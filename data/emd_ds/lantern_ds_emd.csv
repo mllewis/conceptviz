@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,3.364877700805664,lantern
+Australia,Canada,0.6034373044967651,lantern
+Australia,Czech Republic,0.7303615808486938,lantern
+Australia,Finland,0.8468076586723328,lantern
+Australia,France,0.6250941753387451,lantern
+Australia,Germany,1.05696702003479,lantern
+Australia,Hungary,0.7328827381134033,lantern
+Australia,Italy,0.9847419261932373,lantern
+Australia,"Korea, South",0.5971968770027161,lantern
+Australia,Philippines,0.6071553826332092,lantern
+Australia,Poland,1.6548020839691162,lantern
+Australia,Russia,1.61286199092865,lantern
+Australia,Saudi Arabia,0.7380988001823425,lantern
+Australia,Sweden,0.8581231236457825,lantern
+Australia,Thailand,0.5668706893920898,lantern
+Australia,United Kingdom,0.6284782290458679,lantern
+Australia,United States,0.6877622604370117,lantern
+Brazil,Canada,3.6270205974578857,lantern
+Brazil,Czech Republic,3.7905545234680176,lantern
+Brazil,Finland,3.9189505577087402,lantern
+Brazil,France,3.7236855030059814,lantern
+Brazil,Germany,2.5168211460113525,lantern
+Brazil,Hungary,2.883185386657715,lantern
+Brazil,Italy,4.137550354003906,lantern
+Brazil,"Korea, South",3.381964921951294,lantern
+Brazil,Philippines,3.0918185710906982,lantern
+Brazil,Poland,1.8579083681106567,lantern
+Brazil,Russia,1.8650926351547241,lantern
+Brazil,Saudi Arabia,3.664773464202881,lantern
+Brazil,Sweden,4.074512481689453,lantern
+Brazil,Thailand,3.2545082569122314,lantern
+Brazil,United Kingdom,3.5874338150024414,lantern
+Brazil,United States,3.670943021774292,lantern
+Canada,Czech Republic,0.7432477474212646,lantern
+Canada,Finland,0.7646813988685608,lantern
+Canada,France,0.5600408315658569,lantern
+Canada,Germany,1.2864630222320557,lantern
+Canada,Hungary,0.938383162021637,lantern
+Canada,Italy,0.8597845435142517,lantern
+Canada,"Korea, South",0.6922088861465454,lantern
+Canada,Philippines,0.7414089441299438,lantern
+Canada,Poland,1.9066718816757202,lantern
+Canada,Russia,1.8508765697479248,lantern
+Canada,Saudi Arabia,0.6998421549797058,lantern
+Canada,Sweden,0.7476070523262024,lantern
+Canada,Thailand,0.6105194091796875,lantern
+Canada,United Kingdom,0.6858876943588257,lantern
+Canada,United States,0.6787194013595581,lantern
+Czech Republic,Finland,0.6376317739486694,lantern
+Czech Republic,France,0.520612359046936,lantern
+Czech Republic,Germany,1.406092882156372,lantern
+Czech Republic,Hungary,1.2346909046173096,lantern
+Czech Republic,Italy,0.8562281727790833,lantern
+Czech Republic,"Korea, South",0.9539374709129333,lantern
+Czech Republic,Philippines,0.9340204000473022,lantern
+Czech Republic,Poland,2.0416271686553955,lantern
+Czech Republic,Russia,2.0284066200256348,lantern
+Czech Republic,Saudi Arabia,0.7101337313652039,lantern
+Czech Republic,Sweden,0.6089420318603516,lantern
+Czech Republic,Thailand,0.8097219467163086,lantern
+Czech Republic,United Kingdom,0.6310842633247375,lantern
+Czech Republic,United States,0.6137219071388245,lantern
+Finland,France,0.5773943662643433,lantern
+Finland,Germany,1.5010842084884644,lantern
+Finland,Hungary,1.277562141418457,lantern
+Finland,Italy,0.8855738043785095,lantern
+Finland,"Korea, South",1.0793266296386719,lantern
+Finland,Philippines,1.082700252532959,lantern
+Finland,Poland,2.2317373752593994,lantern
+Finland,Russia,2.1015231609344482,lantern
+Finland,Saudi Arabia,0.5937304496765137,lantern
+Finland,Sweden,0.7126769423484802,lantern
+Finland,Thailand,0.943809986114502,lantern
+Finland,United Kingdom,0.71706622838974,lantern
+Finland,United States,0.7133832573890686,lantern
+France,Germany,1.3095439672470093,lantern
+France,Hungary,1.0386078357696533,lantern
+France,Italy,0.7114847898483276,lantern
+France,"Korea, South",0.8102287650108337,lantern
+France,Philippines,0.7817337512969971,lantern
+France,Poland,1.9980725049972534,lantern
+France,Russia,1.9317790269851685,lantern
+France,Saudi Arabia,0.6867851614952087,lantern
+France,Sweden,0.5815181136131287,lantern
+France,Thailand,0.7197107076644897,lantern
+France,United Kingdom,0.6378918290138245,lantern
+France,United States,0.5969880819320679,lantern
+Germany,Hungary,0.8237041234970093,lantern
+Germany,Italy,1.7863035202026367,lantern
+Germany,"Korea, South",1.2676039934158325,lantern
+Germany,Philippines,0.898415744304657,lantern
+Germany,Poland,0.9520941972732544,lantern
+Germany,Russia,0.825359582901001,lantern
+Germany,Saudi Arabia,1.3385998010635376,lantern
+Germany,Sweden,1.6951498985290527,lantern
+Germany,Thailand,1.0409802198410034,lantern
+Germany,United Kingdom,1.2430323362350464,lantern
+Germany,United States,1.315652847290039,lantern
+Hungary,Italy,1.3807448148727417,lantern
+Hungary,"Korea, South",0.8308477997779846,lantern
+Hungary,Philippines,0.57582855224609375,lantern
+Hungary,Poland,1.2498902082443237,lantern
+Hungary,Russia,1.1917258501052856,lantern
+Hungary,Saudi Arabia,1.1496466398239136,lantern
+Hungary,Sweden,1.35872220993042,lantern
+Hungary,Thailand,0.7805927395820618,lantern
+Hungary,United Kingdom,1.0307530164718628,lantern
+Hungary,United States,1.073264241218567,lantern
+Italy,"Korea, South",1.0204603672027588,lantern
+Italy,Philippines,1.1953060626983643,lantern
+Italy,Poland,2.443497657775879,lantern
+Italy,Russia,2.362948417663574,lantern
+Italy,Saudi Arabia,1.071018099784851,lantern
+Italy,Sweden,0.6168908476829529,lantern
+Italy,Thailand,1.1007685661315918,lantern
+Italy,United Kingdom,1.063804030418396,lantern
+Italy,United States,1.0134762525558472,lantern
+"Korea, South",Philippines,0.7095542550086975,lantern
+"Korea, South",Poland,1.7394893169403076,lantern
+"Korea, South",Russia,1.7343401908874512,lantern
+"Korea, South",Saudi Arabia,0.9860097169876099,lantern
+"Korea, South",Sweden,0.9943988919258118,lantern
+"Korea, South",Thailand,0.6060994863510132,lantern
+"Korea, South",United Kingdom,0.8221806883811951,lantern
+"Korea, South",United States,0.935762882232666,lantern
+Philippines,Poland,1.4077152013778687,lantern
+Philippines,Russia,1.3924092054367065,lantern
+Philippines,Saudi Arabia,0.9888364672660828,lantern
+Philippines,Sweden,1.1016227006912231,lantern
+Philippines,Thailand,0.6434106826782227,lantern
+Philippines,United Kingdom,0.7932001948356628,lantern
+Philippines,United States,0.815502405166626,lantern
+Poland,Russia,0.7092076539993286,lantern
+Poland,Saudi Arabia,1.992745041847229,lantern
+Poland,Sweden,2.325800895690918,lantern
+Poland,Thailand,1.5721371173858643,lantern
+Poland,United Kingdom,1.8485455513000488,lantern
+Poland,United States,1.964282512664795,lantern
+Russia,Saudi Arabia,1.878442645072937,lantern
+Russia,Sweden,2.2966439723968506,lantern
+Russia,Thailand,1.5477166175842285,lantern
+Russia,United Kingdom,1.8014731407165527,lantern
+Russia,United States,1.8913275003433228,lantern
+Saudi Arabia,Sweden,0.8332316279411316,lantern
+Saudi Arabia,Thailand,0.7598521709442139,lantern
+Saudi Arabia,United Kingdom,0.5634028911590576,lantern
+Saudi Arabia,United States,0.6299247145652771,lantern
+Sweden,Thailand,0.9465735554695129,lantern
+Sweden,United Kingdom,0.7834617495536804,lantern
+Sweden,United States,0.6877050399780273,lantern
+Thailand,United Kingdom,0.603989839553833,lantern
+Thailand,United States,0.689568281173706,lantern
+United Kingdom,United States,0.49535074830055237,lantern

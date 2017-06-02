@@ -1,0 +1,106 @@
+country1,country2,dist,word
+Australia,Brazil,0.6822075247764587,cactus
+Australia,Canada,0.8360102772712708,cactus
+Australia,Czech Republic,0.8033040761947632,cactus
+Australia,Finland,0.8738094568252563,cactus
+Australia,France,0.7526678442955017,cactus
+Australia,Germany,1.138155460357666,cactus
+Australia,Italy,1.0038057565689087,cactus
+Australia,Philippines,0.7389518618583679,cactus
+Australia,Poland,0.9434729218482971,cactus
+Australia,Russia,1.2035717964172363,cactus
+Australia,Saudi Arabia,0.761501133441925,cactus
+Australia,Sweden,0.8257285952568054,cactus
+Australia,United Kingdom,0.8604469299316406,cactus
+Australia,United States,0.6012759208679199,cactus
+Brazil,Canada,0.9069557785987854,cactus
+Brazil,Czech Republic,0.8546833992004395,cactus
+Brazil,Finland,0.9841398596763611,cactus
+Brazil,France,0.8907791376113892,cactus
+Brazil,Germany,1.144212007522583,cactus
+Brazil,Italy,1.0580976009368896,cactus
+Brazil,Philippines,0.7385404109954834,cactus
+Brazil,Poland,0.9364174604415894,cactus
+Brazil,Russia,1.2215073108673096,cactus
+Brazil,Saudi Arabia,0.7643237113952637,cactus
+Brazil,Sweden,0.8121092319488525,cactus
+Brazil,United Kingdom,1.0157744884490967,cactus
+Brazil,United States,0.8192687630653381,cactus
+Canada,Czech Republic,0.7483275532722473,cactus
+Canada,Finland,0.768343448638916,cactus
+Canada,France,0.6848679184913635,cactus
+Canada,Germany,0.789522111415863,cactus
+Canada,Italy,0.6558970808982849,cactus
+Canada,Philippines,0.7578104734420776,cactus
+Canada,Poland,0.730923593044281,cactus
+Canada,Russia,0.8978510499000549,cactus
+Canada,Saudi Arabia,1.0728641748428345,cactus
+Canada,Sweden,0.9823965430259705,cactus
+Canada,United Kingdom,0.6961538195610046,cactus
+Canada,United States,0.613662838935852,cactus
+Czech Republic,Finland,0.6503068804740906,cactus
+Czech Republic,France,0.7433140873908997,cactus
+Czech Republic,Germany,0.7186898589134216,cactus
+Czech Republic,Italy,0.7644383311271667,cactus
+Czech Republic,Philippines,0.7427582144737244,cactus
+Czech Republic,Poland,0.6509119868278503,cactus
+Czech Republic,Russia,0.7455505132675171,cactus
+Czech Republic,Saudi Arabia,1.0252809524536133,cactus
+Czech Republic,Sweden,0.7163693904876709,cactus
+Czech Republic,United Kingdom,0.7214789986610413,cactus
+Czech Republic,United States,0.8051865100860596,cactus
+Finland,France,0.6655733585357666,cactus
+Finland,Germany,0.5772836208343506,cactus
+Finland,Italy,0.642050564289093,cactus
+Finland,Philippines,0.7259370684623718,cactus
+Finland,Poland,0.6798421740531921,cactus
+Finland,Russia,0.6472264528274536,cactus
+Finland,Saudi Arabia,1.2446626424789429,cactus
+Finland,Sweden,0.8400527238845825,cactus
+Finland,United Kingdom,0.5914312601089478,cactus
+Finland,United States,0.7349159121513367,cactus
+France,Germany,0.7551695704460144,cactus
+France,Italy,0.8073283433914185,cactus
+France,Philippines,0.8387082815170288,cactus
+France,Poland,0.801060676574707,cactus
+France,Russia,0.8063046932220459,cactus
+France,Saudi Arabia,1.0951241254806519,cactus
+France,Sweden,0.9497397541999817,cactus
+France,United Kingdom,0.7978020310401917,cactus
+France,United States,0.6476019024848938,cactus
+Germany,Italy,0.5904044508934021,cactus
+Germany,Philippines,0.9037451148033142,cactus
+Germany,Poland,0.7466543912887573,cactus
+Germany,Russia,0.5456597208976746,cactus
+Germany,Saudi Arabia,1.4343127012252808,cactus
+Germany,Sweden,0.9879313707351685,cactus
+Germany,United Kingdom,0.6908977627754211,cactus
+Germany,United States,0.873955249786377,cactus
+Italy,Philippines,0.7686497569084167,cactus
+Italy,Poland,0.7446997761726379,cactus
+Italy,Russia,0.6759440302848816,cactus
+Italy,Saudi Arabia,1.3715628385543823,cactus
+Italy,Sweden,0.8785718083381653,cactus
+Italy,United Kingdom,0.6240459680557251,cactus
+Italy,United States,0.7793415784835815,cactus
+Philippines,Poland,0.6931425929069519,cactus
+Philippines,Russia,1.006343126296997,cactus
+Philippines,Saudi Arabia,0.9918898940086365,cactus
+Philippines,Sweden,0.7044105529785156,cactus
+Philippines,United Kingdom,0.7347826361656189,cactus
+Philippines,United States,0.6881608366966248,cactus
+Poland,Russia,0.7584733963012695,cactus
+Poland,Saudi Arabia,1.0606108903884888,cactus
+Poland,Sweden,0.9144512414932251,cactus
+Poland,United Kingdom,0.7120712399482727,cactus
+Poland,United States,0.7950956225395203,cactus
+Russia,Saudi Arabia,1.459928035736084,cactus
+Russia,Sweden,0.9117814302444458,cactus
+Russia,United Kingdom,0.7394635081291199,cactus
+Russia,United States,1.0383013486862183,cactus
+Saudi Arabia,Sweden,1.0616685152053833,cactus
+Saudi Arabia,United Kingdom,1.1962968111038208,cactus
+Saudi Arabia,United States,1.0086188316345215,cactus
+Sweden,United Kingdom,0.8186361789703369,cactus
+Sweden,United States,0.9155398011207581,cactus
+United Kingdom,United States,0.6763166189193726,cactus

@@ -1,0 +1,137 @@
+country1,country2,dist,word
+Australia,Brazil,0.7358129620552063,toothbrush
+Australia,Canada,0.5744277238845825,toothbrush
+Australia,Czech Republic,0.6825510263442993,toothbrush
+Australia,Finland,0.7636281251907349,toothbrush
+Australia,France,1.1135246753692627,toothbrush
+Australia,Germany,1.0833555459976196,toothbrush
+Australia,Italy,0.8518259525299072,toothbrush
+Australia,"Korea, South",0.8772761225700378,toothbrush
+Australia,Philippines,0.6702199578285217,toothbrush
+Australia,Poland,0.5468835234642029,toothbrush
+Australia,Russia,1.0648608207702637,toothbrush
+Australia,Saudi Arabia,0.6128654479980469,toothbrush
+Australia,Sweden,0.5953860878944397,toothbrush
+Australia,Thailand,0.8938708305358887,toothbrush
+Australia,United Kingdom,0.8533017039299011,toothbrush
+Australia,United States,0.6114121079444885,toothbrush
+Brazil,Canada,0.9320942163467407,toothbrush
+Brazil,Czech Republic,0.6287139058113098,toothbrush
+Brazil,Finland,1.176976203918457,toothbrush
+Brazil,France,0.6173169016838074,toothbrush
+Brazil,Germany,0.5289489030838013,toothbrush
+Brazil,Italy,0.5140458941459656,toothbrush
+Brazil,"Korea, South",1.2964898347854614,toothbrush
+Brazil,Philippines,0.6613144278526306,toothbrush
+Brazil,Poland,0.5641385912895203,toothbrush
+Brazil,Russia,0.6438903212547302,toothbrush
+Brazil,Saudi Arabia,0.4756143391132355,toothbrush
+Brazil,Sweden,0.8461761474609375,toothbrush
+Brazil,Thailand,1.2725169658660889,toothbrush
+Brazil,United Kingdom,1.2540322542190552,toothbrush
+Brazil,United States,0.9305416345596313,toothbrush
+Canada,Czech Republic,0.8073283433914185,toothbrush
+Canada,Finland,0.6313387155532837,toothbrush
+Canada,France,1.299083948135376,toothbrush
+Canada,Germany,1.228987455368042,toothbrush
+Canada,Italy,0.8990790843963623,toothbrush
+Canada,"Korea, South",0.8532335758209229,toothbrush
+Canada,Philippines,0.8066521286964417,toothbrush
+Canada,Poland,0.7019598484039307,toothbrush
+Canada,Russia,1.2788752317428589,toothbrush
+Canada,Saudi Arabia,0.7772388458251953,toothbrush
+Canada,Sweden,0.7291001677513123,toothbrush
+Canada,Thailand,0.6952977180480957,toothbrush
+Canada,United Kingdom,0.5859758257865906,toothbrush
+Canada,United States,0.6060627102851868,toothbrush
+Czech Republic,Finland,0.9850744009017944,toothbrush
+Czech Republic,France,0.8434520363807678,toothbrush
+Czech Republic,Germany,0.8296967148780823,toothbrush
+Czech Republic,Italy,0.6166946291923523,toothbrush
+Czech Republic,"Korea, South",1.028343677520752,toothbrush
+Czech Republic,Philippines,0.6084372997283936,toothbrush
+Czech Republic,Poland,0.4764791429042816,toothbrush
+Czech Republic,Russia,0.7586356997489929,toothbrush
+Czech Republic,Saudi Arabia,0.5858215093612671,toothbrush
+Czech Republic,Sweden,0.6858524084091187,toothbrush
+Czech Republic,Thailand,1.0984141826629639,toothbrush
+Czech Republic,United Kingdom,0.9757188558578491,toothbrush
+Czech Republic,United States,0.8371998071670532,toothbrush
+Finland,France,1.527791142463684,toothbrush
+Finland,Germany,1.493613839149475,toothbrush
+Finland,Italy,1.0248912572860718,toothbrush
+Finland,"Korea, South",0.9838871955871582,toothbrush
+Finland,Philippines,1.1839241981506348,toothbrush
+Finland,Poland,0.9719741940498352,toothbrush
+Finland,Russia,1.5657635927200317,toothbrush
+Finland,Saudi Arabia,1.0903342962265015,toothbrush
+Finland,Sweden,0.8367795944213867,toothbrush
+Finland,Thailand,0.5350584983825684,toothbrush
+Finland,United Kingdom,0.5300555229187012,toothbrush
+Finland,United States,0.5335854291915894,toothbrush
+France,Germany,0.4990746080875397,toothbrush
+France,Italy,0.7366246581077576,toothbrush
+France,"Korea, South",1.5412811040878296,toothbrush
+France,Philippines,0.8909680843353271,toothbrush
+France,Poland,0.8425983786582947,toothbrush
+France,Russia,0.5288435816764832,toothbrush
+France,Saudi Arabia,0.757209300994873,toothbrush
+France,Sweden,1.1033778190612793,toothbrush
+France,Thailand,1.6285451650619507,toothbrush
+France,United Kingdom,1.5734931230545044,toothbrush
+France,United States,1.2986160516738892,toothbrush
+Germany,Italy,0.6458677053451538,toothbrush
+Germany,"Korea, South",1.6274611949920654,toothbrush
+Germany,Philippines,0.8814560770988464,toothbrush
+Germany,Poland,0.8775359988212585,toothbrush
+Germany,Russia,0.5458993315696716,toothbrush
+Germany,Saudi Arabia,0.7361395955085754,toothbrush
+Germany,Sweden,1.1244263648986816,toothbrush
+Germany,Thailand,1.5971421003341675,toothbrush
+Germany,United Kingdom,1.5293097496032715,toothbrush
+Germany,United States,1.2555996179580688,toothbrush
+Italy,"Korea, South",1.3851990699768066,toothbrush
+Italy,Philippines,0.7246077656745911,toothbrush
+Italy,Poland,0.6532711982727051,toothbrush
+Italy,Russia,0.78717803955078125,toothbrush
+Italy,Saudi Arabia,0.5034337639808655,toothbrush
+Italy,Sweden,0.8661661744117737,toothbrush
+Italy,Thailand,1.1052525043487549,toothbrush
+Italy,United Kingdom,1.1223502159118652,toothbrush
+Italy,United States,0.8063369989395142,toothbrush
+"Korea, South",Philippines,0.9482628107070923,toothbrush
+"Korea, South",Poland,0.8929246068000793,toothbrush
+"Korea, South",Russia,1.3614364862442017,toothbrush
+"Korea, South",Saudi Arabia,1.1673411130905151,toothbrush
+"Korea, South",Sweden,0.7231373190879822,toothbrush
+"Korea, South",Thailand,1.0527335405349731,toothbrush
+"Korea, South",United Kingdom,0.820785403251648,toothbrush
+"Korea, South",United States,0.9155452847480774,toothbrush
+Philippines,Poland,0.5428367853164673,toothbrush
+Philippines,Russia,0.7184439897537231,toothbrush
+Philippines,Saudi Arabia,0.5446657538414001,toothbrush
+Philippines,Sweden,0.8114718794822693,toothbrush
+Philippines,Thailand,1.2013806104660034,toothbrush
+Philippines,United Kingdom,1.1358146667480469,toothbrush
+Philippines,United States,0.9394456744194031,toothbrush
+Poland,Russia,0.8215540051460266,toothbrush
+Poland,Saudi Arabia,0.5102405548095703,toothbrush
+Poland,Sweden,0.6081416606903076,toothbrush
+Poland,Thailand,1.0542856454849243,toothbrush
+Poland,United Kingdom,0.973567545413971,toothbrush
+Poland,United States,0.7295551896095276,toothbrush
+Russia,Saudi Arabia,0.7605496048927307,toothbrush
+Russia,Sweden,1.0168209075927734,toothbrush
+Russia,Thailand,1.6282585859298706,toothbrush
+Russia,United Kingdom,1.5485867261886597,toothbrush
+Russia,United States,1.3446556329727173,toothbrush
+Saudi Arabia,Sweden,0.7751649618148804,toothbrush
+Saudi Arabia,Thailand,1.165440320968628,toothbrush
+Saudi Arabia,United Kingdom,1.1577211618423462,toothbrush
+Saudi Arabia,United States,0.8288200497627258,toothbrush
+Sweden,Thailand,0.9191491603851318,toothbrush
+Sweden,United Kingdom,0.8495774865150452,toothbrush
+Sweden,United States,0.6436901688575745,toothbrush
+Thailand,United Kingdom,0.5908808708190918,toothbrush
+Thailand,United States,0.6078006029129028,toothbrush
+United Kingdom,United States,0.6679970026016235,toothbrush

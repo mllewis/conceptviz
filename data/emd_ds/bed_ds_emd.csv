@@ -1,0 +1,79 @@
+country1,country2,dist,word
+Australia,Brazil,0.6852720379829407,bed
+Australia,Canada,0.6997387409210205,bed
+Australia,Czech Republic,1.3130652904510498,bed
+Australia,Finland,0.9559755325317383,bed
+Australia,France,0.7386006116867065,bed
+Australia,Germany,1.1696910858154297,bed
+Australia,Italy,0.7606536746025085,bed
+Australia,Poland,0.5870968103408813,bed
+Australia,Russia,1.0712321996688843,bed
+Australia,Sweden,1.0007396936416626,bed
+Australia,United Kingdom,0.5998314023017883,bed
+Australia,United States,0.594037652015686,bed
+Brazil,Canada,0.7241737246513367,bed
+Brazil,Czech Republic,1.2966941595077515,bed
+Brazil,Finland,1.067501425743103,bed
+Brazil,France,0.8003692030906677,bed
+Brazil,Germany,1.1586730480194092,bed
+Brazil,Italy,0.7745999693870544,bed
+Brazil,Poland,0.7250071167945862,bed
+Brazil,Russia,1.0699079036712646,bed
+Brazil,Sweden,1.0781718492507935,bed
+Brazil,United Kingdom,0.8141806721687317,bed
+Brazil,United States,0.6601660251617432,bed
+Canada,Czech Republic,1.0921450853347778,bed
+Canada,Finland,0.7781155705451965,bed
+Canada,France,0.8292429447174072,bed
+Canada,Germany,0.790552020072937,bed
+Canada,Italy,0.7788781523704529,bed
+Canada,Poland,0.6770445704460144,bed
+Canada,Russia,0.7434483170509338,bed
+Canada,Sweden,0.956876277923584,bed
+Canada,United Kingdom,0.8192690014839172,bed
+Canada,United States,0.7218942046165466,bed
+Czech Republic,Finland,1.3907138109207153,bed
+Czech Republic,France,1.546520471572876,bed
+Czech Republic,Germany,0.9698261618614197,bed
+Czech Republic,Italy,1.333938479423523,bed
+Czech Republic,Poland,1.0929890871047974,bed
+Czech Republic,Russia,0.8721311092376709,bed
+Czech Republic,Sweden,0.719828724861145,bed
+Czech Republic,United Kingdom,1.418883204460144,bed
+Czech Republic,United States,1.2932578325271606,bed
+Finland,France,0.8724968433380127,bed
+Finland,Germany,0.828572690486908,bed
+Finland,Italy,1.0829191207885742,bed
+Finland,Poland,0.9880644083023071,bed
+Finland,Russia,0.9056169390678406,bed
+Finland,Sweden,1.3299617767333984,bed
+Finland,United Kingdom,1.1245876550674438,bed
+Finland,United States,1.0280669927597046,bed
+France,Germany,1.217536211013794,bed
+France,Italy,0.8228837251663208,bed
+France,Poland,0.838420569896698,bed
+France,Russia,1.2300174236297607,bed
+France,Sweden,1.318724513053894,bed
+France,United Kingdom,0.8537680506706238,bed
+France,United States,0.8041017651557922,bed
+Germany,Italy,1.2127127647399902,bed
+Germany,Poland,1.0388602018356323,bed
+Germany,Russia,0.6852544546127319,bed
+Germany,Sweden,1.021145224571228,bed
+Germany,United Kingdom,1.3061624765396118,bed
+Germany,United States,1.1163535118103027,bed
+Italy,Poland,0.6424943804740906,bed
+Italy,Russia,1.160358190536499,bed
+Italy,Sweden,0.9678589105606079,bed
+Italy,United Kingdom,0.7028688788414001,bed
+Italy,United States,0.7517490386962891,bed
+Poland,Russia,0.9638766050338745,bed
+Poland,Sweden,0.7766140103340149,bed
+Poland,United Kingdom,0.5624130964279175,bed
+Poland,United States,0.5578389167785645,bed
+Russia,Sweden,0.9354772567749023,bed
+Russia,United Kingdom,1.2147523164749146,bed
+Russia,United States,1.0991778373718262,bed
+Sweden,United Kingdom,1.0384385585784912,bed
+Sweden,United States,0.9282054901123047,bed
+United Kingdom,United States,0.6156861186027527,bed

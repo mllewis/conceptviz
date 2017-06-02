@@ -1,0 +1,79 @@
+country1,country2,dist,word
+Australia,Brazil,0.7218508124351501,raccoon
+Australia,Canada,0.48222529888153076,raccoon
+Australia,Czech Republic,0.6254098415374756,raccoon
+Australia,Finland,0.8433192372322083,raccoon
+Australia,Germany,0.514664888381958,raccoon
+Australia,Italy,1.025094985961914,raccoon
+Australia,"Korea, South",0.9538466930389404,raccoon
+Australia,Russia,0.5810260772705078,raccoon
+Australia,Sweden,0.46357443928718567,raccoon
+Australia,Thailand,1.0274465084075928,raccoon
+Australia,United Kingdom,0.39881008863449097,raccoon
+Australia,United States,0.3900558054447174,raccoon
+Brazil,Canada,0.6921311616897583,raccoon
+Brazil,Czech Republic,0.6532062292098999,raccoon
+Brazil,Finland,0.563520073890686,raccoon
+Brazil,Germany,0.4989704191684723,raccoon
+Brazil,Italy,0.7009017467498779,raccoon
+Brazil,"Korea, South",0.5735794901847839,raccoon
+Brazil,Russia,0.5176495909690857,raccoon
+Brazil,Sweden,0.7550888657569885,raccoon
+Brazil,Thailand,0.6971803307533264,raccoon
+Brazil,United Kingdom,0.5425671935081482,raccoon
+Brazil,United States,0.6247417330741882,raccoon
+Canada,Czech Republic,0.6152117252349854,raccoon
+Canada,Finland,0.7660588026046753,raccoon
+Canada,Germany,0.4912504553794861,raccoon
+Canada,Italy,0.9222500324249268,raccoon
+Canada,"Korea, South",0.8698965907096863,raccoon
+Canada,Russia,0.5198687314987183,raccoon
+Canada,Sweden,0.5482437610626221,raccoon
+Canada,Thailand,0.9539565443992615,raccoon
+Canada,United Kingdom,0.49608370661735535,raccoon
+Canada,United States,0.3865072429180145,raccoon
+Czech Republic,Finland,0.6122249960899353,raccoon
+Czech Republic,Germany,0.4958603084087372,raccoon
+Czech Republic,Italy,0.7971745729446411,raccoon
+Czech Republic,"Korea, South",0.7801308631896973,raccoon
+Czech Republic,Russia,0.48885029554367065,raccoon
+Czech Republic,Sweden,0.5708553791046143,raccoon
+Czech Republic,Thailand,0.7457343339920044,raccoon
+Czech Republic,United Kingdom,0.5170854330062866,raccoon
+Czech Republic,United States,0.5784937143325806,raccoon
+Finland,Germany,0.5991369485855103,raccoon
+Finland,Italy,0.4499664902687073,raccoon
+Finland,"Korea, South",0.478333979845047,raccoon
+Finland,Russia,0.5558937788009644,raccoon
+Finland,Sweden,0.8398019671440125,raccoon
+Finland,Thailand,0.5512309670448303,raccoon
+Finland,United Kingdom,0.6979758739471436,raccoon
+Finland,United States,0.8065816164016724,raccoon
+Germany,Italy,0.7367299199104309,raccoon
+Germany,"Korea, South",0.6867133378982544,raccoon
+Germany,Russia,0.42805036902427673,raccoon
+Germany,Sweden,0.5352252125740051,raccoon
+Germany,Thailand,0.7808890342712402,raccoon
+Germany,United Kingdom,0.4326831102371216,raccoon
+Germany,United States,0.49175339937210083,raccoon
+Italy,"Korea, South",0.42132872343063354,raccoon
+Italy,Russia,0.637342095375061,raccoon
+Italy,Sweden,0.9947367906570435,raccoon
+Italy,Thailand,0.520420491695404,raccoon
+Italy,United Kingdom,0.8519847393035889,raccoon
+Italy,United States,0.9918556213378906,raccoon
+"Korea, South",Russia,0.5919944047927856,raccoon
+"Korea, South",Sweden,0.9630228877067566,raccoon
+"Korea, South",Thailand,0.5049539804458618,raccoon
+"Korea, South",United Kingdom,0.7691416144371033,raccoon
+"Korea, South",United States,0.9136383533477783,raccoon
+Russia,Sweden,0.5585712194442749,raccoon
+Russia,Thailand,0.7227154970169067,raccoon
+Russia,United Kingdom,0.42277586460113525,raccoon
+Russia,United States,0.5411136746406555,raccoon
+Sweden,Thailand,1.0343621969223022,raccoon
+Sweden,United Kingdom,0.46708545088768005,raccoon
+Sweden,United States,0.5163316130638123,raccoon
+Thailand,United Kingdom,0.8792345523834229,raccoon
+Thailand,United States,1.0031826496124268,raccoon
+United Kingdom,United States,0.392741322517395,raccoon

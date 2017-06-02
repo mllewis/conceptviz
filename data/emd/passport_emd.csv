@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.7555302977561951,passport
+Australia,Canada,0.4455077052116394,passport
+Australia,Czech Republic,0.7173396348953247,passport
+Australia,Finland,0.5114794969558716,passport
+Australia,France,0.8472922444343567,passport
+Australia,Germany,0.3976571261882782,passport
+Australia,Hungary,0.7015163898468018,passport
+Australia,Italy,0.4674205482006073,passport
+Australia,"Korea, South",1.234443187713623,passport
+Australia,Philippines,0.8083549737930298,passport
+Australia,Poland,0.704795777797699,passport
+Australia,Russia,0.48324543237686157,passport
+Australia,Saudi Arabia,0.9070727825164795,passport
+Australia,Sweden,0.5396170616149902,passport
+Australia,Thailand,0.9327223300933838,passport
+Australia,United Kingdom,1.1946041584014893,passport
+Australia,United States,1.8208686113357544,passport
+Brazil,Canada,0.9836671352386475,passport
+Brazil,Czech Republic,0.42595213651657104,passport
+Brazil,Finland,0.5708350539207458,passport
+Brazil,France,0.4565904140472412,passport
+Brazil,Germany,0.6485734581947327,passport
+Brazil,Hungary,0.5713077187538147,passport
+Brazil,Italy,0.5447916388511658,passport
+Brazil,"Korea, South",0.7028478384017944,passport
+Brazil,Philippines,0.4256821572780609,passport
+Brazil,Poland,0.3997463881969452,passport
+Brazil,Russia,0.693666934967041,passport
+Brazil,Saudi Arabia,0.7817917466163635,passport
+Brazil,Sweden,0.7629452347755432,passport
+Brazil,Thailand,0.48812755942344666,passport
+Brazil,United Kingdom,1.6159343719482422,passport
+Brazil,United States,2.2047595977783203,passport
+Canada,Czech Republic,0.9315004348754883,passport
+Canada,Finland,0.6250442266464233,passport
+Canada,France,1.1297008991241455,passport
+Canada,Germany,0.5824629664421082,passport
+Canada,Hungary,0.9770271182060242,passport
+Canada,Italy,0.7345255613327026,passport
+Canada,"Korea, South",1.3699629306793213,passport
+Canada,Philippines,1.0586166381835938,passport
+Canada,Poland,0.9518307447433472,passport
+Canada,Russia,0.450002521276474,passport
+Canada,Saudi Arabia,0.8926393985748291,passport
+Canada,Sweden,0.8427875638008118,passport
+Canada,Thailand,1.0994611978530884,passport
+Canada,United Kingdom,0.8107293248176575,passport
+Canada,United States,1.4324727058410645,passport
+Czech Republic,Finland,0.6911666393280029,passport
+Czech Republic,France,0.5319706201553345,passport
+Czech Republic,Germany,0.5418535470962524,passport
+Czech Republic,Hungary,0.4753710627555847,passport
+Czech Republic,Italy,0.44082900881767273,passport
+Czech Republic,"Korea, South",0.9097113609313965,passport
+Czech Republic,Philippines,0.5015579462051392,passport
+Czech Republic,Poland,0.36720213294029236,passport
+Czech Republic,Russia,0.7308807373046875,passport
+Czech Republic,Saudi Arabia,0.9990687370300293,passport
+Czech Republic,Sweden,0.6447967886924744,passport
+Czech Republic,Thailand,0.6839645504951477,passport
+Czech Republic,United Kingdom,1.6312569379806519,passport
+Czech Republic,United States,2.2447309494018555,passport
+Finland,France,0.7191248536109924,passport
+Finland,Germany,0.609717607498169,passport
+Finland,Hungary,0.7280406951904297,passport
+Finland,Italy,0.635951817035675,passport
+Finland,"Korea, South",0.8844245076179504,passport
+Finland,Philippines,0.6366066336631775,passport
+Finland,Poland,0.625953733921051,passport
+Finland,Russia,0.4421372711658478,passport
+Finland,Saudi Arabia,0.5915176272392273,passport
+Finland,Sweden,0.764291524887085,passport
+Finland,Thailand,0.6538510322570801,passport
+Finland,United Kingdom,1.2540051937103271,passport
+Finland,United States,1.8485580682754517,passport
+France,Germany,0.742641270160675,passport
+France,Hungary,0.5012674927711487,passport
+France,Italy,0.5860576033592224,passport
+France,"Korea, South",0.808230459690094,passport
+France,Philippines,0.4250274896621704,passport
+France,Poland,0.4573078751564026,passport
+France,Russia,0.9417210817337036,passport
+France,Saudi Arabia,0.9563917517662048,passport
+France,Sweden,0.6949037313461304,passport
+France,Thailand,0.6326755881309509,passport
+France,United Kingdom,1.8289461135864258,passport
+France,United States,2.4245264530181885,passport
+Germany,Hungary,0.6080203652381897,passport
+Germany,Italy,0.43687939643859863,passport
+Germany,"Korea, South",1.1123220920562744,passport
+Germany,Philippines,0.766452968120575,passport
+Germany,Poland,0.5523468852043152,passport
+Germany,Russia,0.5404855012893677,passport
+Germany,Saudi Arabia,0.9094460606575012,passport
+Germany,Sweden,0.5113163590431213,passport
+Germany,Thailand,0.8165804147720337,passport
+Germany,United Kingdom,1.3399909734725952,passport
+Germany,United States,1.9704339504241943,passport
+Hungary,Italy,0.46945422887802124,passport
+Hungary,"Korea, South",0.9650238752365112,passport
+Hungary,Philippines,0.5179979801177979,passport
+Hungary,Poland,0.47901177406311035,passport
+Hungary,Russia,0.873154878616333,passport
+Hungary,Saudi Arabia,1.0398575067520142,passport
+Hungary,Sweden,0.5492785573005676,passport
+Hungary,Thailand,0.7761490941047668,passport
+Hungary,United Kingdom,1.7049272060394287,passport
+Hungary,United States,2.3247344493865967,passport
+Italy,"Korea, South",1.0282552242279053,passport
+Italy,Philippines,0.5597040057182312,passport
+Italy,Poland,0.44167178869247437,passport
+Italy,Russia,0.6500435471534729,passport
+Italy,Saudi Arabia,1.004880428314209,passport
+Italy,Sweden,0.47243067622184753,passport
+Italy,Thailand,0.7826851606369019,passport
+Italy,United Kingdom,1.4883357286453247,passport
+Italy,United States,2.104872941970825,passport
+"Korea, South",Philippines,0.7435727119445801,passport
+"Korea, South",Poland,0.8205600380897522,passport
+"Korea, South",Russia,1.0392436981201172,passport
+"Korea, South",Saudi Arabia,0.7883340120315552,passport
+"Korea, South",Sweden,1.235890507698059,passport
+"Korea, South",Thailand,0.5235679149627686,passport
+"Korea, South",United Kingdom,1.803687334060669,passport
+"Korea, South",United States,2.3085410594940186,passport
+Philippines,Poland,0.46188992261886597,passport
+Philippines,Russia,0.8117820620536804,passport
+Philippines,Saudi Arabia,0.9180335998535156,passport
+Philippines,Sweden,0.7451809048652649,passport
+Philippines,Thailand,0.5997831225395203,passport
+Philippines,United Kingdom,1.6952396631240845,passport
+Philippines,United States,2.2986085414886475,passport
+Poland,Russia,0.744979739189148,passport
+Poland,Saudi Arabia,0.9391985535621643,passport
+Poland,Sweden,0.6408199667930603,passport
+Poland,Thailand,0.5818009376525879,passport
+Poland,United Kingdom,1.6452836990356445,passport
+Poland,United States,2.261073350906372,passport
+Russia,Saudi Arabia,0.7259607315063477,passport
+Russia,Sweden,0.8177618384361267,passport
+Russia,Thailand,0.8282997608184814,passport
+Russia,United Kingdom,1.0072319507598877,passport
+Russia,United States,1.5926499366760254,passport
+Saudi Arabia,Sweden,1.1329537630081177,passport
+Saudi Arabia,Thailand,0.6577709913253784,passport
+Saudi Arabia,United Kingdom,1.2977584600448608,passport
+Saudi Arabia,United States,1.8654625415802002,passport
+Sweden,Thailand,0.9624772071838379,passport
+Sweden,United Kingdom,1.5804624557495117,passport
+Sweden,United States,2.192206859588623,passport
+Thailand,United Kingdom,1.642601490020752,passport
+Thailand,United States,2.210728883743286,passport
+United Kingdom,United States,0.633671760559082,passport

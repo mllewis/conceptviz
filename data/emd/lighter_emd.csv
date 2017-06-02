@@ -1,0 +1,79 @@
+country1,country2,dist,word
+Australia,Brazil,0.4462296962738037,lighter
+Australia,Canada,0.4877639412879944,lighter
+Australia,Czech Republic,0.6202173829078674,lighter
+Australia,Finland,0.7908574342727661,lighter
+Australia,Germany,0.4166789948940277,lighter
+Australia,Italy,0.8714726567268372,lighter
+Australia,"Korea, South",0.6098106503486633,lighter
+Australia,Philippines,0.8271023631095886,lighter
+Australia,Russia,0.51334148645401,lighter
+Australia,Sweden,0.9015342593193054,lighter
+Australia,United Kingdom,1.2872540950775146,lighter
+Australia,United States,2.9775888919830322,lighter
+Brazil,Canada,0.6301386952400208,lighter
+Brazil,Czech Republic,0.6037122011184692,lighter
+Brazil,Finland,0.626760721206665,lighter
+Brazil,Germany,0.44198840856552124,lighter
+Brazil,Italy,0.7301412224769592,lighter
+Brazil,"Korea, South",0.5205848813056946,lighter
+Brazil,Philippines,0.6694700717926025,lighter
+Brazil,Russia,0.504951000213623,lighter
+Brazil,Sweden,0.767024040222168,lighter
+Brazil,United Kingdom,1.392950415611267,lighter
+Brazil,United States,3.0396597385406494,lighter
+Canada,Czech Republic,0.789168655872345,lighter
+Canada,Finland,0.8195741176605225,lighter
+Canada,Germany,0.4392049014568329,lighter
+Canada,Italy,1.0821298360824585,lighter
+Canada,"Korea, South",0.8107467889785767,lighter
+Canada,Philippines,0.9971697926521301,lighter
+Canada,Russia,0.7317383885383606,lighter
+Canada,Sweden,1.1639844179153442,lighter
+Canada,United Kingdom,0.9346429705619812,lighter
+Canada,United States,2.597750186920166,lighter
+Czech Republic,Finland,0.7072535753250122,lighter
+Czech Republic,Germany,0.6936377882957458,lighter
+Czech Republic,Italy,0.7567667365074158,lighter
+Czech Republic,"Korea, South",0.5017702579498291,lighter
+Czech Republic,Philippines,0.7452133297920227,lighter
+Czech Republic,Russia,0.4194394052028656,lighter
+Czech Republic,Sweden,0.8185275197029114,lighter
+Czech Republic,United Kingdom,1.465407371520996,lighter
+Czech Republic,United States,3.1225790977478027,lighter
+Finland,Germany,0.6432660222053528,lighter
+Finland,Italy,0.7712690830230713,lighter
+Finland,"Korea, South",0.6937344074249268,lighter
+Finland,Philippines,0.5844322443008423,lighter
+Finland,Russia,0.6953461766242981,lighter
+Finland,Sweden,0.8725948929786682,lighter
+Finland,United Kingdom,1.567049503326416,lighter
+Finland,United States,3.107246160507202,lighter
+Germany,Italy,0.8361543416976929,lighter
+Germany,"Korea, South",0.6390222907066345,lighter
+Germany,Philippines,0.8106361627578735,lighter
+Germany,Russia,0.5627471208572388,lighter
+Germany,Sweden,0.8738847970962524,lighter
+Germany,United Kingdom,1.200300693511963,lighter
+Germany,United States,2.862851142883301,lighter
+Italy,"Korea, South",0.5722193717956543,lighter
+Italy,Philippines,0.5811079740524292,lighter
+Italy,Russia,0.6444414258003235,lighter
+Italy,Sweden,0.5347580313682556,lighter
+Italy,United Kingdom,1.9094574451446533,lighter
+Italy,United States,3.507215976715088,lighter
+"Korea, South",Philippines,0.5258099436759949,lighter
+"Korea, South",Russia,0.4451819360256195,lighter
+"Korea, South",Sweden,0.5840581059455872,lighter
+"Korea, South",United Kingdom,1.679010033607483,lighter
+"Korea, South",United States,3.344782829284668,lighter
+Philippines,Russia,0.6921836137771606,lighter
+Philippines,Sweden,0.6682541370391846,lighter
+Philippines,United Kingdom,1.8870437145233154,lighter
+Philippines,United States,3.492797374725342,lighter
+Russia,Sweden,0.6431705951690674,lighter
+Russia,United Kingdom,1.5008800029754639,lighter
+Russia,United States,3.179917812347412,lighter
+Sweden,United Kingdom,2.024052143096924,lighter
+Sweden,United States,3.6878135204315186,lighter
+United Kingdom,United States,1.7209198474884033,lighter

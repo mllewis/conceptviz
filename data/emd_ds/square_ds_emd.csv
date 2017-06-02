@@ -1,0 +1,106 @@
+country1,country2,dist,word
+Australia,Brazil,1.1147764921188354,square
+Australia,Canada,0.7826226949691772,square
+Australia,Finland,1.0020246505737305,square
+Australia,France,0.7125715017318726,square
+Australia,Germany,0.975862979888916,square
+Australia,Italy,1.3468728065490723,square
+Australia,"Korea, South",1.1919697523117065,square
+Australia,Philippines,0.7721811532974243,square
+Australia,Russia,0.8093117475509644,square
+Australia,Saudi Arabia,1.0191518068313599,square
+Australia,Sweden,0.8835259079933167,square
+Australia,Thailand,1.2820364236831665,square
+Australia,United Kingdom,0.938648521900177,square
+Australia,United States,0.7903567552566528,square
+Brazil,Canada,0.669353723526001,square
+Brazil,Finland,0.6681109666824341,square
+Brazil,France,1.3307569026947021,square
+Brazil,Germany,0.8934159874916077,square
+Brazil,Italy,0.732971727848053,square
+Brazil,"Korea, South",0.830338180065155,square
+Brazil,Philippines,0.7610488533973694,square
+Brazil,Russia,0.7857763767242432,square
+Brazil,Saudi Arabia,1.1175580024719238,square
+Brazil,Sweden,0.9690316319465637,square
+Brazil,Thailand,0.7094193696975708,square
+Brazil,United Kingdom,0.7458858489990234,square
+Brazil,United States,0.8588283658027649,square
+Canada,Finland,0.7820616364479065,square
+Canada,France,1.0071474313735962,square
+Canada,Germany,0.9403566122055054,square
+Canada,Italy,0.9980021119117737,square
+Canada,"Korea, South",0.918667197227478,square
+Canada,Philippines,0.7378818392753601,square
+Canada,Russia,0.6596763134002686,square
+Canada,Saudi Arabia,0.9741512537002563,square
+Canada,Sweden,0.7577439546585083,square
+Canada,Thailand,1.0003612041473389,square
+Canada,United Kingdom,0.7688393592834473,square
+Canada,United States,0.706626296043396,square
+Finland,France,1.1757618188858032,square
+Finland,Germany,0.7653893828392029,square
+Finland,Italy,0.5779363512992859,square
+Finland,"Korea, South",0.5891809463500977,square
+Finland,Philippines,0.8149327039718628,square
+Finland,Russia,0.5938045978546143,square
+Finland,Saudi Arabia,0.7762286067008972,square
+Finland,Sweden,0.7997404932975769,square
+Finland,Thailand,0.7369005680084229,square
+Finland,United Kingdom,0.7966037392616272,square
+Finland,United States,0.8518717885017395,square
+France,Germany,0.9717164039611816,square
+France,Italy,1.4422820806503296,square
+France,"Korea, South",1.2514220476150513,square
+France,Philippines,0.8802180290222168,square
+France,Russia,0.9028202295303345,square
+France,Saudi Arabia,1.0626769065856934,square
+France,Sweden,0.8556024432182312,square
+France,Thailand,1.380091667175293,square
+France,United Kingdom,1.2050784826278687,square
+France,United States,1.044589877128601,square
+Germany,Italy,0.7830313444137573,square
+Germany,"Korea, South",0.7646475434303284,square
+Germany,Philippines,0.6513156294822693,square
+Germany,Russia,0.7278245091438293,square
+Germany,Saudi Arabia,0.9882552027702332,square
+Germany,Sweden,0.9152217507362366,square
+Germany,Thailand,0.8058648705482483,square
+Germany,United Kingdom,0.9344151616096497,square
+Germany,United States,0.8787545561790466,square
+Italy,"Korea, South",0.6350553035736084,square
+Italy,Philippines,0.913783848285675,square
+Italy,Russia,0.8177794814109802,square
+Italy,Saudi Arabia,1.0997542142868042,square
+Italy,Sweden,1.0625091791152954,square
+Italy,Thailand,0.6031507849693298,square
+Italy,United Kingdom,0.8832072019577026,square
+Italy,United States,1.000517725944519,square
+"Korea, South",Philippines,0.8368851542472839,square
+"Korea, South",Russia,0.7424920201301575,square
+"Korea, South",Saudi Arabia,0.8421715497970581,square
+"Korea, South",Sweden,0.9649378061294556,square
+"Korea, South",Thailand,0.7128207087516785,square
+"Korea, South",United Kingdom,0.8237784504890442,square
+"Korea, South",United States,0.8751246929168701,square
+Philippines,Russia,0.6136890649795532,square
+Philippines,Saudi Arabia,0.9714006185531616,square
+Philippines,Sweden,0.9214194416999817,square
+Philippines,Thailand,0.8384832143783569,square
+Philippines,United Kingdom,0.7964478731155396,square
+Philippines,United States,0.6729878783226013,square
+Russia,Saudi Arabia,0.7310581207275391,square
+Russia,Sweden,0.8214998245239258,square
+Russia,Thailand,0.7901834845542908,square
+Russia,United Kingdom,0.7116355895996094,square
+Russia,United States,0.6786900758743286,square
+Saudi Arabia,Sweden,0.9493851661682129,square
+Saudi Arabia,Thailand,1.1604644060134888,square
+Saudi Arabia,United Kingdom,0.9995463490486145,square
+Saudi Arabia,United States,0.9062625169754028,square
+Sweden,Thailand,1.135632872581482,square
+Sweden,United Kingdom,1.1080631017684937,square
+Sweden,United States,1.0200021266937256,square
+Thailand,United Kingdom,0.723285973072052,square
+Thailand,United States,1.0010801553726196,square
+United Kingdom,United States,0.5809518694877625,square

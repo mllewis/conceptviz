@@ -1,0 +1,137 @@
+country1,country2,dist,word
+Australia,Brazil,1.0585486888885498,circle
+Australia,Canada,0.6856229901313782,circle
+Australia,Czech Republic,1.4968206882476807,circle
+Australia,Finland,0.7081857919692993,circle
+Australia,France,1.0325247049331665,circle
+Australia,Germany,1.048248291015625,circle
+Australia,Italy,1.1356942653656006,circle
+Australia,"Korea, South",1.1143637895584106,circle
+Australia,Philippines,0.6955113410949707,circle
+Australia,Poland,1.1004756689071655,circle
+Australia,Russia,1.0745493173599243,circle
+Australia,Saudi Arabia,0.8919541835784912,circle
+Australia,Sweden,0.7607382535934448,circle
+Australia,Thailand,1.1026885509490967,circle
+Australia,United Kingdom,0.6947851181030273,circle
+Australia,United States,0.769135594367981,circle
+Brazil,Canada,0.7694353461265564,circle
+Brazil,Czech Republic,1.255585789680481,circle
+Brazil,Finland,0.7438478469848633,circle
+Brazil,France,0.5061419010162354,circle
+Brazil,Germany,0.896868109703064,circle
+Brazil,Italy,0.8707370758056641,circle
+Brazil,"Korea, South",0.6257332563400269,circle
+Brazil,Philippines,0.9443053007125854,circle
+Brazil,Poland,0.6118567585945129,circle
+Brazil,Russia,1.0621501207351685,circle
+Brazil,Saudi Arabia,1.0753402709960938,circle
+Brazil,Sweden,0.7875569462776184,circle
+Brazil,Thailand,1.017879843711853,circle
+Brazil,United Kingdom,0.6986444592475891,circle
+Brazil,United States,1.0826869010925293,circle
+Canada,Czech Republic,1.429943323135376,circle
+Canada,Finland,0.6363049745559692,circle
+Canada,France,0.7954585552215576,circle
+Canada,Germany,0.9586310386657715,circle
+Canada,Italy,0.9435651302337646,circle
+Canada,"Korea, South",0.9174154996871948,circle
+Canada,Philippines,0.6559382677078247,circle
+Canada,Poland,0.8624128699302673,circle
+Canada,Russia,1.0749998092651367,circle
+Canada,Saudi Arabia,0.9205949306488037,circle
+Canada,Sweden,0.6494957208633423,circle
+Canada,Thailand,0.987230658531189,circle
+Canada,United Kingdom,0.5715152621269226,circle
+Canada,United States,0.8154267072677612,circle
+Czech Republic,Finland,1.16451096534729,circle
+Czech Republic,France,1.3894151449203491,circle
+Czech Republic,Germany,0.9973109364509583,circle
+Czech Republic,Italy,0.8624599575996399,circle
+Czech Republic,"Korea, South",1.2453341484069824,circle
+Czech Republic,Philippines,1.5597440004348755,circle
+Czech Republic,Poland,0.9371106624603271,circle
+Czech Republic,Russia,0.8126296401023865,circle
+Czech Republic,Saudi Arabia,1.5319108963012695,circle
+Czech Republic,Sweden,1.4049023389816284,circle
+Czech Republic,Thailand,1.4989829063415527,circle
+Czech Republic,United Kingdom,1.3722707033157349,circle
+Czech Republic,United States,1.8004873991012573,circle
+Finland,France,0.8660755157470703,circle
+Finland,Germany,0.7866042852401733,circle
+Finland,Italy,0.8620778322219849,circle
+Finland,"Korea, South",0.9118831157684326,circle
+Finland,Philippines,0.8035125136375427,circle
+Finland,Poland,0.766423225402832,circle
+Finland,Russia,0.8621622920036316,circle
+Finland,Saudi Arabia,0.9326310753822327,circle
+Finland,Sweden,0.6867561340332031,circle
+Finland,Thailand,1.0249015092849731,circle
+Finland,United Kingdom,0.6780730485916138,circle
+Finland,United States,0.9035561084747314,circle
+France,Germany,1.1179146766662598,circle
+France,Italy,1.0724730491638184,circle
+France,"Korea, South",0.6179679036140442,circle
+France,Philippines,0.9807947874069214,circle
+France,Poland,0.7399405241012573,circle
+France,Russia,1.2558772563934326,circle
+France,Saudi Arabia,1.1424311399459839,circle
+France,Sweden,0.8201386332511902,circle
+France,Thailand,1.1865442991256714,circle
+France,United Kingdom,0.7572875022888184,circle
+France,United States,1.0599299669265747,circle
+Germany,Italy,0.5973573923110962,circle
+Germany,"Korea, South",0.9917315244674683,circle
+Germany,Philippines,0.9094136953353882,circle
+Germany,Poland,0.7425745725631714,circle
+Germany,Russia,0.6731651425361633,circle
+Germany,Saudi Arabia,1.0743744373321533,circle
+Germany,Sweden,0.973694384098053,circle
+Germany,Thailand,0.8477405905723572,circle
+Germany,United Kingdom,0.8741834163665771,circle
+Germany,United States,1.2129874229431152,circle
+Italy,"Korea, South",1.0595062971115112,circle
+Italy,Philippines,1.1016786098480225,circle
+Italy,Poland,0.8181191682815552,circle
+Italy,Russia,0.6468238234519958,circle
+Italy,Saudi Arabia,1.3482223749160767,circle
+Italy,Sweden,1.1410425901412964,circle
+Italy,Thailand,1.124565601348877,circle
+Italy,United Kingdom,0.9805155396461487,circle
+Italy,United States,1.3819307088851929,circle
+"Korea, South",Philippines,0.8697519898414612,circle
+"Korea, South",Poland,0.5605909824371338,circle
+"Korea, South",Russia,1.051954984664917,circle
+"Korea, South",Saudi Arabia,0.935920774936676,circle
+"Korea, South",Sweden,0.7118194699287415,circle
+"Korea, South",Thailand,1.0192208290100098,circle
+"Korea, South",United Kingdom,0.6703467965126038,circle
+"Korea, South",United States,1.0321778059005737,circle
+Philippines,Poland,0.9491574168205261,circle
+Philippines,Russia,1.0974252223968506,circle
+Philippines,Saudi Arabia,0.6215492486953735,circle
+Philippines,Sweden,0.6281007528305054,circle
+Philippines,Thailand,0.7839356660842896,circle
+Philippines,United Kingdom,0.5468143224716187,circle
+Philippines,United States,0.6405806541442871,circle
+Poland,Russia,0.8378178477287292,circle
+Poland,Saudi Arabia,0.955348014831543,circle
+Poland,Sweden,0.7576649785041809,circle
+Poland,Thailand,0.9756578207015991,circle
+Poland,United Kingdom,0.7407786250114441,circle
+Poland,United States,1.139096736907959,circle
+Russia,Saudi Arabia,1.133888602256775,circle
+Russia,Sweden,1.1026982069015503,circle
+Russia,Thailand,1.0287524461746216,circle
+Russia,United Kingdom,0.9962274432182312,circle
+Russia,United States,1.3583343029022217,circle
+Saudi Arabia,Sweden,0.6211358308792114,circle
+Saudi Arabia,Thailand,0.8736836314201355,circle
+Saudi Arabia,United Kingdom,0.7062914371490479,circle
+Saudi Arabia,United States,0.7891521453857422,circle
+Sweden,Thailand,0.9408017992973328,circle
+Sweden,United Kingdom,0.49737709760665894,circle
+Sweden,United States,0.6745254993438721,circle
+Thailand,United Kingdom,0.851215660572052,circle
+Thailand,United States,1.0148298740386963,circle
+United Kingdom,United States,0.6493938565254211,circle

@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.48756054043769836,garden
+Australia,Canada,0.4309682548046112,garden
+Australia,Czech Republic,0.3929070830345154,garden
+Australia,Finland,1.1027880907058716,garden
+Australia,France,0.4937158524990082,garden
+Australia,Germany,1.0796147584915161,garden
+Australia,Hungary,1.2149944305419922,garden
+Australia,Italy,0.42260271310806274,garden
+Australia,"Korea, South",0.6240171194076538,garden
+Australia,Philippines,0.6890841722488403,garden
+Australia,Poland,0.5110647082328796,garden
+Australia,Russia,0.3401486277580261,garden
+Australia,Saudi Arabia,1.251320719718933,garden
+Australia,Sweden,0.32413777709007263,garden
+Australia,Thailand,0.5997462868690491,garden
+Australia,United Kingdom,1.5101977586746216,garden
+Australia,United States,2.4375016689300537,garden
+Brazil,Canada,0.7316674590110779,garden
+Brazil,Czech Republic,0.44204357266426086,garden
+Brazil,Finland,1.417160987854004,garden
+Brazil,France,0.39992403984069824,garden
+Brazil,Germany,1.3934264183044434,garden
+Brazil,Hungary,1.2849433422088623,garden
+Brazil,Italy,0.5252509713172913,garden
+Brazil,"Korea, South",0.8665141463279724,garden
+Brazil,Philippines,0.3821618854999542,garden
+Brazil,Poland,0.3718811273574829,garden
+Brazil,Russia,0.69539475440979,garden
+Brazil,Saudi Arabia,1.4877266883850098,garden
+Brazil,Sweden,0.4431256353855133,garden
+Brazil,Thailand,0.74371337890625,garden
+Brazil,United Kingdom,1.827683925628662,garden
+Brazil,United States,2.7606937885284424,garden
+Canada,Czech Republic,0.520849883556366,garden
+Canada,Finland,0.7541096806526184,garden
+Canada,France,0.7035636305809021,garden
+Canada,Germany,0.7173768281936646,garden
+Canada,Hungary,0.9116423726081848,garden
+Canada,Italy,0.4218025803565979,garden
+Canada,"Korea, South",0.3485621511936188,garden
+Canada,Philippines,0.9329182505607605,garden
+Canada,Poland,0.630893886089325,garden
+Canada,Russia,0.3446703851222992,garden
+Canada,Saudi Arabia,0.918427586555481,garden
+Canada,Sweden,0.5316670536994934,garden
+Canada,Thailand,0.3890332579612732,garden
+Canada,United Kingdom,1.1418070793151855,garden
+Canada,United States,2.076036214828491,garden
+Czech Republic,Finland,1.1746220588684082,garden
+Czech Republic,France,0.445997029542923,garden
+Czech Republic,Germany,1.1575398445129395,garden
+Czech Republic,Hungary,1.0920324325561523,garden
+Czech Republic,Italy,0.4129534065723419,garden
+Czech Republic,"Korea, South",0.660925030708313,garden
+Czech Republic,Philippines,0.6050286293029785,garden
+Czech Republic,Poland,0.3976908028125763,garden
+Czech Republic,Russia,0.5356829762458801,garden
+Czech Republic,Saudi Arabia,1.2609132528305054,garden
+Czech Republic,Sweden,0.3099961280822754,garden
+Czech Republic,Thailand,0.5340650081634521,garden
+Czech Republic,United Kingdom,1.5871849060058594,garden
+Czech Republic,United States,2.5219221115112305,garden
+Finland,France,1.3469380140304565,garden
+Finland,Germany,0.2511044144630432,garden
+Finland,Hungary,0.7834161520004272,garden
+Finland,Italy,1.0468406677246094,garden
+Finland,"Korea, South",0.6160169839859009,garden
+Finland,Philippines,1.6198017597198486,garden
+Finland,Poland,1.2694729566574097,garden
+Finland,Russia,0.8901242017745972,garden
+Finland,Saudi Arabia,0.5142613649368286,garden
+Finland,Sweden,1.1881835460662842,garden
+Finland,Thailand,0.8031696677207947,garden
+Finland,United Kingdom,0.49082162976264954,garden
+Finland,United States,1.3966113328933716,garden
+France,Germany,1.3317917585372925,garden
+France,Hungary,1.2541579008102417,garden
+France,Italy,0.5525145530700684,garden
+France,"Korea, South",0.8284929394721985,garden
+France,Philippines,0.6031969785690308,garden
+France,Poland,0.42961883544921875,garden
+France,Russia,0.6077380180358887,garden
+France,Saudi Arabia,1.4445431232452393,garden
+France,Sweden,0.4053684175014496,garden
+France,Thailand,0.6545718908309937,garden
+France,United Kingdom,1.7438467741012573,garden
+France,United States,2.670253276824951,garden
+Germany,Hungary,0.8415356278419495,garden
+Germany,Italy,1.0393718481063843,garden
+Germany,"Korea, South",0.6093724966049194,garden
+Germany,Philippines,1.612117886543274,garden
+Germany,Poland,1.2672264575958252,garden
+Germany,Russia,0.8648279905319214,garden
+Germany,Saudi Arabia,0.518353283405304,garden
+Germany,Sweden,1.1639658212661743,garden
+Germany,Thailand,0.7906569838523865,garden
+Germany,United Kingdom,0.4688154458999634,garden
+Germany,United States,1.3901206254959106,garden
+Hungary,Italy,0.9835197329521179,garden
+Hungary,"Korea, South",0.7261915802955627,garden
+Hungary,Philippines,1.4411001205444336,garden
+Hungary,Poland,1.0978471040725708,garden
+Hungary,Russia,1.094620943069458,garden
+Hungary,Saudi Arabia,0.74372398853302,garden
+Hungary,Sweden,1.1619311571121216,garden
+Hungary,Thailand,0.7395967245101929,garden
+Hungary,United Kingdom,1.0326757431030273,garden
+Hungary,United States,1.8391408920288086,garden
+Italy,"Korea, South",0.5187979936599731,garden
+Italy,Philippines,0.7110426425933838,garden
+Italy,Poland,0.487377405166626,garden
+Italy,Russia,0.48907196521759033,garden
+Italy,Saudi Arabia,1.1104590892791748,garden
+Italy,Sweden,0.40946465730667114,garden
+Italy,Thailand,0.4438759386539459,garden
+Italy,United Kingdom,1.474023699760437,garden
+Italy,United States,2.408332586288452,garden
+"Korea, South",Philippines,1.0725983381271362,garden
+"Korea, South",Poland,0.7310311794281006,garden
+"Korea, South",Russia,0.47349151968955994,garden
+"Korea, South",Saudi Arabia,0.7207024097442627,garden
+"Korea, South",Sweden,0.6690089702606201,garden
+"Korea, South",Thailand,0.35387691855430603,garden
+"Korea, South",United Kingdom,1.0258592367172241,garden
+"Korea, South",United States,1.9618808031082153,garden
+Philippines,Poland,0.4997292459011078,garden
+Philippines,Russia,0.9035179615020752,garden
+Philippines,Saudi Arabia,1.6664345264434814,garden
+Philippines,Sweden,0.6446084976196289,garden
+Philippines,Thailand,0.95197993516922,garden
+Philippines,United Kingdom,2.0444929599761963,garden
+Philippines,United States,2.984212875366211,garden
+Poland,Russia,0.6501298546791077,garden
+Poland,Saudi Arabia,1.3157280683517456,garden
+Poland,Sweden,0.4261195957660675,garden
+Poland,Thailand,0.5936843156814575,garden
+Poland,United Kingdom,1.6913931369781494,garden
+Poland,United States,2.6277873516082764,garden
+Russia,Saudi Arabia,1.0829330682754517,garden
+Russia,Sweden,0.46962377429008484,garden
+Russia,Thailand,0.4991454780101776,garden
+Russia,United Kingdom,1.2866723537445068,garden
+Russia,United States,2.2083218097686768,garden
+Saudi Arabia,Sweden,1.2840074300765991,garden
+Saudi Arabia,Thailand,0.8642737865447998,garden
+Saudi Arabia,United Kingdom,0.6422169208526611,garden
+Saudi Arabia,United States,1.4743341207504272,garden
+Sweden,Thailand,0.5433239936828613,garden
+Sweden,United Kingdom,1.5906147956848145,garden
+Sweden,United States,2.521796703338623,garden
+Thailand,United Kingdom,1.1992294788360596,garden
+Thailand,United States,2.133024215698242,garden
+United Kingdom,United States,0.9489262104034424,garden

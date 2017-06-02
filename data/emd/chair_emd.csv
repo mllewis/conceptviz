@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,1.022469162940979,chair
+Australia,Canada,0.39451777935028076,chair
+Australia,Czech Republic,0.8912334442138672,chair
+Australia,Finland,1.2952784299850464,chair
+Australia,France,1.4063785076141357,chair
+Australia,Germany,0.6007384657859802,chair
+Australia,Hungary,1.2613153457641602,chair
+Australia,Italy,1.079548954963684,chair
+Australia,"Korea, South",0.6156116724014282,chair
+Australia,Philippines,1.128413438796997,chair
+Australia,Poland,1.1226848363876343,chair
+Australia,Russia,0.5877892971038818,chair
+Australia,Saudi Arabia,0.9463690519332886,chair
+Australia,Sweden,0.9837740659713745,chair
+Australia,Thailand,0.6340937614440918,chair
+Australia,United Kingdom,1.1761940717697144,chair
+Australia,United States,2.065786600112915,chair
+Brazil,Canada,1.150716781616211,chair
+Brazil,Czech Republic,0.7509766817092896,chair
+Brazil,Finland,0.7014481425285339,chair
+Brazil,France,0.59763336181640625,chair
+Brazil,Germany,0.9079754948616028,chair
+Brazil,Hungary,0.625324010848999,chair
+Brazil,Italy,0.6410902142524719,chair
+Brazil,"Korea, South",1.3635910749435425,chair
+Brazil,Philippines,0.6173754334449768,chair
+Brazil,Poland,0.8323186635971069,chair
+Brazil,Russia,1.1291531324386597,chair
+Brazil,Saudi Arabia,1.3040969371795654,chair
+Brazil,Sweden,0.6416100263595581,chair
+Brazil,Thailand,1.0692672729492188,chair
+Brazil,United Kingdom,2.1258654594421387,chair
+Brazil,United States,3.0105836391448975,chair
+Canada,Czech Republic,0.9656778573989868,chair
+Canada,Finland,1.3525853157043457,chair
+Canada,France,1.5305999517440796,chair
+Canada,Germany,0.5609838366508484,chair
+Canada,Hungary,1.3822953701019287,chair
+Canada,Italy,1.1553192138671875,chair
+Canada,"Korea, South",0.6074773073196411,chair
+Canada,Philippines,1.310847520828247,chair
+Canada,Poland,1.194525957107544,chair
+Canada,Russia,0.604484498500824,chair
+Canada,Saudi Arabia,0.900215208530426,chair
+Canada,Sweden,1.081558346748352,chair
+Canada,Thailand,0.7261413931846619,chair
+Canada,United Kingdom,1.0422277450561523,chair
+Canada,United States,1.9384896755218506,chair
+Czech Republic,Finland,0.6620205044746399,chair
+Czech Republic,France,0.9087651968002319,chair
+Czech Republic,Germany,0.8776717185974121,chair
+Czech Republic,Hungary,0.6945693492889404,chair
+Czech Republic,Italy,0.5308656692504883,chair
+Czech Republic,"Korea, South",0.9031863808631897,chair
+Czech Republic,Philippines,0.7809213399887085,chair
+Czech Republic,Poland,0.5684977769851685,chair
+Czech Republic,Russia,0.6531884074211121,chair
+Czech Republic,Saudi Arabia,0.7905687689781189,chair
+Czech Republic,Sweden,0.4406999945640564,chair
+Czech Republic,Thailand,0.6633962988853455,chair
+Czech Republic,United Kingdom,1.8621668815612793,chair
+Czech Republic,United States,2.7295520305633545,chair
+Finland,France,0.6537917852401733,chair
+Finland,Germany,1.0006215572357178,chair
+Finland,Hungary,0.5206670761108398,chair
+Finland,Italy,0.4177369773387909,chair
+Finland,"Korea, South",1.3773889541625977,chair
+Finland,Philippines,0.8570348620414734,chair
+Finland,Poland,0.5271018743515015,chair
+Finland,Russia,1.0509415864944458,chair
+Finland,Saudi Arabia,1.0850822925567627,chair
+Finland,Sweden,0.5047773718833923,chair
+Finland,Thailand,1.0642205476760864,chair
+Finland,United Kingdom,2.35736346244812,chair
+Finland,United States,3.23606014251709,chair
+France,Germany,1.2282750606536865,chair
+France,Hungary,0.5810926556587219,chair
+France,Italy,0.6845009326934814,chair
+France,"Korea, South",1.6500474214553833,chair
+France,Philippines,0.7402125000953674,chair
+France,Poland,0.8067824840545654,chair
+France,Russia,1.3297977447509766,chair
+France,Saudi Arabia,1.4281350374221802,chair
+France,Sweden,0.7789832353591919,chair
+France,Thailand,1.3168479204177856,chair
+France,United Kingdom,2.5184574127197266,chair
+France,United States,3.3848187923431396,chair
+Germany,Hungary,1.1218055486679077,chair
+Germany,Italy,0.8595048785209656,chair
+Germany,"Korea, South",0.7921386361122131,chair
+Germany,Philippines,1.267455816268921,chair
+Germany,Poland,0.9405727982521057,chair
+Germany,Russia,0.5870489478111267,chair
+Germany,Saudi Arabia,0.8191944360733032,chair
+Germany,Sweden,0.8438374400138855,chair
+Germany,Thailand,0.7759197354316711,chair
+Germany,United Kingdom,1.5159924030303955,chair
+Germany,United States,2.4191648960113525,chair
+Hungary,Italy,0.5872862935066223,chair
+Hungary,"Korea, South",1.45844304561615,chair
+Hungary,Philippines,0.620305061340332,chair
+Hungary,Poland,0.6577711701393127,chair
+Hungary,Russia,1.1423583030700684,chair
+Hungary,Saudi Arabia,1.2521756887435913,chair
+Hungary,Sweden,0.5727217793464661,chair
+Hungary,Thailand,1.1121619939804077,chair
+Hungary,United Kingdom,2.370419979095459,chair
+Hungary,United States,3.228081226348877,chair
+Italy,"Korea, South",1.1612310409545898,chair
+Italy,Philippines,0.795616626739502,chair
+Italy,Poland,0.49492111802101135,chair
+Italy,Russia,0.859636664390564,chair
+Italy,Saudi Arabia,0.9321434497833252,chair
+Italy,Sweden,0.4118153750896454,chair
+Italy,Thailand,0.854358971118927,chair
+Italy,United Kingdom,2.15800404548645,chair
+Italy,United States,3.0433101654052734,chair
+"Korea, South",Philippines,1.440022349357605,chair
+"Korea, South",Poland,1.1500412225723267,chair
+"Korea, South",Russia,0.5320849418640137,chair
+"Korea, South",Saudi Arabia,0.7983399629592896,chair
+"Korea, South",Sweden,1.0989519357681274,chair
+"Korea, South",Thailand,0.5182605385780334,chair
+"Korea, South",United Kingdom,1.1112140417099,chair
+"Korea, South",United States,1.9345332384109497,chair
+Philippines,Poland,0.9378767609596252,chair
+Philippines,Russia,1.2450106143951416,chair
+Philippines,Saudi Arabia,1.4241217374801636,chair
+Philippines,Sweden,0.7560832500457764,chair
+Philippines,Thailand,1.1105525493621826,chair
+Philippines,United Kingdom,2.1993961334228516,chair
+Philippines,United States,3.049020528793335,chair
+Poland,Russia,0.7899762988090515,chair
+Poland,Saudi Arabia,0.7944861054420471,chair
+Poland,Sweden,0.4845946431159973,chair
+Poland,Thailand,0.8534460663795471,chair
+Poland,United Kingdom,2.1346497535705566,chair
+Poland,United States,2.9890105724334717,chair
+Russia,Saudi Arabia,0.5364232063293457,chair
+Russia,Sweden,0.7790899872779846,chair
+Russia,Thailand,0.5293055176734924,chair
+Russia,United Kingdom,1.4125090837478638,chair
+Russia,United States,2.2588107585906982,chair
+Saudi Arabia,Sweden,0.9030709266662598,chair
+Saudi Arabia,Thailand,0.767884373664856,chair
+Saudi Arabia,United Kingdom,1.6644624471664429,chair
+Saudi Arabia,United States,2.466752767562866,chair
+Sweden,Thailand,0.7948619723320007,chair
+Sweden,United Kingdom,2.052884101867676,chair
+Sweden,United States,2.921307325363159,chair
+Thailand,United Kingdom,1.44198477268219,chair
+Thailand,United States,2.298954963684082,chair
+United Kingdom,United States,0.9244473576545715,chair

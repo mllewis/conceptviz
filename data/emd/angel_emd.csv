@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.609603226184845,angel
+Australia,Canada,0.3168620467185974,angel
+Australia,Czech Republic,0.4541824162006378,angel
+Australia,Finland,0.48787805438041687,angel
+Australia,France,0.6042491793632507,angel
+Australia,Germany,0.2739187180995941,angel
+Australia,Hungary,0.6832311749458313,angel
+Australia,Italy,0.3617248237133026,angel
+Australia,"Korea, South",0.5253859162330627,angel
+Australia,Philippines,0.5280103087425232,angel
+Australia,Poland,0.6850982904434204,angel
+Australia,Russia,0.34734228253364563,angel
+Australia,Saudi Arabia,0.6940452456474304,angel
+Australia,Sweden,0.49108749628067017,angel
+Australia,Thailand,0.5279408693313599,angel
+Australia,United Kingdom,0.8124381899833679,angel
+Australia,United States,1.3504905700683594,angel
+Brazil,Canada,0.8535481095314026,angel
+Brazil,Czech Republic,0.3899622857570648,angel
+Brazil,Finland,0.7097607254981995,angel
+Brazil,France,0.3697056770324707,angel
+Brazil,Germany,0.7905076742172241,angel
+Brazil,Hungary,0.713076651096344,angel
+Brazil,Italy,0.43836933374404907,angel
+Brazil,"Korea, South",0.41810327768325806,angel
+Brazil,Philippines,0.4429996609687805,angel
+Brazil,Poland,0.48245906829833984,angel
+Brazil,Russia,0.4463130235671997,angel
+Brazil,Saudi Arabia,0.5443575978279114,angel
+Brazil,Sweden,0.507480800151825,angel
+Brazil,Thailand,0.4002092182636261,angel
+Brazil,United Kingdom,1.3661125898361206,angel
+Brazil,United States,1.8882999420166016,angel
+Canada,Czech Republic,0.6731597781181335,angel
+Canada,Finland,0.6087878346443176,angel
+Canada,France,0.8359588980674744,angel
+Canada,Germany,0.22338111698627472,angel
+Canada,Hungary,0.8334589600563049,angel
+Canada,Italy,0.5527044534683228,angel
+Canada,"Korea, South",0.7165499925613403,angel
+Canada,Philippines,0.7401891946792603,angel
+Canada,Poland,0.8827241063117981,angel
+Canada,Russia,0.5276087522506714,angel
+Canada,Saudi Arabia,0.8978667855262756,angel
+Canada,Sweden,0.6677606105804443,angel
+Canada,Thailand,0.7355364561080933,angel
+Canada,United Kingdom,0.5601362586021423,angel
+Canada,United States,1.1053853034973145,angel
+Czech Republic,Finland,0.5361957550048828,angel
+Czech Republic,France,0.4155525863170624,angel
+Czech Republic,Germany,0.6112849116325378,angel
+Czech Republic,Hungary,0.575534999370575,angel
+Czech Republic,Italy,0.4046478867530823,angel
+Czech Republic,"Korea, South",0.47000113129615784,angel
+Czech Republic,Philippines,0.4615503251552582,angel
+Czech Republic,Poland,0.43867725133895874,angel
+Czech Republic,Russia,0.38730233907699585,angel
+Czech Republic,Saudi Arabia,0.45819157361984253,angel
+Czech Republic,Sweden,0.37595754861831665,angel
+Czech Republic,Thailand,0.3828137516975403,angel
+Czech Republic,United Kingdom,1.1870710849761963,angel
+Czech Republic,United States,1.7122588157653809,angel
+Finland,France,0.6302354335784912,angel
+Finland,Germany,0.5564733147621155,angel
+Finland,Hungary,0.39627161622047424,angel
+Finland,Italy,0.6302090287208557,angel
+Finland,"Korea, South",0.7187288403511047,angel
+Finland,Philippines,0.6268072724342346,angel
+Finland,Poland,0.537930965423584,angel
+Finland,Russia,0.6473537087440491,angel
+Finland,Saudi Arabia,0.6445252895355225,angel
+Finland,Sweden,0.35286474227905273,angel
+Finland,Thailand,0.6531437635421753,angel
+Finland,United Kingdom,1.022965908050537,angel
+Finland,United States,1.5920631885528564,angel
+France,Germany,0.7597980499267578,angel
+France,Hungary,0.5841467380523682,angel
+France,Italy,0.5095285177230835,angel
+France,"Korea, South",0.44837039709091187,angel
+France,Philippines,0.45091962814331055,angel
+France,Poland,0.46096324920654297,angel
+France,Russia,0.5060927867889404,angel
+France,Saudi Arabia,0.5034581422805786,angel
+France,Sweden,0.4470616579055786,angel
+France,Thailand,0.39437639713287354,angel
+France,United Kingdom,1.3590906858444214,angel
+France,United States,1.8814220428466797,angel
+Germany,Hungary,0.7879689335823059,angel
+Germany,Italy,0.49965476989746094,angel
+Germany,"Korea, South",0.633944034576416,angel
+Germany,Philippines,0.671103298664093,angel
+Germany,Poland,0.8310900926589966,angel
+Germany,Russia,0.4860958158969879,angel
+Germany,Saudi Arabia,0.8577688932418823,angel
+Germany,Sweden,0.6194338202476501,angel
+Germany,Thailand,0.6781628727912903,angel
+Germany,United Kingdom,0.63799285888671875,angel
+Germany,United States,1.1745275259017944,angel
+Hungary,Italy,0.756750762462616,angel
+Hungary,"Korea, South",0.7641311883926392,angel
+Hungary,Philippines,0.6941858530044556,angel
+Hungary,Poland,0.4713446795940399,angel
+Hungary,Russia,0.7324737310409546,angel
+Hungary,Saudi Arabia,0.5669636130332947,angel
+Hungary,Sweden,0.4011673927307129,angel
+Hungary,Thailand,0.6379779577255249,angel
+Hungary,United Kingdom,1.283292293548584,angel
+Hungary,United States,1.8489280939102173,angel
+Italy,"Korea, South",0.40745842456817627,angel
+Italy,Philippines,0.4296945035457611,angel
+Italy,Poland,0.6112729907035828,angel
+Italy,Russia,0.29890862107276917,angel
+Italy,Saudi Arabia,0.6600798964500427,angel
+Italy,Sweden,0.5328667163848877,angel
+Italy,Thailand,0.44327977299690247,angel
+Italy,United Kingdom,1.0432358980178833,angel
+Italy,United States,1.5487751960754395,angel
+"Korea, South",Philippines,0.4358091950416565,angel
+"Korea, South",Poland,0.6235949993133545,angel
+"Korea, South",Russia,0.391845166683197,angel
+"Korea, South",Saudi Arabia,0.6866980791091919,angel
+"Korea, South",Sweden,0.5591556429862976,angel
+"Korea, South",Thailand,0.42435574531555176,angel
+"Korea, South",United Kingdom,1.2236039638519287,angel
+"Korea, South",United States,1.7204313278198242,angel
+Philippines,Poland,0.5701310038566589,angel
+Philippines,Russia,0.4446735978126526,angel
+Philippines,Saudi Arabia,0.6684735417366028,angel
+Philippines,Sweden,0.5222240686416626,angel
+Philippines,Thailand,0.5141050815582275,angel
+Philippines,United Kingdom,1.2274131774902344,angel
+Philippines,United States,1.7429951429367065,angel
+Poland,Russia,0.6120416522026062,angel
+Poland,Saudi Arabia,0.4728834331035614,angel
+Poland,Sweden,0.37458235025405884,angel
+Poland,Thailand,0.5187017917633057,angel
+Poland,United Kingdom,1.3953962326049805,angel
+Poland,United States,1.954687476158142,angel
+Russia,Saudi Arabia,0.6191471219062805,angel
+Russia,Sweden,0.4955674111843109,angel
+Russia,Thailand,0.4149809181690216,angel
+Russia,United Kingdom,1.043229103088379,angel
+Russia,United States,1.547479510307312,angel
+Saudi Arabia,Sweden,0.46941715478897095,angel
+Saudi Arabia,Thailand,0.4446246922016144,angel
+Saudi Arabia,United Kingdom,1.4194817543029785,angel
+Saudi Arabia,United States,1.963594913482666,angel
+Sweden,Thailand,0.4504720866680145,angel
+Sweden,United Kingdom,1.1676357984542847,angel
+Sweden,United States,1.7365895509719849,angel
+Thailand,United Kingdom,1.267741322517395,angel
+Thailand,United States,1.7936240434646606,angel
+United Kingdom,United States,0.5853750109672546,angel

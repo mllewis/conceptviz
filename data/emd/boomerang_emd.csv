@@ -1,0 +1,137 @@
+country1,country2,dist,word
+Australia,Brazil,0.9478636384010315,boomerang
+Australia,Canada,0.9997037649154663,boomerang
+Australia,Czech Republic,0.704791247844696,boomerang
+Australia,Finland,1.0718181133270264,boomerang
+Australia,France,0.759151041507721,boomerang
+Australia,Germany,1.1533294916152954,boomerang
+Australia,Hungary,0.8967399001121521,boomerang
+Australia,Italy,0.9157454371452332,boomerang
+Australia,"Korea, South",0.9360335469245911,boomerang
+Australia,Philippines,0.7788722515106201,boomerang
+Australia,Poland,0.7354819178581238,boomerang
+Australia,Russia,0.687778890132904,boomerang
+Australia,Sweden,0.7865382432937622,boomerang
+Australia,Thailand,0.8216037750244141,boomerang
+Australia,United Kingdom,1.5309396982192993,boomerang
+Australia,United States,2.7960314750671387,boomerang
+Brazil,Canada,0.859780490398407,boomerang
+Brazil,Czech Republic,0.8257763981819153,boomerang
+Brazil,Finland,0.5909413695335388,boomerang
+Brazil,France,0.8135183453559875,boomerang
+Brazil,Germany,0.638336718082428,boomerang
+Brazil,Hungary,0.9078797698020935,boomerang
+Brazil,Italy,0.5818500518798828,boomerang
+Brazil,"Korea, South",1.0463733673095703,boomerang
+Brazil,Philippines,1.2745336294174194,boomerang
+Brazil,Poland,1.0298395156860352,boomerang
+Brazil,Russia,0.7126591801643372,boomerang
+Brazil,Sweden,0.5434392094612122,boomerang
+Brazil,Thailand,0.5629863142967224,boomerang
+Brazil,United Kingdom,1.3260504007339478,boomerang
+Brazil,United States,2.450594425201416,boomerang
+Canada,Czech Republic,1.2191053628921509,boomerang
+Canada,Finland,1.018465518951416,boomerang
+Canada,France,1.1746307611465454,boomerang
+Canada,Germany,0.6231359839439392,boomerang
+Canada,Hungary,1.4058289527893066,boomerang
+Canada,Italy,0.9775827527046204,boomerang
+Canada,"Korea, South",1.5122326612472534,boomerang
+Canada,Philippines,1.5001829862594604,boomerang
+Canada,Poland,1.2879395484924316,boomerang
+Canada,Russia,1.0699455738067627,boomerang
+Canada,Sweden,1.0275332927703857,boomerang
+Canada,Thailand,0.961768627166748,boomerang
+Canada,United Kingdom,0.6440129280090332,boomerang
+Canada,United States,1.8823728561401367,boomerang
+Czech Republic,Finland,0.8448300361633301,boomerang
+Czech Republic,France,0.6307451725006104,boomerang
+Czech Republic,Germany,1.0882298946380615,boomerang
+Czech Republic,Hungary,0.5526506304740906,boomerang
+Czech Republic,Italy,0.687598466873169,boomerang
+Czech Republic,"Korea, South",0.6840593814849854,boomerang
+Czech Republic,Philippines,0.9341701865196228,boomerang
+Czech Republic,Poland,0.5346935987472534,boomerang
+Czech Republic,Russia,0.5121721625328064,boomerang
+Czech Republic,Sweden,0.5339401960372925,boomerang
+Czech Republic,Thailand,0.6009994745254517,boomerang
+Czech Republic,United Kingdom,1.7093127965927124,boomerang
+Czech Republic,United States,2.8952085971832275,boomerang
+Finland,France,0.9350882768630981,boomerang
+Finland,Germany,0.6165899038314819,boomerang
+Finland,Hungary,0.8581207394599915,boomerang
+Finland,Italy,0.5610519647598267,boomerang
+Finland,"Korea, South",1.0585803985595703,boomerang
+Finland,Philippines,1.4901390075683594,boomerang
+Finland,Poland,1.0877680778503418,boomerang
+Finland,Russia,0.7025742530822754,boomerang
+Finland,Sweden,0.6119811534881592,boomerang
+Finland,Thailand,0.6166961789131165,boomerang
+Finland,United Kingdom,1.4108585119247437,boomerang
+Finland,United States,2.4325129985809326,boomerang
+France,Germany,1.1821279525756836,boomerang
+France,Hungary,0.6135974526405334,boomerang
+France,Italy,0.7303760051727295,boomerang
+France,"Korea, South",0.712621808052063,boomerang
+France,Philippines,0.7344745993614197,boomerang
+France,Poland,0.7624965310096741,boomerang
+France,Russia,0.7268352508544922,boomerang
+France,Sweden,0.6615821123123169,boomerang
+France,Thailand,0.6201938390731812,boomerang
+France,United Kingdom,1.6797006130218506,boomerang
+France,United States,2.884643793106079,boomerang
+Germany,Hungary,1.2159290313720703,boomerang
+Germany,Italy,0.744598388671875,boomerang
+Germany,"Korea, South",1.4127984046936035,boomerang
+Germany,Philippines,1.6782784461975098,boomerang
+Germany,Poland,1.2815470695495605,boomerang
+Germany,Russia,0.9030013084411621,boomerang
+Germany,Sweden,0.8336823582649231,boomerang
+Germany,Thailand,0.799856424331665,boomerang
+Germany,United Kingdom,0.9619054794311523,boomerang
+Germany,United States,1.963559865951538,boomerang
+Hungary,Italy,0.7647373080253601,boomerang
+Hungary,"Korea, South",0.7272542715072632,boomerang
+Hungary,Philippines,0.8912534117698669,boomerang
+Hungary,Poland,0.6904307007789612,boomerang
+Hungary,Russia,0.6304044723510742,boomerang
+Hungary,Sweden,0.7106765508651733,boomerang
+Hungary,Thailand,0.6385762691497803,boomerang
+Hungary,United Kingdom,1.8939127922058105,boomerang
+Hungary,United States,3.054434061050415,boomerang
+Italy,"Korea, South",0.889149010181427,boomerang
+Italy,Philippines,1.1711114645004272,boomerang
+Italy,Poland,0.7963630557060242,boomerang
+Italy,Russia,0.6818090081214905,boomerang
+Italy,Sweden,0.4740995168685913,boomerang
+Italy,Thailand,0.4950309991836548,boomerang
+Italy,United Kingdom,1.4322236776351929,boomerang
+Italy,United States,2.513270378112793,boomerang
+"Korea, South",Philippines,1.0132019519805908,boomerang
+"Korea, South",Poland,0.7820584177970886,boomerang
+"Korea, South",Russia,0.7983660697937012,boomerang
+"Korea, South",Sweden,0.7764997482299805,boomerang
+"Korea, South",Thailand,0.8014046549797058,boomerang
+"Korea, South",United Kingdom,1.999293327331543,boomerang
+"Korea, South",United States,3.1947290897369385,boomerang
+Philippines,Poland,0.8648316860198975,boomerang
+Philippines,Russia,1.0821659564971924,boomerang
+Philippines,Sweden,1.0988777875900269,boomerang
+Philippines,Thailand,1.051140546798706,boomerang
+Philippines,United Kingdom,2.04624342918396,boomerang
+Philippines,United States,3.2518370151519775,boomerang
+Poland,Russia,0.7500306963920593,boomerang
+Poland,Sweden,0.7333961129188538,boomerang
+Poland,Thailand,0.7489892244338989,boomerang
+Poland,United Kingdom,1.766611933708191,boomerang
+Poland,United States,2.958954095840454,boomerang
+Russia,Sweden,0.581871747970581,boomerang
+Russia,Thailand,0.5884943604469299,boomerang
+Russia,United Kingdom,1.5560178756713867,boomerang
+Russia,United States,2.7452597618103027,boomerang
+Sweden,Thailand,0.5218816995620728,boomerang
+Sweden,United Kingdom,1.5099811553955078,boomerang
+Sweden,United States,2.676771402359009,boomerang
+Thailand,United Kingdom,1.442196011543274,boomerang
+Thailand,United States,2.6105129718780518,boomerang
+United Kingdom,United States,1.2899097204208374,boomerang

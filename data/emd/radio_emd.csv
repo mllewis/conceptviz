@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.5238248705863953,radio
+Australia,Canada,0.34757888317108154,radio
+Australia,Czech Republic,0.7442150712013245,radio
+Australia,Finland,0.8400328159332275,radio
+Australia,France,0.8581412434577942,radio
+Australia,Germany,0.5956709384918213,radio
+Australia,Hungary,0.9192777276039124,radio
+Australia,Italy,0.5893585681915283,radio
+Australia,"Korea, South",0.4777872860431671,radio
+Australia,Philippines,1.109324336051941,radio
+Australia,Poland,0.6608643531799316,radio
+Australia,Russia,0.7498027086257935,radio
+Australia,Saudi Arabia,0.7768288850784302,radio
+Australia,Sweden,0.5666021108627319,radio
+Australia,Thailand,0.630789041519165,radio
+Australia,United Kingdom,0.7000686526298523,radio
+Australia,United States,1.0308330059051514,radio
+Brazil,Canada,0.7434879541397095,radio
+Brazil,Czech Republic,0.6496195197105408,radio
+Brazil,Finland,0.8912703990936279,radio
+Brazil,France,0.5559062361717224,radio
+Brazil,Germany,0.8370758891105652,radio
+Brazil,Hungary,0.7540658116340637,radio
+Brazil,Italy,0.5189058780670166,radio
+Brazil,"Korea, South",0.5606217980384827,radio
+Brazil,Philippines,0.9915630221366882,radio
+Brazil,Poland,0.47691404819488525,radio
+Brazil,Russia,0.8339728713035583,radio
+Brazil,Saudi Arabia,0.6100348830223083,radio
+Brazil,Sweden,0.6074452996253967,radio
+Brazil,Thailand,0.4943622946739197,radio
+Brazil,United Kingdom,1.0328916311264038,radio
+Brazil,United States,1.3448688983917236,radio
+Canada,Czech Republic,0.9116597175598145,radio
+Canada,Finland,0.9611304998397827,radio
+Canada,France,1.0973860025405884,radio
+Canada,Germany,0.6340851187705994,radio
+Canada,Hungary,1.0809742212295532,radio
+Canada,Italy,0.7572643160820007,radio
+Canada,"Korea, South",0.5970398783683777,radio
+Canada,Philippines,1.2253680229187012,radio
+Canada,Poland,0.8900953531265259,radio
+Canada,Russia,0.8919076323509216,radio
+Canada,Saudi Arabia,0.926701545715332,radio
+Canada,Sweden,0.7347161769866943,radio
+Canada,Thailand,0.8051368594169617,radio
+Canada,United Kingdom,0.5795192122459412,radio
+Canada,United States,0.9059357643127441,radio
+Czech Republic,Finland,1.3741062879562378,radio
+Czech Republic,France,0.7913222312927246,radio
+Czech Republic,Germany,1.2500901222229004,radio
+Czech Republic,Hungary,0.8099777698516846,radio
+Czech Republic,Italy,0.40420714020729065,radio
+Czech Republic,"Korea, South",0.5548895597457886,radio
+Czech Republic,Philippines,0.6529678106307983,radio
+Czech Republic,Poland,0.6549234986305237,radio
+Czech Republic,Russia,1.3103487491607666,radio
+Czech Republic,Saudi Arabia,0.5091780424118042,radio
+Czech Republic,Sweden,1.023722767829895,radio
+Czech Republic,Thailand,0.548375129699707,radio
+Czech Republic,United Kingdom,1.401680588722229,radio
+Czech Republic,United States,1.6905503273010254,radio
+Finland,France,1.058885097503662,radio
+Finland,Germany,0.5656110644340515,radio
+Finland,Hungary,1.255509376525879,radio
+Finland,Italy,1.152075171470642,radio
+Finland,"Korea, South",1.1103031635284424,radio
+Finland,Philippines,1.7708286046981812,radio
+Finland,Poland,0.974214494228363,radio
+Finland,Russia,0.3703056275844574,radio
+Finland,Saudi Arabia,1.3350999355316162,radio
+Finland,Sweden,0.5167874097824097,radio
+Finland,Thailand,1.0853456258773804,radio
+Finland,United Kingdom,0.7686087489128113,radio
+Finland,United States,1.0148110389709473,radio
+France,Germany,1.1320363283157349,radio
+France,Hungary,0.6378079056739807,radio
+France,Italy,0.721002995967865,radio
+France,"Korea, South",0.82245635986328125,radio
+France,Philippines,1.050513505935669,radio
+France,Poland,0.5153260827064514,radio
+France,Russia,1.0809293985366821,radio
+France,Saudi Arabia,0.7791947722434998,radio
+France,Sweden,0.8250682950019836,radio
+France,Thailand,0.6199573874473572,radio
+France,United Kingdom,1.3601412773132324,radio
+France,United States,1.6797492504119873,radio
+Germany,Hungary,1.2870603799819946,radio
+Germany,Italy,1.026084065437317,radio
+Germany,"Korea, South",0.9423295855522156,radio
+Germany,Philippines,1.642390251159668,radio
+Germany,Poland,0.9388697147369385,radio
+Germany,Russia,0.46292823553085327,radio
+Germany,Saudi Arabia,1.230147123336792,radio
+Germany,Sweden,0.4969116151332855,radio
+Germany,Thailand,0.9948971271514893,radio
+Germany,United Kingdom,0.4882081151008606,radio
+Germany,United States,0.8168172836303711,radio
+Hungary,Italy,0.7510396242141724,radio
+Hungary,"Korea, South",0.7767130136489868,radio
+Hungary,Philippines,0.9467182755470276,radio
+Hungary,Poland,0.7195588946342468,radio
+Hungary,Russia,1.3306580781936646,radio
+Hungary,Saudi Arabia,0.7964447736740112,radio
+Hungary,Sweden,1.0167686939239502,radio
+Hungary,Thailand,0.6560834646224976,radio
+Hungary,United Kingdom,1.4747244119644165,radio
+Hungary,United States,1.813018798828125,radio
+Italy,"Korea, South",0.48551511764526367,radio
+Italy,Philippines,0.8112552762031555,radio
+Italy,Poland,0.5624983906745911,radio
+Italy,Russia,1.0947353839874268,radio
+Italy,Saudi Arabia,0.5082883238792419,radio
+Italy,Sweden,0.8414517045021057,radio
+Italy,Thailand,0.509922206401825,radio
+Italy,United Kingdom,1.207816243171692,radio
+Italy,United States,1.5279889106750488,radio
+"Korea, South",Philippines,0.7923250198364258,radio
+"Korea, South",Poland,0.6267638206481934,radio
+"Korea, South",Russia,1.0497075319290161,radio
+"Korea, South",Saudi Arabia,0.6037201285362244,radio
+"Korea, South",Sweden,0.7781832218170166,radio
+"Korea, South",Thailand,0.57362961769104,radio
+"Korea, South",United Kingdom,1.0755853652954102,radio
+"Korea, South",United States,1.3834726810455322,radio
+Philippines,Poland,1.016214370727539,radio
+Philippines,Russia,1.7245420217514038,radio
+Philippines,Saudi Arabia,0.6596695780754089,radio
+Philippines,Sweden,1.4230239391326904,radio
+Philippines,Thailand,0.8758604526519775,radio
+Philippines,United Kingdom,1.7427479028701782,radio
+Philippines,United States,2.0128066539764404,radio
+Poland,Russia,0.9551161527633667,radio
+Poland,Saudi Arabia,0.7282769680023193,radio
+Poland,Sweden,0.6699809432029724,radio
+Poland,Thailand,0.5464897155761719,radio
+Poland,United Kingdom,1.2139077186584473,radio
+Poland,United States,1.5462305545806885,radio
+Russia,Saudi Arabia,1.2741841077804565,radio
+Russia,Sweden,0.45094582438468933,radio
+Russia,Thailand,1.053472876548767,radio
+Russia,United Kingdom,0.6550334692001343,radio
+Russia,United States,0.8909327983856201,radio
+Saudi Arabia,Sweden,0.9988910555839539,radio
+Saudi Arabia,Thailand,0.6448246240615845,radio
+Saudi Arabia,United Kingdom,1.3815414905548096,radio
+Saudi Arabia,United States,1.6726523637771606,radio
+Sweden,Thailand,0.7806763648986816,radio
+Sweden,United Kingdom,0.7747872471809387,radio
+Sweden,United States,1.096762776374817,radio
+Thailand,United Kingdom,1.1814032793045044,radio
+Thailand,United States,1.5097824335098267,radio
+United Kingdom,United States,0.39430415630340576,radio

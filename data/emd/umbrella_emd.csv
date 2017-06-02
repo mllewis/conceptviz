@@ -1,0 +1,121 @@
+country1,country2,dist,word
+Australia,Brazil,0.502896249294281,umbrella
+Australia,Canada,0.5697044134140015,umbrella
+Australia,Czech Republic,0.6724851131439209,umbrella
+Australia,Finland,0.7346517443656921,umbrella
+Australia,Germany,0.5941763520240784,umbrella
+Australia,Italy,0.8747438788414001,umbrella
+Australia,"Korea, South",0.9731540083885193,umbrella
+Australia,Philippines,1.0385217666625977,umbrella
+Australia,Poland,0.7893734574317932,umbrella
+Australia,Russia,0.7877360582351685,umbrella
+Australia,Saudi Arabia,1.1653282642364502,umbrella
+Australia,Sweden,0.659721851348877,umbrella
+Australia,Thailand,1.129979133605957,umbrella
+Australia,United Kingdom,0.8427571654319763,umbrella
+Australia,United States,1.6895923614501953,umbrella
+Brazil,Canada,0.5880561470985413,umbrella
+Brazil,Czech Republic,0.652931272983551,umbrella
+Brazil,Finland,0.6607885956764221,umbrella
+Brazil,Germany,0.6307365298271179,umbrella
+Brazil,Italy,0.7839986681938171,umbrella
+Brazil,"Korea, South",0.9374822378158569,umbrella
+Brazil,Philippines,0.9013673067092896,umbrella
+Brazil,Poland,0.7989144921302795,umbrella
+Brazil,Russia,0.7207785844802856,umbrella
+Brazil,Saudi Arabia,1.058900237083435,umbrella
+Brazil,Sweden,0.7622817754745483,umbrella
+Brazil,Thailand,1.0210645198822021,umbrella
+Brazil,United Kingdom,0.8615458011627197,umbrella
+Brazil,United States,1.6179571151733398,umbrella
+Canada,Czech Republic,0.8481330871582031,umbrella
+Canada,Finland,0.7088677883148193,umbrella
+Canada,Germany,0.48170098662376404,umbrella
+Canada,Italy,0.7644556164741516,umbrella
+Canada,"Korea, South",0.848526656627655,umbrella
+Canada,Philippines,1.0041873455047607,umbrella
+Canada,Poland,0.9609449505805969,umbrella
+Canada,Russia,0.7712899446487427,umbrella
+Canada,Saudi Arabia,1.1557365655899048,umbrella
+Canada,Sweden,0.9403983354568481,umbrella
+Canada,Thailand,1.0214543342590332,umbrella
+Canada,United Kingdom,0.5895183682441711,umbrella
+Canada,United States,1.4243780374526978,umbrella
+Czech Republic,Finland,0.7990446090698242,umbrella
+Czech Republic,Germany,0.8656835556030273,umbrella
+Czech Republic,Italy,0.8687037229537964,umbrella
+Czech Republic,"Korea, South",0.9802644848823547,umbrella
+Czech Republic,Philippines,0.8963547348976135,umbrella
+Czech Republic,Poland,0.6780881881713867,umbrella
+Czech Republic,Russia,0.7303324341773987,umbrella
+Czech Republic,Saudi Arabia,0.9735988974571228,umbrella
+Czech Republic,Sweden,0.5702847242355347,umbrella
+Czech Republic,Thailand,1.1085283756256104,umbrella
+Czech Republic,United Kingdom,1.202902913093567,umbrella
+Czech Republic,United States,2.070138454437256,umbrella
+Finland,Germany,0.6153216361999512,umbrella
+Finland,Italy,0.5955471396446228,umbrella
+Finland,"Korea, South",0.8682917356491089,umbrella
+Finland,Philippines,0.5798267126083374,umbrella
+Finland,Poland,0.8945073485374451,umbrella
+Finland,Russia,0.5313299894332886,umbrella
+Finland,Saudi Arabia,0.7938371300697327,umbrella
+Finland,Sweden,0.8243275880813599,umbrella
+Finland,Thailand,0.6760279536247253,umbrella
+Finland,United Kingdom,1.0346076488494873,umbrella
+Finland,United States,1.71494460105896,umbrella
+Germany,Italy,0.8618859648704529,umbrella
+Germany,"Korea, South",1.0024276971817017,umbrella
+Germany,Philippines,0.9154707789421082,umbrella
+Germany,Poland,0.9718145132064819,umbrella
+Germany,Russia,0.6693304777145386,umbrella
+Germany,Saudi Arabia,1.1267778873443604,umbrella
+Germany,Sweden,0.8504090905189514,umbrella
+Germany,Thailand,0.9941357374191284,umbrella
+Germany,United Kingdom,0.6100704669952393,umbrella
+Germany,United States,1.4075040817260742,umbrella
+Italy,"Korea, South",0.6768466234207153,umbrella
+Italy,Philippines,0.6813907623291016,umbrella
+Italy,Poland,0.8889890313148499,umbrella
+Italy,Russia,0.8011348843574524,umbrella
+Italy,Saudi Arabia,0.8107575178146362,umbrella
+Italy,Sweden,0.9057069420814514,umbrella
+Italy,Thailand,0.7113471627235413,umbrella
+Italy,United Kingdom,1.1913280487060547,umbrella
+Italy,United States,1.837815284729004,umbrella
+"Korea, South",Philippines,0.82765793800354,umbrella
+"Korea, South",Poland,1.1486340761184692,umbrella
+"Korea, South",Russia,1.0053296089172363,umbrella
+"Korea, South",Saudi Arabia,0.9929574131965637,umbrella
+"Korea, South",Sweden,1.0108319520950317,umbrella
+"Korea, South",Thailand,0.7527781128883362,umbrella
+"Korea, South",United Kingdom,1.1959556341171265,umbrella
+"Korea, South",United States,1.8226203918457031,umbrella
+Philippines,Poland,0.9131816625595093,umbrella
+Philippines,Russia,0.7332819104194641,umbrella
+Philippines,Saudi Arabia,0.6868270039558411,umbrella
+Philippines,Sweden,0.9272017478942871,umbrella
+Philippines,Thailand,0.6462655067443848,umbrella
+Philippines,United Kingdom,1.3725029230117798,umbrella
+Philippines,United States,1.9259958267211914,umbrella
+Poland,Russia,0.8402346968650818,umbrella
+Poland,Saudi Arabia,1.0183364152908325,umbrella
+Poland,Sweden,0.7517213225364685,umbrella
+Poland,Thailand,1.1180720329284668,umbrella
+Poland,United Kingdom,1.3358485698699951,umbrella
+Poland,United States,2.085366725921631,umbrella
+Russia,Saudi Arabia,0.8881908655166626,umbrella
+Russia,Sweden,0.8185954689979553,umbrella
+Russia,Thailand,0.8742567896842957,umbrella
+Russia,United Kingdom,1.0948033332824707,umbrella
+Russia,United States,1.8499952554702759,umbrella
+Saudi Arabia,Sweden,1.046768307685852,umbrella
+Saudi Arabia,Thailand,0.8194639682769775,umbrella
+Saudi Arabia,United Kingdom,1.5817406177520752,umbrella
+Saudi Arabia,United States,2.1970415115356445,umbrella
+Sweden,Thailand,1.105080485343933,umbrella
+Sweden,United Kingdom,1.236092209815979,umbrella
+Sweden,United States,2.0739338397979736,umbrella
+Thailand,United Kingdom,1.3458927869796753,umbrella
+Thailand,United States,1.8349831104278564,umbrella
+United Kingdom,United States,1.0331504344940186,umbrella

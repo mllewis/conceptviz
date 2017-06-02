@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.7407597899436951,spreadsheet
+Australia,Canada,0.6342564821243286,spreadsheet
+Australia,Czech Republic,0.8924056887626648,spreadsheet
+Australia,Finland,0.712526261806488,spreadsheet
+Australia,France,0.9923608303070068,spreadsheet
+Australia,Germany,0.9635843634605408,spreadsheet
+Australia,Hungary,0.5950480699539185,spreadsheet
+Australia,Italy,0.6355093121528625,spreadsheet
+Australia,"Korea, South",0.6844422817230225,spreadsheet
+Australia,Philippines,0.9718868136405945,spreadsheet
+Australia,Poland,0.7533933520317078,spreadsheet
+Australia,Russia,0.7671264410018921,spreadsheet
+Australia,Saudi Arabia,0.7652896642684937,spreadsheet
+Australia,Sweden,0.7485543489456177,spreadsheet
+Australia,Thailand,0.7066500782966614,spreadsheet
+Australia,United Kingdom,0.7241614460945129,spreadsheet
+Australia,United States,0.6091583371162415,spreadsheet
+Brazil,Canada,0.6734185218811035,spreadsheet
+Brazil,Czech Republic,0.6187036037445068,spreadsheet
+Brazil,Finland,1.2635846138000488,spreadsheet
+Brazil,France,0.5779773592948914,spreadsheet
+Brazil,Germany,0.7906457781791687,spreadsheet
+Brazil,Hungary,0.9512672424316406,spreadsheet
+Brazil,Italy,0.4613610804080963,spreadsheet
+Brazil,"Korea, South",0.9689422845840454,spreadsheet
+Brazil,Philippines,1.0545504093170166,spreadsheet
+Brazil,Poland,0.8340115547180176,spreadsheet
+Brazil,Russia,0.47634580731391907,spreadsheet
+Brazil,Saudi Arabia,1.2511309385299683,spreadsheet
+Brazil,Sweden,0.6732481718063354,spreadsheet
+Brazil,Thailand,1.041961669921875,spreadsheet
+Brazil,United Kingdom,0.9182588458061218,spreadsheet
+Brazil,United States,0.9563186168670654,spreadsheet
+Canada,Czech Republic,0.644104540348053,spreadsheet
+Canada,Finland,1.0358660221099854,spreadsheet
+Canada,France,0.7527093887329102,spreadsheet
+Canada,Germany,0.7974480390548706,spreadsheet
+Canada,Hungary,0.7807106971740723,spreadsheet
+Canada,Italy,0.6292749047279358,spreadsheet
+Canada,"Korea, South",1.036726713180542,spreadsheet
+Canada,Philippines,1.0652565956115723,spreadsheet
+Canada,Poland,0.5886316895484924,spreadsheet
+Canada,Russia,0.7664291262626648,spreadsheet
+Canada,Saudi Arabia,1.0187253952026367,spreadsheet
+Canada,Sweden,0.5316013693809509,spreadsheet
+Canada,Thailand,0.8777573704719543,spreadsheet
+Canada,United Kingdom,0.8241280913352966,spreadsheet
+Canada,United States,0.730984628200531,spreadsheet
+Czech Republic,Finland,1.3391618728637695,spreadsheet
+Czech Republic,France,0.669950544834137,spreadsheet
+Czech Republic,Germany,0.8652217388153076,spreadsheet
+Czech Republic,Hungary,1.0876859426498413,spreadsheet
+Czech Republic,Italy,0.6951160430908203,spreadsheet
+Czech Republic,"Korea, South",1.2333778142929077,spreadsheet
+Czech Republic,Philippines,1.2300175428390503,spreadsheet
+Czech Republic,Poland,0.6379193663597107,spreadsheet
+Czech Republic,Russia,0.6622483134269714,spreadsheet
+Czech Republic,Saudi Arabia,1.3422496318817139,spreadsheet
+Czech Republic,Sweden,0.634760320186615,spreadsheet
+Czech Republic,Thailand,1.1693991422653198,spreadsheet
+Czech Republic,United Kingdom,1.0253647565841675,spreadsheet
+Czech Republic,United States,1.0569452047348022,spreadsheet
+Finland,France,1.5367510318756104,spreadsheet
+Finland,Germany,1.3453518152236938,spreadsheet
+Finland,Hungary,0.584987461566925,spreadsheet
+Finland,Italy,1.0557681322097778,spreadsheet
+Finland,"Korea, South",0.7476037740707397,spreadsheet
+Finland,Philippines,1.082746982574463,spreadsheet
+Finland,Poland,1.0371185541152954,spreadsheet
+Finland,Russia,1.3011940717697144,spreadsheet
+Finland,Saudi Arabia,0.4975321590900421,spreadsheet
+Finland,Sweden,1.158246636390686,spreadsheet
+Finland,Thailand,0.6248975992202759,spreadsheet
+Finland,United Kingdom,0.8973835706710815,spreadsheet
+Finland,United States,0.5835875868797302,spreadsheet
+France,Germany,0.8610723614692688,spreadsheet
+France,Hungary,1.2147257328033447,spreadsheet
+France,Italy,0.7169039249420166,spreadsheet
+France,"Korea, South",1.3276255130767822,spreadsheet
+France,Philippines,1.2779961824417114,spreadsheet
+France,Poland,0.9198082685470581,spreadsheet
+France,Russia,0.5866600871086121,spreadsheet
+France,Saudi Arabia,1.499403953552246,spreadsheet
+France,Sweden,0.7235523462295532,spreadsheet
+France,Thailand,1.3151392936706543,spreadsheet
+France,United Kingdom,1.16995370388031,spreadsheet
+France,United States,1.2428686618804932,spreadsheet
+Germany,Hungary,1.0201839208602905,spreadsheet
+Germany,Italy,0.696585476398468,spreadsheet
+Germany,"Korea, South",1.2598633766174316,spreadsheet
+Germany,Philippines,0.8024713397026062,spreadsheet
+Germany,Poland,0.7941719889640808,spreadsheet
+Germany,Russia,0.8441957235336304,spreadsheet
+Germany,Saudi Arabia,1.3200055360794067,spreadsheet
+Germany,Sweden,0.78925323486328125,spreadsheet
+Germany,Thailand,1.1669745445251465,spreadsheet
+Germany,United Kingdom,0.8731943368911743,spreadsheet
+Germany,United States,1.0978282690048218,spreadsheet
+Hungary,Italy,0.7567756175994873,spreadsheet
+Hungary,"Korea, South",0.6707288026809692,spreadsheet
+Hungary,Philippines,0.847368061542511,spreadsheet
+Hungary,Poland,0.9255965352058411,spreadsheet
+Hungary,Russia,0.9837445616722107,spreadsheet
+Hungary,Saudi Arabia,0.6173146963119507,spreadsheet
+Hungary,Sweden,0.9022660851478577,spreadsheet
+Hungary,Thailand,0.5698539018630981,spreadsheet
+Hungary,United Kingdom,0.6861956119537354,spreadsheet
+Hungary,United States,0.5713518261909485,spreadsheet
+Italy,"Korea, South",0.8707465529441833,spreadsheet
+Italy,Philippines,0.8796099424362183,spreadsheet
+Italy,Poland,0.8062719702720642,spreadsheet
+Italy,Russia,0.565106987953186,spreadsheet
+Italy,Saudi Arabia,1.0200989246368408,spreadsheet
+Italy,Sweden,0.6244819760322571,spreadsheet
+Italy,Thailand,0.7981633543968201,spreadsheet
+Italy,United Kingdom,0.7837910056114197,spreadsheet
+Italy,United States,0.7450541853904724,spreadsheet
+"Korea, South",Philippines,0.9944912195205688,spreadsheet
+"Korea, South",Poland,1.1933529376983643,spreadsheet
+"Korea, South",Russia,0.9888859391212463,spreadsheet
+"Korea, South",Saudi Arabia,0.7948571443557739,spreadsheet
+"Korea, South",Sweden,1.1613019704818726,spreadsheet
+"Korea, South",Thailand,0.7559665441513062,spreadsheet
+"Korea, South",United Kingdom,0.8414761424064636,spreadsheet
+"Korea, South",United States,0.7994179129600525,spreadsheet
+Philippines,Poland,1.161704421043396,spreadsheet
+Philippines,Russia,1.0494580268859863,spreadsheet
+Philippines,Saudi Arabia,1.0687698125839233,spreadsheet
+Philippines,Sweden,1.0865747928619385,spreadsheet
+Philippines,Thailand,0.9854949116706848,spreadsheet
+Philippines,United Kingdom,0.7476798892021179,spreadsheet
+Philippines,United States,0.9619985818862915,spreadsheet
+Poland,Russia,0.9062178730964661,spreadsheet
+Poland,Saudi Arabia,1.110938310623169,spreadsheet
+Poland,Sweden,0.6358315348625183,spreadsheet
+Poland,Thailand,0.9767110347747803,spreadsheet
+Poland,United Kingdom,0.9563603401184082,spreadsheet
+Poland,United States,0.8512775301933289,spreadsheet
+Russia,Saudi Arabia,1.2805218696594238,spreadsheet
+Russia,Sweden,0.7635844945907593,spreadsheet
+Russia,Thailand,1.1182419061660767,spreadsheet
+Russia,United Kingdom,0.9594913721084595,spreadsheet
+Russia,United States,1.0574769973754883,spreadsheet
+Saudi Arabia,Sweden,1.1516315937042236,spreadsheet
+Saudi Arabia,Thailand,0.6148855090141296,spreadsheet
+Saudi Arabia,United Kingdom,0.8508610725402832,spreadsheet
+Saudi Arabia,United States,0.6207401752471924,spreadsheet
+Sweden,Thailand,0.9826608896255493,spreadsheet
+Sweden,United Kingdom,1.035491704940796,spreadsheet
+Sweden,United States,0.8333733081817627,spreadsheet
+Thailand,United Kingdom,0.9587114453315735,spreadsheet
+Thailand,United States,0.5335758924484253,spreadsheet
+United Kingdom,United States,0.8352639675140381,spreadsheet

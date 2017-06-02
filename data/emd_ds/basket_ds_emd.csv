@@ -1,0 +1,67 @@
+country1,country2,dist,word
+Australia,Canada,1.0913325548171997,basket
+Australia,Finland,0.7397343516349792,basket
+Australia,Germany,0.8080182671546936,basket
+Australia,Hungary,0.674048125743866,basket
+Australia,"Korea, South",0.545008659362793,basket
+Australia,Philippines,1.1726319789886475,basket
+Australia,Russia,1.1994954347610474,basket
+Australia,Sweden,0.8733639717102051,basket
+Australia,Thailand,0.9485388994216919,basket
+Australia,United Kingdom,0.6568065881729126,basket
+Australia,United States,1.0946846008300781,basket
+Canada,Finland,0.8025371432304382,basket
+Canada,Germany,0.9436285495758057,basket
+Canada,Hungary,0.9072554707527161,basket
+Canada,"Korea, South",1.13820219039917,basket
+Canada,Philippines,0.591515302658081,basket
+Canada,Russia,1.1207420825958252,basket
+Canada,Sweden,1.2785210609436035,basket
+Canada,Thailand,0.7285444140434265,basket
+Canada,United Kingdom,1.3819611072540283,basket
+Canada,United States,0.5218260884284973,basket
+Finland,Germany,0.5874187350273132,basket
+Finland,Hungary,0.5673695802688599,basket
+Finland,"Korea, South",0.7090093493461609,basket
+Finland,Philippines,0.918788731098175,basket
+Finland,Russia,0.8872089385986328,basket
+Finland,Sweden,0.7534087300300598,basket
+Finland,Thailand,0.8085845112800598,basket
+Finland,United Kingdom,0.8676527738571167,basket
+Finland,United States,0.8294140696525574,basket
+Germany,Hungary,0.6372135877609253,basket
+Germany,"Korea, South",0.7768949866294861,basket
+Germany,Philippines,1.0064303874969482,basket
+Germany,Russia,0.7677803039550781,basket
+Germany,Sweden,0.667516827583313,basket
+Germany,Thailand,1.049173355102539,basket
+Germany,United Kingdom,0.9131873846054077,basket
+Germany,United States,0.9078124165534973,basket
+Hungary,"Korea, South",0.6805087327957153,basket
+Hungary,Philippines,0.8915877938270569,basket
+Hungary,Russia,0.8936957120895386,basket
+Hungary,Sweden,0.7686482071876526,basket
+Hungary,Thailand,0.822745680809021,basket
+Hungary,United Kingdom,0.8141321539878845,basket
+Hungary,United States,0.8480241298675537,basket
+"Korea, South",Philippines,1.2434611320495605,basket
+"Korea, South",Russia,1.0707935094833374,basket
+"Korea, South",Sweden,0.8851679563522339,basket
+"Korea, South",Thailand,0.9739579558372498,basket
+"Korea, South",United Kingdom,0.6661499738693237,basket
+"Korea, South",United States,1.135450839996338,basket
+Philippines,Russia,1.1307790279388428,basket
+Philippines,Sweden,1.3059183359146118,basket
+Philippines,Thailand,0.7700987458229065,basket
+Philippines,United Kingdom,1.4254575967788696,basket
+Philippines,United States,0.6319083571434021,basket
+Russia,Sweden,0.9484460353851318,basket
+Russia,Thailand,1.2389742136001587,basket
+Russia,United Kingdom,1.2961797714233398,basket
+Russia,United States,1.03995943069458,basket
+Sweden,Thailand,1.2755378484725952,basket
+Sweden,United Kingdom,0.8155403137207031,basket
+Sweden,United States,1.2401479482650757,basket
+Thailand,United Kingdom,1.1847388744354248,basket
+Thailand,United States,0.6815459132194519,basket
+United Kingdom,United States,1.3745073080062866,basket

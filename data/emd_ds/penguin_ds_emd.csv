@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.7111119031906128,penguin
+Australia,Canada,0.5503955483436584,penguin
+Australia,Czech Republic,0.5927427411079407,penguin
+Australia,Finland,0.5808539986610413,penguin
+Australia,France,0.6868491172790527,penguin
+Australia,Germany,0.7259460687637329,penguin
+Australia,Hungary,0.5989893078804016,penguin
+Australia,Italy,0.5584210157394409,penguin
+Australia,"Korea, South",0.9113367795944214,penguin
+Australia,Philippines,0.5852149128913879,penguin
+Australia,Poland,0.5061224102973938,penguin
+Australia,Russia,0.5829216241836548,penguin
+Australia,Saudi Arabia,0.5790305137634277,penguin
+Australia,Sweden,0.5393667817115784,penguin
+Australia,Thailand,0.8974213600158691,penguin
+Australia,United Kingdom,0.5209359526634216,penguin
+Australia,United States,0.5138051509857178,penguin
+Brazil,Canada,0.8979836106300354,penguin
+Brazil,Czech Republic,0.5865625739097595,penguin
+Brazil,Finland,0.8605294823646545,penguin
+Brazil,France,0.6862638592720032,penguin
+Brazil,Germany,0.49795064330101013,penguin
+Brazil,Hungary,0.6376733779907227,penguin
+Brazil,Italy,0.6754937767982483,penguin
+Brazil,"Korea, South",0.8842746019363403,penguin
+Brazil,Philippines,0.8254624009132385,penguin
+Brazil,Poland,0.5990763306617737,penguin
+Brazil,Russia,0.5011079907417297,penguin
+Brazil,Saudi Arabia,0.7399190664291382,penguin
+Brazil,Sweden,0.7708548903465271,penguin
+Brazil,Thailand,1.0631375312805176,penguin
+Brazil,United Kingdom,0.6742427945137024,penguin
+Brazil,United States,0.8331448435783386,penguin
+Canada,Czech Republic,0.7585263252258301,penguin
+Canada,Finland,0.6095133423805237,penguin
+Canada,France,0.8117448687553406,penguin
+Canada,Germany,0.991716206073761,penguin
+Canada,Hungary,0.7720591425895691,penguin
+Canada,Italy,0.5825538039207458,penguin
+Canada,"Korea, South",0.8745899200439453,penguin
+Canada,Philippines,0.5305623412132263,penguin
+Canada,Poland,0.6805043816566467,penguin
+Canada,Russia,0.8021013736724854,penguin
+Canada,Saudi Arabia,0.7125453948974609,penguin
+Canada,Sweden,0.5252277851104736,penguin
+Canada,Thailand,0.7040128707885742,penguin
+Canada,United Kingdom,0.580120325088501,penguin
+Canada,United States,0.4173405170440674,penguin
+Czech Republic,Finland,0.7022023797035217,penguin
+Czech Republic,France,0.7314727306365967,penguin
+Czech Republic,Germany,0.5947936773300171,penguin
+Czech Republic,Hungary,0.5030497312545776,penguin
+Czech Republic,Italy,0.577804446220398,penguin
+Czech Republic,"Korea, South",0.9314881563186646,penguin
+Czech Republic,Philippines,0.6908931732177734,penguin
+Czech Republic,Poland,0.5102918744087219,penguin
+Czech Republic,Russia,0.5162683129310608,penguin
+Czech Republic,Saudi Arabia,0.5394017696380615,penguin
+Czech Republic,Sweden,0.6145431995391846,penguin
+Czech Republic,Thailand,0.8919228911399841,penguin
+Czech Republic,United Kingdom,0.6124926805496216,penguin
+Czech Republic,United States,0.7055384516716003,penguin
+Finland,France,0.6702486872673035,penguin
+Finland,Germany,0.8519302010536194,penguin
+Finland,Hungary,0.69059818983078,penguin
+Finland,Italy,0.6376481056213379,penguin
+Finland,"Korea, South",0.7068869471549988,penguin
+Finland,Philippines,0.5014784932136536,penguin
+Finland,Poland,0.6131996512413025,penguin
+Finland,Russia,0.7232431173324585,penguin
+Finland,Saudi Arabia,0.7479920983314514,penguin
+Finland,Sweden,0.5212910175323486,penguin
+Finland,Thailand,0.7848531603813171,penguin
+Finland,United Kingdom,0.5783932209014893,penguin
+Finland,United States,0.5273863673210144,penguin
+France,Germany,0.6093471050262451,penguin
+France,Hungary,0.8183614015579224,penguin
+France,Italy,0.7175178527832031,penguin
+France,"Korea, South",0.5859156847000122,penguin
+France,Philippines,0.6903403997421265,penguin
+France,Poland,0.6094701886177063,penguin
+France,Russia,0.6894569993019104,penguin
+France,Saudi Arabia,0.8889412879943848,penguin
+France,Sweden,0.7586268782615662,penguin
+France,Thailand,1.1742901802062988,penguin
+France,United Kingdom,0.5480919480323792,penguin
+France,United States,0.7817698121070862,penguin
+Germany,Hungary,0.7699319124221802,penguin
+Germany,Italy,0.7551968097686768,penguin
+Germany,"Korea, South",0.8753378987312317,penguin
+Germany,Philippines,0.8790470957756042,penguin
+Germany,Poland,0.514605700969696,penguin
+Germany,Russia,0.5268267393112183,penguin
+Germany,Saudi Arabia,0.8449949622154236,penguin
+Germany,Sweden,0.8248810172080994,penguin
+Germany,Thailand,1.2394323348999023,penguin
+Germany,United Kingdom,0.6964263319969177,penguin
+Germany,United States,0.9273021817207336,penguin
+Hungary,Italy,0.593883216381073,penguin
+Hungary,"Korea, South",1.0573747158050537,penguin
+Hungary,Philippines,0.6905535459518433,penguin
+Hungary,Poland,0.6042339205741882,penguin
+Hungary,Russia,0.59663987159729,penguin
+Hungary,Saudi Arabia,0.49616581201553345,penguin
+Hungary,Sweden,0.6929931044578552,penguin
+Hungary,Thailand,0.8320913910865784,penguin
+Hungary,United Kingdom,0.7396863102912903,penguin
+Hungary,United States,0.6920510530471802,penguin
+Italy,"Korea, South",0.9009420275688171,penguin
+Italy,Philippines,0.5959333181381226,penguin
+Italy,Poland,0.5527036190032959,penguin
+Italy,Russia,0.5815430283546448,penguin
+Italy,Saudi Arabia,0.5234104990959167,penguin
+Italy,Sweden,0.5564684867858887,penguin
+Italy,Thailand,0.6940942406654358,penguin
+Italy,United Kingdom,0.6161116361618042,penguin
+Italy,United States,0.6071557998657227,penguin
+"Korea, South",Philippines,0.727527379989624,penguin
+"Korea, South",Poland,0.8455905914306641,penguin
+"Korea, South",Russia,0.9472699761390686,penguin
+"Korea, South",Saudi Arabia,1.129306674003601,penguin
+"Korea, South",Sweden,0.8322157263755798,penguin
+"Korea, South",Thailand,1.1687475442886353,penguin
+"Korea, South",United Kingdom,0.6533406972885132,penguin
+"Korea, South",United States,0.8379377126693726,penguin
+Philippines,Poland,0.6700064539909363,penguin
+Philippines,Russia,0.7644919157028198,penguin
+Philippines,Saudi Arabia,0.7267614603042603,penguin
+Philippines,Sweden,0.5796868801116943,penguin
+Philippines,Thailand,0.7349915504455566,penguin
+Philippines,United Kingdom,0.5293348431587219,penguin
+Philippines,United States,0.5306826233863831,penguin
+Poland,Russia,0.45374295115470886,penguin
+Poland,Saudi Arabia,0.5958719253540039,penguin
+Poland,Sweden,0.5683785676956177,penguin
+Poland,Thailand,0.9747171401977539,penguin
+Poland,United Kingdom,0.5507844090461731,penguin
+Poland,United States,0.6453885436058044,penguin
+Russia,Saudi Arabia,0.5977342128753662,penguin
+Russia,Sweden,0.6782430410385132,penguin
+Russia,Thailand,0.9768904447555542,penguin
+Russia,United Kingdom,0.6549766659736633,penguin
+Russia,United States,0.740247368812561,penguin
+Saudi Arabia,Sweden,0.7221673727035522,penguin
+Saudi Arabia,Thailand,0.7209826707839966,penguin
+Saudi Arabia,United Kingdom,0.7274926900863647,penguin
+Saudi Arabia,United States,0.6934052109718323,penguin
+Sweden,Thailand,0.7744438648223877,penguin
+Sweden,United Kingdom,0.5625901818275452,penguin
+Sweden,United States,0.494167685508728,penguin
+Thailand,United Kingdom,0.9861092567443848,penguin
+Thailand,United States,0.7667076587677002,penguin
+United Kingdom,United States,0.5542282462120056,penguin

@@ -1,0 +1,209 @@
+---
+title: Quickdraw exploration
+subtitle: 
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    number_sections: false
+    theme: cerulean
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(dtplyr)
+library(tidyverse) 
+library(knitr)
+library(rmarkdown)
+library(broom)
+library(langcog)
+library(rlist)
+
+FIG_HEIGHT = 4
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F,  cache = F, fig.height = FIG_HEIGHT)
+```  
+
+Munge coordinates (mini)
+```{r}
+m <- jsonlite::stream_in(file("data/json_mini.txt"))
+
+# munge coordinates
+m = m %>%
+  rowwise() %>%
+  do(draw = list.flatten(list(drop(.$drawing)))) %>%
+  cbind(m) %>%
+  select(-drawing)
+```
+
+Munge coordinates
+```{r}
+m = list.files("data/simplified")
+d <- jsonlite::stream_in(file(paste0("data/simplified/", m[1])), flatten = TRUE)
+#save(d, file = "bread")
+#load("bread.Rdata")
+#dd <- d
+
+# munge coordinates
+d %<>%
+  rowwise() %>%
+  do(draw = list.flatten(list(drop(.$drawing)))) %>%
+  cbind(d) %>%
+  select(-drawing)
+```
+
+Drawings by country
+```{r}
+countries <- read.csv("data/iso_3166_2_countries.csv") %>%
+  select(Common.Name, ISO.3166.1.2.Letter.Code)
+
+country.counts = d %>%
+  count(countrycode) %>%
+  arrange(-n)
+
+country.counts %>%
+  filter(n > 1000) %>%
+  ggplot(aes(x = countrycode, y = n)) +
+  geom_bar(stat = "identity") +
+  theme_bw()
+  
+keep.countries = country.counts = d %>%
+  count(countrycode) %>%
+  filter(n > 1000)
+
+ds = d %>%
+  filter(countrycode %in% keep.countries$countrycode,
+         recognized == TRUE) %>%
+  select(word, countrycode, draw, key_id, recognized) %>%
+  inner_join(countries, c("countrycode" = "ISO.3166.1.2.Letter.Code")) %>%
+  rename(country = Common.Name) %>%
+  filter(!is.na(country))
+
+```
+
+N strokes by country
+```{r}
+ds %<>% 
+  mutate(n_strokes = unlist(lapply(draw, length)),
+         mean_length = unlist(lapply(draw, 
+                  function(y) mean(unlist(sapply(y, length))))))
+          
+strokes.df = ds %>%
+  group_by(country) %>%
+  multi_boot_standard(column = "n_strokes") 
+
+ggplot(strokes.df, aes(x = reorder(country, mean), y = mean, 
+                       fill = reorder(country, mean))) +
+    geom_bar(position = "dodge", stat = "identity") +
+    geom_linerange(aes(ymax = ci_upper, ymin = ci_lower)) +
+    theme_bw() +
+    ylab("number of strokes") +
+    theme(legend.position = "none",
+          axis.text.x = element_text(angle = 90, hjust = 1)) 
+```
+
+Length of strokes by country
+```{r}
+strokes.length.df = ds %>%
+  group_by(country) %>%
+  multi_boot_standard(column = "mean_length") 
+
+ggplot(strokes.length.df, aes(x = reorder(country, mean), y = mean, 
+                              fill = reorder(country, mean))) +
+    geom_bar(position = "dodge", stat = "identity") +
+    geom_linerange(aes(ymax = ci_upper, ymin = ci_lower)) +
+    theme_bw() +
+    ylab("mean length of strokes") +
+    theme(legend.position = "none") +
+      theme(axis.text.x = element_text(angle = 90, hjust = 1)) 
+```
+
+```{r}
+ds.coords = ds  %>%
+    rowwise() %>%
+    do(data.frame(cbind(t(as.data.frame(list.flatten(.$draw))),
+          country = as.character(.$country[1]), 
+          key_id = as.character(.$key_id[1]),
+          word = as.character(.$word[1]),
+          recognized = as.character(.$recognized[1])))) %>%
+    bind_rows() %>%
+    rename(x = V1,
+           y = V2)
+
+write_csv(ds.coords, paste0(ds.coords$word[1], ".csv"))
+           
+counts = ds.coords %>%
+    mutate(x = round(as.numeric(x), 2),
+           y = round(as.numeric(y), 2)) %>%
+    count(x, y, country)
+
+h = read_csv("ds_coords.csv")
+
+h = ds.coords
+save(h, "ds.coords")
+
+m = ds %>%
+slice(1:2) %>%
+rowwise() %>%
+do(data.table(list.flatten(.$draw), 
+               as.character(.$country[1]), as.character(.$key_id[1])))
+
+m = ds %>%
+#slice(1:2) %>%
+data.table() %>%
+mutate(draw = list.flatten(draw)) %>%
+do(data.frame(cbind(t(as.data.frame(.$draw)),
+    as.character(.$country[1])))) 
+rowwise() %>%
+do(m = data.table(.$draw)
+do(data.table(list.flatten(.$draw), 
+               as.character(.$country[1])))
+
+m[m$key_id == "5821653743304704",]
+
+m %>%
+  mutate(V1)
+  unnest(V1)
+  
+  k = do.call("cbind", m$V1)
+
+
+```
+
+Heat maps
+```{r}
+ggplot(counts, aes(x, y, colour = n, fill = n)) + 
+  facet_wrap(country) +
+  geom_tile()
+
+ds.coords %<>%
+    mutate(x = as.numeric(x),
+           y = as.numeric(y)) 
+           
+ds.coords %<>% 
+    mutate(x.bin = cut_width(x, 100),
+           y.bin = cut_width(y, 100))
+           
+m = ds.coords %>% 
+   filter(country %in% c("Hungary", "Indonesia")) 
+    mutate(x.bin = cut_width(x, 100),
+           y.bin = cut_width(y, 100))
+
+ds.coords %>%
+  filter(country %in% c("Hungary", "Indonesia")) %>%
+  ggplot( aes(x = x.bin, y = y.bin)) + 
+   facet_wrap("country") +
+   geom_point() + 
+   stat_density2d(aes(fill=..density..), geom = "tile") +
+   scale_fill_gradient2(low = "white", high = "red") +
+   #theme_blank() +
+   theme(legend.position = "none")
+```

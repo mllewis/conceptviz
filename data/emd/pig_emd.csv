@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.46557292342185974,pig
+Australia,Canada,0.6232947111129761,pig
+Australia,Czech Republic,0.4582049548625946,pig
+Australia,Finland,0.8405902981758118,pig
+Australia,France,0.29975053668022156,pig
+Australia,Germany,0.3132358491420746,pig
+Australia,Hungary,0.5737860202789307,pig
+Australia,Italy,0.42012354731559753,pig
+Australia,"Korea, South",0.5765913128852844,pig
+Australia,Philippines,0.5848885774612427,pig
+Australia,Poland,0.6945979595184326,pig
+Australia,Russia,0.8560038208961487,pig
+Australia,Saudi Arabia,0.7360977530479431,pig
+Australia,Sweden,0.42836764454841614,pig
+Australia,Thailand,0.8608303070068359,pig
+Australia,United Kingdom,1.1186494827270508,pig
+Australia,United States,1.7095619440078735,pig
+Brazil,Canada,0.8350120186805725,pig
+Brazil,Czech Republic,0.42094749212265015,pig
+Brazil,Finland,0.9110685586929321,pig
+Brazil,France,0.36519649624824524,pig
+Brazil,Germany,0.5191267132759094,pig
+Brazil,Hungary,0.4512525498867035,pig
+Brazil,Italy,0.4919593334197998,pig
+Brazil,"Korea, South",0.6372580528259277,pig
+Brazil,Philippines,0.43287596106529236,pig
+Brazil,Poland,0.520969808101654,pig
+Brazil,Russia,1.025132179260254,pig
+Brazil,Saudi Arabia,0.7525894641876221,pig
+Brazil,Sweden,0.5538454055786133,pig
+Brazil,Thailand,0.9567850828170776,pig
+Brazil,United Kingdom,1.2943651676177979,pig
+Brazil,United States,1.896174430847168,pig
+Canada,Czech Republic,0.6989843249320984,pig
+Canada,Finland,0.4148928225040436,pig
+Canada,France,0.6337984800338745,pig
+Canada,Germany,0.3937387764453888,pig
+Canada,Hungary,0.7580407857894897,pig
+Canada,Italy,0.4939972162246704,pig
+Canada,"Korea, South",0.5000571012496948,pig
+Canada,Philippines,1.0089476108551025,pig
+Canada,Poland,1.239498257637024,pig
+Canada,Russia,0.28972333669662476,pig
+Canada,Saudi Arabia,0.5584052205085754,pig
+Canada,Sweden,0.39972448348999023,pig
+Canada,Thailand,0.40060994029045105,pig
+Canada,United Kingdom,0.5123993754386902,pig
+Canada,United States,1.1138179302215576,pig
+Czech Republic,Finland,0.6818428635597229,pig
+Czech Republic,France,0.40365689992904663,pig
+Czech Republic,Germany,0.4381927251815796,pig
+Czech Republic,Hungary,0.32574939727783203,pig
+Czech Republic,Italy,0.35344454646110535,pig
+Czech Republic,"Korea, South",0.4383544623851776,pig
+Czech Republic,Philippines,0.4093840718269348,pig
+Czech Republic,Poland,0.7332203388214111,pig
+Czech Republic,Russia,0.8914815187454224,pig
+Czech Republic,Saudi Arabia,0.5442365407943726,pig
+Czech Republic,Sweden,0.38256680965423584,pig
+Czech Republic,Thailand,0.7525299191474915,pig
+Czech Republic,United Kingdom,1.1458654403686523,pig
+Czech Republic,United States,1.754543662071228,pig
+Finland,France,0.7957897782325745,pig
+Finland,Germany,0.5914778113365173,pig
+Finland,Hungary,0.6882001161575317,pig
+Finland,Italy,0.5064853429794312,pig
+Finland,"Korea, South",0.4836546778678894,pig
+Finland,Philippines,1.0077590942382812,pig
+Finland,Poland,1.3416229486465454,pig
+Finland,Russia,0.4322892129421234,pig
+Finland,Saudi Arabia,0.4387182295322418,pig
+Finland,Sweden,0.4776196777820587,pig
+Finland,Thailand,0.29080140590667725,pig
+Finland,United Kingdom,0.5738970041275024,pig
+Finland,United States,1.1574081182479858,pig
+France,Germany,0.3135199248790741,pig
+France,Hungary,0.46686461567878723,pig
+France,Italy,0.3968718945980072,pig
+France,"Korea, South",0.5568681359291077,pig
+France,Philippines,0.5517785549163818,pig
+France,Poland,0.7092466950416565,pig
+France,Russia,0.8306043148040771,pig
+France,Saudi Arabia,0.6982894539833069,pig
+France,Sweden,0.4213055670261383,pig
+France,Thailand,0.8297143578529358,pig
+France,United Kingdom,1.100232481956482,pig
+France,United States,1.6819753646850586,pig
+Germany,Hungary,0.52342289686203,pig
+Germany,Italy,0.2619490921497345,pig
+Germany,"Korea, South",0.42751359939575195,pig
+Germany,Philippines,0.6878247261047363,pig
+Germany,Poland,0.908876359462738,pig
+Germany,Russia,0.5999158620834351,pig
+Germany,Saudi Arabia,0.5759509205818176,pig
+Germany,Sweden,0.24654850363731384,pig
+Germany,Thailand,0.6049448847770691,pig
+Germany,United Kingdom,0.8643505573272705,pig
+Germany,United States,1.467519760131836,pig
+Hungary,Italy,0.4256574213504791,pig
+Hungary,"Korea, South",0.5261086225509644,pig
+Hungary,Philippines,0.5354341268539429,pig
+Hungary,Poland,0.7677438259124756,pig
+Hungary,Russia,0.9038365483283997,pig
+Hungary,Saudi Arabia,0.6413211822509766,pig
+Hungary,Sweden,0.48208555579185486,pig
+Hungary,Thailand,0.773152768611908,pig
+Hungary,United Kingdom,1.15363347530365,pig
+Hungary,United States,1.7493603229522705,pig
+Italy,"Korea, South",0.3406979441642761,pig
+Italy,Philippines,0.6141438484191895,pig
+Italy,Poland,0.91465163230896,pig
+Italy,Russia,0.6554242968559265,pig
+Italy,Saudi Arabia,0.4730030298233032,pig
+Italy,Sweden,0.2540777027606964,pig
+Italy,Thailand,0.5367193818092346,pig
+Italy,United Kingdom,0.916729211807251,pig
+Italy,United States,1.5266969203948975,pig
+"Korea, South",Philippines,0.6891416311264038,pig
+"Korea, South",Poland,0.9938684701919556,pig
+"Korea, South",Russia,0.6227330565452576,pig
+"Korea, South",Saudi Arabia,0.5718538165092468,pig
+"Korea, South",Sweden,0.3967821002006531,pig
+"Korea, South",Thailand,0.4901299774646759,pig
+"Korea, South",United Kingdom,0.875007688999176,pig
+"Korea, South",United States,1.4717198610305786,pig
+Philippines,Poland,0.5471563935279846,pig
+Philippines,Russia,1.2070149183273315,pig
+Philippines,Saudi Arabia,0.7507323622703552,pig
+Philippines,Sweden,0.6615011692047119,pig
+Philippines,Thailand,1.061100959777832,pig
+Philippines,United Kingdom,1.4591025114059448,pig
+Philippines,United States,2.0746397972106934,pig
+Poland,Russia,1.4572017192840576,pig
+Poland,Saudi Arabia,1.1570491790771484,pig
+Poland,Sweden,0.9469757676124573,pig
+Poland,Thailand,1.3903452157974243,pig
+Poland,United Kingdom,1.730331301689148,pig
+Poland,United States,2.320563316345215,pig
+Russia,Saudi Arabia,0.6969678401947021,pig
+Russia,Sweden,0.5876336097717285,pig
+Russia,Thailand,0.34354156255722046,pig
+Russia,United Kingdom,0.3182268440723419,pig
+Russia,United States,0.8947701454162598,pig
+Saudi Arabia,Sweden,0.42129573225975037,pig
+Saudi Arabia,Thailand,0.5629777312278748,pig
+Saudi Arabia,United Kingdom,0.8735834360122681,pig
+Saudi Arabia,United States,1.4631626605987549,pig
+Sweden,Thailand,0.5122339129447937,pig
+Sweden,United Kingdom,0.8373771905899048,pig
+Sweden,United States,1.456895112991333,pig
+Thailand,United Kingdom,0.5304512977600098,pig
+Thailand,United States,1.1098486185073853,pig
+United Kingdom,United States,0.6271320581436157,pig

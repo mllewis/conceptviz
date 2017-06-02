@@ -1,0 +1,82 @@
+---
+title: Checking size confound in movers analysis
+subtitle: 
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    number_sections: false
+    theme: cerulean
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(tidyverse) 
+library(knitr)
+library(rmarkdown)
+library(broom)
+library(langcog)
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F,  cache = F, fig.height = 4)
+```  
+
+Read in cue and drawing data
+```{r}
+cues = read_csv("data/extreme_cues.csv") %>%
+  select(cue, conc.bin)
+
+d <- list.files("data/summaries/", pattern = "*.csv") %>%
+  purrr::map(function(x) paste0("data/summaries/", x)) %>% 
+  purrr::map(read_csv) %>% 
+  bind_rows() %>%
+  select(-6,-7)
+
+english_countries <- c("Australia", 
+                      "Canada",
+                      "United Kingdom", 
+                      "United States")
+
+d %<>% left_join(cues, by=c("word" = "cue")) %>%
+  mutate(lang = ifelse(country %in% english_countries, "english", "non_english")) %>%
+  mutate(conc.bin = as.factor(conc.bin))
+```
+
+
+n_per_country
+```{r}
+n_per_country = d %>% 
+  group_by(country) %>%
+  summarize(`total drawings` = sum(n)) %>%
+  arrange(-`total drawings`) 
+
+
+emds <- list.files("data/emd/", pattern = "*.csv") %>%
+  purrr::map(function(x) paste0("data/emd/", x)) %>% 
+  purrr::map(read_csv) %>% 
+  bind_rows() 
+
+```
+
+```{r}
+m = emds %>%
+  group_by(country1, country2) %>%
+  summarize(mean = mean(dist)) %>%
+  filter(country1 != "Coral Sea Islands" & country2 !="Coral Sea Islands") %>%
+  left_join(n_per_country, by=c("country1" = "country")) %>%
+  rename(n1 = `total drawings`) %>%
+  left_join(n_per_country, by=c("country2" = "country")) %>%
+  rename(n2 = `total drawings`) %>%
+  mutate(dif = n1-n2)
+
+as.data.frame(arrange(m, mean))
+
+
+```

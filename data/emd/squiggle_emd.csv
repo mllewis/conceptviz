@@ -1,0 +1,22 @@
+country1,country2,dist,word
+Australia,Brazil,2.8147900104522705,squiggle
+Australia,Canada,0.36118221282958984,squiggle
+Australia,Germany,0.8782786130905151,squiggle
+Australia,Russia,1.0000696182250977,squiggle
+Australia,United Kingdom,1.0747696161270142,squiggle
+Australia,United States,2.0990896224975586,squiggle
+Brazil,Canada,2.848140001296997,squiggle
+Brazil,Germany,1.9912139177322388,squiggle
+Brazil,Russia,2.2593371868133545,squiggle
+Brazil,United Kingdom,3.7637832164764404,squiggle
+Brazil,United States,4.809577465057373,squiggle
+Canada,Germany,0.911767840385437,squiggle
+Canada,Russia,0.8730332851409912,squiggle
+Canada,United Kingdom,1.178877592086792,squiggle
+Canada,United States,2.1427934169769287,squiggle
+Germany,Russia,0.7013142108917236,squiggle
+Germany,United Kingdom,1.8355145454406738,squiggle
+Germany,United States,2.885282039642334,squiggle
+Russia,United Kingdom,1.980269432067871,squiggle
+Russia,United States,2.9217498302459717,squiggle
+United Kingdom,United States,1.0837771892547607,squiggle

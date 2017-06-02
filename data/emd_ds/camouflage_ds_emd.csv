@@ -1,0 +1,137 @@
+country1,country2,dist,word
+Australia,Brazil,0.4931927025318146,camouflage
+Australia,Canada,0.43392544984817505,camouflage
+Australia,Czech Republic,0.39054787158966064,camouflage
+Australia,Finland,0.5974023938179016,camouflage
+Australia,France,0.3621695935726166,camouflage
+Australia,Germany,0.5787219405174255,camouflage
+Australia,Hungary,0.6036751866340637,camouflage
+Australia,Italy,0.41352578997612,camouflage
+Australia,Philippines,0.476786345243454,camouflage
+Australia,Poland,0.33144596219062805,camouflage
+Australia,Russia,0.5046167373657227,camouflage
+Australia,Saudi Arabia,0.6820304989814758,camouflage
+Australia,Sweden,0.4056716859340668,camouflage
+Australia,Thailand,0.46216171979904175,camouflage
+Australia,United Kingdom,0.5135625600814819,camouflage
+Australia,United States,0.3732818067073822,camouflage
+Brazil,Canada,0.6460766792297363,camouflage
+Brazil,Czech Republic,0.5024334788322449,camouflage
+Brazil,Finland,0.6086222529411316,camouflage
+Brazil,France,0.4828869104385376,camouflage
+Brazil,Germany,0.5948605537414551,camouflage
+Brazil,Hungary,0.48276111483573914,camouflage
+Brazil,Italy,0.38014721870422363,camouflage
+Brazil,Philippines,0.5387423634529114,camouflage
+Brazil,Poland,0.43519771099090576,camouflage
+Brazil,Russia,0.39909300208091736,camouflage
+Brazil,Saudi Arabia,0.5562400221824646,camouflage
+Brazil,Sweden,0.5319013595581055,camouflage
+Brazil,Thailand,0.40775275230407715,camouflage
+Brazil,United Kingdom,0.481499582529068,camouflage
+Brazil,United States,0.5750494599342346,camouflage
+Canada,Czech Republic,0.49770209193229675,camouflage
+Canada,Finland,0.6552735567092896,camouflage
+Canada,France,0.4250534176826477,camouflage
+Canada,Germany,0.5947591066360474,camouflage
+Canada,Hungary,0.7362660765647888,camouflage
+Canada,Italy,0.5074098110198975,camouflage
+Canada,Philippines,0.5516344904899597,camouflage
+Canada,Poland,0.44860467314720154,camouflage
+Canada,Russia,0.6541481614112854,camouflage
+Canada,Saudi Arabia,0.7633703351020813,camouflage
+Canada,Sweden,0.3917974829673767,camouflage
+Canada,Thailand,0.6419762969017029,camouflage
+Canada,United Kingdom,0.5486322045326233,camouflage
+Canada,United States,0.41304564476013184,camouflage
+Czech Republic,Finland,0.7709164023399353,camouflage
+Czech Republic,France,0.3572249710559845,camouflage
+Czech Republic,Germany,0.6786911487579346,camouflage
+Czech Republic,Hungary,0.6650160551071167,camouflage
+Czech Republic,Italy,0.46289587020874023,camouflage
+Czech Republic,Philippines,0.48507732152938843,camouflage
+Czech Republic,Poland,0.3525411784648895,camouflage
+Czech Republic,Russia,0.5197607278823853,camouflage
+Czech Republic,Saudi Arabia,0.7260491847991943,camouflage
+Czech Republic,Sweden,0.488067626953125,camouflage
+Czech Republic,Thailand,0.5169903039932251,camouflage
+Czech Republic,United Kingdom,0.629625678062439,camouflage
+Czech Republic,United States,0.492458313703537,camouflage
+Finland,France,0.640116274356842,camouflage
+Finland,Germany,0.45402196049690247,camouflage
+Finland,Hungary,0.5605137348175049,camouflage
+Finland,Italy,0.5522153377532959,camouflage
+Finland,Philippines,0.7199905514717102,camouflage
+Finland,Poland,0.636742353439331,camouflage
+Finland,Russia,0.6446697115898132,camouflage
+Finland,Saudi Arabia,0.541523277759552,camouflage
+Finland,Sweden,0.453999400138855,camouflage
+Finland,Thailand,0.6063867807388306,camouflage
+Finland,United Kingdom,0.3750162720680237,camouflage
+Finland,United States,0.5668759942054749,camouflage
+France,Germany,0.5498883724212646,camouflage
+France,Hungary,0.5533431172370911,camouflage
+France,Italy,0.38085052371025085,camouflage
+France,Philippines,0.4448515772819519,camouflage
+France,Poland,0.3522452414035797,camouflage
+France,Russia,0.4925425052642822,camouflage
+France,Saudi Arabia,0.6266738176345825,camouflage
+France,Sweden,0.3999110162258148,camouflage
+France,Thailand,0.4959315359592438,camouflage
+France,United Kingdom,0.503211498260498,camouflage
+France,United States,0.39584824442863464,camouflage
+Germany,Hungary,0.5099883675575256,camouflage
+Germany,Italy,0.4954158365726471,camouflage
+Germany,Philippines,0.7612791061401367,camouflage
+Germany,Poland,0.6227883696556091,camouflage
+Germany,Russia,0.5244952440261841,camouflage
+Germany,Saudi Arabia,0.5635178089141846,camouflage
+Germany,Sweden,0.4524495005607605,camouflage
+Germany,Thailand,0.6953122615814209,camouflage
+Germany,United Kingdom,0.40476542711257935,camouflage
+Germany,United States,0.49581554532051086,camouflage
+Hungary,Italy,0.4517148733139038,camouflage
+Hungary,Philippines,0.6953415274620056,camouflage
+Hungary,Poland,0.5997947454452515,camouflage
+Hungary,Russia,0.4655463993549347,camouflage
+Hungary,Saudi Arabia,0.36833664774894714,camouflage
+Hungary,Sweden,0.5794504284858704,camouflage
+Hungary,Thailand,0.5676554441452026,camouflage
+Hungary,United Kingdom,0.514387309551239,camouflage
+Hungary,United States,0.6031128764152527,camouflage
+Italy,Philippines,0.49476438760757446,camouflage
+Italy,Poland,0.3919562101364136,camouflage
+Italy,Russia,0.4009053111076355,camouflage
+Italy,Saudi Arabia,0.530561625957489,camouflage
+Italy,Sweden,0.4314318299293518,camouflage
+Italy,Thailand,0.43580716848373413,camouflage
+Italy,United Kingdom,0.4411954879760742,camouflage
+Italy,United States,0.4573742747306824,camouflage
+Philippines,Poland,0.3888477683067322,camouflage
+Philippines,Russia,0.6460076570510864,camouflage
+Philippines,Saudi Arabia,0.6599831581115723,camouflage
+Philippines,Sweden,0.4945157766342163,camouflage
+Philippines,Thailand,0.4379604756832123,camouflage
+Philippines,United Kingdom,0.6533798575401306,camouflage
+Philippines,United States,0.5331007838249207,camouflage
+Poland,Russia,0.47600263357162476,camouflage
+Poland,Saudi Arabia,0.6361506581306458,camouflage
+Poland,Sweden,0.4050268828868866,camouflage
+Poland,Thailand,0.41239601373672485,camouflage
+Poland,United Kingdom,0.5333452224731445,camouflage
+Poland,United States,0.4449101984500885,camouflage
+Russia,Saudi Arabia,0.5982396602630615,camouflage
+Russia,Sweden,0.5418304204940796,camouflage
+Russia,Thailand,0.4916518032550812,camouflage
+Russia,United Kingdom,0.5256574153900146,camouflage
+Russia,United States,0.5595928430557251,camouflage
+Saudi Arabia,Sweden,0.5877828001976013,camouflage
+Saudi Arabia,Thailand,0.592880129814148,camouflage
+Saudi Arabia,United Kingdom,0.5234398245811462,camouflage
+Saudi Arabia,United States,0.6715538501739502,camouflage
+Sweden,Thailand,0.5061314105987549,camouflage
+Sweden,United Kingdom,0.36443397402763367,camouflage
+Sweden,United States,0.40665489435195923,camouflage
+Thailand,United Kingdom,0.5768396258354187,camouflage
+Thailand,United States,0.5650401711463928,camouflage
+United Kingdom,United States,0.5528947114944458,camouflage

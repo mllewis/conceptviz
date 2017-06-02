@@ -1,0 +1,167 @@
+---
+title: Quickdraw exploration
+subtitle: 
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    number_sections: false
+    theme: cerulean
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(tidyverse) 
+library(knitr)
+library(rmarkdown)
+library(broom)
+library(langcog)
+library(rlist)
+library(magrittr)
+
+FIG_HEIGHT = 4
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F,  cache = F, fig.height = FIG_HEIGHT)
+```  
+
+```{r}
+theme_blank <- function(...) {
+  ret <- theme_bw(...)
+  ret$line <- element_blank()
+  ret$rect <- element_blank()
+  ret$axis.text <- element_blank()
+  ret$axis.title <- element_blank()
+  ret$plot.margin <- structure(c(0, 0, -1, -1), unit = "lines",
+                               valid.unit = 3L, class = "unit")
+  ret
+}
+```
+
+Munge 
+```{r}
+d <- read_csv("data/csvs/banana.csv") 
+  
+d %<>% select(1:5) %>%
+  mutate(country = as.factor(country),
+         word = as.factor(word),
+         key_id = as.factor(key_id))
+```
+
+Heat maps
+```{r}
+
+counts = d %>%
+  #filter(country %in% c("United States", "Russia")) %>%
+  filter(country == "United States") %>%
+  count(x,y,country)
+
+ggplot(counts, aes(x, y, fill = n)) + 
+  facet_grid(~country) +
+  geom_tile()
+
+
+
+d %>%
+ # slice(1:500000) %>%
+  filter(country %in% c("United States", "Russia")) %>%
+  ggplot(aes(x = x, y = y)) + 
+  facet_wrap(~country) +
+  stat_density2d(aes(fill=..density..), geom = "tile", contour = FALSE, n = 255) +
+  scale_fill_gradient2(low = "yellow", high = "red") +
+  #theme_blank() +
+  theme(legend.position="none") 
+
+d %>%
+  slice(1:1000) %>%
+  filter(country %in% c("United States", "Russia")) %>%
+  ggplot(aes(x = x, y = y)) + 
+  facet_wrap(~country) +
+   stat_density2d(aes(alpha=..density.., fill=..density..), size=2, 
+        bins=10, geom="polygon") %>%
+ scale_fill_gradient2(low = "yellow", high = "red") +
+  #theme_blank() +
+  theme(legend.position="none") 
+
+d %>%
+  data.table() %>%
+  filter(country %in% c("United States", "Russia")) %>%
+  count(x,y,country) %>%
+  ggplot(aes(x, y)) + 
+    facet_wrap(~country) +
+    stat_density2d(aes(fill = n), n = 255, geom="tile") + 
+    theme_blank() +
+    scale_fill_gradient(low = "yellow", high = "red") +
+    scale_alpha(range = c(0.00, 0.5), guide = FALSE) +
+    #geom_density2d(colour="black", bins=10, aes(weight=n)) +
+    guides(alpha=FALSE) +
+    #theme_blank() +
+    theme(legend.position="none") 
+
+=======
+# need to make bins
+counts = d %>%
+      data.table() %>%
+      #filter(country %in% c("United States", "Russia")) %>%
+      count(x, y, country) %>%
+      mutate(n = log(n))  # take log
+
+counts.trimmed = counts %>%
+      filter(x > 10 & y > 10 & x < 245 & y < 245) %>% #removed edges
+      group_by(country) %>%
+      summarize(med = median(n),
+                sd = sd(n)) %>%
+      left_join(counts) %>%
+      group_by(country) %>%
+      filter(n<(med + 1.5*sd) & n>(med-1.5*sd)) # remove outliers
+
+counts.scaled = counts.trimmed %>%
+      group_by(country) %>%
+      summarize(min = min(n),
+                max = max(n)) %>%
+      left_join(counts.trimmed) %>%
+      group_by(country) %>%
+      mutate(n.scaled =(n-min)/(max-min)) %>%
+      data.table()
+
+ggplot(counts.scaled, aes(x,y)) + 
+    facet_wrap(~country) +
+    geom_raster(aes(fill = n.scaled), interpolate = TRUE) + 
+    scale_fill_gradient2(midpoint = .5, low = "green", mid = "white", high = "red") +
+    scale_y_continuous(limits = c(10,245)) + 
+    scale_x_continuous(limits = c(10,245))  +
+    theme_blank() +
+    theme(legend.position = "none") 
+
+=======
+counts.trimmed %>%
+  ggplot(aes(x = n)) +
+  geom_histogram()+
+  facet_wrap(~country, scales= "free")
+```
+
+```{r}
+
+library(entropy)
+
+t = counts.scaled %>%
+  ungroup() %>%
+  filter(country == "United States") %>%
+  select(x,y,n.scaled,n) 
+
+m = spread(t,x,n) %>%
+  mutate_each(funs(ifelse(is.na(.), 0, .))) %>%
+  do(H = mi.empirical(as.matrix(.))) %>% 
+  unlist()
+  
+
+
+
+```

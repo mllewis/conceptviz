@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.44867974519729614,elephant
+Australia,Canada,0.6566573977470398,elephant
+Australia,Czech Republic,0.6761301159858704,elephant
+Australia,Finland,0.49568867683410645,elephant
+Australia,France,0.5910595059394836,elephant
+Australia,Germany,0.5928376317024231,elephant
+Australia,Hungary,1.0498669147491455,elephant
+Australia,Italy,0.5965566039085388,elephant
+Australia,"Korea, South",0.7873672842979431,elephant
+Australia,Philippines,0.7905209064483643,elephant
+Australia,Poland,0.7923908829689026,elephant
+Australia,Russia,0.3811873197555542,elephant
+Australia,Saudi Arabia,0.7662938237190247,elephant
+Australia,Sweden,0.4249362349510193,elephant
+Australia,Thailand,0.7063043713569641,elephant
+Australia,United Kingdom,1.21224045753479,elephant
+Australia,United States,2.235081195831299,elephant
+Brazil,Canada,0.8414530158042908,elephant
+Brazil,Czech Republic,0.5538291335105896,elephant
+Brazil,Finland,0.5424068570137024,elephant
+Brazil,France,0.4158269166946411,elephant
+Brazil,Germany,0.7726368308067322,elephant
+Brazil,Hungary,1.0170037746429443,elephant
+Brazil,Italy,0.5129329562187195,elephant
+Brazil,"Korea, South",0.679345428943634,elephant
+Brazil,Philippines,0.6245487928390503,elephant
+Brazil,Poland,0.6213907599449158,elephant
+Brazil,Russia,0.37958353757858276,elephant
+Brazil,Saudi Arabia,0.6898021101951599,elephant
+Brazil,Sweden,0.37221983075141907,elephant
+Brazil,Thailand,0.6556340456008911,elephant
+Brazil,United Kingdom,1.4125851392745972,elephant
+Brazil,United States,2.4401848316192627,elephant
+Canada,Czech Republic,1.0994625091552734,elephant
+Canada,Finland,0.5916846990585327,elephant
+Canada,France,0.8530603647232056,elephant
+Canada,Germany,0.2799348831176758,elephant
+Canada,Hungary,0.7979201078414917,elephant
+Canada,Italy,0.7831500768661499,elephant
+Canada,"Korea, South",0.9703912138938904,elephant
+Canada,Philippines,1.177821397781372,elephant
+Canada,Poland,1.1348222494125366,elephant
+Canada,Russia,0.8465350866317749,elephant
+Canada,Saudi Arabia,0.7478343844413757,elephant
+Canada,Sweden,0.8641376495361328,elephant
+Canada,Thailand,0.8215247392654419,elephant
+Canada,United Kingdom,0.6178288459777832,elephant
+Canada,United States,1.6383957862854004,elephant
+Czech Republic,Finland,0.6653847098350525,elephant
+Czech Republic,France,0.577751874923706,elephant
+Czech Republic,Germany,1.0305789709091187,elephant
+Czech Republic,Hungary,1.1079745292663574,elephant
+Czech Republic,Italy,0.6352672576904297,elephant
+Czech Republic,"Korea, South",0.6222302317619324,elephant
+Czech Republic,Philippines,0.5394997596740723,elephant
+Czech Republic,Poland,0.4134480059146881,elephant
+Czech Republic,Russia,0.44869136810302734,elephant
+Czech Republic,Saudi Arabia,0.9959045052528381,elephant
+Czech Republic,Sweden,0.46043631434440613,elephant
+Czech Republic,Thailand,0.6490765810012817,elephant
+Czech Republic,United Kingdom,1.6600968837738037,elephant
+Czech Republic,United States,2.6862988471984863,elephant
+Finland,France,0.4669056236743927,elephant
+Finland,Germany,0.5591341257095337,elephant
+Finland,Hungary,0.7108902335166931,elephant
+Finland,Italy,0.48220521211624146,elephant
+Finland,"Korea, South",0.639548122882843,elephant
+Finland,Philippines,0.7406633496284485,elephant
+Finland,Poland,0.7312990427017212,elephant
+Finland,Russia,0.515474796295166,elephant
+Finland,Saudi Arabia,0.6197589635848999,elephant
+Finland,Sweden,0.5339676737785339,elephant
+Finland,Thailand,0.45400822162628174,elephant
+Finland,United Kingdom,1.1261998414993286,elephant
+Finland,United States,2.1499483585357666,elephant
+France,Germany,0.7909858226776123,elephant
+France,Hungary,0.8274305462837219,elephant
+France,Italy,0.42596960067749023,elephant
+France,"Korea, South",0.5955972671508789,elephant
+France,Philippines,0.5595068335533142,elephant
+France,Poland,0.6308515071868896,elephant
+France,Russia,0.5293518900871277,elephant
+France,Saudi Arabia,0.6334671378135681,elephant
+France,Sweden,0.4922439455986023,elephant
+France,Thailand,0.501972496509552,elephant
+France,United Kingdom,1.3865445852279663,elephant
+France,United States,2.403869152069092,elephant
+Germany,Hungary,0.8785101175308228,elephant
+Germany,Italy,0.7556060552597046,elephant
+Germany,"Korea, South",0.8867682218551636,elephant
+Germany,Philippines,1.1071451902389526,elephant
+Germany,Poland,1.068297266960144,elephant
+Germany,Russia,0.7687414884567261,elephant
+Germany,Saudi Arabia,0.8387379050254822,elephant
+Germany,Sweden,0.7868707180023193,elephant
+Germany,Thailand,0.7925652861595154,elephant
+Germany,United Kingdom,0.67781001329422,elephant
+Germany,United States,1.700332522392273,elephant
+Hungary,Italy,0.7693997025489807,elephant
+Hungary,"Korea, South",0.9620158672332764,elephant
+Hungary,Philippines,1.127866506576538,elephant
+Hungary,Poland,1.0595693588256836,elephant
+Hungary,Russia,1.084531307220459,elephant
+Hungary,Saudi Arabia,0.69327312707901,elephant
+Hungary,Sweden,1.0622295141220093,elephant
+Hungary,Thailand,0.740875780582428,elephant
+Hungary,United Kingdom,1.0405386686325073,elephant
+Hungary,United States,1.926138997077942,elephant
+Italy,"Korea, South",0.6199755072593689,elephant
+Italy,Philippines,0.5897592306137085,elephant
+Italy,Poland,0.7067127227783203,elephant
+Italy,Russia,0.5773378014564514,elephant
+Italy,Saudi Arabia,0.634128987789154,elephant
+Italy,Sweden,0.5207563638687134,elephant
+Italy,Thailand,0.48258349299430847,elephant
+Italy,United Kingdom,1.3208048343658447,elephant
+Italy,United States,2.3281068801879883,elephant
+"Korea, South",Philippines,0.5601471066474915,elephant
+"Korea, South",Poland,0.7105869650840759,elephant
+"Korea, South",Russia,0.680978536605835,elephant
+"Korea, South",Saudi Arabia,0.964161217212677,elephant
+"Korea, South",Sweden,0.6382433176040649,elephant
+"Korea, South",Thailand,0.48765650391578674,elephant
+"Korea, South",United Kingdom,1.4605140686035156,elephant
+"Korea, South",United States,2.4288082122802734,elephant
+Philippines,Poland,0.6703277826309204,elephant
+Philippines,Russia,0.6366081833839417,elephant
+Philippines,Saudi Arabia,0.9459546804428101,elephant
+Philippines,Sweden,0.5647918581962585,elephant
+Philippines,Thailand,0.6320635676383972,elephant
+Philippines,United Kingdom,1.7146105766296387,elephant
+Philippines,United States,2.708651304244995,elephant
+Poland,Russia,0.6030493974685669,elephant
+Poland,Saudi Arabia,1.014050841331482,elephant
+Poland,Sweden,0.5969448089599609,elephant
+Poland,Thailand,0.6932643055915833,elephant
+Poland,United Kingdom,1.6719964742660522,elephant
+Poland,United States,2.692781925201416,elephant
+Russia,Saudi Arabia,0.8400967121124268,elephant
+Russia,Sweden,0.3504101037979126,elephant
+Russia,Thailand,0.6424400210380554,elephant
+Russia,United Kingdom,1.4187536239624023,elephant
+Russia,United States,2.4506547451019287,elephant
+Saudi Arabia,Sweden,0.8221390247344971,elephant
+Saudi Arabia,Thailand,0.7295666337013245,elephant
+Saudi Arabia,United Kingdom,1.1614176034927368,elephant
+Saudi Arabia,United States,2.125732660293579,elephant
+Sweden,Thailand,0.6090350151062012,elephant
+Sweden,United Kingdom,1.425455093383789,elephant
+Sweden,United States,2.448514461517334,elephant
+Thailand,United Kingdom,1.3274898529052734,elephant
+Thailand,United States,2.3207595348358154,elephant
+United Kingdom,United States,1.0533173084259033,elephant

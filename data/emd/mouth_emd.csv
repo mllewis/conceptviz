@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,1.1664905548095703,mouth
+Australia,Canada,0.5657850503921509,mouth
+Australia,Czech Republic,1.2242913246154785,mouth
+Australia,Finland,0.6458349823951721,mouth
+Australia,France,1.5057786703109741,mouth
+Australia,Germany,0.4972938597202301,mouth
+Australia,Hungary,1.6247645616531372,mouth
+Australia,Italy,1.2021600008010864,mouth
+Australia,"Korea, South",1.1446341276168823,mouth
+Australia,Philippines,1.0804357528686523,mouth
+Australia,Poland,1.6216728687286377,mouth
+Australia,Russia,0.49516618251800537,mouth
+Australia,Saudi Arabia,0.9187701940536499,mouth
+Australia,Sweden,0.7721982598304749,mouth
+Australia,Thailand,1.348407506942749,mouth
+Australia,United Kingdom,1.4034332036972046,mouth
+Australia,United States,3.004983425140381,mouth
+Brazil,Canada,1.604751467704773,mouth
+Brazil,Czech Republic,0.5121404528617859,mouth
+Brazil,Finland,0.9309189319610596,mouth
+Brazil,France,0.5657265782356262,mouth
+Brazil,Germany,0.8514401316642761,mouth
+Brazil,Hungary,0.6780803203582764,mouth
+Brazil,Italy,0.5843570828437805,mouth
+Brazil,"Korea, South",0.8713253736495972,mouth
+Brazil,Philippines,0.6191985607147217,mouth
+Brazil,Poland,0.6651055216789246,mouth
+Brazil,Russia,0.8462924957275391,mouth
+Brazil,Saudi Arabia,0.7416247725486755,mouth
+Brazil,Sweden,0.5982234477996826,mouth
+Brazil,Thailand,0.6941375732421875,mouth
+Brazil,United Kingdom,2.5390625,mouth
+Brazil,United States,4.141458511352539,mouth
+Canada,Czech Republic,1.6803303956985474,mouth
+Canada,Finland,0.9409520030021667,mouth
+Canada,France,1.92375648021698,mouth
+Canada,Germany,0.8904009461402893,mouth
+Canada,Hungary,2.0976428985595703,mouth
+Canada,Italy,1.6661326885223389,mouth
+Canada,"Korea, South",1.4979079961776733,mouth
+Canada,Philippines,1.4878857135772705,mouth
+Canada,Poland,2.038139820098877,mouth
+Canada,Russia,0.902144193649292,mouth
+Canada,Saudi Arabia,1.365272879600525,mouth
+Canada,Sweden,1.2139722108840942,mouth
+Canada,Thailand,1.8134211301803589,mouth
+Canada,United Kingdom,0.9753666520118713,mouth
+Canada,United States,2.5736770629882812,mouth
+Czech Republic,Finland,0.930661141872406,mouth
+Czech Republic,France,0.5096991062164307,mouth
+Czech Republic,Germany,0.9215732216835022,mouth
+Czech Republic,Hungary,0.5867968797683716,mouth
+Czech Republic,Italy,0.5538609623908997,mouth
+Czech Republic,"Korea, South",0.86507648229599,mouth
+Czech Republic,Philippines,0.6324565410614014,mouth
+Czech Republic,Poland,0.6388230323791504,mouth
+Czech Republic,Russia,0.8753668069839478,mouth
+Czech Republic,Saudi Arabia,0.7323997020721436,mouth
+Czech Republic,Sweden,0.6448744535446167,mouth
+Czech Republic,Thailand,0.6505520343780518,mouth
+Czech Republic,United Kingdom,2.6069107055664062,mouth
+Czech Republic,United States,4.198208332061768,mouth
+Finland,France,1.1661919355392456,mouth
+Finland,Germany,0.6318042874336243,mouth
+Finland,Hungary,1.3237110376358032,mouth
+Finland,Italy,0.9300457835197449,mouth
+Finland,"Korea, South",0.9177244901657104,mouth
+Finland,Philippines,0.7367134690284729,mouth
+Finland,Poland,1.3020954132080078,mouth
+Finland,Russia,0.5168320536613464,mouth
+Finland,Saudi Arabia,0.7231467962265015,mouth
+Finland,Sweden,0.650290310382843,mouth
+Finland,Thailand,1.0799314975738525,mouth
+Finland,United Kingdom,1.7933439016342163,mouth
+Finland,United States,3.377437114715576,mouth
+France,Germany,1.2178733348846436,mouth
+France,Hungary,0.4037541449069977,mouth
+France,Italy,0.7241115570068359,mouth
+France,"Korea, South",0.8688205480575562,mouth
+France,Philippines,0.6318238377571106,mouth
+France,Poland,0.5636505484580994,mouth
+France,Russia,1.137473464012146,mouth
+France,Saudi Arabia,0.8744768500328064,mouth
+France,Sweden,0.8729368448257446,mouth
+France,Thailand,0.5244238376617432,mouth
+France,United Kingdom,2.877124547958374,mouth
+France,United States,4.4613261222839355,mouth
+Germany,Hungary,1.3435654640197754,mouth
+Germany,Italy,0.8787199258804321,mouth
+Germany,"Korea, South",0.9891754984855652,mouth
+Germany,Philippines,0.8893868923187256,mouth
+Germany,Poland,1.2640597820281982,mouth
+Germany,Russia,0.4092557430267334,mouth
+Germany,Saudi Arabia,0.7289839386940002,mouth
+Germany,Sweden,0.5472018718719482,mouth
+Germany,Thailand,1.1641349792480469,mouth
+Germany,United Kingdom,1.752073049545288,mouth
+Germany,United States,3.360541820526123,mouth
+Hungary,Italy,0.7073850035667419,mouth
+Hungary,"Korea, South",0.950575590133667,mouth
+Hungary,Philippines,0.7852831482887268,mouth
+Hungary,Poland,0.5941508412361145,mouth
+Hungary,Russia,1.294299840927124,mouth
+Hungary,Saudi Arabia,0.9757135510444641,mouth
+Hungary,Sweden,1.0072187185287476,mouth
+Hungary,Thailand,0.5861877799034119,mouth
+Hungary,United Kingdom,3.010099411010742,mouth
+Hungary,United States,4.586084842681885,mouth
+Italy,"Korea, South",0.7488805055618286,mouth
+Italy,Philippines,0.5872131586074829,mouth
+Italy,Poland,0.6593263745307922,mouth
+Italy,Russia,0.8961963653564453,mouth
+Italy,Saudi Arabia,0.6756151914596558,mouth
+Italy,Sweden,0.7045943737030029,mouth
+Italy,Thailand,0.7695028781890869,mouth
+Italy,United Kingdom,2.5382115840911865,mouth
+Italy,United States,4.115992069244385,mouth
+"Korea, South",Philippines,0.6225807666778564,mouth
+"Korea, South",Poland,1.0437248945236206,mouth
+"Korea, South",Russia,0.8807291388511658,mouth
+"Korea, South",Saudi Arabia,0.6464718580245972,mouth
+"Korea, South",Sweden,0.7706674933433533,mouth
+"Korea, South",Thailand,0.7844786047935486,mouth
+"Korea, South",United Kingdom,2.3139896392822266,mouth
+"Korea, South",United States,3.8452365398406982,mouth
+Philippines,Poland,0.7906730771064758,mouth
+Philippines,Russia,0.7910824418067932,mouth
+Philippines,Saudi Arabia,0.6436449885368347,mouth
+Philippines,Sweden,0.6988469362258911,mouth
+Philippines,Thailand,0.6565198302268982,mouth
+Philippines,United Kingdom,2.4134442806243896,mouth
+Philippines,United States,3.9834542274475098,mouth
+Poland,Russia,1.2664198875427246,mouth
+Poland,Saudi Arabia,1.0423767566680908,mouth
+Poland,Sweden,1.059926152229309,mouth
+Poland,Thailand,0.906753659248352,mouth
+Poland,United Kingdom,2.9820849895477295,mouth
+Poland,United States,4.581528186798096,mouth
+Russia,Saudi Arabia,0.6791552901268005,mouth
+Russia,Sweden,0.49568796157836914,mouth
+Russia,Thailand,1.0416951179504395,mouth
+Russia,United Kingdom,1.7934292554855347,mouth
+Russia,United States,3.3792202472686768,mouth
+Saudi Arabia,Sweden,0.49790430068969727,mouth
+Saudi Arabia,Thailand,0.781217098236084,mouth
+Saudi Arabia,United Kingdom,2.1453263759613037,mouth
+Saudi Arabia,United States,3.696103096008301,mouth
+Sweden,Thailand,0.8168241381645203,mouth
+Sweden,United Kingdom,2.0774805545806885,mouth
+Sweden,United States,3.655580997467041,mouth
+Thailand,United Kingdom,2.6943767070770264,mouth
+Thailand,United States,4.255099773406982,mouth
+United Kingdom,United States,1.6170927286148071,mouth

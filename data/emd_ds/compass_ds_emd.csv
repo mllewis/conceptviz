@@ -1,0 +1,92 @@
+country1,country2,dist,word
+Australia,Brazil,0.7546360492706299,compass
+Australia,Canada,0.5732399225234985,compass
+Australia,Czech Republic,0.8950673937797546,compass
+Australia,Finland,0.713994562625885,compass
+Australia,Germany,0.82741379737854,compass
+Australia,Philippines,0.7894835472106934,compass
+Australia,Poland,0.8056090474128723,compass
+Australia,Russia,0.8520048260688782,compass
+Australia,Saudi Arabia,0.9687342643737793,compass
+Australia,Sweden,0.948053240776062,compass
+Australia,Thailand,1.061665654182434,compass
+Australia,United Kingdom,0.632454514503479,compass
+Australia,United States,1.047404170036316,compass
+Brazil,Canada,0.6514747142791748,compass
+Brazil,Czech Republic,0.933729350566864,compass
+Brazil,Finland,0.5758885741233826,compass
+Brazil,Germany,0.879924476146698,compass
+Brazil,Philippines,0.5855236053466797,compass
+Brazil,Poland,0.717025876045227,compass
+Brazil,Russia,0.7616953253746033,compass
+Brazil,Saudi Arabia,0.5730433464050293,compass
+Brazil,Sweden,0.8111570477485657,compass
+Brazil,Thailand,1.1146146059036255,compass
+Brazil,United Kingdom,0.6517965197563171,compass
+Brazil,United States,0.9035649299621582,compass
+Canada,Czech Republic,0.8802492022514343,compass
+Canada,Finland,0.5625447034835815,compass
+Canada,Germany,0.7054128050804138,compass
+Canada,Philippines,0.7404694557189941,compass
+Canada,Poland,0.7199589014053345,compass
+Canada,Russia,0.7519592046737671,compass
+Canada,Saudi Arabia,0.8020007014274597,compass
+Canada,Sweden,0.7873136401176453,compass
+Canada,Thailand,1.0166529417037964,compass
+Canada,United Kingdom,0.5644617080688477,compass
+Canada,United States,0.9500942230224609,compass
+Czech Republic,Finland,0.8062968254089355,compass
+Czech Republic,Germany,0.6594422459602356,compass
+Czech Republic,Philippines,0.7899168133735657,compass
+Czech Republic,Poland,0.559253990650177,compass
+Czech Republic,Russia,0.5632277727127075,compass
+Czech Republic,Saudi Arabia,1.043796420097351,compass
+Czech Republic,Sweden,1.2637755870819092,compass
+Czech Republic,Thailand,0.544963538646698,compass
+Czech Republic,United Kingdom,0.9987524747848511,compass
+Czech Republic,United States,1.4793444871902466,compass
+Finland,Germany,0.6968708634376526,compass
+Finland,Philippines,0.6843492388725281,compass
+Finland,Poland,0.62089604139328,compass
+Finland,Russia,0.7500709891319275,compass
+Finland,Saudi Arabia,0.6811923384666443,compass
+Finland,Sweden,0.729064404964447,compass
+Finland,Thailand,0.9756420254707336,compass
+Finland,United Kingdom,0.6129187345504761,compass
+Finland,United States,0.9089546799659729,compass
+Germany,Philippines,0.7783582806587219,compass
+Germany,Poland,0.5979336500167847,compass
+Germany,Russia,0.7651097178459167,compass
+Germany,Saudi Arabia,0.9535741806030273,compass
+Germany,Sweden,1.078621506690979,compass
+Germany,Thailand,0.7510908246040344,compass
+Germany,United Kingdom,0.8669486045837402,compass
+Germany,United States,1.3090040683746338,compass
+Philippines,Poland,0.5895110964775085,compass
+Philippines,Russia,0.6715454459190369,compass
+Philippines,Saudi Arabia,0.6790447235107422,compass
+Philippines,Sweden,1.0054255723953247,compass
+Philippines,Thailand,0.9245350360870361,compass
+Philippines,United Kingdom,0.815727710723877,compass
+Philippines,United States,1.1011598110198975,compass
+Poland,Russia,0.5374080538749695,compass
+Poland,Saudi Arabia,0.8323567509651184,compass
+Poland,Sweden,1.0742769241333008,compass
+Poland,Thailand,0.7269816994667053,compass
+Poland,United Kingdom,0.844311535358429,compass
+Poland,United States,1.2336360216140747,compass
+Russia,Saudi Arabia,0.8582193851470947,compass
+Russia,Sweden,1.0824466943740845,compass
+Russia,Thailand,0.7320662140846252,compass
+Russia,United Kingdom,0.9015951156616211,compass
+Russia,United States,1.3364683389663696,compass
+Saudi Arabia,Sweden,0.8194954991340637,compass
+Saudi Arabia,Thailand,1.1810537576675415,compass
+Saudi Arabia,United Kingdom,0.7662656307220459,compass
+Saudi Arabia,United States,0.9873223900794983,compass
+Sweden,Thailand,1.374143123626709,compass
+Sweden,United Kingdom,0.6943432092666626,compass
+Sweden,United States,0.770248532295227,compass
+Thailand,United Kingdom,1.1170775890350342,compass
+Thailand,United States,1.637311339378357,compass
+United Kingdom,United States,0.7876965403556824,compass

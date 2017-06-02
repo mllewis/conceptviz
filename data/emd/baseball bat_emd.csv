@@ -1,0 +1,106 @@
+country1,country2,dist,word
+Australia,Brazil,0.7304040789604187,baseball bat
+Australia,Canada,0.7923839688301086,baseball bat
+Australia,Czech Republic,0.9773154854774475,baseball bat
+Australia,Finland,1.0496933460235596,baseball bat
+Australia,France,1.0464586019515991,baseball bat
+Australia,Germany,0.5796523690223694,baseball bat
+Australia,Italy,0.9193165302276611,baseball bat
+Australia,"Korea, South",1.6994329690933228,baseball bat
+Australia,Philippines,1.160448670387268,baseball bat
+Australia,Poland,1.2813774347305298,baseball bat
+Australia,Russia,0.9089722633361816,baseball bat
+Australia,Sweden,0.8098589777946472,baseball bat
+Australia,United Kingdom,1.4265247583389282,baseball bat
+Australia,United States,2.864488363265991,baseball bat
+Brazil,Canada,1.020053505897522,baseball bat
+Brazil,Czech Republic,1.0733723640441895,baseball bat
+Brazil,Finland,0.6394032835960388,baseball bat
+Brazil,France,0.7846371531486511,baseball bat
+Brazil,Germany,0.8263583779335022,baseball bat
+Brazil,Italy,0.549109697341919,baseball bat
+Brazil,"Korea, South",1.235975980758667,baseball bat
+Brazil,Philippines,0.7630443572998047,baseball bat
+Brazil,Poland,0.9511951804161072,baseball bat
+Brazil,Russia,0.5412890315055847,baseball bat
+Brazil,Sweden,0.7692860960960388,baseball bat
+Brazil,United Kingdom,1.6945677995681763,baseball bat
+Brazil,United States,3.1624011993408203,baseball bat
+Canada,Czech Republic,1.5397144556045532,baseball bat
+Canada,Finland,1.4356216192245483,baseball bat
+Canada,France,1.5903587341308594,baseball bat
+Canada,Germany,0.583709716796875,baseball bat
+Canada,Italy,1.245556354522705,baseball bat
+Canada,"Korea, South",1.952096939086914,baseball bat
+Canada,Philippines,1.6040089130401611,baseball bat
+Canada,Poland,1.7111477851867676,baseball bat
+Canada,Russia,1.2274643182754517,baseball bat
+Canada,Sweden,1.1628313064575195,baseball bat
+Canada,United Kingdom,0.8024743795394897,baseball bat
+Canada,United States,2.2632312774658203,baseball bat
+Czech Republic,Finland,0.9950042366981506,baseball bat
+Czech Republic,France,0.8321790099143982,baseball bat
+Czech Republic,Germany,1.1946465969085693,baseball bat
+Czech Republic,Italy,1.2831273078918457,baseball bat
+Czech Republic,"Korea, South",1.7636606693267822,baseball bat
+Czech Republic,Philippines,1.0538208484649658,baseball bat
+Czech Republic,Poland,1.0238536596298218,baseball bat
+Czech Republic,Russia,1.1690419912338257,baseball bat
+Czech Republic,Sweden,0.8020415306091309,baseball bat
+Czech Republic,United Kingdom,2.182163953781128,baseball bat
+Czech Republic,United States,3.683871030807495,baseball bat
+Finland,France,0.7634180784225464,baseball bat
+Finland,Germany,1.2350449562072754,baseball bat
+Finland,Italy,0.7204250693321228,baseball bat
+Finland,"Korea, South",0.9346812963485718,baseball bat
+Finland,Philippines,0.6260938048362732,baseball bat
+Finland,Poland,0.6177364587783813,baseball bat
+Finland,Russia,0.7831807732582092,baseball bat
+Finland,Sweden,0.7168479561805725,baseball bat
+Finland,United Kingdom,2.093923807144165,baseball bat
+Finland,United States,3.556530714035034,baseball bat
+France,Germany,1.3247215747833252,baseball bat
+France,Italy,0.8989075422286987,baseball bat
+France,"Korea, South",1.3662203550338745,baseball bat
+France,Philippines,0.7958793044090271,baseball bat
+France,Poland,0.7734488844871521,baseball bat
+France,Russia,0.8628886938095093,baseball bat
+France,Sweden,0.9175806641578674,baseball bat
+France,United Kingdom,2.271428108215332,baseball bat
+France,United States,3.7549548149108887,baseball bat
+Germany,Italy,1.0746052265167236,baseball bat
+Germany,"Korea, South",1.8918708562850952,baseball bat
+Germany,Philippines,1.385335087776184,baseball bat
+Germany,Poland,1.468923568725586,baseball bat
+Germany,Russia,0.9429349899291992,baseball bat
+Germany,Sweden,0.9154341816902161,baseball bat
+Germany,United Kingdom,1.07955801486969,baseball bat
+Germany,United States,2.6118557453155518,baseball bat
+Italy,"Korea, South",1.0272752046585083,baseball bat
+Italy,Philippines,0.8092122077941895,baseball bat
+Italy,Poland,0.9961128830909729,baseball bat
+Italy,Russia,0.6397340893745422,baseball bat
+Italy,Sweden,1.0540817975997925,baseball bat
+Italy,United Kingdom,1.915785551071167,baseball bat
+Italy,United States,3.2408089637756348,baseball bat
+"Korea, South",Philippines,0.9831058382987976,baseball bat
+"Korea, South",Poland,1.0506726503372192,baseball bat
+"Korea, South",Russia,1.374374270439148,baseball bat
+"Korea, South",Sweden,1.3829680681228638,baseball bat
+"Korea, South",United Kingdom,2.5390522480010986,baseball bat
+"Korea, South",United States,3.7795650959014893,baseball bat
+Philippines,Poland,0.6741605401039124,baseball bat
+Philippines,Russia,0.8661722540855408,baseball bat
+Philippines,Sweden,0.9508145451545715,baseball bat
+Philippines,United Kingdom,2.269404649734497,baseball bat
+Philippines,United States,3.723073720932007,baseball bat
+Poland,Russia,1.0480074882507324,baseball bat
+Poland,Sweden,0.791256844997406,baseball bat
+Poland,United Kingdom,2.3723933696746826,baseball bat
+Poland,United States,3.809318780899048,baseball bat
+Russia,Sweden,1.0220359563827515,baseball bat
+Russia,United Kingdom,1.7910785675048828,baseball bat
+Russia,United States,3.207493305206299,baseball bat
+Sweden,United Kingdom,1.8179206848144531,baseball bat
+Sweden,United States,3.3378822803497314,baseball bat
+United Kingdom,United States,1.627059817314148,baseball bat

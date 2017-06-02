@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,1.1152831315994263,helicopter
+Australia,Canada,0.5901693105697632,helicopter
+Australia,Czech Republic,0.7673165798187256,helicopter
+Australia,Finland,1.1196902990341187,helicopter
+Australia,France,0.9305129647254944,helicopter
+Australia,Germany,0.6576176881790161,helicopter
+Australia,Hungary,1.0080323219299316,helicopter
+Australia,Italy,0.5559493899345398,helicopter
+Australia,"Korea, South",0.7559831738471985,helicopter
+Australia,Philippines,0.7115508913993835,helicopter
+Australia,Poland,0.5438365936279297,helicopter
+Australia,Russia,0.7231713533401489,helicopter
+Australia,Saudi Arabia,1.2925149202346802,helicopter
+Australia,Sweden,0.5952621102333069,helicopter
+Australia,Thailand,0.6165843605995178,helicopter
+Australia,United Kingdom,0.6534705758094788,helicopter
+Australia,United States,0.5501142144203186,helicopter
+Brazil,Canada,1.0119762420654297,helicopter
+Brazil,Czech Republic,0.7716655135154724,helicopter
+Brazil,Finland,1.8136088848114014,helicopter
+Brazil,France,0.5335073471069336,helicopter
+Brazil,Germany,1.3461154699325562,helicopter
+Brazil,Hungary,1.7996208667755127,helicopter
+Brazil,Italy,0.8436291217803955,helicopter
+Brazil,"Korea, South",1.5938010215759277,helicopter
+Brazil,Philippines,0.6640974283218384,helicopter
+Brazil,Poland,0.8982325792312622,helicopter
+Brazil,Russia,0.736508309841156,helicopter
+Brazil,Saudi Arabia,2.1261255741119385,helicopter
+Brazil,Sweden,1.1252424716949463,helicopter
+Brazil,Thailand,1.1151412725448608,helicopter
+Brazil,United Kingdom,0.9769092202186584,helicopter
+Brazil,United States,1.0404853820800781,helicopter
+Canada,Czech Republic,0.744189977645874,helicopter
+Canada,Finland,1.216986060142517,helicopter
+Canada,France,0.887717068195343,helicopter
+Canada,Germany,0.7522342205047607,helicopter
+Canada,Hungary,1.2018775939941406,helicopter
+Canada,Italy,0.6222628951072693,helicopter
+Canada,"Korea, South",0.9311535358428955,helicopter
+Canada,Philippines,0.6649667620658875,helicopter
+Canada,Poland,0.5358850359916687,helicopter
+Canada,Russia,0.7381694316864014,helicopter
+Canada,Saudi Arabia,1.4535140991210938,helicopter
+Canada,Sweden,0.608696460723877,helicopter
+Canada,Thailand,0.703773558139801,helicopter
+Canada,United Kingdom,0.5924518704414368,helicopter
+Canada,United States,0.5434026122093201,helicopter
+Czech Republic,Finland,1.486204981803894,helicopter
+Czech Republic,France,0.6680131554603577,helicopter
+Czech Republic,Germany,0.9070863723754883,helicopter
+Czech Republic,Hungary,1.5128811597824097,helicopter
+Czech Republic,Italy,0.6520107984542847,helicopter
+Czech Republic,"Korea, South",1.2029215097427368,helicopter
+Czech Republic,Philippines,0.6221168637275696,helicopter
+Czech Republic,Poland,0.6172898411750793,helicopter
+Czech Republic,Russia,0.5674123764038086,helicopter
+Czech Republic,Saudi Arabia,1.845473051071167,helicopter
+Czech Republic,Sweden,0.7744393944740295,helicopter
+Czech Republic,Thailand,0.7996448874473572,helicopter
+Czech Republic,United Kingdom,0.7578725218772888,helicopter
+Czech Republic,United States,0.7645295858383179,helicopter
+Finland,France,1.587476372718811,helicopter
+Finland,Germany,1.0311102867126465,helicopter
+Finland,Hungary,0.6227539777755737,helicopter
+Finland,Italy,1.2000905275344849,helicopter
+Finland,"Korea, South",1.1885604858398438,helicopter
+Finland,Philippines,1.510001540184021,helicopter
+Finland,Poland,1.2098054885864258,helicopter
+Finland,Russia,1.61103093624115,helicopter
+Finland,Saudi Arabia,0.6963788270950317,helicopter
+Finland,Sweden,0.9582331776618958,helicopter
+Finland,Thailand,1.4603394269943237,helicopter
+Finland,United Kingdom,1.048704743385315,helicopter
+Finland,United States,1.0735173225402832,helicopter
+France,Germany,1.1493333578109741,helicopter
+France,Hungary,1.6070170402526855,helicopter
+France,Italy,0.6674543023109436,helicopter
+France,"Korea, South",1.4134892225265503,helicopter
+France,Philippines,0.6023251414299011,helicopter
+France,Poland,0.7562364935874939,helicopter
+France,Russia,0.6686373353004456,helicopter
+France,Saudi Arabia,1.9185925722122192,helicopter
+France,Sweden,0.8767890930175781,helicopter
+France,Thailand,0.9309813976287842,helicopter
+France,United Kingdom,0.8407544493675232,helicopter
+France,United States,0.9115385413169861,helicopter
+Germany,Hungary,0.9922204613685608,helicopter
+Germany,Italy,0.7997177243232727,helicopter
+Germany,"Korea, South",0.853958010673523,helicopter
+Germany,Philippines,1.020375370979309,helicopter
+Germany,Poland,0.7555198073387146,helicopter
+Germany,Russia,0.9724952578544617,helicopter
+Germany,Saudi Arabia,1.3034932613372803,helicopter
+Germany,Sweden,0.6484661102294922,helicopter
+Germany,Thailand,0.8774121999740601,helicopter
+Germany,United Kingdom,0.8142119646072388,helicopter
+Germany,United States,0.7374483942985535,helicopter
+Hungary,Italy,1.1432123184204102,helicopter
+Hungary,"Korea, South",1.0330171585083008,helicopter
+Hungary,Philippines,1.4412742853164673,helicopter
+Hungary,Poland,1.179357886314392,helicopter
+Hungary,Russia,1.569977045059204,helicopter
+Hungary,Saudi Arabia,0.6156290173530579,helicopter
+Hungary,Sweden,0.9953004121780396,helicopter
+Hungary,Thailand,1.2961992025375366,helicopter
+Hungary,United Kingdom,1.0104916095733643,helicopter
+Hungary,United States,1.0527195930480957,helicopter
+Italy,"Korea, South",0.9837851524353027,helicopter
+Italy,Philippines,0.577096700668335,helicopter
+Italy,Poland,0.5124824047088623,helicopter
+Italy,Russia,0.7235780954360962,helicopter
+Italy,Saudi Arabia,1.467045783996582,helicopter
+Italy,Sweden,0.5882017612457275,helicopter
+Italy,Thailand,0.7055887579917908,helicopter
+Italy,United Kingdom,0.5120733380317688,helicopter
+Italy,United States,0.6101937294006348,helicopter
+"Korea, South",Philippines,1.142836570739746,helicopter
+"Korea, South",Poland,0.8824374675750732,helicopter
+"Korea, South",Russia,1.1677956581115723,helicopter
+"Korea, South",Saudi Arabia,1.1906278133392334,helicopter
+"Korea, South",Sweden,0.8921533823013306,helicopter
+"Korea, South",Thailand,0.7193705439567566,helicopter
+"Korea, South",United Kingdom,1.02250075340271,helicopter
+"Korea, South",United States,0.877363383769989,helicopter
+Philippines,Poland,0.5992644429206848,helicopter
+Philippines,Russia,0.5829698443412781,helicopter
+Philippines,Saudi Arabia,1.736316442489624,helicopter
+Philippines,Sweden,0.8449678421020508,helicopter
+Philippines,Thailand,0.7323750257492065,helicopter
+Philippines,United Kingdom,0.6922673583030701,helicopter
+Philippines,United States,0.7102419137954712,helicopter
+Poland,Russia,0.6240006685256958,helicopter
+Poland,Saudi Arabia,1.448807716369629,helicopter
+Poland,Sweden,0.6014533042907715,helicopter
+Poland,Thailand,0.6033533811569214,helicopter
+Poland,United Kingdom,0.5892782211303711,helicopter
+Poland,United States,0.5867254734039307,helicopter
+Russia,Saudi Arabia,1.8773982524871826,helicopter
+Russia,Sweden,0.8721956610679626,helicopter
+Russia,Thailand,0.7464759945869446,helicopter
+Russia,United Kingdom,0.8676092624664307,helicopter
+Russia,United States,0.8017873764038086,helicopter
+Saudi Arabia,Sweden,1.3244794607162476,helicopter
+Saudi Arabia,Thailand,1.5312039852142334,helicopter
+Saudi Arabia,United Kingdom,1.2571383714675903,helicopter
+Saudi Arabia,United States,1.3031834363937378,helicopter
+Sweden,Thailand,0.8189508318901062,helicopter
+Sweden,United Kingdom,0.6136261224746704,helicopter
+Sweden,United States,0.6065319776535034,helicopter
+Thailand,United Kingdom,0.8094348907470703,helicopter
+Thailand,United States,0.7871320247650146,helicopter
+United Kingdom,United States,0.5694679617881775,helicopter

@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.5636080503463745,panda
+Australia,Canada,0.3887060880661011,panda
+Australia,Czech Republic,0.4180448055267334,panda
+Australia,Finland,0.42605656385421753,panda
+Australia,France,0.5067623853683472,panda
+Australia,Germany,0.5871847867965698,panda
+Australia,Hungary,0.5612304210662842,panda
+Australia,Italy,0.4269464910030365,panda
+Australia,"Korea, South",0.8947663903236389,panda
+Australia,Philippines,0.6359578371047974,panda
+Australia,Poland,0.39294618368148804,panda
+Australia,Russia,0.8294656276702881,panda
+Australia,Saudi Arabia,0.4680890738964081,panda
+Australia,Sweden,0.6631321907043457,panda
+Australia,Thailand,0.8912963271141052,panda
+Australia,United Kingdom,0.36090290546417236,panda
+Australia,United States,0.40532463788986206,panda
+Brazil,Canada,0.5457045435905457,panda
+Brazil,Czech Republic,0.551257848739624,panda
+Brazil,Finland,0.4399195909500122,panda
+Brazil,France,0.4460826516151428,panda
+Brazil,Germany,0.6747769117355347,panda
+Brazil,Hungary,0.8821251392364502,panda
+Brazil,Italy,0.5097600221633911,panda
+Brazil,"Korea, South",0.5535778403282166,panda
+Brazil,Philippines,0.5270322561264038,panda
+Brazil,Poland,0.48427969217300415,panda
+Brazil,Russia,0.6680052876472473,panda
+Brazil,Saudi Arabia,0.746830403804779,panda
+Brazil,Sweden,0.6110079884529114,panda
+Brazil,Thailand,0.5829934477806091,panda
+Brazil,United Kingdom,0.5558687448501587,panda
+Brazil,United States,0.5475926399230957,panda
+Canada,Czech Republic,0.4018184244632721,panda
+Canada,Finland,0.4658801257610321,panda
+Canada,France,0.5271715521812439,panda
+Canada,Germany,0.6195152401924133,panda
+Canada,Hungary,0.6525530219078064,panda
+Canada,Italy,0.4350454807281494,panda
+Canada,"Korea, South",0.8109151124954224,panda
+Canada,Philippines,0.6598979234695435,panda
+Canada,Poland,0.4074454605579376,panda
+Canada,Russia,0.8014918565750122,panda
+Canada,Saudi Arabia,0.5498007535934448,panda
+Canada,Sweden,0.6901196837425232,panda
+Canada,Thailand,0.8486401438713074,panda
+Canada,United Kingdom,0.3976309597492218,panda
+Canada,United States,0.45459410548210144,panda
+Czech Republic,Finland,0.46285974979400635,panda
+Czech Republic,France,0.4449305832386017,panda
+Czech Republic,Germany,0.5710568428039551,panda
+Czech Republic,Hungary,0.6188550591468811,panda
+Czech Republic,Italy,0.4303811490535736,panda
+Czech Republic,"Korea, South",0.859178900718689,panda
+Czech Republic,Philippines,0.6194480657577515,panda
+Czech Republic,Poland,0.43578997254371643,panda
+Czech Republic,Russia,0.8010413646697998,panda
+Czech Republic,Saudi Arabia,0.5241006016731262,panda
+Czech Republic,Sweden,0.6045559644699097,panda
+Czech Republic,Thailand,0.830922544002533,panda
+Czech Republic,United Kingdom,0.384534627199173,panda
+Czech Republic,United States,0.4266127049922943,panda
+Finland,France,0.47849833965301514,panda
+Finland,Germany,0.5277551412582397,panda
+Finland,Hungary,0.640310525894165,panda
+Finland,Italy,0.3790794610977173,panda
+Finland,"Korea, South",0.7259800434112549,panda
+Finland,Philippines,0.6872029900550842,panda
+Finland,Poland,0.38184547424316406,panda
+Finland,Russia,0.8591464757919312,panda
+Finland,Saudi Arabia,0.5080529451370239,panda
+Finland,Sweden,0.5763220191001892,panda
+Finland,Thailand,0.8134049773216248,panda
+Finland,United Kingdom,0.4197894334793091,panda
+Finland,United States,0.4628039002418518,panda
+France,Germany,0.6156803965568542,panda
+France,Hungary,0.8278713226318359,panda
+France,Italy,0.5200890898704529,panda
+France,"Korea, South",0.6965366005897522,panda
+France,Philippines,0.4816681742668152,panda
+France,Poland,0.5249161720275879,panda
+France,Russia,0.6554792523384094,panda
+France,Saudi Arabia,0.6929879188537598,panda
+France,Sweden,0.5449323654174805,panda
+France,Thailand,0.6224969029426575,panda
+France,United Kingdom,0.4785580337047577,panda
+France,United States,0.4650801420211792,panda
+Germany,Hungary,0.5492960810661316,panda
+Germany,Italy,0.5329274535179138,panda
+Germany,"Korea, South",1.0216330289840698,panda
+Germany,Philippines,0.9051041007041931,panda
+Germany,Poland,0.5764515399932861,panda
+Germany,Russia,1.1112899780273438,panda
+Germany,Saudi Arabia,0.45105820894241333,panda
+Germany,Sweden,0.5365392565727234,panda
+Germany,Thailand,1.0025924444198608,panda
+Germany,United Kingdom,0.5434249639511108,panda
+Germany,United States,0.46529942750930786,panda
+Hungary,Italy,0.6102205514907837,panda
+Hungary,"Korea, South",1.2577431201934814,panda
+Hungary,Philippines,1.0768986940383911,panda
+Hungary,Poland,0.6380793452262878,panda
+Hungary,Russia,1.2516696453094482,panda
+Hungary,Saudi Arabia,0.4314079284667969,panda
+Hungary,Sweden,0.7478253245353699,panda
+Hungary,Thailand,1.2882338762283325,panda
+Hungary,United Kingdom,0.5259236097335815,panda
+Hungary,United States,0.623831570148468,panda
+Italy,"Korea, South",0.7945685386657715,panda
+Italy,Philippines,0.7208096385002136,panda
+Italy,Poland,0.3711116909980774,panda
+Italy,Russia,0.8908447027206421,panda
+Italy,Saudi Arabia,0.5229594707489014,panda
+Italy,Sweden,0.6256662607192993,panda
+Italy,Thailand,0.8539323806762695,panda
+Italy,United Kingdom,0.4306309223175049,panda
+Italy,United States,0.43052226305007935,panda
+"Korea, South",Philippines,0.681202232837677,panda
+"Korea, South",Poland,0.7959175109863281,panda
+"Korea, South",Russia,0.5796796083450317,panda
+"Korea, South",Saudi Arabia,1.1050853729248047,panda
+"Korea, South",Sweden,0.8697105050086975,panda
+"Korea, South",Thailand,0.4014274775981903,panda
+"Korea, South",United Kingdom,0.9103339314460754,panda
+"Korea, South",United States,0.8748494982719421,panda
+Philippines,Poland,0.6380868554115295,panda
+Philippines,Russia,0.469245970249176,panda
+Philippines,Saudi Arabia,0.9065639972686768,panda
+Philippines,Sweden,0.6685667634010315,panda
+Philippines,Thailand,0.5932839512825012,panda
+Philippines,United Kingdom,0.6590569615364075,panda
+Philippines,United States,0.5980455279350281,panda
+Poland,Russia,0.8076498508453369,panda
+Poland,Saudi Arabia,0.514407217502594,panda
+Poland,Sweden,0.5801639556884766,panda
+Poland,Thailand,0.850975513458252,panda
+Poland,United Kingdom,0.36836645007133484,panda
+Poland,United States,0.4101105332374573,panda
+Russia,Saudi Arabia,1.1019339561462402,panda
+Russia,Sweden,0.9017756581306458,panda
+Russia,Thailand,0.4858206510543823,panda
+Russia,United Kingdom,0.8410195112228394,panda
+Russia,United States,0.8369026780128479,panda
+Saudi Arabia,Sweden,0.583728551864624,panda
+Saudi Arabia,Thailand,1.1098673343658447,panda
+Saudi Arabia,United Kingdom,0.4195575714111328,panda
+Saudi Arabia,United States,0.4938379228115082,panda
+Sweden,Thailand,0.8045399188995361,panda
+Sweden,United Kingdom,0.53477942943573,panda
+Sweden,United States,0.5214629173278809,panda
+Thailand,United Kingdom,0.903515636920929,panda
+Thailand,United States,0.8221315145492554,panda
+United Kingdom,United States,0.3708686828613281,panda

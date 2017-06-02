@@ -1,0 +1,106 @@
+country1,country2,dist,word
+Australia,Brazil,0.7404986619949341,clock
+Australia,Canada,0.6219043135643005,clock
+Australia,Czech Republic,0.8526262044906616,clock
+Australia,Finland,0.7542240619659424,clock
+Australia,France,1.0709654092788696,clock
+Australia,Germany,0.6007831692695618,clock
+Australia,Italy,0.7355824708938599,clock
+Australia,"Korea, South",0.7572243809700012,clock
+Australia,Poland,0.8469299077987671,clock
+Australia,Russia,0.7249093055725098,clock
+Australia,Saudi Arabia,0.7174198031425476,clock
+Australia,Sweden,0.5846048593521118,clock
+Australia,United Kingdom,1.1079190969467163,clock
+Australia,United States,1.6216650009155273,clock
+Brazil,Canada,0.7844080924987793,clock
+Brazil,Czech Republic,0.7646164894104004,clock
+Brazil,Finland,0.6978922486305237,clock
+Brazil,France,0.983796238899231,clock
+Brazil,Germany,0.912014365196228,clock
+Brazil,Italy,0.6209743022918701,clock
+Brazil,"Korea, South",0.7401332259178162,clock
+Brazil,Poland,0.7779342532157898,clock
+Brazil,Russia,0.7207227349281311,clock
+Brazil,Saudi Arabia,0.9002249836921692,clock
+Brazil,Sweden,0.6449014544487,clock
+Brazil,United Kingdom,1.1721605062484741,clock
+Brazil,United States,1.5832748413085938,clock
+Canada,Czech Republic,1.0115464925765991,clock
+Canada,Finland,0.7531952261924744,clock
+Canada,France,1.3395689725875854,clock
+Canada,Germany,0.6869705319404602,clock
+Canada,Italy,0.8780707120895386,clock
+Canada,"Korea, South",0.9825868010520935,clock
+Canada,Poland,1.0952225923538208,clock
+Canada,Russia,0.8981761336326599,clock
+Canada,Saudi Arabia,0.9719008803367615,clock
+Canada,Sweden,0.7894241809844971,clock
+Canada,United Kingdom,0.716501772403717,clock
+Canada,United States,1.209890604019165,clock
+Czech Republic,Finland,0.9277849793434143,clock
+Czech Republic,France,1.0334943532943726,clock
+Czech Republic,Germany,0.8299192786216736,clock
+Czech Republic,Italy,0.7282673120498657,clock
+Czech Republic,"Korea, South",0.7654204964637756,clock
+Czech Republic,Poland,0.7279514074325562,clock
+Czech Republic,Russia,0.8758574724197388,clock
+Czech Republic,Saudi Arabia,0.8256735801696777,clock
+Czech Republic,Sweden,0.7977216243743896,clock
+Czech Republic,United Kingdom,1.385576605796814,clock
+Czech Republic,United States,1.8940702676773071,clock
+Finland,France,1.1162341833114624,clock
+Finland,Germany,1.0583914518356323,clock
+Finland,Italy,0.6484071016311646,clock
+Finland,"Korea, South",0.7312989830970764,clock
+Finland,Poland,1.0276408195495605,clock
+Finland,Russia,1.032236099243164,clock
+Finland,Saudi Arabia,0.9277293086051941,clock
+Finland,Sweden,0.5988050103187561,clock
+Finland,United Kingdom,1.1049972772598267,clock
+Finland,United States,1.5377602577209473,clock
+France,Germany,1.4009288549423218,clock
+France,Italy,0.7547518610954285,clock
+France,"Korea, South",1.0398534536361694,clock
+France,Poland,0.5933184623718262,clock
+France,Russia,0.8406746983528137,clock
+France,Saudi Arabia,0.9328294992446899,clock
+France,Sweden,0.8323376774787903,clock
+France,United Kingdom,1.900274634361267,clock
+France,United States,2.3186707496643066,clock
+Germany,Italy,1.0534182786941528,clock
+Germany,"Korea, South",1.0036497116088867,clock
+Germany,Poland,1.0877376794815063,clock
+Germany,Russia,0.8729234337806702,clock
+Germany,Saudi Arabia,0.9723228812217712,clock
+Germany,Sweden,0.8930424451828003,clock
+Germany,United Kingdom,0.9970921874046326,clock
+Germany,United States,1.5394983291625977,clock
+Italy,"Korea, South",0.677562415599823,clock
+Italy,Poland,0.6130585074424744,clock
+Italy,Russia,0.7195042371749878,clock
+Italy,Saudi Arabia,0.6984498500823975,clock
+Italy,Sweden,0.5295441150665283,clock
+Italy,United Kingdom,1.3848358392715454,clock
+Italy,United States,1.8145745992660522,clock
+"Korea, South",Poland,0.8790386915206909,clock
+"Korea, South",Russia,0.98961639404296875,clock
+"Korea, South",Saudi Arabia,0.9159266948699951,clock
+"Korea, South",Sweden,0.588036060333252,clock
+"Korea, South",United Kingdom,1.3395557403564453,clock
+"Korea, South",United States,1.825974464416504,clock
+Poland,Russia,0.6381442546844482,clock
+Poland,Saudi Arabia,0.7323830127716064,clock
+Poland,Sweden,0.727859616279602,clock
+Poland,United Kingdom,1.6525115966796875,clock
+Poland,United States,2.108192205429077,clock
+Russia,Saudi Arabia,0.6866500377655029,clock
+Russia,Sweden,0.7620461583137512,clock
+Russia,United Kingdom,1.4401432275772095,clock
+Russia,United States,1.8458447456359863,clock
+Saudi Arabia,Sweden,0.7059692740440369,clock
+Saudi Arabia,United Kingdom,1.5097126960754395,clock
+Saudi Arabia,United States,1.9402285814285278,clock
+Sweden,United Kingdom,1.2725404500961304,clock
+Sweden,United States,1.750860333442688,clock
+United Kingdom,United States,0.634567141532898,clock

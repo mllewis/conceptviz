@@ -1,0 +1,137 @@
+country1,country2,dist,word
+Australia,Brazil,0.4784339666366577,ice cream
+Australia,Canada,0.9812140464782715,ice cream
+Australia,Czech Republic,1.0713613033294678,ice cream
+Australia,Finland,0.6052548885345459,ice cream
+Australia,France,0.7359755635261536,ice cream
+Australia,Germany,0.6693326830863953,ice cream
+Australia,Italy,0.7540591359138489,ice cream
+Australia,"Korea, South",1.3122899532318115,ice cream
+Australia,Philippines,0.8536981344223022,ice cream
+Australia,Poland,0.9110727310180664,ice cream
+Australia,Russia,0.6047467589378357,ice cream
+Australia,Saudi Arabia,0.672998309135437,ice cream
+Australia,Sweden,0.684933066368103,ice cream
+Australia,Thailand,0.8292461037635803,ice cream
+Australia,United Kingdom,1.3069757223129272,ice cream
+Australia,United States,2.8742377758026123,ice cream
+Brazil,Canada,1.162685751914978,ice cream
+Brazil,Czech Republic,0.8419802188873291,ice cream
+Brazil,Finland,0.5932559967041016,ice cream
+Brazil,France,0.5773659348487854,ice cream
+Brazil,Germany,0.8686181902885437,ice cream
+Brazil,Italy,0.7735684514045715,ice cream
+Brazil,"Korea, South",1.2245303392410278,ice cream
+Brazil,Philippines,0.7648532390594482,ice cream
+Brazil,Poland,0.8247464299201965,ice cream
+Brazil,Russia,0.577695906162262,ice cream
+Brazil,Saudi Arabia,0.5453521013259888,ice cream
+Brazil,Sweden,0.7550023198127747,ice cream
+Brazil,Thailand,0.6957249641418457,ice cream
+Brazil,United Kingdom,1.4712064266204834,ice cream
+Brazil,United States,3.052574396133423,ice cream
+Canada,Czech Republic,1.8553849458694458,ice cream
+Canada,Finland,1.1804513931274414,ice cream
+Canada,France,1.4178589582443237,ice cream
+Canada,Germany,0.900312066078186,ice cream
+Canada,Italy,1.5049067735671997,ice cream
+Canada,"Korea, South",1.632389783859253,ice cream
+Canada,Philippines,1.1879048347473145,ice cream
+Canada,Poland,1.650909662246704,ice cream
+Canada,Russia,1.217349648475647,ice cream
+Canada,Saudi Arabia,1.35697340965271,ice cream
+Canada,Sweden,1.2111148834228516,ice cream
+Canada,Thailand,1.39138662815094,ice cream
+Canada,United Kingdom,0.5841192007064819,ice cream
+Canada,United States,1.999220609664917,ice cream
+Czech Republic,Finland,0.8396372199058533,ice cream
+Czech Republic,France,0.6809499263763428,ice cream
+Czech Republic,Germany,1.293334722518921,ice cream
+Czech Republic,Italy,0.8200752139091492,ice cream
+Czech Republic,"Korea, South",1.3254207372665405,ice cream
+Czech Republic,Philippines,1.1848515272140503,ice cream
+Czech Republic,Poland,0.6426387429237366,ice cream
+Czech Republic,Russia,0.7530673146247864,ice cream
+Czech Republic,Saudi Arabia,0.7113359570503235,ice cream
+Czech Republic,Sweden,0.9664327502250671,ice cream
+Czech Republic,Thailand,0.889002799987793,ice cream
+Czech Republic,United Kingdom,2.1046507358551025,ice cream
+Czech Republic,United States,3.65920090675354,ice cream
+Finland,France,0.6559506058692932,ice cream
+Finland,Germany,0.9031492471694946,ice cream
+Finland,Italy,0.9447039365768433,ice cream
+Finland,"Korea, South",0.9747911691665649,ice cream
+Finland,Philippines,0.7217831611633301,ice cream
+Finland,Poland,0.7953378558158875,ice cream
+Finland,Russia,0.4902648627758026,ice cream
+Finland,Saudi Arabia,0.5035287141799927,ice cream
+Finland,Sweden,0.7580686211585999,ice cream
+Finland,Thailand,0.5450426936149597,ice cream
+Finland,United Kingdom,1.5051395893096924,ice cream
+Finland,United States,3.055407762527466,ice cream
+France,Germany,1.018631935119629,ice cream
+France,Italy,0.7167619466781616,ice cream
+France,"Korea, South",1.287010669708252,ice cream
+France,Philippines,0.8128333687782288,ice cream
+France,Poland,0.72316974401474,ice cream
+France,Russia,0.6424590945243835,ice cream
+France,Saudi Arabia,0.5686355829238892,ice cream
+France,Sweden,0.7905769348144531,ice cream
+France,Thailand,0.7214769721031189,ice cream
+France,United Kingdom,1.698652744293213,ice cream
+France,United States,3.2656757831573486,ice cream
+Germany,Italy,0.851269543170929,ice cream
+Germany,"Korea, South",1.7050336599349976,ice cream
+Germany,Philippines,1.2238483428955078,ice cream
+Germany,Poland,1.0030721426010132,ice cream
+Germany,Russia,0.7432971000671387,ice cream
+Germany,Saudi Arabia,0.9915067553520203,ice cream
+Germany,Sweden,0.6336617469787598,ice cream
+Germany,Thailand,1.2735315561294556,ice cream
+Germany,United Kingdom,1.0761990547180176,ice cream
+Germany,United States,2.6381707191467285,ice cream
+Italy,"Korea, South",1.709139108657837,ice cream
+Italy,Philippines,1.2227404117584229,ice cream
+Italy,Poland,0.5993680357933044,ice cream
+Italy,Russia,0.7237275242805481,ice cream
+Italy,Saudi Arabia,0.7774093151092529,ice cream
+Italy,Sweden,0.602116048336029,ice cream
+Italy,Thailand,1.1586288213729858,ice cream
+Italy,United Kingdom,1.7546180486679077,ice cream
+Italy,United States,3.3231935501098633,ice cream
+"Korea, South",Philippines,1.2252546548843384,ice cream
+"Korea, South",Poland,1.3677458763122559,ice cream
+"Korea, South",Russia,1.1270390748977661,ice cream
+"Korea, South",Saudi Arabia,1.0264707803726196,ice cream
+"Korea, South",Sweden,1.5035570859909058,ice cream
+"Korea, South",Thailand,0.7274815440177917,ice cream
+"Korea, South",United Kingdom,2.039824962615967,ice cream
+"Korea, South",United States,3.4279048442840576,ice cream
+Philippines,Poland,1.2308621406555176,ice cream
+Philippines,Russia,0.9461417198181152,ice cream
+Philippines,Saudi Arabia,0.931414783000946,ice cream
+Philippines,Sweden,1.1763511896133423,ice cream
+Philippines,Thailand,0.7603466510772705,ice cream
+Philippines,United Kingdom,1.4678648710250854,ice cream
+Philippines,United States,2.8980202674865723,ice cream
+Poland,Russia,0.5966853499412537,ice cream
+Poland,Saudi Arabia,0.6286845207214355,ice cream
+Poland,Sweden,0.5531719326972961,ice cream
+Poland,Thailand,0.9110235571861267,ice cream
+Poland,United Kingdom,1.933318018913269,ice cream
+Poland,United States,3.506728410720825,ice cream
+Russia,Saudi Arabia,0.48902466893196106,ice cream
+Russia,Sweden,0.5667716860771179,ice cream
+Russia,Thailand,0.7066150307655334,ice cream
+Russia,United Kingdom,1.4694576263427734,ice cream
+Russia,United States,3.0475876331329346,ice cream
+Saudi Arabia,Sweden,0.6987623572349548,ice cream
+Saudi Arabia,Thailand,0.5588276982307434,ice cream
+Saudi Arabia,United Kingdom,1.689077615737915,ice cream
+Saudi Arabia,United States,3.246914863586426,ice cream
+Sweden,Thailand,1.0634208917617798,ice cream
+Sweden,United Kingdom,1.4911823272705078,ice cream
+Sweden,United States,3.048893928527832,ice cream
+Thailand,United Kingdom,1.7671259641647339,ice cream
+Thailand,United States,3.2772209644317627,ice cream
+United Kingdom,United States,1.6182963848114014,ice cream

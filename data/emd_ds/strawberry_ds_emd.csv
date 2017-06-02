@@ -1,0 +1,137 @@
+country1,country2,dist,word
+Australia,Brazil,0.6213394999504089,strawberry
+Australia,Canada,0.6451119184494019,strawberry
+Australia,Czech Republic,0.7213054895401001,strawberry
+Australia,Finland,0.6271639466285706,strawberry
+Australia,France,0.647218644618988,strawberry
+Australia,Germany,0.4870951473712921,strawberry
+Australia,Italy,0.5231672525405884,strawberry
+Australia,"Korea, South",0.6326591968536377,strawberry
+Australia,Philippines,0.8579472899436951,strawberry
+Australia,Poland,0.64532470703125,strawberry
+Australia,Russia,0.6413625478744507,strawberry
+Australia,Saudi Arabia,0.874947726726532,strawberry
+Australia,Sweden,0.6257043480873108,strawberry
+Australia,Thailand,0.9730228185653687,strawberry
+Australia,United Kingdom,0.5824515223503113,strawberry
+Australia,United States,0.6589416861534119,strawberry
+Brazil,Canada,0.6783984303474426,strawberry
+Brazil,Czech Republic,0.5951696038246155,strawberry
+Brazil,Finland,0.6642493605613708,strawberry
+Brazil,France,0.7472876906394958,strawberry
+Brazil,Germany,0.5445818305015564,strawberry
+Brazil,Italy,0.6094499826431274,strawberry
+Brazil,"Korea, South",0.590674102306366,strawberry
+Brazil,Philippines,0.7867385745048523,strawberry
+Brazil,Poland,0.688174307346344,strawberry
+Brazil,Russia,0.7569743990898132,strawberry
+Brazil,Saudi Arabia,0.7229875922203064,strawberry
+Brazil,Sweden,0.6589943766593933,strawberry
+Brazil,Thailand,0.889655351638794,strawberry
+Brazil,United Kingdom,0.6304816007614136,strawberry
+Brazil,United States,0.6785931587219238,strawberry
+Canada,Czech Republic,0.7662343382835388,strawberry
+Canada,Finland,0.6906239986419678,strawberry
+Canada,France,0.5520257353782654,strawberry
+Canada,Germany,0.677453339099884,strawberry
+Canada,Italy,0.6077951192855835,strawberry
+Canada,"Korea, South",0.8340200185775757,strawberry
+Canada,Philippines,0.861642062664032,strawberry
+Canada,Poland,0.585981547832489,strawberry
+Canada,Russia,0.7382791638374329,strawberry
+Canada,Saudi Arabia,1.0291963815689087,strawberry
+Canada,Sweden,0.5479776263237,strawberry
+Canada,Thailand,1.2662004232406616,strawberry
+Canada,United Kingdom,0.636411190032959,strawberry
+Canada,United States,0.5980960726737976,strawberry
+Czech Republic,Finland,0.8668900728225708,strawberry
+Czech Republic,France,0.8286464214324951,strawberry
+Czech Republic,Germany,0.6860159039497375,strawberry
+Czech Republic,Italy,0.6701451539993286,strawberry
+Czech Republic,"Korea, South",0.8109793066978455,strawberry
+Czech Republic,Philippines,1.0803864002227783,strawberry
+Czech Republic,Poland,0.7457351088523865,strawberry
+Czech Republic,Russia,0.8534039855003357,strawberry
+Czech Republic,Saudi Arabia,0.8069937229156494,strawberry
+Czech Republic,Sweden,0.7110315561294556,strawberry
+Czech Republic,Thailand,1.026018500328064,strawberry
+Czech Republic,United Kingdom,0.7713881134986877,strawberry
+Czech Republic,United States,0.5871191024780273,strawberry
+Finland,France,0.655083179473877,strawberry
+Finland,Germany,0.6570155620574951,strawberry
+Finland,Italy,0.6869301199913025,strawberry
+Finland,"Korea, South",0.7380125522613525,strawberry
+Finland,Philippines,0.8827048540115356,strawberry
+Finland,Poland,0.688001811504364,strawberry
+Finland,Russia,0.6619411110877991,strawberry
+Finland,Saudi Arabia,1.0026016235351562,strawberry
+Finland,Sweden,0.5857886075973511,strawberry
+Finland,Thailand,1.0882015228271484,strawberry
+Finland,United Kingdom,0.7753978967666626,strawberry
+Finland,United States,0.7944918870925903,strawberry
+France,Germany,0.7323318719863892,strawberry
+France,Italy,0.6536336541175842,strawberry
+France,"Korea, South",0.8913979530334473,strawberry
+France,Philippines,0.9634096622467041,strawberry
+France,Poland,0.5422921776771545,strawberry
+France,Russia,0.7172913551330566,strawberry
+France,Saudi Arabia,1.0904194116592407,strawberry
+France,Sweden,0.5638890266418457,strawberry
+France,Thailand,1.2801579236984253,strawberry
+France,United Kingdom,0.615714967250824,strawberry
+France,United States,0.652938187122345,strawberry
+Germany,Italy,0.6134567856788635,strawberry
+Germany,"Korea, South",0.5910006165504456,strawberry
+Germany,Philippines,0.7073203921318054,strawberry
+Germany,Poland,0.7485527396202087,strawberry
+Germany,Russia,0.5660690665245056,strawberry
+Germany,Saudi Arabia,0.7060354351997375,strawberry
+Germany,Sweden,0.6360845565795898,strawberry
+Germany,Thailand,0.8368636965751648,strawberry
+Germany,United Kingdom,0.5969600081443787,strawberry
+Germany,United States,0.6795809268951416,strawberry
+Italy,"Korea, South",0.7326208353042603,strawberry
+Italy,Philippines,0.939909815788269,strawberry
+Italy,Poland,0.57048797607421875,strawberry
+Italy,Russia,0.7842044234275818,strawberry
+Italy,Saudi Arabia,0.9615017771720886,strawberry
+Italy,Sweden,0.5011361837387085,strawberry
+Italy,Thailand,1.0471125841140747,strawberry
+Italy,United Kingdom,0.6393315196037292,strawberry
+Italy,United States,0.6094940304756165,strawberry
+"Korea, South",Philippines,0.8230801224708557,strawberry
+"Korea, South",Poland,0.8202773332595825,strawberry
+"Korea, South",Russia,0.7388656735420227,strawberry
+"Korea, South",Saudi Arabia,0.7762466669082642,strawberry
+"Korea, South",Sweden,0.8434689044952393,strawberry
+"Korea, South",Thailand,0.7164086103439331,strawberry
+"Korea, South",United Kingdom,0.7504122853279114,strawberry
+"Korea, South",United States,0.9056168794631958,strawberry
+Philippines,Poland,1.1272870302200317,strawberry
+Philippines,Russia,0.764862060546875,strawberry
+Philippines,Saudi Arabia,0.7384947538375854,strawberry
+Philippines,Sweden,0.9056203961372375,strawberry
+Philippines,Thailand,0.961647629737854,strawberry
+Philippines,United Kingdom,0.8112320899963379,strawberry
+Philippines,United States,1.0999606847763062,strawberry
+Poland,Russia,0.8570178151130676,strawberry
+Poland,Saudi Arabia,1.146567463874817,strawberry
+Poland,Sweden,0.5581386685371399,strawberry
+Poland,Thailand,1.2397048473358154,strawberry
+Poland,United Kingdom,0.7242577075958252,strawberry
+Poland,United States,0.5630626678466797,strawberry
+Russia,Saudi Arabia,0.8309324383735657,strawberry
+Russia,Sweden,0.7573825716972351,strawberry
+Russia,Thailand,1.059924840927124,strawberry
+Russia,United Kingdom,0.6990495920181274,strawberry
+Russia,United States,0.8087007999420166,strawberry
+Saudi Arabia,Sweden,1.021031379699707,strawberry
+Saudi Arabia,Thailand,0.7198030948638916,strawberry
+Saudi Arabia,United Kingdom,0.8204339742660522,strawberry
+Saudi Arabia,United States,0.9766163229942322,strawberry
+Sweden,Thailand,1.1801536083221436,strawberry
+Sweden,United Kingdom,0.6956725120544434,strawberry
+Sweden,United States,0.5646486878395081,strawberry
+Thailand,United Kingdom,1.0813705921173096,strawberry
+Thailand,United States,1.160527229309082,strawberry
+United Kingdom,United States,0.6881075501441956,strawberry

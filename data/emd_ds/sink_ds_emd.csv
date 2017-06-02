@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.8615810871124268,sink
+Australia,Canada,0.8788821697235107,sink
+Australia,Czech Republic,0.7229447960853577,sink
+Australia,Finland,0.674709677696228,sink
+Australia,France,0.7227615714073181,sink
+Australia,Germany,0.6784869432449341,sink
+Australia,Hungary,0.6143333911895752,sink
+Australia,Italy,0.713391900062561,sink
+Australia,"Korea, South",0.6437026262283325,sink
+Australia,Philippines,0.7594346404075623,sink
+Australia,Poland,0.6337807774543762,sink
+Australia,Russia,1.0214927196502686,sink
+Australia,Saudi Arabia,0.9234424233436584,sink
+Australia,Sweden,0.635439932346344,sink
+Australia,Thailand,0.7724035382270813,sink
+Australia,United Kingdom,0.7318259477615356,sink
+Australia,United States,0.889219343662262,sink
+Brazil,Canada,0.7118316292762756,sink
+Brazil,Czech Republic,0.6931502819061279,sink
+Brazil,Finland,0.6505046486854553,sink
+Brazil,France,0.7681592702865601,sink
+Brazil,Germany,0.8880318403244019,sink
+Brazil,Hungary,0.9142983555793762,sink
+Brazil,Italy,0.6515777111053467,sink
+Brazil,"Korea, South",0.914099395275116,sink
+Brazil,Philippines,1.0489212274551392,sink
+Brazil,Poland,0.8864758610725403,sink
+Brazil,Russia,0.67263031005859375,sink
+Brazil,Saudi Arabia,0.9265267848968506,sink
+Brazil,Sweden,0.7242435216903687,sink
+Brazil,Thailand,0.9061278104782104,sink
+Brazil,United Kingdom,0.8081926703453064,sink
+Brazil,United States,0.6970118880271912,sink
+Canada,Czech Republic,0.6662555932998657,sink
+Canada,Finland,0.8578232526779175,sink
+Canada,France,0.6667594313621521,sink
+Canada,Germany,0.7934013605117798,sink
+Canada,Hungary,0.6785754561424255,sink
+Canada,Italy,0.6139779686927795,sink
+Canada,"Korea, South",1.0092626810073853,sink
+Canada,Philippines,0.8137819170951843,sink
+Canada,Poland,1.0190930366516113,sink
+Canada,Russia,0.7625636458396912,sink
+Canada,Saudi Arabia,0.8444383144378662,sink
+Canada,Sweden,0.7936592102050781,sink
+Canada,Thailand,0.6849837303161621,sink
+Canada,United Kingdom,0.84578537940979,sink
+Canada,United States,0.6441713571548462,sink
+Czech Republic,Finland,0.6822720170021057,sink
+Czech Republic,France,0.6515540480613708,sink
+Czech Republic,Germany,0.6723737716674805,sink
+Czech Republic,Hungary,0.7218955159187317,sink
+Czech Republic,Italy,0.6548249125480652,sink
+Czech Republic,"Korea, South",0.7091501951217651,sink
+Czech Republic,Philippines,0.8451995849609375,sink
+Czech Republic,Poland,0.6947990655899048,sink
+Czech Republic,Russia,0.8450458645820618,sink
+Czech Republic,Saudi Arabia,0.8234575986862183,sink
+Czech Republic,Sweden,0.5203608274459839,sink
+Czech Republic,Thailand,0.7511078715324402,sink
+Czech Republic,United Kingdom,0.6127279996871948,sink
+Czech Republic,United States,0.754667341709137,sink
+Finland,France,0.7892187237739563,sink
+Finland,Germany,0.7034794092178345,sink
+Finland,Hungary,0.8029735088348389,sink
+Finland,Italy,0.6377047896385193,sink
+Finland,"Korea, South",0.7661746740341187,sink
+Finland,Philippines,0.9809409976005554,sink
+Finland,Poland,0.6903327107429504,sink
+Finland,Russia,0.67911297082901,sink
+Finland,Saudi Arabia,0.7791983485221863,sink
+Finland,Sweden,0.5764392614364624,sink
+Finland,Thailand,0.7819200754165649,sink
+Finland,United Kingdom,0.6082063913345337,sink
+Finland,United States,0.7535145878791809,sink
+France,Germany,0.6974849104881287,sink
+France,Hungary,0.6981553435325623,sink
+France,Italy,0.6686926484107971,sink
+France,"Korea, South",0.8858993649482727,sink
+France,Philippines,0.6285691857337952,sink
+France,Poland,0.7250809073448181,sink
+France,Russia,0.8427205085754395,sink
+France,Saudi Arabia,1.0365221500396729,sink
+France,Sweden,0.6919581890106201,sink
+France,Thailand,0.8837230801582336,sink
+France,United Kingdom,0.8151355385780334,sink
+France,United States,0.8336377739906311,sink
+Germany,Hungary,0.5993075966835022,sink
+Germany,Italy,0.6250760555267334,sink
+Germany,"Korea, South",0.8401187658309937,sink
+Germany,Philippines,0.6857312917709351,sink
+Germany,Poland,0.7779955863952637,sink
+Germany,Russia,0.9350693225860596,sink
+Germany,Saudi Arabia,0.8847625851631165,sink
+Germany,Sweden,0.6227288842201233,sink
+Germany,Thailand,0.744301974773407,sink
+Germany,United Kingdom,0.6905276775360107,sink
+Germany,United States,0.9103100299835205,sink
+Hungary,Italy,0.6029582023620605,sink
+Hungary,"Korea, South",0.8927239775657654,sink
+Hungary,Philippines,0.6604992151260376,sink
+Hungary,Poland,0.907063364982605,sink
+Hungary,Russia,0.957095205783844,sink
+Hungary,Saudi Arabia,0.7622436285018921,sink
+Hungary,Sweden,0.7426656484603882,sink
+Hungary,Thailand,0.6226403713226318,sink
+Hungary,United Kingdom,0.8314163684844971,sink
+Hungary,United States,0.7859198451042175,sink
+Italy,"Korea, South",0.8943385481834412,sink
+Italy,Philippines,0.7661424875259399,sink
+Italy,Poland,0.8372295498847961,sink
+Italy,Russia,0.7614747881889343,sink
+Italy,Saudi Arabia,0.7928593754768372,sink
+Italy,Sweden,0.6004860401153564,sink
+Italy,Thailand,0.6542982459068298,sink
+Italy,United Kingdom,0.7994622588157654,sink
+Italy,United States,0.6882413625717163,sink
+"Korea, South",Philippines,1.0652506351470947,sink
+"Korea, South",Poland,0.48657169938087463,sink
+"Korea, South",Russia,1.163208246231079,sink
+"Korea, South",Saudi Arabia,0.9885797500610352,sink
+"Korea, South",Sweden,0.6373090147972107,sink
+"Korea, South",Thailand,0.952504575252533,sink
+"Korea, South",United Kingdom,0.710835874080658,sink
+"Korea, South",United States,0.9877703785896301,sink
+Philippines,Poland,0.933496356010437,sink
+Philippines,Russia,1.1237777471542358,sink
+Philippines,Saudi Arabia,1.134360432624817,sink
+Philippines,Sweden,0.8754964470863342,sink
+Philippines,Thailand,0.8895887136459351,sink
+Philippines,United Kingdom,0.9846886992454529,sink
+Philippines,United States,0.9866676926612854,sink
+Poland,Russia,1.1154156923294067,sink
+Poland,Saudi Arabia,1.0430610179901123,sink
+Poland,Sweden,0.5235300660133362,sink
+Poland,Thailand,0.9305729866027832,sink
+Poland,United Kingdom,0.6606199145317078,sink
+Poland,United States,1.0374970436096191,sink
+Russia,Saudi Arabia,0.7643774747848511,sink
+Russia,Sweden,0.8940424919128418,sink
+Russia,Thailand,0.8916565179824829,sink
+Russia,United Kingdom,0.7875517010688782,sink
+Russia,United States,0.6401366591453552,sink
+Saudi Arabia,Sweden,0.8564505577087402,sink
+Saudi Arabia,Thailand,0.6342872381210327,sink
+Saudi Arabia,United Kingdom,0.7514778971672058,sink
+Saudi Arabia,United States,0.6862024664878845,sink
+Sweden,Thailand,0.7599986791610718,sink
+Sweden,United Kingdom,0.6157501935958862,sink
+Sweden,United States,0.8157035112380981,sink
+Thailand,United Kingdom,0.7946619391441345,sink
+Thailand,United States,0.7262241840362549,sink
+United Kingdom,United States,0.8862362504005432,sink

@@ -1,0 +1,106 @@
+country1,country2,dist,word
+Australia,Brazil,1.1656230688095093,triangle
+Australia,Canada,0.8768250346183777,triangle
+Australia,Czech Republic,1.136792778968811,triangle
+Australia,Finland,0.839043140411377,triangle
+Australia,France,0.6393847465515137,triangle
+Australia,Germany,1.0530303716659546,triangle
+Australia,Italy,1.0975239276885986,triangle
+Australia,"Korea, South",1.5022605657577515,triangle
+Australia,Poland,0.7013174295425415,triangle
+Australia,Russia,0.9418464303016663,triangle
+Australia,Saudi Arabia,0.9611877799034119,triangle
+Australia,Sweden,0.6437478065490723,triangle
+Australia,United Kingdom,1.3398092985153198,triangle
+Australia,United States,2.4395699501037598,triangle
+Brazil,Canada,1.176776647567749,triangle
+Brazil,Czech Republic,1.9945858716964722,triangle
+Brazil,Finland,0.8794535994529724,triangle
+Brazil,France,1.0326372385025024,triangle
+Brazil,Germany,1.5167433023452759,triangle
+Brazil,Italy,0.7898193597793579,triangle
+Brazil,"Korea, South",2.3972675800323486,triangle
+Brazil,Poland,1.4887053966522217,triangle
+Brazil,Russia,1.7981526851654053,triangle
+Brazil,Saudi Arabia,1.5066571235656738,triangle
+Brazil,Sweden,1.425130844116211,triangle
+Brazil,United Kingdom,1.6237807273864746,triangle
+Brazil,United States,2.7601675987243652,triangle
+Canada,Czech Republic,1.5320014953613281,triangle
+Canada,Finland,0.9813573956489563,triangle
+Canada,France,1.0840022563934326,triangle
+Canada,Germany,0.6436195969581604,triangle
+Canada,Italy,1.4728639125823975,triangle
+Canada,"Korea, South",1.9170681238174438,triangle
+Canada,Poland,1.1955796480178833,triangle
+Canada,Russia,1.0387693643569946,triangle
+Canada,Saudi Arabia,1.1548525094985962,triangle
+Canada,Sweden,0.9821383953094482,triangle
+Canada,United Kingdom,0.7768914103507996,triangle
+Canada,United States,1.8726128339767456,triangle
+Czech Republic,Finland,1.4881722927093506,triangle
+Czech Republic,France,1.2983616590499878,triangle
+Czech Republic,Germany,1.3945339918136597,triangle
+Czech Republic,Italy,1.8329628705978394,triangle
+Czech Republic,"Korea, South",0.717226505279541,triangle
+Czech Republic,Poland,0.7977235317230225,triangle
+Czech Republic,Russia,0.9172519445419312,triangle
+Czech Republic,Saudi Arabia,1.3145440816879272,triangle
+Czech Republic,Sweden,1.0167131423950195,triangle
+Czech Republic,United Kingdom,1.9343786239624023,triangle
+Czech Republic,United States,2.7822377681732178,triangle
+Finland,France,0.9272754788398743,triangle
+Finland,Germany,1.2519797086715698,triangle
+Finland,Italy,0.8642778396606445,triangle
+Finland,"Korea, South",1.8440836668014526,triangle
+Finland,Poland,1.0111804008483887,triangle
+Finland,Russia,1.3359934091567993,triangle
+Finland,Saudi Arabia,0.8845495581626892,triangle
+Finland,Sweden,0.8786620497703552,triangle
+Finland,United Kingdom,1.3908748626708984,triangle
+Finland,United States,2.5338687896728516,triangle
+France,Germany,1.2836610078811646,triangle
+France,Italy,1.0697400569915771,triangle
+France,"Korea, South",1.6555655002593994,triangle
+France,Poland,0.9587814807891846,triangle
+France,Russia,1.2556222677230835,triangle
+France,Saudi Arabia,1.1622545719146729,triangle
+France,Sweden,0.9569785594940186,triangle
+France,United Kingdom,1.6180696487426758,triangle
+France,United States,2.743138074874878,triangle
+Germany,Italy,1.8036868572235107,triangle
+Germany,"Korea, South",1.7518295049667358,triangle
+Germany,Poland,1.2117094993591309,triangle
+Germany,Russia,0.9121513366699219,triangle
+Germany,Saudi Arabia,1.2137562036514282,triangle
+Germany,Sweden,1.0279903411865234,triangle
+Germany,United Kingdom,0.932510256767273,triangle
+Germany,United States,1.919872760772705,triangle
+Italy,"Korea, South",2.193051815032959,triangle
+Italy,Poland,1.3148555755615234,triangle
+Italy,Russia,1.8334004878997803,triangle
+Italy,Saudi Arabia,1.327695369720459,triangle
+Italy,Sweden,1.3370407819747925,triangle
+Italy,United Kingdom,1.857176661491394,triangle
+Italy,United States,3.024653673171997,triangle
+"Korea, South",Poland,1.1513806581497192,triangle
+"Korea, South",Russia,1.288466453552246,triangle
+"Korea, South",Saudi Arabia,1.7525194883346558,triangle
+"Korea, South",Sweden,1.441283106803894,triangle
+"Korea, South",United Kingdom,2.2522337436676025,triangle
+"Korea, South",United States,2.9838016033172607,triangle
+Poland,Russia,0.8822248578071594,triangle
+Poland,Saudi Arabia,1.0193523168563843,triangle
+Poland,Sweden,0.7137370109558105,triangle
+Poland,United Kingdom,1.5769712924957275,triangle
+Poland,United States,2.6359663009643555,triangle
+Russia,Saudi Arabia,1.0287728309631348,triangle
+Russia,Sweden,0.8249720335006714,triangle
+Russia,United Kingdom,1.43276047706604,triangle
+Russia,United States,2.3219780921936035,triangle
+Saudi Arabia,Sweden,0.7610402703285217,triangle
+Saudi Arabia,United Kingdom,1.4645477533340454,triangle
+Saudi Arabia,United States,2.521322727203369,triangle
+Sweden,United Kingdom,1.3281675577163696,triangle
+Sweden,United States,2.3599300384521484,triangle
+United Kingdom,United States,1.2821333408355713,triangle

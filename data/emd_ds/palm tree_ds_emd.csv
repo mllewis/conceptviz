@@ -1,0 +1,92 @@
+country1,country2,dist,word
+Australia,Brazil,0.6040172576904297,palm tree
+Australia,Canada,0.7443322539329529,palm tree
+Australia,Czech Republic,0.6216239333152771,palm tree
+Australia,Finland,1.1350243091583252,palm tree
+Australia,France,0.6254850029945374,palm tree
+Australia,Germany,0.5816912651062012,palm tree
+Australia,Italy,0.5213649868965149,palm tree
+Australia,Poland,0.5849469304084778,palm tree
+Australia,Russia,0.6372042894363403,palm tree
+Australia,Saudi Arabia,0.977419912815094,palm tree
+Australia,Sweden,0.6275301575660706,palm tree
+Australia,United Kingdom,0.5717136859893799,palm tree
+Australia,United States,0.5707480907440186,palm tree
+Brazil,Canada,0.8402166366577148,palm tree
+Brazil,Czech Republic,0.5789449214935303,palm tree
+Brazil,Finland,1.0690897703170776,palm tree
+Brazil,France,0.8042290806770325,palm tree
+Brazil,Germany,0.6846433877944946,palm tree
+Brazil,Italy,0.5760620832443237,palm tree
+Brazil,Poland,0.6237265467643738,palm tree
+Brazil,Russia,0.590119481086731,palm tree
+Brazil,Saudi Arabia,1.0605816841125488,palm tree
+Brazil,Sweden,0.6642975211143494,palm tree
+Brazil,United Kingdom,0.675664484500885,palm tree
+Brazil,United States,0.6911273002624512,palm tree
+Canada,Czech Republic,0.6963428258895874,palm tree
+Canada,Finland,1.2377164363861084,palm tree
+Canada,France,0.6876936554908752,palm tree
+Canada,Germany,0.5863639116287231,palm tree
+Canada,Italy,0.8102886080741882,palm tree
+Canada,Poland,0.6926132440567017,palm tree
+Canada,Russia,0.8224484920501709,palm tree
+Canada,Saudi Arabia,1.2354880571365356,palm tree
+Canada,Sweden,0.7856172323226929,palm tree
+Canada,United Kingdom,0.6704027056694031,palm tree
+Canada,United States,0.793610155582428,palm tree
+Czech Republic,Finland,0.8780713081359863,palm tree
+Czech Republic,France,0.7710753083229065,palm tree
+Czech Republic,Germany,0.5478537678718567,palm tree
+Czech Republic,Italy,0.4928886294364929,palm tree
+Czech Republic,Poland,0.7061482667922974,palm tree
+Czech Republic,Russia,0.5330009460449219,palm tree
+Czech Republic,Saudi Arabia,0.8925021886825562,palm tree
+Czech Republic,Sweden,0.5846572518348694,palm tree
+Czech Republic,United Kingdom,0.6451784372329712,palm tree
+Czech Republic,United States,0.581534743309021,palm tree
+Finland,France,1.4077075719833374,palm tree
+Finland,Germany,1.0312284231185913,palm tree
+Finland,Italy,0.8763693571090698,palm tree
+Finland,Poland,1.309812307357788,palm tree
+Finland,Russia,0.8912537097930908,palm tree
+Finland,Saudi Arabia,0.6490940451622009,palm tree
+Finland,Sweden,0.793803334236145,palm tree
+Finland,United Kingdom,0.8830413222312927,palm tree
+Finland,United States,0.8795287609100342,palm tree
+France,Germany,0.588362455368042,palm tree
+France,Italy,0.7474552989006042,palm tree
+France,Poland,0.47042223811149597,palm tree
+France,Russia,0.792870819568634,palm tree
+France,Saudi Arabia,1.2272449731826782,palm tree
+France,Sweden,0.8528292179107666,palm tree
+France,United Kingdom,0.7933109998703003,palm tree
+France,United States,0.8046866655349731,palm tree
+Germany,Italy,0.5994864106178284,palm tree
+Germany,Poland,0.5702637434005737,palm tree
+Germany,Russia,0.5461798906326294,palm tree
+Germany,Saudi Arabia,0.9889302849769592,palm tree
+Germany,Sweden,0.5610457062721252,palm tree
+Germany,United Kingdom,0.5230908989906311,palm tree
+Germany,United States,0.5537909269332886,palm tree
+Italy,Poland,0.7001677751541138,palm tree
+Italy,Russia,0.6167250871658325,palm tree
+Italy,Saudi Arabia,0.7944657206535339,palm tree
+Italy,Sweden,0.5670074820518494,palm tree
+Italy,United Kingdom,0.5650004148483276,palm tree
+Italy,United States,0.6140353083610535,palm tree
+Poland,Russia,0.6617684364318848,palm tree
+Poland,Saudi Arabia,1.1226458549499512,palm tree
+Poland,Sweden,0.7398731112480164,palm tree
+Poland,United Kingdom,0.6882807016372681,palm tree
+Poland,United States,0.7291996479034424,palm tree
+Russia,Saudi Arabia,0.8545847535133362,palm tree
+Russia,Sweden,0.5587685704231262,palm tree
+Russia,United Kingdom,0.6166059374809265,palm tree
+Russia,United States,0.5235067009925842,palm tree
+Saudi Arabia,Sweden,0.821484386920929,palm tree
+Saudi Arabia,United Kingdom,0.8537076115608215,palm tree
+Saudi Arabia,United States,0.8173662424087524,palm tree
+Sweden,United Kingdom,0.41343954205513,palm tree
+Sweden,United States,0.4924684464931488,palm tree
+United Kingdom,United States,0.5143786668777466,palm tree

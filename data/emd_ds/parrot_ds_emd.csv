@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.8219664096832275,parrot
+Australia,Canada,0.8719561696052551,parrot
+Australia,Czech Republic,0.6525309085845947,parrot
+Australia,Finland,0.8729070425033569,parrot
+Australia,France,0.8905235528945923,parrot
+Australia,Germany,0.6941737532615662,parrot
+Australia,Hungary,0.7766541242599487,parrot
+Australia,Italy,0.8775944709777832,parrot
+Australia,"Korea, South",0.7715974450111389,parrot
+Australia,Philippines,0.8556786775588989,parrot
+Australia,Poland,0.7075483202934265,parrot
+Australia,Russia,1.146296501159668,parrot
+Australia,Saudi Arabia,0.8279834985733032,parrot
+Australia,Sweden,0.8089514970779419,parrot
+Australia,Thailand,1.0315513610839844,parrot
+Australia,United Kingdom,0.7301682829856873,parrot
+Australia,United States,0.8463857769966125,parrot
+Brazil,Canada,0.7954416871070862,parrot
+Brazil,Czech Republic,0.6458125710487366,parrot
+Brazil,Finland,0.789835512638092,parrot
+Brazil,France,0.5791968703269958,parrot
+Brazil,Germany,0.5881615281105042,parrot
+Brazil,Hungary,0.8186282515525818,parrot
+Brazil,Italy,0.9117684960365295,parrot
+Brazil,"Korea, South",1.0472781658172607,parrot
+Brazil,Philippines,0.9746934771537781,parrot
+Brazil,Poland,0.7248391509056091,parrot
+Brazil,Russia,0.6915773749351501,parrot
+Brazil,Saudi Arabia,0.7644997835159302,parrot
+Brazil,Sweden,0.6073266267776489,parrot
+Brazil,Thailand,1.2498949766159058,parrot
+Brazil,United Kingdom,0.8186817169189453,parrot
+Brazil,United States,0.6122326254844666,parrot
+Canada,Czech Republic,0.8891674280166626,parrot
+Canada,Finland,1.103478193283081,parrot
+Canada,France,0.674973726272583,parrot
+Canada,Germany,0.9487032294273376,parrot
+Canada,Hungary,0.8601363301277161,parrot
+Canada,Italy,1.2326656579971313,parrot
+Canada,"Korea, South",1.2392557859420776,parrot
+Canada,Philippines,0.847976565361023,parrot
+Canada,Poland,0.893320620059967,parrot
+Canada,Russia,1.118176817893982,parrot
+Canada,Saudi Arabia,0.5389337539672852,parrot
+Canada,Sweden,0.7606500387191772,parrot
+Canada,Thailand,1.3245124816894531,parrot
+Canada,United Kingdom,0.9133734703063965,parrot
+Canada,United States,0.6131805181503296,parrot
+Czech Republic,Finland,0.6631755232810974,parrot
+Czech Republic,France,0.7492754459381104,parrot
+Czech Republic,Germany,0.5337060689926147,parrot
+Czech Republic,Hungary,0.6924381256103516,parrot
+Czech Republic,Italy,0.7129208445549011,parrot
+Czech Republic,"Korea, South",0.8504162430763245,parrot
+Czech Republic,Philippines,0.9060726165771484,parrot
+Czech Republic,Poland,0.5327237248420715,parrot
+Czech Republic,Russia,0.8516945242881775,parrot
+Czech Republic,Saudi Arabia,0.9102656245231628,parrot
+Czech Republic,Sweden,0.6074002981185913,parrot
+Czech Republic,Thailand,1.0268230438232422,parrot
+Czech Republic,United Kingdom,0.6743608117103577,parrot
+Czech Republic,United States,0.78346848487854,parrot
+Finland,France,0.8661131858825684,parrot
+Finland,Germany,0.6160447597503662,parrot
+Finland,Hungary,0.7783564329147339,parrot
+Finland,Italy,0.6180615425109863,parrot
+Finland,"Korea, South",0.8919934034347534,parrot
+Finland,Philippines,0.9886303544044495,parrot
+Finland,Poland,0.5795237421989441,parrot
+Finland,Russia,0.69775390625,parrot
+Finland,Saudi Arabia,1.1183834075927734,parrot
+Finland,Sweden,0.6701570749282837,parrot
+Finland,Thailand,1.0242805480957031,parrot
+Finland,United Kingdom,0.6390743851661682,parrot
+Finland,United States,0.9388465881347656,parrot
+France,Germany,0.7547833323478699,parrot
+France,Hungary,0.7937368154525757,parrot
+France,Italy,1.0112800598144531,parrot
+France,"Korea, South",1.1447036266326904,parrot
+France,Philippines,0.9433389902114868,parrot
+France,Poland,0.7570914626121521,parrot
+France,Russia,0.776053786277771,parrot
+France,Saudi Arabia,0.7205086350440979,parrot
+France,Sweden,0.6564489603042603,parrot
+France,Thailand,1.2526838779449463,parrot
+France,United Kingdom,0.8098093867301941,parrot
+France,United States,0.6400862336158752,parrot
+Germany,Hungary,0.7029863595962524,parrot
+Germany,Italy,0.7035006880760193,parrot
+Germany,"Korea, South",0.8184424638748169,parrot
+Germany,Philippines,0.9833104610443115,parrot
+Germany,Poland,0.5714748501777649,parrot
+Germany,Russia,0.7837192416191101,parrot
+Germany,Saudi Arabia,0.8958972096443176,parrot
+Germany,Sweden,0.6391282081604004,parrot
+Germany,Thailand,1.0793462991714478,parrot
+Germany,United Kingdom,0.6211981177330017,parrot
+Germany,United States,0.7415268421173096,parrot
+Hungary,Italy,0.7828421592712402,parrot
+Hungary,"Korea, South",0.8262804746627808,parrot
+Hungary,Philippines,0.6350083351135254,parrot
+Hungary,Poland,0.602089524269104,parrot
+Hungary,Russia,0.8221578598022461,parrot
+Hungary,Saudi Arabia,0.8880494832992554,parrot
+Hungary,Sweden,0.65126633644104,parrot
+Hungary,Thailand,0.8455674648284912,parrot
+Hungary,United Kingdom,0.6753579378128052,parrot
+Hungary,United States,0.8234051465988159,parrot
+Italy,"Korea, South",0.7328944802284241,parrot
+Italy,Philippines,1.0279549360275269,parrot
+Italy,Poland,0.6266511678695679,parrot
+Italy,Russia,0.8301576375961304,parrot
+Italy,Saudi Arabia,1.2520599365234375,parrot
+Italy,Sweden,0.7850838899612427,parrot
+Italy,Thailand,0.8961234092712402,parrot
+Italy,United Kingdom,0.6649307012557983,parrot
+Italy,United States,1.0778000354766846,parrot
+"Korea, South",Philippines,0.9270832538604736,parrot
+"Korea, South",Poland,0.694064199924469,parrot
+"Korea, South",Russia,1.1702519655227661,parrot
+"Korea, South",Saudi Arabia,1.1328234672546387,parrot
+"Korea, South",Sweden,0.8980493545532227,parrot
+"Korea, South",Thailand,0.6405210494995117,parrot
+"Korea, South",United Kingdom,0.8198160529136658,parrot
+"Korea, South",United States,1.1017781496047974,parrot
+Philippines,Poland,0.748319685459137,parrot
+Philippines,Russia,0.9767454266548157,parrot
+Philippines,Saudi Arabia,0.8590165972709656,parrot
+Philippines,Sweden,0.7519890069961548,parrot
+Philippines,Thailand,0.8245307803153992,parrot
+Philippines,United Kingdom,0.8934601545333862,parrot
+Philippines,United States,0.9059340953826904,parrot
+Poland,Russia,0.7554401159286499,parrot
+Poland,Saudi Arabia,0.8808650970458984,parrot
+Poland,Sweden,0.5329213738441467,parrot
+Poland,Thailand,0.7936570048332214,parrot
+Poland,United Kingdom,0.5077032446861267,parrot
+Poland,United States,0.7742332816123962,parrot
+Russia,Saudi Arabia,1.1175705194473267,parrot
+Russia,Sweden,0.7144211530685425,parrot
+Russia,Thailand,1.116500973701477,parrot
+Russia,United Kingdom,0.8233931660652161,parrot
+Russia,United States,0.8795545697212219,parrot
+Saudi Arabia,Sweden,0.7790855765342712,parrot
+Saudi Arabia,Thailand,1.3333874940872192,parrot
+Saudi Arabia,United Kingdom,0.9595144987106323,parrot
+Saudi Arabia,United States,0.6054844260215759,parrot
+Sweden,Thailand,0.9722900390625,parrot
+Sweden,United Kingdom,0.6132064461708069,parrot
+Sweden,United States,0.5930150747299194,parrot
+Thailand,United Kingdom,0.9241435527801514,parrot
+Thailand,United States,1.2825583219528198,parrot
+United Kingdom,United States,0.8379775881767273,parrot

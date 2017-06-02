@@ -1,0 +1,92 @@
+country1,country2,dist,word
+Australia,Brazil,0.766289472579956,ladder
+Australia,Canada,0.7522292733192444,ladder
+Australia,Czech Republic,0.707287609577179,ladder
+Australia,Finland,0.5893964767456055,ladder
+Australia,France,0.8051343560218811,ladder
+Australia,Germany,0.6433645486831665,ladder
+Australia,Italy,1.080237627029419,ladder
+Australia,Philippines,0.9858394861221313,ladder
+Australia,Poland,0.6213492751121521,ladder
+Australia,Russia,0.944218635559082,ladder
+Australia,Sweden,0.8765606880187988,ladder
+Australia,United Kingdom,0.6745491027832031,ladder
+Australia,United States,0.7132530212402344,ladder
+Brazil,Canada,0.7658839225769043,ladder
+Brazil,Czech Republic,0.7534076571464539,ladder
+Brazil,Finland,0.5872153639793396,ladder
+Brazil,France,0.7845603823661804,ladder
+Brazil,Germany,0.6286384463310242,ladder
+Brazil,Italy,1.1042654514312744,ladder
+Brazil,Philippines,0.7742368578910828,ladder
+Brazil,Poland,0.7938279509544373,ladder
+Brazil,Russia,0.6432649493217468,ladder
+Brazil,Sweden,0.5490212440490723,ladder
+Brazil,United Kingdom,0.6561687588691711,ladder
+Brazil,United States,0.6012049317359924,ladder
+Canada,Czech Republic,0.5142364501953125,ladder
+Canada,Finland,0.7408578395843506,ladder
+Canada,France,0.5241345167160034,ladder
+Canada,Germany,0.6617384552955627,ladder
+Canada,Italy,1.345281958580017,ladder
+Canada,Philippines,1.145498275756836,ladder
+Canada,Poland,0.5550044178962708,ladder
+Canada,Russia,1.0907173156738281,ladder
+Canada,Sweden,0.8910484313964844,ladder
+Canada,United Kingdom,0.4996756911277771,ladder
+Canada,United States,0.5509222745895386,ladder
+Czech Republic,Finland,0.632239580154419,ladder
+Czech Republic,France,0.6282652616500854,ladder
+Czech Republic,Germany,0.6072002053260803,ladder
+Czech Republic,Italy,1.3094837665557861,ladder
+Czech Republic,Philippines,1.1213741302490234,ladder
+Czech Republic,Poland,0.5446684956550598,ladder
+Czech Republic,Russia,1.0284541845321655,ladder
+Czech Republic,Sweden,0.8877959251403809,ladder
+Czech Republic,United Kingdom,0.588948130607605,ladder
+Czech Republic,United States,0.5593859553337097,ladder
+Finland,France,0.8700566291809082,ladder
+Finland,Germany,0.522179126739502,ladder
+Finland,Italy,0.9715337753295898,ladder
+Finland,Philippines,0.8401078581809998,ladder
+Finland,Poland,0.5767557621002197,ladder
+Finland,Russia,0.7122365832328796,ladder
+Finland,Sweden,0.6872277855873108,ladder
+Finland,United Kingdom,0.6912552118301392,ladder
+Finland,United States,0.6175389289855957,ladder
+France,Germany,0.7288261651992798,ladder
+France,Italy,1.406675934791565,ladder
+France,Philippines,1.1433615684509277,ladder
+France,Poland,0.7355910539627075,ladder
+France,Russia,1.2015303373336792,ladder
+France,Sweden,0.8978068828582764,ladder
+France,United Kingdom,0.5123700499534607,ladder
+France,United States,0.6128280758857727,ladder
+Germany,Italy,1.0814342498779297,ladder
+Germany,Philippines,0.9237772226333618,ladder
+Germany,Poland,0.5360389947891235,ladder
+Germany,Russia,0.818358302116394,ladder
+Germany,Sweden,0.6669696569442749,ladder
+Germany,United Kingdom,0.5403199195861816,ladder
+Germany,United States,0.5968946218490601,ladder
+Italy,Philippines,0.8578737378120422,ladder
+Italy,Poland,1.2967778444290161,ladder
+Italy,Russia,0.8732365369796753,ladder
+Italy,Sweden,1.013541340827942,ladder
+Italy,United Kingdom,1.180950403213501,ladder
+Italy,United States,1.275776743888855,ladder
+Philippines,Poland,1.1037185192108154,ladder
+Philippines,Russia,0.8208193778991699,ladder
+Philippines,Sweden,0.627788782119751,ladder
+Philippines,United Kingdom,0.8785144090652466,ladder
+Philippines,United States,1.017153024673462,ladder
+Poland,Russia,0.9972822070121765,ladder
+Poland,Sweden,0.847792387008667,ladder
+Poland,United Kingdom,0.5644730925559998,ladder
+Poland,United States,0.540503740310669,ladder
+Russia,Sweden,0.7954049706459045,ladder
+Russia,United Kingdom,1.0215758085250854,ladder
+Russia,United States,0.9583799839019775,ladder
+Sweden,United Kingdom,0.6583523154258728,ladder
+Sweden,United States,0.7471928596496582,ladder
+United Kingdom,United States,0.5357823967933655,ladder

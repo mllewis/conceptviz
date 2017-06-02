@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.5968627333641052,pizza
+Australia,Canada,0.293759822845459,pizza
+Australia,Czech Republic,0.8706018328666687,pizza
+Australia,Finland,0.51240074634552,pizza
+Australia,France,0.9018527865409851,pizza
+Australia,Germany,0.5126359462738037,pizza
+Australia,Hungary,0.900331437587738,pizza
+Australia,Italy,0.6482566595077515,pizza
+Australia,"Korea, South",0.512820303440094,pizza
+Australia,Philippines,0.9049795866012573,pizza
+Australia,Poland,1.0416536331176758,pizza
+Australia,Russia,0.6125963926315308,pizza
+Australia,Saudi Arabia,0.49188366532325745,pizza
+Australia,Sweden,0.5708437561988831,pizza
+Australia,Thailand,0.6704761981964111,pizza
+Australia,United Kingdom,0.684266984462738,pizza
+Australia,United States,1.0993341207504272,pizza
+Brazil,Canada,0.6348376274108887,pizza
+Brazil,Czech Republic,0.4500810205936432,pizza
+Brazil,Finland,0.7137622237205505,pizza
+Brazil,France,0.6204911470413208,pizza
+Brazil,Germany,0.7985418438911438,pizza
+Brazil,Hungary,0.5778849720954895,pizza
+Brazil,Italy,0.43706178665161133,pizza
+Brazil,"Korea, South",0.7618923783302307,pizza
+Brazil,Philippines,0.5436195135116577,pizza
+Brazil,Poland,0.6725776195526123,pizza
+Brazil,Russia,0.47361937165260315,pizza
+Brazil,Saudi Arabia,0.6183052659034729,pizza
+Brazil,Sweden,0.6808778643608093,pizza
+Brazil,Thailand,0.5302622318267822,pizza
+Brazil,United Kingdom,1.162834644317627,pizza
+Brazil,United States,1.5936473608016968,pizza
+Canada,Czech Republic,0.9192647337913513,pizza
+Canada,Finland,0.5581626892089844,pizza
+Canada,France,0.9970564842224121,pizza
+Canada,Germany,0.5716561079025269,pizza
+Canada,Hungary,0.931925892829895,pizza
+Canada,Italy,0.7170735597610474,pizza
+Canada,"Korea, South",0.6178498864173889,pizza
+Canada,Philippines,0.9259945750236511,pizza
+Canada,Poland,1.1108254194259644,pizza
+Canada,Russia,0.6654175519943237,pizza
+Canada,Saudi Arabia,0.5399522185325623,pizza
+Canada,Sweden,0.6633464097976685,pizza
+Canada,Thailand,0.7355095148086548,pizza
+Canada,United Kingdom,0.7009706497192383,pizza
+Canada,United States,1.1041399240493774,pizza
+Czech Republic,Finland,0.9695696830749512,pizza
+Czech Republic,France,0.5503689646720886,pizza
+Czech Republic,Germany,0.9877679347991943,pizza
+Czech Republic,Hungary,0.4945659041404724,pizza
+Czech Republic,Italy,0.5582630634307861,pizza
+Czech Republic,"Korea, South",0.9632781744003296,pizza
+Czech Republic,Philippines,0.47593483328819275,pizza
+Czech Republic,Poland,0.4706525206565857,pizza
+Czech Republic,Russia,0.5681353211402893,pizza
+Czech Republic,Saudi Arabia,0.8043664693832397,pizza
+Czech Republic,Sweden,0.8451330065727234,pizza
+Czech Republic,Thailand,0.629908561706543,pizza
+Czech Republic,United Kingdom,1.4095988273620605,pizza
+Czech Republic,United States,1.8471195697784424,pizza
+Finland,France,0.801723301410675,pizza
+Finland,Germany,0.477400004863739,pizza
+Finland,Hungary,1.0159351825714111,pizza
+Finland,Italy,0.6429787874221802,pizza
+Finland,"Korea, South",0.5308429002761841,pizza
+Finland,Philippines,1.0077239274978638,pizza
+Finland,Poland,1.0485554933547974,pizza
+Finland,Russia,0.6119158267974854,pizza
+Finland,Saudi Arabia,0.6845359802246094,pizza
+Finland,Sweden,0.39175212383270264,pizza
+Finland,Thailand,0.8493425250053406,pizza
+Finland,United Kingdom,0.7777013182640076,pizza
+Finland,United States,1.187448263168335,pizza
+France,Germany,0.869255006313324,pizza
+France,Hungary,0.6620079278945923,pizza
+France,Italy,0.47789087891578674,pizza
+France,"Korea, South",0.8901144862174988,pizza
+France,Philippines,0.6837281584739685,pizza
+France,Poland,0.5346361994743347,pizza
+France,Russia,0.527210533618927,pizza
+France,Saudi Arabia,0.8629952669143677,pizza
+France,Sweden,0.6567814350128174,pizza
+France,Thailand,0.7933671474456787,pizza
+France,United Kingdom,1.346402883529663,pizza
+France,United States,1.7890046834945679,pizza
+Germany,Hungary,1.1378800868988037,pizza
+Germany,Italy,0.6517096161842346,pizza
+Germany,"Korea, South",0.5779068470001221,pizza
+Germany,Philippines,1.108554482460022,pizza
+Germany,Poland,1.0980451107025146,pizza
+Germany,Russia,0.6189801096916199,pizza
+Germany,Saudi Arabia,0.7873902320861816,pizza
+Germany,Sweden,0.4782138168811798,pizza
+Germany,Thailand,0.9763982892036438,pizza
+Germany,United Kingdom,0.5492611527442932,pizza
+Germany,United States,0.9898834228515625,pizza
+Hungary,Italy,0.7212119102478027,pizza
+Hungary,"Korea, South",1.0259650945663452,pizza
+Hungary,Philippines,0.4378778338432312,pizza
+Hungary,Poland,0.6110670566558838,pizza
+Hungary,Russia,0.7151919603347778,pizza
+Hungary,Saudi Arabia,0.8019679188728333,pizza
+Hungary,Sweden,0.9330733418464661,pizza
+Hungary,Thailand,0.5998077988624573,pizza
+Hungary,United Kingdom,1.510095238685608,pizza
+Hungary,United States,1.9227372407913208,pizza
+Italy,"Korea, South",0.7465679049491882,pizza
+Italy,Philippines,0.6989688873291016,pizza
+Italy,Poland,0.6543170213699341,pizza
+Italy,Russia,0.41353538632392883,pizza
+Italy,Saudi Arabia,0.6397004723548889,pizza
+Italy,Sweden,0.5635069608688354,pizza
+Italy,Thailand,0.7057134509086609,pizza
+Italy,United Kingdom,1.10857355594635,pizza
+Italy,United States,1.565374493598938,pizza
+"Korea, South",Philippines,1.0270837545394897,pizza
+"Korea, South",Poland,1.136328935623169,pizza
+"Korea, South",Russia,0.7870875597000122,pizza
+"Korea, South",Saudi Arabia,0.6436903476715088,pizza
+"Korea, South",Sweden,0.6314979195594788,pizza
+"Korea, South",Thailand,0.7362833023071289,pizza
+"Korea, South",United Kingdom,0.7480419278144836,pizza
+"Korea, South",United States,1.1268117427825928,pizza
+Philippines,Poland,0.6621186137199402,pizza
+Philippines,Russia,0.6785476207733154,pizza
+Philippines,Saudi Arabia,0.8417431116104126,pizza
+Philippines,Sweden,0.8998468518257141,pizza
+Philippines,Thailand,0.6388992071151733,pizza
+Philippines,United Kingdom,1.491499423980713,pizza
+Philippines,United States,1.9192992448806763,pizza
+Poland,Russia,0.6078169345855713,pizza
+Poland,Saudi Arabia,0.9698371291160583,pizza
+Poland,Sweden,0.9264912605285645,pizza
+Poland,Thailand,0.816155195236206,pizza
+Poland,United Kingdom,1.5623470544815063,pizza
+Poland,United States,1.989111304283142,pizza
+Russia,Saudi Arabia,0.7263553142547607,pizza
+Russia,Sweden,0.5040151476860046,pizza
+Russia,Thailand,0.7297819256782532,pizza
+Russia,United Kingdom,1.0751197338104248,pizza
+Russia,United States,1.5168606042861938,pizza
+Saudi Arabia,Sweden,0.7301552891731262,pizza
+Saudi Arabia,Thailand,0.5403926968574524,pizza
+Saudi Arabia,United Kingdom,0.9860331416130066,pizza
+Saudi Arabia,United States,1.3716206550598145,pizza
+Sweden,Thailand,0.857532799243927,pizza
+Sweden,United Kingdom,0.8884047865867615,pizza
+Sweden,United States,1.3158717155456543,pizza
+Thailand,United Kingdom,1.2435989379882812,pizza
+Thailand,United States,1.6273810863494873,pizza
+United Kingdom,United States,0.471062034368515,pizza

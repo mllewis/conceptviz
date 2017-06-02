@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.7590867280960083,octagon
+Australia,Canada,0.6241500973701477,octagon
+Australia,Czech Republic,0.7274076342582703,octagon
+Australia,Finland,1.0036836862564087,octagon
+Australia,France,0.7939904928207397,octagon
+Australia,Germany,1.2806710004806519,octagon
+Australia,Hungary,0.7888794541358948,octagon
+Australia,Italy,0.5639432072639465,octagon
+Australia,"Korea, South",1.1903107166290283,octagon
+Australia,Philippines,1.1735023260116577,octagon
+Australia,Poland,1.1524317264556885,octagon
+Australia,Russia,0.892865777015686,octagon
+Australia,Saudi Arabia,1.3562875986099243,octagon
+Australia,Sweden,0.7362490892410278,octagon
+Australia,Thailand,0.8047471642494202,octagon
+Australia,United Kingdom,0.6762722134590149,octagon
+Australia,United States,0.6637120842933655,octagon
+Brazil,Canada,0.6655142903327942,octagon
+Brazil,Czech Republic,0.8421604633331299,octagon
+Brazil,Finland,0.8441706895828247,octagon
+Brazil,France,0.6445035934448242,octagon
+Brazil,Germany,0.8568581938743591,octagon
+Brazil,Hungary,0.8484750390052795,octagon
+Brazil,Italy,0.9611441493034363,octagon
+Brazil,"Korea, South",0.9998221397399902,octagon
+Brazil,Philippines,0.9573338031768799,octagon
+Brazil,Poland,1.0143460035324097,octagon
+Brazil,Russia,0.8233178853988647,octagon
+Brazil,Saudi Arabia,1.441223382949829,octagon
+Brazil,Sweden,0.8172081708908081,octagon
+Brazil,Thailand,0.6982645988464355,octagon
+Brazil,United Kingdom,0.4005813002586365,octagon
+Brazil,United States,0.6331292986869812,octagon
+Canada,Czech Republic,0.5884223580360413,octagon
+Canada,Finland,0.8663646578788757,octagon
+Canada,France,0.5327776670455933,octagon
+Canada,Germany,0.9940750598907471,octagon
+Canada,Hungary,0.6826122999191284,octagon
+Canada,Italy,0.7880661487579346,octagon
+Canada,"Korea, South",1.0122085809707642,octagon
+Canada,Philippines,0.8952850103378296,octagon
+Canada,Poland,0.9183201789855957,octagon
+Canada,Russia,0.6918246746063232,octagon
+Canada,Saudi Arabia,1.3270773887634277,octagon
+Canada,Sweden,0.7732919454574585,octagon
+Canada,Thailand,0.6687434911727905,octagon
+Canada,United Kingdom,0.6219922304153442,octagon
+Canada,United States,0.5473833680152893,octagon
+Czech Republic,Finland,0.7067660689353943,octagon
+Czech Republic,France,0.6544700264930725,octagon
+Czech Republic,Germany,1.021715521812439,octagon
+Czech Republic,Hungary,0.5905271172523499,octagon
+Czech Republic,Italy,0.8881440758705139,octagon
+Czech Republic,"Korea, South",0.8320307731628418,octagon
+Czech Republic,Philippines,0.9273476600646973,octagon
+Czech Republic,Poland,0.874527633190155,octagon
+Czech Republic,Russia,0.6745606660842896,octagon
+Czech Republic,Saudi Arabia,1.182299256324768,octagon
+Czech Republic,Sweden,0.7528926134109497,octagon
+Czech Republic,Thailand,0.6868105530738831,octagon
+Czech Republic,United Kingdom,0.7464315295219421,octagon
+Czech Republic,United States,0.6746046543121338,octagon
+Finland,France,0.7652058005332947,octagon
+Finland,Germany,0.7325742244720459,octagon
+Finland,Hungary,0.8317999243736267,octagon
+Finland,Italy,1.2154607772827148,octagon
+Finland,"Korea, South",0.6265872120857239,octagon
+Finland,Philippines,0.86077880859375,octagon
+Finland,Poland,0.7588269114494324,octagon
+Finland,Russia,0.611655056476593,octagon
+Finland,Saudi Arabia,0.9711189866065979,octagon
+Finland,Sweden,0.8209403157234192,octagon
+Finland,Thailand,0.5945817232131958,octagon
+Finland,United Kingdom,0.7620841264724731,octagon
+Finland,United States,0.798053503036499,octagon
+France,Germany,0.786177396774292,octagon
+France,Hungary,0.7581585049629211,octagon
+France,Italy,0.8474035263061523,octagon
+France,"Korea, South",0.8193444013595581,octagon
+France,Philippines,0.7271993160247803,octagon
+France,Poland,0.756310224533081,octagon
+France,Russia,0.6639036536216736,octagon
+France,Saudi Arabia,1.2795754671096802,octagon
+France,Sweden,0.7370736598968506,octagon
+France,Thailand,0.6772386431694031,octagon
+France,United Kingdom,0.6605047583580017,octagon
+France,United States,0.5908220410346985,octagon
+Germany,Hungary,1.1465506553649902,octagon
+Germany,Italy,1.4509222507476807,octagon
+Germany,"Korea, South",0.7430240511894226,octagon
+Germany,Philippines,0.8159865736961365,octagon
+Germany,Poland,0.8472310304641724,octagon
+Germany,Russia,0.8136768937110901,octagon
+Germany,Saudi Arabia,1.2647054195404053,octagon
+Germany,Sweden,0.9465182423591614,octagon
+Germany,Thailand,0.7749361395835876,octagon
+Germany,United Kingdom,0.9015539884567261,octagon
+Germany,United States,0.8853392004966736,octagon
+Hungary,Italy,0.9141104817390442,octagon
+Hungary,"Korea, South",0.9536829590797424,octagon
+Hungary,Philippines,0.8814403414726257,octagon
+Hungary,Poland,0.9242919683456421,octagon
+Hungary,Russia,0.7267786860466003,octagon
+Hungary,Saudi Arabia,1.2426782846450806,octagon
+Hungary,Sweden,1.048314094543457,octagon
+Hungary,Thailand,0.720204770565033,octagon
+Hungary,United Kingdom,0.7783097624778748,octagon
+Hungary,United States,0.7594622373580933,octagon
+Italy,"Korea, South",1.3962764739990234,octagon
+Italy,Philippines,1.327872633934021,octagon
+Italy,Poland,1.304058313369751,octagon
+Italy,Russia,1.0750515460968018,octagon
+Italy,Saudi Arabia,1.4696048498153687,octagon
+Italy,Sweden,0.8190317749977112,octagon
+Italy,Thailand,1.070675253868103,octagon
+Italy,United Kingdom,0.9013026356697083,octagon
+Italy,United States,0.878434956073761,octagon
+"Korea, South",Philippines,0.7142640352249146,octagon
+"Korea, South",Poland,0.5598491430282593,octagon
+"Korea, South",Russia,0.6009568572044373,octagon
+"Korea, South",Saudi Arabia,1.0247704982757568,octagon
+"Korea, South",Sweden,0.9225932359695435,octagon
+"Korea, South",Thailand,0.6826797127723694,octagon
+"Korea, South",United Kingdom,0.9862514138221741,octagon
+"Korea, South",United States,0.8296940922737122,octagon
+Philippines,Poland,0.5318076610565186,octagon
+Philippines,Russia,0.6974571347236633,octagon
+Philippines,Saudi Arabia,1.3552827835083008,octagon
+Philippines,Sweden,1.154274821281433,octagon
+Philippines,Thailand,0.6638088226318359,octagon
+Philippines,United Kingdom,0.9230144619941711,octagon
+Philippines,United States,0.7951179146766663,octagon
+Poland,Russia,0.5802361369132996,octagon
+Poland,Saudi Arabia,1.2680704593658447,octagon
+Poland,Sweden,1.0265648365020752,octagon
+Poland,Thailand,0.6277680993080139,octagon
+Poland,United Kingdom,0.9676925539970398,octagon
+Poland,United States,0.8058149218559265,octagon
+Russia,Saudi Arabia,1.0557811260223389,octagon
+Russia,Sweden,0.8139548301696777,octagon
+Russia,Thailand,0.5056453347206116,octagon
+Russia,United Kingdom,0.7331335544586182,octagon
+Russia,United States,0.6314495205879211,octagon
+Saudi Arabia,Sweden,1.0765299797058105,octagon
+Saudi Arabia,Thailand,1.1436067819595337,octagon
+Saudi Arabia,United Kingdom,1.3510677814483643,octagon
+Saudi Arabia,United States,1.2427796125411987,octagon
+Sweden,Thailand,0.848189651966095,octagon
+Sweden,United Kingdom,0.7481206655502319,octagon
+Sweden,United States,0.6702887415885925,octagon
+Thailand,United Kingdom,0.6479442715644836,octagon
+Thailand,United States,0.5816670656204224,octagon
+United Kingdom,United States,0.5311648845672607,octagon

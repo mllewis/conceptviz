@@ -1,0 +1,121 @@
+country1,country2,dist,word
+Australia,Brazil,0.7724379301071167,sea turtle
+Australia,Canada,0.5394378304481506,sea turtle
+Australia,Czech Republic,0.6156641840934753,sea turtle
+Australia,Finland,0.6016369462013245,sea turtle
+Australia,France,0.586550235748291,sea turtle
+Australia,Germany,0.6850191950798035,sea turtle
+Australia,Italy,0.85406094789505,sea turtle
+Australia,"Korea, South",0.5391541123390198,sea turtle
+Australia,Poland,0.6195173859596252,sea turtle
+Australia,Russia,0.8442825675010681,sea turtle
+Australia,Saudi Arabia,0.5897486209869385,sea turtle
+Australia,Sweden,0.8631367683410645,sea turtle
+Australia,Thailand,0.7430599927902222,sea turtle
+Australia,United Kingdom,0.726482629776001,sea turtle
+Australia,United States,0.7080990076065063,sea turtle
+Brazil,Canada,0.7687597274780273,sea turtle
+Brazil,Czech Republic,0.7342613339424133,sea turtle
+Brazil,Finland,0.7361505031585693,sea turtle
+Brazil,France,0.9262318015098572,sea turtle
+Brazil,Germany,0.5642933249473572,sea turtle
+Brazil,Italy,0.6450833678245544,sea turtle
+Brazil,"Korea, South",0.734380304813385,sea turtle
+Brazil,Poland,0.7137699127197266,sea turtle
+Brazil,Russia,0.6429443359375,sea turtle
+Brazil,Saudi Arabia,0.7555766105651855,sea turtle
+Brazil,Sweden,0.67658531665802,sea turtle
+Brazil,Thailand,0.680475115776062,sea turtle
+Brazil,United Kingdom,0.7244825959205627,sea turtle
+Brazil,United States,0.6489808559417725,sea turtle
+Canada,Czech Republic,0.5412132143974304,sea turtle
+Canada,Finland,0.6210890412330627,sea turtle
+Canada,France,0.6928662061691284,sea turtle
+Canada,Germany,0.6436616778373718,sea turtle
+Canada,Italy,0.696657657623291,sea turtle
+Canada,"Korea, South",0.6375221014022827,sea turtle
+Canada,Poland,0.5990108251571655,sea turtle
+Canada,Russia,0.7456296682357788,sea turtle
+Canada,Saudi Arabia,0.6723656058311462,sea turtle
+Canada,Sweden,0.7771824598312378,sea turtle
+Canada,Thailand,0.6358245611190796,sea turtle
+Canada,United Kingdom,0.543507993221283,sea turtle
+Canada,United States,0.6550682187080383,sea turtle
+Czech Republic,Finland,0.7139143943786621,sea turtle
+Czech Republic,France,0.7080857753753662,sea turtle
+Czech Republic,Germany,0.6663477420806885,sea turtle
+Czech Republic,Italy,0.7536511421203613,sea turtle
+Czech Republic,"Korea, South",0.6636029481887817,sea turtle
+Czech Republic,Poland,0.5850750207901001,sea turtle
+Czech Republic,Russia,0.6931151151657104,sea turtle
+Czech Republic,Saudi Arabia,0.7853598594665527,sea turtle
+Czech Republic,Sweden,0.750628650188446,sea turtle
+Czech Republic,Thailand,0.6996152997016907,sea turtle
+Czech Republic,United Kingdom,0.5948871374130249,sea turtle
+Czech Republic,United States,0.7177207469940186,sea turtle
+Finland,France,0.7669232487678528,sea turtle
+Finland,Germany,0.6505686640739441,sea turtle
+Finland,Italy,0.7335418462753296,sea turtle
+Finland,"Korea, South",0.5287090539932251,sea turtle
+Finland,Poland,0.6334888339042664,sea turtle
+Finland,Russia,0.6986109614372253,sea turtle
+Finland,Saudi Arabia,0.5711237788200378,sea turtle
+Finland,Sweden,0.7855847477912903,sea turtle
+Finland,Thailand,0.5731507539749146,sea turtle
+Finland,United Kingdom,0.6981378793716431,sea turtle
+Finland,United States,0.6521446108818054,sea turtle
+France,Germany,0.8878265023231506,sea turtle
+France,Italy,1.0152581930160522,sea turtle
+France,"Korea, South",0.688103437423706,sea turtle
+France,Poland,0.8746609687805176,sea turtle
+France,Russia,1.0784014463424683,sea turtle
+France,Saudi Arabia,0.7700887322425842,sea turtle
+France,Sweden,1.1256983280181885,sea turtle
+France,Thailand,0.8923936486244202,sea turtle
+France,United Kingdom,0.9566081762313843,sea turtle
+France,United States,0.9399504065513611,sea turtle
+Germany,Italy,0.49343234300613403,sea turtle
+Germany,"Korea, South",0.7095725536346436,sea turtle
+Germany,Poland,0.700851559638977,sea turtle
+Germany,Russia,0.6078006625175476,sea turtle
+Germany,Saudi Arabia,0.6942893266677856,sea turtle
+Germany,Sweden,0.5578446984291077,sea turtle
+Germany,Thailand,0.5467590093612671,sea turtle
+Germany,United Kingdom,0.6241480708122253,sea turtle
+Germany,United States,0.5279585719108582,sea turtle
+Italy,"Korea, South",0.8061725497245789,sea turtle
+Italy,Poland,0.7643818259239197,sea turtle
+Italy,Russia,0.6380639672279358,sea turtle
+Italy,Saudi Arabia,0.7659311294555664,sea turtle
+Italy,Sweden,0.5658616423606873,sea turtle
+Italy,Thailand,0.559705913066864,sea turtle
+Italy,United Kingdom,0.6440780758857727,sea turtle
+Italy,United States,0.5367353558540344,sea turtle
+"Korea, South",Poland,0.5907489657402039,sea turtle
+"Korea, South",Russia,0.7428837418556213,sea turtle
+"Korea, South",Saudi Arabia,0.6317443251609802,sea turtle
+"Korea, South",Sweden,0.8079445362091064,sea turtle
+"Korea, South",Thailand,0.6025822758674622,sea turtle
+"Korea, South",United Kingdom,0.6860634684562683,sea turtle
+"Korea, South",United States,0.666262686252594,sea turtle
+Poland,Russia,0.6141505837440491,sea turtle
+Poland,Saudi Arabia,0.8626464605331421,sea turtle
+Poland,Sweden,0.6669130325317383,sea turtle
+Poland,Thailand,0.7475762963294983,sea turtle
+Poland,United Kingdom,0.5487707853317261,sea turtle
+Poland,United States,0.6831403374671936,sea turtle
+Russia,Saudi Arabia,0.9268328547477722,sea turtle
+Russia,Sweden,0.6151800155639648,sea turtle
+Russia,Thailand,0.7184832096099854,sea turtle
+Russia,United Kingdom,0.5695161819458008,sea turtle
+Russia,United States,0.6852102279663086,sea turtle
+Saudi Arabia,Sweden,0.8904412388801575,sea turtle
+Saudi Arabia,Thailand,0.6300252079963684,sea turtle
+Saudi Arabia,United Kingdom,0.8882493376731873,sea turtle
+Saudi Arabia,United States,0.6314216256141663,sea turtle
+Sweden,Thailand,0.6446869969367981,sea turtle
+Sweden,United Kingdom,0.5893347859382629,sea turtle
+Sweden,United States,0.5688978433609009,sea turtle
+Thailand,United Kingdom,0.6809988617897034,sea turtle
+Thailand,United States,0.48618078231811523,sea turtle
+United Kingdom,United States,0.6658784747123718,sea turtle

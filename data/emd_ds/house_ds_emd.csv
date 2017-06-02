@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,1.2671445608139038,house
+Australia,Canada,0.8195544481277466,house
+Australia,Czech Republic,0.8845472931861877,house
+Australia,Finland,1.0696748495101929,house
+Australia,France,0.7924936413764954,house
+Australia,Germany,0.9371338486671448,house
+Australia,Hungary,0.9363888502120972,house
+Australia,Italy,0.7131435871124268,house
+Australia,"Korea, South",1.262009859085083,house
+Australia,Philippines,0.7453068494796753,house
+Australia,Poland,1.5129269361495972,house
+Australia,Russia,0.956417441368103,house
+Australia,Saudi Arabia,1.1924673318862915,house
+Australia,Sweden,0.9089687466621399,house
+Australia,Thailand,1.2178618907928467,house
+Australia,United Kingdom,0.8165254592895508,house
+Australia,United States,0.8236095905303955,house
+Brazil,Canada,1.2556227445602417,house
+Brazil,Czech Republic,0.9709303975105286,house
+Brazil,Finland,0.9822549819946289,house
+Brazil,France,1.2180730104446411,house
+Brazil,Germany,1.2229983806610107,house
+Brazil,Hungary,1.7681481838226318,house
+Brazil,Italy,1.2875478267669678,house
+Brazil,"Korea, South",1.0844001770019531,house
+Brazil,Philippines,1.080488681793213,house
+Brazil,Poland,0.945598304271698,house
+Brazil,Russia,0.7788810729980469,house
+Brazil,Saudi Arabia,1.861616849899292,house
+Brazil,Sweden,0.9738723039627075,house
+Brazil,Thailand,0.8636819124221802,house
+Brazil,United Kingdom,1.2327485084533691,house
+Brazil,United States,1.5642412900924683,house
+Canada,Czech Republic,0.75331050157547,house
+Canada,Finland,0.9933631420135498,house
+Canada,France,0.8495233654975891,house
+Canada,Germany,0.9984263181686401,house
+Canada,Hungary,1.0735117197036743,house
+Canada,Italy,0.8522758483886719,house
+Canada,"Korea, South",1.284786581993103,house
+Canada,Philippines,0.9324634671211243,house
+Canada,Poland,1.5614114999771118,house
+Canada,Russia,0.9217557311058044,house
+Canada,Saudi Arabia,1.3232232332229614,house
+Canada,Sweden,0.8956503868103027,house
+Canada,Thailand,1.2578669786453247,house
+Canada,United Kingdom,1.0598036050796509,house
+Canada,United States,0.9268072247505188,house
+Czech Republic,Finland,0.9093774557113647,house
+Czech Republic,France,0.872959554195404,house
+Czech Republic,Germany,0.9327002763748169,house
+Czech Republic,Hungary,1.2907205820083618,house
+Czech Republic,Italy,0.8615629076957703,house
+Czech Republic,"Korea, South",1.1463537216186523,house
+Czech Republic,Philippines,0.9157261252403259,house
+Czech Republic,Poland,1.255555272102356,house
+Czech Republic,Russia,0.7506132125854492,house
+Czech Republic,Saudi Arabia,1.4436476230621338,house
+Czech Republic,Sweden,0.7674614787101746,house
+Czech Republic,Thailand,1.0622243881225586,house
+Czech Republic,United Kingdom,0.9692906737327576,house
+Czech Republic,United States,1.0725529193878174,house
+Finland,France,1.1571530103683472,house
+Finland,Germany,1.1604249477386475,house
+Finland,Hungary,1.5862483978271484,house
+Finland,Italy,1.2519298791885376,house
+Finland,"Korea, South",0.9631106853485107,house
+Finland,Philippines,1.0256261825561523,house
+Finland,Poland,1.0656275749206543,house
+Finland,Russia,0.9527885913848877,house
+Finland,Saudi Arabia,1.6461421251296997,house
+Finland,Sweden,0.8472787737846375,house
+Finland,Thailand,1.0595020055770874,house
+Finland,United Kingdom,1.3287643194198608,house
+Finland,United States,1.3269972801208496,house
+France,Germany,1.0190373659133911,house
+France,Hungary,0.993975818157196,house
+France,Italy,0.5854002237319946,house
+France,"Korea, South",1.2634567022323608,house
+France,Philippines,0.7888006567955017,house
+France,Poland,1.6063804626464844,house
+France,Russia,0.8572587966918945,house
+France,Saudi Arabia,0.9882744550704956,house
+France,Sweden,1.0497322082519531,house
+France,Thailand,1.202755093574524,house
+France,United Kingdom,0.8119486570358276,house
+France,United States,0.830444872379303,house
+Germany,Hungary,0.9754623770713806,house
+Germany,Italy,0.9157673120498657,house
+Germany,"Korea, South",1.394147276878357,house
+Germany,Philippines,1.2541155815124512,house
+Germany,Poland,1.644190788269043,house
+Germany,Russia,0.9929189682006836,house
+Germany,Saudi Arabia,1.3757678270339966,house
+Germany,Sweden,1.1436158418655396,house
+Germany,Thailand,1.2844045162200928,house
+Germany,United Kingdom,1.120540738105774,house
+Germany,United States,0.9957360625267029,house
+Hungary,Italy,0.8666144013404846,house
+Hungary,"Korea, South",1.7909550666809082,house
+Hungary,Philippines,1.313862919807434,house
+Hungary,Poland,2.200700044631958,house
+Hungary,Russia,1.311691164970398,house
+Hungary,Saudi Arabia,1.117002248764038,house
+Hungary,Sweden,1.537831425666809,house
+Hungary,Thailand,1.8018505573272705,house
+Hungary,United Kingdom,1.0845870971679688,house
+Hungary,United States,0.7690489292144775,house
+Italy,"Korea, South",1.4006760120391846,house
+Italy,Philippines,0.8427577018737793,house
+Italy,Poland,1.7086824178695679,house
+Italy,Russia,0.9097689390182495,house
+Italy,Saudi Arabia,1.0062147378921509,house
+Italy,Sweden,1.1432615518569946,house
+Italy,Thailand,1.3136534690856934,house
+Italy,United Kingdom,0.7015831470489502,house
+Italy,United States,0.7908439636230469,house
+"Korea, South",Philippines,1.0645350217819214,house
+"Korea, South",Poland,0.9782617688179016,house
+"Korea, South",Russia,0.9626346826553345,house
+"Korea, South",Saudi Arabia,1.820644736289978,house
+"Korea, South",Sweden,1.1738256216049194,house
+"Korea, South",Thailand,1.2152539491653442,house
+"Korea, South",United Kingdom,1.325669765472412,house
+"Korea, South",United States,1.5329740047454834,house
+Philippines,Poland,1.2679443359375,house
+Philippines,Russia,0.8852902054786682,house
+Philippines,Saudi Arabia,1.176401138305664,house
+Philippines,Sweden,0.9153609871864319,house
+Philippines,Thailand,0.9938453435897827,house
+Philippines,United Kingdom,0.7830497622489929,house
+Philippines,United States,1.1765655279159546,house
+Poland,Russia,1.1823444366455078,house
+Poland,Saudi Arabia,2.1492972373962402,house
+Poland,Sweden,1.1512458324432373,house
+Poland,Thailand,1.1793582439422607,house
+Poland,United Kingdom,1.6086974143981934,house
+Poland,United States,1.900395393371582,house
+Russia,Saudi Arabia,1.4612005949020386,house
+Russia,Sweden,0.9731170535087585,house
+Russia,Thailand,0.9973347187042236,house
+Russia,United Kingdom,0.9199130535125732,house
+Russia,United States,1.108290195465088,house
+Saudi Arabia,Sweden,1.6388593912124634,house
+Saudi Arabia,Thailand,1.7613577842712402,house
+Saudi Arabia,United Kingdom,1.1090056896209717,house
+Saudi Arabia,United States,1.0351500511169434,house
+Sweden,Thailand,0.8692799806594849,house
+Sweden,United Kingdom,1.2740514278411865,house
+Sweden,United States,1.360059142112732,house
+Thailand,United Kingdom,1.340787649154663,house
+Thailand,United States,1.5993281602859497,house
+United Kingdom,United States,1.0362533330917358,house

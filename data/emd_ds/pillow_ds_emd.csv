@@ -1,0 +1,106 @@
+country1,country2,dist,word
+Australia,Brazil,0.5197259187698364,pillow
+Australia,Canada,0.5357653498649597,pillow
+Australia,Czech Republic,0.7954792380332947,pillow
+Australia,Finland,0.9977508187294006,pillow
+Australia,Germany,0.8941040635108948,pillow
+Australia,Italy,0.7929994463920593,pillow
+Australia,Philippines,0.8727388381958008,pillow
+Australia,Poland,0.9869933724403381,pillow
+Australia,Russia,1.2039499282836914,pillow
+Australia,Saudi Arabia,0.7950206398963928,pillow
+Australia,Sweden,0.9976752400398254,pillow
+Australia,Thailand,0.9447574019432068,pillow
+Australia,United Kingdom,0.7242030501365662,pillow
+Australia,United States,0.5059638023376465,pillow
+Brazil,Canada,0.6680029630661011,pillow
+Brazil,Czech Republic,0.6937543153762817,pillow
+Brazil,Finland,0.9314752817153931,pillow
+Brazil,Germany,0.7848048210144043,pillow
+Brazil,Italy,0.7053347826004028,pillow
+Brazil,Philippines,1.0220905542373657,pillow
+Brazil,Poland,0.767270565032959,pillow
+Brazil,Russia,1.0137450695037842,pillow
+Brazil,Saudi Arabia,0.8760483264923096,pillow
+Brazil,Sweden,1.0391384363174438,pillow
+Brazil,Thailand,1.0387110710144043,pillow
+Brazil,United Kingdom,0.8387699127197266,pillow
+Brazil,United States,0.483371376991272,pillow
+Canada,Czech Republic,0.7421423196792603,pillow
+Canada,Finland,0.8647007346153259,pillow
+Canada,Germany,0.7581077814102173,pillow
+Canada,Italy,0.6341947913169861,pillow
+Canada,Philippines,0.716985821723938,pillow
+Canada,Poland,0.9413813948631287,pillow
+Canada,Russia,1.1089760065078735,pillow
+Canada,Saudi Arabia,0.7693096399307251,pillow
+Canada,Sweden,0.8074867129325867,pillow
+Canada,Thailand,0.820808470249176,pillow
+Canada,United Kingdom,0.5827908515930176,pillow
+Canada,United States,0.5356526970863342,pillow
+Czech Republic,Finland,0.6289858222007751,pillow
+Czech Republic,Germany,0.43389835953712463,pillow
+Czech Republic,Italy,0.4710942804813385,pillow
+Czech Republic,Philippines,0.8429012894630432,pillow
+Czech Republic,Poland,0.5384386777877808,pillow
+Czech Republic,Russia,0.6881957650184631,pillow
+Czech Republic,Saudi Arabia,0.8018687963485718,pillow
+Czech Republic,Sweden,0.7544507384300232,pillow
+Czech Republic,Thailand,0.9813023805618286,pillow
+Czech Republic,United Kingdom,0.7415830492973328,pillow
+Czech Republic,United States,0.7023546099662781,pillow
+Finland,Germany,0.5667815208435059,pillow
+Finland,Italy,0.5060019493103027,pillow
+Finland,Philippines,0.8507871627807617,pillow
+Finland,Poland,0.6234262585639954,pillow
+Finland,Russia,0.6559777855873108,pillow
+Finland,Saudi Arabia,0.9813507795333862,pillow
+Finland,Sweden,0.7382141947746277,pillow
+Finland,Thailand,1.027356505393982,pillow
+Finland,United Kingdom,0.9284581542015076,pillow
+Finland,United States,0.8897578120231628,pillow
+Germany,Italy,0.44916921854019165,pillow
+Germany,Philippines,0.7877771854400635,pillow
+Germany,Poland,0.589076578617096,pillow
+Germany,Russia,0.657926619052887,pillow
+Germany,Saudi Arabia,0.7870169281959534,pillow
+Germany,Sweden,0.6401699185371399,pillow
+Germany,Thailand,0.9172648787498474,pillow
+Germany,United Kingdom,0.7448596954345703,pillow
+Germany,United States,0.7654232978820801,pillow
+Italy,Philippines,0.6780397295951843,pillow
+Italy,Poland,0.6020634770393372,pillow
+Italy,Russia,0.7552182674407959,pillow
+Italy,Saudi Arabia,0.7691929340362549,pillow
+Italy,Sweden,0.6869054436683655,pillow
+Italy,Thailand,0.8662616014480591,pillow
+Italy,United Kingdom,0.7313868403434753,pillow
+Italy,United States,0.6401068568229675,pillow
+Philippines,Poland,1.0823214054107666,pillow
+Philippines,Russia,1.1513768434524536,pillow
+Philippines,Saudi Arabia,0.7151810526847839,pillow
+Philippines,Sweden,0.6873347759246826,pillow
+Philippines,Thailand,0.6658357381820679,pillow
+Philippines,United Kingdom,0.676171064376831,pillow
+Philippines,United States,0.8801636695861816,pillow
+Poland,Russia,0.5836108326911926,pillow
+Poland,Saudi Arabia,1.0806299448013306,pillow
+Poland,Sweden,0.9907906651496887,pillow
+Poland,Thailand,1.294813632965088,pillow
+Poland,United Kingdom,1.0382076501846313,pillow
+Poland,United States,0.8705702424049377,pillow
+Russia,Saudi Arabia,1.1394327878952026,pillow
+Russia,Sweden,0.9834498763084412,pillow
+Russia,Thailand,1.3012703657150269,pillow
+Russia,United Kingdom,1.096998929977417,pillow
+Russia,United States,1.104666829109192,pillow
+Saudi Arabia,Sweden,0.7204757928848267,pillow
+Saudi Arabia,Thailand,0.5612737536430359,pillow
+Saudi Arabia,United Kingdom,0.6207241415977478,pillow
+Saudi Arabia,United States,0.7518033981323242,pillow
+Sweden,Thailand,0.7655120491981506,pillow
+Sweden,United Kingdom,0.6349776983261108,pillow
+Sweden,United States,0.8955247402191162,pillow
+Thailand,United Kingdom,0.6936305165290833,pillow
+Thailand,United States,0.8014439940452576,pillow
+United Kingdom,United States,0.7527769207954407,pillow

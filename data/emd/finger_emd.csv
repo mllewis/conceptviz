@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.5472518801689148,finger
+Australia,Canada,0.7078465819358826,finger
+Australia,Czech Republic,0.7288911938667297,finger
+Australia,Finland,0.5221590995788574,finger
+Australia,France,0.7187976837158203,finger
+Australia,Germany,0.9090303778648376,finger
+Australia,Hungary,0.5744460821151733,finger
+Australia,Italy,0.8280047178268433,finger
+Australia,"Korea, South",1.141306757926941,finger
+Australia,Philippines,0.9988813996315002,finger
+Australia,Poland,0.6970821619033813,finger
+Australia,Russia,0.4556851387023926,finger
+Australia,Saudi Arabia,0.5885959267616272,finger
+Australia,Sweden,0.7576965689659119,finger
+Australia,Thailand,0.7350854873657227,finger
+Australia,United Kingdom,1.4938955307006836,finger
+Australia,United States,3.047539472579956,finger
+Brazil,Canada,0.9888848066329956,finger
+Brazil,Czech Republic,0.5935336351394653,finger
+Brazil,Finland,0.506026566028595,finger
+Brazil,France,0.4961340129375458,finger
+Brazil,Germany,1.0610554218292236,finger
+Brazil,Hungary,0.4458632469177246,finger
+Brazil,Italy,0.8356562852859497,finger
+Brazil,"Korea, South",1.199868083000183,finger
+Brazil,Philippines,0.9845083355903625,finger
+Brazil,Poland,0.4595072269439697,finger
+Brazil,Russia,0.565453827381134,finger
+Brazil,Saudi Arabia,0.684894323348999,finger
+Brazil,Sweden,0.7767032980918884,finger
+Brazil,Thailand,0.7539381980895996,finger
+Brazil,United Kingdom,1.6860690116882324,finger
+Brazil,United States,3.1967811584472656,finger
+Canada,Czech Republic,0.9092929363250732,finger
+Canada,Finland,0.9651400446891785,finger
+Canada,France,1.1338080167770386,finger
+Canada,Germany,0.41657641530036926,finger
+Canada,Hungary,0.9668672680854797,finger
+Canada,Italy,1.2196245193481445,finger
+Canada,"Korea, South",0.9164129495620728,finger
+Canada,Philippines,1.5381239652633667,finger
+Canada,Poland,1.1323827505111694,finger
+Canada,Russia,0.77853924036026,finger
+Canada,Saudi Arabia,0.6686747074127197,finger
+Canada,Sweden,1.264266848564148,finger
+Canada,Thailand,0.7493290305137634,finger
+Canada,United Kingdom,0.9068994522094727,finger
+Canada,United States,2.472001075744629,finger
+Czech Republic,Finland,0.7367703914642334,finger
+Czech Republic,France,0.6399471163749695,finger
+Czech Republic,Germany,0.8441523909568787,finger
+Czech Republic,Hungary,0.6218106746673584,finger
+Czech Republic,Italy,1.1380139589309692,finger
+Czech Republic,"Korea, South",0.796174168586731,finger
+Czech Republic,Philippines,1.364753246307373,finger
+Czech Republic,Poland,0.8174998760223389,finger
+Czech Republic,Russia,0.6713931560516357,finger
+Czech Republic,Saudi Arabia,0.6429159641265869,finger
+Czech Republic,Sweden,1.0883976221084595,finger
+Czech Republic,Thailand,0.5373406410217285,finger
+Czech Republic,United Kingdom,1.4842170476913452,finger
+Czech Republic,United States,2.95021915435791,finger
+Finland,France,0.5287066102027893,finger
+Finland,Germany,1.0954445600509644,finger
+Finland,Hungary,0.5587427616119385,finger
+Finland,Italy,0.6902660131454468,finger
+Finland,"Korea, South",1.2072564363479614,finger
+Finland,Philippines,0.8506690859794617,finger
+Finland,Poland,0.5749250650405884,finger
+Finland,Russia,0.49172189831733704,finger
+Finland,Saudi Arabia,0.6286713480949402,finger
+Finland,Sweden,0.6371309161186218,finger
+Finland,Thailand,0.8302825689315796,finger
+Finland,United Kingdom,1.643649935722351,finger
+Finland,United States,3.1605937480926514,finger
+France,Germany,1.1809808015823364,finger
+France,Hungary,0.4915361702442169,finger
+France,Italy,0.8219582438468933,finger
+France,"Korea, South",1.2284975051879883,finger
+France,Philippines,0.9480273723602295,finger
+France,Poland,0.53510284423828125,finger
+France,Russia,0.6236592531204224,finger
+France,Saudi Arabia,0.7136964201927185,finger
+France,Sweden,0.728975772857666,finger
+France,Thailand,0.8146101236343384,finger
+France,United Kingdom,1.777116060256958,finger
+France,United States,3.2832722663879395,finger
+Germany,Hungary,1.0953130722045898,finger
+Germany,Italy,1.435068964958191,finger
+Germany,"Korea, South",0.6714285016059875,finger
+Germany,Philippines,1.7820016145706177,finger
+Germany,Poland,1.3008471727371216,finger
+Germany,Russia,0.958308756351471,finger
+Germany,Saudi Arabia,0.7111568450927734,finger
+Germany,Sweden,1.4931228160858154,finger
+Germany,Thailand,0.7770382165908813,finger
+Germany,United Kingdom,0.760565996170044,finger
+Germany,United States,2.275087833404541,finger
+Hungary,Italy,0.8440661430358887,finger
+Hungary,"Korea, South",1.1964932680130005,finger
+Hungary,Philippines,0.924176812171936,finger
+Hungary,Poland,0.4736332893371582,finger
+Hungary,Russia,0.6002310514450073,finger
+Hungary,Saudi Arabia,0.6496202349662781,finger
+Hungary,Sweden,0.6922493577003479,finger
+Hungary,Thailand,0.687552273273468,finger
+Hungary,United Kingdom,1.7065269947052002,finger
+Hungary,United States,3.2319211959838867,finger
+Italy,"Korea, South",1.512866735458374,finger
+Italy,Philippines,0.6288069486618042,finger
+Italy,Poland,0.7472245693206787,finger
+Italy,Russia,0.8296842575073242,finger
+Italy,Saudi Arabia,0.9121477603912354,finger
+Italy,Sweden,0.7037772536277771,finger
+Italy,Thailand,1.1815091371536255,finger
+Italy,United Kingdom,1.7923108339309692,finger
+Italy,United States,3.159486770629883,finger
+"Korea, South",Philippines,1.8949021100997925,finger
+"Korea, South",Poland,1.420445442199707,finger
+"Korea, South",Russia,1.1334906816482544,finger
+"Korea, South",Saudi Arabia,0.84112149477005,finger
+"Korea, South",Sweden,1.6351654529571533,finger
+"Korea, South",Thailand,0.77792888879776,finger
+"Korea, South",United Kingdom,1.0918232202529907,finger
+"Korea, South",United States,2.373352527618408,finger
+Philippines,Poland,0.7649927139282227,finger
+Philippines,Russia,0.9916958808898926,finger
+Philippines,Saudi Arabia,1.2158575057983398,finger
+Philippines,Sweden,0.6389548778533936,finger
+Philippines,Thailand,1.4270617961883545,finger
+Philippines,United Kingdom,2.2227282524108887,finger
+Philippines,United States,3.6498396396636963,finger
+Poland,Russia,0.654455840587616,finger
+Poland,Saudi Arabia,0.8062906265258789,finger
+Poland,Sweden,0.6098223328590393,finger
+Poland,Thailand,0.9076366424560547,finger
+Poland,United Kingdom,1.883819818496704,finger
+Poland,United States,3.377436637878418,finger
+Russia,Saudi Arabia,0.5582664012908936,finger
+Russia,Sweden,0.700783371925354,finger
+Russia,Thailand,0.7203930020332336,finger
+Russia,United Kingdom,1.5194886922836304,finger
+Russia,United States,3.0537309646606445,finger
+Saudi Arabia,Sweden,0.9635452628135681,finger
+Saudi Arabia,Thailand,0.6041690707206726,finger
+Saudi Arabia,United Kingdom,1.209926962852478,finger
+Saudi Arabia,United States,2.7233924865722656,finger
+Sweden,Thailand,1.1409685611724854,finger
+Sweden,United Kingdom,2.013118267059326,finger
+Sweden,United States,3.5104010105133057,finger
+Thailand,United Kingdom,1.3648896217346191,finger
+Thailand,United States,2.8602681159973145,finger
+United Kingdom,United States,1.5815969705581665,finger

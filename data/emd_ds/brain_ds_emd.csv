@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.5244360566139221,brain
+Australia,Canada,0.46683889627456665,brain
+Australia,Czech Republic,0.5320926904678345,brain
+Australia,Finland,0.6145387887954712,brain
+Australia,France,0.4314963221549988,brain
+Australia,Germany,0.45034679770469666,brain
+Australia,Hungary,0.7014310956001282,brain
+Australia,Italy,0.46159061789512634,brain
+Australia,"Korea, South",0.5324996709823608,brain
+Australia,Philippines,0.37120896577835083,brain
+Australia,Poland,0.3600490391254425,brain
+Australia,Russia,0.4037398397922516,brain
+Australia,Saudi Arabia,0.8264338970184326,brain
+Australia,Sweden,0.42786967754364014,brain
+Australia,Thailand,0.3867885172367096,brain
+Australia,United Kingdom,0.4588770270347595,brain
+Australia,United States,0.37881797552108765,brain
+Brazil,Canada,0.5323407053947449,brain
+Brazil,Czech Republic,0.6810464262962341,brain
+Brazil,Finland,0.6504020094871521,brain
+Brazil,France,0.5915251970291138,brain
+Brazil,Germany,0.5806219577789307,brain
+Brazil,Hungary,0.6450850367546082,brain
+Brazil,Italy,0.6181973218917847,brain
+Brazil,"Korea, South",0.6152740120887756,brain
+Brazil,Philippines,0.5183402299880981,brain
+Brazil,Poland,0.5619018077850342,brain
+Brazil,Russia,0.5015066862106323,brain
+Brazil,Saudi Arabia,0.8749046325683594,brain
+Brazil,Sweden,0.6094844341278076,brain
+Brazil,Thailand,0.5127333402633667,brain
+Brazil,United Kingdom,0.6946616768836975,brain
+Brazil,United States,0.617152988910675,brain
+Canada,Czech Republic,0.6998468637466431,brain
+Canada,Finland,0.4034973680973053,brain
+Canada,France,0.5489386916160583,brain
+Canada,Germany,0.5463334918022156,brain
+Canada,Hungary,0.46718883514404297,brain
+Canada,Italy,0.5430096387863159,brain
+Canada,"Korea, South",0.38809359073638916,brain
+Canada,Philippines,0.5191347002983093,brain
+Canada,Poland,0.5391983389854431,brain
+Canada,Russia,0.43444398045539856,brain
+Canada,Saudi Arabia,0.6251592636108398,brain
+Canada,Sweden,0.5041425228118896,brain
+Canada,Thailand,0.4408888816833496,brain
+Canada,United Kingdom,0.44693294167518616,brain
+Canada,United States,0.5227903127670288,brain
+Czech Republic,Finland,0.827946126461029,brain
+Czech Republic,France,0.44812923669815063,brain
+Czech Republic,Germany,0.43475833535194397,brain
+Czech Republic,Hungary,0.8656038045883179,brain
+Czech Republic,Italy,0.49030545353889465,brain
+Czech Republic,"Korea, South",0.7114855647087097,brain
+Czech Republic,Philippines,0.46440577507019043,brain
+Czech Republic,Poland,0.4959947168827057,brain
+Czech Republic,Russia,0.5126709342002869,brain
+Czech Republic,Saudi Arabia,1.0371990203857422,brain
+Czech Republic,Sweden,0.6042945384979248,brain
+Czech Republic,Thailand,0.5270714163780212,brain
+Czech Republic,United Kingdom,0.5859435796737671,brain
+Czech Republic,United States,0.5449846982955933,brain
+Finland,France,0.6399168372154236,brain
+Finland,Germany,0.6665464639663696,brain
+Finland,Hungary,0.3847063481807709,brain
+Finland,Italy,0.6152858138084412,brain
+Finland,"Korea, South",0.39598801732063293,brain
+Finland,Philippines,0.6417033076286316,brain
+Finland,Poland,0.6823533773422241,brain
+Finland,Russia,0.5206725597381592,brain
+Finland,Saudi Arabia,0.4645597040653229,brain
+Finland,Sweden,0.5090820789337158,brain
+Finland,Thailand,0.5539804697036743,brain
+Finland,United Kingdom,0.5183150172233582,brain
+Finland,United States,0.6508881449699402,brain
+France,Germany,0.4745918810367584,brain
+France,Hungary,0.6927671432495117,brain
+France,Italy,0.43498271703720093,brain
+France,"Korea, South",0.5879846215248108,brain
+France,Philippines,0.3836842179298401,brain
+France,Poland,0.4528609812259674,brain
+France,Russia,0.419799268245697,brain
+France,Saudi Arabia,0.8481414318084717,brain
+France,Sweden,0.46724021434783936,brain
+France,Thailand,0.4262615442276001,brain
+France,United Kingdom,0.493843138217926,brain
+France,United States,0.45991745591163635,brain
+Germany,Hungary,0.726469099521637,brain
+Germany,Italy,0.42333555221557617,brain
+Germany,"Korea, South",0.5608946681022644,brain
+Germany,Philippines,0.43804892897605896,brain
+Germany,Poland,0.43056735396385193,brain
+Germany,Russia,0.39293888211250305,brain
+Germany,Saudi Arabia,0.8431368470191956,brain
+Germany,Sweden,0.5163731575012207,brain
+Germany,Thailand,0.40735337138175964,brain
+Germany,United Kingdom,0.5016729831695557,brain
+Germany,United States,0.46350017189979553,brain
+Hungary,Italy,0.6566187739372253,brain
+Hungary,"Korea, South",0.46031203866004944,brain
+Hungary,Philippines,0.7302110195159912,brain
+Hungary,Poland,0.7707500457763672,brain
+Hungary,Russia,0.5711900591850281,brain
+Hungary,Saudi Arabia,0.4093083143234253,brain
+Hungary,Sweden,0.5999478101730347,brain
+Hungary,Thailand,0.6087744235992432,brain
+Hungary,United Kingdom,0.6111873984336853,brain
+Hungary,United States,0.7205226421356201,brain
+Italy,"Korea, South",0.5600496530532837,brain
+Italy,Philippines,0.5094390511512756,brain
+Italy,Poland,0.49713215231895447,brain
+Italy,Russia,0.4290778636932373,brain
+Italy,Saudi Arabia,0.7562635540962219,brain
+Italy,Sweden,0.4155867099761963,brain
+Italy,Thailand,0.43013685941696167,brain
+Italy,United Kingdom,0.5123171806335449,brain
+Italy,United States,0.4490465223789215,brain
+"Korea, South",Philippines,0.5695998072624207,brain
+"Korea, South",Poland,0.5913892984390259,brain
+"Korea, South",Russia,0.45028209686279297,brain
+"Korea, South",Saudi Arabia,0.5797286629676819,brain
+"Korea, South",Sweden,0.4905775487422943,brain
+"Korea, South",Thailand,0.46396151185035706,brain
+"Korea, South",United Kingdom,0.49361854791641235,brain
+"Korea, South",United States,0.5537838339805603,brain
+Philippines,Poland,0.35769081115722656,brain
+Philippines,Russia,0.4051523804664612,brain
+Philippines,Saudi Arabia,0.92173171043396,brain
+Philippines,Sweden,0.5055121779441833,brain
+Philippines,Thailand,0.41444098949432373,brain
+Philippines,United Kingdom,0.5091863870620728,brain
+Philippines,United States,0.4584752321243286,brain
+Poland,Russia,0.4457741379737854,brain
+Poland,Saudi Arabia,0.8918634653091431,brain
+Poland,Sweden,0.48092058300971985,brain
+Poland,Thailand,0.43137267231941223,brain
+Poland,United Kingdom,0.5039143562316895,brain
+Poland,United States,0.4167485535144806,brain
+Russia,Saudi Arabia,0.7574158906936646,brain
+Russia,Sweden,0.4230577051639557,brain
+Russia,Thailand,0.39215540885925293,brain
+Russia,United Kingdom,0.40145912766456604,brain
+Russia,United States,0.46546676754951477,brain
+Saudi Arabia,Sweden,0.6966448426246643,brain
+Saudi Arabia,Thailand,0.7042683362960815,brain
+Saudi Arabia,United Kingdom,0.7129569053649902,brain
+Saudi Arabia,United States,0.815421998500824,brain
+Sweden,Thailand,0.43138861656188965,brain
+Sweden,United Kingdom,0.42670679092407227,brain
+Sweden,United States,0.4620610773563385,brain
+Thailand,United Kingdom,0.4637357294559479,brain
+Thailand,United States,0.40998902916908264,brain
+United Kingdom,United States,0.45248785614967346,brain

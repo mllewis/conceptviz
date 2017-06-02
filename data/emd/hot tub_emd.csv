@@ -1,0 +1,106 @@
+country1,country2,dist,word
+Australia,Brazil,1.0925140380859375,hot tub
+Australia,Canada,0.7945040464401245,hot tub
+Australia,Czech Republic,0.49866679310798645,hot tub
+Australia,Finland,0.6103787422180176,hot tub
+Australia,Germany,0.4029799997806549,hot tub
+Australia,Hungary,0.6174793839454651,hot tub
+Australia,"Korea, South",0.9373663067817688,hot tub
+Australia,Philippines,1.0728567838668823,hot tub
+Australia,Russia,0.9505822658538818,hot tub
+Australia,Saudi Arabia,0.6590700745582581,hot tub
+Australia,Sweden,0.7880141735076904,hot tub
+Australia,Thailand,0.6711137294769287,hot tub
+Australia,United Kingdom,1.1659151315689087,hot tub
+Australia,United States,2.174453020095825,hot tub
+Brazil,Canada,1.7967991828918457,hot tub
+Brazil,Czech Republic,1.0085581541061401,hot tub
+Brazil,Finland,1.1799160242080688,hot tub
+Brazil,Germany,1.323494791984558,hot tub
+Brazil,Hungary,0.7276106476783752,hot tub
+Brazil,"Korea, South",0.534877359867096,hot tub
+Brazil,Philippines,0.5930737853050232,hot tub
+Brazil,Russia,0.5779958963394165,hot tub
+Brazil,Saudi Arabia,1.3539246320724487,hot tub
+Brazil,Sweden,0.6572366952896118,hot tub
+Brazil,Thailand,1.0966004133224487,hot tub
+Brazil,United Kingdom,2.1737375259399414,hot tub
+Brazil,United States,3.1586146354675293,hot tub
+Canada,Czech Republic,0.9902989268302917,hot tub
+Canada,Finland,1.0155377388000488,hot tub
+Canada,Germany,0.5480279922485352,hot tub
+Canada,Hungary,1.2125228643417358,hot tub
+Canada,"Korea, South",1.6443487405776978,hot tub
+Canada,Philippines,1.7268905639648438,hot tub
+Canada,Russia,1.6635334491729736,hot tub
+Canada,Saudi Arabia,0.8668799996376038,hot tub
+Canada,Sweden,1.467204213142395,hot tub
+Canada,Thailand,1.023579478263855,hot tub
+Canada,United Kingdom,0.42665839195251465,hot tub
+Canada,United States,1.43047297000885,hot tub
+Czech Republic,Finland,0.5383715033531189,hot tub
+Czech Republic,Germany,0.5611677765846252,hot tub
+Czech Republic,Hungary,0.6023337841033936,hot tub
+Czech Republic,"Korea, South",0.90745609998703,hot tub
+Czech Republic,Philippines,1.0773680210113525,hot tub
+Czech Republic,Russia,0.9174690842628479,hot tub
+Czech Republic,Saudi Arabia,0.681867241859436,hot tub
+Czech Republic,Sweden,0.7261173129081726,hot tub
+Czech Republic,Thailand,0.8409718871116638,hot tub
+Czech Republic,United Kingdom,1.3690577745437622,hot tub
+Czech Republic,United States,2.374880075454712,hot tub
+Finland,Germany,0.6494893431663513,hot tub
+Finland,Hungary,0.7182973623275757,hot tub
+Finland,"Korea, South",1.0975971221923828,hot tub
+Finland,Philippines,1.2671213150024414,hot tub
+Finland,Russia,1.111181616783142,hot tub
+Finland,Saudi Arabia,0.5219425559043884,hot tub
+Finland,Sweden,0.8290395736694336,hot tub
+Finland,Thailand,0.8398758172988892,hot tub
+Finland,United Kingdom,1.372592568397522,hot tub
+Finland,United States,2.3795621395111084,hot tub
+Germany,Hungary,0.7851775884628296,hot tub
+Germany,"Korea, South",1.1796144247055054,hot tub
+Germany,Philippines,1.2776105403900146,hot tub
+Germany,Russia,1.180249810218811,hot tub
+Germany,Saudi Arabia,0.6208303570747375,hot tub
+Germany,Sweden,0.9958651661872864,hot tub
+Germany,Thailand,0.7655082941055298,hot tub
+Germany,United Kingdom,0.9247074127197266,hot tub
+Germany,United States,1.9390559196472168,hot tub
+Hungary,"Korea, South",0.7121760845184326,hot tub
+Hungary,Philippines,0.7531458735466003,hot tub
+Hungary,Russia,0.7564770579338074,hot tub
+Hungary,Saudi Arabia,0.8260806798934937,hot tub
+Hungary,Sweden,0.5993751883506775,hot tub
+Hungary,Thailand,0.7269602417945862,hot tub
+Hungary,United Kingdom,1.5856276750564575,hot tub
+Hungary,United States,2.56974458694458,hot tub
+"Korea, South",Philippines,0.5205234289169312,hot tub
+"Korea, South",Russia,0.4680722951889038,hot tub
+"Korea, South",Saudi Arabia,1.289188027381897,hot tub
+"Korea, South",Sweden,0.6140202879905701,hot tub
+"Korea, South",Thailand,0.9387102723121643,hot tub
+"Korea, South",United Kingdom,2.0158050060272217,hot tub
+"Korea, South",United States,2.9959425926208496,hot tub
+Philippines,Russia,0.5252442359924316,hot tub
+Philippines,Saudi Arabia,1.4236418008804321,hot tub
+Philippines,Sweden,0.7393209934234619,hot tub
+Philippines,Thailand,1.0169388055801392,hot tub
+Philippines,United Kingdom,2.0953454971313477,hot tub
+Philippines,United States,3.0561461448669434,hot tub
+Russia,Saudi Arabia,1.3238147497177124,hot tub
+Russia,Sweden,0.6215454936027527,hot tub
+Russia,Thailand,1.0694082975387573,hot tub
+Russia,United Kingdom,2.035266637802124,hot tub
+Russia,United States,3.031632661819458,hot tub
+Saudi Arabia,Sweden,1.0221658945083618,hot tub
+Saudi Arabia,Thailand,0.7944797277450562,hot tub
+Saudi Arabia,United Kingdom,1.1868045330047607,hot tub
+Saudi Arabia,United States,2.147087574005127,hot tub
+Sweden,Thailand,0.8928123712539673,hot tub
+Sweden,United Kingdom,1.8416991233825684,hot tub
+Sweden,United States,2.831230878829956,hot tub
+Thailand,United Kingdom,1.353550910949707,hot tub
+Thailand,United States,2.28410267829895,hot tub
+United Kingdom,United States,1.0343854427337646,hot tub

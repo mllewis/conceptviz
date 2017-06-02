@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.5409515500068665,apple
+Australia,Canada,0.6806484460830688,apple
+Australia,Czech Republic,1.0249539613723755,apple
+Australia,Finland,0.8171969056129456,apple
+Australia,France,0.7109026312828064,apple
+Australia,Germany,0.8715160489082336,apple
+Australia,Hungary,1.1273630857467651,apple
+Australia,Italy,0.6764389276504517,apple
+Australia,"Korea, South",0.6228826642036438,apple
+Australia,Philippines,0.7473399043083191,apple
+Australia,Poland,0.7294228076934814,apple
+Australia,Russia,0.6678928136825562,apple
+Australia,Saudi Arabia,0.9657503366470337,apple
+Australia,Sweden,0.645430326461792,apple
+Australia,Thailand,0.8941749930381775,apple
+Australia,United Kingdom,1.1700100898742676,apple
+Australia,United States,1.814133644104004,apple
+Brazil,Canada,0.6850876808166504,apple
+Brazil,Czech Republic,0.7364905476570129,apple
+Brazil,Finland,0.7518494725227356,apple
+Brazil,France,0.601087749004364,apple
+Brazil,Germany,0.8022875785827637,apple
+Brazil,Hungary,0.8824157118797302,apple
+Brazil,Italy,0.6625184416770935,apple
+Brazil,"Korea, South",0.7308794856071472,apple
+Brazil,Philippines,0.708612322807312,apple
+Brazil,Poland,0.5618538856506348,apple
+Brazil,Russia,0.5727052092552185,apple
+Brazil,Saudi Arabia,0.8905463814735413,apple
+Brazil,Sweden,0.5757343769073486,apple
+Brazil,Thailand,0.7527507543563843,apple
+Brazil,United Kingdom,1.0510255098342896,apple
+Brazil,United States,1.6099441051483154,apple
+Canada,Czech Republic,1.0339027643203735,apple
+Canada,Finland,1.1690647602081299,apple
+Canada,France,0.8193037509918213,apple
+Canada,Germany,0.39711278676986694,apple
+Canada,Hungary,1.2010830640792847,apple
+Canada,Italy,0.982947587966919,apple
+Canada,"Korea, South",0.7786849737167358,apple
+Canada,Philippines,0.6483310461044312,apple
+Canada,Poland,0.8619197607040405,apple
+Canada,Russia,0.4882326126098633,apple
+Canada,Saudi Arabia,1.289199709892273,apple
+Canada,Sweden,0.856602132320404,apple
+Canada,Thailand,0.9835734963417053,apple
+Canada,United Kingdom,0.5882035493850708,apple
+Canada,United States,1.2488449811935425,apple
+Czech Republic,Finland,1.0003015995025635,apple
+Czech Republic,France,0.7006763219833374,apple
+Czech Republic,Germany,1.0029621124267578,apple
+Czech Republic,Hungary,0.5646218657493591,apple
+Czech Republic,Italy,0.8290690183639526,apple
+Czech Republic,"Korea, South",0.8444122076034546,apple
+Czech Republic,Philippines,0.7318001389503479,apple
+Czech Republic,Poland,0.560039222240448,apple
+Czech Republic,Russia,0.7917717099189758,apple
+Czech Republic,Saudi Arabia,1.1393604278564453,apple
+Czech Republic,Sweden,0.7747098803520203,apple
+Czech Republic,Thailand,0.5990506410598755,apple
+Czech Republic,United Kingdom,1.3053293228149414,apple
+Czech Republic,United States,1.739285945892334,apple
+Finland,France,0.9553200602531433,apple
+Finland,Germany,1.339799165725708,apple
+Finland,Hungary,1.0512969493865967,apple
+Finland,Italy,0.576007604598999,apple
+Finland,"Korea, South",1.0127842426300049,apple
+Finland,Philippines,1.130609393119812,apple
+Finland,Poland,0.7930216789245605,apple
+Finland,Russia,1.1405428647994995,apple
+Finland,Saudi Arabia,0.49985969066619873,apple
+Finland,Sweden,0.5409891605377197,apple
+Finland,Thailand,0.8664153218269348,apple
+Finland,United Kingdom,1.5585241317749023,apple
+Finland,United States,2.1060805320739746,apple
+France,Germany,0.8443916440010071,apple
+France,Hungary,0.7920920848846436,apple
+France,Italy,0.6641711592674255,apple
+France,"Korea, South",0.6820110082626343,apple
+France,Philippines,0.5461092591285706,apple
+France,Poland,0.48954373598098755,apple
+France,Russia,0.5874916315078735,apple
+France,Saudi Arabia,1.045688271522522,apple
+France,Sweden,0.6693972945213318,apple
+France,Thailand,0.6366046071052551,apple
+France,United Kingdom,1.2265381813049316,apple
+France,United States,1.798092007637024,apple
+Germany,Hungary,1.1877716779708862,apple
+Germany,Italy,1.1261868476867676,apple
+Germany,"Korea, South",0.8404233455657959,apple
+Germany,Philippines,0.6709043979644775,apple
+Germany,Poland,0.9060563445091248,apple
+Germany,Russia,0.4396402835845947,apple
+Germany,Saudi Arabia,1.453230619430542,apple
+Germany,Sweden,1.004056453704834,apple
+Germany,Thailand,0.9553372263908386,apple
+Germany,United Kingdom,0.524283230304718,apple
+Germany,United States,1.1158710718154907,apple
+Hungary,Italy,0.9471868872642517,apple
+Hungary,"Korea, South",0.994920015335083,apple
+Hungary,Philippines,0.8634750247001648,apple
+Hungary,Poland,0.6451195478439331,apple
+Hungary,Russia,0.9475207328796387,apple
+Hungary,Saudi Arabia,1.241619348526001,apple
+Hungary,Sweden,0.8780972957611084,apple
+Hungary,Thailand,0.7140973806381226,apple
+Hungary,United Kingdom,1.4976863861083984,apple
+Hungary,United States,1.9178533554077148,apple
+Italy,"Korea, South",0.7585436105728149,apple
+Italy,Philippines,0.8489991426467896,apple
+Italy,Poland,0.5708131194114685,apple
+Italy,Russia,0.8882429003715515,apple
+Italy,Saudi Arabia,0.6176019906997681,apple
+Italy,Sweden,0.5193032622337341,apple
+Italy,Thailand,0.7079402804374695,apple
+Italy,United Kingdom,1.4279758930206299,apple
+Italy,United States,1.9966837167739868,apple
+"Korea, South",Philippines,0.6055305600166321,apple
+"Korea, South",Poland,0.6642886400222778,apple
+"Korea, South",Russia,0.6844390034675598,apple
+"Korea, South",Saudi Arabia,1.1344977617263794,apple
+"Korea, South",Sweden,0.7637681365013123,apple
+"Korea, South",Thailand,0.6616275310516357,apple
+"Korea, South",United Kingdom,1.262383222579956,apple
+"Korea, South",United States,1.8299046754837036,apple
+Philippines,Poland,0.6263859868049622,apple
+Philippines,Russia,0.5064688324928284,apple
+Philippines,Saudi Arabia,1.2333670854568481,apple
+Philippines,Sweden,0.7726179957389832,apple
+Philippines,Thailand,0.7505435943603516,apple
+Philippines,United Kingdom,1.0214805603027344,apple
+Philippines,United States,1.6010868549346924,apple
+Poland,Russia,0.6701829433441162,apple
+Poland,Saudi Arabia,0.9368912577629089,apple
+Poland,Sweden,0.5867291688919067,apple
+Poland,Thailand,0.5873472094535828,apple
+Poland,United Kingdom,1.244067907333374,apple
+Poland,United States,1.762147068977356,apple
+Russia,Saudi Arabia,1.2616450786590576,apple
+Russia,Sweden,0.7833747863769531,apple
+Russia,Thailand,0.819804310798645,apple
+Russia,United Kingdom,0.8014505505561829,apple
+Russia,United States,1.393201231956482,apple
+Saudi Arabia,Sweden,0.6938419938087463,apple
+Saudi Arabia,Thailand,0.9858521223068237,apple
+Saudi Arabia,United Kingdom,1.6669679880142212,apple
+Saudi Arabia,United States,2.174959897994995,apple
+Sweden,Thailand,0.7242117524147034,apple
+Sweden,United Kingdom,1.2764790058135986,apple
+Sweden,United States,1.8559976816177368,apple
+Thailand,United Kingdom,1.3604426383972168,apple
+Thailand,United States,1.837157130241394,apple
+United Kingdom,United States,0.739380955696106,apple

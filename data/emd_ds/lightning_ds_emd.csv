@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.8807639479637146,lightning
+Australia,Canada,0.7119288444519043,lightning
+Australia,Czech Republic,1.0142107009887695,lightning
+Australia,Finland,0.9190208911895752,lightning
+Australia,France,0.702010452747345,lightning
+Australia,Germany,1.2025151252746582,lightning
+Australia,Hungary,0.9258621335029602,lightning
+Australia,Italy,0.8207757472991943,lightning
+Australia,"Korea, South",0.9474692940711975,lightning
+Australia,Philippines,0.9476471543312073,lightning
+Australia,Poland,0.9797205328941345,lightning
+Australia,Russia,0.9680958986282349,lightning
+Australia,Saudi Arabia,1.275679588317871,lightning
+Australia,Sweden,0.735451340675354,lightning
+Australia,Thailand,1.3998935222625732,lightning
+Australia,United Kingdom,0.9194236397743225,lightning
+Australia,United States,0.9295649528503418,lightning
+Brazil,Canada,0.9096037745475769,lightning
+Brazil,Czech Republic,1.419703483581543,lightning
+Brazil,Finland,0.7317404747009277,lightning
+Brazil,France,0.7436103820800781,lightning
+Brazil,Germany,0.7959404587745667,lightning
+Brazil,Hungary,0.8848613500595093,lightning
+Brazil,Italy,0.7124640345573425,lightning
+Brazil,"Korea, South",1.077599287033081,lightning
+Brazil,Philippines,1.0976561307907104,lightning
+Brazil,Poland,1.4416080713272095,lightning
+Brazil,Russia,1.287677526473999,lightning
+Brazil,Saudi Arabia,1.8311983346939087,lightning
+Brazil,Sweden,0.5782052278518677,lightning
+Brazil,Thailand,1.809565544128418,lightning
+Brazil,United Kingdom,1.397037386894226,lightning
+Brazil,United States,1.1425892114639282,lightning
+Canada,Czech Republic,1.2854716777801514,lightning
+Canada,Finland,0.9185669422149658,lightning
+Canada,France,0.791620671749115,lightning
+Canada,Germany,1.2986489534378052,lightning
+Canada,Hungary,1.0446513891220093,lightning
+Canada,Italy,0.8931801915168762,lightning
+Canada,"Korea, South",0.942694902420044,lightning
+Canada,Philippines,1.043655276298523,lightning
+Canada,Poland,0.9954051971435547,lightning
+Canada,Russia,0.948137640953064,lightning
+Canada,Saudi Arabia,1.4905375242233276,lightning
+Canada,Sweden,0.7673258185386658,lightning
+Canada,Thailand,1.2753944396972656,lightning
+Canada,United Kingdom,0.8547972440719604,lightning
+Canada,United States,1.1469789743423462,lightning
+Czech Republic,Finland,1.1556657552719116,lightning
+Czech Republic,France,1.3339585065841675,lightning
+Czech Republic,Germany,1.6436750888824463,lightning
+Czech Republic,Hungary,1.045114517211914,lightning
+Czech Republic,Italy,1.2128101587295532,lightning
+Czech Republic,"Korea, South",1.0949795246124268,lightning
+Czech Republic,Philippines,0.761838972568512,lightning
+Czech Republic,Poland,0.8754745125770569,lightning
+Czech Republic,Russia,0.9130144119262695,lightning
+Czech Republic,Saudi Arabia,1.0976624488830566,lightning
+Czech Republic,Sweden,1.1316828727722168,lightning
+Czech Republic,Thailand,1.3381364345550537,lightning
+Czech Republic,United Kingdom,1.0400373935699463,lightning
+Czech Republic,United States,1.005388855934143,lightning
+Finland,France,0.7931203842163086,lightning
+Finland,Germany,0.9129201769828796,lightning
+Finland,Hungary,0.7749124765396118,lightning
+Finland,Italy,0.7115804553031921,lightning
+Finland,"Korea, South",0.8342214226722717,lightning
+Finland,Philippines,0.9289530515670776,lightning
+Finland,Poland,1.2841284275054932,lightning
+Finland,Russia,0.9878538250923157,lightning
+Finland,Saudi Arabia,1.6645528078079224,lightning
+Finland,Sweden,0.621408224105835,lightning
+Finland,Thailand,1.5913656949996948,lightning
+Finland,United Kingdom,1.3416606187820435,lightning
+Finland,United States,1.1503492593765259,lightning
+France,Germany,0.9315316081047058,lightning
+France,Hungary,0.9836897850036621,lightning
+France,Italy,0.6141988039016724,lightning
+France,"Korea, South",0.8892517685890198,lightning
+France,Philippines,1.190778374671936,lightning
+France,Poland,1.2207350730895996,lightning
+France,Russia,1.0671117305755615,lightning
+France,Saudi Arabia,1.6643519401550293,lightning
+France,Sweden,0.6435161828994751,lightning
+France,Thailand,1.5913571119308472,lightning
+France,United Kingdom,1.2978448867797852,lightning
+France,United States,1.2505854368209839,lightning
+Germany,Hungary,1.1838510036468506,lightning
+Germany,Italy,0.9953321218490601,lightning
+Germany,"Korea, South",1.2508825063705444,lightning
+Germany,Philippines,1.4569262266159058,lightning
+Germany,Poland,1.8801074028015137,lightning
+Germany,Russia,1.6073235273361206,lightning
+Germany,Saudi Arabia,2.2456576824188232,lightning
+Germany,Sweden,0.863556981086731,lightning
+Germany,Thailand,2.2156009674072266,lightning
+Germany,United Kingdom,1.848336100578308,lightning
+Germany,United States,1.4005643129348755,lightning
+Hungary,Italy,0.7641651034355164,lightning
+Hungary,"Korea, South",0.8606761693954468,lightning
+Hungary,Philippines,0.8012077212333679,lightning
+Hungary,Poland,1.1002163887023926,lightning
+Hungary,Russia,1.042551875114441,lightning
+Hungary,Saudi Arabia,1.378682255744934,lightning
+Hungary,Sweden,0.7436441779136658,lightning
+Hungary,Thailand,1.5554760694503784,lightning
+Hungary,United Kingdom,1.1703306436538696,lightning
+Hungary,United States,0.8923394680023193,lightning
+Italy,"Korea, South",0.859597384929657,lightning
+Italy,Philippines,1.0824252367019653,lightning
+Italy,Poland,1.250607967376709,lightning
+Italy,Russia,1.0941696166992188,lightning
+Italy,Saudi Arabia,1.608819603919983,lightning
+Italy,Sweden,0.659883439540863,lightning
+Italy,Thailand,1.6588143110275269,lightning
+Italy,United Kingdom,1.324912428855896,lightning
+Italy,United States,1.161862850189209,lightning
+"Korea, South",Philippines,0.9186591506004333,lightning
+"Korea, South",Poland,1.1121509075164795,lightning
+"Korea, South",Russia,0.9140442609786987,lightning
+"Korea, South",Saudi Arabia,1.34250807762146,lightning
+"Korea, South",Sweden,0.8125462532043457,lightning
+"Korea, South",Thailand,1.276510238647461,lightning
+"Korea, South",United Kingdom,1.2131208181381226,lightning
+"Korea, South",United States,1.2195912599563599,lightning
+Philippines,Poland,0.9219419360160828,lightning
+Philippines,Russia,0.7986665964126587,lightning
+Philippines,Saudi Arabia,1.1194612979888916,lightning
+Philippines,Sweden,0.9070811867713928,lightning
+Philippines,Thailand,1.206752061843872,lightning
+Philippines,United Kingdom,1.0180286169052124,lightning
+Philippines,United States,0.9404932260513306,lightning
+Poland,Russia,0.732244074344635,lightning
+Poland,Saudi Arabia,0.8595740795135498,lightning
+Poland,Sweden,1.2056158781051636,lightning
+Poland,Thailand,0.9103451371192932,lightning
+Poland,United Kingdom,0.7266972064971924,lightning
+Poland,United States,1.1772888898849487,lightning
+Russia,Saudi Arabia,1.0727843046188354,lightning
+Russia,Sweden,1.0475555658340454,lightning
+Russia,Thailand,0.8692613840103149,lightning
+Russia,United Kingdom,0.9570839405059814,lightning
+Russia,United States,1.1623611450195312,lightning
+Saudi Arabia,Sweden,1.6024669408798218,lightning
+Saudi Arabia,Thailand,1.064821481704712,lightning
+Saudi Arabia,United Kingdom,1.1252002716064453,lightning
+Saudi Arabia,United States,1.3236324787139893,lightning
+Sweden,Thailand,1.5640840530395508,lightning
+Sweden,United Kingdom,1.2269421815872192,lightning
+Sweden,United States,1.056583285331726,lightning
+Thailand,United Kingdom,1.1388442516326904,lightning
+Thailand,United States,1.6832314729690552,lightning
+United Kingdom,United States,1.0453174114227295,lightning

@@ -1,0 +1,92 @@
+country1,country2,dist,word
+Australia,Brazil,0.579226553440094,mailbox
+Australia,Canada,0.6367748975753784,mailbox
+Australia,Czech Republic,1.2660350799560547,mailbox
+Australia,Finland,0.5071471333503723,mailbox
+Australia,France,0.7415191531181335,mailbox
+Australia,Germany,1.113158941268921,mailbox
+Australia,Italy,1.0158783197402954,mailbox
+Australia,Philippines,1.0079792737960815,mailbox
+Australia,Poland,0.830726146697998,mailbox
+Australia,Russia,0.9656184315681458,mailbox
+Australia,Sweden,0.6340157389640808,mailbox
+Australia,United Kingdom,1.1130783557891846,mailbox
+Australia,United States,0.8960039615631104,mailbox
+Brazil,Canada,0.7861052751541138,mailbox
+Brazil,Czech Republic,1.0979374647140503,mailbox
+Brazil,Finland,0.5320841670036316,mailbox
+Brazil,France,0.6054015159606934,mailbox
+Brazil,Germany,1.194618821144104,mailbox
+Brazil,Italy,1.0641087293624878,mailbox
+Brazil,Philippines,0.8783595561981201,mailbox
+Brazil,Poland,0.6522824764251709,mailbox
+Brazil,Russia,0.8145620822906494,mailbox
+Brazil,Sweden,0.6079949736595154,mailbox
+Brazil,United Kingdom,0.9708164930343628,mailbox
+Brazil,United States,0.9591398239135742,mailbox
+Canada,Czech Republic,1.373079776763916,mailbox
+Canada,Finland,0.7043015956878662,mailbox
+Canada,France,0.8178936839103699,mailbox
+Canada,Germany,0.993892252445221,mailbox
+Canada,Italy,0.8992106318473816,mailbox
+Canada,Philippines,0.8596064448356628,mailbox
+Canada,Poland,1.012127161026001,mailbox
+Canada,Russia,1.0578675270080566,mailbox
+Canada,Sweden,0.8358650803565979,mailbox
+Canada,United Kingdom,1.1388872861862183,mailbox
+Canada,United States,0.7687202095985413,mailbox
+Czech Republic,Finland,1.3023048639297485,mailbox
+Czech Republic,France,0.9360086917877197,mailbox
+Czech Republic,Germany,0.8225482702255249,mailbox
+Czech Republic,Italy,0.8237643837928772,mailbox
+Czech Republic,Philippines,0.878801167011261,mailbox
+Czech Republic,Poland,0.7640968561172485,mailbox
+Czech Republic,Russia,0.604084312915802,mailbox
+Czech Republic,Sweden,1.146632194519043,mailbox
+Czech Republic,United Kingdom,0.6813664436340332,mailbox
+Czech Republic,United States,1.1127856969833374,mailbox
+Finland,France,0.6955899000167847,mailbox
+Finland,Germany,1.1549274921417236,mailbox
+Finland,Italy,0.9867085814476013,mailbox
+Finland,Philippines,0.9773964881896973,mailbox
+Finland,Poland,0.8031167984008789,mailbox
+Finland,Russia,0.9217894077301025,mailbox
+Finland,Sweden,0.5930851101875305,mailbox
+Finland,United Kingdom,1.100558876991272,mailbox
+Finland,United States,0.9204399585723877,mailbox
+France,Germany,1.0347257852554321,mailbox
+France,Italy,0.8642683625221252,mailbox
+France,Philippines,0.7970597147941589,mailbox
+France,Poland,0.6348229050636292,mailbox
+France,Russia,0.6595010757446289,mailbox
+France,Sweden,0.7429065108299255,mailbox
+France,United Kingdom,0.9133861660957336,mailbox
+France,United States,0.9353740215301514,mailbox
+Germany,Italy,0.5507914423942566,mailbox
+Germany,Philippines,0.8719416856765747,mailbox
+Germany,Poland,1.0704905986785889,mailbox
+Germany,Russia,0.8568288087844849,mailbox
+Germany,Sweden,1.114138126373291,mailbox
+Germany,United Kingdom,0.7877582907676697,mailbox
+Germany,United States,0.7108297348022461,mailbox
+Italy,Philippines,0.6860320568084717,mailbox
+Italy,Poland,0.8563202619552612,mailbox
+Italy,Russia,0.7272988557815552,mailbox
+Italy,Sweden,0.9886361360549927,mailbox
+Italy,United Kingdom,0.7665202021598816,mailbox
+Italy,United States,0.6983955502510071,mailbox
+Philippines,Poland,0.7666435837745667,mailbox
+Philippines,Russia,0.8019129633903503,mailbox
+Philippines,Sweden,0.9385152459144592,mailbox
+Philippines,United Kingdom,0.7673019170761108,mailbox
+Philippines,United States,0.8029151558876038,mailbox
+Poland,Russia,0.5174719095230103,mailbox
+Poland,Sweden,0.8680561780929565,mailbox
+Poland,United Kingdom,0.654899537563324,mailbox
+Poland,United States,1.0140355825424194,mailbox
+Russia,Sweden,0.8707980513572693,mailbox
+Russia,United Kingdom,0.523495078086853,mailbox
+Russia,United States,0.9580882787704468,mailbox
+Sweden,United Kingdom,0.996675431728363,mailbox
+Sweden,United States,0.8452537059783936,mailbox
+United Kingdom,United States,0.9324841499328613,mailbox

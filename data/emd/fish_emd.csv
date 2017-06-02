@@ -1,0 +1,137 @@
+country1,country2,dist,word
+Australia,Brazil,0.9328449368476868,fish
+Australia,Canada,0.5907045006752014,fish
+Australia,Czech Republic,1.0054298639297485,fish
+Australia,Finland,0.9326270818710327,fish
+Australia,France,1.15408456325531,fish
+Australia,Germany,0.4308759868144989,fish
+Australia,Hungary,0.7635595798492432,fish
+Australia,Italy,0.6332798600196838,fish
+Australia,"Korea, South",0.5889730453491211,fish
+Australia,Philippines,0.7587220072746277,fish
+Australia,Poland,1.134132742881775,fish
+Australia,Russia,1.202559232711792,fish
+Australia,Sweden,0.8992342948913574,fish
+Australia,Thailand,0.6010404229164124,fish
+Australia,United Kingdom,0.9166291952133179,fish
+Australia,United States,2.6374359130859375,fish
+Brazil,Canada,1.393722414970398,fish
+Brazil,Czech Republic,0.4375748038291931,fish
+Brazil,Finland,0.6433187127113342,fish
+Brazil,France,0.6296208500862122,fish
+Brazil,Germany,0.7242529988288879,fish
+Brazil,Hungary,0.6911993026733398,fish
+Brazil,Italy,0.548105001449585,fish
+Brazil,"Korea, South",0.8614176511764526,fish
+Brazil,Philippines,0.6083782315254211,fish
+Brazil,Poland,0.5394101738929749,fish
+Brazil,Russia,0.7164042592048645,fish
+Brazil,Sweden,0.5837218761444092,fish
+Brazil,Thailand,0.8157846331596375,fish
+Brazil,United Kingdom,1.7228121757507324,fish
+Brazil,United States,3.4743545055389404,fish
+Canada,Czech Republic,1.4879639148712158,fish
+Canada,Finland,1.2880001068115234,fish
+Canada,France,1.6142610311508179,fish
+Canada,Germany,0.771635115146637,fish
+Canada,Hungary,1.1737405061721802,fish
+Canada,Italy,1.0848382711410522,fish
+Canada,"Korea, South",0.9272578954696655,fish
+Canada,Philippines,1.211979627609253,fish
+Canada,Poland,1.6121597290039062,fish
+Canada,Russia,1.5799397230148315,fish
+Canada,Sweden,1.3740109205245972,fish
+Canada,Thailand,0.9654697775840759,fish
+Canada,United Kingdom,0.5099435448646545,fish
+Canada,United States,2.163094997406006,fish
+Czech Republic,Finland,0.7302154898643494,fish
+Czech Republic,France,0.6522774696350098,fish
+Czech Republic,Germany,0.7677483558654785,fish
+Czech Republic,Hungary,0.7917552590370178,fish
+Czech Republic,Italy,0.6107723116874695,fish
+Czech Republic,"Korea, South",0.8459530472755432,fish
+Czech Republic,Philippines,0.5388931035995483,fish
+Czech Republic,Poland,0.4404275417327881,fish
+Czech Republic,Russia,0.5678860545158386,fish
+Czech Republic,Sweden,0.62152498960495,fish
+Czech Republic,Thailand,0.7902225255966187,fish
+Czech Republic,United Kingdom,1.8040574789047241,fish
+Czech Republic,United States,3.6035079956054688,fish
+Finland,France,0.8093178868293762,fish
+Finland,Germany,0.8393018245697021,fish
+Finland,Hungary,0.45230451226234436,fish
+Finland,Italy,0.7330307960510254,fish
+Finland,"Korea, South",0.8724610805511475,fish
+Finland,Philippines,0.5182399749755859,fish
+Finland,Poland,0.7621248960494995,fish
+Finland,Russia,1.0959144830703735,fish
+Finland,Sweden,0.6175488829612732,fish
+Finland,Thailand,0.7997274994850159,fish
+Finland,United Kingdom,1.6844558715820312,fish
+Finland,United States,3.3498778343200684,fish
+France,Germany,0.9945707321166992,fish
+France,Hungary,0.8091543316841125,fish
+France,Italy,0.7130378484725952,fish
+France,"Korea, South",0.9934501051902771,fish
+France,Philippines,0.628502368927002,fish
+France,Poland,0.7249711751937866,fish
+France,Russia,0.9913075566291809,fish
+France,Sweden,0.5055394172668457,fish
+France,Thailand,1.0089004039764404,fish
+France,United Kingdom,1.889516830444336,fish
+France,United States,3.6481173038482666,fish
+Germany,Hungary,0.7831339240074158,fish
+Germany,Italy,0.5046916007995605,fish
+Germany,"Korea, South",0.5163818001747131,fish
+Germany,Philippines,0.6438832879066467,fish
+Germany,Poland,0.9187284708023071,fish
+Germany,Russia,0.9082527160644531,fish
+Germany,Sweden,0.8057503700256348,fish
+Germany,Thailand,0.5098020434379578,fish
+Germany,United Kingdom,1.1051937341690063,fish
+Germany,United States,2.8853533267974854,fish
+Hungary,Italy,0.6602462530136108,fish
+Hungary,"Korea, South",0.7928646206855774,fish
+Hungary,Philippines,0.4763781726360321,fish
+Hungary,Poland,0.787950336933136,fish
+Hungary,Russia,1.1537798643112183,fish
+Hungary,Sweden,0.5382260084152222,fish
+Hungary,Thailand,0.743910014629364,fish
+Hungary,United Kingdom,1.5512679815292358,fish
+Hungary,United States,3.210768938064575,fish
+Italy,"Korea, South",0.5522286295890808,fish
+Italy,Philippines,0.5258047580718994,fish
+Italy,Poland,0.7343742847442627,fish
+Italy,Russia,0.8182384967803955,fish
+Italy,Sweden,0.5580311417579651,fish
+Italy,Thailand,0.5492054224014282,fish
+Italy,United Kingdom,1.3683607578277588,fish
+Italy,United States,3.1417477130889893,fish
+"Korea, South",Philippines,0.6905216574668884,fish
+"Korea, South",Poland,0.9802674651145935,fish
+"Korea, South",Russia,1.0760016441345215,fish
+"Korea, South",Sweden,0.7962315082550049,fish
+"Korea, South",Thailand,0.35082241892814636,fish
+"Korea, South",United Kingdom,1.190642237663269,fish
+"Korea, South",United States,2.9233713150024414,fish
+Philippines,Poland,0.6345387697219849,fish
+Philippines,Russia,0.8893193602561951,fish
+Philippines,Sweden,0.46523094177246094,fish
+Philippines,Thailand,0.6297652125358582,fish
+Philippines,United Kingdom,1.5662511587142944,fish
+Philippines,United States,3.323580503463745,fish
+Poland,Russia,0.6292504668235779,fish
+Poland,Sweden,0.6666214466094971,fish
+Poland,Thailand,0.8690372109413147,fish
+Poland,United Kingdom,1.9581124782562256,fish
+Poland,United States,3.71885347366333,fish
+Russia,Sweden,0.9745280742645264,fish
+Russia,Thailand,1.037591576576233,fish
+Russia,United Kingdom,1.8517237901687622,fish
+Russia,United States,3.6697328090667725,fish
+Sweden,Thailand,0.8079641461372375,fish
+Sweden,United Kingdom,1.6825700998306274,fish
+Sweden,United States,3.399841070175171,fish
+Thailand,United Kingdom,1.2940964698791504,fish
+Thailand,United States,3.0174407958984375,fish
+United Kingdom,United States,1.8276110887527466,fish

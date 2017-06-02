@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.7963734865188599,calendar
+Australia,Canada,0.3468063175678253,calendar
+Australia,Czech Republic,1.3132251501083374,calendar
+Australia,Finland,0.3052417039871216,calendar
+Australia,France,1.130942940711975,calendar
+Australia,Germany,0.353414386510849,calendar
+Australia,Hungary,0.7582724094390869,calendar
+Australia,Italy,0.5817760825157166,calendar
+Australia,"Korea, South",1.1179426908493042,calendar
+Australia,Philippines,1.230745792388916,calendar
+Australia,Poland,0.5960573554039001,calendar
+Australia,Russia,0.3150216042995453,calendar
+Australia,Saudi Arabia,1.0338233709335327,calendar
+Australia,Sweden,0.33822691440582275,calendar
+Australia,Thailand,0.7976273894309998,calendar
+Australia,United Kingdom,0.6641809344291687,calendar
+Australia,United States,1.0124669075012207,calendar
+Brazil,Canada,1.078877568244934,calendar
+Brazil,Czech Republic,0.6413947939872742,calendar
+Brazil,Finland,0.9944592714309692,calendar
+Brazil,France,0.40912896394729614,calendar
+Brazil,Germany,1.0938175916671753,calendar
+Brazil,Hungary,0.29702624678611755,calendar
+Brazil,Italy,1.0362905263900757,calendar
+Brazil,"Korea, South",0.4826201796531677,calendar
+Brazil,Philippines,0.5233314037322998,calendar
+Brazil,Poland,0.4455540180206299,calendar
+Brazil,Russia,0.6647180914878845,calendar
+Brazil,Saudi Arabia,0.4106644093990326,calendar
+Brazil,Sweden,0.7008914351463318,calendar
+Brazil,Thailand,0.2658872902393341,calendar
+Brazil,United Kingdom,1.367893099784851,calendar
+Brazil,United States,1.6864091157913208,calendar
+Canada,Czech Republic,1.6229944229125977,calendar
+Canada,Finland,0.42468565702438354,calendar
+Canada,France,1.4115592241287231,calendar
+Canada,Germany,0.29666027426719666,calendar
+Canada,Hungary,1.0760126113891602,calendar
+Canada,Italy,0.701197624206543,calendar
+Canada,"Korea, South",1.4132970571517944,calendar
+Canada,Philippines,1.5139113664627075,calendar
+Canada,Poland,0.9226081371307373,calendar
+Canada,Russia,0.49648553133010864,calendar
+Canada,Saudi Arabia,1.3318802118301392,calendar
+Canada,Sweden,0.5915042757987976,calendar
+Canada,Thailand,1.0875022411346436,calendar
+Canada,United Kingdom,0.33870449662208557,calendar
+Canada,United States,0.6849303841590881,calendar
+Czech Republic,Finland,1.4566867351531982,calendar
+Czech Republic,France,0.4433962106704712,calendar
+Czech Republic,Germany,1.6119877099990845,calendar
+Czech Republic,Hungary,0.6423310041427612,calendar
+Czech Republic,Italy,1.4842420816421509,calendar
+Czech Republic,"Korea, South",0.3734969198703766,calendar
+Czech Republic,Philippines,0.3768729567527771,calendar
+Czech Republic,Poland,0.8299399018287659,calendar
+Czech Republic,Russia,1.1995142698287964,calendar
+Czech Republic,Saudi Arabia,0.41872838139533997,calendar
+Czech Republic,Sweden,1.1604093313217163,calendar
+Czech Republic,Thailand,0.6641308665275574,calendar
+Czech Republic,United Kingdom,1.9287679195404053,calendar
+Czech Republic,United States,2.2595224380493164,calendar
+Finland,France,1.33038330078125,calendar
+Finland,Germany,0.305189847946167,calendar
+Finland,Hungary,0.8883432745933533,calendar
+Finland,Italy,0.42162925004959106,calendar
+Finland,"Korea, South",1.2841541767120361,calendar
+Finland,Philippines,1.42503821849823,calendar
+Finland,Poland,0.6888565421104431,calendar
+Finland,Russia,0.565757155418396,calendar
+Finland,Saudi Arabia,1.188671588897705,calendar
+Finland,Sweden,0.3529357612133026,calendar
+Finland,Thailand,0.987983226776123,calendar
+Finland,United Kingdom,0.716594934463501,calendar
+Finland,United States,1.0627562999725342,calendar
+France,Germany,1.4461313486099243,calendar
+France,Hungary,0.5384106636047363,calendar
+France,Italy,1.39159095287323,calendar
+France,"Korea, South",0.4142906367778778,calendar
+France,Philippines,0.3029990494251251,calendar
+France,Poland,0.738599419593811,calendar
+France,Russia,0.9766765236854553,calendar
+France,Saudi Arabia,0.3481066823005676,calendar
+France,Sweden,1.0364208221435547,calendar
+France,Thailand,0.40520697832107544,calendar
+France,United Kingdom,1.6999340057373047,calendar
+France,United States,2.0053956508636475,calendar
+Germany,Hungary,1.0429445505142212,calendar
+Germany,Italy,0.4546689987182617,calendar
+Germany,"Korea, South",1.415846586227417,calendar
+Germany,Philippines,1.5524392127990723,calendar
+Germany,Poland,0.8478958010673523,calendar
+Germany,Russia,0.5512552857398987,calendar
+Germany,Saudi Arabia,1.3343045711517334,calendar
+Germany,Sweden,0.49455639719963074,calendar
+Germany,Thailand,1.117716908454895,calendar
+Germany,United Kingdom,0.473768413066864,calendar
+Germany,United States,0.8179490566253662,calendar
+Hungary,Italy,0.9040295481681824,calendar
+Hungary,"Korea, South",0.5300209522247314,calendar
+Hungary,Philippines,0.6380096077919006,calendar
+Hungary,Poland,0.2932969927787781,calendar
+Hungary,Russia,0.7213074564933777,calendar
+Hungary,Saudi Arabia,0.45881545543670654,calendar
+Hungary,Sweden,0.5965204834938049,calendar
+Hungary,Thailand,0.3643260896205902,calendar
+Hungary,United Kingdom,1.3968784809112549,calendar
+Hungary,United States,1.7384997606277466,calendar
+Italy,"Korea, South",1.3215420246124268,calendar
+Italy,Philippines,1.4890261888504028,calendar
+Italy,Poland,0.6915527582168579,calendar
+Italy,Russia,0.7153424024581909,calendar
+Italy,Saudi Arabia,1.2398571968078613,calendar
+Italy,Sweden,0.4367561936378479,calendar
+Italy,Thailand,1.0752942562103271,calendar
+Italy,United Kingdom,0.9015164375305176,calendar
+Italy,United States,1.2347054481506348,calendar
+"Korea, South",Philippines,0.4133453071117401,calendar
+"Korea, South",Poland,0.7019193172454834,calendar
+"Korea, South",Russia,0.9850855469703674,calendar
+"Korea, South",Saudi Arabia,0.3455228805541992,calendar
+"Korea, South",Sweden,0.9843490123748779,calendar
+"Korea, South",Thailand,0.48757803440093994,calendar
+"Korea, South",United Kingdom,1.706667423248291,calendar
+"Korea, South",United States,2.0311315059661865,calendar
+Philippines,Poland,0.8308072090148926,calendar
+Philippines,Russia,1.0891004800796509,calendar
+Philippines,Saudi Arabia,0.40982842445373535,calendar
+Philippines,Sweden,1.1312267780303955,calendar
+Philippines,Thailand,0.521977961063385,calendar
+Philippines,United Kingdom,1.8038047552108765,calendar
+Philippines,United States,2.1099791526794434,calendar
+Poland,Russia,0.6024501323699951,calendar
+Poland,Saudi Arabia,0.6125959753990173,calendar
+Poland,Sweden,0.4046538770198822,calendar
+Poland,Thailand,0.48743030428886414,calendar
+Poland,United Kingdom,1.2358684539794922,calendar
+Poland,United States,1.5857540369033813,calendar
+Russia,Saudi Arabia,0.944527804851532,calendar
+Russia,Sweden,0.39929094910621643,calendar
+Russia,Thailand,0.6779466271400452,calendar
+Russia,United Kingdom,0.74626922607421875,calendar
+Russia,United States,1.0695433616638184,calendar
+Saudi Arabia,Sweden,0.8939443230628967,calendar
+Saudi Arabia,Thailand,0.39745357632637024,calendar
+Saudi Arabia,United Kingdom,1.6388336420059204,calendar
+Saudi Arabia,United States,1.9672069549560547,calendar
+Sweden,Thailand,0.7037085890769958,calendar
+Sweden,United Kingdom,0.9045830965042114,calendar
+Sweden,United States,1.2574119567871094,calendar
+Thailand,United Kingdom,1.3831382989883423,calendar
+Thailand,United States,1.6974250078201294,calendar
+United Kingdom,United States,0.35835444927215576,calendar

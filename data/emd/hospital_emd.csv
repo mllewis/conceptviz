@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.4982723295688629,hospital
+Australia,Canada,0.6318339705467224,hospital
+Australia,Czech Republic,0.9423201680183411,hospital
+Australia,Finland,0.3826085925102234,hospital
+Australia,France,0.7940524220466614,hospital
+Australia,Germany,0.41622835397720337,hospital
+Australia,Hungary,0.5711232423782349,hospital
+Australia,Italy,0.38274094462394714,hospital
+Australia,"Korea, South",0.8487251400947571,hospital
+Australia,Philippines,0.8901849985122681,hospital
+Australia,Poland,1.0011802911758423,hospital
+Australia,Russia,0.7047222852706909,hospital
+Australia,Saudi Arabia,0.8668769598007202,hospital
+Australia,Sweden,0.411902517080307,hospital
+Australia,Thailand,0.8697323799133301,hospital
+Australia,United Kingdom,0.9402549266815186,hospital
+Australia,United States,1.7469385862350464,hospital
+Brazil,Canada,0.96724700927734375,hospital
+Brazil,Czech Republic,0.7074543237686157,hospital
+Brazil,Finland,0.46401938796043396,hospital
+Brazil,France,0.533353865146637,hospital
+Brazil,Germany,0.7480466961860657,hospital
+Brazil,Hungary,0.5624756217002869,hospital
+Brazil,Italy,0.4712429344654083,hospital
+Brazil,"Korea, South",0.8305159211158752,hospital
+Brazil,Philippines,0.6707621216773987,hospital
+Brazil,Poland,0.7494745254516602,hospital
+Brazil,Russia,0.6026560664176941,hospital
+Brazil,Saudi Arabia,0.83034747838974,hospital
+Brazil,Sweden,0.4849466383457184,hospital
+Brazil,Thailand,0.881178617477417,hospital
+Brazil,United Kingdom,1.3161592483520508,hospital
+Brazil,United States,2.0856213569641113,hospital
+Canada,Czech Republic,1.4686869382858276,hospital
+Canada,Finland,0.8104379773139954,hospital
+Canada,France,1.3357253074645996,hospital
+Canada,Germany,0.3263023793697357,hospital
+Canada,Hungary,0.9054074883460999,hospital
+Canada,Italy,0.6910869479179382,hospital
+Canada,"Korea, South",0.9977332949638367,hospital
+Canada,Philippines,1.4333466291427612,hospital
+Canada,Poland,1.539332628250122,hospital
+Canada,Russia,1.2404999732971191,hospital
+Canada,Saudi Arabia,1.2654438018798828,hospital
+Canada,Sweden,0.82423996925354,hospital
+Canada,Thailand,0.9908242225646973,hospital
+Canada,United Kingdom,0.4162900447845459,hospital
+Canada,United States,1.1638062000274658,hospital
+Czech Republic,Finland,0.8675331473350525,hospital
+Czech Republic,France,0.5088039040565491,hospital
+Czech Republic,Germany,1.2210618257522583,hospital
+Czech Republic,Hungary,0.9176881313323975,hospital
+Czech Republic,Italy,0.9621332287788391,hospital
+Czech Republic,"Korea, South",1.3955395221710205,hospital
+Czech Republic,Philippines,0.6515269875526428,hospital
+Czech Republic,Poland,0.4736633598804474,hospital
+Czech Republic,Russia,0.49700674414634705,hospital
+Czech Republic,Saudi Arabia,1.0382670164108276,hospital
+Czech Republic,Sweden,0.8796733021736145,hospital
+Czech Republic,Thailand,1.4330235719680786,hospital
+Czech Republic,United Kingdom,1.7605658769607544,hospital
+Czech Republic,United States,2.555882692337036,hospital
+Finland,France,0.7069923877716064,hospital
+Finland,Germany,0.5958003401756287,hospital
+Finland,Hungary,0.4676129221916199,hospital
+Finland,Italy,0.37427282333374023,hospital
+Finland,"Korea, South",0.7674512267112732,hospital
+Finland,Philippines,0.7095614075660706,hospital
+Finland,Poland,0.8620449304580688,hospital
+Finland,Russia,0.6913170218467712,hospital
+Finland,Saudi Arabia,0.6809539198875427,hospital
+Finland,Sweden,0.35954976081848145,hospital
+Finland,Thailand,0.7637708187103271,hospital
+Finland,United Kingdom,1.1310933828353882,hospital
+Finland,United States,1.927205204963684,hospital
+France,Germany,1.0902276039123535,hospital
+France,Hungary,0.694205105304718,hospital
+France,Italy,0.8118513822555542,hospital
+France,"Korea, South",1.1608582735061646,hospital
+France,Philippines,0.5562925934791565,hospital
+France,Poland,0.5222583413124084,hospital
+France,Russia,0.5007190108299255,hospital
+France,Saudi Arabia,0.8448741436004639,hospital
+France,Sweden,0.6984718441963196,hospital
+France,Thailand,1.2073875665664673,hospital
+France,United Kingdom,1.6444681882858276,hospital
+France,United States,2.4384989738464355,hospital
+Germany,Hungary,0.7288175821304321,hospital
+Germany,Italy,0.5285564661026001,hospital
+Germany,"Korea, South",0.9259558916091919,hospital
+Germany,Philippines,1.1716554164886475,hospital
+Germany,Poland,1.2724428176879883,hospital
+Germany,Russia,0.9798868298530579,hospital
+Germany,Saudi Arabia,1.0726438760757446,hospital
+Germany,Sweden,0.624006986618042,hospital
+Germany,Thailand,0.9288719892501831,hospital
+Germany,United Kingdom,0.6219450235366821,hospital
+Germany,United States,1.427344799041748,hospital
+Hungary,Italy,0.5053074955940247,hospital
+Hungary,"Korea, South",0.8000552654266357,hospital
+Hungary,Philippines,0.7464664578437805,hospital
+Hungary,Poland,0.8987172842025757,hospital
+Hungary,Russia,0.816108763217926,hospital
+Hungary,Saudi Arabia,0.763921320438385,hospital
+Hungary,Sweden,0.4720902740955353,hospital
+Hungary,Thailand,0.7542464733123779,hospital
+Hungary,United Kingdom,1.2307500839233398,hospital
+Hungary,United States,2.0070278644561768,hospital
+Italy,"Korea, South",0.674413800239563,hospital
+Italy,Philippines,0.8617826104164124,hospital
+Italy,Poland,1.0362602472305298,hospital
+Italy,Russia,0.8088085651397705,hospital
+Italy,Saudi Arabia,0.7649267315864563,hospital
+Italy,Sweden,0.3754984140396118,hospital
+Italy,Thailand,0.7120862007141113,hospital
+Italy,United Kingdom,1.0283467769622803,hospital
+Italy,United States,1.788326382637024,hospital
+"Korea, South",Philippines,1.0896061658859253,hospital
+"Korea, South",Poland,1.3459700345993042,hospital
+"Korea, South",Russia,1.3161139488220215,hospital
+"Korea, South",Saudi Arabia,0.9643334746360779,hospital
+"Korea, South",Sweden,0.7528302669525146,hospital
+"Korea, South",Thailand,0.5498713850975037,hospital
+"Korea, South",United Kingdom,1.2797709703445435,hospital
+"Korea, South",United States,1.8972105979919434,hospital
+Philippines,Poland,0.5173850059509277,hospital
+Philippines,Russia,0.707482635974884,hospital
+Philippines,Saudi Arabia,0.7058680057525635,hospital
+Philippines,Sweden,0.7375431656837463,hospital
+Philippines,Thailand,1.0813289880752563,hospital
+Philippines,United Kingdom,1.7392246723175049,hospital
+Philippines,United States,2.567293405532837,hospital
+Poland,Russia,0.5746051669120789,hospital
+Poland,Saudi Arabia,0.9447017908096313,hospital
+Poland,Sweden,0.8954721093177795,hospital
+Poland,Thailand,1.318198800086975,hospital
+Poland,United Kingdom,1.8432056903839111,hospital
+Poland,United States,2.6663029193878174,hospital
+Russia,Saudi Arabia,1.0099014043807983,hospital
+Russia,Sweden,0.7170894742012024,hospital
+Russia,Thailand,1.3165158033370972,hospital
+Russia,United Kingdom,1.5178641080856323,hospital
+Russia,United States,2.320396661758423,hospital
+Saudi Arabia,Sweden,0.6726469993591309,hospital
+Saudi Arabia,Thailand,0.8202630877494812,hospital
+Saudi Arabia,United Kingdom,1.568869948387146,hospital
+Saudi Arabia,United States,2.348447322845459,hospital
+Sweden,Thailand,0.7238261103630066,hospital
+Sweden,United Kingdom,1.1404917240142822,hospital
+Sweden,United States,1.9357683658599854,hospital
+Thailand,United Kingdom,1.2522659301757812,hospital
+Thailand,United States,1.9403921365737915,hospital
+United Kingdom,United States,0.8389503955841064,hospital

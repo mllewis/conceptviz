@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.4928802251815796,mermaid
+Australia,Canada,0.48365679383277893,mermaid
+Australia,Czech Republic,0.4280082881450653,mermaid
+Australia,Finland,0.44517308473587036,mermaid
+Australia,France,0.3663448691368103,mermaid
+Australia,Germany,0.29339104890823364,mermaid
+Australia,Hungary,0.6361806392669678,mermaid
+Australia,Italy,0.44092634320259094,mermaid
+Australia,"Korea, South",1.5069273710250854,mermaid
+Australia,Philippines,0.6253759860992432,mermaid
+Australia,Poland,0.6561499834060669,mermaid
+Australia,Russia,0.32869479060173035,mermaid
+Australia,Saudi Arabia,0.9658180475234985,mermaid
+Australia,Sweden,0.33567237854003906,mermaid
+Australia,Thailand,0.7318397760391235,mermaid
+Australia,United Kingdom,0.7940506935119629,mermaid
+Australia,United States,1.4097343683242798,mermaid
+Brazil,Canada,0.8853759169578552,mermaid
+Brazil,Czech Republic,0.26605403423309326,mermaid
+Brazil,Finland,0.4554385542869568,mermaid
+Brazil,France,0.43660518527030945,mermaid
+Brazil,Germany,0.6453690528869629,mermaid
+Brazil,Hungary,0.3590826988220215,mermaid
+Brazil,Italy,0.3140374720096588,mermaid
+Brazil,"Korea, South",1.366886854171753,mermaid
+Brazil,Philippines,0.41650620102882385,mermaid
+Brazil,Poland,0.4520379602909088,mermaid
+Brazil,Russia,0.6852092742919922,mermaid
+Brazil,Saudi Arabia,0.6074742078781128,mermaid
+Brazil,Sweden,0.3544168174266815,mermaid
+Brazil,Thailand,0.8681975603103638,mermaid
+Brazil,United Kingdom,1.2215461730957031,mermaid
+Brazil,United States,1.8335597515106201,mermaid
+Canada,Czech Republic,0.7904344797134399,mermaid
+Canada,Finland,0.8072486519813538,mermaid
+Canada,France,0.7352224588394165,mermaid
+Canada,Germany,0.3933040499687195,mermaid
+Canada,Hungary,1.0239835977554321,mermaid
+Canada,Italy,0.8024008870124817,mermaid
+Canada,"Korea, South",1.7543725967407227,mermaid
+Canada,Philippines,0.9923869967460632,mermaid
+Canada,Poland,1.0187515020370483,mermaid
+Canada,Russia,0.30849942564964294,mermaid
+Canada,Saudi Arabia,1.3761157989501953,mermaid
+Canada,Sweden,0.6886089444160461,mermaid
+Canada,Thailand,0.854864239692688,mermaid
+Canada,United Kingdom,0.37450799345970154,mermaid
+Canada,United States,0.9704176187515259,mermaid
+Czech Republic,Finland,0.42647695541381836,mermaid
+Czech Republic,France,0.4842873215675354,mermaid
+Czech Republic,Germany,0.5658135414123535,mermaid
+Czech Republic,Hungary,0.3917241096496582,mermaid
+Czech Republic,Italy,0.23964901268482208,mermaid
+Czech Republic,"Korea, South",1.284495234489441,mermaid
+Czech Republic,Philippines,0.48139768838882446,mermaid
+Czech Republic,Poland,0.44962209463119507,mermaid
+Czech Republic,Russia,0.6298390030860901,mermaid
+Czech Republic,Saudi Arabia,0.6978921890258789,mermaid
+Czech Republic,Sweden,0.33283308148384094,mermaid
+Czech Republic,Thailand,0.7731586694717407,mermaid
+Czech Republic,United Kingdom,1.1093041896820068,mermaid
+Czech Republic,United States,1.7178281545639038,mermaid
+Finland,France,0.5153793096542358,mermaid
+Finland,Germany,0.47598162293434143,mermaid
+Finland,Hungary,0.5053480267524719,mermaid
+Finland,Italy,0.3584294021129608,mermaid
+Finland,"Korea, South",1.4399731159210205,mermaid
+Finland,Philippines,0.7095397114753723,mermaid
+Finland,Poland,0.687512993812561,mermaid
+Finland,Russia,0.6371786594390869,mermaid
+Finland,Saudi Arabia,0.8311662077903748,mermaid
+Finland,Sweden,0.31067904829978943,mermaid
+Finland,Thailand,0.7340715527534485,mermaid
+Finland,United Kingdom,1.0900344848632812,mermaid
+Finland,United States,1.6756213903427124,mermaid
+France,Germany,0.5522669553756714,mermaid
+France,Hungary,0.5360392928123474,mermaid
+France,Italy,0.5120300650596619,mermaid
+France,"Korea, South",1.644576072692871,mermaid
+France,Philippines,0.4870750308036804,mermaid
+France,Poland,0.6541159152984619,mermaid
+France,Russia,0.49002212285995483,mermaid
+France,Saudi Arabia,0.7451526522636414,mermaid
+France,Sweden,0.3966386020183563,mermaid
+France,Thailand,0.9589818716049194,mermaid
+France,United Kingdom,1.0686670541763306,mermaid
+France,United States,1.6838959455490112,mermaid
+Germany,Hungary,0.7973523139953613,mermaid
+Germany,Italy,0.5418009161949158,mermaid
+Germany,"Korea, South",1.6013356447219849,mermaid
+Germany,Philippines,0.8115837574005127,mermaid
+Germany,Poland,0.8239327669143677,mermaid
+Germany,Russia,0.31729739904403687,mermaid
+Germany,Saudi Arabia,1.1181737184524536,mermaid
+Germany,Sweden,0.4094911515712738,mermaid
+Germany,Thailand,0.7101625800132751,mermaid
+Germany,United Kingdom,0.6431213617324829,mermaid
+Germany,United States,1.242016315460205,mermaid
+Hungary,Italy,0.40868985652923584,mermaid
+Hungary,"Korea, South",1.3406533002853394,mermaid
+Hungary,Philippines,0.5009218454360962,mermaid
+Hungary,Poland,0.5270229578018188,mermaid
+Hungary,Russia,0.8107813000679016,mermaid
+Hungary,Saudi Arabia,0.5707746744155884,mermaid
+Hungary,Sweden,0.5051376819610596,mermaid
+Hungary,Thailand,0.9525707960128784,mermaid
+Hungary,United Kingdom,1.3373208045959473,mermaid
+Hungary,United States,1.9449840784072876,mermaid
+Italy,"Korea, South",1.3135241270065308,mermaid
+Italy,Philippines,0.5152373313903809,mermaid
+Italy,Poland,0.49327731132507324,mermaid
+Italy,Russia,0.6239674687385559,mermaid
+Italy,Saudi Arabia,0.7195907235145569,mermaid
+Italy,Sweden,0.32516559958457947,mermaid
+Italy,Thailand,0.747072696685791,mermaid
+Italy,United Kingdom,1.09941565990448,mermaid
+Italy,United States,1.697258710861206,mermaid
+"Korea, South",Philippines,1.4707154035568237,mermaid
+"Korea, South",Poland,1.133987545967102,mermaid
+"Korea, South",Russia,1.6950773000717163,mermaid
+"Korea, South",Saudi Arabia,1.6041818857192993,mermaid
+"Korea, South",Sweden,1.4556275606155396,mermaid
+"Korea, South",Thailand,1.155308723449707,mermaid
+"Korea, South",United Kingdom,1.9387552738189697,mermaid
+"Korea, South",United States,2.390061616897583,mermaid
+Philippines,Poland,0.5256062150001526,mermaid
+Philippines,Russia,0.7460516691207886,mermaid
+Philippines,Saudi Arabia,0.5692735314369202,mermaid
+Philippines,Sweden,0.5779142379760742,mermaid
+Philippines,Thailand,1.0574945211410522,mermaid
+Philippines,United Kingdom,1.3228002786636353,mermaid
+Philippines,United States,1.936099648475647,mermaid
+Poland,Russia,0.8605009317398071,mermaid
+Poland,Saudi Arabia,0.7640181183815002,mermaid
+Poland,Sweden,0.6066147685050964,mermaid
+Poland,Thailand,0.871001124382019,mermaid
+Poland,United Kingdom,1.3457216024398804,mermaid
+Poland,United States,1.9383363723754883,mermaid
+Russia,Saudi Arabia,1.1269968748092651,mermaid
+Russia,Sweden,0.5201363563537598,mermaid
+Russia,Thailand,0.917518138885498,mermaid
+Russia,United Kingdom,0.6169337034225464,mermaid
+Russia,United States,1.2274765968322754,mermaid
+Saudi Arabia,Sweden,0.7955849170684814,mermaid
+Saudi Arabia,Thailand,1.3743075132369995,mermaid
+Saudi Arabia,United Kingdom,1.7051366567611694,mermaid
+Saudi Arabia,United States,2.317655324935913,mermaid
+Sweden,Thailand,0.7386597990989685,mermaid
+Sweden,United Kingdom,0.9960955381393433,mermaid
+Sweden,United States,1.5981056690216064,mermaid
+Thailand,United Kingdom,0.9430018067359924,mermaid
+Thailand,United States,1.4136894941329956,mermaid
+United Kingdom,United States,0.6220929026603699,mermaid

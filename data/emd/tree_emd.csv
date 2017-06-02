@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.7845121026039124,tree
+Australia,Canada,0.5379546284675598,tree
+Australia,Czech Republic,1.120295524597168,tree
+Australia,Finland,0.9969419836997986,tree
+Australia,France,0.9095123410224915,tree
+Australia,Germany,0.45839881896972656,tree
+Australia,Hungary,1.7479665279388428,tree
+Australia,Italy,0.950829029083252,tree
+Australia,"Korea, South",1.0585027933120728,tree
+Australia,Philippines,0.9500612020492554,tree
+Australia,Poland,1.2309017181396484,tree
+Australia,Russia,0.5579949617385864,tree
+Australia,Saudi Arabia,0.8945647478103638,tree
+Australia,Sweden,0.5310410261154175,tree
+Australia,Thailand,1.1017725467681885,tree
+Australia,United Kingdom,0.8568242192268372,tree
+Australia,United States,1.8620071411132812,tree
+Brazil,Canada,0.48253148794174194,tree
+Brazil,Czech Republic,1.2748796939849854,tree
+Brazil,Finland,1.259941816329956,tree
+Brazil,France,1.117828130722046,tree
+Brazil,Germany,0.6540347933769226,tree
+Brazil,Hungary,1.9205937385559082,tree
+Brazil,Italy,0.9903724193572998,tree
+Brazil,"Korea, South",1.005497694015503,tree
+Brazil,Philippines,0.5616332292556763,tree
+Brazil,Poland,1.379902958869934,tree
+Brazil,Russia,0.6495164036750793,tree
+Brazil,Saudi Arabia,1.229038953781128,tree
+Brazil,Sweden,0.9361701607704163,tree
+Brazil,Thailand,0.6097081899642944,tree
+Brazil,United Kingdom,0.5613026022911072,tree
+Brazil,United States,1.4349966049194336,tree
+Canada,Czech Republic,1.205727219581604,tree
+Canada,Finland,1.1656723022460938,tree
+Canada,France,1.0644649267196655,tree
+Canada,Germany,0.37734976410865784,tree
+Canada,Hungary,1.8717111349105835,tree
+Canada,Italy,0.9431391954421997,tree
+Canada,"Korea, South",0.9569647908210754,tree
+Canada,Philippines,0.7273140549659729,tree
+Canada,Poland,1.3012094497680664,tree
+Canada,Russia,0.49813464283943176,tree
+Canada,Saudi Arabia,1.148544430732727,tree
+Canada,Sweden,0.812129557132721,tree
+Canada,Thailand,0.8634049892425537,tree
+Canada,United Kingdom,0.4325273334980011,tree
+Canada,United States,1.4434937238693237,tree
+Czech Republic,Finland,0.40278318524360657,tree
+Czech Republic,France,0.6567419767379761,tree
+Czech Republic,Germany,0.9458150863647461,tree
+Czech Republic,Hungary,0.7847816944122314,tree
+Czech Republic,Italy,0.6723185181617737,tree
+Czech Republic,"Korea, South",0.669578492641449,tree
+Czech Republic,Philippines,1.1803966760635376,tree
+Czech Republic,Poland,0.4432756304740906,tree
+Czech Republic,Russia,0.9124894142150879,tree
+Czech Republic,Saudi Arabia,0.5632052421569824,tree
+Czech Republic,Sweden,0.8851708173751831,tree
+Czech Republic,Thailand,1.5810741186141968,tree
+Czech Republic,United Kingdom,1.5312379598617554,tree
+Czech Republic,United States,2.4571244716644287,tree
+Finland,France,0.6255741119384766,tree
+Finland,Germany,0.8939720988273621,tree
+Finland,Hungary,0.8627768754959106,tree
+Finland,Italy,0.6771474480628967,tree
+Finland,"Korea, South",0.7368649244308472,tree
+Finland,Philippines,1.1756044626235962,tree
+Finland,Poland,0.48480942845344543,tree
+Finland,Russia,0.8945031762123108,tree
+Finland,Saudi Arabia,0.47024378180503845,tree
+Finland,Sweden,0.7068714499473572,tree
+Finland,Thailand,1.5718003511428833,tree
+Finland,United Kingdom,1.5035403966903687,tree
+Finland,United States,2.448549747467041,tree
+France,Germany,0.8635258078575134,tree
+France,Hungary,1.0039211511611938,tree
+France,Italy,0.5177273750305176,tree
+France,"Korea, South",0.7430905103683472,tree
+France,Philippines,0.9450443387031555,tree
+France,Poland,0.7489149570465088,tree
+France,Russia,0.8888071775436401,tree
+France,Saudi Arabia,0.5069959759712219,tree
+France,Sweden,0.6029079556465149,tree
+France,Thailand,1.35371994972229,tree
+France,United Kingdom,1.438997745513916,tree
+France,United States,2.431035041809082,tree
+Germany,Hungary,1.6019859313964844,tree
+Germany,Italy,0.8482125997543335,tree
+Germany,"Korea, South",0.8173598051071167,tree
+Germany,Philippines,0.8381361365318298,tree
+Germany,Poland,1.0252435207366943,tree
+Germany,Russia,0.3621785342693329,tree
+Germany,Saudi Arabia,0.9018590450286865,tree
+Germany,Sweden,0.6489027738571167,tree
+Germany,Thailand,1.040984034538269,tree
+Germany,United Kingdom,0.6789731979370117,tree
+Germany,United States,1.6790573596954346,tree
+Hungary,Italy,1.07082998752594,tree
+Hungary,"Korea, South",1.1189154386520386,tree
+Hungary,Philippines,1.730499505996704,tree
+Hungary,Poland,0.7373031973838806,tree
+Hungary,Russia,1.5651981830596924,tree
+Hungary,Saudi Arabia,0.9675356149673462,tree
+Hungary,Sweden,1.411253809928894,tree
+Hungary,Thailand,2.1557862758636475,tree
+Hungary,United Kingdom,2.1883113384246826,tree
+Hungary,United States,3.077216863632202,tree
+Italy,"Korea, South",0.6173432469367981,tree
+Italy,Philippines,0.8395666480064392,tree
+Italy,Poland,0.7096425890922546,tree
+Italy,Russia,0.7874341011047363,tree
+Italy,Saudi Arabia,0.6548025012016296,tree
+Italy,Sweden,0.7556301951408386,tree
+Italy,Thailand,1.2278636693954468,tree
+Italy,United Kingdom,1.2825995683670044,tree
+Italy,United States,2.2224793434143066,tree
+"Korea, South",Philippines,0.8755991458892822,tree
+"Korea, South",Poland,0.70811927318573,tree
+"Korea, South",Russia,0.7227327227592468,tree
+"Korea, South",Saudi Arabia,0.8228933811187744,tree
+"Korea, South",Sweden,0.9148458242416382,tree
+"Korea, South",Thailand,1.2020660638809204,tree
+"Korea, South",United Kingdom,1.230533480644226,tree
+"Korea, South",United States,2.0766069889068604,tree
+Philippines,Poland,1.248301386833191,tree
+Philippines,Russia,0.8454002737998962,tree
+Philippines,Saudi Arabia,1.1615909337997437,tree
+Philippines,Sweden,0.960403323173523,tree
+Philippines,Thailand,0.5977548956871033,tree
+Philippines,United Kingdom,0.9121254682540894,tree
+Philippines,United States,1.7219280004501343,tree
+Poland,Russia,0.998391330242157,tree
+Poland,Saudi Arabia,0.6966667175292969,tree
+Poland,Sweden,1.0220996141433716,tree
+Poland,Thailand,1.6549798250198364,tree
+Poland,United Kingdom,1.5884588956832886,tree
+Poland,United States,2.465102195739746,tree
+Russia,Saudi Arabia,0.8630329966545105,tree
+Russia,Sweden,0.6760874390602112,tree
+Russia,Thailand,0.9731929302215576,tree
+Russia,United Kingdom,0.765193521976471,tree
+Russia,United States,1.7320306301116943,tree
+Saudi Arabia,Sweden,0.5327956080436707,tree
+Saudi Arabia,Thailand,1.4652096033096313,tree
+Saudi Arabia,United Kingdom,1.5251951217651367,tree
+Saudi Arabia,United States,2.5242812633514404,tree
+Sweden,Thailand,1.2140048742294312,tree
+Sweden,United Kingdom,1.194062352180481,tree
+Sweden,United States,2.2006263732910156,tree
+Thailand,United Kingdom,0.9200312495231628,tree
+Thailand,United States,1.507226586341858,tree
+United Kingdom,United States,1.0383623838424683,tree

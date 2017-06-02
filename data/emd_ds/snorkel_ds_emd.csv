@@ -1,0 +1,137 @@
+country1,country2,dist,word
+Australia,Brazil,0.9942789673805237,snorkel
+Australia,Canada,0.7990031838417053,snorkel
+Australia,Czech Republic,1.2943180799484253,snorkel
+Australia,Finland,1.0284088850021362,snorkel
+Australia,France,1.4628015756607056,snorkel
+Australia,Germany,1.197757363319397,snorkel
+Australia,Italy,0.9620335698127747,snorkel
+Australia,"Korea, South",1.3537153005599976,snorkel
+Australia,Philippines,0.9569735527038574,snorkel
+Australia,Poland,0.73613041639328,snorkel
+Australia,Russia,1.1792244911193848,snorkel
+Australia,Saudi Arabia,1.1148085594177246,snorkel
+Australia,Sweden,0.7610170841217041,snorkel
+Australia,Thailand,1.5338435173034668,snorkel
+Australia,United Kingdom,0.8640690445899963,snorkel
+Australia,United States,0.630890429019928,snorkel
+Brazil,Canada,1.3390768766403198,snorkel
+Brazil,Czech Republic,2.0481936931610107,snorkel
+Brazil,Finland,1.5103082656860352,snorkel
+Brazil,France,2.2736923694610596,snorkel
+Brazil,Germany,1.8706841468811035,snorkel
+Brazil,Italy,1.4358994960784912,snorkel
+Brazil,"Korea, South",1.2537715435028076,snorkel
+Brazil,Philippines,0.9710814952850342,snorkel
+Brazil,Poland,1.2346277236938477,snorkel
+Brazil,Russia,1.5037317276000977,snorkel
+Brazil,Saudi Arabia,1.4427939653396606,snorkel
+Brazil,Sweden,1.453696370124817,snorkel
+Brazil,Thailand,1.4592289924621582,snorkel
+Brazil,United Kingdom,0.9796493053436279,snorkel
+Brazil,United States,1.0866940021514893,snorkel
+Canada,Czech Republic,1.0734373331069946,snorkel
+Canada,Finland,0.7623882293701172,snorkel
+Canada,France,1.1517959833145142,snorkel
+Canada,Germany,0.8279961943626404,snorkel
+Canada,Italy,1.1786997318267822,snorkel
+Canada,"Korea, South",1.7442266941070557,snorkel
+Canada,Philippines,1.3950705528259277,snorkel
+Canada,Poland,0.9598036408424377,snorkel
+Canada,Russia,1.5137234926223755,snorkel
+Canada,Saudi Arabia,1.208482265472412,snorkel
+Canada,Sweden,0.6713900566101074,snorkel
+Canada,Thailand,1.9634876251220703,snorkel
+Canada,United Kingdom,1.3291221857070923,snorkel
+Canada,United States,0.7304840087890625,snorkel
+Czech Republic,Finland,1.3375942707061768,snorkel
+Czech Republic,France,0.7103983163833618,snorkel
+Czech Republic,Germany,0.7906582355499268,snorkel
+Czech Republic,Italy,1.1843680143356323,snorkel
+Czech Republic,"Korea, South",2.158386468887329,snorkel
+Czech Republic,Philippines,1.7473797798156738,snorkel
+Czech Republic,Poland,1.1862900257110596,snorkel
+Czech Republic,Russia,1.5761833190917969,snorkel
+Czech Republic,Saudi Arabia,1.5292553901672363,snorkel
+Czech Republic,Sweden,0.8632869720458984,snorkel
+Czech Republic,Thailand,2.2575502395629883,snorkel
+Czech Republic,United Kingdom,1.673896074295044,snorkel
+Czech Republic,United States,1.1503064632415771,snorkel
+Finland,France,1.2198472023010254,snorkel
+Finland,Germany,0.9455745220184326,snorkel
+Finland,Italy,1.610264539718628,snorkel
+Finland,"Korea, South",2.1568286418914795,snorkel
+Finland,Philippines,1.7991341352462769,snorkel
+Finland,Poland,1.3890583515167236,snorkel
+Finland,Russia,1.945027232170105,snorkel
+Finland,Saudi Arabia,1.7169684171676636,snorkel
+Finland,Sweden,0.9237565994262695,snorkel
+Finland,Thailand,2.3614678382873535,snorkel
+Finland,United Kingdom,1.6720820665359497,snorkel
+Finland,United States,1.1218446493148804,snorkel
+France,Germany,0.7510260343551636,snorkel
+France,Italy,1.4876158237457275,snorkel
+France,"Korea, South",2.461477756500244,snorkel
+France,Philippines,2.0339369773864746,snorkel
+France,Poland,1.453656792640686,snorkel
+France,Russia,1.9101533889770508,snorkel
+France,Saudi Arabia,1.7888243198394775,snorkel
+France,Sweden,1.000905156135559,snorkel
+France,Thailand,2.5665695667266846,snorkel
+France,United Kingdom,1.9492641687393188,snorkel
+France,United States,1.3896390199661255,snorkel
+Germany,Italy,1.3222382068634033,snorkel
+Germany,"Korea, South",2.1623120307922363,snorkel
+Germany,Philippines,1.7559599876403809,snorkel
+Germany,Poland,1.2066395282745361,snorkel
+Germany,Russia,1.73009192943573,snorkel
+Germany,Saudi Arabia,1.5529850721359253,snorkel
+Germany,Sweden,0.8500849604606628,snorkel
+Germany,Thailand,2.309807777404785,snorkel
+Germany,United Kingdom,1.630466341972351,snorkel
+Germany,United States,1.0138546228408813,snorkel
+Italy,"Korea, South",1.1582857370376587,snorkel
+Italy,Philippines,0.8802841901779175,snorkel
+Italy,Poland,0.6238753795623779,snorkel
+Italy,Russia,0.7137005925178528,snorkel
+Italy,Saudi Arabia,0.6933777928352356,snorkel
+Italy,Sweden,1.0057134628295898,snorkel
+Italy,Thailand,1.2629936933517456,snorkel
+Italy,United Kingdom,0.8488373756408691,snorkel
+Italy,United States,0.8453709483146667,snorkel
+"Korea, South",Philippines,0.7446737885475159,snorkel
+"Korea, South",Poland,1.1778936386108398,snorkel
+"Korea, South",Russia,0.9959414601325989,snorkel
+"Korea, South",Saudi Arabia,0.9857053160667419,snorkel
+"Korea, South",Sweden,1.7161389589309692,snorkel
+"Korea, South",Thailand,0.6345883011817932,snorkel
+"Korea, South",United Kingdom,0.9501662850379944,snorkel
+"Korea, South",United States,1.3789873123168945,snorkel
+Philippines,Poland,0.8072462677955627,snorkel
+Philippines,Russia,0.839167594909668,snorkel
+Philippines,Saudi Arabia,0.9091868996620178,snorkel
+Philippines,Sweden,1.2905453443527222,snorkel
+Philippines,Thailand,1.015581488609314,snorkel
+Philippines,United Kingdom,0.6607299447059631,snorkel
+Philippines,United States,0.930488646030426,snorkel
+Poland,Russia,0.7865990400314331,snorkel
+Poland,Saudi Arabia,0.8160381317138672,snorkel
+Poland,Sweden,0.8794183135032654,snorkel
+Poland,Thailand,1.3234440088272095,snorkel
+Poland,United Kingdom,0.7294965386390686,snorkel
+Poland,United States,0.661510169506073,snorkel
+Russia,Saudi Arabia,0.8122816681861877,snorkel
+Russia,Sweden,1.357120394706726,snorkel
+Russia,Thailand,1.0210994482040405,snorkel
+Russia,United Kingdom,0.8323057889938354,snorkel
+Russia,United States,1.0831694602966309,snorkel
+Saudi Arabia,Sweden,1.250313639640808,snorkel
+Saudi Arabia,Thailand,1.1180299520492554,snorkel
+Saudi Arabia,United Kingdom,0.8417849540710449,snorkel
+Saudi Arabia,United States,0.9754137396812439,snorkel
+Sweden,Thailand,1.8835580348968506,snorkel
+Sweden,United Kingdom,1.2298312187194824,snorkel
+Sweden,United States,0.6948191523551941,snorkel
+Thailand,United Kingdom,1.048227310180664,snorkel
+Thailand,United States,1.5666472911834717,snorkel
+United Kingdom,United States,0.8265429139137268,snorkel

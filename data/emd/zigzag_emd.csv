@@ -1,0 +1,79 @@
+country1,country2,dist,word
+Australia,Brazil,0.7031420469284058,zigzag
+Australia,Canada,0.8467028141021729,zigzag
+Australia,Czech Republic,1.4012678861618042,zigzag
+Australia,Finland,0.8036198019981384,zigzag
+Australia,Germany,1.0549346208572388,zigzag
+Australia,Italy,0.8867188692092896,zigzag
+Australia,"Korea, South",0.9588331580162048,zigzag
+Australia,Poland,1.6707442998886108,zigzag
+Australia,Russia,1.303741216659546,zigzag
+Australia,Sweden,0.6011267304420471,zigzag
+Australia,United Kingdom,1.3224849700927734,zigzag
+Australia,United States,2.7036190032958984,zigzag
+Brazil,Canada,1.2146954536437988,zigzag
+Brazil,Czech Republic,1.1461281776428223,zigzag
+Brazil,Finland,0.5454443693161011,zigzag
+Brazil,Germany,0.9950265884399414,zigzag
+Brazil,Italy,0.7244799137115479,zigzag
+Brazil,"Korea, South",0.687398374080658,zigzag
+Brazil,Poland,1.2954775094985962,zigzag
+Brazil,Russia,1.1700451374053955,zigzag
+Brazil,Sweden,0.515357494354248,zigzag
+Brazil,United Kingdom,1.6769866943359375,zigzag
+Brazil,United States,3.0961458683013916,zigzag
+Canada,Czech Republic,1.773593544960022,zigzag
+Canada,Finland,1.177600383758545,zigzag
+Canada,Germany,1.1019806861877441,zigzag
+Canada,Italy,1.316077709197998,zigzag
+Canada,"Korea, South",1.5058658123016357,zigzag
+Canada,Poland,2.225834369659424,zigzag
+Canada,Russia,1.6874306201934814,zigzag
+Canada,Sweden,1.0515638589859009,zigzag
+Canada,United Kingdom,0.7219124436378479,zigzag
+Canada,United States,2.012376546859741,zigzag
+Czech Republic,Finland,1.0311278104782104,zigzag
+Czech Republic,Germany,0.9063881039619446,zigzag
+Czech Republic,Italy,1.1870993375778198,zigzag
+Czech Republic,"Korea, South",1.0273785591125488,zigzag
+Czech Republic,Poland,0.6564522981643677,zigzag
+Czech Republic,Russia,0.8693462610244751,zigzag
+Czech Republic,Sweden,1.1437594890594482,zigzag
+Czech Republic,United Kingdom,2.045466899871826,zigzag
+Czech Republic,United States,3.522996664047241,zigzag
+Finland,Germany,0.7663567066192627,zigzag
+Finland,Italy,0.8262810707092285,zigzag
+Finland,"Korea, South",0.6405207514762878,zigzag
+Finland,Poland,1.303242564201355,zigzag
+Finland,Russia,1.0740981101989746,zigzag
+Finland,Sweden,0.48749905824661255,zigzag
+Finland,United Kingdom,1.6341975927352905,zigzag
+Finland,United States,3.0414607524871826,zigzag
+Germany,Italy,1.1737617254257202,zigzag
+Germany,"Korea, South",1.0517183542251587,zigzag
+Germany,Poland,1.29849374294281,zigzag
+Germany,Russia,0.994580090045929,zigzag
+Germany,Sweden,0.8086955547332764,zigzag
+Germany,United Kingdom,1.3399056196212769,zigzag
+Germany,United States,2.8324837684631348,zigzag
+Italy,"Korea, South",0.6501522064208984,zigzag
+Italy,Poland,1.2482730150222778,zigzag
+Italy,Russia,1.17983877658844,zigzag
+Italy,Sweden,0.8497806787490845,zigzag
+Italy,United Kingdom,1.783887267112732,zigzag
+Italy,United States,3.163072109222412,zigzag
+"Korea, South",Poland,1.0279096364974976,zigzag
+"Korea, South",Russia,1.1107558012008667,zigzag
+"Korea, South",Sweden,0.7439696788787842,zigzag
+"Korea, South",United Kingdom,1.9943269491195679,zigzag
+"Korea, South",United States,3.4106740951538086,zigzag
+Poland,Russia,1.084729552268982,zigzag
+Poland,Sweden,1.4453024864196777,zigzag
+Poland,United Kingdom,2.566390037536621,zigzag
+Poland,United States,4.049010753631592,zigzag
+Russia,Sweden,1.1580556631088257,zigzag
+Russia,United Kingdom,1.8863496780395508,zigzag
+Russia,United States,3.3446311950683594,zigzag
+Sweden,United Kingdom,1.5164695978164673,zigzag
+Sweden,United States,2.920285940170288,zigzag
+United Kingdom,United States,1.5533137321472168,zigzag

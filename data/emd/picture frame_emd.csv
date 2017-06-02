@@ -1,0 +1,92 @@
+country1,country2,dist,word
+Australia,Brazil,0.5138391256332397,picture frame
+Australia,Canada,0.7615100145339966,picture frame
+Australia,Czech Republic,0.7669981122016907,picture frame
+Australia,Finland,0.7021690011024475,picture frame
+Australia,Germany,0.6240409016609192,picture frame
+Australia,Italy,0.5918234586715698,picture frame
+Australia,Poland,0.7132231593132019,picture frame
+Australia,Russia,0.5326108336448669,picture frame
+Australia,Saudi Arabia,1.0312789678573608,picture frame
+Australia,Sweden,0.6956223845481873,picture frame
+Australia,Thailand,0.9152536988258362,picture frame
+Australia,United Kingdom,1.3592249155044556,picture frame
+Australia,United States,2.1371281147003174,picture frame
+Brazil,Canada,0.9411211013793945,picture frame
+Brazil,Czech Republic,0.8549814820289612,picture frame
+Brazil,Finland,0.7313898801803589,picture frame
+Brazil,Germany,0.8123879432678223,picture frame
+Brazil,Italy,0.6026598215103149,picture frame
+Brazil,Poland,0.8005003333091736,picture frame
+Brazil,Russia,0.7215788960456848,picture frame
+Brazil,Saudi Arabia,0.8489881753921509,picture frame
+Brazil,Sweden,0.6736911535263062,picture frame
+Brazil,Thailand,0.812537431716919,picture frame
+Brazil,United Kingdom,1.55141282081604,picture frame
+Brazil,United States,2.3279500007629395,picture frame
+Canada,Czech Republic,1.3378300666809082,picture frame
+Canada,Finland,0.8034117817878723,picture frame
+Canada,Germany,0.39789634943008423,picture frame
+Canada,Italy,1.1402531862258911,picture frame
+Canada,Poland,1.3342453241348267,picture frame
+Canada,Russia,1.1129270792007446,picture frame
+Canada,Saudi Arabia,1.400850772857666,picture frame
+Canada,Sweden,0.9008780121803284,picture frame
+Canada,Thailand,1.5079917907714844,picture frame
+Canada,United Kingdom,0.6864001154899597,picture frame
+Canada,United States,1.4609214067459106,picture frame
+Czech Republic,Finland,1.151251196861267,picture frame
+Czech Republic,Germany,1.1450947523117065,picture frame
+Czech Republic,Italy,0.6190738677978516,picture frame
+Czech Republic,Poland,0.5448486804962158,picture frame
+Czech Republic,Russia,0.7841469645500183,picture frame
+Czech Republic,Saudi Arabia,1.2972686290740967,picture frame
+Czech Republic,Sweden,1.0619089603424072,picture frame
+Czech Republic,Thailand,0.9076059460639954,picture frame
+Czech Republic,United Kingdom,1.904093623161316,picture frame
+Czech Republic,United States,2.6585123538970947,picture frame
+Finland,Germany,0.7792673707008362,picture frame
+Finland,Italy,0.942981481552124,picture frame
+Finland,Poland,1.2044932842254639,picture frame
+Finland,Russia,1.0764949321746826,picture frame
+Finland,Saudi Arabia,1.025781512260437,picture frame
+Finland,Sweden,0.5111767649650574,picture frame
+Finland,Thailand,1.2465256452560425,picture frame
+Finland,United Kingdom,1.2794265747070312,picture frame
+Finland,United States,2.021610975265503,picture frame
+Germany,Italy,0.984729528427124,picture frame
+Germany,Poland,1.1814348697662354,picture frame
+Germany,Russia,0.9684626460075378,picture frame
+Germany,Saudi Arabia,1.3498296737670898,picture frame
+Germany,Sweden,0.7839556932449341,picture frame
+Germany,Thailand,1.4015119075775146,picture frame
+Germany,United Kingdom,0.8563960194587708,picture frame
+Germany,United States,1.6224472522735596,picture frame
+Italy,Poland,0.5982357859611511,picture frame
+Italy,Russia,0.7042513489723206,picture frame
+Italy,Saudi Arabia,0.9402779936790466,picture frame
+Italy,Sweden,0.8409721255302429,picture frame
+Italy,Thailand,0.7528568506240845,picture frame
+Italy,United Kingdom,1.7461985349655151,picture frame
+Italy,United States,2.53183913230896,picture frame
+Poland,Russia,0.5755056142807007,picture frame
+Poland,Saudi Arabia,1.2449531555175781,picture frame
+Poland,Sweden,1.0364078283309937,picture frame
+Poland,Thailand,0.8046519160270691,picture frame
+Poland,United Kingdom,1.9409997463226318,picture frame
+Poland,United States,2.705002546310425,picture frame
+Russia,Saudi Arabia,1.2815377712249756,picture frame
+Russia,Sweden,0.9708864092826843,picture frame
+Russia,Thailand,1.0241596698760986,picture frame
+Russia,United Kingdom,1.703108549118042,picture frame
+Russia,United States,2.451793909072876,picture frame
+Saudi Arabia,Sweden,0.945304274559021,picture frame
+Saudi Arabia,Thailand,0.9069425463676453,picture frame
+Saudi Arabia,United Kingdom,1.9045436382293701,picture frame
+Saudi Arabia,United States,2.6342766284942627,picture frame
+Sweden,Thailand,1.040356159210205,picture frame
+Sweden,United Kingdom,1.3601839542388916,picture frame
+Sweden,United States,2.1149516105651855,picture frame
+Thailand,United Kingdom,2.096066951751709,picture frame
+Thailand,United States,2.8761775493621826,picture frame
+United Kingdom,United States,0.8085866570472717,picture frame

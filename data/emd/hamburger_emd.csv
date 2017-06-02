@@ -1,0 +1,137 @@
+country1,country2,dist,word
+Australia,Brazil,0.4574289321899414,hamburger
+Australia,Canada,0.6045910716056824,hamburger
+Australia,Czech Republic,0.6727710366249084,hamburger
+Australia,Finland,0.6697437167167664,hamburger
+Australia,France,0.6045855283737183,hamburger
+Australia,Germany,0.4132184088230133,hamburger
+Australia,Italy,0.5898963809013367,hamburger
+Australia,"Korea, South",0.729557991027832,hamburger
+Australia,Philippines,1.1040194034576416,hamburger
+Australia,Poland,0.9055629372596741,hamburger
+Australia,Russia,0.5952470302581787,hamburger
+Australia,Saudi Arabia,0.6906242370605469,hamburger
+Australia,Sweden,0.7677142024040222,hamburger
+Australia,Thailand,0.7314732074737549,hamburger
+Australia,United Kingdom,0.7864150404930115,hamburger
+Australia,United States,1.6881227493286133,hamburger
+Brazil,Canada,0.8373591899871826,hamburger
+Brazil,Czech Republic,0.6059898734092712,hamburger
+Brazil,Finland,0.5967572927474976,hamburger
+Brazil,France,0.6014852523803711,hamburger
+Brazil,Germany,0.6520442962646484,hamburger
+Brazil,Italy,0.5344125032424927,hamburger
+Brazil,"Korea, South",0.7251380681991577,hamburger
+Brazil,Philippines,0.8606895804405212,hamburger
+Brazil,Poland,0.7806375622749329,hamburger
+Brazil,Russia,0.5359095931053162,hamburger
+Brazil,Saudi Arabia,0.6617752909660339,hamburger
+Brazil,Sweden,0.585457444190979,hamburger
+Brazil,Thailand,0.6176273226737976,hamburger
+Brazil,United Kingdom,1.0616732835769653,hamburger
+Brazil,United States,1.9317814111709595,hamburger
+Canada,Czech Republic,1.1039334535598755,hamburger
+Canada,Finland,1.0756545066833496,hamburger
+Canada,France,0.7502530813217163,hamburger
+Canada,Germany,0.4770425856113434,hamburger
+Canada,Italy,0.7818489074707031,hamburger
+Canada,"Korea, South",0.8926041722297668,hamburger
+Canada,Philippines,1.5142520666122437,hamburger
+Canada,Poland,1.3879402875900269,hamburger
+Canada,Russia,1.0343979597091675,hamburger
+Canada,Saudi Arabia,0.7642426490783691,hamburger
+Canada,Sweden,1.1963673830032349,hamburger
+Canada,Thailand,1.006941556930542,hamburger
+Canada,United Kingdom,0.53704071044921875,hamburger
+Canada,United States,1.2455023527145386,hamburger
+Czech Republic,Finland,0.657034158706665,hamburger
+Czech Republic,France,0.692884624004364,hamburger
+Czech Republic,Germany,0.9047219157218933,hamburger
+Czech Republic,Italy,0.7479235529899597,hamburger
+Czech Republic,"Korea, South",0.7002710700035095,hamburger
+Czech Republic,Philippines,0.7523525357246399,hamburger
+Czech Republic,Poland,0.5252333283424377,hamburger
+Czech Republic,Russia,0.4377695322036743,hamburger
+Czech Republic,Saudi Arabia,0.8874632120132446,hamburger
+Czech Republic,Sweden,0.46330997347831726,hamburger
+Czech Republic,Thailand,0.7483440041542053,hamburger
+Czech Republic,United Kingdom,1.333961844444275,hamburger
+Czech Republic,United States,2.2625575065612793,hamburger
+Finland,France,0.7383056879043579,hamburger
+Finland,Germany,0.8608676791191101,hamburger
+Finland,Italy,0.7749842405319214,hamburger
+Finland,"Korea, South",0.9391459226608276,hamburger
+Finland,Philippines,0.8704293370246887,hamburger
+Finland,Poland,0.695204496383667,hamburger
+Finland,Russia,0.5761309266090393,hamburger
+Finland,Saudi Arabia,0.7352449297904968,hamburger
+Finland,Sweden,0.6851176023483276,hamburger
+Finland,Thailand,0.8706603646278381,hamburger
+Finland,United Kingdom,1.2254595756530762,hamburger
+Finland,United States,2.129427194595337,hamburger
+France,Germany,0.7024867534637451,hamburger
+France,Italy,0.5701961517333984,hamburger
+France,"Korea, South",0.6395816206932068,hamburger
+France,Philippines,1.0484565496444702,hamburger
+France,Poland,0.9675567746162415,hamburger
+France,Russia,0.673902153968811,hamburger
+France,Saudi Arabia,0.6552913784980774,hamburger
+France,Sweden,0.7663908004760742,hamburger
+France,Thailand,0.6812279224395752,hamburger
+France,United Kingdom,1.077009677886963,hamburger
+France,United States,1.892352819442749,hamburger
+Germany,Italy,0.6755507588386536,hamburger
+Germany,"Korea, South",0.9064064621925354,hamburger
+Germany,Philippines,1.3280744552612305,hamburger
+Germany,Poland,1.1174019575119019,hamburger
+Germany,Russia,0.7878521084785461,hamburger
+Germany,Saudi Arabia,0.7527897953987122,hamburger
+Germany,Sweden,0.9760341048240662,hamburger
+Germany,Thailand,0.9231109619140625,hamburger
+Germany,United Kingdom,0.5325976014137268,hamburger
+Germany,United States,1.430160641670227,hamburger
+Italy,"Korea, South",0.7566375136375427,hamburger
+Italy,Philippines,0.9849778413772583,hamburger
+Italy,Poland,0.996645450592041,hamburger
+Italy,Russia,0.7852202653884888,hamburger
+Italy,Saudi Arabia,0.6131669282913208,hamburger
+Italy,Sweden,0.8432632088661194,hamburger
+Italy,Thailand,0.561150312423706,hamburger
+Italy,United Kingdom,1.007832646369934,hamburger
+Italy,United States,1.7987885475158691,hamburger
+"Korea, South",Philippines,1.141664743423462,hamburger
+"Korea, South",Poland,1.038356065750122,hamburger
+"Korea, South",Russia,0.7898440957069397,hamburger
+"Korea, South",Saudi Arabia,0.8229957222938538,hamburger
+"Korea, South",Sweden,0.8579192757606506,hamburger
+"Korea, South",Thailand,0.7316024899482727,hamburger
+"Korea, South",United Kingdom,1.2786223888397217,hamburger
+"Korea, South",United States,2.058029890060425,hamburger
+Philippines,Poland,0.6800959706306458,hamburger
+Philippines,Russia,0.8344574570655823,hamburger
+Philippines,Saudi Arabia,1.1618664264678955,hamburger
+Philippines,Sweden,0.6644095182418823,hamburger
+Philippines,Thailand,0.8542070984840393,hamburger
+Philippines,United Kingdom,1.754400610923767,hamburger
+Philippines,United States,2.653656244277954,hamburger
+Poland,Russia,0.547062873840332,hamburger
+Poland,Saudi Arabia,1.0798555612564087,hamburger
+Poland,Sweden,0.49604740738868713,hamburger
+Poland,Thailand,0.9409722089767456,hamburger
+Poland,United Kingdom,1.5422147512435913,hamburger
+Poland,United States,2.4923362731933594,hamburger
+Russia,Saudi Arabia,0.8758375644683838,hamburger
+Russia,Sweden,0.4058235287666321,hamburger
+Russia,Thailand,0.8594972491264343,hamburger
+Russia,United Kingdom,1.202312707901001,hamburger
+Russia,United States,2.1323952674865723,hamburger
+Saudi Arabia,Sweden,0.9675090312957764,hamburger
+Saudi Arabia,Thailand,0.6645675301551819,hamburger
+Saudi Arabia,United Kingdom,1.0165456533432007,hamburger
+Saudi Arabia,United States,1.788187026977539,hamburger
+Sweden,Thailand,0.8196111917495728,hamburger
+Sweden,United Kingdom,1.398858904838562,hamburger
+Sweden,United States,2.3346455097198486,hamburger
+Thailand,United Kingdom,1.3179078102111816,hamburger
+Thailand,United States,2.1065549850463867,hamburger
+United Kingdom,United States,0.9830999374389648,hamburger

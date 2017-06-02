@@ -1,0 +1,121 @@
+country1,country2,dist,word
+Australia,Brazil,0.8765594959259033,wine bottle
+Australia,Canada,0.7424601316452026,wine bottle
+Australia,Czech Republic,0.8613623976707458,wine bottle
+Australia,Finland,0.6638261675834656,wine bottle
+Australia,France,0.8190158009529114,wine bottle
+Australia,Germany,0.5149108171463013,wine bottle
+Australia,Italy,0.7255622744560242,wine bottle
+Australia,"Korea, South",0.6049965023994446,wine bottle
+Australia,Philippines,0.42616090178489685,wine bottle
+Australia,Poland,0.6379322409629822,wine bottle
+Australia,Russia,0.5495474338531494,wine bottle
+Australia,Sweden,0.5414150357246399,wine bottle
+Australia,Thailand,0.7713119983673096,wine bottle
+Australia,United Kingdom,0.7616755962371826,wine bottle
+Australia,United States,0.60445404052734375,wine bottle
+Brazil,Canada,0.7820804119110107,wine bottle
+Brazil,Czech Republic,0.7287518978118896,wine bottle
+Brazil,Finland,0.6435754299163818,wine bottle
+Brazil,France,0.9205679893493652,wine bottle
+Brazil,Germany,0.7257363200187683,wine bottle
+Brazil,Italy,0.6455042362213135,wine bottle
+Brazil,"Korea, South",0.9495905637741089,wine bottle
+Brazil,Philippines,0.7244033217430115,wine bottle
+Brazil,Poland,0.8582885265350342,wine bottle
+Brazil,Russia,0.8541063666343689,wine bottle
+Brazil,Sweden,0.6907492280006409,wine bottle
+Brazil,Thailand,0.662339448928833,wine bottle
+Brazil,United Kingdom,0.7034082412719727,wine bottle
+Brazil,United States,0.9675290584564209,wine bottle
+Canada,Czech Republic,0.8403035402297974,wine bottle
+Canada,Finland,0.53963470458984375,wine bottle
+Canada,France,0.6000455617904663,wine bottle
+Canada,Germany,0.8008459806442261,wine bottle
+Canada,Italy,0.5602137446403503,wine bottle
+Canada,"Korea, South",0.6888338923454285,wine bottle
+Canada,Philippines,0.6383963227272034,wine bottle
+Canada,Poland,0.7198662757873535,wine bottle
+Canada,Russia,0.6732321381568909,wine bottle
+Canada,Sweden,0.6648409366607666,wine bottle
+Canada,Thailand,0.40065932273864746,wine bottle
+Canada,United Kingdom,0.6354917883872986,wine bottle
+Canada,United States,0.6384052634239197,wine bottle
+Czech Republic,Finland,0.6456332206726074,wine bottle
+Czech Republic,France,0.7475659251213074,wine bottle
+Czech Republic,Germany,0.7739963531494141,wine bottle
+Czech Republic,Italy,0.809544563293457,wine bottle
+Czech Republic,"Korea, South",1.0289640426635742,wine bottle
+Czech Republic,Philippines,0.7653689384460449,wine bottle
+Czech Republic,Poland,0.6168025135993958,wine bottle
+Czech Republic,Russia,1.0719026327133179,wine bottle
+Czech Republic,Sweden,0.7056999206542969,wine bottle
+Czech Republic,Thailand,0.7096992135047913,wine bottle
+Czech Republic,United Kingdom,0.7079597115516663,wine bottle
+Czech Republic,United States,0.9813115000724792,wine bottle
+Finland,France,0.5992711782455444,wine bottle
+Finland,Germany,0.5663549900054932,wine bottle
+Finland,Italy,0.4380449056625366,wine bottle
+Finland,"Korea, South",0.7448959946632385,wine bottle
+Finland,Philippines,0.5756524801254272,wine bottle
+Finland,Poland,0.6773552894592285,wine bottle
+Finland,Russia,0.7417716979980469,wine bottle
+Finland,Sweden,0.5127561688423157,wine bottle
+Finland,Thailand,0.46110162138938904,wine bottle
+Finland,United Kingdom,0.5906251668930054,wine bottle
+Finland,United States,0.7936816811561584,wine bottle
+France,Germany,0.8066670894622803,wine bottle
+France,Italy,0.6506932973861694,wine bottle
+France,"Korea, South",0.8456484079360962,wine bottle
+France,Philippines,0.7092043161392212,wine bottle
+France,Poland,0.6644548773765564,wine bottle
+France,Russia,0.8394688367843628,wine bottle
+France,Sweden,0.69040447473526,wine bottle
+France,Thailand,0.5987914204597473,wine bottle
+France,United Kingdom,0.6264838576316833,wine bottle
+France,United States,0.6872758865356445,wine bottle
+Germany,Italy,0.6290151476860046,wine bottle
+Germany,"Korea, South",0.825745701789856,wine bottle
+Germany,Philippines,0.5157694220542908,wine bottle
+Germany,Poland,0.700798749923706,wine bottle
+Germany,Russia,0.6930453181266785,wine bottle
+Germany,Sweden,0.5437093377113342,wine bottle
+Germany,Thailand,0.6936209797859192,wine bottle
+Germany,United Kingdom,0.7628260254859924,wine bottle
+Germany,United States,0.7596375942230225,wine bottle
+Italy,"Korea, South",0.7781137228012085,wine bottle
+Italy,Philippines,0.6053780317306519,wine bottle
+Italy,Poland,0.7442609071731567,wine bottle
+Italy,Russia,0.6594533920288086,wine bottle
+Italy,Sweden,0.569582462310791,wine bottle
+Italy,Thailand,0.46202853322029114,wine bottle
+Italy,United Kingdom,0.6170545816421509,wine bottle
+Italy,United States,0.7966838479042053,wine bottle
+"Korea, South",Philippines,0.5543398857116699,wine bottle
+"Korea, South",Poland,0.7666552662849426,wine bottle
+"Korea, South",Russia,0.5785082578659058,wine bottle
+"Korea, South",Sweden,0.7130679488182068,wine bottle
+"Korea, South",Thailand,0.7935789823532104,wine bottle
+"Korea, South",United Kingdom,0.88362884521484375,wine bottle
+"Korea, South",United States,0.606512188911438,wine bottle
+Philippines,Poland,0.5603269338607788,wine bottle
+Philippines,Russia,0.529401421546936,wine bottle
+Philippines,Sweden,0.505780816078186,wine bottle
+Philippines,Thailand,0.5748727321624756,wine bottle
+Philippines,United Kingdom,0.6414499878883362,wine bottle
+Philippines,United States,0.5370856523513794,wine bottle
+Poland,Russia,0.86262047290802,wine bottle
+Poland,Sweden,0.5333787202835083,wine bottle
+Poland,Thailand,0.6570201516151428,wine bottle
+Poland,United Kingdom,0.5525506138801575,wine bottle
+Poland,United States,0.6534364223480225,wine bottle
+Russia,Sweden,0.7284713983535767,wine bottle
+Russia,Thailand,0.6619218587875366,wine bottle
+Russia,United Kingdom,0.8643923997879028,wine bottle
+Russia,United States,0.6314757466316223,wine bottle
+Sweden,Thailand,0.5731499791145325,wine bottle
+Sweden,United Kingdom,0.5446621179580688,wine bottle
+Sweden,United States,0.6882394552230835,wine bottle
+Thailand,United Kingdom,0.5644412040710449,wine bottle
+Thailand,United States,0.7209726572036743,wine bottle
+United Kingdom,United States,0.7705950140953064,wine bottle

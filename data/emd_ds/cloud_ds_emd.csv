@@ -1,0 +1,106 @@
+country1,country2,dist,word
+Australia,Brazil,0.7918308973312378,cloud
+Australia,Canada,0.6523233652114868,cloud
+Australia,Czech Republic,0.7227081656455994,cloud
+Australia,Finland,0.49214303493499756,cloud
+Australia,France,0.61888188123703,cloud
+Australia,Germany,0.5695326328277588,cloud
+Australia,Italy,0.5349217057228088,cloud
+Australia,"Korea, South",0.4941333830356598,cloud
+Australia,Poland,0.5278027057647705,cloud
+Australia,Russia,0.74826979637146,cloud
+Australia,Sweden,0.5565630197525024,cloud
+Australia,Thailand,0.536344587802887,cloud
+Australia,United Kingdom,0.5751741528511047,cloud
+Australia,United States,0.5980554223060608,cloud
+Brazil,Canada,1.2057623863220215,cloud
+Brazil,Czech Republic,0.6798871755599976,cloud
+Brazil,Finland,0.9950585961341858,cloud
+Brazil,France,0.9439640045166016,cloud
+Brazil,Germany,1.0774099826812744,cloud
+Brazil,Italy,0.8582665324211121,cloud
+Brazil,"Korea, South",0.8164081573486328,cloud
+Brazil,Poland,0.6475472450256348,cloud
+Brazil,Russia,0.49032583832740784,cloud
+Brazil,Sweden,0.9661864042282104,cloud
+Brazil,Thailand,0.7425706386566162,cloud
+Brazil,United Kingdom,0.8043926954269409,cloud
+Brazil,United States,1.0190259218215942,cloud
+Canada,Czech Republic,0.9604771137237549,cloud
+Canada,Finland,0.5373916029930115,cloud
+Canada,France,0.6909299492835999,cloud
+Canada,Germany,0.4833938479423523,cloud
+Canada,Italy,0.738706648349762,cloud
+Canada,"Korea, South",0.711247980594635,cloud
+Canada,Poland,0.86000823974609375,cloud
+Canada,Russia,1.1351873874664307,cloud
+Canada,Sweden,0.6978840231895447,cloud
+Canada,Thailand,0.8649609088897705,cloud
+Canada,United Kingdom,0.8649754524230957,cloud
+Canada,United States,0.5484260320663452,cloud
+Czech Republic,Finland,0.8255788087844849,cloud
+Czech Republic,France,0.7123342156410217,cloud
+Czech Republic,Germany,0.8226950168609619,cloud
+Czech Republic,Italy,0.645600438117981,cloud
+Czech Republic,"Korea, South",0.7720738649368286,cloud
+Czech Republic,Poland,0.6636807322502136,cloud
+Czech Republic,Russia,0.6480381488800049,cloud
+Czech Republic,Sweden,0.9193350672721863,cloud
+Czech Republic,Thailand,0.675160825252533,cloud
+Czech Republic,United Kingdom,0.8436073064804077,cloud
+Czech Republic,United States,0.6879931092262268,cloud
+Finland,France,0.6594476699829102,cloud
+Finland,Germany,0.5423217415809631,cloud
+Finland,Italy,0.5905675292015076,cloud
+Finland,"Korea, South",0.6386411190032959,cloud
+Finland,Poland,0.6485087275505066,cloud
+Finland,Russia,0.9529746174812317,cloud
+Finland,Sweden,0.6228927969932556,cloud
+Finland,Thailand,0.7118921875953674,cloud
+Finland,United Kingdom,0.6773247718811035,cloud
+Finland,United States,0.587267279624939,cloud
+France,Germany,0.644889771938324,cloud
+France,Italy,0.5456708669662476,cloud
+France,"Korea, South",0.7116758227348328,cloud
+France,Poland,0.719996452331543,cloud
+France,Russia,0.85526275634765625,cloud
+France,Sweden,0.7734013795852661,cloud
+France,Thailand,0.6137501001358032,cloud
+France,United Kingdom,0.8018645644187927,cloud
+France,United States,0.6612474918365479,cloud
+Germany,Italy,0.6480071544647217,cloud
+Germany,"Korea, South",0.5694575905799866,cloud
+Germany,Poland,0.7402376532554626,cloud
+Germany,Russia,0.9985609650611877,cloud
+Germany,Sweden,0.6000596284866333,cloud
+Germany,Thailand,0.7516334056854248,cloud
+Germany,United Kingdom,0.7521414160728455,cloud
+Germany,United States,0.5675650238990784,cloud
+Italy,"Korea, South",0.6852495074272156,cloud
+Italy,Poland,0.657862663269043,cloud
+Italy,Russia,0.762312650680542,cloud
+Italy,Sweden,0.7931317687034607,cloud
+Italy,Thailand,0.5496950149536133,cloud
+Italy,United Kingdom,0.7563714385032654,cloud
+Italy,United States,0.5838944911956787,cloud
+"Korea, South",Poland,0.5063565373420715,cloud
+"Korea, South",Russia,0.7403422594070435,cloud
+"Korea, South",Sweden,0.48697036504745483,cloud
+"Korea, South",Thailand,0.7120731472969055,cloud
+"Korea, South",United Kingdom,0.5366646647453308,cloud
+"Korea, South",United States,0.6845948100090027,cloud
+Poland,Russia,0.5867090821266174,cloud
+Poland,Sweden,0.6126875877380371,cloud
+Poland,Thailand,0.667332649230957,cloud
+Poland,United Kingdom,0.5257994532585144,cloud
+Poland,United States,0.8135862350463867,cloud
+Russia,Sweden,0.8626828789710999,cloud
+Russia,Thailand,0.676033079624176,cloud
+Russia,United Kingdom,0.7323399186134338,cloud
+Russia,United States,0.9961944818496704,cloud
+Sweden,Thailand,0.7718250751495361,cloud
+Sweden,United Kingdom,0.48656588792800903,cloud
+Sweden,United States,0.7668329477310181,cloud
+Thailand,United Kingdom,0.6368756294250488,cloud
+Thailand,United States,0.7374425530433655,cloud
+United Kingdom,United States,0.8410158753395081,cloud

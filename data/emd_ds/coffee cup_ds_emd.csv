@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.8088068962097168,coffee cup
+Australia,Canada,0.7195818424224854,coffee cup
+Australia,Czech Republic,0.8245127201080322,coffee cup
+Australia,Finland,0.7790737152099609,coffee cup
+Australia,France,0.7545959949493408,coffee cup
+Australia,Germany,0.6101431846618652,coffee cup
+Australia,Hungary,0.668960690498352,coffee cup
+Australia,Italy,0.8790857195854187,coffee cup
+Australia,"Korea, South",0.7239196300506592,coffee cup
+Australia,Philippines,0.7402486205101013,coffee cup
+Australia,Poland,0.60030364990234375,coffee cup
+Australia,Russia,0.7726134657859802,coffee cup
+Australia,Saudi Arabia,0.8093917369842529,coffee cup
+Australia,Sweden,0.679537296295166,coffee cup
+Australia,Thailand,1.012073278427124,coffee cup
+Australia,United Kingdom,0.7257970571517944,coffee cup
+Australia,United States,0.6001676917076111,coffee cup
+Brazil,Canada,0.8564949631690979,coffee cup
+Brazil,Czech Republic,0.6699962615966797,coffee cup
+Brazil,Finland,0.7288790345191956,coffee cup
+Brazil,France,0.8247548341751099,coffee cup
+Brazil,Germany,0.6934974789619446,coffee cup
+Brazil,Hungary,0.7617468237876892,coffee cup
+Brazil,Italy,0.8208376169204712,coffee cup
+Brazil,"Korea, South",0.7457282543182373,coffee cup
+Brazil,Philippines,0.7061755061149597,coffee cup
+Brazil,Poland,0.6365880966186523,coffee cup
+Brazil,Russia,0.6680778861045837,coffee cup
+Brazil,Saudi Arabia,0.8180502653121948,coffee cup
+Brazil,Sweden,0.7318333387374878,coffee cup
+Brazil,Thailand,0.9479211568832397,coffee cup
+Brazil,United Kingdom,0.6384398341178894,coffee cup
+Brazil,United States,0.6690455079078674,coffee cup
+Canada,Czech Republic,1.0577998161315918,coffee cup
+Canada,Finland,0.5328534841537476,coffee cup
+Canada,France,0.7516489028930664,coffee cup
+Canada,Germany,0.5520100593566895,coffee cup
+Canada,Hungary,0.783821165561676,coffee cup
+Canada,Italy,1.102415919303894,coffee cup
+Canada,"Korea, South",0.9662537574768066,coffee cup
+Canada,Philippines,0.8627205491065979,coffee cup
+Canada,Poland,0.6686533093452454,coffee cup
+Canada,Russia,0.8020910620689392,coffee cup
+Canada,Saudi Arabia,0.6507826447486877,coffee cup
+Canada,Sweden,0.5121884942054749,coffee cup
+Canada,Thailand,1.1973708868026733,coffee cup
+Canada,United Kingdom,0.7916382551193237,coffee cup
+Canada,United States,0.5104986429214478,coffee cup
+Czech Republic,Finland,0.9250447750091553,coffee cup
+Czech Republic,France,0.8856868147850037,coffee cup
+Czech Republic,Germany,0.7836612462997437,coffee cup
+Czech Republic,Hungary,0.7145885229110718,coffee cup
+Czech Republic,Italy,0.6629021167755127,coffee cup
+Czech Republic,"Korea, South",0.7010140419006348,coffee cup
+Czech Republic,Philippines,0.6905705332756042,coffee cup
+Czech Republic,Poland,0.8023967742919922,coffee cup
+Czech Republic,Russia,0.6536015272140503,coffee cup
+Czech Republic,Saudi Arabia,1.071018934249878,coffee cup
+Czech Republic,Sweden,0.8517348766326904,coffee cup
+Czech Republic,Thailand,0.714119553565979,coffee cup
+Czech Republic,United Kingdom,0.853456437587738,coffee cup
+Czech Republic,United States,0.811172366142273,coffee cup
+Finland,France,0.6310229301452637,coffee cup
+Finland,Germany,0.5378732681274414,coffee cup
+Finland,Hungary,0.6712217926979065,coffee cup
+Finland,Italy,0.9571343064308167,coffee cup
+Finland,"Korea, South",0.8595634698867798,coffee cup
+Finland,Philippines,0.7757664322853088,coffee cup
+Finland,Poland,0.6235863566398621,coffee cup
+Finland,Russia,0.6721423268318176,coffee cup
+Finland,Saudi Arabia,0.676788866519928,coffee cup
+Finland,Sweden,0.5227605104446411,coffee cup
+Finland,Thailand,1.0319366455078125,coffee cup
+Finland,United Kingdom,0.677227258682251,coffee cup
+Finland,United States,0.49063369631767273,coffee cup
+France,Germany,0.6617646813392639,coffee cup
+France,Hungary,0.7078465223312378,coffee cup
+France,Italy,0.8474370241165161,coffee cup
+France,"Korea, South",0.9648215174674988,coffee cup
+France,Philippines,0.709811270236969,coffee cup
+France,Poland,0.5988283753395081,coffee cup
+France,Russia,0.7279918789863586,coffee cup
+France,Saudi Arabia,0.9212430119514465,coffee cup
+France,Sweden,0.6451141238212585,coffee cup
+France,Thailand,0.9937869906425476,coffee cup
+France,United Kingdom,0.8207221627235413,coffee cup
+France,United States,0.6279327273368835,coffee cup
+Germany,Hungary,0.5773648619651794,coffee cup
+Germany,Italy,0.8780624866485596,coffee cup
+Germany,"Korea, South",0.8101266622543335,coffee cup
+Germany,Philippines,0.7216819524765015,coffee cup
+Germany,Poland,0.61344146728515625,coffee cup
+Germany,Russia,0.6452831625938416,coffee cup
+Germany,Saudi Arabia,0.6162161231040955,coffee cup
+Germany,Sweden,0.4275793731212616,coffee cup
+Germany,Thailand,0.9948698878288269,coffee cup
+Germany,United Kingdom,0.7014798521995544,coffee cup
+Germany,United States,0.44504863023757935,coffee cup
+Hungary,Italy,0.7244014143943787,coffee cup
+Hungary,"Korea, South",0.8099142909049988,coffee cup
+Hungary,Philippines,0.6810507774353027,coffee cup
+Hungary,Poland,0.6504047513008118,coffee cup
+Hungary,Russia,0.6514530777931213,coffee cup
+Hungary,Saudi Arabia,0.8660024404525757,coffee cup
+Hungary,Sweden,0.57730633020401,coffee cup
+Hungary,Thailand,0.8271965384483337,coffee cup
+Hungary,United Kingdom,0.8930128812789917,coffee cup
+Hungary,United States,0.6177892088890076,coffee cup
+Italy,"Korea, South",0.7481111288070679,coffee cup
+Italy,Philippines,0.6159365773200989,coffee cup
+Italy,Poland,0.744310736656189,coffee cup
+Italy,Russia,0.7355962991714478,coffee cup
+Italy,Saudi Arabia,1.2844977378845215,coffee cup
+Italy,Sweden,0.9001188278198242,coffee cup
+Italy,Thailand,0.5635161995887756,coffee cup
+Italy,United Kingdom,1.0155251026153564,coffee cup
+Italy,United States,0.8755832314491272,coffee cup
+"Korea, South",Philippines,0.7245056629180908,coffee cup
+"Korea, South",Poland,0.7029405832290649,coffee cup
+"Korea, South",Russia,0.5929727554321289,coffee cup
+"Korea, South",Saudi Arabia,1.0188895463943481,coffee cup
+"Korea, South",Sweden,0.8514943718910217,coffee cup
+"Korea, South",Thailand,0.6745584607124329,coffee cup
+"Korea, South",United Kingdom,0.8072096109390259,coffee cup
+"Korea, South",United States,0.7794784307479858,coffee cup
+Philippines,Poland,0.6485373377799988,coffee cup
+Philippines,Russia,0.6248518228530884,coffee cup
+Philippines,Saudi Arabia,1.0035479068756104,coffee cup
+Philippines,Sweden,0.7125891447067261,coffee cup
+Philippines,Thailand,0.6901363730430603,coffee cup
+Philippines,United Kingdom,0.8127500414848328,coffee cup
+Philippines,United States,0.6963503360748291,coffee cup
+Poland,Russia,0.6454390287399292,coffee cup
+Poland,Saudi Arabia,0.8396689295768738,coffee cup
+Poland,Sweden,0.6092534065246582,coffee cup
+Poland,Thailand,0.8631561994552612,coffee cup
+Poland,United Kingdom,0.7402259707450867,coffee cup
+Poland,United States,0.5247278213500977,coffee cup
+Russia,Saudi Arabia,0.8933500647544861,coffee cup
+Russia,Sweden,0.6911318898200989,coffee cup
+Russia,Thailand,0.7210658192634583,coffee cup
+Russia,United Kingdom,0.7176653742790222,coffee cup
+Russia,United States,0.6233121156692505,coffee cup
+Saudi Arabia,Sweden,0.6452635526657104,coffee cup
+Saudi Arabia,Thailand,1.3488105535507202,coffee cup
+Saudi Arabia,United Kingdom,0.7380666136741638,coffee cup
+Saudi Arabia,United States,0.6781030893325806,coffee cup
+Sweden,Thailand,1.0174847841262817,coffee cup
+Sweden,United Kingdom,0.7297294735908508,coffee cup
+Sweden,United States,0.47919583320617676,coffee cup
+Thailand,United Kingdom,1.1284221410751343,coffee cup
+Thailand,United States,0.9717993140220642,coffee cup
+United Kingdom,United States,0.6698189377784729,coffee cup

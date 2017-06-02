@@ -1,0 +1,56 @@
+country1,country2,dist,word
+Australia,Brazil,0.8695778250694275,saw
+Australia,Canada,0.5771600604057312,saw
+Australia,Finland,0.8392394185066223,saw
+Australia,Germany,0.5326818227767944,saw
+Australia,Italy,1.3829874992370605,saw
+Australia,Philippines,0.6319238543510437,saw
+Australia,Russia,0.7647060751914978,saw
+Australia,Sweden,0.4551105499267578,saw
+Australia,United Kingdom,0.8164743185043335,saw
+Australia,United States,0.6340848803520203,saw
+Brazil,Canada,0.6545491814613342,saw
+Brazil,Finland,0.7334189414978027,saw
+Brazil,Germany,0.9182634353637695,saw
+Brazil,Italy,1.0156272649765015,saw
+Brazil,Philippines,0.8831257820129395,saw
+Brazil,Russia,0.5924886465072632,saw
+Brazil,Sweden,0.7979648113250732,saw
+Brazil,United Kingdom,0.7246137857437134,saw
+Brazil,United States,0.8211326003074646,saw
+Canada,Finland,0.5734816789627075,saw
+Canada,Germany,0.6217194199562073,saw
+Canada,Italy,1.1216448545455933,saw
+Canada,Philippines,0.5789030194282532,saw
+Canada,Russia,0.5838732719421387,saw
+Canada,Sweden,0.493240624666214,saw
+Canada,United Kingdom,0.701264500617981,saw
+Canada,United States,0.5873337984085083,saw
+Finland,Germany,0.8757597208023071,saw
+Finland,Italy,0.8124735355377197,saw
+Finland,Philippines,0.7617539763450623,saw
+Finland,Russia,0.7777881622314453,saw
+Finland,Sweden,0.7264337539672852,saw
+Finland,United Kingdom,0.6771619915962219,saw
+Finland,United States,0.7466236352920532,saw
+Germany,Italy,1.374638319015503,saw
+Germany,Philippines,0.5190295577049255,saw
+Germany,Russia,0.7705109715461731,saw
+Germany,Sweden,0.47897663712501526,saw
+Germany,United Kingdom,0.8722234964370728,saw
+Germany,United States,0.640609085559845,saw
+Italy,Philippines,1.1978875398635864,saw
+Italy,Russia,1.2321125268936157,saw
+Italy,Sweden,1.2568739652633667,saw
+Italy,United Kingdom,0.8103082180023193,saw
+Italy,United States,1.1394785642623901,saw
+Philippines,Russia,0.7748661041259766,saw
+Philippines,Sweden,0.5783457159996033,saw
+Philippines,United Kingdom,0.787980318069458,saw
+Philippines,United States,0.624256432056427,saw
+Russia,Sweden,0.7291257381439209,saw
+Russia,United Kingdom,0.861609697341919,saw
+Russia,United States,0.7913239002227783,saw
+Sweden,United Kingdom,0.7874346971511841,saw
+Sweden,United States,0.6267918348312378,saw
+United Kingdom,United States,0.6172708868980408,saw

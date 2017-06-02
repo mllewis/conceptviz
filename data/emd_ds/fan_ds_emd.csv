@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.49712634086608887,fan
+Australia,Canada,0.5524114370346069,fan
+Australia,Czech Republic,0.9662078619003296,fan
+Australia,Finland,0.5984708666801453,fan
+Australia,France,0.46160808205604553,fan
+Australia,Germany,0.4747064709663391,fan
+Australia,Hungary,0.6393529772758484,fan
+Australia,Italy,0.6281407475471497,fan
+Australia,"Korea, South",0.8416134715080261,fan
+Australia,Philippines,0.49615395069122314,fan
+Australia,Poland,0.7823253870010376,fan
+Australia,Russia,0.7905527353286743,fan
+Australia,Saudi Arabia,0.5941440463066101,fan
+Australia,Sweden,0.6293738484382629,fan
+Australia,Thailand,1.3670531511306763,fan
+Australia,United Kingdom,0.5699650049209595,fan
+Australia,United States,0.5399146676063538,fan
+Brazil,Canada,0.5174590945243835,fan
+Brazil,Czech Republic,1.0462646484375,fan
+Brazil,Finland,0.6086734533309937,fan
+Brazil,France,0.4002532958984375,fan
+Brazil,Germany,0.47038814425468445,fan
+Brazil,Hungary,0.6200957894325256,fan
+Brazil,Italy,0.6690275073051453,fan
+Brazil,"Korea, South",0.7513375878334045,fan
+Brazil,Philippines,0.4711715281009674,fan
+Brazil,Poland,0.7938486337661743,fan
+Brazil,Russia,0.8366479873657227,fan
+Brazil,Saudi Arabia,0.5603024959564209,fan
+Brazil,Sweden,0.5905196070671082,fan
+Brazil,Thailand,1.3237988948822021,fan
+Brazil,United Kingdom,0.5830850601196289,fan
+Brazil,United States,0.6095505952835083,fan
+Canada,Czech Republic,1.2505710124969482,fan
+Canada,Finland,0.5623313188552856,fan
+Canada,France,0.5196726322174072,fan
+Canada,Germany,0.6397227048873901,fan
+Canada,Hungary,0.7537058591842651,fan
+Canada,Italy,0.89174652099609375,fan
+Canada,"Korea, South",0.7109551429748535,fan
+Canada,Philippines,0.45708411931991577,fan
+Canada,Poland,1.0537697076797485,fan
+Canada,Russia,0.9936555027961731,fan
+Canada,Saudi Arabia,0.5211255550384521,fan
+Canada,Sweden,0.6946095824241638,fan
+Canada,Thailand,1.1480375528335571,fan
+Canada,United Kingdom,0.48573946952819824,fan
+Canada,United States,0.7970873117446899,fan
+Czech Republic,Finland,1.3304755687713623,fan
+Czech Republic,France,1.100015640258789,fan
+Czech Republic,Germany,0.892131507396698,fan
+Czech Republic,Hungary,0.7409936785697937,fan
+Czech Republic,Italy,0.6485263705253601,fan
+Czech Republic,"Korea, South",1.6117392778396606,fan
+Czech Republic,Philippines,1.1854701042175293,fan
+Czech Republic,Poland,0.6041566133499146,fan
+Czech Republic,Russia,0.7647022008895874,fan
+Czech Republic,Saudi Arabia,1.3028388023376465,fan
+Czech Republic,Sweden,1.1787351369857788,fan
+Czech Republic,Thailand,2.2294979095458984,fan
+Czech Republic,United Kingdom,1.2698521614074707,fan
+Czech Republic,United States,0.69995880126953125,fan
+Finland,France,0.6103706955909729,fan
+Finland,Germany,0.7147126793861389,fan
+Finland,Hungary,0.8797328472137451,fan
+Finland,Italy,1.0073058605194092,fan
+Finland,"Korea, South",0.6973105669021606,fan
+Finland,Philippines,0.5232264399528503,fan
+Finland,Poland,1.1606024503707886,fan
+Finland,Russia,1.144107460975647,fan
+Finland,Saudi Arabia,0.5043618679046631,fan
+Finland,Sweden,0.6090556383132935,fan
+Finland,Thailand,1.1011767387390137,fan
+Finland,United Kingdom,0.45299577713012695,fan
+Finland,United States,0.8591750860214233,fan
+France,Germany,0.469275563955307,fan
+France,Hungary,0.7093572020530701,fan
+France,Italy,0.7219980359077454,fan
+France,"Korea, South",0.6900004744529724,fan
+France,Philippines,0.45168790221214294,fan
+France,Poland,0.8400362133979797,fan
+France,Russia,0.9144189357757568,fan
+France,Saudi Arabia,0.5361096262931824,fan
+France,Sweden,0.56125408411026,fan
+France,Thailand,1.2952581644058228,fan
+France,United Kingdom,0.5708475112915039,fan
+France,United States,0.6472097635269165,fan
+Germany,Hungary,0.585191547870636,fan
+Germany,Italy,0.5780695676803589,fan
+Germany,"Korea, South",0.8977221250534058,fan
+Germany,Philippines,0.5170705318450928,fan
+Germany,Poland,0.7209659814834595,fan
+Germany,Russia,0.749110996723175,fan
+Germany,Saudi Arabia,0.6629600524902344,fan
+Germany,Sweden,0.5844038128852844,fan
+Germany,Thailand,1.488542079925537,fan
+Germany,United Kingdom,0.697431206703186,fan
+Germany,United States,0.5329546332359314,fan
+Hungary,Italy,0.6371373534202576,fan
+Hungary,"Korea, South",1.1359915733337402,fan
+Hungary,Philippines,0.7206418514251709,fan
+Hungary,Poland,0.6522313356399536,fan
+Hungary,Russia,0.7780478000640869,fan
+Hungary,Saudi Arabia,0.8752122521400452,fan
+Hungary,Sweden,0.7945272326469421,fan
+Hungary,Thailand,1.7063974142074585,fan
+Hungary,United Kingdom,0.8538990020751953,fan
+Hungary,United States,0.58420330286026,fan
+Italy,"Korea, South",1.2544647455215454,fan
+Italy,Philippines,0.8469249606132507,fan
+Italy,Poland,0.4728275537490845,fan
+Italy,Russia,0.5516504645347595,fan
+Italy,Saudi Arabia,0.9700801968574524,fan
+Italy,Sweden,0.8553909063339233,fan
+Italy,Thailand,1.8473052978515625,fan
+Italy,United Kingdom,0.9360964298248291,fan
+Italy,United States,0.4531373977661133,fan
+"Korea, South",Philippines,0.665610671043396,fan
+"Korea, South",Poland,1.3854773044586182,fan
+"Korea, South",Russia,1.411407232284546,fan
+"Korea, South",Saudi Arabia,0.634656548500061,fan
+"Korea, South",Sweden,0.6996005177497864,fan
+"Korea, South",Thailand,0.9450106620788574,fan
+"Korea, South",United Kingdom,0.6136659383773804,fan
+"Korea, South",United States,1.1170598268508911,fan
+Philippines,Poland,0.9738840460777283,fan
+Philippines,Russia,0.9591420888900757,fan
+Philippines,Saudi Arabia,0.5288324952125549,fan
+Philippines,Sweden,0.582572340965271,fan
+Philippines,Thailand,1.1398627758026123,fan
+Philippines,United Kingdom,0.5452648997306824,fan
+Philippines,United States,0.7286089062690735,fan
+Poland,Russia,0.6058021783828735,fan
+Poland,Saudi Arabia,1.0865179300308228,fan
+Poland,Sweden,1.0294013023376465,fan
+Poland,Thailand,1.994907021522522,fan
+Poland,United Kingdom,1.125634789466858,fan
+Poland,United States,0.6118617653846741,fan
+Russia,Saudi Arabia,1.0780738592147827,fan
+Russia,Sweden,1.0955872535705566,fan
+Russia,Thailand,1.9571986198425293,fan
+Russia,United Kingdom,1.0775619745254517,fan
+Russia,United States,0.6505807042121887,fan
+Saudi Arabia,Sweden,0.6941696405410767,fan
+Saudi Arabia,Thailand,1.1557846069335938,fan
+Saudi Arabia,United Kingdom,0.4771987497806549,fan
+Saudi Arabia,United States,0.8639672994613647,fan
+Sweden,Thailand,1.3104881048202515,fan
+Sweden,United Kingdom,0.6875986456871033,fan
+Sweden,United States,0.728472113609314,fan
+Thailand,United Kingdom,1.1381828784942627,fan
+Thailand,United States,1.7294082641601562,fan
+United Kingdom,United States,0.7971488237380981,fan

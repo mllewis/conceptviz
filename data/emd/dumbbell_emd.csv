@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,1.3631420135498047,dumbbell
+Australia,Canada,0.4000028371810913,dumbbell
+Australia,Czech Republic,1.1342236995697021,dumbbell
+Australia,Finland,0.5954577922821045,dumbbell
+Australia,France,1.4953019618988037,dumbbell
+Australia,Germany,0.4181232154369354,dumbbell
+Australia,Hungary,1.0870543718338013,dumbbell
+Australia,Italy,0.6752559542655945,dumbbell
+Australia,"Korea, South",1.054666519165039,dumbbell
+Australia,Philippines,1.18281090259552,dumbbell
+Australia,Poland,1.1211892366409302,dumbbell
+Australia,Russia,0.7260082364082336,dumbbell
+Australia,Saudi Arabia,0.7173559069633484,dumbbell
+Australia,Sweden,0.5644333362579346,dumbbell
+Australia,Thailand,0.8241811394691467,dumbbell
+Australia,United Kingdom,1.481690764427185,dumbbell
+Australia,United States,2.9897027015686035,dumbbell
+Brazil,Canada,1.68768310546875,dumbbell
+Brazil,Czech Republic,0.5140894055366516,dumbbell
+Brazil,Finland,1.6498734951019287,dumbbell
+Brazil,France,0.4860145151615143,dumbbell
+Brazil,Germany,1.1322236061096191,dumbbell
+Brazil,Hungary,0.5326205492019653,dumbbell
+Brazil,Italy,1.1513861417770386,dumbbell
+Brazil,"Korea, South",0.5571291446685791,dumbbell
+Brazil,Philippines,0.4659240245819092,dumbbell
+Brazil,Poland,0.4850586950778961,dumbbell
+Brazil,Russia,0.8290737867355347,dumbbell
+Brazil,Saudi Arabia,1.2260758876800537,dumbbell
+Brazil,Sweden,1.2856444120407104,dumbbell
+Brazil,Thailand,0.6725212335586548,dumbbell
+Brazil,United Kingdom,2.788076639175415,dumbbell
+Brazil,United States,4.260942459106445,dumbbell
+Canada,Czech Republic,1.4595435857772827,dumbbell
+Canada,Finland,0.6732749342918396,dumbbell
+Canada,France,1.801477074623108,dumbbell
+Canada,Germany,0.6394613981246948,dumbbell
+Canada,Hungary,1.394229769706726,dumbbell
+Canada,Italy,0.8332750797271729,dumbbell
+Canada,"Korea, South",1.3801082372665405,dumbbell
+Canada,Philippines,1.5209243297576904,dumbbell
+Canada,Poland,1.4300898313522339,dumbbell
+Canada,Russia,0.9946179986000061,dumbbell
+Canada,Saudi Arabia,0.9113408923149109,dumbbell
+Canada,Sweden,0.7297108769416809,dumbbell
+Canada,Thailand,1.129015564918518,dumbbell
+Canada,United Kingdom,1.1391507387161255,dumbbell
+Canada,United States,2.6509644985198975,dumbbell
+Czech Republic,Finland,1.3490188121795654,dumbbell
+Czech Republic,France,0.7418453693389893,dumbbell
+Czech Republic,Germany,0.956935465335846,dumbbell
+Czech Republic,Hungary,0.5098505020141602,dumbbell
+Czech Republic,Italy,0.8771321177482605,dumbbell
+Czech Republic,"Korea, South",0.6511508226394653,dumbbell
+Czech Republic,Philippines,0.5216308236122131,dumbbell
+Czech Republic,Poland,0.36669570207595825,dumbbell
+Czech Republic,Russia,0.6336821913719177,dumbbell
+Czech Republic,Saudi Arabia,0.9307222962379456,dumbbell
+Czech Republic,Sweden,1.0795620679855347,dumbbell
+Czech Republic,Thailand,0.6939117908477783,dumbbell
+Czech Republic,United Kingdom,2.5773277282714844,dumbbell
+Czech Republic,United States,4.078399658203125,dumbbell
+Finland,France,1.8071836233139038,dumbbell
+Finland,Germany,0.7422571182250977,dumbbell
+Finland,Hungary,1.355408787727356,dumbbell
+Finland,Italy,0.7454952001571655,dumbbell
+Finland,"Korea, South",1.3399237394332886,dumbbell
+Finland,Philippines,1.439376950263977,dumbbell
+Finland,Poland,1.3507447242736816,dumbbell
+Finland,Russia,1.0040801763534546,dumbbell
+Finland,Saudi Arabia,0.6556620597839355,dumbbell
+Finland,Sweden,0.6520282030105591,dumbbell
+Finland,Thailand,1.1539496183395386,dumbbell
+Finland,United Kingdom,1.5193047523498535,dumbbell
+Finland,United States,2.988265037536621,dumbbell
+France,Germany,1.2561925649642944,dumbbell
+France,Hungary,0.6436436176300049,dumbbell
+France,Italy,1.293084740638733,dumbbell
+France,"Korea, South",0.6666135191917419,dumbbell
+France,Philippines,0.7201511859893799,dumbbell
+France,Poland,0.7108855247497559,dumbbell
+France,Russia,0.9957433938980103,dumbbell
+France,Saudi Arabia,1.375783085823059,dumbbell
+France,Sweden,1.4154629707336426,dumbbell
+France,Thailand,0.8497617244720459,dumbbell
+France,United Kingdom,2.875397205352783,dumbbell
+France,United States,4.321226119995117,dumbbell
+Germany,Hungary,0.8423952460289001,dumbbell
+Germany,Italy,0.631342887878418,dumbbell
+Germany,"Korea, South",0.8565251231193542,dumbbell
+Germany,Philippines,1.0150889158248901,dumbbell
+Germany,Poland,0.9481199979782104,dumbbell
+Germany,Russia,0.5990058183670044,dumbbell
+Germany,Saudi Arabia,0.6938431262969971,dumbbell
+Germany,Sweden,0.5628852248191833,dumbbell
+Germany,Thailand,0.655086100101471,dumbbell
+Germany,United Kingdom,1.6811292171478271,dumbbell
+Germany,United States,3.1713480949401855,dumbbell
+Hungary,Italy,0.9062069654464722,dumbbell
+Hungary,"Korea, South",0.6035211682319641,dumbbell
+Hungary,Philippines,0.5174091458320618,dumbbell
+Hungary,Poland,0.5820745825767517,dumbbell
+Hungary,Russia,0.7510866522789001,dumbbell
+Hungary,Saudi Arabia,0.9663052558898926,dumbbell
+Hungary,Sweden,1.007401704788208,dumbbell
+Hungary,Thailand,0.6957422494888306,dumbbell
+Hungary,United Kingdom,2.4721598625183105,dumbbell
+Hungary,United States,3.946490526199341,dumbbell
+Italy,"Korea, South",0.9805610775947571,dumbbell
+Italy,Philippines,1.0470712184906006,dumbbell
+Italy,Poland,0.8341211080551147,dumbbell
+Italy,Russia,0.6042949557304382,dumbbell
+Italy,Saudi Arabia,0.4494773745536804,dumbbell
+Italy,Sweden,0.6831302642822266,dumbbell
+Italy,Thailand,0.8024879693984985,dumbbell
+Italy,United Kingdom,1.8405109643936157,dumbbell
+Italy,United States,3.3483269214630127,dumbbell
+"Korea, South",Philippines,0.5603255033493042,dumbbell
+"Korea, South",Poland,0.6444393992424011,dumbbell
+"Korea, South",Russia,0.7289376258850098,dumbbell
+"Korea, South",Saudi Arabia,1.0115197896957397,dumbbell
+"Korea, South",Sweden,1.0261975526809692,dumbbell
+"Korea, South",Thailand,0.4686610698699951,dumbbell
+"Korea, South",United Kingdom,2.4645235538482666,dumbbell
+"Korea, South",United States,3.939800500869751,dumbbell
+Philippines,Poland,0.5374535918235779,dumbbell
+Philippines,Russia,0.8298884630203247,dumbbell
+Philippines,Saudi Arabia,1.0714665651321411,dumbbell
+Philippines,Sweden,1.0822694301605225,dumbbell
+Philippines,Thailand,0.6793370246887207,dumbbell
+Philippines,United Kingdom,2.616567611694336,dumbbell
+Philippines,United States,4.09848690032959,dumbbell
+Poland,Russia,0.6220424771308899,dumbbell
+Poland,Saudi Arabia,0.9204750061035156,dumbbell
+Poland,Sweden,1.0675345659255981,dumbbell
+Poland,Thailand,0.6456796526908875,dumbbell
+Poland,United Kingdom,2.543835401535034,dumbbell
+Poland,United States,4.048650741577148,dumbbell
+Russia,Saudi Arabia,0.7175260186195374,dumbbell
+Russia,Sweden,0.893804132938385,dumbbell
+Russia,Thailand,0.5196322202682495,dumbbell
+Russia,United Kingdom,2.099466323852539,dumbbell
+Russia,United States,3.5912270545959473,dumbbell
+Saudi Arabia,Sweden,0.6702198386192322,dumbbell
+Saudi Arabia,Thailand,0.8796371221542358,dumbbell
+Saudi Arabia,United Kingdom,1.8346736431121826,dumbbell
+Saudi Arabia,United States,3.3407235145568848,dumbbell
+Sweden,Thailand,0.8911063075065613,dumbbell
+Sweden,United Kingdom,1.6279711723327637,dumbbell
+Sweden,United States,3.1272571086883545,dumbbell
+Thailand,United Kingdom,2.228384256362915,dumbbell
+Thailand,United States,3.710374116897583,dumbbell
+United Kingdom,United States,1.531999945640564,dumbbell

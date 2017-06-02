@@ -1,0 +1,137 @@
+country1,country2,dist,word
+Australia,Brazil,1.627189040184021,giraffe
+Australia,Canada,0.8667638301849365,giraffe
+Australia,Czech Republic,0.6121565103530884,giraffe
+Australia,Finland,1.0981295108795166,giraffe
+Australia,France,0.9395270943641663,giraffe
+Australia,Germany,0.9390590190887451,giraffe
+Australia,Hungary,0.8688573837280273,giraffe
+Australia,Italy,1.062456488609314,giraffe
+Australia,"Korea, South",1.5089887380599976,giraffe
+Australia,Philippines,0.5731119513511658,giraffe
+Australia,Poland,1.140040636062622,giraffe
+Australia,Russia,0.7625277042388916,giraffe
+Australia,Sweden,0.760664701461792,giraffe
+Australia,Thailand,1.848465085029602,giraffe
+Australia,United Kingdom,0.8748757839202881,giraffe
+Australia,United States,0.8760781288146973,giraffe
+Brazil,Canada,1.187737226486206,giraffe
+Brazil,Czech Republic,1.49933922290802,giraffe
+Brazil,Finland,1.584857702255249,giraffe
+Brazil,France,1.0693279504776,giraffe
+Brazil,Germany,1.20182466506958,giraffe
+Brazil,Hungary,1.636335849761963,giraffe
+Brazil,Italy,1.3021557331085205,giraffe
+Brazil,"Korea, South",2.775519371032715,giraffe
+Brazil,Philippines,1.5224484205245972,giraffe
+Brazil,Poland,1.4979475736618042,giraffe
+Brazil,Russia,1.1528273820877075,giraffe
+Brazil,Sweden,1.6648260354995728,giraffe
+Brazil,Thailand,3.0915520191192627,giraffe
+Brazil,United Kingdom,1.2924304008483887,giraffe
+Brazil,United States,1.1774325370788574,giraffe
+Canada,Czech Republic,0.7036845088005066,giraffe
+Canada,Finland,0.9852055311203003,giraffe
+Canada,France,0.7413440942764282,giraffe
+Canada,Germany,0.5225948095321655,giraffe
+Canada,Hungary,0.9395954608917236,giraffe
+Canada,Italy,0.642262876033783,giraffe
+Canada,"Korea, South",1.8813813924789429,giraffe
+Canada,Philippines,0.7475439310073853,giraffe
+Canada,Poland,0.9241771697998047,giraffe
+Canada,Russia,0.5378555059432983,giraffe
+Canada,Sweden,0.9883138537406921,giraffe
+Canada,Thailand,2.1354432106018066,giraffe
+Canada,United Kingdom,0.808851420879364,giraffe
+Canada,United States,0.5817607045173645,giraffe
+Czech Republic,Finland,0.9742044806480408,giraffe
+Czech Republic,France,0.849445641040802,giraffe
+Czech Republic,Germany,0.7903169393539429,giraffe
+Czech Republic,Hungary,0.7283148765563965,giraffe
+Czech Republic,Italy,0.7895128726959229,giraffe
+Czech Republic,"Korea, South",1.5697623491287231,giraffe
+Czech Republic,Philippines,0.6459442377090454,giraffe
+Czech Republic,Poland,0.935158908367157,giraffe
+Czech Republic,Russia,0.6895727515220642,giraffe
+Czech Republic,Sweden,0.761227011680603,giraffe
+Czech Republic,Thailand,1.8364882469177246,giraffe
+Czech Republic,United Kingdom,0.8151259422302246,giraffe
+Czech Republic,United States,0.7907027006149292,giraffe
+Finland,France,1.0257121324539185,giraffe
+Finland,Germany,1.1106184720993042,giraffe
+Finland,Hungary,0.6223818063735962,giraffe
+Finland,Italy,0.7235832810401917,giraffe
+Finland,"Korea, South",1.6821839809417725,giraffe
+Finland,Philippines,1.165205478668213,giraffe
+Finland,Poland,0.5753366947174072,giraffe
+Finland,Russia,0.9787031412124634,giraffe
+Finland,Sweden,1.3372968435287476,giraffe
+Finland,Thailand,1.942229151725769,giraffe
+Finland,United Kingdom,0.7033454179763794,giraffe
+Finland,United States,1.201653242111206,giraffe
+France,Germany,0.8515990376472473,giraffe
+France,Hungary,1.0440179109573364,giraffe
+France,Italy,0.8740805983543396,giraffe
+France,"Korea, South",2.0265657901763916,giraffe
+France,Philippines,0.891130805015564,giraffe
+France,Poland,1.054104208946228,giraffe
+France,Russia,0.5901268124580383,giraffe
+France,Sweden,0.9199392199516296,giraffe
+France,Thailand,2.3345375061035156,giraffe
+France,United Kingdom,0.6380932927131653,giraffe
+France,United States,0.7741517424583435,giraffe
+Germany,Hungary,1.099576711654663,giraffe
+Germany,Italy,0.6852438449859619,giraffe
+Germany,"Korea, South",1.9607728719711304,giraffe
+Germany,Philippines,0.8872441053390503,giraffe
+Germany,Poland,1.015447974205017,giraffe
+Germany,Russia,0.6725642085075378,giraffe
+Germany,Sweden,0.993272602558136,giraffe
+Germany,Thailand,2.193101167678833,giraffe
+Germany,United Kingdom,0.9844866991043091,giraffe
+Germany,United States,0.7021205425262451,giraffe
+Hungary,Italy,0.7864503860473633,giraffe
+Hungary,"Korea, South",1.441571593284607,giraffe
+Hungary,Philippines,0.9460872411727905,giraffe
+Hungary,Poland,0.5981280207633972,giraffe
+Hungary,Russia,0.8950663805007935,giraffe
+Hungary,Sweden,1.161435842514038,giraffe
+Hungary,Thailand,1.7478498220443726,giraffe
+Hungary,United Kingdom,0.7469407916069031,giraffe
+Hungary,United States,1.1446269750595093,giraffe
+Italy,"Korea, South",1.850163459777832,giraffe
+Italy,Philippines,1.071237325668335,giraffe
+Italy,Poland,0.6262328624725342,giraffe
+Italy,Russia,0.7417730093002319,giraffe
+Italy,Sweden,1.2002460956573486,giraffe
+Italy,Thailand,2.138075590133667,giraffe
+Italy,United Kingdom,0.7472347617149353,giraffe
+Italy,United States,0.8882582187652588,giraffe
+"Korea, South",Philippines,1.6936211585998535,giraffe
+"Korea, South",Poland,1.6932573318481445,giraffe
+"Korea, South",Russia,1.8243749141693115,giraffe
+"Korea, South",Sweden,1.6920064687728882,giraffe
+"Korea, South",Thailand,0.7228049635887146,giraffe
+"Korea, South",United Kingdom,1.8275256156921387,giraffe
+"Korea, South",United States,1.9663010835647583,giraffe
+Philippines,Poland,1.2148834466934204,giraffe
+Philippines,Russia,0.712395966053009,giraffe
+Philippines,Sweden,0.7340226769447327,giraffe
+Philippines,Thailand,1.930169939994812,giraffe
+Philippines,United Kingdom,0.9672065377235413,giraffe
+Philippines,United States,0.7112485766410828,giraffe
+Poland,Russia,0.925704836845398,giraffe
+Poland,Sweden,1.3788501024246216,giraffe
+Poland,Thailand,1.9902194738388062,giraffe
+Poland,United Kingdom,0.7556936144828796,giraffe
+Poland,United States,1.1337746381759644,giraffe
+Russia,Sweden,0.8915581107139587,giraffe
+Russia,Thailand,2.109760046005249,giraffe
+Russia,United Kingdom,0.6819761395454407,giraffe
+Russia,United States,0.5908962488174438,giraffe
+Sweden,Thailand,1.791556477546692,giraffe
+Sweden,United Kingdom,1.0311903953552246,giraffe
+Sweden,United States,0.9658318758010864,giraffe
+Thailand,United Kingdom,2.164034128189087,giraffe
+Thailand,United States,2.1922850608825684,giraffe
+United Kingdom,United States,0.962979793548584,giraffe

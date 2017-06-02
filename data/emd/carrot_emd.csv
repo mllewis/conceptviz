@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.8880255222320557,carrot
+Australia,Canada,0.5838218927383423,carrot
+Australia,Czech Republic,1.019628643989563,carrot
+Australia,Finland,1.0429919958114624,carrot
+Australia,France,1.1298567056655884,carrot
+Australia,Germany,0.785953164100647,carrot
+Australia,Hungary,0.9434836506843567,carrot
+Australia,Italy,1.1705178022384644,carrot
+Australia,"Korea, South",0.6531535983085632,carrot
+Australia,Philippines,1.0004884004592896,carrot
+Australia,Poland,0.6121334433555603,carrot
+Australia,Russia,0.5841899514198303,carrot
+Australia,Saudi Arabia,0.9288440346717834,carrot
+Australia,Sweden,0.5961236357688904,carrot
+Australia,Thailand,0.9661667346954346,carrot
+Australia,United Kingdom,1.1311254501342773,carrot
+Australia,United States,2.6257450580596924,carrot
+Brazil,Canada,1.0366228818893433,carrot
+Brazil,Czech Republic,0.5037947297096252,carrot
+Brazil,Finland,0.4379695653915405,carrot
+Brazil,France,0.828986406326294,carrot
+Brazil,Germany,1.3008522987365723,carrot
+Brazil,Hungary,0.6802735328674316,carrot
+Brazil,Italy,0.6765629649162292,carrot
+Brazil,"Korea, South",0.750238299369812,carrot
+Brazil,Philippines,0.6012302041053772,carrot
+Brazil,Poland,0.9433445930480957,carrot
+Brazil,Russia,0.908883810043335,carrot
+Brazil,Saudi Arabia,1.3715713024139404,carrot
+Brazil,Sweden,0.6979833245277405,carrot
+Brazil,Thailand,0.6847910284996033,carrot
+Brazil,United Kingdom,1.6090476512908936,carrot
+Brazil,United States,3.042351484298706,carrot
+Canada,Czech Republic,1.272526741027832,carrot
+Canada,Finland,1.2676762342453003,carrot
+Canada,France,1.4919675588607788,carrot
+Canada,Germany,0.4009593725204468,carrot
+Canada,Hungary,1.223101258277893,carrot
+Canada,Italy,1.4765119552612305,carrot
+Canada,"Korea, South",0.8398072719573975,carrot
+Canada,Philippines,1.1054500341415405,carrot
+Canada,Poland,0.9724278450012207,carrot
+Canada,Russia,0.5070886015892029,carrot
+Canada,Saudi Arabia,0.998132586479187,carrot
+Canada,Sweden,0.960947573184967,carrot
+Canada,Thailand,1.0927221775054932,carrot
+Canada,United Kingdom,0.7155598402023315,carrot
+Canada,United States,2.2508111000061035,carrot
+Czech Republic,Finland,0.5903950929641724,carrot
+Czech Republic,France,0.647667646408081,carrot
+Czech Republic,Germany,1.483699917793274,carrot
+Czech Republic,Hungary,0.5545656085014343,carrot
+Czech Republic,Italy,0.4860537350177765,carrot
+Czech Republic,"Korea, South",0.8247189521789551,carrot
+Czech Republic,Philippines,0.6770539879798889,carrot
+Czech Republic,Poland,0.8434187769889832,carrot
+Czech Republic,Russia,1.0135538578033447,carrot
+Czech Republic,Saudi Arabia,1.3830868005752563,carrot
+Czech Republic,Sweden,0.6875399351119995,carrot
+Czech Republic,Thailand,0.7383038997650146,carrot
+Czech Republic,United Kingdom,1.931627869606018,carrot
+Czech Republic,United States,3.4268531799316406,carrot
+Finland,France,0.8219848871231079,carrot
+Finland,Germany,1.5263901948928833,carrot
+Finland,Hungary,0.7159818410873413,carrot
+Finland,Italy,0.6497965455055237,carrot
+Finland,"Korea, South",0.8978102803230286,carrot
+Finland,Philippines,0.6306543946266174,carrot
+Finland,Poland,1.0934202671051025,carrot
+Finland,Russia,1.1390283107757568,carrot
+Finland,Saudi Arabia,1.554944634437561,carrot
+Finland,Sweden,0.8554475903511047,carrot
+Finland,Thailand,0.7485517859458923,carrot
+Finland,United Kingdom,1.8179447650909424,carrot
+Finland,United States,3.112111806869507,carrot
+France,Germany,1.716998815536499,carrot
+France,Hungary,0.6320089101791382,carrot
+France,Italy,0.5162122249603271,carrot
+France,"Korea, South",1.0112637281417847,carrot
+France,Philippines,0.9069581627845764,carrot
+France,Poland,0.9456073045730591,carrot
+France,Russia,1.2951807975769043,carrot
+France,Saudi Arabia,1.4960192441940308,carrot
+France,Sweden,0.8136422038078308,carrot
+France,Thailand,0.8995904922485352,carrot
+France,United Kingdom,2.139662027359009,carrot
+France,United States,3.5968711376190186,carrot
+Germany,Hungary,1.4217119216918945,carrot
+Germany,Italy,1.7079503536224365,carrot
+Germany,"Korea, South",0.9995694756507874,carrot
+Germany,Philippines,1.3499393463134766,carrot
+Germany,Poland,1.0313727855682373,carrot
+Germany,Russia,0.5634153485298157,carrot
+Germany,Saudi Arabia,0.8909871578216553,carrot
+Germany,Sweden,1.118970274925232,carrot
+Germany,Thailand,1.316152572631836,carrot
+Germany,United Kingdom,0.7011857628822327,carrot
+Germany,United States,2.2342355251312256,carrot
+Hungary,Italy,0.6237969994544983,carrot
+Hungary,"Korea, South",0.6697539687156677,carrot
+Hungary,Philippines,0.6779882311820984,carrot
+Hungary,Poland,0.7736876606941223,carrot
+Hungary,Russia,1.0186213254928589,carrot
+Hungary,Saudi Arabia,1.2134003639221191,carrot
+Hungary,Sweden,0.6831263899803162,carrot
+Hungary,Thailand,0.7244870662689209,carrot
+Hungary,United Kingdom,1.8766546249389648,carrot
+Hungary,United States,3.397185802459717,carrot
+Italy,"Korea, South",0.923132061958313,carrot
+Italy,Philippines,0.7900398373603821,carrot
+Italy,Poland,1.0346410274505615,carrot
+Italy,Russia,1.2791723012924194,carrot
+Italy,Saudi Arabia,1.540318489074707,carrot
+Italy,Sweden,0.857304573059082,carrot
+Italy,Thailand,0.8361014723777771,carrot
+Italy,United Kingdom,2.1040232181549072,carrot
+Italy,United States,3.5515005588531494,carrot
+"Korea, South",Philippines,0.6523750424385071,carrot
+"Korea, South",Poland,0.6786094903945923,carrot
+"Korea, South",Russia,0.6600714325904846,carrot
+"Korea, South",Saudi Arabia,0.8931386470794678,carrot
+"Korea, South",Sweden,0.7370743751525879,carrot
+"Korea, South",Thailand,0.6486977934837341,carrot
+"Korea, South",United Kingdom,1.4300459623336792,carrot
+"Korea, South",United States,2.948751449584961,carrot
+Philippines,Poland,0.9808954000473022,carrot
+Philippines,Russia,0.9575560092926025,carrot
+Philippines,Saudi Arabia,1.2787302732467651,carrot
+Philippines,Sweden,0.9285067319869995,carrot
+Philippines,Thailand,0.4514721930027008,carrot
+Philippines,United Kingdom,1.6682963371276855,carrot
+Philippines,United States,3.097001314163208,carrot
+Poland,Russia,0.6575961709022522,carrot
+Poland,Saudi Arabia,0.8504385352134705,carrot
+Poland,Sweden,0.5412348508834839,carrot
+Poland,Thailand,0.9466068744659424,carrot
+Poland,United Kingdom,1.622474193572998,carrot
+Poland,United States,3.1698124408721924,carrot
+Russia,Saudi Arabia,0.9136313199996948,carrot
+Russia,Sweden,0.7544171214103699,carrot
+Russia,Thailand,0.9284240007400513,carrot
+Russia,United Kingdom,1.1254867315292358,carrot
+Russia,United States,2.658346176147461,carrot
+Saudi Arabia,Sweden,1.137052297592163,carrot
+Saudi Arabia,Thailand,1.2210139036178589,carrot
+Saudi Arabia,United Kingdom,1.4301583766937256,carrot
+Saudi Arabia,United States,2.9545443058013916,carrot
+Sweden,Thailand,0.9334383606910706,carrot
+Sweden,United Kingdom,1.5796453952789307,carrot
+Sweden,United States,3.076035261154175,carrot
+Thailand,United Kingdom,1.675218105316162,carrot
+Thailand,United States,3.131403684616089,carrot
+United Kingdom,United States,1.5714267492294312,carrot

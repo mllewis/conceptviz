@@ -1,0 +1,79 @@
+country1,country2,dist,word
+Australia,Brazil,0.5682384371757507,couch
+Australia,Canada,0.407792866230011,couch
+Australia,Czech Republic,0.46828973293304443,couch
+Australia,Finland,0.7199870944023132,couch
+Australia,Germany,0.49690428376197815,couch
+Australia,Italy,0.541271448135376,couch
+Australia,Philippines,0.47434094548225403,couch
+Australia,Poland,0.5562350749969482,couch
+Australia,Russia,0.6016621589660645,couch
+Australia,Sweden,0.7125802040100098,couch
+Australia,United Kingdom,0.7363652586936951,couch
+Australia,United States,0.45473846793174744,couch
+Brazil,Canada,0.5296916961669922,couch
+Brazil,Czech Republic,0.5448594689369202,couch
+Brazil,Finland,0.5833977460861206,couch
+Brazil,Germany,0.4897414743900299,couch
+Brazil,Italy,0.7262014150619507,couch
+Brazil,Philippines,0.5104438066482544,couch
+Brazil,Poland,0.5048372149467468,couch
+Brazil,Russia,0.5182495713233948,couch
+Brazil,Sweden,0.9150788187980652,couch
+Brazil,United Kingdom,0.7503750920295715,couch
+Brazil,United States,0.546059250831604,couch
+Canada,Czech Republic,0.5553533434867859,couch
+Canada,Finland,0.6647597551345825,couch
+Canada,Germany,0.5421486496925354,couch
+Canada,Italy,0.5331915020942688,couch
+Canada,Philippines,0.4951942265033722,couch
+Canada,Poland,0.6196957230567932,couch
+Canada,Russia,0.6360837817192078,couch
+Canada,Sweden,0.874241054058075,couch
+Canada,United Kingdom,0.82399982213974,couch
+Canada,United States,0.4768129885196686,couch
+Czech Republic,Finland,0.7589677572250366,couch
+Czech Republic,Germany,0.5047775506973267,couch
+Czech Republic,Italy,0.7252380847930908,couch
+Czech Republic,Philippines,0.5178768634796143,couch
+Czech Republic,Poland,0.5219298601150513,couch
+Czech Republic,Russia,0.5190277695655823,couch
+Czech Republic,Sweden,0.6182039380073547,couch
+Czech Republic,United Kingdom,0.7206377983093262,couch
+Czech Republic,United States,0.5039308667182922,couch
+Finland,Germany,0.6752349138259888,couch
+Finland,Italy,0.8382028341293335,couch
+Finland,Philippines,0.7236716747283936,couch
+Finland,Poland,0.6697410941123962,couch
+Finland,Russia,0.6746120452880859,couch
+Finland,Sweden,1.2053585052490234,couch
+Finland,United Kingdom,0.9478725790977478,couch
+Finland,United States,0.7528989315032959,couch
+Germany,Italy,0.7840030789375305,couch
+Germany,Philippines,0.49044811725616455,couch
+Germany,Poland,0.5743148326873779,couch
+Germany,Russia,0.4076648950576782,couch
+Germany,Sweden,0.7607429623603821,couch
+Germany,United Kingdom,0.7268239259719849,couch
+Germany,United States,0.4143916070461273,couch
+Italy,Philippines,0.6326950788497925,couch
+Italy,Poland,0.7672178149223328,couch
+Italy,Russia,0.8979272246360779,couch
+Italy,Sweden,0.904509961605072,couch
+Italy,United Kingdom,0.9695738554000854,couch
+Italy,United States,0.6595556735992432,couch
+Philippines,Poland,0.44768738746643066,couch
+Philippines,Russia,0.5499364733695984,couch
+Philippines,Sweden,0.7648834586143494,couch
+Philippines,United Kingdom,0.6641541123390198,couch
+Philippines,United States,0.4142707586288452,couch
+Poland,Russia,0.515394389629364,couch
+Poland,Sweden,0.8005062341690063,couch
+Poland,United Kingdom,0.5218418836593628,couch
+Poland,United States,0.5443594455718994,couch
+Russia,Sweden,0.7888610363006592,couch
+Russia,United Kingdom,0.6788409352302551,couch
+Russia,United States,0.5143361687660217,couch
+Sweden,United Kingdom,0.8062682151794434,couch
+Sweden,United States,0.7165089249610901,couch
+United Kingdom,United States,0.6702832579612732,couch

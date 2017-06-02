@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.5584668517112732,hurricane
+Australia,Canada,0.5560566186904907,hurricane
+Australia,Czech Republic,0.6485235095024109,hurricane
+Australia,Finland,0.5602145195007324,hurricane
+Australia,France,0.6190306544303894,hurricane
+Australia,Germany,0.5931231379508972,hurricane
+Australia,Hungary,0.7622862458229065,hurricane
+Australia,Italy,0.6222252249717712,hurricane
+Australia,"Korea, South",0.5855753421783447,hurricane
+Australia,Philippines,0.5065279603004456,hurricane
+Australia,Poland,0.41209325194358826,hurricane
+Australia,Russia,0.5892618894577026,hurricane
+Australia,Saudi Arabia,1.4479864835739136,hurricane
+Australia,Sweden,0.3569575846195221,hurricane
+Australia,Thailand,0.526314377784729,hurricane
+Australia,United Kingdom,0.4829566478729248,hurricane
+Australia,United States,0.6872581839561462,hurricane
+Brazil,Canada,0.9142559766769409,hurricane
+Brazil,Czech Republic,0.5812007188796997,hurricane
+Brazil,Finland,0.53384929895401,hurricane
+Brazil,France,0.5668172836303711,hurricane
+Brazil,Germany,0.5169815421104431,hurricane
+Brazil,Hungary,0.5543112754821777,hurricane
+Brazil,Italy,0.7166422009468079,hurricane
+Brazil,"Korea, South",0.8828980922698975,hurricane
+Brazil,Philippines,0.7277852892875671,hurricane
+Brazil,Poland,0.4652680456638336,hurricane
+Brazil,Russia,0.49745115637779236,hurricane
+Brazil,Saudi Arabia,1.3145695924758911,hurricane
+Brazil,Sweden,0.6277258992195129,hurricane
+Brazil,Thailand,0.6778751015663147,hurricane
+Brazil,United Kingdom,0.6871774792671204,hurricane
+Brazil,United States,1.0345622301101685,hurricane
+Canada,Czech Republic,0.6235248446464539,hurricane
+Canada,Finland,0.9729066491127014,hurricane
+Canada,France,0.6660574674606323,hurricane
+Canada,Germany,0.9894416332244873,hurricane
+Canada,Hungary,1.1967798471450806,hurricane
+Canada,Italy,0.9476994276046753,hurricane
+Canada,"Korea, South",0.8246159553527832,hurricane
+Canada,Philippines,0.4549020528793335,hurricane
+Canada,Poland,0.6430293321609497,hurricane
+Canada,Russia,0.7413016557693481,hurricane
+Canada,Saudi Arabia,1.8371564149856567,hurricane
+Canada,Sweden,0.5831857919692993,hurricane
+Canada,Thailand,0.5615687370300293,hurricane
+Canada,United Kingdom,0.42846426367759705,hurricane
+Canada,United States,0.35091882944107056,hurricane
+Czech Republic,Finland,0.8229548931121826,hurricane
+Czech Republic,France,0.4237940311431885,hurricane
+Czech Republic,Germany,0.8031154274940491,hurricane
+Czech Republic,Hungary,0.9387292265892029,hurricane
+Czech Republic,Italy,0.9745607376098633,hurricane
+Czech Republic,"Korea, South",1.0979965925216675,hurricane
+Czech Republic,Philippines,0.506086528301239,hurricane
+Czech Republic,Poland,0.5141578316688538,hurricane
+Czech Republic,Russia,0.40400904417037964,hurricane
+Czech Republic,Saudi Arabia,1.6807175874710083,hurricane
+Czech Republic,Sweden,0.6754075288772583,hurricane
+Czech Republic,Thailand,0.4930611252784729,hurricane
+Czech Republic,United Kingdom,0.45888417959213257,hurricane
+Czech Republic,United States,0.6830261945724487,hurricane
+Finland,France,0.7597128748893738,hurricane
+Finland,Germany,0.32927167415618896,hurricane
+Finland,Hungary,0.4375784993171692,hurricane
+Finland,Italy,0.426098108291626,hurricane
+Finland,"Korea, South",0.6624978184700012,hurricane
+Finland,Philippines,0.8187164068222046,hurricane
+Finland,Poland,0.5643835067749023,hurricane
+Finland,Russia,0.7928388118743896,hurricane
+Finland,Saudi Arabia,0.98957759141922,hurricane
+Finland,Sweden,0.575911819934845,hurricane
+Finland,Thailand,0.8491942882537842,hurricane
+Finland,United Kingdom,0.8444603681564331,hurricane
+Finland,United States,1.0938475131988525,hurricane
+France,Germany,0.7425394654273987,hurricane
+France,Hungary,0.8623551726341248,hurricane
+France,Italy,0.8659042716026306,hurricane
+France,"Korea, South",1.0210603475570679,hurricane
+France,Philippines,0.5483468174934387,hurricane
+France,Poland,0.5370379686355591,hurricane
+France,Russia,0.45837461948394775,hurricane
+France,Saudi Arabia,1.5825525522232056,hurricane
+France,Sweden,0.6528682112693787,hurricane
+France,Thailand,0.589377224445343,hurricane
+France,United Kingdom,0.5475272536277771,hurricane
+France,United States,0.7199700474739075,hurricane
+Germany,Hungary,0.42321598529815674,hurricane
+Germany,Italy,0.4731558561325073,hurricane
+Germany,"Korea, South",0.7466903924942017,hurricane
+Germany,Philippines,0.8295825123786926,hurricane
+Germany,Poland,0.5518088936805725,hurricane
+Germany,Russia,0.7775029540061951,hurricane
+Germany,Saudi Arabia,1.0096389055252075,hurricane
+Germany,Sweden,0.6327329874038696,hurricane
+Germany,Thailand,0.858513593673706,hurricane
+Germany,United Kingdom,0.8450352549552917,hurricane
+Germany,United States,1.0996216535568237,hurricane
+Hungary,Italy,0.6000029444694519,hurricane
+Hungary,"Korea, South",0.9073371887207031,hurricane
+Hungary,Philippines,1.0229462385177612,hurricane
+Hungary,Poland,0.7387779355049133,hurricane
+Hungary,Russia,0.8751490116119385,hurricane
+Hungary,Saudi Arabia,0.8494592905044556,hurricane
+Hungary,Sweden,0.8097740411758423,hurricane
+Hungary,Thailand,0.9952684044837952,hurricane
+Hungary,United Kingdom,1.040035367012024,hurricane
+Hungary,United States,1.324647307395935,hurricane
+Italy,"Korea, South",0.5813671946525574,hurricane
+Italy,Philippines,0.916287362575531,hurricane
+Italy,Poland,0.669162392616272,hurricane
+Italy,Russia,0.9860222339630127,hurricane
+Italy,Saudi Arabia,0.9847516417503357,hurricane
+Italy,Sweden,0.5766206383705139,hurricane
+Italy,Thailand,0.9874817132949829,hurricane
+Italy,United Kingdom,0.9459764957427979,hurricane
+Italy,United States,1.085576057434082,hurricane
+"Korea, South",Philippines,0.8950531482696533,hurricane
+"Korea, South",Poland,0.7673572301864624,hurricane
+"Korea, South",Russia,1.0081064701080322,hurricane
+"Korea, South",Saudi Arabia,1.3746228218078613,hurricane
+"Korea, South",Sweden,0.6290085911750793,hurricane
+"Korea, South",Thailand,0.9295985102653503,hurricane
+"Korea, South",United Kingdom,0.8247652053833008,hurricane
+"Korea, South",United States,0.9738519787788391,hurricane
+Philippines,Poland,0.48601335287094116,hurricane
+Philippines,Russia,0.5914915800094604,hurricane
+Philippines,Saudi Arabia,1.7014126777648926,hurricane
+Philippines,Sweden,0.5645080804824829,hurricane
+Philippines,Thailand,0.5269351005554199,hurricane
+Philippines,United Kingdom,0.4064052700996399,hurricane
+Philippines,United States,0.4720081686973572,hurricane
+Poland,Russia,0.5213025808334351,hurricane
+Poland,Saudi Arabia,1.4294127225875854,hurricane
+Poland,Sweden,0.5045264959335327,hurricane
+Poland,Thailand,0.5598007440567017,hurricane
+Poland,United Kingdom,0.49910104274749756,hurricane
+Poland,United States,0.77570641040802,hurricane
+Russia,Saudi Arabia,1.651868224143982,hurricane
+Russia,Sweden,0.6693513989448547,hurricane
+Russia,Thailand,0.45326879620552063,hurricane
+Russia,United Kingdom,0.5006094574928284,hurricane
+Russia,United States,0.8172498345375061,hurricane
+Saudi Arabia,Sweden,1.3843848705291748,hurricane
+Saudi Arabia,Thailand,1.747402548789978,hurricane
+Saudi Arabia,United Kingdom,1.772052526473999,hurricane
+Saudi Arabia,United States,1.975239634513855,hurricane
+Sweden,Thailand,0.5963774919509888,hurricane
+Sweden,United Kingdom,0.5573164820671082,hurricane
+Sweden,United States,0.6992090344429016,hurricane
+Thailand,United Kingdom,0.43034154176712036,hurricane
+Thailand,United States,0.6743277907371521,hurricane
+United Kingdom,United States,0.5230717062950134,hurricane

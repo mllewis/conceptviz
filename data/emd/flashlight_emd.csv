@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.6417535543441772,flashlight
+Australia,Canada,0.5650231242179871,flashlight
+Australia,Czech Republic,0.580964982509613,flashlight
+Australia,Finland,0.5793096423149109,flashlight
+Australia,France,0.7039749622344971,flashlight
+Australia,Germany,0.38444381952285767,flashlight
+Australia,Hungary,0.6175063252449036,flashlight
+Australia,Italy,0.3846575915813446,flashlight
+Australia,"Korea, South",0.496367871761322,flashlight
+Australia,Philippines,0.45200926065444946,flashlight
+Australia,Poland,0.6155211925506592,flashlight
+Australia,Russia,0.3120478391647339,flashlight
+Australia,Saudi Arabia,0.3900998830795288,flashlight
+Australia,Sweden,0.28034254908561707,flashlight
+Australia,Thailand,1.0095064640045166,flashlight
+Australia,United Kingdom,1.1246353387832642,flashlight
+Australia,United States,2.200878858566284,flashlight
+Brazil,Canada,1.096713900566101,flashlight
+Brazil,Czech Republic,0.5231654644012451,flashlight
+Brazil,Finland,1.066620945930481,flashlight
+Brazil,France,0.3390521705150604,flashlight
+Brazil,Germany,0.8675817847251892,flashlight
+Brazil,Hungary,1.0265125036239624,flashlight
+Brazil,Italy,0.8165689706802368,flashlight
+Brazil,"Korea, South",0.6898206472396851,flashlight
+Brazil,Philippines,0.690464437007904,flashlight
+Brazil,Poland,0.6539902091026306,flashlight
+Brazil,Russia,0.49802640080451965,flashlight
+Brazil,Saudi Arabia,0.7836551070213318,flashlight
+Brazil,Sweden,0.5827877521514893,flashlight
+Brazil,Thailand,1.551160454750061,flashlight
+Brazil,United Kingdom,1.547042727470398,flashlight
+Brazil,United States,2.600424289703369,flashlight
+Canada,Czech Republic,1.0852491855621338,flashlight
+Canada,Finland,0.4359695017337799,flashlight
+Canada,France,1.1617467403411865,flashlight
+Canada,Germany,0.3563879430294037,flashlight
+Canada,Hungary,0.7940331101417542,flashlight
+Canada,Italy,0.4914935231208801,flashlight
+Canada,"Korea, South",0.9306318759918213,flashlight
+Canada,Philippines,0.8257267475128174,flashlight
+Canada,Poland,1.1176632642745972,flashlight
+Canada,Russia,0.7577337026596069,flashlight
+Canada,Saudi Arabia,0.628016471862793,flashlight
+Canada,Sweden,0.7211437225341797,flashlight
+Canada,Thailand,0.7019745707511902,flashlight
+Canada,United Kingdom,0.6518945693969727,flashlight
+Canada,United States,1.7033483982086182,flashlight
+Czech Republic,Finland,1.023970127105713,flashlight
+Czech Republic,France,0.5054906606674194,flashlight
+Czech Republic,Germany,0.8696220517158508,flashlight
+Czech Republic,Hungary,0.8533329367637634,flashlight
+Czech Republic,Italy,0.8049811720848083,flashlight
+Czech Republic,"Korea, South",0.47774845361709595,flashlight
+Czech Republic,Philippines,0.522236168384552,flashlight
+Czech Republic,Poland,0.3675876259803772,flashlight
+Czech Republic,Russia,0.4471651613712311,flashlight
+Czech Republic,Saudi Arabia,0.6752344369888306,flashlight
+Czech Republic,Sweden,0.46496284008026123,flashlight
+Czech Republic,Thailand,1.4228166341781616,flashlight
+Czech Republic,United Kingdom,1.6302156448364258,flashlight
+Czech Republic,United States,2.7081732749938965,flashlight
+Finland,France,1.0844511985778809,flashlight
+Finland,Germany,0.36809787154197693,flashlight
+Finland,Hungary,0.5800496339797974,flashlight
+Finland,Italy,0.37003225088119507,flashlight
+Finland,"Korea, South",0.8744736313819885,flashlight
+Finland,Philippines,0.7078019380569458,flashlight
+Finland,Poland,1.0485032796859741,flashlight
+Finland,Russia,0.748162031173706,flashlight
+Finland,Saudi Arabia,0.48075366020202637,flashlight
+Finland,Sweden,0.6265440583229065,flashlight
+Finland,Thailand,0.695641040802002,flashlight
+Finland,United Kingdom,0.8343403339385986,flashlight
+Finland,United States,1.8612092733383179,flashlight
+France,Germany,0.9166291952133179,flashlight
+France,Hungary,1.0549430847167969,flashlight
+France,Italy,0.8378415107727051,flashlight
+France,"Korea, South",0.7021605372428894,flashlight
+France,Philippines,0.7092791199684143,flashlight
+France,Poland,0.6240985989570618,flashlight
+France,Russia,0.5504266023635864,flashlight
+France,Saudi Arabia,0.8083083033561707,flashlight
+France,Sweden,0.618316113948822,flashlight
+France,Thailand,1.5731651782989502,flashlight
+France,United Kingdom,1.5914716720581055,flashlight
+France,United States,2.6360809803009033,flashlight
+Germany,Hungary,0.6687636971473694,flashlight
+Germany,Italy,0.3065953850746155,flashlight
+Germany,"Korea, South",0.7452012300491333,flashlight
+Germany,Philippines,0.6288489699363708,flashlight
+Germany,Poland,0.9137448072433472,flashlight
+Germany,Russia,0.5308302640914917,flashlight
+Germany,Saudi Arabia,0.4567892849445343,flashlight
+Germany,Sweden,0.49837616086006165,flashlight
+Germany,Thailand,0.8360486030578613,flashlight
+Germany,United Kingdom,0.8299240469932556,flashlight
+Germany,United States,1.9025870561599731,flashlight
+Hungary,Italy,0.5645978450775146,flashlight
+Hungary,"Korea, South",0.618753969669342,flashlight
+Hungary,Philippines,0.5122175812721252,flashlight
+Hungary,Poland,0.8207013607025146,flashlight
+Hungary,Russia,0.7697857022285461,flashlight
+Hungary,Saudi Arabia,0.4198257029056549,flashlight
+Hungary,Sweden,0.5782679319381714,flashlight
+Hungary,Thailand,0.7796453833580017,flashlight
+Hungary,United Kingdom,1.3177481889724731,flashlight
+Hungary,United States,2.3276429176330566,flashlight
+Italy,"Korea, South",0.6770070791244507,flashlight
+Italy,Philippines,0.5395426750183105,flashlight
+Italy,Poland,0.8274073004722595,flashlight
+Italy,Russia,0.5373185873031616,flashlight
+Italy,Saudi Arabia,0.383512020111084,flashlight
+Italy,Sweden,0.4126720428466797,flashlight
+Italy,Thailand,0.8126451373100281,flashlight
+Italy,United Kingdom,0.9440160989761353,flashlight
+Italy,United States,1.9918663501739502,flashlight
+"Korea, South",Philippines,0.3653952479362488,flashlight
+"Korea, South",Poland,0.4253993034362793,flashlight
+"Korea, South",Russia,0.5419448614120483,flashlight
+"Korea, South",Saudi Arabia,0.5430805087089539,flashlight
+"Korea, South",Sweden,0.4414581060409546,flashlight
+"Korea, South",Thailand,1.1808953285217285,flashlight
+"Korea, South",United Kingdom,1.5021957159042358,flashlight
+"Korea, South",United States,2.5802767276763916,flashlight
+Philippines,Poland,0.5449902415275574,flashlight
+Philippines,Russia,0.5216639041900635,flashlight
+Philippines,Saudi Arabia,0.43253853917121887,flashlight
+Philippines,Sweden,0.3617646098136902,flashlight
+Philippines,Thailand,1.0657106637954712,flashlight
+Philippines,United Kingdom,1.3980717658996582,flashlight
+Philippines,United States,2.4515204429626465,flashlight
+Poland,Russia,0.5322614312171936,flashlight
+Poland,Saudi Arabia,0.7064387798309326,flashlight
+Poland,Sweden,0.5382179617881775,flashlight
+Poland,Thailand,1.418748378753662,flashlight
+Poland,United Kingdom,1.665552020072937,flashlight
+Poland,United States,2.737152338027954,flashlight
+Russia,Saudi Arabia,0.5168172121047974,flashlight
+Russia,Sweden,0.3148389160633087,flashlight
+Russia,Thailand,1.2033305168151855,flashlight
+Russia,United Kingdom,1.2757470607757568,flashlight
+Russia,United States,2.354860544204712,flashlight
+Saudi Arabia,Sweden,0.39025411009788513,flashlight
+Saudi Arabia,Thailand,0.8632356524467468,flashlight
+Saudi Arabia,United Kingdom,1.1528154611587524,flashlight
+Saudi Arabia,United States,2.1963555812835693,flashlight
+Sweden,Thailand,1.0377109050750732,flashlight
+Sweden,United Kingdom,1.2579741477966309,flashlight
+Sweden,United States,2.3238325119018555,flashlight
+Thailand,United Kingdom,0.9802268147468567,flashlight
+Thailand,United States,1.8087096214294434,flashlight
+United Kingdom,United States,1.093644380569458,flashlight

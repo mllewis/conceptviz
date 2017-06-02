@@ -1,0 +1,121 @@
+country1,country2,dist,word
+Australia,Brazil,0.7797674536705017,vase
+Australia,Canada,0.801969051361084,vase
+Australia,Czech Republic,0.8067929148674011,vase
+Australia,Finland,0.7754541039466858,vase
+Australia,France,0.9328418374061584,vase
+Australia,Germany,0.82389068603515625,vase
+Australia,Italy,0.9785158038139343,vase
+Australia,"Korea, South",1.135012149810791,vase
+Australia,Philippines,0.5704963803291321,vase
+Australia,Poland,0.6577960848808289,vase
+Australia,Russia,0.8971196413040161,vase
+Australia,Sweden,0.757114589214325,vase
+Australia,Thailand,0.89324951171875,vase
+Australia,United Kingdom,0.6004423499107361,vase
+Australia,United States,0.8348401784896851,vase
+Brazil,Canada,0.9019805788993835,vase
+Brazil,Czech Republic,1.0763349533081055,vase
+Brazil,Finland,1.0058914422988892,vase
+Brazil,France,0.6036304235458374,vase
+Brazil,Germany,0.8334037065505981,vase
+Brazil,Italy,0.8023408055305481,vase
+Brazil,"Korea, South",1.046449899673462,vase
+Brazil,Philippines,0.6597446799278259,vase
+Brazil,Poland,1.0273334980010986,vase
+Brazil,Russia,1.1353178024291992,vase
+Brazil,Sweden,0.8969513177871704,vase
+Brazil,Thailand,0.8574188351631165,vase
+Brazil,United Kingdom,0.7513541579246521,vase
+Brazil,United States,0.7327466607093811,vase
+Canada,Czech Republic,0.6087014079093933,vase
+Canada,Finland,0.6002382040023804,vase
+Canada,France,0.7530486583709717,vase
+Canada,Germany,0.5066192150115967,vase
+Canada,Italy,1.3548080921173096,vase
+Canada,"Korea, South",0.7771458029747009,vase
+Canada,Philippines,0.601146399974823,vase
+Canada,Poland,0.7701348662376404,vase
+Canada,Russia,0.6630273461341858,vase
+Canada,Sweden,0.4923986792564392,vase
+Canada,Thailand,0.5541038513183594,vase
+Canada,United Kingdom,0.6363990902900696,vase
+Canada,United States,1.1244899034500122,vase
+Czech Republic,Finland,0.5026620626449585,vase
+Czech Republic,France,1.0410208702087402,vase
+Czech Republic,Germany,0.7008526921272278,vase
+Czech Republic,Italy,1.4562084674835205,vase
+Czech Republic,"Korea, South",0.9863575100898743,vase
+Czech Republic,Philippines,0.791222333908081,vase
+Czech Republic,Poland,0.6526347994804382,vase
+Czech Republic,Russia,0.6080094575881958,vase
+Czech Republic,Sweden,0.6085808873176575,vase
+Czech Republic,Thailand,0.810180127620697,vase
+Czech Republic,United Kingdom,0.7906081080436707,vase
+Czech Republic,United States,1.2854382991790771,vase
+Finland,France,0.9210396409034729,vase
+Finland,Germany,0.6841992735862732,vase
+Finland,Italy,1.4028526544570923,vase
+Finland,"Korea, South",0.9616332650184631,vase
+Finland,Philippines,0.7412412166595459,vase
+Finland,Poland,0.7383958101272583,vase
+Finland,Russia,0.5876995921134949,vase
+Finland,Sweden,0.5624993443489075,vase
+Finland,Thailand,0.7047575116157532,vase
+Finland,United Kingdom,0.7170891761779785,vase
+Finland,United States,1.216617465019226,vase
+France,Germany,0.6619088053703308,vase
+France,Italy,1.0289512872695923,vase
+France,"Korea, South",0.8136436343193054,vase
+France,Philippines,0.6550037860870361,vase
+France,Poland,1.052721381187439,vase
+France,Russia,1.0749802589416504,vase
+France,Sweden,0.8043534755706787,vase
+France,Thailand,0.6148535013198853,vase
+France,United Kingdom,0.7165960669517517,vase
+France,United States,0.8565279841423035,vase
+Germany,Italy,1.2406452894210815,vase
+Germany,"Korea, South",0.8223763108253479,vase
+Germany,Philippines,0.597438395023346,vase
+Germany,Poland,0.8346440196037292,vase
+Germany,Russia,0.7522432804107666,vase
+Germany,Sweden,0.5719887614250183,vase
+Germany,Thailand,0.6118656396865845,vase
+Germany,United Kingdom,0.6205340623855591,vase
+Germany,United States,1.0033570528030396,vase
+Italy,"Korea, South",1.566941738128662,vase
+Italy,Philippines,0.9839906692504883,vase
+Italy,Poland,1.2131041288375854,vase
+Italy,Russia,1.580176591873169,vase
+Italy,Sweden,1.3646384477615356,vase
+Italy,Thailand,1.3511089086532593,vase
+Italy,United Kingdom,1.037847638130188,vase
+Italy,United States,0.6159566640853882,vase
+"Korea, South",Philippines,0.9118398427963257,vase
+"Korea, South",Poland,1.090699553489685,vase
+"Korea, South",Russia,0.983314573764801,vase
+"Korea, South",Sweden,0.8609050512313843,vase
+"Korea, South",Thailand,0.5971193909645081,vase
+"Korea, South",United Kingdom,1.0175458192825317,vase
+"Korea, South",United States,1.3950146436691284,vase
+Philippines,Poland,0.6884143352508545,vase
+Philippines,Russia,0.845372200012207,vase
+Philippines,Sweden,0.5783254504203796,vase
+Philippines,Thailand,0.6141515970230103,vase
+Philippines,United Kingdom,0.46771976351737976,vase
+Philippines,United States,0.7615000605583191,vase
+Poland,Russia,0.7063770890235901,vase
+Poland,Sweden,0.7484366297721863,vase
+Poland,Thailand,0.8823018074035645,vase
+Poland,United Kingdom,0.7427824139595032,vase
+Poland,United States,1.0169439315795898,vase
+Russia,Sweden,0.5789803862571716,vase
+Russia,Thailand,0.7673821449279785,vase
+Russia,United Kingdom,0.780188798904419,vase
+Russia,United States,1.3451021909713745,vase
+Sweden,Thailand,0.594839334487915,vase
+Sweden,United Kingdom,0.5644705295562744,vase
+Sweden,United States,1.1326873302459717,vase
+Thailand,United Kingdom,0.6218055486679077,vase
+Thailand,United States,1.0749866962432861,vase
+United Kingdom,United States,0.756601095199585,vase

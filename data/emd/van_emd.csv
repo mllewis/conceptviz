@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.6715421080589294,van
+Australia,Canada,0.32383403182029724,van
+Australia,Czech Republic,0.9740942716598511,van
+Australia,Finland,0.5658643841743469,van
+Australia,France,1.0324214696884155,van
+Australia,Germany,0.38132405281066895,van
+Australia,Hungary,0.9100357294082642,van
+Australia,Italy,0.552969753742218,van
+Australia,"Korea, South",0.7591899037361145,van
+Australia,Philippines,0.9997522830963135,van
+Australia,Poland,1.0374832153320312,van
+Australia,Russia,0.8421272039413452,van
+Australia,Saudi Arabia,0.7074407935142517,van
+Australia,Sweden,0.6477329134941101,van
+Australia,Thailand,0.5073691010475159,van
+Australia,United Kingdom,1.0368834733963013,van
+Australia,United States,1.4671478271484375,van
+Brazil,Canada,0.76380455493927,van
+Brazil,Czech Republic,0.4941273331642151,van
+Brazil,Finland,0.61801910400390625,van
+Brazil,France,0.5834423899650574,van
+Brazil,Germany,0.5243759751319885,van
+Brazil,Hungary,0.7215046286582947,van
+Brazil,Italy,0.5019652843475342,van
+Brazil,"Korea, South",0.689251720905304,van
+Brazil,Philippines,0.5892767906188965,van
+Brazil,Poland,0.5638020634651184,van
+Brazil,Russia,0.48776763677597046,van
+Brazil,Saudi Arabia,0.7704712748527527,van
+Brazil,Sweden,0.3649700880050659,van
+Brazil,Thailand,0.5391930937767029,van
+Brazil,United Kingdom,1.6311450004577637,van
+Brazil,United States,2.062035083770752,van
+Canada,Czech Republic,1.0495716333389282,van
+Canada,Finland,0.6906142234802246,van
+Canada,France,1.1161115169525146,van
+Canada,Germany,0.3432297110557556,van
+Canada,Hungary,0.9363800883293152,van
+Canada,Italy,0.6356649398803711,van
+Canada,"Korea, South",0.8189613223075867,van
+Canada,Philippines,1.046646237373352,van
+Canada,Poland,1.091986894607544,van
+Canada,Russia,0.8939570784568787,van
+Canada,Saudi Arabia,0.7323850393295288,van
+Canada,Sweden,0.6953273415565491,van
+Canada,Thailand,0.6088075637817383,van
+Canada,United Kingdom,0.9992173910140991,van
+Canada,United States,1.4151619672775269,van
+Czech Republic,Finland,0.8717783689498901,van
+Czech Republic,France,0.4340256452560425,van
+Czech Republic,Germany,0.8079209327697754,van
+Czech Republic,Hungary,0.7988491058349609,van
+Czech Republic,Italy,0.7014322876930237,van
+Czech Republic,"Korea, South",0.715186595916748,van
+Czech Republic,Philippines,0.4013417363166809,van
+Czech Republic,Poland,0.3614235520362854,van
+Czech Republic,Russia,0.49198678135871887,van
+Czech Republic,Saudi Arabia,0.9857479333877563,van
+Czech Republic,Sweden,0.5135247707366943,van
+Czech Republic,Thailand,0.7638190984725952,van
+Czech Republic,United Kingdom,1.9626628160476685,van
+Czech Republic,United States,2.3953187465667725,van
+Finland,France,0.9096089601516724,van
+Finland,Germany,0.5295881628990173,van
+Finland,Hungary,0.7300606369972229,van
+Finland,Italy,0.5013794898986816,van
+Finland,"Korea, South",0.7953197956085205,van
+Finland,Philippines,0.9702709913253784,van
+Finland,Poland,0.9539313912391663,van
+Finland,Russia,0.8417576551437378,van
+Finland,Saudi Arabia,0.6529440879821777,van
+Finland,Sweden,0.6982421278953552,van
+Finland,Thailand,0.3888000547885895,van
+Finland,United Kingdom,1.2426050901412964,van
+Finland,United States,1.664892554283142,van
+France,Germany,0.8999290466308594,van
+France,Hungary,0.6756782531738281,van
+France,Italy,0.6487662196159363,van
+France,"Korea, South",0.6060506105422974,van
+France,Philippines,0.5907052159309387,van
+France,Poland,0.4875566065311432,van
+France,Russia,0.49935945868492126,van
+France,Saudi Arabia,1.0503507852554321,van
+France,Sweden,0.6232448816299438,van
+France,Thailand,0.788794994354248,van
+France,United Kingdom,1.9851930141448975,van
+France,United States,2.414194345474243,van
+Germany,Hungary,0.751591682434082,van
+Germany,Italy,0.49882441759109497,van
+Germany,"Korea, South",0.7361762523651123,van
+Germany,Philippines,0.818422257900238,van
+Germany,Poland,0.8460109829902649,van
+Germany,Russia,0.6848803758621216,van
+Germany,Saudi Arabia,0.5859569907188416,van
+Germany,Sweden,0.48663854598999023,van
+Germany,Thailand,0.44921842217445374,van
+Germany,United Kingdom,1.2255483865737915,van
+Germany,United States,1.6490124464035034,van
+Hungary,Italy,0.5814555287361145,van
+Hungary,"Korea, South",0.6458680629730225,van
+Hungary,Philippines,0.8297534584999084,van
+Hungary,Poland,0.7435857653617859,van
+Hungary,Russia,0.661440908908844,van
+Hungary,Saudi Arabia,0.6400173902511597,van
+Hungary,Sweden,0.7112393379211426,van
+Hungary,Thailand,0.681586503982544,van
+Hungary,United Kingdom,1.5653536319732666,van
+Hungary,United States,1.9669839143753052,van
+Italy,"Korea, South",0.5238843560218811,van
+Italy,Philippines,0.8015418648719788,van
+Italy,Poland,0.7441909909248352,van
+Italy,Russia,0.5223615765571594,van
+Italy,Saudi Arabia,0.681360125541687,van
+Italy,Sweden,0.5035287737846375,van
+Italy,Thailand,0.40905818343162537,van
+Italy,United Kingdom,1.41064453125,van
+Italy,United States,1.835058331489563,van
+"Korea, South",Philippines,0.7861946821212769,van
+"Korea, South",Poland,0.7533748149871826,van
+"Korea, South",Russia,0.6292374730110168,van
+"Korea, South",Saudi Arabia,0.905913233757019,van
+"Korea, South",Sweden,0.6384381651878357,van
+"Korea, South",Thailand,0.6985689997673035,van
+"Korea, South",United Kingdom,1.6447358131408691,van
+"Korea, South",United States,2.053941011428833,van
+Philippines,Poland,0.3992418050765991,van
+Philippines,Russia,0.633251428604126,van
+Philippines,Saudi Arabia,0.9322910308837891,van
+Philippines,Sweden,0.5505803227424622,van
+Philippines,Thailand,0.8096493482589722,van
+Philippines,United Kingdom,1.9826264381408691,van
+Philippines,United States,2.414362668991089,van
+Poland,Russia,0.5372694134712219,van
+Poland,Saudi Arabia,0.9689514636993408,van
+Poland,Sweden,0.5206612944602966,van
+Poland,Thailand,0.7993753552436829,van
+Poland,United Kingdom,2.0051772594451904,van
+Poland,United States,2.4366092681884766,van
+Russia,Saudi Arabia,0.908588171005249,van
+Russia,Sweden,0.48123177886009216,van
+Russia,Thailand,0.70754241943359375,van
+Russia,United Kingdom,1.7832832336425781,van
+Russia,United States,2.200138807296753,van
+Saudi Arabia,Sweden,0.7183302640914917,van
+Saudi Arabia,Thailand,0.6056607365608215,van
+Saudi Arabia,United Kingdom,1.2633256912231445,van
+Saudi Arabia,United States,1.6546560525894165,van
+Sweden,Thailand,0.5346885919570923,van
+Sweden,United Kingdom,1.610246181488037,van
+Sweden,United States,2.041654586791992,van
+Thailand,United Kingdom,1.312360405921936,van
+Thailand,United States,1.7414681911468506,van
+United Kingdom,United States,0.45225316286087036,van

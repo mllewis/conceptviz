@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.7021245360374451,horse
+Australia,Canada,0.43054673075675964,horse
+Australia,Czech Republic,0.31073012948036194,horse
+Australia,Finland,0.8212903141975403,horse
+Australia,France,0.362748384475708,horse
+Australia,Germany,0.39940905570983887,horse
+Australia,Hungary,0.4208965599536896,horse
+Australia,Italy,0.3804350197315216,horse
+Australia,"Korea, South",0.8411979675292969,horse
+Australia,Philippines,0.8118076920509338,horse
+Australia,Poland,0.4133317768573761,horse
+Australia,Russia,0.4151855707168579,horse
+Australia,Saudi Arabia,0.8546373844146729,horse
+Australia,Sweden,0.2597287893295288,horse
+Australia,Thailand,1.1347358226776123,horse
+Australia,United Kingdom,1.0403577089309692,horse
+Australia,United States,2.0755300521850586,horse
+Brazil,Canada,0.8889021873474121,horse
+Brazil,Czech Republic,0.7519686222076416,horse
+Brazil,Finland,1.2500616312026978,horse
+Brazil,France,0.46143639087677,horse
+Brazil,Germany,0.9012498259544373,horse
+Brazil,Hungary,0.8257609009742737,horse
+Brazil,Italy,0.7739523649215698,horse
+Brazil,"Korea, South",1.3258785009384155,horse
+Brazil,Philippines,0.7635247707366943,horse
+Brazil,Poland,0.6658785939216614,horse
+Brazil,Russia,0.9282751679420471,horse
+Brazil,Saudi Arabia,0.6024501323699951,horse
+Brazil,Sweden,0.6950194835662842,horse
+Brazil,Thailand,1.6629199981689453,horse
+Brazil,United Kingdom,1.4852982759475708,horse
+Brazil,United States,2.4884772300720215,horse
+Canada,Czech Republic,0.605552613735199,horse
+Canada,Finland,0.4813394844532013,horse
+Canada,France,0.5110453367233276,horse
+Canada,Germany,0.28119638562202454,horse
+Canada,Hungary,0.5688711404800415,horse
+Canada,Italy,0.46624740958213806,horse
+Canada,"Korea, South",0.954512357711792,horse
+Canada,Philippines,1.1635026931762695,horse
+Canada,Poland,0.75534987449646,horse
+Canada,Russia,0.2263963520526886,horse
+Canada,Saudi Arabia,0.923642098903656,horse
+Canada,Sweden,0.50284743309021,horse
+Canada,Thailand,1.1977155208587646,horse
+Canada,United Kingdom,0.6654936075210571,horse
+Canada,United States,1.6954479217529297,horse
+Czech Republic,Finland,0.9389750957489014,horse
+Czech Republic,France,0.4996931552886963,horse
+Czech Republic,Germany,0.5450602173805237,horse
+Czech Republic,Hungary,0.43025344610214233,horse
+Czech Republic,Italy,0.5001490712165833,horse
+Czech Republic,"Korea, South",0.7638733983039856,horse
+Czech Republic,Philippines,0.712571918964386,horse
+Czech Republic,Poland,0.322092205286026,horse
+Czech Republic,Russia,0.5633463859558105,horse
+Czech Republic,Saudi Arabia,0.9322066307067871,horse
+Czech Republic,Sweden,0.3173533082008362,horse
+Czech Republic,Thailand,1.0588141679763794,horse
+Czech Republic,United Kingdom,1.1730059385299683,horse
+Czech Republic,United States,2.1940410137176514,horse
+Finland,France,0.9041486382484436,horse
+Finland,Germany,0.5019538402557373,horse
+Finland,Hungary,0.7544146180152893,horse
+Finland,Italy,0.6911989450454712,horse
+Finland,"Korea, South",0.890714168548584,horse
+Finland,Philippines,1.523180365562439,horse
+Finland,Poland,1.0941590070724487,horse
+Finland,Russia,0.47974348068237305,horse
+Finland,Saudi Arabia,1.1526155471801758,horse
+Finland,Sweden,0.8341221213340759,horse
+Finland,Thailand,1.0765293836593628,horse
+Finland,United Kingdom,0.3538643717765808,horse
+Finland,United States,1.3088668584823608,horse
+France,Germany,0.5325184464454651,horse
+France,Hungary,0.5705869197845459,horse
+France,Italy,0.4694308936595917,horse
+France,"Korea, South",1.0884722471237183,horse
+France,Philippines,0.8078593015670776,horse
+France,Poland,0.4919571876525879,horse
+France,Russia,0.5562230944633484,horse
+France,Saudi Arabia,0.7014243006706238,horse
+France,Sweden,0.3980761170387268,horse
+France,Thailand,1.3856027126312256,horse
+France,United Kingdom,1.1339116096496582,horse
+France,United States,2.163029432296753,horse
+Germany,Hungary,0.45015037059783936,horse
+Germany,Italy,0.3650851249694824,horse
+Germany,"Korea, South",0.8067973256111145,horse
+Germany,Philippines,1.120591402053833,horse
+Germany,Poland,0.6756982803344727,horse
+Germany,Russia,0.18989606201648712,horse
+Germany,Saudi Arabia,0.9614644646644592,horse
+Germany,Sweden,0.4148409366607666,horse
+Germany,Thailand,1.0647798776626587,horse
+Germany,United Kingdom,0.700946033000946,horse
+Germany,United States,1.7252492904663086,horse
+Hungary,Italy,0.36196449398994446,horse
+Hungary,"Korea, South",0.7374384999275208,horse
+Hungary,Philippines,0.8535946011543274,horse
+Hungary,Poland,0.4760384261608124,horse
+Hungary,Russia,0.4873025715351105,horse
+Hungary,Saudi Arabia,0.8329527378082275,horse
+Hungary,Sweden,0.3726111054420471,horse
+Hungary,Thailand,1.0597187280654907,horse
+Hungary,United Kingdom,0.99638831615448,horse
+Hungary,United States,2.0149567127227783,horse
+Italy,"Korea, South",0.7896106839179993,horse
+Italy,Philippines,0.9321190714836121,horse
+Italy,Poland,0.5137507319450378,horse
+Italy,Russia,0.41079744696617126,horse
+Italy,Saudi Arabia,0.81187504529953,horse
+Italy,Sweden,0.3106997311115265,horse
+Italy,Thailand,1.081734299659729,horse
+Italy,United Kingdom,0.9318189024925232,horse
+Italy,United States,1.9614593982696533,horse
+"Korea, South",Philippines,1.0792009830474854,horse
+"Korea, South",Poland,0.8888949155807495,horse
+"Korea, South",Russia,0.8308255076408386,horse
+"Korea, South",Saudi Arabia,1.263503074645996,horse
+"Korea, South",Sweden,0.8347164988517761,horse
+"Korea, South",Thailand,0.6246014833450317,horse
+"Korea, South",United Kingdom,1.1202781200408936,horse
+"Korea, South",United States,1.9793351888656616,horse
+Philippines,Poland,0.6148126125335693,horse
+Philippines,Russia,1.1540946960449219,horse
+Philippines,Saudi Arabia,1.021693468093872,horse
+Philippines,Sweden,0.7818329334259033,horse
+Philippines,Thailand,1.4124301671981812,horse
+Philippines,United Kingdom,1.7620521783828735,horse
+Philippines,United States,2.7848901748657227,horse
+Poland,Russia,0.6991191506385803,horse
+Poland,Saudi Arabia,0.8826324939727783,horse
+Poland,Sweden,0.34909123182296753,horse
+Poland,Thailand,1.2090219259262085,horse
+Poland,United Kingdom,1.336910605430603,horse
+Poland,United States,2.359314203262329,horse
+Russia,Saudi Arabia,0.9721449613571167,horse
+Russia,Sweden,0.4548260569572449,horse
+Russia,Thailand,1.0775055885314941,horse
+Russia,United Kingdom,0.6729040741920471,horse
+Russia,United States,1.6991961002349854,horse
+Saudi Arabia,Sweden,0.8398955464363098,horse
+Saudi Arabia,Thailand,1.634661078453064,horse
+Saudi Arabia,United Kingdom,1.375250220298767,horse
+Saudi Arabia,United States,2.2901644706726074,horse
+Sweden,Thailand,1.151528000831604,horse
+Sweden,United Kingdom,1.0745065212249756,horse
+Sweden,United States,2.1001317501068115,horse
+Thailand,United Kingdom,1.2104215621948242,horse
+Thailand,United States,1.868621587753296,horse
+United Kingdom,United States,1.052028775215149,horse

@@ -1,0 +1,154 @@
+country1,country2,dist,word
+Australia,Brazil,0.5024455785751343,snowman
+Australia,Canada,0.252888023853302,snowman
+Australia,Czech Republic,0.6895808577537537,snowman
+Australia,Finland,0.8712850213050842,snowman
+Australia,France,0.5305066108703613,snowman
+Australia,Germany,0.32460591197013855,snowman
+Australia,Hungary,1.0028008222579956,snowman
+Australia,Italy,0.4076957106590271,snowman
+Australia,"Korea, South",0.5729325413703918,snowman
+Australia,Philippines,0.44532638788223267,snowman
+Australia,Poland,0.8464260101318359,snowman
+Australia,Russia,0.26421910524368286,snowman
+Australia,Saudi Arabia,0.5199822187423706,snowman
+Australia,Sweden,0.496526837348938,snowman
+Australia,Thailand,0.3768623173236847,snowman
+Australia,United Kingdom,0.8156691789627075,snowman
+Australia,United States,1.5553573369979858,snowman
+Brazil,Canada,0.604002833366394,snowman
+Brazil,Czech Republic,0.5391665101051331,snowman
+Brazil,Finland,0.7119857668876648,snowman
+Brazil,France,0.35918131470680237,snowman
+Brazil,Germany,0.5720502734184265,snowman
+Brazil,Hungary,0.7818412780761719,snowman
+Brazil,Italy,0.2652062773704529,snowman
+Brazil,"Korea, South",0.6326432824134827,snowman
+Brazil,Philippines,0.3323071599006653,snowman
+Brazil,Poland,0.5623810887336731,snowman
+Brazil,Russia,0.46921396255493164,snowman
+Brazil,Saudi Arabia,0.5950431823730469,snowman
+Brazil,Sweden,0.39108458161354065,snowman
+Brazil,Thailand,0.40868011116981506,snowman
+Brazil,United Kingdom,1.244774580001831,snowman
+Brazil,United States,1.968707799911499,snowman
+Canada,Czech Republic,0.6863884925842285,snowman
+Canada,Finland,0.8499186635017395,snowman
+Canada,France,0.6750534176826477,snowman
+Canada,Germany,0.3085187077522278,snowman
+Canada,Hungary,0.9893397092819214,snowman
+Canada,Italy,0.5243464708328247,snowman
+Canada,"Korea, South",0.6937930583953857,snowman
+Canada,Philippines,0.5431622862815857,snowman
+Canada,Poland,0.8799015879631042,snowman
+Canada,Russia,0.2552485167980194,snowman
+Canada,Saudi Arabia,0.6181970238685608,snowman
+Canada,Sweden,0.5233930945396423,snowman
+Canada,Thailand,0.4860769808292389,snowman
+Canada,United Kingdom,0.7980645298957825,snowman
+Canada,United States,1.5401231050491333,snowman
+Czech Republic,Finland,0.2778184413909912,snowman
+Czech Republic,France,0.7991344332695007,snowman
+Czech Republic,Germany,0.4947567284107208,snowman
+Czech Republic,Hungary,0.38294288516044617,snowman
+Czech Republic,Italy,0.6430881023406982,snowman
+Czech Republic,"Korea, South",1.0631762742996216,snowman
+Czech Republic,Philippines,0.6674303412437439,snowman
+Czech Republic,Poland,0.3400709927082062,snowman
+Czech Republic,Russia,0.5248796939849854,snowman
+Czech Republic,Saudi Arabia,0.9664489030838013,snowman
+Czech Republic,Sweden,0.35045284032821655,snowman
+Czech Republic,Thailand,0.7542561888694763,snowman
+Czech Republic,United Kingdom,1.4601043462753296,snowman
+Czech Republic,United States,2.1942532062530518,snowman
+Finland,France,0.9913886785507202,snowman
+Finland,Germany,0.6559106111526489,snowman
+Finland,Hungary,0.32389363646507263,snowman
+Finland,Italy,0.8414618968963623,snowman
+Finland,"Korea, South",1.2355998754501343,snowman
+Finland,Philippines,0.8400635123252869,snowman
+Finland,Poland,0.40690797567367554,snowman
+Finland,Russia,0.6905182003974915,snowman
+Finland,Saudi Arabia,1.139001727104187,snowman
+Finland,Sweden,0.5003937482833862,snowman
+Finland,Thailand,0.9292691946029663,snowman
+Finland,United Kingdom,1.6311171054840088,snowman
+Finland,United States,2.36728835105896,snowman
+France,Germany,0.6933636665344238,snowman
+France,Hungary,1.0647315979003906,snowman
+France,Italy,0.31391680240631104,snowman
+France,"Korea, South",0.49225831031799316,snowman
+France,Philippines,0.3719395101070404,snowman
+France,Poland,0.827462375164032,snowman
+France,Russia,0.6056057214736938,snowman
+France,Saudi Arabia,0.46408799290657043,snowman
+France,Sweden,0.6304760575294495,snowman
+France,Thailand,0.3550322949886322,snowman
+France,United Kingdom,1.133135437965393,snowman
+France,United States,1.798934817314148,snowman
+Germany,Hungary,0.7904473543167114,snowman
+Germany,Italy,0.5358409881591797,snowman
+Germany,"Korea, South",0.8257635235786438,snowman
+Germany,Philippines,0.5668684840202332,snowman
+Germany,Poland,0.7068519592285156,snowman
+Germany,Russia,0.23382259905338287,snowman
+Germany,Saudi Arabia,0.7338711619377136,snowman
+Germany,Sweden,0.4358552098274231,snowman
+Germany,Thailand,0.5413682460784912,snowman
+Germany,United Kingdom,1.0222671031951904,snowman
+Germany,United States,1.7602128982543945,snowman
+Hungary,Italy,0.9110766053199768,snowman
+Hungary,"Korea, South",1.3495548963546753,snowman
+Hungary,Philippines,0.9319252371788025,snowman
+Hungary,Poland,0.35850074887275696,snowman
+Hungary,Russia,0.8214941620826721,snowman
+Hungary,Saudi Arabia,1.2662842273712158,snowman
+Hungary,Sweden,0.6338157653808594,snowman
+Hungary,Thailand,1.05714750289917,snowman
+Hungary,United Kingdom,1.767717719078064,snowman
+Hungary,United States,2.4989359378814697,snowman
+Italy,"Korea, South",0.5403313040733337,snowman
+Italy,Philippines,0.28456929326057434,snowman
+Italy,Poland,0.6984656453132629,snowman
+Italy,Russia,0.43186134099960327,snowman
+Italy,Saudi Arabia,0.5016575455665588,snowman
+Italy,Sweden,0.4682786464691162,snowman
+Italy,Thailand,0.31494563817977905,snowman
+Italy,United Kingdom,1.083252191543579,snowman
+Italy,United States,1.791566252708435,snowman
+"Korea, South",Philippines,0.48309993743896484,snowman
+"Korea, South",Poland,1.1317474842071533,snowman
+"Korea, South",Russia,0.7447431087493896,snowman
+"Korea, South",Saudi Arabia,0.3960645794868469,snowman
+"Korea, South",Sweden,0.7872591614723206,snowman
+"Korea, South",Thailand,0.4888763427734375,snowman
+"Korea, South",United Kingdom,0.9251547455787659,snowman
+"Korea, South",United States,1.5715163946151733,snowman
+Philippines,Poland,0.7196425199508667,snowman
+Philippines,Russia,0.4588014483451843,snowman
+Philippines,Saudi Arabia,0.44600561261177063,snowman
+Philippines,Sweden,0.4391272962093353,snowman
+Philippines,Thailand,0.372318297624588,snowman
+Philippines,United Kingdom,1.1248594522476196,snowman
+Philippines,United States,1.8336200714111328,snowman
+Poland,Russia,0.7000201940536499,snowman
+Poland,Saudi Arabia,1.0371874570846558,snowman
+Poland,Sweden,0.47298043966293335,snowman
+Poland,Thailand,0.8533784747123718,snowman
+Poland,United Kingdom,1.632966160774231,snowman
+Poland,United States,2.364553213119507,snowman
+Russia,Saudi Arabia,0.6519544720649719,snowman
+Russia,Sweden,0.39364513754844666,snowman
+Russia,Thailand,0.4403230547904968,snowman
+Russia,United Kingdom,0.9795026779174805,snowman
+Russia,United States,1.7211236953735352,snowman
+Saudi Arabia,Sweden,0.6960718631744385,snowman
+Saudi Arabia,Thailand,0.463929146528244,snowman
+Saudi Arabia,United Kingdom,0.9548971652984619,snowman
+Saudi Arabia,United States,1.584213376045227,snowman
+Sweden,Thailand,0.5748971700668335,snowman
+Sweden,United Kingdom,1.265436053276062,snowman
+Sweden,United States,2.0050103664398193,snowman
+Thailand,United Kingdom,0.9642206430435181,snowman
+Thailand,United States,1.6668264865875244,snowman
+United Kingdom,United States,0.7474450469017029,snowman

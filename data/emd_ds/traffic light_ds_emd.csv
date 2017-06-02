@@ -1,0 +1,121 @@
+country1,country2,dist,word
+Australia,Brazil,0.6088183522224426,traffic light
+Australia,Canada,0.9944420456886292,traffic light
+Australia,Czech Republic,0.7795335650444031,traffic light
+Australia,Finland,0.809483528137207,traffic light
+Australia,France,0.6281300187110901,traffic light
+Australia,Germany,0.5839542150497437,traffic light
+Australia,Italy,0.5759003162384033,traffic light
+Australia,Philippines,0.48280951380729675,traffic light
+Australia,Poland,0.527971625328064,traffic light
+Australia,Russia,0.6953713297843933,traffic light
+Australia,Saudi Arabia,0.6631630659103394,traffic light
+Australia,Sweden,0.8660772442817688,traffic light
+Australia,Thailand,0.7500241994857788,traffic light
+Australia,United Kingdom,0.9779910445213318,traffic light
+Australia,United States,1.315889835357666,traffic light
+Brazil,Canada,0.6460632681846619,traffic light
+Brazil,Czech Republic,1.0051242113113403,traffic light
+Brazil,Finland,1.1075735092163086,traffic light
+Brazil,France,0.8217582106590271,traffic light
+Brazil,Germany,0.7145481705665588,traffic light
+Brazil,Italy,0.7779880166053772,traffic light
+Brazil,Philippines,0.4217817783355713,traffic light
+Brazil,Poland,0.7536699175834656,traffic light
+Brazil,Russia,0.587881326675415,traffic light
+Brazil,Saudi Arabia,0.8743625283241272,traffic light
+Brazil,Sweden,1.1437056064605713,traffic light
+Brazil,Thailand,0.7596535682678223,traffic light
+Brazil,United Kingdom,1.2397512197494507,traffic light
+Brazil,United States,1.0060861110687256,traffic light
+Canada,Czech Republic,1.427849531173706,traffic light
+Canada,Finland,1.5982697010040283,traffic light
+Canada,France,1.18434476852417,traffic light
+Canada,Germany,1.0960546731948853,traffic light
+Canada,Italy,1.195090651512146,traffic light
+Canada,Philippines,0.7366774678230286,traffic light
+Canada,Poland,1.2045255899429321,traffic light
+Canada,Russia,0.7801051735877991,traffic light
+Canada,Saudi Arabia,1.2766845226287842,traffic light
+Canada,Sweden,1.6083391904830933,traffic light
+Canada,Thailand,1.022902488708496,traffic light
+Canada,United Kingdom,1.5509222745895386,traffic light
+Canada,United States,0.6286363005638123,traffic light
+Czech Republic,Finland,0.5620184540748596,traffic light
+Czech Republic,France,0.5237614512443542,traffic light
+Czech Republic,Germany,0.611351490020752,traffic light
+Czech Republic,Italy,0.5093376636505127,traffic light
+Czech Republic,Philippines,0.8996790647506714,traffic light
+Czech Republic,Poland,0.5873254537582397,traffic light
+Czech Republic,Russia,0.8905009627342224,traffic light
+Czech Republic,Saudi Arabia,0.48131057620048523,traffic light
+Czech Republic,Sweden,0.6161001324653625,traffic light
+Czech Republic,Thailand,0.8048461079597473,traffic light
+Czech Republic,United Kingdom,0.8703404664993286,traffic light
+Czech Republic,United States,1.8029829263687134,traffic light
+Finland,France,0.594020664691925,traffic light
+Finland,Germany,0.6983161568641663,traffic light
+Finland,Italy,0.6856210231781006,traffic light
+Finland,Philippines,1.0471841096878052,traffic light
+Finland,Poland,0.5089917778968811,traffic light
+Finland,Russia,1.085218906402588,traffic light
+Finland,Saudi Arabia,0.49575912952423096,traffic light
+Finland,Sweden,0.40153709053993225,traffic light
+Finland,Thailand,0.9631220698356628,traffic light
+Finland,United Kingdom,0.693722665309906,traffic light
+Finland,United States,1.9702939987182617,traffic light
+France,Germany,0.5142720937728882,traffic light
+France,Italy,0.43637174367904663,traffic light
+France,Philippines,0.7393953800201416,traffic light
+France,Poland,0.43635743856430054,traffic light
+France,Russia,0.6816573143005371,traffic light
+France,Saudi Arabia,0.3576641082763672,traffic light
+France,Sweden,0.581425666809082,traffic light
+France,Thailand,0.8097233176231384,traffic light
+France,United Kingdom,0.7481402158737183,traffic light
+France,United States,1.5416961908340454,traffic light
+Germany,Italy,0.4048205316066742,traffic light
+Germany,Philippines,0.6296413540840149,traffic light
+Germany,Poland,0.4175168573856354,traffic light
+Germany,Russia,0.7164751887321472,traffic light
+Germany,Saudi Arabia,0.5641782283782959,traffic light
+Germany,Sweden,0.6844668984413147,traffic light
+Germany,Thailand,0.6426640152931213,traffic light
+Germany,United Kingdom,0.9961893558502197,traffic light
+Germany,United States,1.4991838932037354,traffic light
+Italy,Philippines,0.6553006768226624,traffic light
+Italy,Poland,0.4448968470096588,traffic light
+Italy,Russia,0.6677111387252808,traffic light
+Italy,Saudi Arabia,0.5193925499916077,traffic light
+Italy,Sweden,0.6714804768562317,traffic light
+Italy,Thailand,0.6317521929740906,traffic light
+Italy,United Kingdom,0.9028157591819763,traffic light
+Italy,United States,1.5406936407089233,traffic light
+Philippines,Poland,0.6968618035316467,traffic light
+Philippines,Russia,0.6131722331047058,traffic light
+Philippines,Saudi Arabia,0.8086649775505066,traffic light
+Philippines,Sweden,1.0393518209457397,traffic light
+Philippines,Thailand,0.7290861010551453,traffic light
+Philippines,United Kingdom,1.158572793006897,traffic light
+Philippines,United States,1.087856650352478,traffic light
+Poland,Russia,0.7859549522399902,traffic light
+Poland,Saudi Arabia,0.41912880539894104,traffic light
+Poland,Sweden,0.5629273653030396,traffic light
+Poland,Thailand,0.7167782783508301,traffic light
+Poland,United Kingdom,0.7533167600631714,traffic light
+Poland,United States,1.5917704105377197,traffic light
+Russia,Saudi Arabia,0.7976123094558716,traffic light
+Russia,Sweden,1.1368902921676636,traffic light
+Russia,Thailand,0.7274037003517151,traffic light
+Russia,United Kingdom,1.1727877855300903,traffic light
+Russia,United States,1.122009515762329,traffic light
+Saudi Arabia,Sweden,0.48421213030815125,traffic light
+Saudi Arabia,Thailand,0.8147652745246887,traffic light
+Saudi Arabia,United Kingdom,0.6101637482643127,traffic light
+Saudi Arabia,United States,1.6219282150268555,traffic light
+Sweden,Thailand,1.0278092622756958,traffic light
+Sweden,United Kingdom,0.6365783214569092,traffic light
+Sweden,United States,1.9635556936264038,traffic light
+Thailand,United Kingdom,1.1875200271606445,traffic light
+Thailand,United States,1.390176773071289,traffic light
+United Kingdom,United States,1.8315538167953491,traffic light

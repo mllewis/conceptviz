@@ -1,0 +1,137 @@
+country1,country2,dist,word
+Australia,Brazil,1.0558615922927856,line
+Australia,Canada,1.0197319984436035,line
+Australia,Czech Republic,1.2801403999328613,line
+Australia,Finland,0.8361809849739075,line
+Australia,France,1.5801926851272583,line
+Australia,Germany,0.8809860944747925,line
+Australia,Italy,1.120963215827942,line
+Australia,"Korea, South",0.9333977699279785,line
+Australia,Philippines,1.4328513145446777,line
+Australia,Poland,0.8558136820793152,line
+Australia,Russia,0.832582414150238,line
+Australia,Saudi Arabia,1.442057728767395,line
+Australia,Sweden,0.9877485632896423,line
+Australia,Thailand,1.0404399633407593,line
+Australia,United Kingdom,1.7552613019943237,line
+Australia,United States,3.110698938369751,line
+Brazil,Canada,1.7277072668075562,line
+Brazil,Czech Republic,0.7086289525032043,line
+Brazil,Finland,0.6932132840156555,line
+Brazil,France,1.0779043436050415,line
+Brazil,Germany,1.2823127508163452,line
+Brazil,Italy,0.8792096972465515,line
+Brazil,"Korea, South",1.396964192390442,line
+Brazil,Philippines,1.7209714651107788,line
+Brazil,Poland,0.9544757008552551,line
+Brazil,Russia,1.2190582752227783,line
+Brazil,Saudi Arabia,1.9444704055786133,line
+Brazil,Sweden,1.0499284267425537,line
+Brazil,Thailand,1.2502543926239014,line
+Brazil,United Kingdom,2.405764102935791,line
+Brazil,United States,3.6396028995513916,line
+Canada,Czech Republic,2.0726559162139893,line
+Canada,Finland,1.3763394355773926,line
+Canada,France,2.431117296218872,line
+Canada,Germany,0.6102124452590942,line
+Canada,Italy,1.5727084875106812,line
+Canada,"Korea, South",1.0611952543258667,line
+Canada,Philippines,1.6001249551773071,line
+Canada,Poland,1.3290656805038452,line
+Canada,Russia,1.12209951877594,line
+Canada,Saudi Arabia,1.0795620679855347,line
+Canada,Sweden,1.4852635860443115,line
+Canada,Thailand,0.8988378643989563,line
+Canada,United Kingdom,0.9068769812583923,line
+Canada,United States,2.341322183609009,line
+Czech Republic,Finland,0.9689932465553284,line
+Czech Republic,France,1.0280770063400269,line
+Czech Republic,Germany,1.6208308935165405,line
+Czech Republic,Italy,1.1118203401565552,line
+Czech Republic,"Korea, South",1.5733625888824463,line
+Czech Republic,Philippines,1.7156239748001099,line
+Czech Republic,Poland,1.1158794164657593,line
+Czech Republic,Russia,1.5679655075073242,line
+Czech Republic,Saudi Arabia,2.335817813873291,line
+Czech Republic,Sweden,1.3116629123687744,line
+Czech Republic,Thailand,1.6309088468551636,line
+Czech Republic,United Kingdom,2.773331642150879,line
+Czech Republic,United States,4.014060020446777,line
+Finland,France,1.3750029802322388,line
+Finland,Germany,1.0485137701034546,line
+Finland,Italy,0.6335209608078003,line
+Finland,"Korea, South",1.032678484916687,line
+Finland,Philippines,1.3190175294876099,line
+Finland,Poland,0.5975004434585571,line
+Finland,Russia,1.1518514156341553,line
+Finland,Saudi Arabia,1.6655831336975098,line
+Finland,Sweden,0.7877457141876221,line
+Finland,Thailand,0.921693742275238,line
+Finland,United Kingdom,2.1212778091430664,line
+Finland,United States,3.437488079071045,line
+France,Germany,2.046430826187134,line
+France,Italy,1.1734939813613892,line
+France,"Korea, South",1.9008965492248535,line
+France,Philippines,1.926827073097229,line
+France,Poland,1.431267261505127,line
+France,Russia,1.8014081716537476,line
+France,Saudi Arabia,2.5599827766418457,line
+France,Sweden,1.2288352251052856,line
+France,Thailand,1.9281110763549805,line
+France,United Kingdom,3.1431198120117188,line
+France,United States,4.397405624389648,line
+Germany,Italy,1.1690231561660767,line
+Germany,"Korea, South",1.0636807680130005,line
+Germany,Philippines,1.6357074975967407,line
+Germany,Poland,1.0625578165054321,line
+Germany,Russia,0.8194518089294434,line
+Germany,Saudi Arabia,1.279990792274475,line
+Germany,Sweden,1.2467875480651855,line
+Germany,Thailand,0.7848301529884338,line
+Germany,United Kingdom,1.2811630964279175,line
+Germany,United States,2.6396124362945557,line
+Italy,"Korea, South",1.23984956741333,line
+Italy,Philippines,1.4586405754089355,line
+Italy,Poland,0.8502635359764099,line
+Italy,Russia,1.2969508171081543,line
+Italy,Saudi Arabia,1.7877260446548462,line
+Italy,Sweden,0.903106153011322,line
+Italy,Thailand,1.0447875261306763,line
+Italy,United Kingdom,2.3058199882507324,line
+Italy,United States,3.5908350944519043,line
+"Korea, South",Philippines,1.120664119720459,line
+"Korea, South",Poland,0.8917079567909241,line
+"Korea, South",Russia,1.1827173233032227,line
+"Korea, South",Saudi Arabia,1.4042208194732666,line
+"Korea, South",Sweden,1.3942232131958008,line
+"Korea, South",Thailand,0.8557162284851074,line
+"Korea, South",United Kingdom,1.7422360181808472,line
+"Korea, South",United States,3.0381553173065186,line
+Philippines,Poland,1.0212961435317993,line
+Philippines,Russia,1.8595070838928223,line
+Philippines,Saudi Arabia,1.8371981382369995,line
+Philippines,Sweden,1.533339262008667,line
+Philippines,Thailand,1.2915821075439453,line
+Philippines,United Kingdom,2.2596020698547363,line
+Philippines,United States,3.6958627700805664,line
+Poland,Russia,1.1905288696289062,line
+Poland,Saudi Arabia,1.6066579818725586,line
+Poland,Sweden,1.0667113065719604,line
+Poland,Thailand,0.9020705223083496,line
+Poland,United Kingdom,2.08805775642395,line
+Poland,United States,3.356718063354492,line
+Russia,Saudi Arabia,1.3995662927627563,line
+Russia,Sweden,1.3134711980819702,line
+Russia,Thailand,1.1106373071670532,line
+Russia,United Kingdom,1.5602408647537231,line
+Russia,United States,2.7581329345703125,line
+Saudi Arabia,Sweden,1.6949712038040161,line
+Saudi Arabia,Thailand,1.1202455759048462,line
+Saudi Arabia,United Kingdom,1.222935676574707,line
+Saudi Arabia,United States,2.242945671081543,line
+Sweden,Thailand,1.1547969579696655,line
+Sweden,United Kingdom,2.113389730453491,line
+Sweden,United States,3.499070405960083,line
+Thailand,United Kingdom,1.5044219493865967,line
+Thailand,United States,2.839730739593506,line
+United Kingdom,United States,1.6720249652862549,line
