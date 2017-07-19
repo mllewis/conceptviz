@@ -53,12 +53,12 @@ get_movers_dist_mat <- function(data.frame, all.combos) {
 ```  
 
 ```{r}
-d <- list.files("../data/emd/", pattern = "*.csv") %>%
-  purrr::map(function(x) paste0("../data/emd/", x)) %>% 
+d <- list.files("../../data/emd/", pattern = "*.csv") %>%
+  purrr::map(function(x) paste0("../../data/emd/", x)) %>% 
   purrr::map(read_csv) %>% 
   bind_rows() 
 
-cues = read_csv("../data/extreme_cues.csv") %>%
+cues = read_csv("../../data/extreme_cues.csv") %>%
   select(cue, conc.bin) 
 
 d %<>% left_join(cues, by=c("word" = "cue")) %>%
@@ -160,12 +160,22 @@ Abstract words show more variability between countries in terms of their similar
 
 Red indicates similarity (small distance).
 ```{r, fig.height = 45, fig.width = 8}
+
+big.countries <- c("United States", "United Kingdom","Australia", "Canada",
+                    "Germany","Russia", "Finland" ,
+                    "Sweden","Brazil", "Czech Republic" ,"Italy","Poland","Philippines",
+                    "France","Thailand" ,"Korea, South","Saudi Arabia","Hungary") 
+
+
+#d$country1 <- factor(d$country1, levels = big.countries )
+#d$country2 <- factor(d$country2, levels = rev(big.countries))
+
 d %>%
-  ggplot( aes(x = country2, y = country1)) +
+  ggplot(aes(x = country2, y = country1)) +
   facet_wrap(~word, ncol = 4, scales = "free") +
   geom_raster(aes(fill = dist)) +
   scale_fill_gradient2(low = "red", 
-                       high = "blue", na.value="black", name = "" ) +
+                       high = "white",name = "" ) +
   ggtitle("country-wise movers distances") +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90, 
@@ -181,18 +191,18 @@ n = 18
 hues = seq(15, 375, length = n + 1)
 cols =   hcl(h = hues, l = 65, c = 100)[1:n]
 
-inverse.high = 1/all.means.high
+inverse.high = 1/log(all.means)
 inverse.high[is.infinite(inverse.high)] = 0
-inverse.high[inverse.high < -1] = 0
+inverse.high[inverse.high < -5] = 0
 chordDiagram(t(inverse.high), annotationTrack = "grid", preAllocateTracks = 1, grid.col = cols, col = "grey", directional = 0)
 # add labels
 circos.trackPlotRegion(track.index = 2, panel.fun = function(x, y) {
     xlim = get.cell.meta.data("xlim")
     ylim = get.cell.meta.data("ylim")
     sector.index = get.cell.meta.data("sector.index")
-    circos.text(mean(xlim), mean(ylim), sector.index, col = "black", cex = 0.6, facing = "outside", niceFacing = TRUE)
+    circos.text(mean(xlim), mean(ylim), sector.index, col = "black", cex = 0.6, facing = "inside", niceFacing = TRUE)
 }, bg.border = NA)
-
+circos.par(track.margin=c(0,0)) 
 ```
 
 ```{r, eval = F}

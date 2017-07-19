@@ -1,0 +1,71 @@
+---
+title: Visualizing concepts
+subtitle: 
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    number_sections: false
+    theme: cerulean
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(tidyverse) 
+library(knitr)
+library(rmarkdown)
+library(broom)
+library(langcog)
+library(ggdendro)
+library(gtools)
+library(magrittr)
+library(circlize)
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F,  cache = F, fig.height = 4)
+
+get_movers_dist_mat <- function(data.frame, all.combos) {
+    word.list = unique(data.frame$word)
+    my.list <- list()
+    for (i in 1:length(word.list)){
+      df <- data.frame %>%
+        filter(word == word.list[i])%>%
+        right_join(all.combos, by=c("country1", "country2"))%>%
+        select(-word, -conc.bin)
+    
+      mat <-  spread(df, country1, dist) %>%
+       as.data.frame() %>%
+       remove_rownames() %>%
+       column_to_rownames(var = "country2") %>%
+       as.matrix()
+      
+       my.list[[i]] <- mat
+    }
+    my.list
+}
+```  
+
+```{r}
+# loop over files
+file.list =  list.files("../../data/rdata/")
+load(paste0("../../data/rdata/", file.list[4]))
+
+test = d %>%
+  slice(1:1000)
+
+test %>%
+  ggplot( aes(x = x, y = y)) +
+  facet_wrap(~key_id) +
+  geom_point(color = "red") +
+  theme_bw()
+
+```
+
+

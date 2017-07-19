@@ -1,3 +1,4 @@
+# gets down sampled earth movers distance
 # load libraries and functions
 library(tidyverse)
 library(emdist)
@@ -6,14 +7,7 @@ library(data.table)
 library(magrittr)
 library(gtools)
 
-theme_blank <- function(...) {
-  ret <- theme_bw(...)
-  ret$line <- element_blank()
-  ret$axis.text <- element_blank()
-  ret$axis.title <- element_blank()
-  ret
-}
-
+######## define functions  ######## 
 rescale <- function(x, newrange=range(x)){
   xrange <- range(x)
   mfac <- (newrange[2]-newrange[1])/(xrange[2]-xrange[1])
@@ -43,6 +37,44 @@ ResizeMat <- function(mat, ndim=dim(mat)){
   ans
 }
 
+get_movers <- function(cntry1, cntry2, counts, dim){
+  
+  d1 <- counts[counts$country == cntry1,]
+  d2 <- counts[counts$country == cntry2,]
+  
+  matrix1 = d1 %>%
+    ungroup() %>%
+    select(x, y, n) %>%
+    spread(x, n) %>%
+    mutate_each(funs(ifelse(is.na(.), 0, .))) %>%
+    select(-y) %>%
+    as.matrix(., rownames.force = NA)  %>%
+    ResizeMat(., c(dim, dim)) # downsample matrix size
+  
+  matrix1 = matrix1/sum(matrix1) # normalize
+  
+  matrix2 = d2 %>%
+    ungroup() %>%
+    select(x, y, n) %>%
+    spread(x, n) %>%
+    mutate_each(funs(ifelse(is.na(.), 0, .))) %>%
+    select(-y) %>%
+    as.matrix(., rownames.force = NA)  %>%
+    ResizeMat(., c(dim, dim))
+  
+  matrix2 = matrix2/sum(matrix2)
+  
+  distance = emd2d(matrix1, matrix2) # earth mover distance
+  
+  data.frame(country1 = cntry1, 
+             country2 = cntry2, 
+             dist = distance, row.names = NULL)
+}
+
+######## define params ######## 
+DIM = 20 # number of square the earth mover evaluates (DIM x DIM)
+N_TOTAL = 1500 # minimumb numer of drawings
+
 # dataframes for subsets countries needed below
 big.countries <- c( "Australia", "Canada",
                     "Germany","Russia", "United Kingdom","United States","Finland" ,
@@ -56,75 +88,38 @@ country.combo <- combinations(n = length(big.countries),
                     as.data.frame() %>%
                     rename(c1 = V1, c2 = V2)
 
-# loop over files
+######## define drawing files (by item) ######## 
 file.list =  list.files("data/rdata/")
 
 for (i in 1:length(file.list)){
-  print(file.list[i])
-  
-  load(paste0("data/rdata/", file.list[i]))
-  
-  WORD = d$word[1]
-  N_TOTAL = 1500
-  
-  down.sampled.d = d %>%
-    data.table() %>%
-    .[country %in% big.countries] %>%
-    group_by(country, key_id) %>%
-    nest() %>%
-    group_by(country) %>%
-    sample_n(N_TOTAL) %>%
-    unnest()
-  
-  # num counts by x, y, country
-  counts = down.sampled.d %>%
+    print(file.list[i])
+    
+    load(paste0("data/rdata/", file.list[i]))
+    
+    WORD = d$word[1]
+    
+    down.sampled.d = d %>%
+      data.table() %>%
+      .[country %in% big.countries] %>%
+      group_by(country, key_id) %>%
+      nest() %>%
+      group_by(country) %>%
+      sample_n(N_TOTAL) %>%
+      unnest()
+      
+    # num counts in each square by x, y, country
+    counts = down.sampled.d %>%
     count(x, y, country) %>%
     mutate(n = log(as.numeric(n)))  # take log
-
-    ########Get mean distance between countries ###########
-
-    get_entropies = function(cntry1, cntry2, counts){
-      
-      d1 <- counts[counts$country == cntry1,]
-      d2 <- counts[counts$country == cntry2,]
-      
-      DIM = 20 # downsampling size (for emd)
-      
-      matrix1 = d1 %>%
-        ungroup() %>%
-        select(x, y, n) %>%
-        spread(x, n) %>%
-        mutate_each(funs(ifelse(is.na(.), 0, .))) %>%
-        select(-y) %>%
-        as.matrix(., rownames.force = NA)  %>%
-        ResizeMat(., c(DIM, DIM)) # downsample matrix size
-      
-      matrix1 = matrix1/sum(matrix1) # normalize
-      
-      matrix2 = d2 %>%
-        ungroup() %>%
-        select(x, y, n) %>%
-        spread(x, n) %>%
-        mutate_each(funs(ifelse(is.na(.), 0, .))) %>%
-        select(-y) %>%
-        as.matrix(., rownames.force = NA)  %>%
-        ResizeMat(., c(DIM, DIM))
-      
-      matrix2 = matrix2/sum(matrix2)
-      
-      distance = emd2d(matrix1, matrix2) # earth mover distance
-
-      data.frame(country1 = cntry1, 
-                 country2 = cntry2, 
-                 dist = distance, row.names = NULL)
-    }
+    
+    ######## Get movers distances between countries ###########
     
     # get rid of country combos not present for this item
     this.country.combo <- country.combo %>%
-                filter(c1 %in% unique(counts$country) & c2 %in% unique(counts$country))
-   
+              filter(c1 %in% unique(counts$country) & c2 %in% unique(counts$country))
+    
     distances = purrr::map2(this.country.combo$c1, this.country.combo$c2, 
-                      get_entropies, counts) %>%
+                    get_movers, counts, DIM) %>%
                 bind_rows()
     
     ##########Merge and write to data file################
@@ -132,5 +127,4 @@ for (i in 1:length(file.list)){
     distances %<>% mutate(word = WORD) 
     
     write_csv(distances, paste0("data/emd_ds/", WORD, "_ds_emd.csv"))
-}
-
+  }

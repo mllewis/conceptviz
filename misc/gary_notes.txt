@@ -1,0 +1,5 @@
+- variability pic
+- hetergeneity
+- item-wise variability
+- keras
+- sanity check: smaller movers distance for google recognized images
