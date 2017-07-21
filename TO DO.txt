@@ -1,0 +1,13 @@
+TO DO:
+- push to github
+- redo movers distances (sampled and unsampled)
+- do keras stuff
+- sanity check: smaller movers distance for google recognized images
+
+
+Gary:
+- variability pic
+- hetergeneity
+- item-wise variability
+- keras
+- sanity check: smaller movers distance for google recognized images

@@ -1,53 +1,89 @@
-# munge simplified jsons to longform csv's
+# read in raw simplified json from google, munge into long form tidy data frame and write to feathers
+# critically, long form data include info about stroke number
+# takes ~5 min per item
 
 # load packages
-library(dtplyr)
 library(tidyverse) 
 library(rlist)
+library(data.table)
 
-countries <- read.csv("data/iso_3166_2_countries.csv") %>%
-  select(Common.Name, ISO.3166.1.2.Letter.Code)
+# specify params
+MIN_NUM_PARTICIPANTS_PER_COUNTRY <- 1500
 
-file.list = list.files("data/simplified")
+# get names for country codes
+countries <- read.csv("../../data/supplementary_data/iso_3166_2_countries.csv") %>%
+  rename(country = Common.Name,
+         country_code = ISO.3166.1.2.Letter.Code) %>%
+  select(country, country_code) %>%
+  mutate(country_code = as.character(country_code)) %>% # for joining, below
+  group_by(country_code) %>%
+  slice(1) # get one name per code
 
-for (i in 2:17){
-    
-    print(file.list[i])
-    
-    d <- jsonlite::stream_in(file(paste0("data/simplified/", file.list[i])), flatten = TRUE)
-    
-    d.flat = d %>%
-      rowwise() %>%
-      do(draw = list.flatten(list(drop(.$drawing)))) %>%
-      cbind(d)
-    
-    
-    keep.countries = d.flat %>%
-      count(countrycode) %>%
-      filter(n > 1500)
-      
-    ds = d.flat %>%
-      filter(countrycode %in% keep.countries$countrycode) %>%
-      select(word, countrycode, draw, key_id, recognized) %>%
-      inner_join(countries, c("countrycode" = "ISO.3166.1.2.Letter.Code")) %>%
-      rename(country = Common.Name) %>%
-      filter(!is.na(country)) %>%
-      mutate(n_strokes = unlist(lapply(draw, length)),
-             mean_length = unlist(lapply(draw, 
-                                         function(y) mean(unlist(sapply(y, length))))))
+# read in all file names
+file_list <- list.files("../../data/raw_data/simplified")
 
-    ds.coords = ds  %>%
-      rowwise() %>%
-      do(data.frame(cbind(t(as.data.frame(list.flatten(.$draw))),
-                          country = as.character(.$country[1]), 
-                          key_id = as.character(.$key_id[1]),
-                          word = as.character(.$word[1]),
-                          recognized = as.character(.$recognized[1]),
-                          n_strokes = .$n_strokes[1],
-                          mean_length = .$mean_length[1]))) %>%
-      bind_rows() %>%
-      rename(x = V1,
-             y = V2)
-    
-    write_csv(ds.coords, paste0("data/csvs/", ds.coords$word[1], ".csv"))
+# read data, munge and write function
+write_drawings_to_feather <- function(name){
+  
+  # print to item to console
+  print(name)
+  
+  # read in json
+  d <- jsonlite::stream_in(file(paste0("../../data/raw_data/simplified/", name)), simplifyMatrix = FALSE)
+  
+  # get list of countries with many participants for this item
+  keep_countries <- d %>%
+    rename(country_code = countrycode) %>%
+    count(country_code) %>%
+    filter(n > MIN_NUM_PARTICIPANTS_PER_COUNTRY)
+  
+  # get subset of data with countries of minsize
+  dc <- d %>%
+    rename(country_code = countrycode) %>%
+    filter(country_code %in% keep_countries$country_code) %>%
+    select(word, country_code, drawing, key_id, recognized) %>%
+    inner_join(countries) %>%
+    filter(!is.na(country)) 
+  
+  # get meta-data in wide form
+  dc_wide <- dc %>%
+            mutate(drawing = lapply(drawing, lapply, function(x) { # bind together x and y values
+                                  do.call(rbind, x)}), 
+                  n_strokes = unlist(lapply(drawing, length))) 
+  
+  # get stroke number
+  dc_strokes <- dc_wide %>%
+          rowwise() %>%
+          do(stroke_lengths = unlist(lapply(.$drawing, function(x) dim(x)[2]))) %>%
+          ungroup() %>%
+          mutate(mean_length = unlist(lapply(stroke_lengths, function(x) {mean(unlist(x))}))) %>%
+          cbind(dc_wide)
+
+  # get all data in long form
+  dc_coords <- dc_strokes %>%
+    data.table() %>%
+    group_by(key_id) %>%
+    do(data.table(transpose(data.frame(.$drawing)), # optimize here
+                        country = as.character(.$country[1]), 
+                        key_id = as.character(.$key_id[1]),
+                        word = as.character(.$word[1]),
+                        recognized = as.character(.$recognized[1]),
+                        n_strokes = .$n_strokes[1],
+                        mean_length = .$mean_length[1])) %>%
+    bind_rows() %>%
+    rename(x = V1,
+           y = V2)
+
+  # bind in stroke numbers to long form
+  dc_coords_with_strokes <- dc_coords %>%
+    bind_cols(data.frame(stroke_num = unlist(lapply(dc_strokes$stroke_lengths, 
+                                                    function(m){unlist(lapply(seq_along(m), 
+                                                                             function(x){rep(x, m[x])}))}))))
+  # write to feather
+  feather::write_feather(dc_coords_with_strokes, paste0("../../data/raw_data/feathers/", 
+                                                        gsub(" ", "", dc_coords_with_strokes$word[1], fixed = TRUE)
+, ".txt"))
 }
+
+# DO THE THING: loop over all files
+purrr::walk(file_list, write_drawings_to_feather)

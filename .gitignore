@@ -11,10 +11,8 @@
 *.cb
 *.cb2
 *.html
-*data/heatmaps/*
-*data/quickdraw-dataset/*
-*data/simplified/*
-*data/brysbaert_corpus.csv
+*data/raw_data/*
+*data/supplementary_data/brysbaert_corpus.csv
 *.Rhistory
 *_cache/*
 *_files/*

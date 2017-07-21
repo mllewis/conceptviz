@@ -14,7 +14,7 @@ rescale <- function(x, newrange=range(x)){
   newrange[1]+(x-xrange[1])*mfac
 }
 
-ResizeMat <- function(mat, ndim=dim(mat)){
+resize_mat <- function(mat, ndim=dim(mat)){
   if(!require(fields)) stop("`fields` required.")
   
   # input object
@@ -49,7 +49,7 @@ get_movers <- function(cntry1, cntry2, counts, dim){
     mutate_each(funs(ifelse(is.na(.), 0, .))) %>%
     select(-y) %>%
     as.matrix(., rownames.force = NA)  %>%
-    ResizeMat(., c(dim, dim)) # downsample matrix size
+    resize_mat(., c(dim, dim)) # downsample matrix size
   
   matrix1 = matrix1/sum(matrix1) # normalize
   
@@ -60,7 +60,7 @@ get_movers <- function(cntry1, cntry2, counts, dim){
     mutate_each(funs(ifelse(is.na(.), 0, .))) %>%
     select(-y) %>%
     as.matrix(., rownames.force = NA)  %>%
-    ResizeMat(., c(dim, dim))
+    resize_mat(., c(dim, dim))
   
   matrix2 = matrix2/sum(matrix2)
   
@@ -73,7 +73,7 @@ get_movers <- function(cntry1, cntry2, counts, dim){
 
 ######## define params ######## 
 DIM = 20 # number of square the earth mover evaluates (DIM x DIM)
-N_TOTAL = 1500 # minimumb numer of drawings
+N_TOTAL = 1500 # minimum numer of drawings
 
 # dataframes for subsets countries needed below
 big.countries <- c( "Australia", "Canada",
@@ -82,9 +82,9 @@ big.countries <- c( "Australia", "Canada",
                     "France","Thailand" ,"Korea, South","Saudi Arabia","Hungary") 
 
 country.combo <- combinations(n = length(big.countries), 
-                             r = 2, 
-                             repeats.allowed = F, 
-                             v = big.countries) %>%
+                              r = 2, 
+                              repeats.allowed = F, 
+                              v = big.countries) %>%
                     as.data.frame() %>%
                     rename(c1 = V1, c2 = V2)
 
@@ -110,7 +110,7 @@ for (i in 1:length(file.list)){
     # num counts in each square by x, y, country
     counts = down.sampled.d %>%
     count(x, y, country) %>%
-    mutate(n = log(as.numeric(n)))  # take log
+    mutate(n = log(as.numeric(n))) # take log
     
     ######## Get movers distances between countries ###########
     

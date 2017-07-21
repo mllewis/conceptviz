@@ -1,0 +1,228 @@
+---
+title: Summary of drawing analyses
+subtitle: 
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    number_sections: false
+    theme: cerulean
+    toc_float: false
+    toc: true
+    code_folding: hide
+---
+  
+******
+******
+
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(tidyverse) 
+library(knitr)
+library(rmarkdown)
+library(purrr)
+library(broom)
+library(langcog)
+library(magrittr)
+library(rworldmap)
+library(ggjoy)
+library(feather)
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F,  cache = F, fig.height = 4)
+
+mapTheme = theme(plot.background = element_blank(),
+                 panel.grid.major = element_blank(),
+                 panel.grid.minor = element_blank(),
+                 panel.border = element_blank(),
+                 panel.background = element_blank())
+```  
+
+The [Quick Draw](https://quickdraw.withgoogle.com/) Dataset is a collection of [50 million drawings across 345 categories](https://github.com/googlecreativelab/quickdraw-dataset). Using the Brysbaert concretneess norms (Brysbaert, Warriner, & Kuperman, 2013), I selected the subset of drawing cues that were in the top and bottom 6-tile of concreteness (n = 109). I then download the "simplified" datasets for this set of cues from: https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/simplified. The drawings have been pre-scaled so they are all 255 x 255. The simplified versions also do not have time information. I then munged jsons to be in long form and saved them as a  feather file (munge_jsons.R).
+
+## Sanity check
+This is what the drawings look like:
+(random sampling of 30 drawings for 1 cue)
+```{r, fig.height = 6}
+ITEM <- "tree"
+N_DRAWINGS <- 30
+
+ex <- read_feather(paste0("../../data/raw_data/feathers/", ITEM, ".txt"))
+
+ex %>%
+  filter(key_id %in% sample(unique(ex$key_id), N_DRAWINGS)) %>% # sample N
+  ggplot(aes(x = x, y = -y, color = country, alpha = recognized)) +
+  ggtitle(ITEM)+
+  facet_wrap(~key_id) +
+  geom_point() +
+  geom_path(aes(group = stroke_num)) +
+  theme_bw()
+```
+
+
+## Summary stats
+
+```{r}
+# Read in summary drawing data
+d <- list.files("../../data/summary_data/") %>%
+  purrr::map(function(x) paste0("../../data/summary_data/", x)) %>% 
+  purrr::map(read_feather) %>% 
+  bind_rows() 
+```
+
+### Number of participants per country
+```{r}
+d %>% 
+  group_by(country) %>%
+  summarize(`total drawings` = sum(n)) %>%
+  arrange(-`total drawings`) %>%
+  kable()
+```
+
+### Number of cues per country
+
+The missing items are because we only include an item for a country if there were at least 1500 participants.
+```{r}
+MIN_NUM_ITEMS <- 40
+
+item_counts = d %>%
+  ungroup() %>%
+  count(country) %>%
+  arrange(-`nn`)
+  
+kable(item_counts)
+
+big.countries <- item_counts %>%
+                    filter(nn > MIN_NUM_ITEMS)
+
+d %<>% filter(country %in% big.countries$country)
+```
+
+The analyses below only include countries with at least `r MIN_NUM_ITEMS` items.
+
+
+### Number of participants per cue
+
+```{r}
+d %>% 
+  group_by(word) %>%
+  summarize(`total drawings` = sum(n)) %>%
+  arrange(-`total drawings`) %>%
+  kable()
+```
+
+
+## By-country summaries
+Below is the distribution over __items__ within each country for a number of different measures. The measures are: stroke length, number of strokes, proportion recognized by google. 
+
+### Stroke length{.tabset}
+
+#### Joy plot
+```{r, fig.height = 7}
+ggplot(d, aes(x = mean_lengths, y = reorder(country, mean_lengths))) + 
+  geom_joy(scale = 2, aes(color = country), alpha = .3, size = 1) +
+  theme_joy(font_size = 13, grid = T) + 
+  theme(axis.title.y = element_blank(),
+        legend.position = "none")
+```
+
+#### Map
+```{r}
+geo_codes <- read_csv("../../data/supplementary_data/geo_codes.csv")
+
+d %<>% left_join(geo_codes, by = c("country" = "countries"))
+
+d %>%
+  group_by(country, lat, lon) %>%
+  summarize(mean_lengths = mean(mean_lengths)) %>%
+  ggplot() +     
+  borders("world", colour="gray50", fill="gray50") +
+  geom_point(aes(x = lon, y=lat, 
+                 color = mean_lengths),size = 3) +
+  scale_color_gradient2(midpoint = median(d$mean_lengths, na.rm = T), 
+                          low = "green", mid = "white", high = "red") +
+  mapTheme
+```
+
+### Num Strokes{.tabset}
+
+#### Joy plot
+```{r, fig.height = 7}
+ggplot(d, aes(x = mean_n_strokes, y = reorder(country, mean_n_strokes))) + 
+  geom_joy(scale = 3, aes(color = country), alpha = .3, size = 1) +
+  theme_joy(font_size = 13, grid = T) + 
+  theme(axis.title.y = element_blank(),
+        legend.position = "none")
+```
+
+#### Map
+```{r}
+d %>%
+  group_by(country, lat, lon) %>%
+  summarize(mean_n_strokes = mean(mean_n_strokes)) %>%
+  ggplot() +   
+  borders("world", colour="gray50", fill="gray50") +
+  geom_point(aes(x = lon, y=lat, 
+                 color = mean_n_strokes),size = 3) +
+    scale_color_gradient2(midpoint = median(d$mean_n_strokes, na.rm = T), 
+                          low = "green", mid = "white", high = "red") +
+  mapTheme
+```
+
+### Prop recognized{.tabset}
+
+#### Joy plot
+```{r, fig.height = 7}
+ggplot(d, aes(x = prop_recognized, y = reorder(country, prop_recognized))) + 
+  geom_joy(scale = 3, aes(color = country), alpha = .3, size = 1) +
+  theme_joy(font_size = 13, grid = T) + 
+  theme(axis.title.y = element_blank(),
+        legend.position = "none")
+```
+
+#### Map
+```{r}
+d %>%
+  group_by(country, lat, lon) %>%
+  summarize(prop_recognized = mean(prop_recognized)) %>%
+  ggplot() +   
+  borders("world", colour="gray50", fill="gray50") +
+  geom_point(aes(x = lon, y=lat,
+                 color = prop_recognized),size = 3) +
+    scale_color_gradient2(midpoint = median(d$prop_recognized, na.rm = T), 
+                          low = "green", mid = "white", high = "red") +
+  mapTheme
+```
+
+## By-item summaries
+Below is the distribution over __countries__  for each item for a number of different measures. The measures are: stroke length, number of strokes, and proportion recognized by google. 
+
+
+### Stroke length{.tabset}
+```{r, fig.height = 30}
+ggplot(d, aes(x = mean_lengths, y = reorder(word, mean_lengths))) + 
+  geom_joy(scale = 3, aes(color = word), alpha = .3, size = 1) +
+  theme_joy(font_size = 13, grid = T) + 
+  theme(axis.title.y = element_blank(),
+        legend.position = "none")
+```
+
+### Num Strokes{.tabset}
+```{r, fig.height = 30}
+ggplot(d, aes(x = mean_n_strokes, y = reorder(word, mean_n_strokes))) + 
+  geom_joy(scale = 3, aes(color = word), alpha = .3, size = 1) +
+  theme_joy(font_size = 13, grid = T) + 
+  theme(axis.title.y = element_blank(),
+        legend.position = "none")
+```
+
+### Prop recognized{.tabset}
+```{r, fig.height = 30}
+ggplot(d, aes(x = prop_recognized, y = reorder(word, prop_recognized))) + 
+  geom_joy(scale = 3, aes(color = word), alpha = .3, size = 1) +
+  theme_joy(font_size = 13, grid = T) + 
+  theme(axis.title.y = element_blank(),
+        legend.position = "none")
+```

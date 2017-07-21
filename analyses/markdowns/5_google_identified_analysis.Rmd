@@ -1,0 +1,253 @@
+---
+title: Google Identified Analysis
+subtitle: Do items that google identified how lower movers distance than those that do not?
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    number_sections: false
+    theme: cerulean
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(tidyverse) 
+library(knitr)
+library(rmarkdown)
+library(feather)
+library(magrittr)
+library(emdist)
+
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F,  cache = F, fig.height = 4)
+
+rescale <- function(x, newrange=range(x)){
+  xrange <- range(x)
+  mfac <- (newrange[2]-newrange[1])/(xrange[2]-xrange[1])
+  newrange[1]+(x-xrange[1])*mfac
+}
+
+resize_mat <- function(mat, ndim=dim(mat)){
+  if(!require(fields)) stop("`fields` required.")
+  
+  # input object
+  odim <- dim(mat)
+  obj <- list(x= 1:odim[1], y=1:odim[2], z= mat)
+  
+  # output object
+  ans <- matrix(NA, nrow=ndim[1], ncol=ndim[2])
+  ndim <- dim(ans)
+  
+  # rescaling
+  ncord <- as.matrix(expand.grid(seq_len(ndim[1]), seq_len(ndim[2])))
+  loc <- ncord
+  loc[,1] = rescale(ncord[,1], c(1,odim[1]))
+  loc[,2] = rescale(ncord[,2], c(1,odim[2]))
+  
+  # interpolation
+  ans[ncord] <- interp.surface(obj, loc)
+  
+  ans
+}
+
+get_movers <- function(cntry1, cntry2, counts, dim){
+  
+  d1 <- counts[counts$country == cntry1,]
+  d2 <- counts[counts$country == cntry2,]
+  
+  matrix1 = d1 %>%
+    ungroup() %>%
+    select(x, y, n) %>%
+    spread(x, n) %>%
+    mutate_if(is.na, 0) %>%
+    select(-y) %>%
+    as.matrix(., rownames.force = NA)  %>%
+    resize_mat(., c(dim, dim)) # downsample matrix size
+  
+  matrix1 = matrix1/sum(matrix1) # normalize
+  
+  matrix2 = d2 %>%
+    ungroup() %>%
+    select(x, y, n) %>%
+    spread(x, n) %>%
+    mutate_if(is.na, 0)%>%
+    select(-y) %>%
+    as.matrix(., rownames.force = NA)  %>%
+    resize_mat(., c(dim, dim))
+  
+  matrix2 = matrix2/sum(matrix2)
+  
+  distance = emd2d(matrix1, matrix2) # earth mover distance
+  
+  data.frame(country1 = cntry1, 
+             country2 = cntry2, 
+             dist = distance, row.names = NULL)
+}
+
+blank_theme <- theme_bw()
+blank_theme$line <- element_blank()
+blank_theme$rect <- element_blank()
+blank_theme$strip.text <- element_blank()
+blank_theme$axis.text <- element_blank()
+blank_theme$plot.title <- element_blank()
+blank_theme$axis.title <- element_blank()
+blank_theme$plot.margin <- structure(c(0, 0, -1, -1), unit = "lines", valid.unit = 3L, class = "unit")
+```
+
+# Define constants
+```{r}
+DIM = 20 # number of square the earth mover evaluates (DIM x DIM)
+N_TOTAL = 1500 # minimum numer of drawings
+
+# dataframes for subsets countries needed below
+BIG_COUNTRIES <- c( "Australia", "Canada",
+                    "Germany","Russia", "United Kingdom","United States","Finland" ,
+                    "Sweden","Brazil", "Czech Republic", "Italy","Poland","Philippines",
+                    "France","Thailand" ,"Korea, South","Saudi Arabia","Hungary") 
+
+country.combo <- combinations(n = length(big.countries), 
+                              r = 2, 
+                              repeats.allowed = F, 
+                              v = big.countries) %>%
+                    as.data.frame() %>%
+                    rename(c1 = V1, c2 = V2)
+
+```
+
+# Loops over files and save to csv
+```{r}
+file.list <- list.files("../../data/raw_data/feather/")
+
+for (i in 1:length(file.list)){
+
+  down.sampled.d <- d %>%
+    data.table() %>%
+    .[country %in% BIG_COUNTRIES] %>%
+    group_by(country, key_id) %>%
+    nest() %>%
+    group_by(country) %>%
+    sample_n(N_TOTAL) %>%
+    unnest()
+
+}
+
+ggplot(unnest(m[3,]), aes(x = x, y = y)) +
+  geom_point() +
+  geom_path()
+  geom_polygon(alpha = .5, fill = "blue")+
+  blank_theme
+
+
+```
+
+```{r} 
+d <- read_feather("../../data/raw_data/feather/giraffe")
+```
+
+```{r}
+d %<>% filter(country %in% big_countries)
+
+prop_recognized <- d %>%
+  group_by(country, word, recognized) %>%
+  summarize(n = n()) %>%
+  mutate(prop = n/sum(n)) %>%
+  filter(recognized == "TRUE")
+
+ggplot(prop_recognized, aes(color = country, y = prop, x = word)) +
+  geom_point() +
+  theme_bw()
+```
+
+```{r}
+
+    
+  # num counts in each square by x, y, country
+  counts = down.sampled.d %>%
+           count(x, y, country, recognized) %>%
+           mutate(n = log(as.numeric(n))) # take log
+  
+######## Get movers distances between countries ###########
+## TRUE   
+true_counts = counts %>%
+  filter(recognized == TRUE)
+
+# get rid of country combos not present for this item
+this.country.comboT <- country.combo %>%
+          filter(c1 %in% unique(true_counts$country) & c2 %in% unique(true_counts$country))
+
+true_distances = purrr::map2(this.country.comboT$c1, this.country.comboT$c2, 
+                get_movers, true_counts, DIM) %>%
+            bind_rows()
+
+true_distances2 = true_distances %>%
+                    mutate(word = "giraffe") %>%
+                    mutate(dist = ifelse(!is.finite(dist), NA, dist)) %>%
+mutate(group = "istrue")
+```
+    
+## FALSE
+```{r}
+false_counts = counts %>%
+      filter(recognized == FALSE)
+
+# get rid of country combos not present for this item
+this.country.comboF <- country.combo %>%
+          filter(c1 %in% unique(false_counts$country) & c2 %in% unique(false_counts$country))
+
+false_distances = purrr::map2(this.country.comboF$c1, this.country.comboF$c2, 
+                get_movers, false_counts, DIM) %>%
+                bind_rows()
+
+false_distances2 = false_distances %>%
+                    mutate(word = "giraffe") %>%
+                    mutate(dist = ifelse(!is.finite(dist), NA, dist)) %>%
+                    filter(!is.na(dist)) %>%
+                    mutate(group = "isfalse")
+```
+
+
+Red indicates similarity (small distance).
+```{r, fig.height = 45, fig.width = 8}
+true_distances2 %>%
+  ggplot(aes(x = country2, y = country1)) +
+  facet_wrap(~word, ncol = 4, scales = "free") +
+  geom_raster(aes(fill = dist)) +
+  scale_fill_gradient2(low = "red", 
+                       high = "blue", na.value="black", name = "", midpoint = mean(true_distances2$dist)) +
+  ggtitle("country-wise movers distances") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust = 1, vjust =.25, size = 4),
+        axis.text.y = element_text(size = 4),
+        axis.title = element_blank())
+
+false_distances2 %>%
+  ggplot( aes(x = country2, y = country1)) +
+  facet_wrap(~word, ncol = 4, scales = "free") +
+  geom_raster(aes(fill = dist)) +
+ scale_fill_gradient2(low = "red", 
+                       high = "blue", na.value="black", name = "", 
+                       midpoint = mean(false_distances2$dist)) +
+  ggtitle("country-wise movers distances") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust = 1, vjust =.25, size = 4),
+        axis.text.y = element_text(size = 4),
+        axis.title = element_blank())
+```
+
+```{r}
+dists = bind_rows(false_distances2, true_distances2)
+ggplot(dists, aes(x = dist, group = group, fill = group)) +
+  geom_histogram() +
+  theme_bw()
+
+```

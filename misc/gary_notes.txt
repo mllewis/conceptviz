@@ -1,3 +1,10 @@
+TO DO:
+- finish summaries
+- push to github
+- get missing items: "bird"   "rhinoceros" "tiger" 
+
+
+Gary:
 - variability pic
 - hetergeneity
 - item-wise variability

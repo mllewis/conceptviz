@@ -1,0 +1,13 @@
+TO DO:
+- finish summaries
+- push to github
+- get missing items: "bird"   "rhinoceros" "tiger" 
+- redo movers distances (sampled and unsampled)
+
+
+Gary:
+- variability pic
+- hetergeneity
+- item-wise variability
+- keras
+- sanity check: smaller movers distance for google recognized images

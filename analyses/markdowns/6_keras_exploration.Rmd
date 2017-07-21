@@ -1,0 +1,343 @@
+---
+title: Compare within vs. across category similarity using Keras
+subtitle: 
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    number_sections: false
+    theme: cerulean
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(imager)
+library(knitr)
+library(rmarkdown)
+library(langcog)
+library(keras)
+library(tidyverse)
+library(feather)
+library(stringr)
+library(purrr)
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F,  cache = F, fig.height = 4)
+``` 
+
+# Define params
+```{r}
+LAYER <- 'fc2'
+RAW_PATH <- "../../data/raw_data/feathers/"
+N_SAMPLES <- 10
+GDRAW_SIZE <- 255
+IMAGENET_SIZE <- 224
+N_INTERPOLATE <- 1000
+```
+
+# Define functions
+```{r}
+get_n_drawing_ids <- function(file_name, n_samples, file_path){
+      item <- unlist(str_split(file_name, ".txt"))[1]
+      
+      print(item)
+
+      d <- feather::read_feather(paste0(file_path, file_name))
+      d_us <- filter(d, country == "United States")
+      key_id <- sample(unique(d_us$key_id), n_samples)
+      
+      data.frame(item, key_id)
+}
+
+get_imagenet_matrix_from_google_draw <- function(key_id, data, size1, size2, n_interpolate){
+    print(key_id)
+  
+    # get long form coordinates with lines interpolated
+    image_draw <- data %>%
+      rename(x_end = x, y_end = y) %>%
+      select(x_end, y_end, stroke_num) %>%
+      mutate(x_start = lag(x_end),
+             y_start = lag(y_end)) %>%
+      mutate(transition = ifelse(stroke_num != lag(stroke_num), 
+                                 1, 0)) %>%
+      filter(transition != 1) %>% # remove connections between strokes
+      drop_na() %>%   # deals with first row
+      mutate(x_end = ifelse(x_end == x_start, x_end + .00000001, x_end), # spline can't deal with x's being equal
+             y_end = abs(y_end - size1), # we're flipping the image on the x axis
+             y_start = abs(y_start - size1)) %>% 
+      rowwise() %>%
+      mutate(line = list(spline(c(x_start, x_end), # could also use approx function
+                                   c(y_start, y_end), n = n_interpolate)), 
+              x_line = list(line$x),
+              y_line = list(line$y)) %>%
+      ungroup() %>%
+      select(x_line, y_line) %>%
+      unnest() %>%
+      mutate_all(round) # necessary for indexing matrix
+      
+      
+    # make the drawing into a binary matrix
+    mat <- array(0, c(size1, size1))
+    mat[cbind(image_draw$x_line, image_draw$y_line)] <- 1 
+
+    data.frame(key_id, list(mat))
+}
+
+get_pairwise_sim <- function(pic_1_index, pic_2_index,
+                             item1, item2,
+                             sub_ids1, sub_ids2,
+                             all_mats1, all_mats2,
+                             model, comparison){
+  
+    # get key_id nums for each drawing
+    #key_id_1 <- as.character(sub_ids1[image_pairs[pic_1_index, 1][[1]]]) # check this
+    #key_id_2 <- as.character(sub_ids2[image_pairs[pic_2_index, 2][[1]]])
+    
+    ### MAT 1 ###
+    # get key_id nums for each drawing
+    key_id_1 <- as.character(sub_ids1[pic_1_index])
+    
+    # get matrix out of dataframe
+    mat1 <- all_mats1[pic_1_index][[1]] %>% 
+          select(-key_id) %>%
+          as.matrix()
+    
+     # mutate matrix into imagenet size and preprocess
+    dim(mat1) <- c(dim(mat1), 1, 1)
+    mat1 <- resize(mat1, IMAGENET_SIZE, IMAGENET_SIZE) %>%
+        as.matrix()
+    img_mat1 <- array(0, c(1, IMAGENET_SIZE, IMAGENET_SIZE, 3)) # [1, 1:224, 1:224, 1:3]
+    img_mat1[ , 1:IMAGENET_SIZE, 1:IMAGENET_SIZE,] <- mat1
+    
+    img_mat1 <- imagenet_preprocess_input(img_mat1)
+    
+    # get layer
+    features_1 <- model %>% 
+      predict(img_mat1) %>%
+      as.vector()  # flatten to 1 x 25088 vector
+    
+    ### MAT 2 ###
+    if (comparison == "within") {
+       key_id_2 <- as.character(sub_ids1[pic_2_index])
+       
+       mat2 <- all_mats1[pic_2_index][[1]] %>% 
+          select(-key_id) %>%
+          as.matrix()
+    
+    } else {
+        key_id_2 <- as.character(sub_ids2[pic_2_index])
+     
+        mat2 <- all_mats2[pic_2_index][[1]] %>% 
+              select(-key_id) %>%
+              as.matrix()
+    }
+        
+    # mutate into imagenet size and preprocess
+    dim(mat2) <- c(dim(mat2), 1, 1)
+    mat2 <- resize(mat2, IMAGENET_SIZE, IMAGENET_SIZE) %>%
+          as.matrix()
+    img_mat2 <- array(0, c(1, IMAGENET_SIZE, IMAGENET_SIZE, 3)) # [1, 1:224, 1:224, 1:3]
+    img_mat2[ , 1:IMAGENET_SIZE, 1:IMAGENET_SIZE,] <- mat2
+    
+    img_mat2 <- imagenet_preprocess_input(img_mat2)
+    
+    features_2 <- model %>% 
+      predict(img_mat2) %>%  
+      as.vector() 
+
+      
+    # get distance measure
+    cosine <- lsa::cosine(features_1, features_2)[1]
+
+    return(data.frame(item1, item2, key_id_1, key_id_2, cosine))
+}
+```
+
+# Define keras model
+```{r}
+# get model with appropriate outputs
+base_model <- application_vgg16(include_top = TRUE, 
+                            weights = "imagenet")
+
+layer_dict <- base_model$layers
+names(layer_dict) <- purrr::map_chr(layer_dict ,~.x$name)
+
+model <- keras_model(inputs = base_model$input, 
+                     outputs = get_layer(base_model, LAYER)$output) # outputs
+```
+
+# Get N random ids for each item
+```{r}
+ids <- list.files(RAW_PATH) %>%
+        purrr::map(get_n_drawing_ids, N_SAMPLES, RAW_PATH) %>%
+        bind_rows()
+
+# write_csv(ids, "../../data/keras_similarities/id_samples/key_ids_10_1.csv")
+ids <- read_csv("../../data/keras_similarities/id_samples/key_ids_10_1.csv") %>%
+          mutate(key_ids = as.character(key_ids))
+```
+
+# Get across-category similarity 
+Loop over item pairs and image pairs (subsetted) within items
+```{r, eval = F}
+# variables to loop over
+ITEMS <- c("angel", "bed", "frog", "flower", "coffeecup") # unique(ids$item) # for all
+
+item_pairs <- combn(ITEMS, 2) %>%
+                  t() %>%
+                  data.frame() %>%
+                  rename(item1 = X1, item2 = X2)
+
+across_item_image_pair_indices <- expand.grid(1:N_SAMPLES, 1:N_SAMPLES) %>%
+  rename(pic_1_index = Var1, pic_2_index = Var2) 
+
+# loop over pairs of items
+for(i in 1:dim(item_pairs)[1]){
+  
+        # item names
+        item1 <- item_pairs$item1[i]
+        item2 <- item_pairs$item2[i]
+        
+        print("=============================")
+        print(paste0("Current pair of items: ", item1, " and " , item2))
+        print(paste0(round(i/dim(item_pairs)[1] * 100, 2), "% complete"))
+        print("=============================")
+        
+        # subset of key_ids
+        sub_ids1 <- sort(unlist(ids[ids$item == item1, "key_ids"])) # unlist seems necessary from csv
+        sub_ids2 <- sort(unlist(ids[ids$item == item2, "key_ids"]))
+        
+        # longform data for these items
+        d1 <- feather::read_feather(paste0(RAW_PATH, item1, ".txt")) %>%
+                  filter(key_id %in% sub_ids1)  %>%
+                  arrange(key_id)
+        
+        d2 <- feather::read_feather(paste0(RAW_PATH, item2, ".txt")) %>%
+                  filter(key_id %in% sub_ids2)  %>%
+                  arrange(key_id)
+        
+        # get all the matrices for each item for subset of images
+        all_mats1 <- d1 %>%
+                mutate(key_id = paste0(item1, "_", key_id)) %>%
+                group_by(key_id) %>%
+                nest() %>%
+                as.list() %>% # this is supposed to make it faster
+                pmap(get_imagenet_matrix_from_google_draw, 
+                     GDRAW_SIZE, IMAGENET_SIZE, N_INTERPOLATE)
+                
+        all_mats2 <- d2 %>%
+                mutate(key_id = paste0(item2, "_", key_id)) %>%
+                group_by(key_id) %>%
+                nest() %>%
+                as.list() %>% 
+                pmap(get_imagenet_matrix_from_google_draw, GDRAW_SIZE, 
+                     IMAGENET_SIZE, N_INTERPOLATE)
+        
+        # loop over all pairs of drawings for these items and get similarity
+        x_sim_data <- across_item_image_pair_indices %>%
+                          as.list() %>%
+                          pmap(get_pairwise_sim, item1, item2, 
+                                                 sub_ids1, sub_ids2,
+                                                 all_mats1, all_mats2,
+                                                 model, "across") %>%
+                          bind_rows()
+        
+        # write sims to csv 
+        write_csv(x_sim_data, paste0("../../data/keras_similarities/x_sim/", 
+                                     item1, "_", item2, "_x_sim.csv"))
+}
+```
+
+# Get within-category similarity
+Loop over items and image pairs (subsetted) within items
+```{r, eval = F}
+within_item_image_pairs_indices <- combn(1:N_SAMPLES, 2) %>%
+                  t() %>%
+                  data.frame() %>%
+                  rename(pic_1_index = X1, pic_2_index = X2)
+
+for(i in 1:length(ITEMS)){
+  
+  item1 <- ITEMS[i]
+  
+  print("=============================")
+  print(paste0("Current item: ", item1))
+  print(paste0(round(i/length(ITEMS) * 100, 2), "% complete"))
+  print("=============================")
+  
+  sub_ids1 <- sort(unlist(ids[ids$item == item1, "key_ids"])) # unlist seems necessary from csv
+        
+  # longform data for these items
+  d1 <- feather::read_feather(paste0(RAW_PATH, item1, ".txt")) %>%
+            filter(key_id %in% sub_ids1)  %>%
+            arrange(key_id)
+  
+  # get all the matrices for each item for subset of images
+  all_mats1 <- d1 %>%
+          mutate(key_id = paste0(item1, "_", key_id)) %>%
+          group_by(key_id) %>%
+          nest() %>%
+          as.list() %>% # this is supposed to make it faster
+          pmap(get_imagenet_matrix_from_google_draw, 
+               GDRAW_SIZE, IMAGENET_SIZE, N_INTERPOLATE)
+  
+    # loop over all pairs of drawings for these items and get similarity
+    x_sim_data <- within_item_image_pairs_indices %>%
+                          as.list() %>%
+                          pmap(get_pairwise_sim, item1, NA, 
+                                                 sub_ids1, NA,
+                                                 all_mats1, NA,
+                                                 model, "within") %>%
+                          bind_rows()
+    
+    write_csv(x_sim_data, paste0("../../data/keras_similarities/w_sim/", 
+                                 item1, "_w_sim.csv"))
+}
+```
+
+# Compare within vs. across
+Take the item-mean between vs. across items
+```{r}
+across <- list.files("../../data/keras_similarities/x_sim/") %>%
+  purrr::map(function(x) paste0("../../data/keras_similarities/x_sim/", x)) %>% 
+  purrr::map(read_csv) %>% 
+  bind_rows() %>%
+  mutate(sim = "across")
+  
+within <- list.files("../../data/keras_similarities/w_sim/") %>%
+  purrr::map(function(x) paste0("../../data/keras_similarities/w_sim/", x)) %>% 
+  purrr::map(read_csv) %>% 
+  bind_rows() %>%
+  mutate(sim = "within")
+
+within_means <- within %>%
+  group_by(sim, item1) %>%
+  multi_boot_standard(column = "cosine")
+
+across_means <- across %>%
+  gather(item_name, item1, 
+         c(-key_id_1, -key_id_2, -sim, -cosine)) %>%
+  group_by(sim, item1) %>%
+  multi_boot_standard(column = "cosine")
+
+all_means <- rbind(within_means, across_means)
+
+#pdf("google_draw_sim.pdf", width = 8, height = 5)
+ggplot(all_means, aes(x = item1, y = mean, 
+                      group = sim, color = sim)) +
+  geom_pointrange(aes(ymax = summary_ci_upper, ymin = summary_ci_lower)) +
+  #geom_bar(stat= "identity", position = "dodge") +
+  theme_bw() +
+  ylim(.99985, 1) +
+  xlab("item") +
+  ylab("cosine similarity")
+#dev.off()
+```
+```

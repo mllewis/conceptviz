@@ -1,0 +1,190 @@
+---
+title: Exploring Keras
+subtitle: 
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    number_sections: false
+    theme: cerulean
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(imager)
+library(knitr)
+library(rmarkdown)
+library(broom)
+library(langcog)
+library(keras)
+library(tidyverse)
+library(feather)
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F,  cache = F, fig.height = 4)
+``` 
+
+Sanity check
+```{r}
+LAYER <- 'fc2'
+IMG_PATH <- "../../data/supplementary_data/test_keras_images/"
+
+# get model with appropriate outputs
+base_model <- application_vgg16(include_top = TRUE, 
+                            weights = "imagenet")
+
+layer_dict <- base_model$layers
+names(layer_dict) <- purrr::map_chr(layer_dict ,~.x$name)
+
+model <- keras_model(inputs = base_model$input, 
+                     outputs = get_layer(base_model, LAYER)$output)
+
+# pairwise similarity function
+get_pairwise_sim <- function(pic1, pic2, img_path, model){
+    ## pic1
+    img1 <- image_load(paste0(img_path, pic1), 
+                       target_size = c(224, 224))
+    x1 <- image_to_array(img1)
+    dim(x1) <- c(1, dim(x1))
+    x1 <- imagenet_preprocess_input(x1)
+    
+    features_1 <- model %>% 
+      predict(x1) %>%
+      as.vector()  # flatten to 1 x 25088 vector
+    
+    # pic2
+    img2 <- image_load(paste0(img_path, pic2), target_size = c(224, 224))
+    x2 <- image_to_array(img2)
+    dim(x2) <- c(1, dim(x2))
+    x2 <- imagenet_preprocess_input(x2)
+    
+    features_2 <- model %>% 
+      predict(x2) %>%  
+      as.vector() # flatten to 1 x 25088 vector
+    
+   # dist <- dist(rbind(features_1, features_2))[1]
+    cosine <- lsa::cosine(features_1, features_2)[1]
+
+    return(data.frame(pic1, pic2, cosine))
+}
+
+# loop overall
+all_pics = list.files(IMG_PATH)[1:2]
+all_pics_grid = expand.grid(all_pics, all_pics) %>%
+  rename(p1 = Var1, p2 = Var2)  
+
+all_dists = map2(all_pics_grid$p1, all_pics_grid$p2, 
+       get_pairwise_sim, IMG_PATH, model) %>%
+       bind_rows()
+
+ggplot(all_dists, aes(pic1, pic2, fill = cosine)) + 
+  geom_raster() +
+  scale_fill_gradient(low = "#d6ca2c", high = "#56B1F7") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+all_dists %>%
+  arrange(-cosine) %>%
+  filter(cosine != 1) %>%
+  distinct(cosine, .keep_all = TRUE)
+```
+
+
+### Is within category more similiar to across category
+
+```{r}
+
+ITEM <- "tree"
+GDRAW_SIZE <- 255
+IMAGENET_SIZE <- 224
+N_INTERPOLATE <- 1000
+
+ex <- read_feather(paste0("../../data/raw_data/feathers/", ITEM, ".txt"))
+
+test_img = filter(ex, key_id == "4503639731208192") 
+
+test_draw <- test_img %>%
+  rename(x_end = x, y_end = y) %>%
+  select(x_end, y_end, stroke_num) %>%
+  mutate(x_start = lag(x_end),
+         y_start = lag(y_end)) %>%
+  mutate(transition = ifelse(stroke_num != lag(stroke_num), 
+                             1, 0)) %>%
+  filter(transition != 1) %>% # remove connections between strokes
+  drop_na() %>%   # deals with first row
+  mutate(x_end = ifelse(x_end == x_start, x_end + .00000001, x_end), # spline can't deal with x's being equal
+         y_end = abs(y_end - GDRAW_SIZE), # we're flipping the image on the x axis
+         y_start = abs(y_start - GDRAW_SIZE)) %>% 
+  rowwise() %>%
+  mutate(line = list(spline(c(x_start, x_end), # could also use approx function
+                               c(y_start, y_end), n = N_INTERPOLATE)), 
+          x_line = list(line$x),
+          y_line = list(line$y)) %>%
+  ungroup() %>%
+  select(x_line, y_line) %>%
+  unnest() %>%
+  mutate_all(round) # necessary for indexing matrix
+
+# make the drawing into a binary matrix
+mat <- array(0, c(GDRAW_SIZE, GDRAW_SIZE))
+mat[cbind(test_draw$x_line, test_draw$y_line)] <- 1 
+dim(mat) <- c(dim(mat), 1)
+
+# resize for imagenet, and make necessary dimensions
+mat <- resize(mat, IMAGENET_SIZE, IMAGENET_SIZE, 1) %>%
+              as.matrix()
+img_mat <- array(0, c(1, IMAGENET_SIZE, IMAGENET_SIZE, 3)) # [1, 1:224, 1:224, 1:3]
+img_mat[ , 1:IMAGENET_SIZE, 1:IMAGENET_SIZE,] <- mat
+```
+
+```{r}
+get_imagenet_matrix_from_google_draw <- function(image){
+  
+    # get long form coordinates with lines interpolated
+    image_draw <- image %>%
+      rename(x_end = x, y_end = y) %>%
+      select(x_end, y_end, stroke_num) %>%
+      mutate(x_start = lag(x_end),
+             y_start = lag(y_end)) %>%
+      mutate(transition = ifelse(stroke_num != lag(stroke_num), 
+                                 1, 0)) %>%
+      filter(transition != 1) %>% # remove connections between strokes
+      drop_na() %>%   # deals with first row
+      mutate(x_end = ifelse(x_end == x_start, x_end + .00000001, x_end), # spline can't deal with x's being equal
+             y_end = abs(y_end - GDRAW_SIZE), # we're flipping the image on the x axis
+             y_start = abs(y_start - GDRAW_SIZE)) %>% 
+      rowwise() %>%
+      mutate(line = list(spline(c(x_start, x_end), # could also use approx function
+                                   c(y_start, y_end), n = N_INTERPOLATE)), 
+              x_line = list(line$x),
+              y_line = list(line$y)) %>%
+      ungroup() %>%
+      select(x_line, y_line) %>%
+      unnest() %>%
+      mutate_all(round) # necessary for indexing matrix
+      
+    # make the drawing into a binary matrix
+    mat <- array(0, c(GDRAW_SIZE, GDRAW_SIZE))
+    mat[cbind(image_draw$x_line, image_draw$y_line)] <- 1 
+    dim(mat) <- c(dim(mat), 1)
+    
+    # resize for imagenet, and make necessary dimensions
+    mat <- resize(mat, IMAGENET_SIZE, IMAGENET_SIZE, 1) %>%
+                as.matrix()
+    img_mat <- array(0, c(1, IMAGENET_SIZE, IMAGENET_SIZE, 3)) # [1, 1:224, 1:224, 1:3]
+    img_mat[ , 1:IMAGENET_SIZE, 1:IMAGENET_SIZE,] <- mat
+    
+    img_mat
+}
+
+
+
+
+```
+
