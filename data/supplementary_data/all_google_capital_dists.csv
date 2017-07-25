@@ -1,0 +1,1297 @@
+country1,country2,city1,city2,dist_meters
+Australia,Australia,Canberra,Canberra,0
+Brazil,Australia,Brasilia,Canberra,14072419.344316112
+Canada,Australia,Ottawa,Canberra,16126745.321945135
+Czech Republic,Australia,Prague,Canberra,16058504.99764818
+Finland,Australia,Helsinki,Canberra,15233647.151848778
+France,Australia,Paris,Canberra,16941417.525033403
+Germany,Australia,Berlin,Canberra,16088327.160367865
+Hungary,Australia,Budapest,Canberra,15734116.834650466
+Italy,Australia,Rome,Canberra,16235492.620549593
+"Korea, South",Australia,Soul,Canberra,8427911.2295002
+Netherlands,Australia,Amsterdam,Canberra,16647757.544953516
+Philippines,Australia,Manila,Canberra,6302378.198138204
+Poland,Australia,Warsaw,Canberra,15577798.16121478
+Russia,Australia,Moscow,Canberra,14499717.610219393
+Saudi Arabia,Australia,Riyadh,Canberra,12642258.11225471
+Sweden,Australia,Stockholm,Canberra,15629777.805945037
+Thailand,Australia,Bangkok,Canberra,7486060.996079615
+United Kingdom,Australia,London,Canberra,17000539.851203874
+United States,Australia,Washington,Canberra,15964545.953143777
+Bulgaria,Australia,Sofia,Canberra,15360115.843126632
+India,Australia,Ni Dilli,Canberra,10364705.39844716
+Indonesia,Australia,Jakarta,Canberra,5401876.780120862
+Ireland,Australia,Dublin,Canberra,17259610.788205486
+Japan,Australia,Tokyo,Canberra,7960909.829968293
+Norway,Australia,Oslo,Canberra,15996935.558627073
+Romania,Australia,Bucharest,Canberra,15166473.319789758
+Slovakia,Australia,Bratislava,Canberra,15878737.217304228
+Turkey,Australia,Ankara,Canberra,14515482.728099639
+Ukraine,Australia,Kiev,Canberra,14915129.274178095
+United Arab Emirates,Australia,Abu Dhabi,Canberra,11969737.728913767
+Vietnam,Australia,Ha Noi,Canberra,7758504.613471347
+Croatia,Australia,Zagreb,Canberra,15970865.19485168
+Malaysia,Australia,Kuala Lumpur,Canberra,6535011.338870425
+"China, Republic of (Taiwan)",Australia,Taipei,Canberra,7321648.404980176
+New Zealand,Australia,Wellington,Canberra,2327656.057742822
+Serbia,Australia,Belgrade,Canberra,15612049.571532307
+Australia,Brazil,Canberra,Brasilia,14072419.344316112
+Brazil,Brazil,Brasilia,Brasilia,0
+Canada,Brazil,Ottawa,Brasilia,7367618.656912336
+Czech Republic,Brazil,Prague,Brasilia,9520061.542579021
+Finland,Brazil,Helsinki,Brasilia,10624068.707982438
+France,Brazil,Paris,Brasilia,8734265.59982376
+Germany,Brazil,Berlin,Brasilia,9600814.93289049
+Hungary,Brazil,Budapest,Brasilia,9677033.23529267
+Italy,Brazil,Rome,Brasilia,8915197.213790575
+"Korea, South",Brazil,Soul,Brasilia,17561573.977415115
+Netherlands,Brazil,Amsterdam,Brasilia,9123772.132600328
+Philippines,Brazil,Manila,Brasilia,18836134.99142361
+Poland,Brazil,Warsaw,Brasilia,10039789.302935382
+Russia,Brazil,Moscow,Brasilia,11189818.189833995
+Saudi Arabia,Brazil,Riyadh,Brasilia,11204129.27812165
+Sweden,Brazil,Stockholm,Brasilia,10236251.267164012
+Thailand,Brazil,Bangkok,Brasilia,16632329.668744698
+United Kingdom,Brazil,London,Brasilia,8804316.742141254
+United States,Brazil,Washington,Brasilia,6800646.522622356
+Bulgaria,Brazil,Sofia,Brasilia,9742314.42986319
+India,Brazil,Ni Dilli,Brasilia,14254535.581280211
+Indonesia,Brazil,Jakarta,Brasilia,16332391.519705974
+Ireland,Brazil,Dublin,Brasilia,8661241.582548168
+Japan,Brazil,Tokyo,Brasilia,17695434.0105579
+Norway,Brazil,Oslo,Brasilia,9918991.738223458
+Romania,Brazil,Bucharest,Brasilia,10026003.077415781
+Slovakia,Brazil,Bratislava,Brasilia,9582936.584944678
+Turkey,Brazil,Ankara,Brasilia,10376488.762768196
+Ukraine,Brazil,Kiev,Brasilia,10572296.153099408
+United Arab Emirates,Brazil,Abu Dhabi,Brasilia,11955185.664576447
+Vietnam,Brazil,Ha Noi,Brasilia,17207601.607037436
+Croatia,Brazil,Zagreb,Brasilia,9377297.343510354
+Malaysia,Brazil,Kuala Lumpur,Brasilia,16425743.798708623
+"China, Republic of (Taiwan)",Brazil,Taipei,Brasilia,18525481.352891658
+New Zealand,Brazil,Wellington,Brasilia,12313992.524393795
+Serbia,Brazil,Belgrade,Brasilia,9639654.49939381
+Australia,Canada,Canberra,Ottawa,16126745.321945135
+Brazil,Canada,Brasilia,Ottawa,7367618.656912336
+Canada,Canada,Ottawa,Ottawa,0
+Czech Republic,Canada,Prague,Ottawa,6341176.2564923465
+Finland,Canada,Helsinki,Ottawa,6278559.18895497
+France,Canada,Paris,Ottawa,5655020.756049053
+Germany,Canada,Berlin,Ottawa,6134705.526409566
+Hungary,Canada,Budapest,Ottawa,6784465.978585636
+Italy,Canada,Rome,Ottawa,6738615.407308775
+"Korea, South",Canada,Soul,Ottawa,10523889.527056307
+Netherlands,Canada,Amsterdam,Ottawa,5638038.828472504
+Philippines,Canada,Manila,Ottawa,13145425.400699561
+Poland,Canada,Warsaw,Ottawa,6583644.7893859055
+Russia,Canada,Moscow,Ottawa,7167377.748920529
+Saudi Arabia,Canada,Riyadh,Ottawa,10309111.674351918
+Sweden,Canada,Stockholm,Ottawa,6001398.239655475
+Thailand,Canada,Bangkok,Ottawa,13441887.743294235
+United Kingdom,Canada,London,Ottawa,5369072.947888857
+United States,Canada,Washington,Ottawa,732676.7184236749
+Bulgaria,Canada,Sofia,Ottawa,7379727.173079942
+India,Canada,Ni Dilli,Ottawa,11353802.63257189
+Indonesia,Canada,Jakarta,Ottawa,15662423.319519836
+Ireland,Canada,Dublin,Ottawa,4906874.972396517
+Japan,Canada,Tokyo,Ottawa,10331429.97498997
+Norway,Canada,Oslo,Ottawa,5605622.696463302
+Romania,Canada,Bucharest,Ottawa,7420904.541147719
+Slovakia,Canada,Bratislava,Ottawa,6624155.28174465
+Turkey,Canada,Ankara,Ottawa,8169765.949239652
+Ukraine,Canada,Kiev,Ottawa,7225457.99725718
+United Arab Emirates,Canada,Abu Dhabi,Ottawa,10761267.566445997
+Vietnam,Canada,Ha Noi,Ottawa,12638660.393521091
+Croatia,Canada,Zagreb,Ottawa,6706470.626957284
+Malaysia,Canada,Kuala Lumpur,Ottawa,14623567.596358629
+"China, Republic of (Taiwan)",Canada,Taipei,Ottawa,12005500.399084719
+New Zealand,Canada,Wellington,Ottawa,14498959.621164048
+Serbia,Canada,Belgrade,Ottawa,7053742.667067952
+Australia,Czech Republic,Canberra,Prague,16058504.99764818
+Brazil,Czech Republic,Brasilia,Prague,9520061.542579021
+Canada,Czech Republic,Ottawa,Prague,6341176.2564923465
+Czech Republic,Czech Republic,Prague,Prague,0
+Finland,Czech Republic,Helsinki,Prague,1303832.8271919128
+France,Czech Republic,Paris,Prague,884067.697675773
+Germany,Czech Republic,Berlin,Prague,281271.1482710624
+Hungary,Czech Republic,Budapest,Prague,444965.0177504283
+Italy,Czech Republic,Rome,Prague,923760.7503779773
+"Korea, South",Czech Republic,Soul,Prague,8259388.796388655
+Netherlands,Czech Republic,Amsterdam,Prague,711595.7496156625
+Philippines,Czech Republic,Manila,Prague,9911535.566230513
+Poland,Czech Republic,Warsaw,Prague,519790.10751428606
+Russia,Czech Republic,Moscow,Prague,1669762.3195249923
+Saudi Arabia,Czech Republic,Riyadh,Prague,3967981.123507942
+Sweden,Czech Republic,Stockholm,Prague,1055585.1376614128
+Thailand,Czech Republic,Bangkok,Prague,8572877.030999448
+United Kingdom,Czech Republic,London,Prague,1033006.3302354107
+United States,Czech Republic,Washington,Prague,6904641.871652729
+Bulgaria,Czech Republic,Sofia,Prague,1066986.7511007297
+India,Czech Republic,Ni Dilli,Prague,5714693.266885061
+Indonesia,Czech Republic,Jakarta,Prague,10717146.460755447
+Ireland,Czech Republic,Dublin,Prague,1466067.46088365
+Japan,Czech Republic,Tokyo,Prague,9086349.091626998
+Norway,Czech Republic,Oslo,Prague,1118782.1716173317
+Romania,Czech Republic,Bucharest,Prague,1080384.105854491
+Slovakia,Czech Republic,Bratislava,Prague,290439.4941314105
+Turkey,Czech Republic,Ankara,Prague,1829609.8539971057
+Ukraine,Czech Republic,Kiev,Prague,1143622.376104132
+United Arab Emirates,Czech Republic,Abu Dhabi,Prague,4457305.333249762
+Vietnam,Czech Republic,Ha Noi,Prague,8337970.313412521
+Croatia,Czech Republic,Zagreb,Prague,490063.31480634684
+Malaysia,Czech Republic,Kuala Lumpur,Prague,9554758.50899328
+"China, Republic of (Taiwan)",Czech Republic,Taipei,Prague,9031576.157447208
+New Zealand,Czech Republic,Wellington,Prague,18230723.155630164
+Serbia,Czech Republic,Belgrade,Prague,741306.0290969292
+Australia,Finland,Canberra,Helsinki,15233647.151848778
+Brazil,Finland,Brasilia,Helsinki,10624068.707982438
+Canada,Finland,Ottawa,Helsinki,6278559.18895497
+Czech Republic,Finland,Prague,Helsinki,1303832.8271919128
+Finland,Finland,Helsinki,Helsinki,0
+France,Finland,Paris,Helsinki,1910982.6708230823
+Germany,Finland,Berlin,Helsinki,1107586.8365782686
+Hungary,Finland,Budapest,Helsinki,1459522.1311222867
+Italy,Finland,Rome,Helsinki,2204871.267730906
+"Korea, South",Finland,Soul,Helsinki,7066605.367572144
+Netherlands,Finland,Amsterdam,Helsinki,1503599.1325111152
+Philippines,Finland,Manila,Helsinki,8939520.550304193
+Poland,Finland,Warsaw,Helsinki,912957.3535989686
+Russia,Finland,Moscow,Helsinki,893754.4981131146
+Saudi Arabia,Finland,Riyadh,Helsinki,4297209.90267615
+Sweden,Finland,Stockholm,Helsinki,396253.6509206003
+Thailand,Finland,Bangkok,Helsinki,7898093.319874775
+United Kingdom,Finland,London,Helsinki,1820652.1520540137
+United States,Finland,Washington,Helsinki,6936458.96882288
+Bulgaria,Finland,Sofia,Helsinki,1949003.7750852052
+India,Finland,Ni Dilli,Helsinki,5227966.1413075505
+Indonesia,Finland,Jakarta,Helsinki,10169436.04192749
+Ireland,Finland,Dublin,Helsinki,2026608.1581674537
+Japan,Finland,Tokyo,Helsinki,7832086.854392091
+Norway,Finland,Oslo,Helsinki,787866.8629913243
+Romania,Finland,Bucharest,Helsinki,1752767.162147173
+Slovakia,Finland,Bratislava,Helsinki,1428221.9293716776
+Turkey,Finland,Ankara,Helsinki,2319092.3031825186
+Ukraine,Finland,Kiev,Helsinki,1139469.028987461
+United Arab Emirates,Finland,Abu Dhabi,Helsinki,4573266.526740832
+Vietnam,Finland,Ha Noi,Helsinki,7499846.170113405
+Croatia,Finland,Zagreb,Helsinki,1705250.5820091765
+Malaysia,Finland,Kuala Lumpur,Helsinki,8984222.580784757
+"China, Republic of (Taiwan)",Finland,Taipei,Helsinki,7969504.8008197285
+New Zealand,Finland,Wellington,Helsinki,17096168.127139956
+Serbia,Finland,Belgrade,Helsinki,1732982.5249306697
+Australia,France,Canberra,Paris,16941417.525033403
+Brazil,France,Brasilia,Paris,8734265.59982376
+Canada,France,Ottawa,Paris,5655020.756049053
+Czech Republic,France,Prague,Paris,884067.697675773
+Finland,France,Helsinki,Paris,1910982.6708230823
+France,France,Paris,Paris,0
+Germany,France,Berlin,Paris,877450.1680776904
+Hungary,France,Budapest,Paris,1248914.5793237565
+Italy,France,Rome,Paris,1108699.5769812497
+"Korea, South",France,Soul,Paris,8977269.52428898
+Netherlands,France,Amsterdam,Paris,430181.1091310417
+Philippines,France,Manila,Paris,10753471.525676021
+Poland,France,Warsaw,Paris,1369782.7128521258
+Russia,France,Moscow,Paris,2489734.47797189
+Saudi Arabia,France,Riyadh,Paris,4694887.588106728
+Sweden,France,Stockholm,Paris,1545592.4160067695
+Thailand,France,Bangkok,Paris,9456532.467486853
+United Kingdom,France,London,Paris,343353.4771659595
+United States,France,Washington,Paris,6169403.864578399
+Bulgaria,France,Sofia,Paris,1759762.5462137954
+India,France,Ni Dilli,Paris,6596565.619075766
+Indonesia,France,Jakarta,Paris,11595698.53476229
+Ireland,France,Dublin,Paris,778988.6336850877
+Japan,France,Tokyo,Paris,9728227.132563794
+Norway,France,Oslo,Paris,1342999.147630562
+Romania,France,Bucharest,Paris,1872536.6702111142
+Slovakia,France,Bratislava,Paris,1091780.7096843699
+Turkey,France,Ankara,Paris,2600510.525430093
+Ukraine,France,Kiev,Paris,2026497.7235700288
+United Arab Emirates,France,Abu Dhabi,Paris,5245468.999277021
+Vietnam,France,Ha Noi,Paris,9207165.092459379
+Croatia,France,Zagreb,Paris,1081552.1631636177
+Malaysia,France,Kuala Lumpur,Paris,10436406.955850922
+"China, Republic of (Taiwan)",France,Taipei,Paris,9837033.294440612
+New Zealand,France,Wellington,Paris,19006521.936682787
+Serbia,France,Belgrade,Paris,1449513.7867865253
+Australia,Germany,Canberra,Berlin,16088327.160367865
+Brazil,Germany,Brasilia,Berlin,9600814.93289049
+Canada,Germany,Ottawa,Berlin,6134705.526409566
+Czech Republic,Germany,Prague,Berlin,281271.1482710624
+Finland,Germany,Helsinki,Berlin,1107586.8365782686
+France,Germany,Paris,Berlin,877450.1680776904
+Germany,Germany,Berlin,Berlin,0
+Hungary,Germany,Budapest,Berlin,690398.8532723755
+Italy,Germany,Rome,Berlin,1185172.0381119363
+"Korea, South",Germany,Soul,Berlin,8138377.5047809575
+Netherlands,Germany,Amsterdam,Berlin,575971.0850335718
+Philippines,Germany,Manila,Berlin,9876066.222784545
+Poland,Germany,Warsaw,Berlin,519597.01016210247
+Russia,Germany,Moscow,Berlin,1612335.6263110798
+Saudi Arabia,Germany,Riyadh,Berlin,4181020.34041181
+Sweden,Germany,Stockholm,Berlin,812073.9307728341
+Thailand,Germany,Bangkok,Berlin,8616740.714654023
+United Kingdom,Germany,London,Berlin,928741.3244204333
+United States,Germany,Washington,Berlin,6714961.629568123
+Bulgaria,Germany,Sofia,Berlin,1321314.1555459893
+India,Germany,Ni Dilli,Berlin,5790661.497478811
+Indonesia,Germany,Jakarta,Berlin,10797760.064732559
+Ireland,Germany,Dublin,Berlin,1316278.837052968
+Japan,Germany,Tokyo,Berlin,8932623.042563252
+Norway,Germany,Oslo,Berlin,838434.8768331102
+Romania,Germany,Bucharest,Berlin,1296523.3445894087
+Slovakia,Germany,Bratislava,Berlin,553491.2904391474
+Turkey,Germany,Ankara,Berlin,2040249.3157306125
+Ukraine,Germany,Kiev,Berlin,1207939.2188409034
+United Arab Emirates,Germany,Abu Dhabi,Berlin,4640041.489085573
+Vietnam,Germany,Ha Noi,Berlin,8338528.793809519
+Croatia,Germany,Zagreb,Berlin,771327.0120931404
+Malaysia,Germany,Kuala Lumpur,Berlin,9626564.830473606
+"China, Republic of (Taiwan)",Germany,Taipei,Berlin,8964121.697614184
+New Zealand,Germany,Wellington,Berlin,18158879.856434636
+Serbia,Germany,Belgrade,Berlin,1002261.7631835372
+Australia,Hungary,Canberra,Budapest,15734116.834650466
+Brazil,Hungary,Brasilia,Budapest,9677033.23529267
+Canada,Hungary,Ottawa,Budapest,6784465.978585636
+Czech Republic,Hungary,Prague,Budapest,444965.0177504283
+Finland,Hungary,Helsinki,Budapest,1459522.1311222867
+France,Hungary,Paris,Budapest,1248914.5793237565
+Germany,Hungary,Berlin,Budapest,690398.8532723755
+Hungary,Hungary,Budapest,Budapest,0
+Italy,Hungary,Rome,Budapest,813305.2151485876
+"Korea, South",Hungary,Soul,Budapest,8176446.216670566
+Netherlands,Hungary,Amsterdam,Budapest,1148862.101925264
+Philippines,Hungary,Manila,Budapest,9690375.649501363
+Poland,Hungary,Warsaw,Budapest,546715.8971063351
+Russia,Hungary,Moscow,Budapest,1567635.3068232897
+Saudi Arabia,Hungary,Riyadh,Budapest,3524726.565094049
+Sweden,Hungary,Stockholm,Budapest,1317462.165951071
+Thailand,Hungary,Bangkok,Budapest,8255724.321295335
+United Kingdom,Hungary,London,Budapest,1451360.6583108823
+United States,Hungary,Washington,Budapest,7343119.091170572
+Bulgaria,Hungary,Sofia,Budapest,630941.3395421061
+India,Hungary,Ni Dilli,Budapest,5369977.916724587
+Indonesia,Hungary,Jakarta,Budapest,10357068.391718162
+Ireland,Hungary,Dublin,Budapest,1897698.2137430343
+Japan,Hungary,Tokyo,Budapest,9058955.969775548
+Norway,Hungary,Oslo,Budapest,1482746.7841473965
+Romania,Hungary,Bucharest,Budapest,641293.7532393334
+Slovakia,Hungary,Bratislava,Budapest,162683.92259947836
+Turkey,Hungary,Ankara,Budapest,1389167.5747127426
+Ukraine,Hungary,Kiev,Budapest,895805.5944708583
+United Arab Emirates,Hungary,Abu Dhabi,Budapest,4025725.3469245266
+Vietnam,Hungary,Ha Noi,Budapest,8073694.203201438
+Croatia,Hungary,Zagreb,Budapest,304430.93997232075
+Malaysia,Hungary,Kuala Lumpur,Budapest,9205492.467474833
+"China, Republic of (Taiwan)",Hungary,Taipei,Budapest,8859543.712303123
+New Zealand,Hungary,Wellington,Budapest,17994207.84927163
+Serbia,Hungary,Belgrade,Budapest,317771.0300014277
+Australia,Italy,Canberra,Rome,16235492.620549593
+Brazil,Italy,Brasilia,Rome,8915197.213790575
+Canada,Italy,Ottawa,Rome,6738615.407308775
+Czech Republic,Italy,Prague,Rome,923760.7503779773
+Finland,Italy,Helsinki,Rome,2204871.267730906
+France,Italy,Paris,Rome,1108699.5769812497
+Germany,Italy,Berlin,Rome,1185172.0381119363
+Hungary,Italy,Budapest,Rome,813305.2151485876
+Italy,Italy,Rome,Rome,0
+"Korea, South",Italy,Soul,Rome,8978328.900794854
+Netherlands,Italy,Amsterdam,Rome,1299526.876259751
+Philippines,Italy,Manila,Rome,10399574.396939099
+Poland,Italy,Warsaw,Rome,1320723.7851887571
+Russia,Italy,Moscow,Rome,2378695.7820175923
+Saudi Arabia,Italy,Riyadh,Rome,3685932.3997653006
+Sweden,Italy,Stockholm,Rome,1979211.5184382475
+Thailand,Italy,Bangkok,Rome,8840301.98070187
+United Kingdom,Italy,London,Rome,1436258.6820978438
+United States,Italy,Washington,Rome,7224376.938016537
+Bulgaria,Italy,Sofia,Rome,894009.1435209501
+India,Italy,Ni Dilli,Rome,5924482.816581459
+Indonesia,Italy,Jakarta,Rome,10835845.722843016
+Ireland,Italy,Dublin,Rome,1887307.2414241603
+Japan,Italy,Tokyo,Rome,9871282.91300633
+Norway,Italy,Oslo,Rome,2009563.2163811806
+Romania,Italy,Bucharest,Rome,1138653.9455527274
+Slovakia,Italy,Bratislava,Rome,786960.6434632941
+Turkey,Italy,Ankara,Rome,1721739.0586557603
+Ukraine,Italy,Kiev,Rome,1676540.006038729
+United Arab Emirates,Italy,Abu Dhabi,Rome,4300270.196432759
+Vietnam,Italy,Ha Noi,Rome,8740146.234322587
+Croatia,Italy,Zagreb,Rome,516660.7596598393
+Malaysia,Italy,Kuala Lumpur,Rome,9718519.701329313
+"China, Republic of (Taiwan)",Italy,Taipei,Rome,9614541.188714983
+New Zealand,Italy,Wellington,Rome,18563134.819760144
+Serbia,Italy,Belgrade,Rome,725041.9317253436
+Australia,"Korea, South",Canberra,Soul,8427911.2295002
+Brazil,"Korea, South",Brasilia,Soul,17561573.977415115
+Canada,"Korea, South",Ottawa,Soul,10523889.527056307
+Czech Republic,"Korea, South",Prague,Soul,8259388.796388655
+Finland,"Korea, South",Helsinki,Soul,7066605.367572144
+France,"Korea, South",Paris,Soul,8977269.52428898
+Germany,"Korea, South",Berlin,Soul,8138377.5047809575
+Hungary,"Korea, South",Budapest,Soul,8176446.216670566
+Italy,"Korea, South",Rome,Soul,8978328.900794854
+"Korea, South","Korea, South",Soul,Soul,0
+Netherlands,"Korea, South",Amsterdam,Soul,8567473.778903889
+Philippines,"Korea, South",Manila,Soul,2622024.678344457
+Poland,"Korea, South",Warsaw,Soul,7747872.405187747
+Russia,"Korea, South",Moscow,Soul,6614255.990561056
+Saudi Arabia,"Korea, South",Riyadh,Soul,7555805.479120464
+Sweden,"Korea, South",Stockholm,Soul,7441222.577686669
+Thailand,"Korea, South",Bangkok,Soul,3729027.6928022173
+United Kingdom,"Korea, South",London,Soul,8866121.84954346
+United States,"Korea, South",Washington,Soul,11176885.641601207
+Bulgaria,"Korea, South",Sofia,Soul,8238413.618231476
+India,"Korea, South",Ni Dilli,Soul,4692810.673428151
+Indonesia,"Korea, South",Jakarta,Soul,5299689.730800845
+Ireland,"Korea, South",Dublin,Soul,8963908.41767061
+Japan,"Korea, South",Tokyo,Soul,1160171.0130739699
+Norway,"Korea, South",Oslo,Soul,7726377.0609018495
+Romania,"Korea, South",Bucharest,Soul,7941983.362577706
+Slovakia,"Korea, South",Bratislava,Soul,8245104.029739299
+Turkey,"Korea, South",Ankara,Soul,7755930.454619991
+Ukraine,"Korea, South",Kiev,Soul,7303291.164085356
+United Arab Emirates,"Korea, South",Abu Dhabi,Soul,6911682.104316207
+Vietnam,"Korea, South",Ha Noi,Soul,2744682.588278012
+Croatia,"Korea, South",Zagreb,Soul,8480863.544884618
+Malaysia,"Korea, South",Kuala Lumpur,Soul,4616329.3746872945
+"China, Republic of (Taiwan)","Korea, South",Taipei,Soul,1491309.2489226307
+New Zealand,"Korea, South",Wellington,Soul,10031105.665826872
+Serbia,"Korea, South",Belgrade,Soul,8273772.114472917
+Australia,Netherlands,Canberra,Amsterdam,16647757.544953516
+Brazil,Netherlands,Brasilia,Amsterdam,9123772.132600328
+Canada,Netherlands,Ottawa,Amsterdam,5638038.828472504
+Czech Republic,Netherlands,Prague,Amsterdam,711595.7496156625
+Finland,Netherlands,Helsinki,Amsterdam,1503599.1325111152
+France,Netherlands,Paris,Amsterdam,430181.1091310417
+Germany,Netherlands,Berlin,Amsterdam,575971.0850335718
+Hungary,Netherlands,Budapest,Amsterdam,1148862.101925264
+Italy,Netherlands,Rome,Amsterdam,1299526.876259751
+"Korea, South",Netherlands,Soul,Amsterdam,8567473.778903889
+Netherlands,Netherlands,Amsterdam,Amsterdam,0
+Philippines,Netherlands,Manila,Amsterdam,10400572.419554157
+Poland,Netherlands,Warsaw,Amsterdam,1095467.7451089753
+Russia,Netherlands,Moscow,Amsterdam,2150371.203504201
+Saudi Arabia,Netherlands,Riyadh,Amsterdam,4672282.686838734
+Sweden,Netherlands,Stockholm,Amsterdam,1127088.5641526969
+Thailand,Netherlands,Bangkok,Amsterdam,9187301.832280423
+United Kingdom,Netherlands,London,Amsterdam,355161.1138319942
+United States,Netherlands,Washington,Amsterdam,6194555.385599399
+Bulgaria,Netherlands,Sofia,Amsterdam,1745888.5040958538
+India,Netherlands,Ni Dilli,Amsterdam,6366607.331551091
+Indonesia,Netherlands,Jakarta,Amsterdam,11373691.267809324
+Ireland,Netherlands,Dublin,Amsterdam,755690.2890652713
+Japan,Netherlands,Tokyo,Amsterdam,9304106.548415331
+Norway,Netherlands,Oslo,Amsterdam,913819.3634713608
+Romania,Netherlands,Bucharest,Amsterdam,1789283.6902438812
+Slovakia,Netherlands,Bratislava,Amsterdam,987287.9416793403
+Turkey,Netherlands,Ankara,Amsterdam,2537936.987162592
+Ukraine,Netherlands,Kiev,Amsterdam,1783518.7967241388
+United Arab Emirates,Netherlands,Abu Dhabi,Amsterdam,5168900.2484332435
+Vietnam,Netherlands,Ha Noi,Amsterdam,8890638.886348985
+Croatia,Netherlands,Zagreb,Amsterdam,1087534.2549413503
+Malaysia,Netherlands,Kuala Lumpur,Amsterdam,10202069.100886974
+"China, Republic of (Taiwan)",Netherlands,Taipei,Amsterdam,9459520.464014176
+New Zealand,Netherlands,Wellington,Amsterdam,18585590.557779625
+Serbia,Netherlands,Belgrade,Amsterdam,1418171.0049562799
+Australia,Philippines,Canberra,Manila,6302378.198138204
+Brazil,Philippines,Brasilia,Manila,18836134.99142361
+Canada,Philippines,Ottawa,Manila,13145425.400699561
+Czech Republic,Philippines,Prague,Manila,9911535.566230513
+Finland,Philippines,Helsinki,Manila,8939520.550304193
+France,Philippines,Paris,Manila,10753471.525676021
+Germany,Philippines,Berlin,Manila,9876066.222784545
+Hungary,Philippines,Budapest,Manila,9690375.649501363
+Italy,Philippines,Rome,Manila,10399574.396939099
+"Korea, South",Philippines,Soul,Manila,2622024.678344457
+Netherlands,Philippines,Amsterdam,Manila,10400572.419554157
+Philippines,Philippines,Manila,Manila,0
+Poland,Philippines,Warsaw,Manila,9397391.574500995
+Russia,Philippines,Moscow,Manila,8263739.429661721
+Saudi Arabia,Philippines,Riyadh,Manila,7773976.767129573
+Sweden,Philippines,Stockholm,Manila,9335566.314264778
+Thailand,Philippines,Bangkok,Manila,2210809.878353887
+United Kingdom,Philippines,London,Manila,10741930.721592236
+United States,Philippines,Washington,Manila,13791300.55007446
+Bulgaria,Philippines,Sofia,Manila,9531394.812098775
+India,Philippines,Ni Dilli,Manila,4757117.46380505
+Indonesia,Philippines,Jakarta,Manila,2792465.132549777
+Ireland,Philippines,Dublin,Manila,10960308.29656164
+Japan,Philippines,Tokyo,Manila,3001090.711036216
+Norway,Philippines,Oslo,Manila,9695114.018216431
+Romania,Philippines,Bucharest,Manila,9263896.922513518
+Slovakia,Philippines,Bratislava,Manila,9804115.215473227
+Turkey,Philippines,Ankara,Manila,8823198.755058771
+Ukraine,Philippines,Kiev,Manila,8801274.784101585
+United Arab Emirates,Philippines,Abu Dhabi,Manila,7010663.174587147
+Vietnam,Philippines,Ha Noi,Manila,1753615.5836838207
+Croatia,Philippines,Zagreb,Manila,9978213.313473983
+Malaysia,Philippines,Kuala Lumpur,Manila,2469281.8961179517
+"China, Republic of (Taiwan)",Philippines,Taipei,Manila,1158809.3401674286
+New Zealand,Philippines,Wellington,Manila,8322392.0203731395
+Serbia,Philippines,Belgrade,Manila,9678991.325352421
+Australia,Poland,Canberra,Warsaw,15577798.16121478
+Brazil,Poland,Brasilia,Warsaw,10039789.302935382
+Canada,Poland,Ottawa,Warsaw,6583644.7893859055
+Czech Republic,Poland,Prague,Warsaw,519790.10751428606
+Finland,Poland,Helsinki,Warsaw,912957.3535989686
+France,Poland,Paris,Warsaw,1369782.7128521258
+Germany,Poland,Berlin,Warsaw,519597.01016210247
+Hungary,Poland,Budapest,Warsaw,546715.8971063351
+Italy,Poland,Rome,Warsaw,1320723.7851887571
+"Korea, South",Poland,Soul,Warsaw,7747872.405187747
+Netherlands,Poland,Amsterdam,Warsaw,1095467.7451089753
+Philippines,Poland,Manila,Warsaw,9397391.574500995
+Poland,Poland,Warsaw,Warsaw,0
+Russia,Poland,Moscow,Warsaw,1150034.7307380543
+Saudi Arabia,Poland,Riyadh,Warsaw,3763785.667641589
+Sweden,Poland,Stockholm,Warsaw,808186.1249209006
+Thailand,Poland,Bangkok,Warsaw,8100424.566671764
+United Kingdom,Poland,London,Warsaw,1448194.6638062594
+United States,Poland,Washington,Warsaw,7183126.288864454
+Bulgaria,Poland,Sofia,Warsaw,1079024.3988590422
+India,Poland,Ni Dilli,Warsaw,5271148.649864517
+Indonesia,Poland,Jakarta,Warsaw,10278224.080245117
+Ireland,Poland,Dublin,Warsaw,1828238.5861986042
+Japan,Poland,Tokyo,Warsaw,8591199.024943803
+Norway,Poland,Oslo,Warsaw,1061484.831457671
+Romania,Poland,Bucharest,Warsaw,947597.0604264148
+Slovakia,Poland,Bratislava,Warsaw,533778.3379639987
+Turkey,Poland,Ankara,Warsaw,1643994.624303834
+Ukraine,Poland,Kiev,Warsaw,690672.4658001829
+United Arab Emirates,Poland,Abu Dhabi,Warsaw,4178055.982675767
+Vietnam,Poland,Ha Noi,Warsaw,7837489.578903961
+Croatia,Poland,Zagreb,Warsaw,807608.0320311378
+Malaysia,Poland,Kuala Lumpur,Warsaw,9107013.75221934
+"China, Republic of (Taiwan)",Poland,Taipei,Warsaw,8512000.565862827
+New Zealand,Poland,Wellington,Warsaw,17712520.56308696
+Serbia,Poland,Belgrade,Warsaw,827985.1118278749
+Australia,Russia,Canberra,Moscow,14499717.610219393
+Brazil,Russia,Brasilia,Moscow,11189818.189833995
+Canada,Russia,Ottawa,Moscow,7167377.748920529
+Czech Republic,Russia,Prague,Moscow,1669762.3195249923
+Finland,Russia,Helsinki,Moscow,893754.4981131146
+France,Russia,Paris,Moscow,2489734.47797189
+Germany,Russia,Berlin,Moscow,1612335.6263110798
+Hungary,Russia,Budapest,Moscow,1567635.3068232897
+Italy,Russia,Rome,Moscow,2378695.7820175923
+"Korea, South",Russia,Soul,Moscow,6614255.990561056
+Netherlands,Russia,Amsterdam,Moscow,2150371.203504201
+Philippines,Russia,Manila,Moscow,8263739.429661721
+Poland,Russia,Warsaw,Moscow,1150034.7307380543
+Russia,Russia,Moscow,Moscow,0
+Saudi Arabia,Russia,Riyadh,Moscow,3541586.980372528
+Sweden,Russia,Stockholm,Moscow,1228817.6835852298
+Thailand,Russia,Bangkok,Moscow,7074364.858668336
+United Kingdom,Russia,London,Moscow,2501218.584249105
+United States,Russia,Washington,Moscow,7829133.876714299
+Bulgaria,Russia,Sofia,Moscow,1780258.9711589534
+India,Russia,Ni Dilli,Moscow,4348833.604314224
+Indonesia,Russia,Jakarta,Moscow,9318181.940894231
+Ireland,Russia,Dublin,Moscow,2798089.520827056
+Japan,Russia,Tokyo,Moscow,7492766.5660442095
+Norway,Russia,Oslo,Moscow,1645591.2885128725
+Romania,Russia,Bucharest,Moscow,1499651.3434351003
+Slovakia,Russia,Bratislava,Moscow,1630877.0286757592
+Turkey,Russia,Ankara,Moscow,1795713.6657856484
+Ukraine,Russia,Kiev,Moscow,758170.377232915
+United Arab Emirates,Russia,Abu Dhabi,Moscow,3739447.0035389108
+Vietnam,Russia,Ha Noi,Moscow,6741278.63356217
+Croatia,Russia,Zagreb,Moscow,1871054.926122891
+Malaysia,Russia,Kuala Lumpur,Moscow,8134709.931613935
+"China, Republic of (Taiwan)",Russia,Taipei,Moscow,7363344.437115054
+New Zealand,Russia,Wellington,Moscow,16565523.433591483
+Serbia,Russia,Belgrade,Moscow,1711643.0559456754
+Australia,Saudi Arabia,Canberra,Riyadh,12642258.11225471
+Brazil,Saudi Arabia,Brasilia,Riyadh,11204129.27812165
+Canada,Saudi Arabia,Ottawa,Riyadh,10309111.674351918
+Czech Republic,Saudi Arabia,Prague,Riyadh,3967981.123507942
+Finland,Saudi Arabia,Helsinki,Riyadh,4297209.90267615
+France,Saudi Arabia,Paris,Riyadh,4694887.588106728
+Germany,Saudi Arabia,Berlin,Riyadh,4181020.34041181
+Hungary,Saudi Arabia,Budapest,Riyadh,3524726.565094049
+Italy,Saudi Arabia,Rome,Riyadh,3685932.3997653006
+"Korea, South",Saudi Arabia,Soul,Riyadh,7555805.479120464
+Netherlands,Saudi Arabia,Amsterdam,Riyadh,4672282.686838734
+Philippines,Saudi Arabia,Manila,Riyadh,7773976.767129573
+Poland,Saudi Arabia,Warsaw,Riyadh,3763785.667641589
+Russia,Saudi Arabia,Moscow,Riyadh,3541586.980372528
+Saudi Arabia,Saudi Arabia,Riyadh,Riyadh,0
+Sweden,Saudi Arabia,Stockholm,Riyadh,4459303.746170544
+Thailand,Saudi Arabia,Bangkok,Riyadh,5742782.852422719
+United Kingdom,Saudi Arabia,London,Riyadh,4954815.940750194
+United States,Saudi Arabia,Washington,Riyadh,10859010.532776657
+Bulgaria,Saudi Arabia,Sofia,Riyadh,2940175.592619874
+India,Saudi Arabia,Ni Dilli,Riyadh,3053673.6308753504
+Indonesia,Saudi Arabia,Jakarta,Riyadh,7351693.7224632455
+Ireland,Saudi Arabia,Dublin,Riyadh,5412487.850753789
+Japan,Saudi Arabia,Tokyo,Riyadh,8704768.319775473
+Norway,Saudi Arabia,Oslo,Riyadh,4804779.32461867
+Romania,Saudi Arabia,Bucharest,Riyadh,2888858.122822038
+Slovakia,Saudi Arabia,Bratislava,Riyadh,3685355.0056281756
+Turkey,Saudi Arabia,Ankara,Riyadh,2141103.843573188
+Ukraine,Saudi Arabia,Kiev,Riyadh,3192284.8067953754
+United Arab Emirates,Saudi Arabia,Abu Dhabi,Riyadh,769588.941227283
+Vietnam,Saudi Arabia,Ha Noi,Riyadh,6027630.510896379
+Croatia,Saudi Arabia,Zagreb,Riyadh,3619310.691643423
+Malaysia,Saudi Arabia,Kuala Lumpur,Riyadh,6347908.062528618
+"China, Republic of (Taiwan)",Saudi Arabia,Taipei,Riyadh,7435780.578079012
+New Zealand,Saudi Arabia,Wellington,Riyadh,14926575.345127292
+Serbia,Saudi Arabia,Belgrade,Riyadh,3262032.0430170167
+Australia,Sweden,Canberra,Stockholm,15629777.805945037
+Brazil,Sweden,Brasilia,Stockholm,10236251.267164012
+Canada,Sweden,Ottawa,Stockholm,6001398.239655475
+Czech Republic,Sweden,Prague,Stockholm,1055585.1376614128
+Finland,Sweden,Helsinki,Stockholm,396253.6509206003
+France,Sweden,Paris,Stockholm,1545592.4160067695
+Germany,Sweden,Berlin,Stockholm,812073.9307728341
+Hungary,Sweden,Budapest,Stockholm,1317462.165951071
+Italy,Sweden,Rome,Stockholm,1979211.5184382475
+"Korea, South",Sweden,Soul,Stockholm,7441222.577686669
+Netherlands,Sweden,Amsterdam,Stockholm,1127088.5641526969
+Philippines,Sweden,Manila,Stockholm,9335566.314264778
+Poland,Sweden,Warsaw,Stockholm,808186.1249209006
+Russia,Sweden,Moscow,Stockholm,1228817.6835852298
+Saudi Arabia,Sweden,Riyadh,Stockholm,4459303.746170544
+Sweden,Sweden,Stockholm,Stockholm,0
+Thailand,Sweden,Bangkok,Stockholm,8278826.591238676
+United Kingdom,Sweden,London,Stockholm,1432133.6312626805
+United States,Sweden,Washington,Stockholm,6642097.71773058
+Bulgaria,Sweden,Sofia,Stockholm,1886942.7786101697
+India,Sweden,Ni Dilli,Stockholm,5577622.560788015
+Indonesia,Sweden,Jakarta,Stockholm,10539913.655470336
+Ireland,Sweden,Dublin,Stockholm,1630828.7791776962
+Japan,Sweden,Tokyo,Stockholm,8183433.219230545
+Norway,Sweden,Oslo,Stockholm,416904.78785309376
+Romania,Sweden,Bucharest,Stockholm,1743981.9369171727
+Slovakia,Sweden,Bratislava,Stockholm,1244945.4512193566
+Turkey,Sweden,Ankara,Stockholm,2395755.863261431
+Ukraine,Sweden,Kiev,Stockholm,1267505.8574083892
+United Arab Emirates,Sweden,Abu Dhabi,Stockholm,4794199.981696478
+Vietnam,Sweden,Ha Noi,Stockholm,7892768.283876752
+Croatia,Sweden,Zagreb,Stockholm,1512650.1712684566
+Malaysia,Sweden,Kuala Lumpur,Stockholm,9355295.533218872
+"China, Republic of (Taiwan)",Sweden,Taipei,Stockholm,8362214.746622272
+New Zealand,Sweden,Wellington,Stockholm,17461631.7951904
+Serbia,Sweden,Belgrade,Stockholm,1622398.6755596686
+Australia,Thailand,Canberra,Bangkok,7486060.996079615
+Brazil,Thailand,Brasilia,Bangkok,16632329.668744698
+Canada,Thailand,Ottawa,Bangkok,13441887.743294235
+Czech Republic,Thailand,Prague,Bangkok,8572877.030999448
+Finland,Thailand,Helsinki,Bangkok,7898093.319874775
+France,Thailand,Paris,Bangkok,9456532.467486853
+Germany,Thailand,Berlin,Bangkok,8616740.714654023
+Hungary,Thailand,Budapest,Bangkok,8255724.321295335
+Italy,Thailand,Rome,Bangkok,8840301.98070187
+"Korea, South",Thailand,Soul,Bangkok,3729027.6928022173
+Netherlands,Thailand,Amsterdam,Bangkok,9187301.832280423
+Philippines,Thailand,Manila,Bangkok,2210809.878353887
+Poland,Thailand,Warsaw,Bangkok,8100424.566671764
+Russia,Thailand,Moscow,Bangkok,7074364.858668336
+Saudi Arabia,Thailand,Riyadh,Bangkok,5742782.852422719
+Sweden,Thailand,Stockholm,Bangkok,8278826.591238676
+Thailand,Thailand,Bangkok,Bangkok,0
+United Kingdom,Thailand,London,Bangkok,9542440.503668053
+United States,Thailand,Washington,Bangkok,14171971.095502533
+Bulgaria,Thailand,Sofia,Bangkok,7946307.480257219
+India,Thailand,Ni Dilli,Bangkok,2919266.863185415
+Indonesia,Thailand,Jakarta,Bangkok,2324140.6093584537
+Ireland,Thailand,Dublin,Bangkok,9870902.560820227
+Japan,Thailand,Tokyo,Bangkok,4615888.873059511
+Norway,Thailand,Oslo,Bangkok,8685690.81555181
+Romania,Thailand,Bucharest,Bangkok,7719728.840014924
+Slovakia,Thailand,Bratislava,Bangkok,8396311.313095707
+Turkey,Thailand,Ankara,Bangkok,7144054.8788541835
+Ukraine,Thailand,Kiev,Bangkok,7430123.063598726
+United Arab Emirates,Thailand,Abu Dhabi,Bangkok,4973678.146690702
+Vietnam,Thailand,Ha Noi,Bangkok,990769.0464907242
+Croatia,Thailand,Zagreb,Bangkok,8507615.713362183
+Malaysia,Thailand,Kuala Lumpur,Bangkok,1184143.7144337539
+"China, Republic of (Taiwan)",Thailand,Taipei,Bangkok,2528294.2488568733
+New Zealand,Thailand,Wellington,Bangkok,9755886.888355758
+Serbia,Thailand,Belgrade,Bangkok,8162363.149781458
+Australia,United Kingdom,Canberra,London,17000539.851203874
+Brazil,United Kingdom,Brasilia,London,8804316.742141254
+Canada,United Kingdom,Ottawa,London,5369072.947888857
+Czech Republic,United Kingdom,Prague,London,1033006.3302354107
+Finland,United Kingdom,Helsinki,London,1820652.1520540137
+France,United Kingdom,Paris,London,343353.4771659595
+Germany,United Kingdom,Berlin,London,928741.3244204333
+Hungary,United Kingdom,Budapest,London,1451360.6583108823
+Italy,United Kingdom,Rome,London,1436258.6820978438
+"Korea, South",United Kingdom,Soul,London,8866121.84954346
+Netherlands,United Kingdom,Amsterdam,London,355161.1138319942
+Philippines,United Kingdom,Manila,London,10741930.721592236
+Poland,United Kingdom,Warsaw,London,1448194.6638062594
+Russia,United Kingdom,Moscow,London,2501218.584249105
+Saudi Arabia,United Kingdom,Riyadh,London,4954815.940750194
+Sweden,United Kingdom,Stockholm,London,1432133.6312626805
+Thailand,United Kingdom,Bangkok,London,9542440.503668053
+United Kingdom,United Kingdom,London,London,0
+United States,United Kingdom,Washington,London,5904294.70260598
+Bulgaria,United Kingdom,Sofia,London,2015204.9824158484
+India,United Kingdom,Ni Dilli,London,6718487.570318032
+Indonesia,United Kingdom,Jakarta,London,11725550.19139238
+Ireland,United Kingdom,Dublin,London,463348.8218607226
+Japan,United Kingdom,Tokyo,London,9572052.397126805
+Norway,United Kingdom,Oslo,London,1152431.2657832548
+Romania,United Kingdom,Bucharest,London,2091208.8107362068
+Slovakia,United Kingdom,Bratislava,London,1288800.8679698536
+Turkey,United Kingdom,Ankara,London,2834601.6172647364
+Ukraine,United Kingdom,Kiev,London,2133974.97782573
+United Arab Emirates,United Kingdom,Abu Dhabi,London,5476414.779248064
+Vietnam,United Kingdom,Ha Noi,London,9242418.39565404
+Croatia,United Kingdom,Zagreb,London,1338225.4430194532
+Malaysia,United Kingdom,Kuala Lumpur,London,10555186.607405448
+"China, Republic of (Taiwan)",United Kingdom,Taipei,London,9788750.254649214
+New Zealand,United Kingdom,Wellington,London,18832493.986266218
+Serbia,United Kingdom,Belgrade,London,1693079.6897450762
+Australia,United States,Canberra,Washington,15964545.953143777
+Brazil,United States,Brasilia,Washington,6800646.522622356
+Canada,United States,Ottawa,Washington,732676.7184236749
+Czech Republic,United States,Prague,Washington,6904641.871652729
+Finland,United States,Helsinki,Washington,6936458.96882288
+France,United States,Paris,Washington,6169403.864578399
+Germany,United States,Berlin,Washington,6714961.629568123
+Hungary,United States,Budapest,Washington,7343119.091170572
+Italy,United States,Rome,Washington,7224376.938016537
+"Korea, South",United States,Soul,Washington,11176885.641601207
+Netherlands,United States,Amsterdam,Washington,6194555.385599399
+Philippines,United States,Manila,Washington,13791300.55007446
+Poland,United States,Warsaw,Washington,7183126.288864454
+Russia,United States,Moscow,Washington,7829133.876714299
+Saudi Arabia,United States,Riyadh,Washington,10859010.532776657
+Sweden,United States,Stockholm,Washington,6642097.71773058
+Thailand,United States,Bangkok,Washington,14171971.095502533
+United Kingdom,United States,London,Washington,5904294.70260598
+United States,United States,Washington,Washington,0
+Bulgaria,United States,Sofia,Washington,7918913.5667668525
+India,United States,Ni Dilli,Washington,12060174.846312694
+Indonesia,United States,Jakarta,Washington,16373478.00254484
+Ireland,United States,Dublin,Washington,5447995.006256917
+Japan,United States,Tokyo,Washington,10914582.417989306
+Norway,United States,Oslo,Washington,6238176.865547779
+Romania,United States,Bucharest,Washington,7983838.868356569
+Slovakia,United States,Bratislava,Washington,7181052.752504084
+Turkey,United States,Ankara,Washington,8732272.646898197
+Ukraine,United States,Kiev,Washington,7841424.085495337
+United Arab Emirates,United States,Abu Dhabi,Washington,11354961.155842256
+Vietnam,United States,Ha Noi,Washington,13358353.373550136
+Croatia,United States,Zagreb,Washington,7240161.5761784855
+Malaysia,United States,Kuala Lumpur,Washington,15352480.872785265
+"China, Republic of (Taiwan)",United States,Taipei,Washington,12665390.621565275
+New Zealand,United States,Wellington,Washington,14099394.615741987
+Serbia,United States,Belgrade,Washington,7597325.317874984
+Australia,Bulgaria,Canberra,Sofia,15360115.843126632
+Brazil,Bulgaria,Brasilia,Sofia,9742314.42986319
+Canada,Bulgaria,Ottawa,Sofia,7379727.173079942
+Czech Republic,Bulgaria,Prague,Sofia,1066986.7511007297
+Finland,Bulgaria,Helsinki,Sofia,1949003.7750852052
+France,Bulgaria,Paris,Sofia,1759762.5462137954
+Germany,Bulgaria,Berlin,Sofia,1321314.1555459893
+Hungary,Bulgaria,Budapest,Sofia,630941.3395421061
+Italy,Bulgaria,Rome,Sofia,894009.1435209501
+"Korea, South",Bulgaria,Soul,Sofia,8238413.618231476
+Netherlands,Bulgaria,Amsterdam,Sofia,1745888.5040958538
+Philippines,Bulgaria,Manila,Sofia,9531394.812098775
+Poland,Bulgaria,Warsaw,Sofia,1079024.3988590422
+Russia,Bulgaria,Moscow,Sofia,1780258.9711589534
+Saudi Arabia,Bulgaria,Riyadh,Sofia,2940175.592619874
+Sweden,Bulgaria,Stockholm,Sofia,1886942.7786101697
+Thailand,Bulgaria,Bangkok,Sofia,7946307.480257219
+United Kingdom,Bulgaria,London,Sofia,2015204.9824158484
+United States,Bulgaria,Washington,Sofia,7918913.5667668525
+Bulgaria,Bulgaria,Sofia,Sofia,0
+India,Bulgaria,Ni Dilli,Sofia,5030934.076935272
+Indonesia,Bulgaria,Jakarta,Sofia,9958292.154323034
+Ireland,Bulgaria,Dublin,Sofia,2474664.0389567018
+Japan,Bulgaria,Tokyo,Sofia,9191715.014011169
+Norway,Bulgaria,Oslo,Sofia,2098601.5715311863
+Romania,Bulgaria,Bucharest,Sofia,297618.0521716831
+Slovakia,Bulgaria,Bratislava,Sofia,776576.7478100377
+Turkey,Bulgaria,Ankara,Sofia,854219.4780945644
+Ukraine,Bulgaria,Kiev,Sofia,1022112.2740559975
+United Arab Emirates,Bulgaria,Abu Dhabi,Sofia,3489838.9139966504
+Vietnam,Bulgaria,Ha Noi,Sofia,7856792.570019645
+Croatia,Bulgaria,Zagreb,Sofia,679643.7547798755
+Malaysia,Bulgaria,Kuala Lumpur,Sofia,8832285.072844954
+"China, Republic of (Taiwan)",Bulgaria,Taipei,Sofia,8783547.879672047
+New Zealand,Bulgaria,Wellington,Sofia,17682781.833543114
+Serbia,Bulgaria,Belgrade,Sofia,328275.37315133685
+Australia,India,Canberra,Ni Dilli,10364705.39844716
+Brazil,India,Brasilia,Ni Dilli,14254535.581280211
+Canada,India,Ottawa,Ni Dilli,11353802.63257189
+Czech Republic,India,Prague,Ni Dilli,5714693.266885061
+Finland,India,Helsinki,Ni Dilli,5227966.1413075505
+France,India,Paris,Ni Dilli,6596565.619075766
+Germany,India,Berlin,Ni Dilli,5790661.497478811
+Hungary,India,Budapest,Ni Dilli,5369977.916724587
+Italy,India,Rome,Ni Dilli,5924482.816581459
+"Korea, South",India,Soul,Ni Dilli,4692810.673428151
+Netherlands,India,Amsterdam,Ni Dilli,6366607.331551091
+Philippines,India,Manila,Ni Dilli,4757117.46380505
+Poland,India,Warsaw,Ni Dilli,5271148.649864517
+Russia,India,Moscow,Ni Dilli,4348833.604314224
+Saudi Arabia,India,Riyadh,Ni Dilli,3053673.6308753504
+Sweden,India,Stockholm,Ni Dilli,5577622.560788015
+Thailand,India,Bangkok,Ni Dilli,2919266.863185415
+United Kingdom,India,London,Ni Dilli,6718487.570318032
+United States,India,Washington,Ni Dilli,12060174.846312694
+Bulgaria,India,Sofia,Ni Dilli,5030934.076935272
+India,India,Ni Dilli,Ni Dilli,0
+Indonesia,India,Jakarta,Ni Dilli,5007112.834869075
+Ireland,India,Dublin,Ni Dilli,7087413.258357753
+Japan,India,Tokyo,Ni Dilli,5850961.8836363815
+Norway,India,Oslo,Ni Dilli,5994424.878065952
+Romania,India,Bucharest,Ni Dilli,4812062.171815959
+Slovakia,India,Bratislava,Ni Dilli,5516889.438676234
+Turkey,India,Ankara,Ni Dilli,4224825.499601893
+Ukraine,India,Kiev,Ni Dilli,4584845.390273405
+United Arab Emirates,India,Abu Dhabi,Ni Dilli,2317532.4726549713
+Vietnam,India,Ha Noi,Ni Dilli,3003548.4360686243
+Croatia,India,Zagreb,Ni Dilli,5609110.969207711
+Malaysia,India,Kuala Lumpur,Ni Dilli,3840065.2562185773
+"China, Republic of (Taiwan)",India,Taipei,Ni Dilli,4387992.158344036
+New Zealand,India,Wellington,Ni Dilli,12661695.024634643
+Serbia,India,Belgrade,Ni Dilli,5256749.393011613
+Australia,Indonesia,Canberra,Jakarta,5401876.780120862
+Brazil,Indonesia,Brasilia,Jakarta,16332391.519705974
+Canada,Indonesia,Ottawa,Jakarta,15662423.319519836
+Czech Republic,Indonesia,Prague,Jakarta,10717146.460755447
+Finland,Indonesia,Helsinki,Jakarta,10169436.04192749
+France,Indonesia,Paris,Jakarta,11595698.53476229
+Germany,Indonesia,Berlin,Jakarta,10797760.064732559
+Hungary,Indonesia,Budapest,Jakarta,10357068.391718162
+Italy,Indonesia,Rome,Jakarta,10835845.722843016
+"Korea, South",Indonesia,Soul,Jakarta,5299689.730800845
+Netherlands,Indonesia,Amsterdam,Jakarta,11373691.267809324
+Philippines,Indonesia,Manila,Jakarta,2792465.132549777
+Poland,Indonesia,Warsaw,Jakarta,10278224.080245117
+Russia,Indonesia,Moscow,Jakarta,9318181.940894231
+Saudi Arabia,Indonesia,Riyadh,Jakarta,7351693.7224632455
+Sweden,Indonesia,Stockholm,Jakarta,10539913.655470336
+Thailand,Indonesia,Bangkok,Jakarta,2324140.6093584537
+United Kingdom,Indonesia,London,Jakarta,11725550.19139238
+United States,Indonesia,Washington,Jakarta,16373478.00254484
+Bulgaria,Indonesia,Sofia,Jakarta,9958292.154323034
+India,Indonesia,Ni Dilli,Jakarta,5007112.834869075
+Indonesia,Indonesia,Jakarta,Jakarta,0
+Ireland,Indonesia,Dublin,Jakarta,12090244.740415499
+Japan,Indonesia,Tokyo,Jakarta,5793531.03377342
+Norway,Indonesia,Oslo,Jakarta,10952908.598913465
+Romania,Indonesia,Bucharest,Jakarta,9770127.851379737
+Slovakia,Indonesia,Bratislava,Jakarta,10508628.484385844
+Turkey,Indonesia,Ankara,Jakarta,9114513.613533765
+Ukraine,Indonesia,Kiev,Jakarta,9591717.911275078
+United Arab Emirates,Indonesia,Abu Dhabi,Jakarta,6629638.396421966
+Vietnam,Indonesia,Ha Noi,Jakarta,3030934.9869156964
+Croatia,Indonesia,Zagreb,Jakarta,10578069.401241228
+Malaysia,Indonesia,Kuala Lumpur,Jakarta,1185297.087682954
+"China, Republic of (Taiwan)",Indonesia,Taipei,Jakarta,3817171.5682859807
+New Zealand,Indonesia,Wellington,Jakarta,7727861.74753332
+Serbia,Indonesia,Belgrade,Jakarta,10214998.677689454
+Australia,Ireland,Canberra,Dublin,17259610.788205486
+Brazil,Ireland,Brasilia,Dublin,8661241.582548168
+Canada,Ireland,Ottawa,Dublin,4906874.972396517
+Czech Republic,Ireland,Prague,Dublin,1466067.46088365
+Finland,Ireland,Helsinki,Dublin,2026608.1581674537
+France,Ireland,Paris,Dublin,778988.6336850877
+Germany,Ireland,Berlin,Dublin,1316278.837052968
+Hungary,Ireland,Budapest,Dublin,1897698.2137430343
+Italy,Ireland,Rome,Dublin,1887307.2414241603
+"Korea, South",Ireland,Soul,Dublin,8963908.41767061
+Netherlands,Ireland,Amsterdam,Dublin,755690.2890652713
+Philippines,Ireland,Manila,Dublin,10960308.29656164
+Poland,Ireland,Warsaw,Dublin,1828238.5861986042
+Russia,Ireland,Moscow,Dublin,2798089.520827056
+Saudi Arabia,Ireland,Riyadh,Dublin,5412487.850753789
+Sweden,Ireland,Stockholm,Dublin,1630828.7791776962
+Thailand,Ireland,Bangkok,Dublin,9870902.560820227
+United Kingdom,Ireland,London,Dublin,463348.8218607226
+United States,Ireland,Washington,Dublin,5447995.006256917
+Bulgaria,Ireland,Sofia,Dublin,2474664.0389567018
+India,Ireland,Ni Dilli,Dublin,7087413.258357753
+Indonesia,Ireland,Jakarta,Dublin,12090244.740415499
+Ireland,Ireland,Dublin,Dublin,0
+Japan,Ireland,Tokyo,Dublin,9601341.722147685
+Norway,Ireland,Oslo,Dublin,1267148.110035908
+Romania,Ireland,Bucharest,Dublin,2538987.0694829547
+Slovakia,Ireland,Bratislava,Dublin,1735149.094418684
+Turkey,Ireland,Ankara,Dublin,3285742.4801097633
+Ukraine,Ireland,Kiev,Dublin,2518801.903830759
+United Arab Emirates,Ireland,Abu Dhabi,Dublin,5922252.630952119
+Vietnam,Ireland,Ha Noi,Dublin,9519426.673083851
+Croatia,Ireland,Zagreb,Dublin,1799624.3082384367
+Malaysia,Ireland,Kuala Lumpur,Dublin,10912416.098873459
+"China, Republic of (Taiwan)",Ireland,Taipei,Dublin,9965848.474084815
+New Zealand,Ireland,Wellington,Dublin,18693894.773844972
+Serbia,Ireland,Belgrade,Dublin,2150639.5170679335
+Australia,Japan,Canberra,Tokyo,7960909.829968293
+Brazil,Japan,Brasilia,Tokyo,17695434.0105579
+Canada,Japan,Ottawa,Tokyo,10331429.97498997
+Czech Republic,Japan,Prague,Tokyo,9086349.091626998
+Finland,Japan,Helsinki,Tokyo,7832086.854392091
+France,Japan,Paris,Tokyo,9728227.132563794
+Germany,Japan,Berlin,Tokyo,8932623.042563252
+Hungary,Japan,Budapest,Tokyo,9058955.969775548
+Italy,Japan,Rome,Tokyo,9871282.91300633
+"Korea, South",Japan,Soul,Tokyo,1160171.0130739699
+Netherlands,Japan,Amsterdam,Tokyo,9304106.548415331
+Philippines,Japan,Manila,Tokyo,3001090.711036216
+Poland,Japan,Warsaw,Tokyo,8591199.024943803
+Russia,Japan,Moscow,Tokyo,7492766.5660442095
+Saudi Arabia,Japan,Riyadh,Tokyo,8704768.319775473
+Sweden,Japan,Stockholm,Tokyo,8183433.219230545
+Thailand,Japan,Bangkok,Tokyo,4615888.873059511
+United Kingdom,Japan,London,Tokyo,9572052.397126805
+United States,Japan,Washington,Tokyo,10914582.417989306
+Bulgaria,Japan,Sofia,Tokyo,9191715.014011169
+India,Japan,Ni Dilli,Tokyo,5850961.8836363815
+Indonesia,Japan,Jakarta,Tokyo,5793531.03377342
+Ireland,Japan,Dublin,Tokyo,9601341.722147685
+Japan,Japan,Tokyo,Tokyo,0
+Norway,Japan,Oslo,Tokyo,8419621.19604148
+Romania,Japan,Bucharest,Tokyo,8894141.52837114
+Slovakia,Japan,Bratislava,Tokyo,9109049.111279776
+Turkey,Japan,Ankara,Tokyo,8780203.740080561
+Ukraine,Japan,Kiev,Tokyo,8216146.752566298
+United Arab Emirates,Japan,Abu Dhabi,Tokyo,8069197.890922843
+Vietnam,Japan,Ha Noi,Tokyo,3676552.540524976
+Croatia,Japan,Zagreb,Tokyo,9360810.268142946
+Malaysia,Japan,Kuala Lumpur,Tokyo,5328834.346762849
+"China, Republic of (Taiwan)",Japan,Taipei,Tokyo,2116157.7616347107
+New Zealand,Japan,Wellington,Tokyo,9281514.024150535
+Serbia,Japan,Belgrade,Tokyo,9191060.00457373
+Australia,Norway,Canberra,Oslo,15996935.558627073
+Brazil,Norway,Brasilia,Oslo,9918991.738223458
+Canada,Norway,Ottawa,Oslo,5605622.696463302
+Czech Republic,Norway,Prague,Oslo,1118782.1716173317
+Finland,Norway,Helsinki,Oslo,787866.8629913243
+France,Norway,Paris,Oslo,1342999.147630562
+Germany,Norway,Berlin,Oslo,838434.8768331102
+Hungary,Norway,Budapest,Oslo,1482746.7841473965
+Italy,Norway,Rome,Oslo,2009563.2163811806
+"Korea, South",Norway,Soul,Oslo,7726377.0609018495
+Netherlands,Norway,Amsterdam,Oslo,913819.3634713608
+Philippines,Norway,Manila,Oslo,9695114.018216431
+Poland,Norway,Warsaw,Oslo,1061484.831457671
+Russia,Norway,Moscow,Oslo,1645591.2885128725
+Saudi Arabia,Norway,Riyadh,Oslo,4804779.32461867
+Sweden,Norway,Stockholm,Oslo,416904.78785309376
+Thailand,Norway,Bangkok,Oslo,8685690.81555181
+United Kingdom,Norway,London,Oslo,1152431.2657832548
+United States,Norway,Washington,Oslo,6238176.865547779
+Bulgaria,Norway,Sofia,Oslo,2098601.5715311863
+India,Norway,Ni Dilli,Oslo,5994424.878065952
+Indonesia,Norway,Jakarta,Oslo,10952908.598913465
+Ireland,Norway,Dublin,Oslo,1267148.110035908
+Japan,Norway,Tokyo,Oslo,8419621.19604148
+Norway,Norway,Oslo,Oslo,0
+Romania,Norway,Bucharest,Oslo,2004905.481569282
+Slovakia,Norway,Bratislava,Oslo,1371363.5816198988
+Turkey,Norway,Ankara,Oslo,2702550.5439391257
+Ukraine,Norway,Kiev,Oslo,1630082.8794817694
+United Arab Emirates,Norway,Abu Dhabi,Oslo,5171939.234461464
+Vietnam,Norway,Ha Noi,Oslo,8281780.220582425
+Croatia,Norway,Zagreb,Oslo,1608206.0842293804
+Malaysia,Norway,Kuala Lumpur,Oslo,9767973.787551947
+"China, Republic of (Taiwan)",Norway,Taipei,Oslo,8699609.495709315
+New Zealand,Norway,Wellington,Oslo,17690557.722106796
+Serbia,Norway,Belgrade,Oslo,1800308.4704536519
+Australia,Romania,Canberra,Bucharest,15166473.319789758
+Brazil,Romania,Brasilia,Bucharest,10026003.077415781
+Canada,Romania,Ottawa,Bucharest,7420904.541147719
+Czech Republic,Romania,Prague,Bucharest,1080384.105854491
+Finland,Romania,Helsinki,Bucharest,1752767.162147173
+France,Romania,Paris,Bucharest,1872536.6702111142
+Germany,Romania,Berlin,Bucharest,1296523.3445894087
+Hungary,Romania,Budapest,Bucharest,641293.7532393334
+Italy,Romania,Rome,Bucharest,1138653.9455527274
+"Korea, South",Romania,Soul,Bucharest,7941983.362577706
+Netherlands,Romania,Amsterdam,Bucharest,1789283.6902438812
+Philippines,Romania,Manila,Bucharest,9263896.922513518
+Poland,Romania,Warsaw,Bucharest,947597.0604264148
+Russia,Romania,Moscow,Bucharest,1499651.3434351003
+Saudi Arabia,Romania,Riyadh,Bucharest,2888858.122822038
+Sweden,Romania,Stockholm,Bucharest,1743981.9369171727
+Thailand,Romania,Bangkok,Bucharest,7719728.840014924
+United Kingdom,Romania,London,Bucharest,2091208.8107362068
+United States,Romania,Washington,Bucharest,7983838.868356569
+Bulgaria,Romania,Sofia,Bucharest,297618.0521716831
+India,Romania,Ni Dilli,Bucharest,4812062.171815959
+Indonesia,Romania,Jakarta,Bucharest,9770127.851379737
+Ireland,Romania,Dublin,Bucharest,2538987.0694829547
+Japan,Romania,Tokyo,Bucharest,8894141.52837114
+Norway,Romania,Oslo,Bucharest,2004905.481569282
+Romania,Romania,Bucharest,Bucharest,0
+Slovakia,Romania,Bratislava,Bucharest,803854.9436410185
+Turkey,Romania,Ankara,Bucharest,749226.2200873167
+Ukraine,Romania,Kiev,Bucharest,744922.036252567
+United Arab Emirates,Romania,Abu Dhabi,Bucharest,3385211.8448399734
+Vietnam,Romania,Ha Noi,Bucharest,7601665.907215625
+Croatia,Romania,Zagreb,Bucharest,809397.4382502171
+Malaysia,Romania,Kuala Lumpur,Bucharest,8631659.909610463
+"China, Republic of (Taiwan)",Romania,Taipei,Bucharest,8500502.959495105
+New Zealand,Romania,Wellington,Bucharest,17473676.489967946
+Serbia,Romania,Belgrade,Bucharest,445631.1118104639
+Australia,Slovakia,Canberra,Bratislava,15878737.217304228
+Brazil,Slovakia,Brasilia,Bratislava,9582936.584944678
+Canada,Slovakia,Ottawa,Bratislava,6624155.28174465
+Czech Republic,Slovakia,Prague,Bratislava,290439.4941314105
+Finland,Slovakia,Helsinki,Bratislava,1428221.9293716776
+France,Slovakia,Paris,Bratislava,1091780.7096843699
+Germany,Slovakia,Berlin,Bratislava,553491.2904391474
+Hungary,Slovakia,Budapest,Bratislava,162683.92259947836
+Italy,Slovakia,Rome,Bratislava,786960.6434632941
+"Korea, South",Slovakia,Soul,Bratislava,8245104.029739299
+Netherlands,Slovakia,Amsterdam,Bratislava,987287.9416793403
+Philippines,Slovakia,Manila,Bratislava,9804115.215473227
+Poland,Slovakia,Warsaw,Bratislava,533778.3379639987
+Russia,Slovakia,Moscow,Bratislava,1630877.0286757592
+Saudi Arabia,Slovakia,Riyadh,Bratislava,3685355.0056281756
+Sweden,Slovakia,Stockholm,Bratislava,1244945.4512193566
+Thailand,Slovakia,Bangkok,Bratislava,8396311.313095707
+United Kingdom,Slovakia,London,Bratislava,1288800.8679698536
+United States,Slovakia,Washington,Bratislava,7181052.752504084
+Bulgaria,Slovakia,Sofia,Bratislava,776576.7478100377
+India,Slovakia,Ni Dilli,Bratislava,5516889.438676234
+Indonesia,Slovakia,Jakarta,Bratislava,10508628.484385844
+Ireland,Slovakia,Dublin,Bratislava,1735149.094418684
+Japan,Slovakia,Tokyo,Bratislava,9109049.111279776
+Norway,Slovakia,Oslo,Bratislava,1371363.5816198988
+Romania,Slovakia,Bucharest,Bratislava,803854.9436410185
+Slovakia,Slovakia,Bratislava,Bratislava,0
+Turkey,Slovakia,Ankara,Bratislava,1551243.3430141946
+Ukraine,Slovakia,Kiev,Bratislava,1002858.8678385955
+United Arab Emirates,Slovakia,Abu Dhabi,Bratislava,4188408.8709134106
+Vietnam,Slovakia,Ha Noi,Bratislava,8199578.95689436
+Croatia,Slovakia,Zagreb,Bratislava,277083.38782824704
+Malaysia,Slovakia,Kuala Lumpur,Bratislava,9354357.730940636
+"China, Republic of (Taiwan)",Slovakia,Taipei,Bratislava,8957736.726768447
+New Zealand,Slovakia,Wellington,Bratislava,18119867.42562088
+Serbia,Slovakia,Belgrade,Bratislava,451685.2577498586
+Australia,Turkey,Canberra,Ankara,14515482.728099639
+Brazil,Turkey,Brasilia,Ankara,10376488.762768196
+Canada,Turkey,Ottawa,Ankara,8169765.949239652
+Czech Republic,Turkey,Prague,Ankara,1829609.8539971057
+Finland,Turkey,Helsinki,Ankara,2319092.3031825186
+France,Turkey,Paris,Ankara,2600510.525430093
+Germany,Turkey,Berlin,Ankara,2040249.3157306125
+Hungary,Turkey,Budapest,Ankara,1389167.5747127426
+Italy,Turkey,Rome,Ankara,1721739.0586557603
+"Korea, South",Turkey,Soul,Ankara,7755930.454619991
+Netherlands,Turkey,Amsterdam,Ankara,2537936.987162592
+Philippines,Turkey,Manila,Ankara,8823198.755058771
+Poland,Turkey,Warsaw,Ankara,1643994.624303834
+Russia,Turkey,Moscow,Ankara,1795713.6657856484
+Saudi Arabia,Turkey,Riyadh,Ankara,2141103.843573188
+Sweden,Turkey,Stockholm,Ankara,2395755.863261431
+Thailand,Turkey,Bangkok,Ankara,7144054.8788541835
+United Kingdom,Turkey,London,Ankara,2834601.6172647364
+United States,Turkey,Washington,Ankara,8732272.646898197
+Bulgaria,Turkey,Sofia,Ankara,854219.4780945644
+India,Turkey,Ni Dilli,Ankara,4224825.499601893
+Indonesia,Turkey,Jakarta,Ankara,9114513.613533765
+Ireland,Turkey,Dublin,Ankara,3285742.4801097633
+Japan,Turkey,Tokyo,Ankara,8780203.740080561
+Norway,Turkey,Oslo,Ankara,2702550.5439391257
+Romania,Turkey,Bucharest,Ankara,749226.2200873167
+Slovakia,Turkey,Bratislava,Ankara,1551243.3430141946
+Turkey,Turkey,Ankara,Ankara,0
+Ukraine,Turkey,Kiev,Ankara,1182905.950087869
+United Arab Emirates,Turkey,Abu Dhabi,Ankara,2645402.051688529
+Vietnam,Turkey,Ha Noi,Ankara,7114886.660800861
+Croatia,Turkey,Zagreb,Ankara,1520387.8475261645
+Malaysia,Turkey,Kuala Lumpur,Ankara,7998232.631022486
+"China, Republic of (Taiwan)",Turkey,Taipei,Ankara,8152540.650693899
+New Zealand,Turkey,Wellington,Ankara,16842371.722626865
+Serbia,Turkey,Belgrade,Ankara,1151023.421522568
+Australia,Ukraine,Canberra,Kiev,14915129.274178095
+Brazil,Ukraine,Brasilia,Kiev,10572296.153099408
+Canada,Ukraine,Ottawa,Kiev,7225457.99725718
+Czech Republic,Ukraine,Prague,Kiev,1143622.376104132
+Finland,Ukraine,Helsinki,Kiev,1139469.028987461
+France,Ukraine,Paris,Kiev,2026497.7235700288
+Germany,Ukraine,Berlin,Kiev,1207939.2188409034
+Hungary,Ukraine,Budapest,Kiev,895805.5944708583
+Italy,Ukraine,Rome,Kiev,1676540.006038729
+"Korea, South",Ukraine,Soul,Kiev,7303291.164085356
+Netherlands,Ukraine,Amsterdam,Kiev,1783518.7967241388
+Philippines,Ukraine,Manila,Kiev,8801274.784101585
+Poland,Ukraine,Warsaw,Kiev,690672.4658001829
+Russia,Ukraine,Moscow,Kiev,758170.377232915
+Saudi Arabia,Ukraine,Riyadh,Kiev,3192284.8067953754
+Sweden,Ukraine,Stockholm,Kiev,1267505.8574083892
+Thailand,Ukraine,Bangkok,Kiev,7430123.063598726
+United Kingdom,Ukraine,London,Kiev,2133974.97782573
+United States,Ukraine,Washington,Kiev,7841424.085495337
+Bulgaria,Ukraine,Sofia,Kiev,1022112.2740559975
+India,Ukraine,Ni Dilli,Kiev,4584845.390273405
+Indonesia,Ukraine,Jakarta,Kiev,9591717.911275078
+Ireland,Ukraine,Dublin,Kiev,2518801.903830759
+Japan,Ukraine,Tokyo,Kiev,8216146.752566298
+Norway,Ukraine,Oslo,Kiev,1630082.8794817694
+Romania,Ukraine,Bucharest,Kiev,744922.036252567
+Slovakia,Ukraine,Bratislava,Kiev,1002858.8678385955
+Turkey,Ukraine,Ankara,Kiev,1182905.950087869
+Ukraine,Ukraine,Kiev,Kiev,0
+United Arab Emirates,Ukraine,Abu Dhabi,Kiev,3542663.588127131
+Vietnam,Ukraine,Ha Noi,Kiev,7202745.298235108
+Croatia,Ukraine,Zagreb,Kiev,1195204.7000855606
+Malaysia,Ukraine,Kuala Lumpur,Kiev,8423092.041984202
+"China, Republic of (Taiwan)",Ukraine,Taipei,Kiev,7963754.967018385
+New Zealand,Ukraine,Wellington,Kiev,17118959.829192866
+Serbia,Ukraine,Belgrade,Kiev,975093.7680334989
+Australia,United Arab Emirates,Canberra,Abu Dhabi,11969737.728913767
+Brazil,United Arab Emirates,Brasilia,Abu Dhabi,11955185.664576447
+Canada,United Arab Emirates,Ottawa,Abu Dhabi,10761267.566445997
+Czech Republic,United Arab Emirates,Prague,Abu Dhabi,4457305.333249762
+Finland,United Arab Emirates,Helsinki,Abu Dhabi,4573266.526740832
+France,United Arab Emirates,Paris,Abu Dhabi,5245468.999277021
+Germany,United Arab Emirates,Berlin,Abu Dhabi,4640041.489085573
+Hungary,United Arab Emirates,Budapest,Abu Dhabi,4025725.3469245266
+Italy,United Arab Emirates,Rome,Abu Dhabi,4300270.196432759
+"Korea, South",United Arab Emirates,Soul,Abu Dhabi,6911682.104316207
+Netherlands,United Arab Emirates,Amsterdam,Abu Dhabi,5168900.2484332435
+Philippines,United Arab Emirates,Manila,Abu Dhabi,7010663.174587147
+Poland,United Arab Emirates,Warsaw,Abu Dhabi,4178055.982675767
+Russia,United Arab Emirates,Moscow,Abu Dhabi,3739447.0035389108
+Saudi Arabia,United Arab Emirates,Riyadh,Abu Dhabi,769588.941227283
+Sweden,United Arab Emirates,Stockholm,Abu Dhabi,4794199.981696478
+Thailand,United Arab Emirates,Bangkok,Abu Dhabi,4973678.146690702
+United Kingdom,United Arab Emirates,London,Abu Dhabi,5476414.779248064
+United States,United Arab Emirates,Washington,Abu Dhabi,11354961.155842256
+Bulgaria,United Arab Emirates,Sofia,Abu Dhabi,3489838.9139966504
+India,United Arab Emirates,Ni Dilli,Abu Dhabi,2317532.4726549713
+Indonesia,United Arab Emirates,Jakarta,Abu Dhabi,6629638.396421966
+Ireland,United Arab Emirates,Dublin,Abu Dhabi,5922252.630952119
+Japan,United Arab Emirates,Tokyo,Abu Dhabi,8069197.890922843
+Norway,United Arab Emirates,Oslo,Abu Dhabi,5171939.234461464
+Romania,United Arab Emirates,Bucharest,Abu Dhabi,3385211.8448399734
+Slovakia,United Arab Emirates,Bratislava,Abu Dhabi,4188408.8709134106
+Turkey,United Arab Emirates,Ankara,Abu Dhabi,2645402.051688529
+Ukraine,United Arab Emirates,Kiev,Abu Dhabi,3542663.588127131
+United Arab Emirates,United Arab Emirates,Abu Dhabi,Abu Dhabi,0
+Vietnam,United Arab Emirates,Ha Noi,Abu Dhabi,5267950.600359151
+Croatia,United Arab Emirates,Zagreb,Abu Dhabi,4164351.483645918
+Malaysia,United Arab Emirates,Kuala Lumpur,Abu Dhabi,5600475.056363487
+"China, Republic of (Taiwan)",United Arab Emirates,Taipei,Abu Dhabi,6705429.565790069
+New Zealand,United Arab Emirates,Wellington,Abu Dhabi,14280668.178570434
+Serbia,United Arab Emirates,Belgrade,Abu Dhabi,3796045.198998528
+Australia,Vietnam,Canberra,Ha Noi,7758504.613471347
+Brazil,Vietnam,Brasilia,Ha Noi,17207601.607037436
+Canada,Vietnam,Ottawa,Ha Noi,12638660.393521091
+Czech Republic,Vietnam,Prague,Ha Noi,8337970.313412521
+Finland,Vietnam,Helsinki,Ha Noi,7499846.170113405
+France,Vietnam,Paris,Ha Noi,9207165.092459379
+Germany,Vietnam,Berlin,Ha Noi,8338528.793809519
+Hungary,Vietnam,Budapest,Ha Noi,8073694.203201438
+Italy,Vietnam,Rome,Ha Noi,8740146.234322587
+"Korea, South",Vietnam,Soul,Ha Noi,2744682.588278012
+Netherlands,Vietnam,Amsterdam,Ha Noi,8890638.886348985
+Philippines,Vietnam,Manila,Ha Noi,1753615.5836838207
+Poland,Vietnam,Warsaw,Ha Noi,7837489.578903961
+Russia,Vietnam,Moscow,Ha Noi,6741278.63356217
+Saudi Arabia,Vietnam,Riyadh,Ha Noi,6027630.510896379
+Sweden,Vietnam,Stockholm,Ha Noi,7892768.283876752
+Thailand,Vietnam,Bangkok,Ha Noi,990769.0464907242
+United Kingdom,Vietnam,London,Ha Noi,9242418.39565404
+United States,Vietnam,Washington,Ha Noi,13358353.373550136
+Bulgaria,Vietnam,Sofia,Ha Noi,7856792.570019645
+India,Vietnam,Ni Dilli,Ha Noi,3003548.4360686243
+Indonesia,Vietnam,Jakarta,Ha Noi,3030934.9869156964
+Ireland,Vietnam,Dublin,Ha Noi,9519426.673083851
+Japan,Vietnam,Tokyo,Ha Noi,3676552.540524976
+Norway,Vietnam,Oslo,Ha Noi,8281780.220582425
+Romania,Vietnam,Bucharest,Ha Noi,7601665.907215625
+Slovakia,Vietnam,Bratislava,Ha Noi,8199578.95689436
+Turkey,Vietnam,Ankara,Ha Noi,7114886.660800861
+Ukraine,Vietnam,Kiev,Ha Noi,7202745.298235108
+United Arab Emirates,Vietnam,Abu Dhabi,Ha Noi,5267950.600359151
+Vietnam,Vietnam,Ha Noi,Ha Noi,0
+Croatia,Vietnam,Zagreb,Ha Noi,8349453.070802857
+Malaysia,Vietnam,Kuala Lumpur,Ha Noi,2038982.4184092022
+"China, Republic of (Taiwan)",Vietnam,Taipei,Ha Noi,1658581.085686098
+New Zealand,Vietnam,Wellington,Ha Noi,9921119.493920183
+Serbia,Vietnam,Belgrade,Ha Noi,8030028.337090574
+Australia,Croatia,Canberra,Zagreb,15970865.19485168
+Brazil,Croatia,Brasilia,Zagreb,9377297.343510354
+Canada,Croatia,Ottawa,Zagreb,6706470.626957284
+Czech Republic,Croatia,Prague,Zagreb,490063.31480634684
+Finland,Croatia,Helsinki,Zagreb,1705250.5820091765
+France,Croatia,Paris,Zagreb,1081552.1631636177
+Germany,Croatia,Berlin,Zagreb,771327.0120931404
+Hungary,Croatia,Budapest,Zagreb,304430.93997232075
+Italy,Croatia,Rome,Zagreb,516660.7596598393
+"Korea, South",Croatia,Soul,Zagreb,8480863.544884618
+Netherlands,Croatia,Amsterdam,Zagreb,1087534.2549413503
+Philippines,Croatia,Manila,Zagreb,9978213.313473983
+Poland,Croatia,Warsaw,Zagreb,807608.0320311378
+Russia,Croatia,Moscow,Zagreb,1871054.926122891
+Saudi Arabia,Croatia,Riyadh,Zagreb,3619310.691643423
+Sweden,Croatia,Stockholm,Zagreb,1512650.1712684566
+Thailand,Croatia,Bangkok,Zagreb,8507615.713362183
+United Kingdom,Croatia,London,Zagreb,1338225.4430194532
+United States,Croatia,Washington,Zagreb,7240161.5761784855
+Bulgaria,Croatia,Sofia,Zagreb,679643.7547798755
+India,Croatia,Ni Dilli,Zagreb,5609110.969207711
+Indonesia,Croatia,Jakarta,Zagreb,10578069.401241228
+Ireland,Croatia,Dublin,Zagreb,1799624.3082384367
+Japan,Croatia,Tokyo,Zagreb,9360810.268142946
+Norway,Croatia,Oslo,Zagreb,1608206.0842293804
+Romania,Croatia,Bucharest,Zagreb,809397.4382502171
+Slovakia,Croatia,Bratislava,Zagreb,277083.38782824704
+Turkey,Croatia,Ankara,Zagreb,1520387.8475261645
+Ukraine,Croatia,Kiev,Zagreb,1195204.7000855606
+United Arab Emirates,Croatia,Abu Dhabi,Zagreb,4164351.483645918
+Vietnam,Croatia,Ha Noi,Zagreb,8349453.070802857
+Croatia,Croatia,Zagreb,Zagreb,0
+Malaysia,Croatia,Kuala Lumpur,Zagreb,9436080.921545696
+"China, Republic of (Taiwan)",Croatia,Taipei,Zagreb,9157689.901075948
+New Zealand,Croatia,Wellington,Zagreb,18261137.57354272
+Serbia,Croatia,Belgrade,Zagreb,370626.61287004815
+Australia,Malaysia,Canberra,Kuala Lumpur,6535011.338870425
+Brazil,Malaysia,Brasilia,Kuala Lumpur,16425743.798708623
+Canada,Malaysia,Ottawa,Kuala Lumpur,14623567.596358629
+Czech Republic,Malaysia,Prague,Kuala Lumpur,9554758.50899328
+Finland,Malaysia,Helsinki,Kuala Lumpur,8984222.580784757
+France,Malaysia,Paris,Kuala Lumpur,10436406.955850922
+Germany,Malaysia,Berlin,Kuala Lumpur,9626564.830473606
+Hungary,Malaysia,Budapest,Kuala Lumpur,9205492.467474833
+Italy,Malaysia,Rome,Kuala Lumpur,9718519.701329313
+"Korea, South",Malaysia,Soul,Kuala Lumpur,4616329.3746872945
+Netherlands,Malaysia,Amsterdam,Kuala Lumpur,10202069.100886974
+Philippines,Malaysia,Manila,Kuala Lumpur,2469281.8961179517
+Poland,Malaysia,Warsaw,Kuala Lumpur,9107013.75221934
+Russia,Malaysia,Moscow,Kuala Lumpur,8134709.931613935
+Saudi Arabia,Malaysia,Riyadh,Kuala Lumpur,6347908.062528618
+Sweden,Malaysia,Stockholm,Kuala Lumpur,9355295.533218872
+Thailand,Malaysia,Bangkok,Kuala Lumpur,1184143.7144337539
+United Kingdom,Malaysia,London,Kuala Lumpur,10555186.607405448
+United States,Malaysia,Washington,Kuala Lumpur,15352480.872785265
+Bulgaria,Malaysia,Sofia,Kuala Lumpur,8832285.072844954
+India,Malaysia,Ni Dilli,Kuala Lumpur,3840065.2562185773
+Indonesia,Malaysia,Jakarta,Kuala Lumpur,1185297.087682954
+Ireland,Malaysia,Dublin,Kuala Lumpur,10912416.098873459
+Japan,Malaysia,Tokyo,Kuala Lumpur,5328834.346762849
+Norway,Malaysia,Oslo,Kuala Lumpur,9767973.787551947
+Romania,Malaysia,Bucharest,Kuala Lumpur,8631659.909610463
+Slovakia,Malaysia,Bratislava,Kuala Lumpur,9354357.730940636
+Turkey,Malaysia,Ankara,Kuala Lumpur,7998232.631022486
+Ukraine,Malaysia,Kiev,Kuala Lumpur,8423092.041984202
+United Arab Emirates,Malaysia,Abu Dhabi,Kuala Lumpur,5600475.056363487
+Vietnam,Malaysia,Ha Noi,Kuala Lumpur,2038982.4184092022
+Croatia,Malaysia,Zagreb,Kuala Lumpur,9436080.921545696
+Malaysia,Malaysia,Kuala Lumpur,Kuala Lumpur,0
+"China, Republic of (Taiwan)",Malaysia,Taipei,Kuala Lumpur,3224221.95024769
+New Zealand,Malaysia,Wellington,Kuala Lumpur,8850538.390176268
+Serbia,Malaysia,Belgrade,Kuala Lumpur,9077282.483231148
+Australia,"China, Republic of (Taiwan)",Canberra,Taipei,7321648.404980176
+Brazil,"China, Republic of (Taiwan)",Brasilia,Taipei,18525481.352891658
+Canada,"China, Republic of (Taiwan)",Ottawa,Taipei,12005500.399084719
+Czech Republic,"China, Republic of (Taiwan)",Prague,Taipei,9031576.157447208
+Finland,"China, Republic of (Taiwan)",Helsinki,Taipei,7969504.8008197285
+France,"China, Republic of (Taiwan)",Paris,Taipei,9837033.294440612
+Germany,"China, Republic of (Taiwan)",Berlin,Taipei,8964121.697614184
+Hungary,"China, Republic of (Taiwan)",Budapest,Taipei,8859543.712303123
+Italy,"China, Republic of (Taiwan)",Rome,Taipei,9614541.188714983
+"Korea, South","China, Republic of (Taiwan)",Soul,Taipei,1491309.2489226307
+Netherlands,"China, Republic of (Taiwan)",Amsterdam,Taipei,9459520.464014176
+Philippines,"China, Republic of (Taiwan)",Manila,Taipei,1158809.3401674286
+Poland,"China, Republic of (Taiwan)",Warsaw,Taipei,8512000.565862827
+Russia,"China, Republic of (Taiwan)",Moscow,Taipei,7363344.437115054
+Saudi Arabia,"China, Republic of (Taiwan)",Riyadh,Taipei,7435780.578079012
+Sweden,"China, Republic of (Taiwan)",Stockholm,Taipei,8362214.746622272
+Thailand,"China, Republic of (Taiwan)",Bangkok,Taipei,2528294.2488568733
+United Kingdom,"China, Republic of (Taiwan)",London,Taipei,9788750.254649214
+United States,"China, Republic of (Taiwan)",Washington,Taipei,12665390.621565275
+Bulgaria,"China, Republic of (Taiwan)",Sofia,Taipei,8783547.879672047
+India,"China, Republic of (Taiwan)",Ni Dilli,Taipei,4387992.158344036
+Indonesia,"China, Republic of (Taiwan)",Jakarta,Taipei,3817171.5682859807
+Ireland,"China, Republic of (Taiwan)",Dublin,Taipei,9965848.474084815
+Japan,"China, Republic of (Taiwan)",Tokyo,Taipei,2116157.7616347107
+Norway,"China, Republic of (Taiwan)",Oslo,Taipei,8699609.495709315
+Romania,"China, Republic of (Taiwan)",Bucharest,Taipei,8500502.959495105
+Slovakia,"China, Republic of (Taiwan)",Bratislava,Taipei,8957736.726768447
+Turkey,"China, Republic of (Taiwan)",Ankara,Taipei,8152540.650693899
+Ukraine,"China, Republic of (Taiwan)",Kiev,Taipei,7963754.967018385
+United Arab Emirates,"China, Republic of (Taiwan)",Abu Dhabi,Taipei,6705429.565790069
+Vietnam,"China, Republic of (Taiwan)",Ha Noi,Taipei,1658581.085686098
+Croatia,"China, Republic of (Taiwan)",Zagreb,Taipei,9157689.901075948
+Malaysia,"China, Republic of (Taiwan)",Kuala Lumpur,Taipei,3224221.95024769
+"China, Republic of (Taiwan)","China, Republic of (Taiwan)",Taipei,Taipei,0
+New Zealand,"China, Republic of (Taiwan)",Wellington,Taipei,9202326.19538939
+Serbia,"China, Republic of (Taiwan)",Belgrade,Taipei,8889687.019566469
+Australia,New Zealand,Canberra,Wellington,2327656.057742822
+Brazil,New Zealand,Brasilia,Wellington,12313992.524393795
+Canada,New Zealand,Ottawa,Wellington,14498959.621164048
+Czech Republic,New Zealand,Prague,Wellington,18230723.155630164
+Finland,New Zealand,Helsinki,Wellington,17096168.127139956
+France,New Zealand,Paris,Wellington,19006521.936682787
+Germany,New Zealand,Berlin,Wellington,18158879.856434636
+Hungary,New Zealand,Budapest,Wellington,17994207.84927163
+Italy,New Zealand,Rome,Wellington,18563134.819760144
+"Korea, South",New Zealand,Soul,Wellington,10031105.665826872
+Netherlands,New Zealand,Amsterdam,Wellington,18585590.557779625
+Philippines,New Zealand,Manila,Wellington,8322392.0203731395
+Poland,New Zealand,Warsaw,Wellington,17712520.56308696
+Russia,New Zealand,Moscow,Wellington,16565523.433591483
+Saudi Arabia,New Zealand,Riyadh,Wellington,14926575.345127292
+Sweden,New Zealand,Stockholm,Wellington,17461631.7951904
+Thailand,New Zealand,Bangkok,Wellington,9755886.888355758
+United Kingdom,New Zealand,London,Wellington,18832493.986266218
+United States,New Zealand,Washington,Wellington,14099394.615741987
+Bulgaria,New Zealand,Sofia,Wellington,17682781.833543114
+India,New Zealand,Ni Dilli,Wellington,12661695.024634643
+Indonesia,New Zealand,Jakarta,Wellington,7727861.74753332
+Ireland,New Zealand,Dublin,Wellington,18693894.773844972
+Japan,New Zealand,Tokyo,Wellington,9281514.024150535
+Norway,New Zealand,Oslo,Wellington,17690557.722106796
+Romania,New Zealand,Bucharest,Wellington,17473676.489967946
+Slovakia,New Zealand,Bratislava,Wellington,18119867.42562088
+Turkey,New Zealand,Ankara,Wellington,16842371.722626865
+Ukraine,New Zealand,Kiev,Wellington,17118959.829192866
+United Arab Emirates,New Zealand,Abu Dhabi,Wellington,14280668.178570434
+Vietnam,New Zealand,Ha Noi,Wellington,9921119.493920183
+Croatia,New Zealand,Zagreb,Wellington,18261137.57354272
+Malaysia,New Zealand,Kuala Lumpur,Wellington,8850538.390176268
+"China, Republic of (Taiwan)",New Zealand,Taipei,Wellington,9202326.19538939
+New Zealand,New Zealand,Wellington,Wellington,0
+Serbia,New Zealand,Belgrade,Wellington,17917736.492345296
+Australia,Serbia,Canberra,Belgrade,15612049.571532307
+Brazil,Serbia,Brasilia,Belgrade,9639654.49939381
+Canada,Serbia,Ottawa,Belgrade,7053742.667067952
+Czech Republic,Serbia,Prague,Belgrade,741306.0290969292
+Finland,Serbia,Helsinki,Belgrade,1732982.5249306697
+France,Serbia,Paris,Belgrade,1449513.7867865253
+Germany,Serbia,Berlin,Belgrade,1002261.7631835372
+Hungary,Serbia,Budapest,Belgrade,317771.0300014277
+Italy,Serbia,Rome,Belgrade,725041.9317253436
+"Korea, South",Serbia,Soul,Belgrade,8273772.114472917
+Netherlands,Serbia,Amsterdam,Belgrade,1418171.0049562799
+Philippines,Serbia,Manila,Belgrade,9678991.325352421
+Poland,Serbia,Warsaw,Belgrade,827985.1118278749
+Russia,Serbia,Moscow,Belgrade,1711643.0559456754
+Saudi Arabia,Serbia,Riyadh,Belgrade,3262032.0430170167
+Sweden,Serbia,Stockholm,Belgrade,1622398.6755596686
+Thailand,Serbia,Bangkok,Belgrade,8162363.149781458
+United Kingdom,Serbia,London,Belgrade,1693079.6897450762
+United States,Serbia,Washington,Belgrade,7597325.317874984
+Bulgaria,Serbia,Sofia,Belgrade,328275.37315133685
+India,Serbia,Ni Dilli,Belgrade,5256749.393011613
+Indonesia,Serbia,Jakarta,Belgrade,10214998.677689454
+Ireland,Serbia,Dublin,Belgrade,2150639.5170679335
+Japan,Serbia,Tokyo,Belgrade,9191060.00457373
+Norway,Serbia,Oslo,Belgrade,1800308.4704536519
+Romania,Serbia,Bucharest,Belgrade,445631.1118104639
+Slovakia,Serbia,Bratislava,Belgrade,451685.2577498586
+Turkey,Serbia,Ankara,Belgrade,1151023.421522568
+Ukraine,Serbia,Kiev,Belgrade,975093.7680334989
+United Arab Emirates,Serbia,Abu Dhabi,Belgrade,3796045.198998528
+Vietnam,Serbia,Ha Noi,Belgrade,8030028.337090574
+Croatia,Serbia,Zagreb,Belgrade,370626.61287004815
+Malaysia,Serbia,Kuala Lumpur,Belgrade,9077282.483231148
+"China, Republic of (Taiwan)",Serbia,Taipei,Belgrade,8889687.019566469
+New Zealand,Serbia,Wellington,Belgrade,17917736.492345296
+Serbia,Serbia,Belgrade,Belgrade,0
