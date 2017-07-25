@@ -24,8 +24,8 @@ d_codes <- left_join(d, geo_codes, by = c("country" = "countries")) %>%
   left_join(countries) %>%
   distinct(country, country_code)
 
-#write_csv(d_codes, "../../data/supplementary_data/all_google_countries.csv")
-g_cities = read_csv("../../data/supplementary_data/all_google_countries.csv")
+#write_csv(d_codes, "../../data/supplementary_data/cultural_sim_measures/geo/all_google_countries.csv")
+g_cities = read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_countries.csv")
 
 
 ## get capital cities
@@ -46,8 +46,8 @@ g_cities_data <- g_cities %>%
   select(-capital, -pop) %>%
   rename(capital_name = name)
 
-#write_csv(g_cities_data, "../../data/supplementary_data/all_google_capitals.csv")
-g_capitals <- read_csv("../../data/supplementary_data/all_google_capitals.csv")
+#write_csv(g_cities_data, "../../data/supplementary_data/cultural_sim_measures/geo/all_google_capitals.csv")
+g_capitals <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_capitals.csv")
 
 ## get pairwise capital dist
 g_dists <- geosphere::distm(cbind(g_capitals$long, g_capitals$lat)) # in meters
@@ -66,6 +66,6 @@ all_dists_with_countries = all_dists %>%
          country2 = country.y) %>%
   select(country1, country2, city1, city2, dist_meters)
 
-write_csv(all_dists_with_countries, "../../data/supplementary_data/all_google_capital_dists.csv")
+write_csv(all_dists_with_countries, "../../data/cultural_sim_measures/geo/supplementary_data/all_google_capital_dists.csv")
   
   
