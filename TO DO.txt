@@ -1,3 +1,12 @@
+# TO DO 7/26
+(1) redo distance measures to include full set of countries
+(2) revert back to the old R so can run keras
+(3) debug pairwise sim code for tree
+(4) run pairwise sim code for tree
+(5) predict sims with sists
+
+
+
 TO DO:
 - push to github
 - redo movers distances (sampled and unsampled)

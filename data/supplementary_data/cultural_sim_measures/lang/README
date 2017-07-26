@@ -1,0 +1,12 @@
+These are a subset from this repository: https://github.com/ddediu/lgfam-newick/blob/master/paper/family-trees-with-brlength.pdf
+
+From this paper:
+https://github.com/ddediu/lgfam-newick/blob/master/paper/family-trees-with-brlength.pdf
+
+From these folder: https://github.com/ddediu/lgfam-newick/tree/master/input/distances
+
+The ASJP ones are missing (unable to straightfoward reproduce from code)
+
+geo_cepii: http://www.cepii.fr/CEPII/en/bdd_modele/download.asp?id=6
+
+languages_countries.csv is from Gary

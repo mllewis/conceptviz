@@ -8,7 +8,7 @@ library(rlist)
 library(data.table)
 
 # specify params
-MIN_NUM_PARTICIPANTS_PER_COUNTRY <- 1500
+MIN_NUM_PARTICIPANTS_PER_COUNTRY <- 100
 
 # get names for country codes
 countries <- read.csv("../../data/supplementary_data/iso_3166_2_countries.csv") %>%
@@ -64,6 +64,7 @@ write_drawings_to_feather <- function(name){
     data.table() %>%
     group_by(key_id) %>%
     do(data.table(transpose(data.frame(.$drawing)), # optimize here
+                        country_code = as.character(.$country_code[1]),
                         country = as.character(.$country[1]), 
                         key_id = as.character(.$key_id[1]),
                         word = as.character(.$word[1]),
@@ -80,7 +81,7 @@ write_drawings_to_feather <- function(name){
                                                     function(m){unlist(lapply(seq_along(m), 
                                                                              function(x){rep(x, m[x])}))}))))
   # write to feather
-  feather::write_feather(dc_coords_with_strokes, paste0("../../data/raw_data/feathers/", 
+  feather::write_feather(dc_coords_with_strokes, paste0("../../data/raw_data/feathers/atleast_100/", 
                                                         gsub(" ", "", dc_coords_with_strokes$word[1], fixed = TRUE)
 , ".txt"))
 }

@@ -19,6 +19,7 @@
 *rsconnect/
 *.RData
 *figure-html/
+*misc/lgfam-newick/*
 
 
 

@@ -49,7 +49,7 @@ This is what the drawings look like:
 ITEM <- "tree"
 N_DRAWINGS <- 30
 
-ex <- read_feather(paste0("../../data/raw_data/feathers/", ITEM, ".txt"))
+ex <- read_feather(paste0("../../data/raw_data/feathers/atleast_1500/", ITEM, ".txt"))
 
 ex %>%
   filter(key_id %in% sample(unique(ex$key_id), N_DRAWINGS)) %>% # sample N
