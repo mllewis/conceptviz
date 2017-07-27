@@ -1,1 +1,3 @@
-commes from: http://cow.dss.ucdavis.edu/data-sets/bilateral-trade
+trade data comes from: http://cow.dss.ucdavis.edu/data-sets/bilateral-trade
+
+GDP data comes from csv version of CIA factbook: https://github.com/thewiremonkey/factbook.csv [table 2001]

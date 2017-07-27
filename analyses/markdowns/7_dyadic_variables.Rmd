@@ -1,0 +1,98 @@
+---
+title: Explore country dyadic variables
+subtitle: 
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    number_sections: false
+    theme: cerulean
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(knitr)
+library(rmarkdown)
+library(langcog)
+library(tidyverse)
+library(stringr)
+library(purrr)
+library(corrr)
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F,  cache = F, fig.height = 4)
+``` 
+
+Read in files
+```{r}
+
+geo <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_geo_dists.csv")
+lang <- read_csv("../../data/supplementary_data/cultural_sim_measures/lang/all_google_lang_dists.csv")
+events <- read_csv("../../data/supplementary_data/cultural_sim_measures/events/all_google_event_dists.csv")
+
+# noth these dyadic pairs are ordered and have pairs for both, e.g, US-GB and GB-US
+```
+
+```{r}
+
+all_dyadic <- geo %>%
+  full_join(events)  %>%
+    mutate_if(is.numeric, funs(log)) %>% # take log of all non-lang measures
+    full_join(lang) 
+  
+
+all_dyadic %>%
+  gather("measure", "value", 3:12)  %>%
+ ggplot(, aes(x = value)) +
+  geom_density(aes(fill = value)) +
+  facet_wrap(~measure, scales = "free")
+
+corrs <- correlate(all_dyadic %>% select(-1, -2), use = "complete.obs")  %>%
+  shave()
+
+rplot(corrs) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ gather(corrs, 
+       "variable1", "value",-1) %>%
+  ungroup() %>%
+  arrange(-value) %>%
+  as.data.frame()
+```
+
+
+Just the variables we care about
+```{r}
+
+all_dyadic <- geo %>%
+  full_join(events)  %>%
+  mutate_if(is.numeric, funs(log)) %>% # take log of all non-lang measures
+  full_join(lang) %>%
+  select(-capital_dist_meters, -n_events_all, -n_events_positive, -normalized_n_events_positive, -mean_imports_dollars)
+  
+
+all_dyadic %>%
+  gather("measure", "value", 3:12)  %>%
+ ggplot(aes(x = value)) +
+  geom_density(aes(fill = value)) +
+  facet_wrap(~measure, scales = "free")
+
+corrs <- correlate(all_dyadic %>% select(-1, -2), use = "complete.obs")  %>%
+  shave()
+
+rplot(corrs) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ gather(corrs, 
+       "variable1", "value",-1) %>%
+  ungroup() %>%
+  arrange(-value) %>%
+  as.data.frame()
+```

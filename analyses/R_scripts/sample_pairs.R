@@ -15,7 +15,7 @@ IMAGENET_SIZE <- 224
 N_INTERPOLATE <- 1000
 N_SAMPLES_PER_COUNTRY_PAIRS <- 20
 LAYER <- 'fc2'
-CURRENT_ROW  <- 1
+CURRENT_ROW  <- nrow(read_csv(WRITE_PATH)) # check this
 
 ##### FUNCTIONS ######
 get_pairwise_similarities <- function(country1, country2, loop_num, total_loops, d, model,
@@ -42,7 +42,8 @@ get_pairwise_similarities <- function(country1, country2, loop_num, total_loops,
   similarity <- get_sim(mat_1, mat_2, imagenet_size, model)
 
   # APPEND TO CSV
-  write_csv(data.frame(loop_num, country1, country2, key_id_1, key_id_2, similarity), append = TRUE, write_path)
+  write_csv(data.frame(loop_num, country1, country2, key_id_1, key_id_2, similarity), 
+            append = TRUE, write_path)
   
   }
 

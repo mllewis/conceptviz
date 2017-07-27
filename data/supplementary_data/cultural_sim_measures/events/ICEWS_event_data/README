@@ -1,3 +1,5 @@
 This came from: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/28075
 
 used in Hannah Wallach IR paper
+
+pop data comes from csv version of CIA factbook: https://github.com/thewiremonkey/factbook.csv [table 2119]
