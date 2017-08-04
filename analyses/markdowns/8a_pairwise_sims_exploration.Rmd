@@ -55,15 +55,15 @@ There are 8 that are NAs
 ```{r}
 ex <- read_feather(paste0("../../data/raw_data/feathers/atleast_100/", ITEM, ".txt"))
 
-ex %>% 
-  filter(key_id %in% nas$key_id_1) %>%
+m = ex %>% 
+  #filter(key_id %in% nas$key_id_1) %>%
+  filter(key_id == "4504308487815168") %>%
   ggplot(aes(x = x, y = -y, color = country, alpha = recognized)) +
   ggtitle(ITEM)+
   facet_wrap(~key_id) +
   geom_point() +
   geom_path(aes(group = stroke_num)) +
   theme_bw()
-
 ```
 
 ```{r}

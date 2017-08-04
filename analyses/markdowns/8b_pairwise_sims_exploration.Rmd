@@ -24,6 +24,9 @@ library(purrr)
 library(corrr)
 library(countrycode)
 library(ggjoy)
+library(feather)
+library(forcats)
+library(ggdendro)
 
 opts_chunk$set(echo = T, message = F, warning = F, 
                error = F, tidy = F, cache = F, fig.height = 4)
@@ -48,8 +51,8 @@ tree_big = tree %>%
   ungroup() %>%
   count(country_code_1)%>%
   arrange(-n)%>%
-  as.data.frame() 
-  #slice(1:34)
+  as.data.frame()   %>%
+  slice(1:34)
 
 kable(tree_big)
 ```
@@ -59,76 +62,6 @@ Remove NAs- very few, these come from 8 drawings (not sure why)
 tree_clean <- tree %>%
   filter(!is.na(cosine)) %>%
   filter(country_code_1 %in% tree_big$country_code_1 & country_code_2 %in%   tree_big$country_code_1)
-```
-
-```{r}
-get_unique_relation_id <- function (x, y){
-  pairs = c(x, y)
-  ordered = order(pairs)
-  paste0(pairs[ordered[1]], pairs[ordered[2]])
-}
-
-tree_means <- tree_clean %>%
-  group_by(country_code_1, country_code_2) %>%
-  summarize(mean_cosine = mean(cosine),
-            sd = sd(cosine),
-            norm_mean = mean_cosine/sd) %>%
-  rowwise() %>%
-  mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2)) %>%
-  group_by(all_codes)%>%
-  slice(1) %>%
-  ungroup()%>%
-  mutate(country_name_1 = as.factor(countrycode(country_code_1, "iso2c","country.name")),
-         country_name_2 = as.factor(countrycode(country_code_2, "iso2c","country.name")),
-         country_names = paste0(country_name_1,"_", country_name_2),
-         continent_name_1 = as.factor(countrycode(country_code_1, 'iso2c', 'continent')),
-         continent_name_2 = as.factor(countrycode(country_code_2, 'iso2c', 'continent')),
-         cont_order_1 = unclass(continent_name_1) %>% as.numeric,
-         cont_order_2 = unclass(continent_name_2) %>% as.numeric) %>%
-  select(-country_code_1, -country_code_2, -continent_name_1, -continent_name_2) %>%
-  arrange(-mean_cosine)
-```
-
-
-## Similarity distributions by country
-Distribution of mean country-wise similarities: Looks to be correlation between mean and varaince. 
-```{r, fig.height = 6}
-tree_clean %>%
-  ungroup() %>%
-  select(mean_cosine, country_name_1, country_name_2) %>%
-  gather("country", "country_name", 2:3) %>%
-  select(-country) %>%
-  ggplot(aes(x = mean_cosine, y = reorder(country_name, mean_cosine))) + 
-  geom_joy(scale = 2, aes(color = country_name), alpha = .3, size = 1) +
-  theme_joy(font_size = 13, grid = T) + 
-  theme(axis.title.y = element_blank(),
-        legend.position = "none")
-
-tree_clean %>%
-  ungroup() %>%
-  select(mean_cosine, sd, country_name_1, country_name_2) %>%
-  gather("country", "country_name", 3:4) %>%
-  select(-country) %>%
-  ggplot(aes(x = mean_cosine, y = reorder(country_name, sd))) + 
-  geom_joy(scale = 2, aes(color = country_name), alpha = .3, size = 1) +
-  theme_joy(font_size = 13, grid = T) + 
-  theme(axis.title.y = element_blank(),
-        legend.position = "none")
-
-tree_clean  %>%
-  ungroup() %>%
-  select(cosine, country_code_1, country_code_2) %>%
-  gather("country", "country_name", 2:3) %>%
-  select(-country) %>%
-  group_by(country_name) %>%
-  summarize(mean_cosine = mean(cosine),
-            sd_cosine = sd(cosine),
-            norm_cosine = mean_cosine/sd_cosine)
-  ggplot(aes(x = norm_mean, y = reorder(country_code, norm_mean))) + 
-  geom_joy(scale = 2, aes(color = country_name), alpha = .3, size = 1) +
-  theme_joy(font_size = 13, grid = T) + 
-  theme(axis.title.y = element_blank(),
-        legend.position = "none")
 ```
 
 ```{r}
@@ -172,13 +105,59 @@ all_measures <- across_means %>%
 correlate(all_measures %>% select(-1),
                    use = "complete.obs")  %>%
   kable()
+```
 
+## compare country pairwise
+```{r}
+get_unique_relation_id <- function (x, y){
+  pairs = c(x, y)
+  ordered = order(pairs)
+  paste0(pairs[ordered[1]], pairs[ordered[2]])
+}
 
+within_country <- tree_clean %>%
+  filter(country_code_1 == country_code_2) %>%
+  group_by(country_code_1) %>%
+  summarize(country_sd = log(sd(cosine)),
+            country_mean = mean(cosine)) %>%
+  rename(country_code = country_code_1) %>%
+  select(country_code, country_sd, country_mean) %>%
+  arrange(-country_sd)
+
+pairwise_means <- tree_clean %>%
+  left_join(within_country, by = c("country_code_1" = "country_code" )) %>%
+  rename(country_sd_1 = country_sd,
+         country_mean_1 = country_mean) %>%
+  left_join(within_country, by = c("country_code_2" = "country_code" )) %>%
+  rename(country_sd_2 = country_sd,
+         country_mean_2 = country_mean) %>%
+  group_by(country_code_1, country_code_2) %>%
+  summarize(mean_cosine = mean(cosine),
+            sd = sd(cosine),
+            norm_mean = mean_cosine/mean(c(country_sd_1[1], country_sd_2[1])),
+            norm_mean2 = mean_cosine/sum(c(country_sd_1[1], country_sd_2[1])),
+            norm_mean3 = mean_cosine/country_sd_1[1],
+            norm_mean4 = mean_cosine/country_sd_2[1],
+            norm_mean5 = mean_cosine/mean(c(country_mean_1[1], country_mean_2[1])),
+            norm_mean6 = mean_cosine/sum(c(country_mean_1[1], country_mean_2[1])),
+            norm_mean7 = mean_cosine/country_mean_1[1],
+            norm_mean8 = mean_cosine/country_mean_2[1]) %>%
+  rowwise() %>%
+  mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2)) %>%
+  mutate(country_name_1 = as.factor(countrycode(country_code_1, "iso2c","country.name")),
+         country_name_2 = as.factor(countrycode(country_code_2, "iso2c","country.name")),
+         country_names = paste0(country_name_1, "_", country_name_2),
+         continent_name_1 = countrycode(country_code_1, 'iso2c', 'continent'),
+         continent_name_2 = countrycode(country_code_2, 'iso2c', 'continent')) %>%
+    ungroup() %>%
+    mutate(cont_order_1 = as.factor(continent_name_1) %>% as.numeric,
+         cont_order_2 = as.factor(continent_name_2) %>% as.numeric) %>%
+  select(-country_code_1, -country_code_2, -continent_name_1, -continent_name_2)
 ```
 
 Pairwise similarity:
 ```{r, fig.height = 6}
-tree_means_2 = tree_means %>%
+tree_means_2 = pairwise_means %>%
   mutate(country_name_3 = country_name_1,
          country_name_1 = country_name_2, 
          country_name_2 = country_name_3,
@@ -187,7 +166,7 @@ tree_means_2 = tree_means %>%
          cont_order_2 = cont_order_3) %>%
   select(-country_name_3, -cont_order_3)    
 
-all = tree_means %>%
+all = pairwise_means %>%
     bind_rows(tree_means_2) %>%
     mutate(country_name_1 = fct_reorder(country_name_1, cont_order_1), 
            country_name_2 = fct_reorder(country_name_2, cont_order_2)) 
@@ -195,7 +174,7 @@ all = tree_means %>%
 all %>%
   ggplot(aes(x = country_name_1, 
              y = country_name_2)) +
-  geom_raster(aes(fill = mean_cosine)) + 
+  geom_raster(aes(fill = norm_mean5)) + 
   scale_fill_continuous(low = "#ffffcc", high = "#800026") +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 45, 
@@ -204,6 +183,73 @@ all %>%
         axis.title = element_blank())
 
 ```
+
+```{r}
+all_countries <- unique(all$country_name_1)
+NUM_COUNTRIES <-  length(all_countries)
+
+m = matrix(nrow = NUM_COUNTRIES, ncol = NUM_COUNTRIES)
+
+for (i in 1:dim(all)[1]){
+  sim = unlist(all[i, "norm_mean5"])
+  x = which(all_countries == unlist(all[i, "country_name_1"]))
+  y = which(all_countries == unlist(all[i, "country_name_2"]))
+  m[x,y] <- sim
+}
+
+colnames(m) = all_countries
+rownames(m) = all_countries
+ 
+# plot
+ggdendrogram(hclust(dist(m)), size = 2) +
+  ggtitle("all")
+
+``
+
+
+## Similarity distributions by country
+Distribution of mean country-wise similarities: Looks to be correlation between mean and varaince. 
+```{r, fig.height = 6}
+tree_clean %>%
+  ungroup() %>%
+  select(mean_cosine, country_name_1, country_name_2) %>%
+  gather("country", "country_name", 2:3) %>%
+  select(-country) %>%
+  ggplot(aes(x = mean_cosine, y = reorder(country_name, mean_cosine))) + 
+  geom_joy(scale = 2, aes(color = country_name), alpha = .3, size = 1) +
+  theme_joy(font_size = 13, grid = T) + 
+  theme(axis.title.y = element_blank(),
+        legend.position = "none")
+
+tree_clean %>%
+  ungroup() %>%
+  select(mean_cosine, sd, country_name_1, country_name_2) %>%
+  gather("country", "country_name", 3:4) %>%
+  select(-country) %>%
+  ggplot(aes(x = mean_cosine, y = reorder(country_name, sd))) + 
+  geom_joy(scale = 2, aes(color = country_name), alpha = .3, size = 1) +
+  theme_joy(font_size = 13, grid = T) + 
+  theme(axis.title.y = element_blank(),
+        legend.position = "none")
+
+tree_clean  %>%
+  ungroup() %>%
+  select(cosine, country_code_1, country_code_2) %>%
+  gather("country", "country_name", 2:3) %>%
+  select(-country) %>%
+  group_by(country_name) %>%
+  summarize(mean_cosine = mean(cosine),
+            sd_cosine = sd(cosine),
+            norm_cosine = mean_cosine/sd_cosine)
+  ggplot(aes(x = norm_mean, y = reorder(country_code, norm_mean))) + 
+  geom_joy(scale = 2, aes(color = country_name), alpha = .3, size = 1) +
+  theme_joy(font_size = 13, grid = T) + 
+  theme(axis.title.y = element_blank(),
+        legend.position = "none")
+```
+
+
+
 
 ```{r}
   tree_clean %>%
