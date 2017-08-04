@@ -20,7 +20,7 @@ countries <- read.csv("../../data/supplementary_data/iso_3166_2_countries.csv") 
   slice(1) # get one name per code
 
 # read in all file names
-file_list <- list.files("../../data/raw_data/simplified")
+file_list <- list.files("../../data/raw_data/simplified")[104]
 
 # read data, munge and write function
 write_drawings_to_feather <- function(name){
@@ -57,13 +57,14 @@ write_drawings_to_feather <- function(name){
           do(stroke_lengths = unlist(lapply(.$drawing, function(x) dim(x)[2]))) %>%
           ungroup() %>%
           mutate(mean_length = unlist(lapply(stroke_lengths, function(x) {mean(unlist(x))}))) %>%
-          cbind(dc_wide)
+          cbind(dc_wide) %>%
+          arrange(key_id) # these is necessary for binding below
 
   # get all data in long form
   dc_coords <- dc_strokes %>%
     data.table() %>%
     group_by(key_id) %>%
-    do(data.table(transpose(data.frame(.$drawing)), # optimize here
+    do(data.frame(t(as.matrix(data.frame(.$drawing))), # optimize here
                         country_code = as.character(.$country_code[1]),
                         country = as.character(.$country[1]), 
                         key_id = as.character(.$key_id[1]),
@@ -71,9 +72,9 @@ write_drawings_to_feather <- function(name){
                         recognized = as.character(.$recognized[1]),
                         n_strokes = .$n_strokes[1],
                         mean_length = .$mean_length[1])) %>%
-    bind_rows() %>%
-    rename(x = V1,
-           y = V2)
+    rename(x = X1,
+           y = X2) %>%
+    arrange(key_id) # these is necessary for binding below
 
   # bind in stroke numbers to long form
   dc_coords_with_strokes <- dc_coords %>%

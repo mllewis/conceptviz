@@ -25,6 +25,7 @@ library(tidyverse)
 library(stringr)
 library(purrr)
 library(corrr)
+library(countrycode)
 
 opts_chunk$set(echo = T, message = F, warning = F, 
                error = F, tidy = F,  cache = F, fig.height = 4)
@@ -32,25 +33,26 @@ opts_chunk$set(echo = T, message = F, warning = F,
 
 Read in files
 ```{r}
-
 geo <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_geo_dists.csv")
 lang <- read_csv("../../data/supplementary_data/cultural_sim_measures/lang/all_google_lang_dists.csv")
 events <- read_csv("../../data/supplementary_data/cultural_sim_measures/events/all_google_event_dists.csv")
-
-# noth these dyadic pairs are ordered and have pairs for both, e.g, US-GB and GB-US
+# note that none these dyadic pairs are ordered and have pairs for both, e.g, US-GB and GB-US
 ```
 
 ```{r}
-
 all_dyadic <- geo %>%
-  full_join(events)  %>%
-    mutate_if(is.numeric, funs(log)) %>% # take log of all non-lang measures
-    full_join(lang) 
-  
+  #full_join(events)  %>%
+  #mutate_if(is.numeric, funs(log)) %>% # take log of all non-lang measures
+  full_join(lang)%>%
+  select(-capital_dist_meters)
 
+dyadic <- write_csv(all_dyadic, "../../data/supplementary_data/cultural_sim_measures/all_dyadic_vars.csv") 
+
+
+  
 all_dyadic %>%
   gather("measure", "value", 3:12)  %>%
- ggplot(, aes(x = value)) +
+  ggplot(aes(x = value)) +
   geom_density(aes(fill = value)) +
   facet_wrap(~measure, scales = "free")
 
@@ -68,31 +70,118 @@ rplot(corrs) +
 ```
 
 
-Just the variables we care about
+Just the variables we care about: "normalized_n_events_positive"/"normalized_n_events_all" 
+"normalized_mean_imports_dollars"
+"wals_euclidean_dist"/"asjp_dist"             
+"centroid_dist_meters"            
 ```{r}
-
-all_dyadic <- geo %>%
+all_dyadic2 <- geo %>%
   full_join(events)  %>%
   mutate_if(is.numeric, funs(log)) %>% # take log of all non-lang measures
   full_join(lang) %>%
-  select(-capital_dist_meters, -n_events_all, -n_events_positive, -normalized_n_events_positive, -mean_imports_dollars)
+  select(-capital_dist_meters, -n_events_all, -n_events_positive, -mean_imports_dollars)
   
-
-all_dyadic %>%
-  gather("measure", "value", 3:12)  %>%
- ggplot(aes(x = value)) +
-  geom_density(aes(fill = value)) +
-  facet_wrap(~measure, scales = "free")
-
 corrs <- correlate(all_dyadic %>% select(-1, -2), use = "complete.obs")  %>%
   shave()
 
 rplot(corrs) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
- gather(corrs, 
+gather(corrs, 
        "variable1", "value",-1) %>%
   ungroup() %>%
   arrange(-value) %>%
-  as.data.frame()
+  as.data.frame() %>%
+  filter(!is.na(value)) %>%
+  kable()
+```
+
+## Scatterplots{.tabset}
+
+### events vs. imports
+```{r}
+all_dyadic2 = all_dyadic2 %>%
+  mutate(country_label = paste0(country_code_1, "-", country_code_2))
+
+ggplot(all_dyadic2, aes(x = normalized_n_events_all, y = normalized_mean_imports_dollars)) +
+  geom_label(aes(label = country_label))
+
+```
+
+distance
+```{r}
+
+all_dyadic2 = all_dyadic2 %>%
+  mutate(country_name_1 = countrycode(country_code_1, 'iso2c', 'country.name'),
+         country_name_2 = countrycode(country_code_2, 'iso2c', 'country.name'),
+         continent_name_1 = as.factor(countrycode(country_code_1, 'iso2c', 'continent')),
+         continent_name_2 = as.factor(countrycode(country_code_2, 'iso2c', 'continent')),
+         cont_order_1 = unclass(continent_name_1) %>% as.numeric,
+         cont_order_2 = unclass(continent_name_2) %>% as.numeric) 
+
+
+
+all_dyadic2 %>%
+  ggplot(aes(x = fct_reorder(country_name_1, cont_order_1), y = fct_reorder(country_name_2, cont_order_2))) +
+  #facet_wrap(~word, ncol = 4, scales = "free") +
+  geom_raster(aes(fill = centroid_dist_meters)) +
+  scale_fill_gradientn(colours = terrain.colors(10)) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust = 1, vjust =.25, size = 4),
+        axis.text.y = element_text(size = 4),
+        axis.title = element_blank())
+```
+
+## events - something weird is going on here (no symmetrical)
+```{r}
+all_dyadic2 %>%
+  ggplot(aes(x = fct_reorder(country_name_1, cont_order_1), y = fct_reorder(country_name_2, cont_order_2))) +
+  geom_raster(aes(fill = normalized_n_events_positive)) +
+  scale_fill_gradientn(colours = terrain.colors(10)) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust = 1, vjust =.25, size = 4),
+        axis.text.y = element_text(size = 4),
+        axis.title = element_blank())
+```
+
+## imports - something weird is going on here
+```{r}
+all_dyadic2 %>%
+  ggplot(aes(x = fct_reorder(country_name_1, cont_order_1), y = fct_reorder(country_name_2, cont_order_2))) +
+  geom_raster(aes(fill = normalized_mean_imports_dollars)) +
+  scale_fill_gradientn(colours = terrain.colors(10)) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust = 1, vjust =.25, size = 4),
+        axis.text.y = element_text(size = 4),
+        axis.title = element_blank())
+```
+
+## wals_euclidean_dist
+```{r}
+all_dyadic2 %>%
+  ggplot(aes(x = fct_reorder(country_name_1, cont_order_1), y = fct_reorder(country_name_2, cont_order_2))) +
+  geom_raster(aes(fill = wals_euclidean_dist)) +
+  scale_fill_gradientn(colours = terrain.colors(10)) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust = 1, vjust =.25, size = 4),
+        axis.text.y = element_text(size = 4),
+        axis.title = element_blank())
+```
+
+
+## asjp_dist
+```{r}
+all_dyadic2 %>%
+  ggplot(aes(x = fct_reorder(country_name_1, cont_order_1), y = fct_reorder(country_name_2, cont_order_2))) +
+  geom_raster(aes(fill = asjp_dist)) +
+  scale_fill_gradientn(colours = terrain.colors(10)) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust = 1, vjust =.25, size = 4),
+        axis.text.y = element_text(size = 4),
+        axis.title = element_blank())
 ```

@@ -174,8 +174,7 @@ d %>%
   ggplot(aes(x = country2, y = country1)) +
   facet_wrap(~word, ncol = 4, scales = "free") +
   geom_raster(aes(fill = dist)) +
-  scale_fill_gradient2(low = "red", 
-                       high = "white",name = "" ) +
+  scale_fill_gradient2() +
   ggtitle("country-wise movers distances") +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90, 

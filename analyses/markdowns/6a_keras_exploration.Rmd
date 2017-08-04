@@ -76,9 +76,9 @@ get_pairwise_sim <- function(pic1, pic2, img_path, model){
 }
 
 # loop overall
-all_pics = list.files(IMG_PATH)[1:2]
+all_pics = list.files(IMG_PATH)
 all_pics_grid = expand.grid(all_pics, all_pics) %>%
-  rename(p1 = Var1, p2 = Var2)  
+  dplyr::rename(p1 = Var1, p2 = Var2)  
 
 all_dists = map2(all_pics_grid$p1, all_pics_grid$p2, 
        get_pairwise_sim, IMG_PATH, model) %>%

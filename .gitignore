@@ -22,6 +22,11 @@
 *misc/lgfam-newick/*
 *data/supplementary_data/cultural_sim_measures/events/ICEWS_event_data/events.2015.20170206133646.tab
 *data/supplementary_data/cultural_sim_measures/events/trade_data/Dyadic_COW_4.0.csv
+*data/keras_similarities/features/*
+*misc/*
+*.rdb
+*.rdx
+*html/*
 
 
 

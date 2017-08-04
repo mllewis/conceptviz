@@ -5,7 +5,6 @@ library(forcats)
 library(feather)
 library(maps)
 library(countrycode)
-library(gapminder)
 
 ## get countries in google
 d <- read_feather("../../data/raw_data/feathers/atleast_100/tree.txt")
@@ -70,7 +69,7 @@ all_centroid_dists <- reshape2::melt(g_centroids) %>%
          centroid_dist_meters = value)
 
 all_dists <- left_join(all_capital_dists_with_countries, all_centroid_dists) %>%
-  select(country_code_1, country_code_2, city1, city2,
+  select(country_code_1, country_code_2,
          capital_dist_meters, centroid_dist_meters)
 
 ggplot(all_dists, aes(x = log(centroid_dist_meters),
