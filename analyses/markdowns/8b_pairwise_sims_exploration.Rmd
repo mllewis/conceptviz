@@ -134,14 +134,7 @@ pairwise_means <- tree_clean %>%
   group_by(country_code_1, country_code_2) %>%
   summarize(mean_cosine = mean(cosine),
             sd = sd(cosine),
-            norm_mean = mean_cosine/mean(c(country_sd_1[1], country_sd_2[1])),
-            norm_mean2 = mean_cosine/sum(c(country_sd_1[1], country_sd_2[1])),
-            norm_mean3 = mean_cosine/country_sd_1[1],
-            norm_mean4 = mean_cosine/country_sd_2[1],
-            norm_mean5 = mean_cosine/mean(c(country_mean_1[1], country_mean_2[1])),
-            norm_mean6 = mean_cosine/sum(c(country_mean_1[1], country_mean_2[1])),
-            norm_mean7 = mean_cosine/country_mean_1[1],
-            norm_mean8 = mean_cosine/country_mean_2[1]) %>%
+            norm_mean = mean_cosine/sum(c(country_mean_1[1], country_mean_2[1]))) %>%
   rowwise() %>%
   mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2)) %>%
   mutate(country_name_1 = as.factor(countrycode(country_code_1, "iso2c","country.name")),
@@ -452,6 +445,231 @@ m = summary(lm(mean_cosine~ wals_euclidean_dist +  centroid_dist_meters, all_com
 
 summary(lm(mean_cosine~ centroid_dist_meters, all_complete))
 
+```
 
+Z-scoring
+```{r}
+cosines_ids <- tree_clean %>%
+  mutate(n = 1:n())
+
+scaled_cosines <-  cosines_ids %>%
+  gather("country", "country_code", 2:3) %>%
+  group_by(country_code) %>%
+  mutate(cosine_scaled = scale(cosine)) %>%
+  ungroup() 
+
+spread_cosines <- scaled_cosines %>%
+    select(n, country, country_code) %>%
+    spread(country, country_code) %>%
+    mutate(country_code_1 = country_code_1,
+          country_code_2 =  country_code_2) %>%
+    left_join(scaled_cosines %>% select(cosine_scaled, n)) %>%
+    ungroup ()%>%
+    group_by(n) %>%
+    summarize(cosine_scaled = mean(cosine_scaled))
+
+scaled_cosines2 <- left_join(cosines_ids, spread_cosines, by = "n")
+```
+
+## compare country pairwise
+```{r}
+get_unique_relation_id <- function (x, y){
+  pairs = c(x, y)
+  ordered = order(pairs)
+  paste0(pairs[ordered[1]], pairs[ordered[2]])
+}
+
+
+pairwise_means <-  scaled_cosines2 %>%
+  group_by(country_code_1, country_code_2) %>%
+  summarize(cosine_scaled = mean(cosine_scaled)) %>%
+  rowwise() %>%
+  mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2)) %>%
+  mutate(country_name_1 = as.factor(countrycode(country_code_1, "iso2c","country.name")),
+         country_name_2 = as.factor(countrycode(country_code_2, "iso2c","country.name")),
+         country_names = paste0(country_name_1, "_", country_name_2),
+         continent_name_1 = countrycode(country_code_1, 'iso2c', 'continent'),
+         continent_name_2 = countrycode(country_code_2, 'iso2c', 'continent')) %>%
+    ungroup() %>%
+    mutate(cont_order_1 = as.factor(continent_name_1) %>% as.numeric,
+         cont_order_2 = as.factor(continent_name_2) %>% as.numeric) %>%
+  select(-country_code_1, -country_code_2, -continent_name_1, -continent_name_2)
+```
+
+Pairwise similarity:
+```{r, fig.height = 6}
+tree_means_2 = pairwise_means %>%
+  mutate(country_name_3 = country_name_1,
+         country_name_1 = country_name_2, 
+         country_name_2 = country_name_3,
+         cont_order_3 = cont_order_1,
+         cont_order_1 = cont_order_2, 
+         cont_order_2 = cont_order_3) %>%
+  select(-country_name_3, -cont_order_3)    
+
+all = pairwise_means %>%
+    bind_rows(tree_means_2) %>%
+    mutate(country_name_1 = fct_reorder(country_name_1, cont_order_1), 
+           country_name_2 = fct_reorder(country_name_2, cont_order_2)) 
+  
+all %>%
+  ggplot(aes(x = country_name_1, 
+             y = country_name_2)) +
+  geom_raster(aes(fill = cosine_scaled)) + 
+  scale_fill_continuous(low = "#ffffcc", high = "#800026") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, 
+                                   hjust = 1, vjust = 1, size = 6),
+        axis.text.y = element_text(size = 6),
+        axis.title = element_blank())
+
+```
+
+```{r}
+all_countries <- unique(all$country_name_1)
+NUM_COUNTRIES <-  length(all_countries)
+
+m = matrix(nrow = NUM_COUNTRIES, ncol = NUM_COUNTRIES)
+
+for (i in 1:dim(all)[1]){
+  sim = unlist(all[i, "cosine_scaled"])
+  x = which(all_countries == unlist(all[i, "country_name_1"]))
+  y = which(all_countries == unlist(all[i, "country_name_2"]))
+  m[x,y] <- sim
+}
+
+colnames(m) = all_countries
+rownames(m) = all_countries
+ 
+# plot
+ggdendrogram(hclust(dist(m)), size = 2) +
+  ggtitle("all")
 
 ``
+
+
+## Get country-wise sims using Dan's measure
+```{r}
+within_category_cosines <- tree_clean %>%
+  filter(country_code_1 == country_code_2) %>%
+  filter(key_id_1 != key_id_2) %>%
+  group_by(key_id_1, country_code_1) %>%
+  summarize(cosine = mean(cosine)) %>%
+  group_by(country_code_1) %>%
+  summarize(within_cosine = mean(cosine)) 
+
+across_category_cosines <- tree_clean %>%
+  filter(country_code_1 != country_code_2) %>%
+  group_by(country_code_1, country_code_2, key_id_1) %>%
+  summarize(cosine = mean(cosine)) %>%
+  group_by(country_code_1, country_code_2) %>%
+  summarize(across_cosine = mean(cosine)) 
+
+pairwise_ratios <- across_category_cosines %>% 
+  left_join(within_category_cosines, by = c("country_code_1" = "country_code_1")) %>%
+  rename(within_cosine_1 = within_cosine) %>%
+  left_join(within_category_cosines, by = c("country_code_2" = "country_code_1")) %>%
+  rename(within_cosine_2 = within_cosine) %>%
+  mutate(ratio_1 = across_cosine/within_cosine_1,
+         ratio_2 = across_cosine/within_cosine_2) %>%
+  ungroup()
+```
+
+## Plot heatmap by continent
+```{r, fig.height = 6}
+# get compliment
+full_pairwise_ratios = pairwise_ratios %>%
+  select(country_code_1, country_code_2, ratio_1, ratio_2) %>%
+  mutate(ratio = ratio_1) %>%
+  bind_rows(pairwise_ratios %>% 
+                mutate(country_code_3 = country_code_1,
+                       country_code_1 = country_code_2,
+                       country_code_2 = country_code_3,
+                       ratio = ratio_2) %>%
+                select(-country_code_3)) %>%
+  select(country_code_1, country_code_2, ratio) 
+
+# get contintents
+full_pairwise_ratios_with_continents <- full_pairwise_ratios %>%
+  rowwise() %>%
+  mutate(country_name_1 = as.factor(countrycode(country_code_1, "iso2c","country.name")),
+         country_name_2 = as.factor(countrycode(country_code_2, "iso2c","country.name")),
+         continent_name_1 = countrycode(country_code_1, 'iso2c', 'continent'),
+         continent_name_2 = countrycode(country_code_2, 'iso2c', 'continent')) %>%
+    ungroup() %>%
+    mutate(cont_order_1 = as.factor(continent_name_1) %>% as.numeric,
+          cont_order_2 = as.factor(continent_name_2) %>% as.numeric) %>%
+    select(-continent_name_1, -continent_name_2) %>%
+    mutate(country_name_1 = fct_reorder(country_name_1, cont_order_1), 
+           country_name_2 = fct_reorder(country_name_2, cont_order_2)) 
+  
+# plot heatmap
+full_pairwise_ratios_with_continents %>%
+  ggplot(aes(x = country_name_1, 
+             y = country_name_2)) +
+  geom_raster(aes(fill = ratio)) + 
+  scale_fill_continuous(low = "#ffffcc", high = "#800026") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, 
+                                   hjust = 1, vjust = 1, size = 6),
+        axis.text.y = element_text(size = 6),
+        axis.title = element_blank())
+```
+
+## plot ratio_1 denodogram
+```{r}
+pairwise_ratios_name <- pairwise_ratios %>%
+  rowwise() %>%
+  mutate(country_name_1 = as.factor(countrycode(country_code_1, "iso2c","country.name")),
+         country_name_2 = as.factor(countrycode(country_code_2, "iso2c","country.name")))
+         
+all_countries <- unique(pairwise_ratios_name$country_name_1)
+NUM_COUNTRIES <-  length(all_countries)
+
+m = matrix(nrow = NUM_COUNTRIES, ncol = NUM_COUNTRIES)
+
+for (i in 1:dim(pairwise_ratios_name)[1]){
+  sim = unlist(pairwise_ratios_name[i, "ratio_1"])
+  x = which(all_countries == unlist(pairwise_ratios_name[i, "country_name_1"]))
+  y = which(all_countries == unlist(pairwise_ratios_name[i, "country_name_2"]))
+  m[x,y] <- sim
+}
+
+colnames(m) = all_countries
+rownames(m) = all_countries
+
+k = m[rowSums(is.na(m))!= 33, ]
+ 
+# plot
+ggdendrogram(hclust(dist(k)), size = 2) +
+  ggtitle("ratio_1")
+```
+
+## plot ratio_2 denodogram
+```{r}
+pairwise_ratios_name <- pairwise_ratios %>%
+  rowwise() %>%
+  mutate(country_name_1 = as.factor(countrycode(country_code_1, "iso2c","country.name")),
+         country_name_2 = as.factor(countrycode(country_code_2, "iso2c","country.name")))
+         
+all_countries <- unique(pairwise_ratios_name$country_name_1)
+NUM_COUNTRIES <-  length(all_countries)
+
+m = matrix(nrow = NUM_COUNTRIES, ncol = NUM_COUNTRIES)
+
+for (i in 1:dim(pairwise_ratios_name)[1]){
+  sim = unlist(pairwise_ratios_name[i, "ratio_2"])
+  x = which(all_countries == unlist(pairwise_ratios_name[i, "country_name_1"]))
+  y = which(all_countries == unlist(pairwise_ratios_name[i, "country_name_2"]))
+  m[x,y] <- sim
+}
+
+colnames(m) = all_countries
+rownames(m) = all_countries
+
+k = m[rowSums(is.na(m))!= 33, ] ## where do these NAS come from, and why is there not 34 countries?
+ 
+# plot
+ggdendrogram(hclust(dist(k)), size = 2) +
+  ggtitle("ratio_2")
+```

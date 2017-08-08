@@ -1,0 +1,178 @@
+---
+title: Predict pairwise similarities
+subtitle: 
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc_float: false
+    code_folding: hide
+---
+  
+******
+******
+  
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(knitr)
+library(rmarkdown)
+library(langcog)
+library(tidyverse)
+library(stringr)
+library(corrr)
+library(countrycode)
+library(forcats)
+library(broom)
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F, cache = F, fig.height = 4)
+```
+
+```{r}
+ITEM <- "bread"
+``` 
+Here we're just looking at one item: __`r ITEM`__
+
+```{r}
+get_unique_relation_id <- function (x, y){
+  pairs = c(x, y)
+  ordered = order(pairs)
+  paste0(pairs[ordered[1]], pairs[ordered[2]])
+}
+
+ratios <- read_csv(paste0("../../data/keras_similarities/pairwise_country/",ITEM, "_sim_ratios.csv")) %>%
+  rowwise() %>%
+  mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2))  %>%
+  ungroup() %>%
+  select(all_codes, everything()) %>%
+  mutate(country_name_1 = as.factor(country_name_1),
+         country_name_2 = as.factor(country_name_2))
+
+```
+
+## Dyadic predictive measures
+
+Centroid geographic distance and linguistic distance. 
+Continuous linguistic measures come from here: https://github.com/ddediu/lgfam-newick/blob/master/paper/family-trees-with-brlength.pdf. 
+```{r}
+dyadic <- read_csv("../../data/supplementary_data/cultural_sim_measures/all_dyadic_vars.csv") %>%
+  rowwise() %>%
+  mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2)) %>%
+  ungroup() %>%
+  select(-country_code_1, -country_code_2) 
+
+is.na(dyadic) <- do.call(cbind,lapply(dyadic, is.infinite))
+
+dyadic_clean <- dyadic %>%
+  mutate(all_codes = as.factor(all_codes)) %>%
+  group_by(all_codes) %>%
+  slice(1) %>%
+  select(all_codes, everything()) %>%
+  ungroup()
+```
+
+Merge together dists and sims
+
+Note there a bunch of different ratios we could use here since it's not symmetrical. Here I'm taking the average of the two.
+```{r, eval = F}
+all0 <- ratios %>%
+  left_join(dyadic_clean, by = "all_codes") %>%
+  select(all_codes, everything())
+
+all1 <- ratios %>%
+  group_by(all_codes) %>%
+  slice(1) %>%
+  left_join(dyadic_clean, by = "all_codes") %>%
+  select(all_codes, everything())%>%
+  mutate(country_name_1 = as.factor(country_name_1),
+         country_name_2 = as.factor(country_name_2))
+
+all2 <- ratios %>%
+  group_by(all_codes) %>%
+  slice(2) %>%
+  left_join(dyadic_clean, by = "all_codes") %>%
+  select(all_codes, everything())%>%
+  mutate(country_name_1 = as.factor(country_name_1),
+         country_name_2 = as.factor(country_name_2))
+```
+
+```{r}
+all <- ratios %>%
+  #mutate(all_codes = as.factor(all_codes)) %>%
+  group_by(all_codes) %>%
+  summarize(mean_ratio = mean(mean_ratio)) %>%
+  ungroup()%>%
+  left_join(dyadic_clean %>% mutate(all_codes = as.character(all_codes)), by = "all_codes")  %>%
+  ungroup() %>%
+  select(all_codes, everything())  %>%
+  separate(all_codes, c("country_code_1", "country_code_2"), sep = 2, remove = F)  %>%
+
+  left_join(ratios %>% select(country_code_1, cont_order_1) %>% distinct()) %>%
+  left_join(ratios %>% select(country_code_2, cont_order_2) %>% distinct()) %>%
+  left_join(ratios %>% select(country_code_1, country_name_1) %>% distinct()) %>%
+  left_join(ratios %>% select(country_code_2, country_name_2) %>% distinct()) %>%
+  mutate(country_name_1 = as.factor(country_name_1),
+         country_name_2 = as.factor(country_name_2)) 
+```
+
+### Distance
+
+```{r, fig.height = 6}
+all %>%
+  filter(country_name_1 != country_name_2) %>%
+  ggplot(aes(x = centroid_dist_meters, y = mean_ratio)) +
+  geom_point() +
+  #geom_label(aes(label = all_codes)) +
+  geom_smooth(method = "lm") +
+  theme_minimal()
+```
+
+### ASJP language distance
+
+
+```{r, fig.height = 6}
+all %>%
+  #filter(asjp_dist > 0) %>%
+  filter(country_name_1 != country_name_2) %>%
+  ggplot(aes(x = asjp_dist, y = mean_ratio)) +
+  #geom_point() +
+  geom_smooth(method = "lm") +
+  theme_minimal()
+```
+
+### WALS language distance
+
+```{r, fig.height = 6}
+all %>%
+  #filter(wals_euclidean_dist > 0) %>%
+  filter(country_name_1 != country_name_2) %>%
+  ggplot(aes(x = wals_euclidean_dist, y = mean_ratio)) +
+  #geom_point() +
+  #geom_label(aes(label = all_codes)) +
+  geom_smooth(method = "lm") +
+  theme_minimal()
+```
+
+```{r}
+lm(mean_ratio ~ centroid_dist_meters , all) %>%
+  tidy () %>%
+  kable()
+
+lm(mean_ratio ~ asjp_dist, all) %>%
+  tidy () %>%
+  kable()
+
+lm(mean_ratio ~ wals_euclidean_dist , all) %>%
+    tidy () %>%
+  kable()
+
+lm(mean_ratio ~ asjp_dist + centroid_dist_meters, all) %>%
+  tidy () %>%
+  kable()
+
+lm(mean_ratio ~ wals_euclidean_dist + centroid_dist_meters, all) %>%
+  tidy () %>%
+  kable()
+```

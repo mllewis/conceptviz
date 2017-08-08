@@ -8,12 +8,19 @@ library(lsa)
 library(tidyverse)
 
 #### PARAMS #######
-ITEM <- "tree"
+ITEM <- "bread"
 READ_PATH <- paste0("../../data/keras_similarities/features/", ITEM, "_country_features.csv")
 WRITE_PATH <- paste0("../../data/keras_similarities/pairwise_country/", ITEM, "_all_sims.txt")
 
 # read in feature data
 d <- read_csv(READ_PATH, col_names = FALSE)
+
+#d_write <- d %>%
+#  slice(1:1000) %>%
+#  rename(country = X3, subj = X4)
+
+#write_tsv(select(d_write, country, subj), "labels.tsv")
+#write_tsv(select(d_write, X5:X4100), "values.tsv", col_names = F)
 
 # tidy feature data
 d_clean <-  d %>%

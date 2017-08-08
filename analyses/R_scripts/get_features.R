@@ -9,7 +9,7 @@ library(lsa)
 library(tidyverse)
 
 #### PARAMS #######
-ITEM <- "tree"
+ITEM <- "bread"
 RAW_PATH <- "../../data/raw_data/feathers/atleast_100/"
 WRITE_PATH <- paste0("../../data/keras_similarities/features/", ITEM, "_country_features.csv")
 GDRAW_SIZE <- 255

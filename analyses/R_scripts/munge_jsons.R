@@ -20,7 +20,7 @@ countries <- read.csv("../../data/supplementary_data/iso_3166_2_countries.csv") 
   slice(1) # get one name per code
 
 # read in all file names
-file_list <- list.files("../../data/raw_data/simplified")[104]
+file_list <- list.files("../../data/raw_data/simplified")
 
 # read data, munge and write function
 write_drawings_to_feather <- function(name){
