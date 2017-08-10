@@ -23,34 +23,11 @@ g_event_data <- event_data %>%
                  event_id = `Event ID`)
 
 ######## get all events ########   
-g_all_events <- g_event_data %>%
+g_events <- g_event_data %>%
   select(event_id, event_text, country_code_1, country_code_2)%>%
   count(country_code_1, country_code_2) %>%
   filter(as.character(country_code_1) != as.character(country_code_2)) %>%
   rename(n_events_all = n)
-
-######## get positive events ########  
-# most frequent events
-g_event_data %>%
-  count(event_text) %>%
-    arrange(-n) %>%
-    slice(1:150) %>%
-    as.data.frame() %>%
-  kable()
-
-# this list is somewhat adhoc
-positive_frequent_events <- c("Make a visit","Make statement", "Consult", "Express intent to meet or negotiate", 
-                              "Praise or Endorse", "Engage in negotiation", "Express intent to cooperate", "Engage in diplomatic cooperation", 
-                              "Discuss by telephone", "Make optimistic comment")
-
-
-g_positive_events <- g_event_data %>%
-  filter(event_text %in% positive_frequent_events) %>%
-  count(country_code_1, country_code_2) %>%
-  filter(as.character(country_code_1) != as.character(country_code_2)) %>%
-  rename(n_events_positive = n)
-
-g_events <- full_join(g_all_events, g_positive_events) # bind together
 
 # there is some asymettry a-> b != b->a. Take the average of these.
 
@@ -63,12 +40,11 @@ get_unique_relation_id <- function (x, y){
 g_events_final <- g_events %>%
   rowwise() %>%
   mutate(allcodes = get_unique_relation_id(country_code_1, country_code_2))%>%
-  group_by(allcodes)%>%
-  summarize(n_events_positive = mean(n_events_positive, na.rm = T),
-            n_events_all = mean(n_events_all, na.rm = T)) %>% 
+  group_by(allcodes) %>%
+  summarize(n_events_all = mean(n_events_all, na.rm = TRUE)) %>% 
   mutate(country_code_1 = unlist(lapply(allcodes, function(x) {substr(x, 1, 2)})),
          country_code_2 = unlist(lapply(allcodes, function(x) {substr(x, 3, 4)}))) %>%
-  select(country_code_1, country_code_2, n_events_all, n_events_positive)
+  select(country_code_1, country_code_2, n_events_all)
 
 # normalize by mean population
 pop <- read_csv("../../data/supplementary_data/cultural_sim_measures/events/ICEWS_event_data/factbook_pop_tableid_2119.csv")
@@ -84,13 +60,21 @@ g_pop <- pop %>%
 g_events_normal <- g_events_final %>%
   left_join(g_pop, by = c("country_code_1" = "country_code")) %>%
   rename(pop_1 = population) %>%
-  left_join(g_pop, by =c("country_code_2" = "country_code")) %>%
+  left_join(g_pop, by = c("country_code_2" = "country_code")) %>%
   rename(pop_2 = population) %>%
   rowwise() %>%
-  mutate(mean_pop = mean(c(pop_1, pop_2), na.rm = FALSE),
-         normalized_n_events_positive = 1000*(n_events_positive/mean_pop),
-         normalized_n_events_all = 1000* (n_events_all/mean_pop)) %>% #multiply because so small R writes as 0
-  select(-pop_1, -pop_2, -mean_pop)
+  mutate(mean_pop = mean(c(pop_1, pop_2), na.rm = TRUE),
+         log_normalized_n_events_all = log(n_events_all/mean_pop)) %>%
+  select(-pop_1, -pop_2, -mean_pop, -n_events_all)
+
+g_events_normal_temp = g_events_normal %>%
+  filter(!is.na(log_normalized_n_events_all)) 
+
+g_events_normal = g_events_normal_temp %>%
+  rename(country_code_1 = country_code_2,
+         country_code_2 = country_code_1) %>%
+  bind_rows(g_events_normal_temp)
+
 
 ########## Trade Data ##############
 trade <- read_csv("../../data/supplementary_data/cultural_sim_measures/events/trade_data/Dyadic_COW_4.0.csv")
@@ -133,12 +117,20 @@ g_gdp <- g_clean %>%
 g_trade_normal <- g_trade %>%
     left_join(g_gdp, by = c("country_code_1" = "country_code")) %>%
     rename(gdp_1 = gdp_dollars) %>%
-    left_join(g_gdp, by =c("country_code_2" = "country_code")) %>%
+    left_join(g_gdp, by = c("country_code_2" = "country_code")) %>%
     rename(gdp_2 = gdp_dollars) %>%
     rowwise() %>%
     mutate(mean_gdp = mean(c(gdp_1, gdp_2), na.rm = FALSE),
-           normalized_mean_imports_dollars = 1000* (mean_imports_dollars/mean_gdp)) %>%
-    select(-gdp_1, -gdp_2, -mean_gdp)
+           log_normalized_mean_imports_dollars = log(mean_imports_dollars/mean_gdp)) %>%
+    select(-gdp_1, -gdp_2, -mean_gdp, -mean_imports_dollars)
+
+g_trade_normal_temp = g_trade_normal %>%
+  filter(!is.na(log_normalized_mean_imports_dollars)) 
+
+g_trade_normal = g_trade_normal_temp %>%
+  rename(country_code_1 = country_code_2,
+         country_code_2 = country_code_1) %>%
+  bind_rows(g_trade_normal_temp)
 
 ##### JOIN AND WRITE TO FILE #########
 all_events <- full_join(g_events_normal, g_trade_normal)

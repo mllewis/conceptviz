@@ -25,6 +25,9 @@ library(corrr)
 library(countrycode)
 library(forcats)
 library(broom)
+library(igraph)
+library(intergraph)
+library(ggnetwork)
 
 opts_chunk$set(echo = T, message = F, warning = F, 
                error = F, tidy = F, cache = F, fig.height = 4)
@@ -42,7 +45,7 @@ get_unique_relation_id <- function (x, y){
   paste0(pairs[ordered[1]], pairs[ordered[2]])
 }
 
-ratios <- read_csv(paste0("../../data/keras_similarities/pairwise_country/",ITEM, "_sim_ratios.csv")) %>%
+ratios <- read_csv(paste0("../../data/keras_similarities/pairwise_country/", ITEM, "_sim_ratios.csv")) %>%
   rowwise() %>%
   mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2))  %>%
   ungroup() %>%
@@ -50,51 +53,37 @@ ratios <- read_csv(paste0("../../data/keras_similarities/pairwise_country/",ITEM
   mutate(country_name_1 = as.factor(country_name_1),
          country_name_2 = as.factor(country_name_2))
 
+# write_csv(ratios, "../../data/supplementary_data/cultural_sim_measures/temp2.csv")
+
+ratios <- read_csv( "../../data/supplementary_data/cultural_sim_measures/temp2.csv") 
+
+dict <- ratios  %>%
+  select(all_codes, country_code_1, 
+         country_code_2, country_name_1,
+         country_name_2, cont_order_1, 
+         cont_order_2 ) %>%
+  distinct() %>%
+  mutate_all(as.factor) %>%
+  mutate(cont_order_1 = as.factor(cont_order_1),
+         cont_order_1 = fct_recode(cont_order_1, 
+                                   "AM" = "2",
+                                   "AU" = "5",
+                                   "EU" = "4",
+                                   "AS" = "3",
+                                   "AF" = "1")) %>%
+  ungroup()
 ```
+
+
 
 ## Dyadic predictive measures
 
 Centroid geographic distance and linguistic distance. 
 Continuous linguistic measures come from here: https://github.com/ddediu/lgfam-newick/blob/master/paper/family-trees-with-brlength.pdf. 
 ```{r}
-dyadic <- read_csv("../../data/supplementary_data/cultural_sim_measures/all_dyadic_vars.csv") %>%
-  rowwise() %>%
-  mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2)) %>%
-  ungroup() %>%
-  select(-country_code_1, -country_code_2) 
-
-is.na(dyadic) <- do.call(cbind,lapply(dyadic, is.infinite))
-
-dyadic_clean <- dyadic %>%
-  mutate(all_codes = as.factor(all_codes)) %>%
-  group_by(all_codes) %>%
-  slice(1) %>%
-  select(all_codes, everything()) %>%
-  ungroup()
+dyadic <- read_csv("../../data/supplementary_data/cultural_sim_measures/all_dyadic_vars.csv")  %>%
+  select(1, 4:8)
 ```
-
-Summary of dyadic measures:
-```{r, fig.height = 3}
-summary(dyadic_clean)
-
-dyadic_clean %>%
-  gather("measure", "value" , 2:4)  %>%
-  ggplot(aes(x = value, fill = measure)) +
-  geom_histogram() +
-  facet_wrap(~measure, scales = "free") +
-  theme_bw() +
-  theme(legend.position = "none")
-```
-
-Correlations:
-```{r}
-correlate(dyadic_clean %>% select(c(-1)),
-                   use = "complete.obs")  %>%
-  shave() %>%
-  kable()
-```
-
-## Dyadic measures predicting pairwise country variance in simiarities{.tabset}
 
 Merge together dists and sims
 
@@ -107,7 +96,7 @@ all0 <- ratios %>%
 all1 <- ratios %>%
   group_by(all_codes) %>%
   slice(1) %>%
-  left_join(dyadic_clean, by = "all_codes") %>%
+  left_join(dyadic_cle an, by = "all_codes") %>%
   select(all_codes, everything())%>%
   mutate(country_name_1 = as.factor(country_name_1),
          country_name_2 = as.factor(country_name_2))
@@ -122,109 +111,136 @@ all2 <- ratios %>%
 ```
 
 ```{r}
-all <- ratios %>%
-  #mutate(all_codes = as.factor(all_codes)) %>%
+all <- ratios %>%   
+  mutate(all_codes = as.factor(all_codes),
+         country_code_1 = as.factor(country_code_1),
+         country_code_2 = as.factor(country_code_2)) %>%
   group_by(all_codes) %>%
   summarize(mean_ratio = mean(mean_ratio)) %>%
-  ungroup()%>%
-  left_join(dyadic_clean %>% mutate(all_codes = as.character(all_codes)), by = "all_codes")  %>%
-  ungroup() %>%
-  select(all_codes, everything())  %>%
-  separate(all_codes, c("country_code_1", "country_code_2"), sep = 2, remove = F)  %>%
-
-  left_join(ratios %>% select(country_code_1, cont_order_1) %>% distinct()) %>%
-  left_join(ratios %>% select(country_code_2, cont_order_2) %>% distinct()) %>%
-  left_join(ratios %>% select(country_code_1, country_name_1) %>% distinct()) %>%
-  left_join(ratios %>% select(country_code_2, country_name_2) %>% distinct()) %>%
-  mutate(country_name_1 = as.factor(country_name_1),
-         country_name_2 = as.factor(country_name_2)) 
+  left_join(dyadic) %>%
+  full_join(dict) %>%
+ ungroup() %>%
+    mutate(all_codes = as.factor(all_codes),
+         country_code_1 = as.factor(country_code_1),
+         country_code_2 = as.factor(country_code_2),
+         cont_pair = paste0(as.character(cont_order_1), as.character(cont_order_2))) %>%
+  distinct() 
+  
 ```
 
-### Distance
+### Most similiar countries overall
 ```{r}
+N <- 1
+c1max <- all %>%
+  select(country_name_1, country_name_2, mean_ratio) %>%
+  group_by(country_name_1) %>%
+  top_n(N, mean_ratio)
 
-all %>%
-  filter(country_name_1 != country_name_2) %>%
-  mutate(country_name_1 = fct_reorder(country_name_1, cont_order_1), 
-         country_name_2 = fct_reorder(country_name_2, cont_order_2))  %>%
-  ggplot(aes(x = country_name_1,
-             y = country_name_2)) +
-  geom_raster(aes(fill = centroid_dist_meters)) +
-  scale_fill_gradientn(colours = terrain.colors(10)) +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, 
-                                   hjust = 1, vjust =.25, size = 4),
-        axis.text.y = element_text(size = 4),
-        axis.title = element_blank()) 
+c2max <- all %>%
+  select(country_name_1, country_name_2, mean_ratio) %>%
+  group_by(country_name_2) %>%
+  top_n(N, mean_ratio)
+
+both_max = bind_rows(c1max, c2max) %>%
+           ungroup() %>%
+           mutate(index = 1:n())
+
+max = both_max %>%
+        gather("country", "country_name", 1:2) %>%
+        select(-country) %>%
+        #mutate(country_name = as.factor(country_name)) %>%
+        group_by(country_name) %>%
+        top_n(N, mean_ratio) %>%
+        left_join(both_max %>% select(-mean_ratio), by = "index") %>%
+        mutate(country_pair = ifelse(country_name == country_name_1, 
+                                     as.character(country_name_2),
+                                     as.character(country_name_1))) %>%
+        select(country_name, country_pair, mean_ratio) %>%
+        ungroup()%>%
+        distinct() # remove reciprocals 
 ```
 
+Draw network
+```{r, fig.height = 8}
+max2 <- max %>%
+  rowwise() %>%
+  mutate(all_codes = get_unique_relation_id(as.character(country_name),
+                                            as.character(country_pair)))  
+
+max3 <- max2 %>%
+  select(all_codes, everything()) %>%
+  ungroup() %>%
+  count(all_codes) %>%
+  left_join(max2 %>% select(-mean_ratio), by = "all_codes")
+
+cont_dict <- dict %>%
+  ungroup() %>%
+  select(country_name_2, cont_order_2) %>%
+  distinct() %>%
+  filter(!is.na(cont_order_2)) %>%
+  rename(continent = cont_order_2)
+
+
+graph <- max3 %>%
+      select(country_name, country_pair) %>%
+      mutate_all(as.factor) %>%
+      graph_from_data_frame(directed = FALSE, vertices = cont_dict) %>%
+      simplify() 
+
+E(graph)$weight=max3$n # add in weights
+  
+ggplot(ggnetwork(asNetwork(graph)), 
+            aes(x = x, y = y, xend = xend, yend = yend)) +
+         geom_edges(aes(size = weight), color = "grey60", 
+                    curvature = .15, 
+                    show.legend = FALSE) +
+         geom_nodes(aes(color = continent), show.legend = FALSE) +
+         geom_nodelabel(aes(label =  vertex.names,
+                                  fill = continent), 
+                        show.legend = FALSE, 
+                        label.padding = unit(0.2,"lines"), 
+                        label.size = 0.4, size = 3,
+                        force = .1) +
+        ggtitle(paste0("Top ", N, " most similar countries to each country")) +
+        theme_blank()
+```
+
+## Between measure correlations
+```{r, fig.height = 5, fig.width = 7}
+corrs <- correlate(all %>% select(2:7), 
+                   use = "pairwise.complete.obs")  
+
+rplot(corrs, 
+      legend = TRUE,
+      colours = c("skyblue1", "white","indianred2")) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+gather(corrs, 
+       "variable1", "value", -1) %>%
+  filter(rowname == "mean_ratio") %>%
+  kable()
+```
+
+## Scatter plots
 ```{r, fig.height = 6}
 all %>%
   filter(country_name_1 != country_name_2) %>%
   ggplot(aes(x = centroid_dist_meters, y = mean_ratio)) +
-  geom_point() +
+  geom_point(size = .2) +
   #geom_label(aes(label = all_codes)) +
   geom_smooth(method = "lm") +
   theme_minimal()
-```
 
-### ASJP language distance
-
-```{r, fig.height = 6}
-  all %>%
-  filter(country_name_1 != country_name_2) %>%
-   mutate(country_name_1 = fct_reorder(country_name_1, cont_order_1), 
-         country_name_2 = fct_reorder(country_name_2, cont_order_2))  %>%
-
-  ggplot(aes(x = country_name_1,
-             y = country_name_2)) +
-  geom_raster(aes(fill = asjp_dist)) +
-  scale_fill_gradientn(colours = terrain.colors(10)) +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, 
-                                   hjust = 1, vjust =.25, size = 4),
-        axis.text.y = element_text(size = 4),
-        axis.title = element_blank()) 
-```
-
-```{r, fig.height = 6}
 all %>%
-  #filter(asjp_dist > 0) %>%
   filter(country_name_1 != country_name_2) %>%
   ggplot(aes(x = asjp_dist, y = mean_ratio)) +
-  #geom_point() +
-  geom_smooth(method = "lm") +
-  theme_minimal()
-```
-
-### WALS language distance
-```{r, fig.height = 6}
-all %>%
-  #filter(wals_euclidean_dist > 0) %>%
-  filter(country_name_1 != country_name_2) %>%
-  ggplot(aes(x = country_name_1,
-             y = country_name_2)) +
-  geom_raster(aes(fill = wals_euclidean_dist)) +
-  scale_fill_gradientn(colours = terrain.colors(10)) +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, 
-                                   hjust = 1, vjust =.25, size = 4),
-        axis.text.y = element_text(size = 4),
-        axis.title = element_blank()) 
-```
-
-```{r, fig.height = 6}
-all %>%
-  #filter(wals_euclidean_dist > 0) %>%
-  filter(country_name_1 != country_name_2) %>%
-  ggplot(aes(x = wals_euclidean_dist, y = mean_ratio)) +
-  #geom_point() +
+  geom_point(size = .2) +
   #geom_label(aes(label = all_codes)) +
   geom_smooth(method = "lm") +
   theme_minimal()
 ```
 
-##  models
+## Models
 ```{r}
 lm(mean_ratio ~ centroid_dist_meters , all) %>%
   tidy () %>%
@@ -242,7 +258,11 @@ lm(mean_ratio ~ asjp_dist + centroid_dist_meters, all) %>%
   tidy () %>%
   kable()
 
-lm(mean_ratio ~ wals_euclidean_dist + centroid_dist_meters, all) %>%
+lm(mean_ratio ~ log_normalized_n_events_all + centroid_dist_meters, all) %>%
+  tidy () %>%
+  kable()
+
+lm(mean_ratio ~ log_normalized_mean_imports_dollars + centroid_dist_meters, all) %>%
   tidy () %>%
   kable()
 ```

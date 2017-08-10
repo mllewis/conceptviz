@@ -26,69 +26,176 @@ library(stringr)
 library(purrr)
 library(corrr)
 library(countrycode)
+library(forcats)
 
 opts_chunk$set(echo = T, message = F, warning = F, 
-               error = F, tidy = F,  cache = F, fig.height = 4)
+               error = F, tidy = F,  cache = F, fig.height = 7, fig.width = 9)
 ``` 
 
 Read in files
 ```{r}
-geo <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_geo_dists.csv")
-lang <- read_csv("../../data/supplementary_data/cultural_sim_measures/lang/all_google_lang_dists.csv")
-events <- read_csv("../../data/supplementary_data/cultural_sim_measures/events/all_google_event_dists.csv")
-# note that none these dyadic pairs are ordered and have pairs for both, e.g, US-GB and GB-US
-```
-
-```{r}
-all_dyadic <- geo %>%
-  #full_join(events)  %>%
-  #mutate_if(is.numeric, funs(log)) %>% # take log of all non-lang measures
-  full_join(lang)%>%
+geo <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_geo_dists.csv") %>%
   select(-capital_dist_meters)
+lang <- read_csv("../../data/supplementary_data/cultural_sim_measures/lang/all_google_lang_dists.csv")
+events<- read_csv("../../data/supplementary_data/cultural_sim_measures/events/all_google_event_dists.csv")
+```
 
-dyadic <- write_csv(all_dyadic, "../../data/supplementary_data/cultural_sim_measures/all_dyadic_vars.csv") 
+These are our variables: 
+"centroid_dist_meters"  
+"wals_euclidean_dist"/"asjp_dist"    
+"log_normalized_n_events_all" 
+"lop_normalized_mean_imports_dollars"
+   
+```{r}
+get_unique_relation_id <- function (x, y){
+  pairs = c(x, y)
+  ordered = order(pairs)
+  paste0(pairs[ordered[1]], pairs[ordered[2]])
+}
 
-
-  
-all_dyadic %>%
-  gather("measure", "value", 3:12)  %>%
-  ggplot(aes(x = value)) +
-  geom_density(aes(fill = value)) +
-  facet_wrap(~measure, scales = "free")
-
-corrs <- correlate(all_dyadic %>% select(-1, -2), use = "complete.obs")  %>%
-  shave()
-
-rplot(corrs) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
- gather(corrs, 
-       "variable1", "value",-1) %>%
+all_dyadic2 <- events %>%
+  full_join(geo)  %>%
+  full_join(lang) %>%
+  rowwise() %>%
+  mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2)) %>%
   ungroup() %>%
-  arrange(-value) %>%
-  as.data.frame()
+  select(all_codes, everything())
+
+# this just cause there's a weird bug
+#write_csv(all_dyadic2, "../../data/supplementary_data/cultural_sim_measures/events/all_dyadic2_temp.csv")
+
+all_dyadic2 <- read_csv("../../data/supplementary_data/cultural_sim_measures/events/all_dyadic2_temp.csv") %>%
+  mutate(all_codes = as.factor(all_codes))
+
+is.na(all_dyadic2) <- do.call(cbind, lapply(all_dyadic2, is.infinite))
+
+dyadic_clean <- all_dyadic2 %>%
+  group_by(all_codes) %>%
+  slice(1)  %>%
+  ungroup()
+```
+
+## Histograms
+
+Summary of dyadic measures:
+```{r, fig.height = 6}
+summary(dyadic_clean)
+
+dyadic_clean %>%
+  gather("measure", "value" , 4:8)  %>%
+  ggplot(aes(x = value, fill = measure)) +
+  geom_histogram() +
+  facet_wrap(~measure, scales = "free") +
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
+## Heatmap by continent{.tabset}
+```{r}
+# get contintents
+dist_by_continent <- all_dyadic2 %>%
+  rowwise() %>%
+  mutate(country_name_1 = as.factor(countrycode(country_code_1, "iso2c","country.name")),
+         country_name_2 = as.factor(countrycode(country_code_2, "iso2c","country.name")),
+         continent_name_1 = countrycode(country_code_1, 'iso2c', 'continent'),
+         continent_name_2 = countrycode(country_code_2, 'iso2c', 'continent')) %>%
+  ungroup() %>%
+  mutate(cont_order_1 = as.factor(continent_name_1) %>% as.numeric,
+         cont_order_2 = as.factor(continent_name_2) %>% as.numeric) %>%
+  select(-continent_name_1, -continent_name_2) %>%
+  mutate(country_name_1 = fct_reorder(country_name_1, cont_order_1), 
+         country_name_2 = fct_reorder(country_name_2, cont_order_2)) 
+```
+
+### centroid_dist_meters
+```{r}
+dist_by_continent %>%
+  ggplot(aes(x = country_name_1, 
+             y = country_name_2)) +
+  geom_raster(aes(fill = centroid_dist_meters)) + 
+  scale_fill_continuous(low = "#ffffcc", high = "#800026") +
+  ggtitle("Geographical distance") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, 
+                                   hjust = 1, vjust = 1, size = 6),
+        axis.text.y = element_text(size = 6),
+        axis.title = element_blank())
+```
+
+### wals_euclidean_dist
+```{r,  fig.height = 8, fig.width = 10}
+dist_by_continent %>%
+  ggplot(aes(x = country_name_1, 
+             y = country_name_2)) +
+  geom_raster(aes(fill = wals_euclidean_dist)) + 
+  scale_fill_continuous(low = "#ffffcc", high = "#800026") +
+  ggtitle("WALS distance") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, 
+                                   hjust = 1, vjust = 1, size = 6),
+        axis.text.y = element_text(size = 6),
+        axis.title = element_blank())
+```
+
+### asjp_dist
+```{r,  fig.height = 8, fig.width = 10}
+dist_by_continent %>%
+  ggplot(aes(x = country_name_1, 
+             y = country_name_2)) +
+  geom_raster(aes(fill = asjp_dist)) + 
+  scale_fill_continuous(low = "#ffffcc", high = "#800026") +
+  ggtitle("ASJP distance") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, 
+                                   hjust = 1, vjust = 1, size = 6),
+        axis.text.y = element_text(size = 6),
+        axis.title = element_blank())
+```
+
+### log_normalized_n_events_all
+```{r,  fig.height = 8, fig.width = 10}
+dist_by_continent %>%
+  ggplot(aes(x = country_name_1, 
+             y = country_name_2)) +
+  geom_raster(aes(fill = log_normalized_n_events_all)) + 
+  scale_fill_continuous(low = "#ffffcc", high = "#800026") +
+  ggtitle("events") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, 
+                                   hjust = 1, vjust = 1, size = 6),
+        axis.text.y = element_text(size = 6),
+        axis.title = element_blank())
+```
+
+### log_normalized_mean_imports_dollars
+```{r,  fig.height = 8, fig.width = 10}
+dist_by_continent %>%
+  ggplot(aes(x = country_name_1, 
+             y = country_name_2)) +
+  geom_raster(aes(fill = log_normalized_mean_imports_dollars)) + 
+  scale_fill_continuous(low = "#ffffcc", high = "#800026") +
+  ggtitle("mean_imports_dollars") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, 
+                                   hjust = 1, vjust = 1, size = 6),
+        axis.text.y = element_text(size = 6),
+        axis.title = element_blank())
 ```
 
 
-Just the variables we care about: "normalized_n_events_positive"/"normalized_n_events_all" 
-"normalized_mean_imports_dollars"
-"wals_euclidean_dist"/"asjp_dist"             
-"centroid_dist_meters"            
-```{r}
-all_dyadic2 <- geo %>%
-  full_join(events)  %>%
-  mutate_if(is.numeric, funs(log)) %>% # take log of all non-lang measures
-  full_join(lang) %>%
-  select(-capital_dist_meters, -n_events_all, -n_events_positive, -mean_imports_dollars)
-  
-corrs <- correlate(all_dyadic %>% select(-1, -2), use = "complete.obs")  %>%
+## Between measure correlations
+```{r, fig.height = 5, fig.width = 7}
+corrs <- correlate(all_dyadic2 %>% select(-1:-3), 
+                   use = "complete.obs")  %>%
   shave()
 
-rplot(corrs) +
+rplot(corrs, 
+      legend = TRUE,
+      colours = c("skyblue1", "white","indianred2")) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 gather(corrs, 
-       "variable1", "value",-1) %>%
+       "variable1", "value", -1) %>%
   ungroup() %>%
   arrange(-value) %>%
   as.data.frame() %>%
@@ -98,90 +205,62 @@ gather(corrs,
 
 ## Scatterplots{.tabset}
 
+### dist vs. imports
+```{r}
+ggplot(all_dyadic2, aes(x = centroid_dist_meters,
+                              y = log_normalized_mean_imports_dollars)) +
+  geom_point() +
+  geom_smooth(method = "lm")+
+  theme_minimal()
+```
+
+### dist vs. events
+```{r}
+ggplot(all_dyadic2, aes(x = centroid_dist_meters,
+                              y =  log_normalized_n_events_all)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_minimal()
+```
+
 ### events vs. imports
 ```{r}
-all_dyadic2 = all_dyadic2 %>%
-  mutate(country_label = paste0(country_code_1, "-", country_code_2))
-
-ggplot(all_dyadic2, aes(x = normalized_n_events_all, y = normalized_mean_imports_dollars)) +
-  geom_label(aes(label = country_label))
-
+ggplot(all_dyadic2, aes(x = log_normalized_n_events_all,
+                              y = log_normalized_mean_imports_dollars)) +
+  geom_point() +
+  geom_smooth(method = "lm")+
+  theme_minimal()
 ```
 
-distance
+### dist vs. asjp
 ```{r}
-
-all_dyadic2 = all_dyadic2 %>%
-  mutate(country_name_1 = countrycode(country_code_1, 'iso2c', 'country.name'),
-         country_name_2 = countrycode(country_code_2, 'iso2c', 'country.name'),
-         continent_name_1 = as.factor(countrycode(country_code_1, 'iso2c', 'continent')),
-         continent_name_2 = as.factor(countrycode(country_code_2, 'iso2c', 'continent')),
-         cont_order_1 = unclass(continent_name_1) %>% as.numeric,
-         cont_order_2 = unclass(continent_name_2) %>% as.numeric) 
-
-
-
-all_dyadic2 %>%
-  ggplot(aes(x = fct_reorder(country_name_1, cont_order_1), y = fct_reorder(country_name_2, cont_order_2))) +
-  #facet_wrap(~word, ncol = 4, scales = "free") +
-  geom_raster(aes(fill = centroid_dist_meters)) +
-  scale_fill_gradientn(colours = terrain.colors(10)) +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, 
-                                   hjust = 1, vjust =.25, size = 4),
-        axis.text.y = element_text(size = 4),
-        axis.title = element_blank())
+ggplot(all_dyadic2, aes(x = centroid_dist_meters,
+                              y = asjp_dist)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_minimal()
 ```
 
-## events - something weird is going on here (no symmetrical)
+### events vs. asjp
 ```{r}
-all_dyadic2 %>%
-  ggplot(aes(x = fct_reorder(country_name_1, cont_order_1), y = fct_reorder(country_name_2, cont_order_2))) +
-  geom_raster(aes(fill = normalized_n_events_positive)) +
-  scale_fill_gradientn(colours = terrain.colors(10)) +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, 
-                                   hjust = 1, vjust =.25, size = 4),
-        axis.text.y = element_text(size = 4),
-        axis.title = element_blank())
+ggplot(all_dyadic2, aes(x = log_normalized_n_events_all, 
+                              y = asjp_dist)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_minimal()
 ```
 
-## imports - something weird is going on here
+### imports vs. asjp
 ```{r}
-all_dyadic2 %>%
-  ggplot(aes(x = fct_reorder(country_name_1, cont_order_1), y = fct_reorder(country_name_2, cont_order_2))) +
-  geom_raster(aes(fill = normalized_mean_imports_dollars)) +
-  scale_fill_gradientn(colours = terrain.colors(10)) +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, 
-                                   hjust = 1, vjust =.25, size = 4),
-        axis.text.y = element_text(size = 4),
-        axis.title = element_blank())
+ggplot(all_dyadic2, aes(x = log_normalized_mean_imports_dollars, 
+                        y = asjp_dist)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_minimal()
 ```
 
-## wals_euclidean_dist
 ```{r}
-all_dyadic2 %>%
-  ggplot(aes(x = fct_reorder(country_name_1, cont_order_1), y = fct_reorder(country_name_2, cont_order_2))) +
-  geom_raster(aes(fill = wals_euclidean_dist)) +
-  scale_fill_gradientn(colours = terrain.colors(10)) +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, 
-                                   hjust = 1, vjust =.25, size = 4),
-        axis.text.y = element_text(size = 4),
-        axis.title = element_blank())
+write_csv(dist_by_continent, "../../data/supplementary_data/cultural_sim_measures/all_dyadic_vars.csv")
+
 ```
 
-
-## asjp_dist
-```{r}
-all_dyadic2 %>%
-  ggplot(aes(x = fct_reorder(country_name_1, cont_order_1), y = fct_reorder(country_name_2, cont_order_2))) +
-  geom_raster(aes(fill = asjp_dist)) +
-  scale_fill_gradientn(colours = terrain.colors(10)) +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, 
-                                   hjust = 1, vjust =.25, size = 4),
-        axis.text.y = element_text(size = 4),
-        axis.title = element_blank())
-```

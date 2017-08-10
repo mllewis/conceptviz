@@ -1,6 +1,6 @@
 ---
 title: Explore pairwise country similarities
-subtitle: Using Dan's item-level measure
+subtitle: item-level measure
 author: Molly Lewis 
 date: "`r Sys.Date()`"
 output: 
@@ -29,7 +29,7 @@ library(forcats)
 library(ggdendro)
 
 opts_chunk$set(echo = T, message = F, warning = F, 
-               error = F, tidy = F, cache = T, fig.height = 4)
+               error = F, tidy = F, cache = F, fig.height = 4)
 ```
 
 ```{r}

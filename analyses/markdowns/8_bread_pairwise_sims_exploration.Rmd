@@ -1,17 +1,17 @@
 ---
 title: Explore pairwise country similarities
-subtitle: Using Dan's item-level measure
+subtitle: item-level measure
 author: Molly Lewis 
 date: "`r Sys.Date()`"
 output: 
   html_document:
     toc_float: false
-    code_folding: hide
+    code_folding: hide 
 ---
-  
+
 ******
 ******
-  
+
 ```{r setup, include = F}
 rm(list=ls())
 
@@ -29,7 +29,7 @@ library(forcats)
 library(ggdendro)
 
 opts_chunk$set(echo = T, message = F, warning = F, 
-               error = F, tidy = F, cache = T, fig.height = 4)
+error = F, tidy = F, cache = T, fig.height = 4)
 ```
 
 ```{r}
@@ -44,8 +44,8 @@ if (ITEM == "tree"){ # this is just because within is in a separate file for tre
   tree_within <- read_feather("../../data/keras_similarities/pairwise_country/tree_all_sims_within.txt")
   
   d <- bind_rows(tree, tree_within) %>%
-          mutate(key_id_1 = as.character(key_id_1),
-                 key_id_2 = as.character(key_id_2))
+    mutate(key_id_1 = as.character(key_id_1),
+           key_id_2 = as.character(key_id_2))
   
 } else {
   d <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", ITEM , "_all_sims.txt"))
@@ -117,7 +117,7 @@ pairwise_ratios_with_continents <- pairwise_ratios %>%
   select(-continent_name_1, -continent_name_2) %>%
   mutate(country_name_1 = fct_reorder(country_name_1, cont_order_1), 
          country_name_2 = fct_reorder(country_name_2, cont_order_2)) 
-  
+
 # plot heatmap
 pairwise_ratios_with_continents %>%
   ggplot(aes(x = country_name_1, 
@@ -153,5 +153,6 @@ ggdendrogram(hclust(dist(m)), size = 2)
 ```
 
 ```{r, eval = F}
-write_csv(pairwise_ratios_with_continents, paste0("../../data/keras_similarities/pairwise_country/", ITEM, "_sim_ratios.csv"))
+write_csv(pairwise_ratios_with_continents, 
+          paste0("../../data/keras_similarities/pairwise_country/", ITEM, "_sim_ratios.csv"))
 ```
