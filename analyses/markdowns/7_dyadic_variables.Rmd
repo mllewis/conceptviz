@@ -260,7 +260,7 @@ ggplot(all_dyadic2, aes(x = log_normalized_mean_imports_dollars,
 ```
 
 ```{r}
-write_csv(dist_by_continent, "../../data/supplementary_data/cultural_sim_measures/all_dyadic_vars.csv")
+#write_csv(dist_by_continent, "../../data/supplementary_data/cultural_sim_measures/all_dyadic_vars.csv")
 
 ```
 

@@ -11,7 +11,7 @@
 *.cb
 *.cb2
 *.html
-*data/raw_data/*
+*data/raw_data/**
 *data/supplementary_data/brysbaert_corpus.csv
 *.Rhistory
 *_cache/*
@@ -23,7 +23,7 @@
 *data/supplementary_data/cultural_sim_measures/events/ICEWS_event_data/events.2015.20170206133646.tab
 *data/supplementary_data/cultural_sim_measures/events/trade_data/Dyadic_COW_4.0.csv
 *data/keras_similarities/features/*
-*misc/*
+*misc/**
 *.rdb
 *.rdx
 *html/*

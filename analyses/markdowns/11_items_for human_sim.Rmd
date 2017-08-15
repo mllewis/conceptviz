@@ -1,0 +1,222 @@
+---
+title: Compare two countries pairwise  similarities
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc_float: false
+    code_folding: hide
+---
+  
+******
+******
+  
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(knitr)
+library(rmarkdown)
+library(langcog)
+library(tidyverse)
+library(purrr)
+library(feather)
+library(forcats)
+library(magick)
+source("../R_scripts/helpers.R")
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F, cache = T, fig.height = 4)
+```
+
+```{r}
+ITEM1 <- "tree"
+ITEM2 <- "bread"
+N_ILE <- 10
+GDRAW_SIZE <- 255
+IMAGENET_SIZE <- 224
+JPEG_SIZE <- IMAGENET_SIZE * 2
+N_INTERPOLATE <- 500 # 1000 doesn't look any different (imagenet saw 1000)
+JPEG_PATH <- "../../data/keras_similarities/pair_sim_drawings/images/"
+```
+
+## Sample pairs of items from N-iles of similarity
+### Tree items
+```{r}
+# read in all data
+d <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", ITEM1 , "_all_sims.txt"))
+  
+# get bins
+d_bin_tree <- mutate(d, cosine_bin = ntile(cosine, N_ILE))
+
+# sample 20 from top and bottom N_tile for all country pairs
+sampled_tree_pairs <- d_bin_tree %>%
+    mutate(country_code_1 = as.factor(country_code_1),
+          country_code_2 = as.factor(country_code_2)) %>%
+    filter(!is.na(cosine_bin)) %>%
+    group_by(cosine_bin) %>%
+    sample_n(20) 
+
+
+# check n in each bin
+count(sampled_tree_pairs, cosine_bin)
+
+# check Ntiles
+sampled_tree_pairs %>%
+  group_by(cosine_bin) %>%
+  summarize(mean = mean(cosine)) %>%
+  ggplot(aes(y = mean, x = cosine_bin)) +
+  geom_point(size = 1) +
+  theme(legend.position = "none")
+
+# check country distributions
+sampled_tree_pairs %>%
+  count(country_code_1, country_code_2) %>%
+  ggplot(aes(x = country_code_1, y = country_code_2, fill = as.factor(n))) +
+  geom_tile()
+
+# check country AND Ntile distribution
+sampled_tree_pairs %>%
+  count(country_code_1, country_code_2) %>%
+  ggplot(aes(x = country_code_1, y = country_code_2, fill = cosine_bin)) +
+  geom_tile()
+
+#write_csv(sampled_tree_pairs, "../../data/keras_similarities/pair_sim_drawings/pair_lists/sampled_tree_pairs.csv")
+
+```
+
+
+### Bread items
+```{r}
+# read in all data
+d <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", ITEM2 , "_all_sims.txt"))
+  
+# get bins
+d_bin_bread <- mutate(d, cosine_bin = ntile(cosine, N_ILE))
+
+# sample 20 from top and bottom N_tile for all country pairs
+sampled_bread_pairs <- d_bin_bread %>%
+    mutate(country_code_1 = as.factor(country_code_1),
+          country_code_2 = as.factor(country_code_2)) %>%
+    filter(!is.na(cosine_bin)) %>%
+    group_by(cosine_bin) %>%
+    sample_n(20) 
+
+# check n in each bin
+count(sampled_bread_pairs, cosine_bin)
+
+# check Ntiles
+sampled_bread_pairs %>%
+  group_by(cosine_bin) %>%
+  summarize(mean = mean(cosine)) %>%
+  ggplot(aes(y = mean, x = cosine_bin)) +
+  geom_point(size = 1) +
+  theme(legend.position = "none")
+
+# check country distributions
+sampled_bread_pairs %>%
+  count(country_code_1, country_code_2) %>%
+  ggplot(aes(x = country_code_1, y = country_code_2, fill = as.factor(n))) +
+  geom_tile()
+
+# check country AND Ntile distribution
+sampled_bread_pairs %>%
+  count(country_code_1, country_code_2) %>%
+  ggplot(aes(x = country_code_1, y = country_code_2, fill = cosine_bin)) +
+  geom_tile()
+
+#write_csv(sampled_bread_pairs, "../../data/keras_similarities/pair_sim_drawings/pair_lists/sampled_bread_pairs.csv")
+
+```
+
+
+
+## Save selected items as pdfs
+### Tree items
+```{r }
+raw_data <- read_feather(paste0("../../data/raw_data/feathers/atleast_100/", ITEM1, ".txt"))
+crit_ids <- read_csv(paste0("../../data/keras_similarities/pair_sim_drawings/pair_lists/sampled_", ITEM1 ,"_pairs.csv"))
+
+# get all crit ids
+crit_ids_long <- gather(crit_ids, "key_id_name", "key_id_num", c(-1:-3, -6,-7))
+
+nested_raw <- raw_data %>%
+  filter(key_id %in% crit_ids_long$key_id_num) %>%
+  mutate(key_id_name = key_id) %>%
+  group_by(key_id_name) %>%
+  nest() 
+
+
+# DO THE THING
+JPEG_PATH <- paste0("../../data/keras_similarities/pair_sim_drawings/images/", ITEM1, "/")
+
+walk(nested_raw$data, get_image_from_google_draw, 
+                                      GDRAW_SIZE,
+                                      IMAGENET_SIZE,
+                                      N_INTERPOLATE, 
+                                      return = "jpeg",
+                                      jpeg_size = JPEG_SIZE,
+                                      jpeg_path = JPEG_PATH)
+
+```
+
+### Bread items
+```{r }
+raw_data <- read_feather(paste0("../../data/raw_data/feathers/atleast_100/", ITEM2, ".txt"))
+crit_ids <- read_csv(paste0("../../data/keras_similarities/pair_sim_drawings/pair_lists/sampled_", ITEM2 ,"_pairs.csv"))
+
+# get all crit ids
+crit_ids_long <- gather(crit_ids, "key_id_name", "key_id_num", c(-1:-3, -6,-7))
+
+nested_raw <- raw_data %>%
+  filter(key_id %in% crit_ids_long$key_id_num) %>%
+  mutate(key_id_name = key_id) %>%
+  group_by(key_id_name) %>%
+  nest() 
+
+# DO THE THING
+
+JPEG_PATH <- paste0("../../data/keras_similarities/pair_sim_drawings/images/", ITEM2, "/")
+
+walk(nested_raw$data, get_image_from_google_draw, 
+                                      GDRAW_SIZE,
+                                      IMAGENET_SIZE,
+                                      N_INTERPOLATE, 
+                                      return = "jpeg",
+                                      jpeg_size = JPEG_SIZE,
+                                      jpeg_path = JPEG_PATH)
+
+```
+
+
+## Sanity check
+```{r}
+crit_ids <- read_csv(paste0("../../data/keras_similarities/pair_sim_drawings/pair_lists/sampled_", ITEM2 ,"_pairs.csv")) %>%
+  group_by(cosine_bin) %>%
+  sample_n(1)
+
+files <- list.files("../../data/keras_similarities/pair_sim_drawings/images/bread/")
+long_files = paste0("../../data/keras_similarities/pair_sim_drawings/images/bread/", files)
+
+rl = lapply(long_files, image_read)
+#layout(matrix(1:20,nr=10, byr=T))
+#for (j in 1:12) plot(rl[[j]])
+gl = lapply(rl, grid::rasterGrob)
+
+gridExtra::grid.arrange(grobs=gl)
+
+
+bigdata <- image_read(paste0("../../data/keras_similarities/pair_sim_drawings/images/bread/", files[1]))
+
+filenames<-dir(pattern='compo')
+foo<-list()
+for(j in 1:12) foo[[j]]<-readPNG(filenames[j])
+  
+
+
+rl = lapply(long_files, image_read)
+gl = lapply(rl, grid::rasterGrob)
+gridExtra::grid.arrange(grobs=gl)
+
+```
+
