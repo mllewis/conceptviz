@@ -4,7 +4,7 @@ author: Molly Lewis
 date: "`r Sys.Date()`"
 output: 
   html_document:
-    toc_float: false
+    toc_float: true
     code_folding: hide
 ---
   
@@ -192,31 +192,155 @@ walk(nested_raw$data, get_image_from_google_draw,
 ## Sanity check
 ```{r}
 crit_ids <- read_csv(paste0("../../data/keras_similarities/pair_sim_drawings/pair_lists/sampled_", ITEM2 ,"_pairs.csv")) %>%
-  group_by(cosine_bin) %>%
-  sample_n(1)
+  #group_by(cosine_bin) %>%
+  filter(cosine_bin == 1) %>%
+  sample_n(4) %>%
+  gather(key_id_name, key_id_num, c(-1:-3, -6:-7)) %>%
+  arrange(cosine_bin) %>%
+  mutate(key_id_num = as.factor(key_id_num))
 
-files <- list.files("../../data/keras_similarities/pair_sim_drawings/images/bread/")
-long_files = paste0("../../data/keras_similarities/pair_sim_drawings/images/bread/", files)
-
-rl = lapply(long_files, image_read)
-#layout(matrix(1:20,nr=10, byr=T))
-#for (j in 1:12) plot(rl[[j]])
-gl = lapply(rl, grid::rasterGrob)
-
-gridExtra::grid.arrange(grobs=gl)
-
-
-bigdata <- image_read(paste0("../../data/keras_similarities/pair_sim_drawings/images/bread/", files[1]))
-
-filenames<-dir(pattern='compo')
-foo<-list()
-for(j in 1:12) foo[[j]]<-readPNG(filenames[j])
-  
-
+#files <- list.files("../../data/keras_similarities/pair_sim_drawings/images/bread/")
+long_files = paste0("../../data/keras_similarities/pair_sim_drawings/images/bread/", crit_ids$key_id_num, ".jpeg")
 
 rl = lapply(long_files, image_read)
 gl = lapply(rl, grid::rasterGrob)
-gridExtra::grid.arrange(grobs=gl)
+gridExtra::grid.arrange(grobs = gl, ncol = 2)
 
 ```
+
+
+
+Comparing image metrics
+```{r}
+img_nums <- c("5759447068573696","6310524302131200", "5439162058539008","5128091204583424", "4575892489633792", "5280902294798336","6153535580274688", "6137737331605504")
+
+# look at images
+image_read(paste0("../../data/keras_similarities/pair_sim_drawings/images/bread/", img_nums[4], ".jpeg"))
+
+raw_combos <- as.data.frame(t(combn(img_nums,2)))
+combos <- raw_combos %>%
+  rename(key_id_1 = V1, key_id_2 = V2) %>%
+  bind_rows(raw_combos %>%
+              rename(key_id_2 = V1, 
+                     key_id_1 = V2)) %>%
+  bind_rows(data.frame(key_id_1 = img_nums, 
+                       key_id_2 = img_nums))
+
+nested_raw <- raw_data %>%
+  filter(key_id %in% img_nums) %>%
+  mutate(key_id_name = key_id) %>%
+  group_by(key_id_name) %>%
+  nest() 
+
+long_data = map_df(nested_raw$data, get_image_from_google_draw, 
+                                      GDRAW_SIZE,
+                                      IMAGENET_SIZE,
+                                      N_INTERPOLATE, 
+                                      return = "long") %>%
+  #bind_rows() %>%
+  mutate(key_id = as.factor(key_id))
+```
+
+Neural Nets
+```{r}
+bread_sims <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", ITEM2 , "_all_sims.txt"))
+
+nn_sims <- combos %>%
+          left_join(bread_sims) %>%
+          bind_rows(left_join(combos, bread_sims) %>%
+                    rename(key_id_1 = key_id_2,
+                           key_id_2 = key_id_1)) %>%
+  filter(!is.na(cosine)) %>%
+  select(-country_code_1, -country_code_2) %>%
+  distinct()
+```
+
+Hausdorff Distance
+```{r}
+# https://pdfs.semanticscholar.org/4a04/c3e4d183305aff2e40a6090c366c136fe8f3.pdf
+
+get_hd_distance <- function(id_1, id_2, long_data){
+  
+  d1 <- long_data %>%
+    filter(key_id == id_1) %>%
+    select(x_line, y_line) %>%
+    distinct() %>%
+    as.matrix()
+  
+  d2 <- long_data %>%
+    filter(key_id == id_2) %>%
+    select(x_line, y_line) %>%
+    distinct() %>%
+    as.matrix()
+  
+  hd_sim <- pracma::hausdorff_dist(d1, d2)
+
+  data.frame(key_id_1 = id_1,
+             key_id_2 = id_2, 
+             hd_sim = hd_sim)
+}
+
+hd_sims <- map2_df(combos$key_id_1, 
+                   combos$key_id_2, 
+                   get_hd_distance, 
+                   long_data)
+```
+
+Plot sims
+```{r}
+
+sims <- left_join(hd_sims, nn_sims) %>%
+  mutate(key_id_1 = as.factor(key_id_1),
+         key_id_2 = as.factor(key_id_2))
+
+sims$key_id_1 <- fct_recode(sims$key_id_1, 
+                          white_bread_1 = "5759447068573696",
+                          white_bread_2 = "6310524302131200",
+                          white_bread_3 = "5439162058539008",
+                          white_bread_4 = "5128091204583424",
+                          loaf_1 = "4575892489633792",
+                          loaf_2 = "5280902294798336",
+                          loaf_3 = "6153535580274688",
+                          weird = "6137737331605504")
+
+sims$key_id_2 <- fct_recode(sims$key_id_2, 
+                          white_bread_1 = "5759447068573696",
+                          white_bread_2 = "6310524302131200",
+                          white_bread_3 = "5439162058539008",
+                          white_bread_4 = "5128091204583424",
+                          loaf_1 = "4575892489633792",
+                          loaf_2 = "5280902294798336",
+                          loaf_3 = "6153535580274688",
+                          weird = "6137737331605504")
+
+sims$key_id_1 <- fct_relevel(sims$key_id_1,c("white_bread_1",
+                             "white_bread_2",
+                             "white_bread_3",
+                             "white_bread_4", 
+                             "loaf_1",
+                             "loaf_2",
+                             "loaf_3",
+                             "weird"))
+
+sims$key_id_2 <- fct_relevel(sims$key_id_2,c("white_bread_1",
+                             "white_bread_2",
+                             "white_bread_3",
+                             "white_bread_4", 
+                             "loaf_1",
+                             "loaf_2",
+                             "loaf_3",
+                             "weird"))
+                        
+                        
+ggplot(sims, aes(x = key_id_1, y = key_id_2, fill = hd_sim )) +
+  geom_tile() +
+  theme_bw()
+
+sims %>%
+  filter(cosine > .997) %>%
+  ggplot(aes(x = key_id_1, y = key_id_2, fill = cosine)) +
+  geom_tile() +
+  theme_bw()
+```
+
 

@@ -7,7 +7,7 @@ output:
   html_document:
     number_sections: false
     theme: cerulean
-    toc_float: false
+    toc_float: true
     toc: true
     code_folding: hide
 ---
@@ -54,7 +54,7 @@ Item and countries vary along a number of measures. Can we predict this variabli
 
 ## Country variability
 ### first language status
-```{r}
+```{r, }
 english_countries <- c("Australia", 
                       "Canada",
                       "United Kingdom", 
@@ -64,7 +64,7 @@ d %<>%
   mutate(lang = ifelse(country %in% english_countries, "english", "non_english"))
 ```
 
-```{r}
+```{r, eval = F}
 d %>%
   gather(measure, value, c(4:8)) %>%
   ggplot(aes(y = value, x= lang, fill = lang)) +
@@ -79,7 +79,7 @@ No difference here
 ## Item variability
 
 ### concreteness
-```{r}
+```{r, eval = F}
 cues <- read_csv("../../data/supplementary_data/extreme_cues.csv") %>%
   select(cue, conc.bin)
 
@@ -97,18 +97,20 @@ d %>%
 ```
 
 ### concretness and first language status
-```{r, fig.height = 3}
+```{r, fig.height = 3, eval = F}
 summaries <- d %>%
   filter(!is.na(conc.bin)) %>%
-  gather(measure, value, c(4,6, 8)) %>% 
+  gather(measure, value, c(4, 6, 8)) %>% 
   filter(!is.na(value))  %>%
   group_by(measure, conc.bin, lang) %>%
   multi_boot_standard(column = "value", na.rm = TRUE)
 
 ggplot(summaries, aes(x = lang, y = mean,
-                      fill = conc.bin, color = conc.bin, group = conc.bin)) +
+                      fill = conc.bin, color = conc.bin, 
+                      group = conc.bin)) +
     facet_wrap(~measure, scales = "free") +
-    geom_pointrange(aes(ymax = summary_ci_upper, ymin = summary_ci_lower), 
+    geom_pointrange(aes(ymax = summary_ci_upper, 
+                        ymin = summary_ci_lower), 
                    position=position_dodge(.9), size = .4) +
     theme_bw() 
 ```

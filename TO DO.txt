@@ -1,7 +1,54 @@
 # TO DO 8/8
-(1) explore dan's measurs
-(2) explore tensorflow
-(3) do analyses with bread
-(4) do more of pipeline with new items
-(5) is mover's distance correlated with this siilaritiy?
-(6) explore aspects of tensor flow - different layers, different measures, etc.
+(1) explore tensorflow
+(2) do more of pipeline with new items
+(3) is mover's distance correlated with this siilaritiy?
+(4) explore aspects of tensor flow - different layers, different measures, etc.
+
+all <- tree_dists %>%
+  left_join(dyadic_clean, by = "all_codes") %>%
+  select(all_codes, everything())
+
+all1 <- tree_dists %>%
+  group_by(all_codes) %>%
+  slice(1) %>%
+  left_join(dyadic_clean, by = "all_codes") %>%
+  select(all_codes, everything())%>%
+  mutate(country_name_1 = as.factor(country_name_1),
+         country_name_2 = as.factor(country_name_2))
+
+all2 <- tree_dists %>%
+  group_by(all_codes) %>%
+  slice(2) %>%
+  left_join(dyadic_clean, by = "all_codes") %>%
+  select(all_codes, everything())%>%
+  mutate(country_name_1 = as.factor(country_name_1),
+         country_name_2 = as.factor(country_name_2))
+
+all3 <- tree_dists %>%
+  group_by(all_codes) %>%
+  summarize(mean_ratio = mean(mean_ratio)) %>%
+  left_join(dyadic_clean, by = "all_codes") %>%
+  ungroup() %>%
+  select(all_codes, everything()) %>%
+  separate(all_codes, c("country_code_1", "country_code_2"), sep = 2, remove = F) %>%
+  left_join(tree_dists %>% select(country_code_1, cont_order_1) %>% distinct()) %>%
+  left_join(tree_dists %>% select(country_code_2, cont_order_2) %>% distinct())) %>%
+  left_join(tree_dists %>% select(country_code_1, country_name_1) %>% distinct())) %>%
+  left_join(tree_dists %>% select(country_code_2, country_name_2) %>% distinct())) %>%
+  mutate(country_name_1 = as.factor(country_name_1),
+         country_name_2 = as.factor(country_name_2)) 
+
+all %>%
+  filter(country_name_1 != country_name_2) %>%
+  mutate(country_name_1 = fct_reorder(country_name_1, cont_order_1), 
+         country_name_2 = fct_reorder(country_name_2, cont_order_2))  %>%
+  ggplot(aes(x = country_name_1,
+             y = country_name_2)) +
+  geom_raster(aes(fill = centroid_dist_meters)) +
+  scale_fill_gradientn(colours = terrain.colors(10)) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust = 1, vjust =.25, size = 4),
+        axis.text.y = element_text(size = 4),
+        axis.title = element_blank()) 
+```

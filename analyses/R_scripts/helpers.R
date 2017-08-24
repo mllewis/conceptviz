@@ -1,3 +1,5 @@
+## Misc helper functions
+
 get_image_from_google_draw <- function(data, 
                                         size1,
                                         size2,
@@ -47,11 +49,14 @@ get_image_from_google_draw <- function(data,
     
     } else if (return == "long") {
       # return long form
-      data.frame(image_draw)
+      data.frame(image_draw) %>%
+          mutate(key_id = key_id) %>%
+          select(key_id, everything())
     
     } else if (return == "jpeg") {
       # write to pdf
-      file_name = paste0(jpeg_path, key_id , ".jpeg")
+      
+      file_name <- paste0(jpeg_path, key_id , ".jpeg")
       
       jpeg(file_name, width  = jpeg_size, height = jpeg_size, quality = 100)
         print(
@@ -63,6 +68,7 @@ get_image_from_google_draw <- function(data,
         )
       dev.off()
     }
+}
   
   
 get_unique_relation_id <- function (x, y){
@@ -70,5 +76,71 @@ get_unique_relation_id <- function (x, y){
     ordered = order(pairs)
     paste0(pairs[ordered[1]], pairs[ordered[2]])
 }
+
+get_hd_distance <- function(id_1, id_2, long_data){
   
+  d1 <- long_data %>%
+    filter(key_id == id_1) %>%
+    select(x_line, y_line) %>%
+    distinct() %>%
+    as.matrix()
+  
+  d2 <- long_data %>%
+    filter(key_id == id_2) %>%
+    select(x_line, y_line) %>%
+    distinct() %>%
+    as.matrix()
+  
+  hd_sim <- pracma::hausdorff_dist(d1, d2)
+  
+  data.frame(key_id_1 = id_1,
+             key_id_2 = id_2, 
+             hd_sim = hd_sim)
 }
+
+get_hd_distance_fast <- function(id_1, id_2, long_data, py){
+  
+  d1 <- long_data %>%
+    filter(key_id == id_1) %>%
+    select(x_line, y_line) %>%
+    distinct() %>%
+    as.matrix()
+  
+  d2 <- long_data %>%
+    filter(key_id == id_2) %>%
+    select(x_line, y_line) %>%
+    distinct() %>%
+    as.matrix()
+  
+  hd_sim <- py$hausdorff_wrapper(d1, d2)
+  
+  data.frame(key_id_1 = id_1,
+             key_id_2 = id_2, 
+             hd_sim = hd_sim)
+}
+
+
+get_mhd_distance <- function(id_1, id_2, long_data, py){
+  
+  
+  d1 <- long_data %>%
+    filter(key_id == id_1) %>%
+    select(x_line, y_line) %>%
+    distinct() %>%
+    as.matrix()
+  
+  d2 <- long_data %>%
+    filter(key_id == id_2) %>%
+    select(x_line, y_line) %>%
+    distinct() %>%
+    as.matrix()
+  
+   mhd_sim <- py$ModHausdorffDist(d1, d2)[1] %>%
+              unlist()
+  
+  data.frame(key_id_1 = id_1,
+             key_id_2 = id_2, 
+             mhd_sim = mhd_sim)
+}
+
+  

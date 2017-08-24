@@ -1,0 +1,423 @@
+---
+title: Compare similarity measures
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+  
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(knitr)
+library(rmarkdown)
+library(langcog)
+library(tidyverse)
+library(purrr)
+library(feather)
+library(forcats)
+library(magick)
+source("../R_scripts/helpers.R")
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F, cache = T, fig.height = 4)
+```
+
+Three measures: Cosine similarity, Hausdorff Distance (2 implementations: pracma in R, fast haussdorf module in python), and Modified Hausdorff Distan
+ce (in Python).
+
+In quick tests, MHD and HD were correlated ~.7-.96. Neither HD measure was very correlated with cosine, but HD was more correlated. The python implementations are much faster (~4) that R. The "fast" python version was not significantly faster than the not fast MHD in python, but this may not be true at scale.
+
+In conclusion, the best way forward (both computationally fast and accurate), I think is using either HD_fast or MHD on points since points and lines are almost perfectly correlated.
+
+```{r}
+ITEM1 <- "tree"
+ITEM2 <- "bread"
+N_ILE <- 10
+GDRAW_SIZE <- 255
+IMAGENET_SIZE <- 224
+JPEG_SIZE <- IMAGENET_SIZE * 2
+N_INTERPOLATE <- 500 # 1000 doesn't look any different (imagenet saw 1000)
+JPEG_PATH <- "../../data/keras_similarities/pair_sim_drawings/images/"
+```
+
+
+## Bread
+```{r}
+raw_data <- read_feather(paste0("../../data/raw_data/feathers/atleast_100/", ITEM2, ".txt"))
+
+img_nums <- c("5759447068573696",
+              "6310524302131200", 
+              "5439162058539008",
+              "5128091204583424",
+              "4575892489633792", 
+              "5280902294798336",
+              "6153535580274688", 
+              "6137737331605504")
+
+long_files = paste0("../../data/keras_similarities/pair_sim_drawings/images/bread/", img_nums, ".jpeg")
+
+rl = lapply(long_files, image_read)
+gl = lapply(rl, grid::rasterGrob)
+gridExtra::grid.arrange(grobs = gl, ncol = 1)
+
+image_read(paste0("../../data/keras_similarities/pair_sim_drawings/images/bread/", img_nums[2], ".jpeg"))
+
+```
+
+Get coordinates
+```{r}
+raw_combos <- as.data.frame(t(combn(img_nums,2)))
+
+combos <- raw_combos %>%
+  rename(key_id_1 = V1, key_id_2 = V2) %>%
+  bind_rows(raw_combos %>%
+              rename(key_id_2 = V1, 
+                     key_id_1 = V2)) %>%
+  bind_rows(data.frame(key_id_1 = img_nums, 
+                       key_id_2 = img_nums))
+
+```
+
+Neural Nets
+```{r}
+bread_sims <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", ITEM2 , "_all_sims.txt"))
+
+nn_sims <- combos %>%
+          left_join(bread_sims) %>%
+          bind_rows(left_join(combos, bread_sims) %>%
+                    rename(key_id_1 = key_id_2,
+                           key_id_2 = key_id_1)) %>%
+  filter(!is.na(cosine)) %>%
+  select(-country_code_1, -country_code_2) %>%
+  distinct()
+```
+
+Hausdorff Distance
+```{r}
+# https://pdfs.semanticscholar.org/4a04/c3e4d183305aff2e40a6090c366c136fe8f3.pdf
+
+nested_raw <- raw_data %>%
+  filter(key_id %in% img_nums) %>%
+  mutate(key_id_name = key_id) %>%
+  group_by(key_id_name) %>%
+  nest() 
+
+long_data = map_df(nested_raw$data, get_image_from_google_draw, 
+                                      GDRAW_SIZE,
+                                      IMAGENET_SIZE,
+                                      N_INTERPOLATE, 
+                                      return = "long") %>%
+  #bind_rows() %>%
+  mutate(key_id = as.factor(key_id))
+
+py2 <- reticulate::py_run_file("../R_scripts/hausdorff_fast_wrapper.py")
+
+system.time(
+hd_sims <- map2_df(combos$key_id_1, 
+                   combos$key_id_2, 
+                   get_hd_distance_fast, 
+                   long_data,
+                   py2)
+)
+```
+
+Hausdorff Distance Points only
+```{r}
+point_data <- raw_data %>%
+  filter(key_id %in% img_nums) %>%
+  mutate(key_id_name = key_id) %>%
+  rename(x_line = x, y_line = y) # this is dumb - it's just teh name in the func
+
+system.time(
+pts <- map2_df(combos$key_id_1, 
+                   combos$key_id_2, 
+                   get_hd_distance_fast, 
+                   point_data,
+                   py2)
+)
+
+ # They're very correlated 
+ pts %>%
+    rename(hd_sim_pt = hd_sim) %>%
+    left_join(hd_sims) %>%
+    do(tidy(cor.test(.$hd_sim, .$hd_sim_pt)))
+```
+
+Modified Hausdorff Distance
+```{r}
+py <- reticulate::py_run_file("../R_scripts/mhausdorff.py")
+mhd_sims <- map2_df(combos$key_id_1, 
+                   combos$key_id_2, 
+                   get_mhd_distance, 
+                   long_data,
+                   py)
+```
+
+Plot sims
+```{r}
+sims <- left_join(hd_sims, nn_sims) %>%
+  left_join(mhd_sims) %>%
+  mutate(key_id_1 = as.factor(key_id_1),
+         key_id_2 = as.factor(key_id_2))
+
+sims$key_id_1 <- fct_recode(sims$key_id_1, 
+                          white_bread_1 = "5759447068573696",
+                          white_bread_2 = "6310524302131200",
+                          white_bread_3 = "5439162058539008",
+                          white_bread_4 = "5128091204583424",
+                          loaf_1 = "4575892489633792",
+                          loaf_2 = "5280902294798336",
+                          loaf_3 = "6153535580274688",
+                          weird = "6137737331605504")
+
+sims$key_id_2 <- fct_recode(sims$key_id_2, 
+                          white_bread_1 = "5759447068573696",
+                          white_bread_2 = "6310524302131200",
+                          white_bread_3 = "5439162058539008",
+                          white_bread_4 = "5128091204583424",
+                          loaf_1 = "4575892489633792",
+                          loaf_2 = "5280902294798336",
+                          loaf_3 = "6153535580274688",
+                          weird = "6137737331605504")
+
+sims$key_id_1 <- fct_relevel(sims$key_id_1,c("white_bread_1",
+                             "white_bread_2",
+                             "white_bread_3",
+                             "white_bread_4", 
+                             "loaf_1",
+                             "loaf_2",
+                             "loaf_3",
+                             "weird"))
+
+sims$key_id_2 <- fct_relevel(sims$key_id_2,c("white_bread_1",
+                             "white_bread_2",
+                             "white_bread_3",
+                             "white_bread_4", 
+                             "loaf_1",
+                             "loaf_2",
+                             "loaf_3",
+                             "weird"))
+                        
+ggplot(sims, aes(x = key_id_1, y = key_id_2, fill = hd_sim)) +
+  geom_tile() +
+  theme_bw()
+
+sims %>%
+  filter(cosine > .997) %>%
+  ggplot(aes(x = key_id_1, y = key_id_2, fill = cosine)) +
+  geom_tile() +
+  theme_bw()
+```
+
+## Tree
+```{r, eval = F}
+
+crit_ids <- read_csv(paste0("../../data/keras_similarities/pair_sim_drawings/pair_lists/sampled_", ITEM1 ,"_pairs.csv")) %>%
+  #group_by(cosine_bin) %>%
+  filter(cosine_bin == 1) %>%
+  sample_n(4) %>%
+  gather(key_id_name, key_id_num, c(-1:-3, -6:-7)) %>%
+  arrange(cosine_bin) %>%
+  mutate(key_id_num = as.factor(key_id_num))
+
+
+
+long_files = paste0("../../data/keras_similarities/pair_sim_drawings/images/tree/", img_nums, ".jpeg")
+
+rl = lapply(long_files, image_read)
+gl = lapply(rl, grid::rasterGrob)
+gridExtra::grid.arrange(grobs = gl, ncol = 2)
+
+img_nums <- c("6613114395033600",
+              "6557761544388608", 
+              "4736045847412736",
+              "4688802348007424",
+              "5366456621465600", 
+              "4707338638327808",
+              "4653335464378368", 
+              "5142905146572800")
+```
+
+```{r}
+raw_data <- read_feather(paste0("../../data/raw_data/feathers/atleast_100/", ITEM1, ".txt"))
+
+raw_combos <- as.data.frame(t(combn(img_nums,2)))
+
+combos <- raw_combos %>%
+  rename(key_id_1 = V1, key_id_2 = V2) %>%
+  bind_rows(raw_combos %>%
+              rename(key_id_2 = V1, 
+                     key_id_1 = V2)) %>%
+  bind_rows(data.frame(key_id_1 = img_nums, 
+                       key_id_2 = img_nums))
+
+```
+
+
+Neural Nets
+```{r}
+tree_sims <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", ITEM1 , "_all_sims.txt"))
+
+nn_sims <- combos %>%
+          left_join(tree_sims) %>%
+          bind_rows(left_join(combos, tree_sims) %>%
+                    rename(key_id_1 = key_id_2,
+                           key_id_2 = key_id_1)) %>%
+  filter(!is.na(cosine)) %>%
+  select(-country_code_1, -country_code_2) %>%
+  distinct()
+```
+
+Hausdorff Distance Full
+```{r}
+nested_raw <- raw_data %>%
+  filter(key_id %in% img_nums) %>%
+  mutate(key_id_name = key_id) %>%
+  group_by(key_id_name) %>%
+  nest() 
+
+long_data = map_df(nested_raw$data, get_image_from_google_draw, 
+                                      GDRAW_SIZE,
+                                      IMAGENET_SIZE,
+                                      N_INTERPOLATE, 
+                                      return = "long") %>%
+  #bind_rows() %>%
+  mutate(key_id = as.factor(key_id))
+
+
+# https://pdfs.semanticscholar.org/4a04/c3e4d183305aff2e40a6090c366c136fe8f3.pdf
+system.time(
+hd_sims <- map2_df(combos$key_id_1, 
+                   combos$key_id_2, 
+                   get_hd_distance, 
+                   long_data))
+
+# fast python hausdorff - this is actually similar to MDH, but maybe with scale it's a lot better?
+py2 <- reticulate::py_run_file("../R_scripts/hausdorff_fast_wrapper.py")
+system.time(
+hd_sims <- map2_df(combos$key_id_1, 
+                   combos$key_id_2, 
+                   get_hd_distance_fast, 
+                   long_data,
+                   py2)
+)
+```
+
+Hausdorff Distance Points only
+```{r}
+point_data <- raw_data %>%
+  filter(key_id %in% img_nums) %>%
+  mutate(key_id_name = key_id) %>%
+  rename(x_line = x, y_line = y)
+
+system.time(
+pts <- map2_df(combos$key_id_1, 
+                   combos$key_id_2, 
+                   get_hd_distance_fast, 
+                   point_data,
+                   py2)
+)
+ 
+ # They're very correlated 
+ pts %>%
+    rename(hd_sim_pt = hd_sim) %>%
+    left_join(hd_sims) %>%
+    do(tidy(cor.test(.$hd_sim, .$hd_sim_pt)))
+```
+
+Modified Hausdorff Distance
+```{r}
+# load python modfied haussdorff function
+py <- reticulate::py_run_file("../R_scripts/mhausdorff.py")
+
+system.time(
+mhd_sims <- map2_df(combos$key_id_1, 
+                   combos$key_id_2, 
+                   get_mhd_distance, 
+                   long_data,
+                   py))
+```
+
+
+MHD Points only
+```{r}
+system.time(
+pts <- map2_df(combos$key_id_1, 
+                   combos$key_id_2, 
+                   get_mhd_distance, 
+                   point_data,
+                   py2)
+)
+
+# They're very correlated 
+pts %>%
+  rename(mhd_sim_pt = mhd_sim) %>%
+  left_join(mhd_sims) %>%
+  do(tidy(cor.test(.$mhd_sim, .$mhd_sim_pt)))
+```
+
+Plot sims
+```{r}
+sims <- left_join(hd_sims, nn_sims) %>% 
+  left_join(mhd_sims) %>%
+  mutate(key_id_1 = as.factor(key_id_1),
+         key_id_2 = as.factor(key_id_2))
+
+sims$key_id_1 <- fct_recode(sims$key_id_1, 
+                          tree_outline_1 = "6613114395033600",
+                          tree_outline_2 = "6557761544388608",
+                          tree_bushy_1 = "4736045847412736",
+                          tree_xmas = "4688802348007424",
+                          tree_bushy_2 = "5366456621465600",
+                          tree_bushy_3 = "4707338638327808",
+                          tree_outline_3 = "4653335464378368",
+                          tree_bushy_4 = "5142905146572800")
+
+sims$key_id_2 <- fct_recode(sims$key_id_2, 
+                          tree_outline_1 = "6613114395033600",
+                          tree_outline_2 = "6557761544388608",
+                          tree_bushy_1 = "4736045847412736",
+                          tree_xmas = "4688802348007424",
+                          tree_bushy_2 = "5366456621465600",
+                          tree_bushy_3 = "4707338638327808",
+                          tree_outline_3 = "4653335464378368",
+                          tree_bushy_4 = "5142905146572800")
+
+sims$key_id_1 <- fct_relevel(sims$key_id_1, 
+                             c("tree_outline_1",
+                             "tree_outline_2",
+                             "tree_outline_3",
+                             "tree_bushy_1", 
+                             "tree_bushy_2",
+                             "tree_bushy_3",
+                             "tree_bushy_4",
+                             "tree_xmas"))
+
+
+sims$key_id_2 <- fct_relevel(sims$key_id_2,
+                             c("tree_outline_1",
+                             "tree_outline_2",
+                             "tree_outline_3",
+                             "tree_bushy_1", 
+                             "tree_bushy_2",
+                             "tree_bushy_3",
+                             "tree_bushy_4",
+                             "tree_xmas"))
+                        
+ggplot(sims, aes(x = key_id_1, y = key_id_2, fill = cosine)) +
+  geom_tile() +
+  theme_bw()
+
+sims %>%
+ # filter(cosine > .997) %>%
+  ggplot(aes(x = key_id_1, y = key_id_2, fill = cosine)) +
+  geom_tile() +
+  theme_bw()
+```
