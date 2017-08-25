@@ -29,8 +29,7 @@ opts_chunk$set(echo = T, message = F, warning = F,
                error = F, tidy = F, cache = T, fig.height = 4)
 ```
 
-Three measures: Cosine similarity, Hausdorff Distance (2 implementations: pracma in R, fast haussdorf module in python), and Modified Hausdorff Distan
-ce (in Python).
+Three measures: Cosine similarity, Hausdorff Distance (2 implementations: pracma in R, fast haussdorf module in python), and Modified Hausdorff Distance (in Python).
 
 In quick tests, MHD and HD were correlated ~.7-.96. Neither HD measure was very correlated with cosine, but HD was more correlated. The python implementations are much faster (~4) that R. The "fast" python version was not significantly faster than the not fast MHD in python, but this may not be true at scale.
 

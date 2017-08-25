@@ -44,7 +44,8 @@ JPEG_PATH <- "../../data/keras_similarities/pair_sim_drawings/images/"
 ### Tree items
 ```{r}
 # read in all data
-d <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", ITEM1 , "_all_sims.txt"))
+d <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", 
+                         ITEM1 , "_all_sims.txt"))
   
 # get bins
 d_bin_tree <- mutate(d, cosine_bin = ntile(cosine, N_ILE))

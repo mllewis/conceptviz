@@ -27,6 +27,7 @@
 *.rdb
 *.rdx
 *html/*
+**/data/*
 
 
 
