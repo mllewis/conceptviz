@@ -10,58 +10,33 @@ library(tidyverse)
 ITEM <- "bread"
 RAW_PATH <- "../../data/raw_data/feathers/atleast_100/"
 N_SAMPLES_PER_COUNTRY <- 50
-CURRENT_ROW <- nrow(read_csv(WRITE_PATH, col_names = FALSE)) + 1 
 
-all_data <- read_feather(paste0(RAW_PATH, ITEM, ".txt")) %>%
-  as.data.table()
-
-# read in feature data
-d <- read_csv(READ_PATH, col_names = FALSE)
-
-#d_write <- d %>%
-#  slice(1:1000) %>%
-#  rename(country = X3, subj = X4)
-
-#write_tsv(select(d_write, country, subj), "labels.tsv")
-#write_tsv(select(d_write, X5:X4100), "values.tsv", col_names = F)
-
-# tidy feature data
-d_clean <-  d %>%
-  mutate(X1 = ITEM) %>%
-  rename(item = X1,
-        country_code = X3,
-        key_id = X4) %>%
-  select(-X2) %>%
-  mutate(key_id = as.character(key_id)) %>%
-  distinct() %>% # get rid of accidental duplicates
-  group_by(item, country_code, key_id) %>%
-  nest(.key = features) %>% 
+######### GET DATA ##############################################################################
+# point data
+raw_data <- read_feather(paste0(RAW_PATH, ITEM, ".txt")) %>%
   data.table()
 
-setkey(d_clean, key_id) # this allows us to index into featurs faster below
+# nested point data
+nested_raw_data <- raw_data %>%
+  select(word, country_code, key_id, x, y) %>%
+  group_by(word, country_code, key_id) %>%
+  nest() %>%
+  data.table()
 
-# get all unique combos of countries 
-unique_country_combos <- combinat::combn(unique(d_clean$country_code), 2) %>%
-  t() %>%
-  as.data.frame() %>%
-  rename(c_1 = V1,
-         c_2 = V2) %>%
-  mutate_all(as.character) %>%
-  bind_rows(data.frame(c_1 = unique(d_clean$country_code),# (include within country, e.g. US_US)
-            c_2 = unique(d_clean$country_code)))
+setkey(nested_raw_data, key_id) # this allows us to index into featurs faster below
 
-# make lists for looping over
-arg_list = list(unique_country_combos$c_1,
-                unique_country_combos$c_2)
-# arg_list = list("US", "CA") # for debugging
+######### GET STUFF FOR LOOPING ####################################################################
+# get all unique combos of countries into argument list
+all_countries <- unique(nested_raw_data$country_code)
+arg_list <- get_country_combos(all_countries)
 
-# define similarity functions
-get_pairwise_sims <- function(country_code_1, country_code_2, this_item, all_data){
+# pairwise country key_ids function for looping over
+get_country_pair_key_ids <- function(country_code_1, country_code_2, this_item, nested_raw_data, py){
   print(paste0(country_code_1, "_", country_code_2))
   
   # get key_ids for each country in pair
-  country_1_key_ids <-  unlist(all_data[country_code == country_code_1, key_id], use.names = FALSE)
-  country_2_key_ids <-  unlist(all_data[country_code == country_code_2, key_id], use.names = FALSE)
+  country_1_key_ids <-  unlist(nested_raw_data[country_code == country_code_1, key_id], use.names = FALSE)
+  country_2_key_ids <-  unlist(nested_raw_data[country_code == country_code_2, key_id], use.names = FALSE)
   
   # get all combos of key_id pairs
   all_key_id_combos <- expand.grid(country_1_key_ids, country_2_key_ids, stringsAsFactors = FALSE) %>%
@@ -69,36 +44,50 @@ get_pairwise_sims <- function(country_code_1, country_code_2, this_item, all_dat
            key_id_2 = Var2)
   
   # key sims for each combo of key_id pairs
-  cosines <- pmap(all_key_id_combos, get_sim, country_code_1, country_code_2, all_data) %>%
+  sim_measures <- pmap(all_key_id_combos, get_pair_sim, country_code_1, country_code_2, nested_raw_data, py) %>%
     bind_rows() %>%
-    mutate(item = this_item) %>%
-    select(item, country_code_1,country_code_2, key_id_1, 
-           key_id_2,  cosine)
+    mutate(word = this_item) %>%
+    select(word, country_code_1, country_code_2, key_id_1, 
+           key_id_2,  hd_sim)
   
-  return(cosines)
+  return(sim_measures)
 }
 
-get_sim <- function(key_id_1, key_id_2, country_code_1, country_code_2, all_data){
+# actual similarity function
+get_pair_sim <- function(key_id_1, key_id_2, country_code_1, country_code_2, nested_raw_data, py){
   
-  # get features for two key_ids
-  f1 = unlist(all_data[key_id_1, features], use.names = FALSE) # false speeds up
-  f2 = unlist(all_data[key_id_2, features], use.names = FALSE)
-  
-  # get sim
-  cosine <- lsa::cosine(f1, f2)[1]
+  # points for two drawings
+    pts1 = nested_raw_data[key_id == key_id_1, data][[1]] %>%
+               distinct() %>%
+               as.matrix()
 
-  this_pair_sim <- data.frame(cosine = cosine, 
+    pts2 = nested_raw_data[key_id == key_id_2, data][[1]] %>%
+      distinct() %>%
+      as.matrix()
+    
+  # get hausdorff distance
+  hd_sim <- py$hausdorff_wrapper(pts1, pts2)
+
+  this_pair_sim <- data.frame(hd_sim = hd_sim, 
                               key_id_1 = key_id_1,
                               key_id_2 = key_id_2, 
                               country_code_1 = country_code_1,
                               country_code_2 = country_code_2)
-  
   return(this_pair_sim)
 }
 
-# DO THE THING: loop over each unique pair of countries and get sims for all pairs
-all_sims = pmap(arg_list, get_pairwise_sims, ITEM, d_clean) %>%
-              bind_rows()
+py <- reticulate::py_run_file("../R_scripts/hausdorff_fast_wrapper.py")
+
+######## DO THE THING #################################################################################
+# loop over each unique pair of countries and get sims for all pairs
+system.time(
+all_sims <- pmap(arg_list, 
+                 get_country_pair_key_ids, 
+                 ITEM, 
+                 nested_raw_data,
+                 py) %>%
+            bind_rows()
+)
 
 write_feather(all_sims, WRITE_PATH)
 

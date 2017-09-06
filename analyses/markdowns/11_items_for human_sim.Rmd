@@ -1,5 +1,5 @@
 ---
-title: Compare two countries pairwise  similarities
+title: Get picutures for human sims
 author: Molly Lewis 
 date: "`r Sys.Date()`"
 output: 
@@ -192,16 +192,18 @@ walk(nested_raw$data, get_image_from_google_draw,
 
 ## Sanity check
 ```{r}
-crit_ids <- read_csv(paste0("../../data/keras_similarities/pair_sim_drawings/pair_lists/sampled_", ITEM2 ,"_pairs.csv")) %>%
+
+SIM_BIN <- 5
+crit_ids <- read_csv(paste0("../../data/keras_similarities/pair_sim_drawings/pair_lists/sampled_", ITEM1 ,"_pairs.csv")) %>%
   #group_by(cosine_bin) %>%
-  filter(cosine_bin == 1) %>%
+  filter(cosine_bin == SIM_BIN) %>%
   sample_n(4) %>%
   gather(key_id_name, key_id_num, c(-1:-3, -6:-7)) %>%
   arrange(cosine_bin) %>%
   mutate(key_id_num = as.factor(key_id_num))
 
 #files <- list.files("../../data/keras_similarities/pair_sim_drawings/images/bread/")
-long_files = paste0("../../data/keras_similarities/pair_sim_drawings/images/bread/", crit_ids$key_id_num, ".jpeg")
+long_files = paste0("../../data/keras_similarities/pair_sim_drawings/images/tree/", crit_ids$key_id_num, ".jpeg")
 
 rl = lapply(long_files, image_read)
 gl = lapply(rl, grid::rasterGrob)
@@ -211,7 +213,7 @@ gridExtra::grid.arrange(grobs = gl, ncol = 2)
 
 
 
-Comparing image metrics
+#### Comparing image metrics
 ```{r}
 img_nums <- c("5759447068573696","6310524302131200", "5439162058539008","5128091204583424", "4575892489633792", "5280902294798336","6153535580274688", "6137737331605504")
 

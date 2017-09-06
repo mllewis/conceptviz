@@ -33,7 +33,7 @@ Three measures: Cosine similarity, Hausdorff Distance (2 implementations: pracma
 
 In quick tests, MHD and HD were correlated ~.7-.96. Neither HD measure was very correlated with cosine, but HD was more correlated. The python implementations are much faster (~4) that R. The "fast" python version was not significantly faster than the not fast MHD in python, but this may not be true at scale.
 
-In conclusion, the best way forward (both computationally fast and accurate), I think is using either HD_fast or MHD on points since points and lines are almost perfectly correlated.
+In conclusion, the best way forward (both computationally fast and accurate), I think is using either HD_fast on points since points and lines are almost perfectly correlated, or MHD (points and lines not perfectly correlated).
 
 ```{r}
 ITEM1 <- "tree"

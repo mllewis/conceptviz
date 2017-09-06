@@ -30,6 +30,13 @@ opts_chunk$set(echo = T, message = F, warning = F,
 ```  
 
 ```{r}
+
+arrange(concreteness, Conc.M) %>% 
+  slice(200:400) %>% 
+  as.data.frame()
+```
+
+```{r}
 cues = read.table("../../data/supplementary_data/cues.txt", sep = "\n", header = FALSE) %>%
   rename(cue = V1)
 

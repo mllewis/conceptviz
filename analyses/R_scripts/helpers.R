@@ -49,7 +49,7 @@ get_image_from_google_draw <- function(data,
     
     } else if (return == "long") {
       # return long form
-      data.frame(image_draw) %>%
+      data.table(image_draw) %>%
           mutate(key_id = key_id) %>%
           select(key_id, everything())
     
@@ -119,8 +119,7 @@ get_hd_distance_fast <- function(id_1, id_2, long_data, py){
              hd_sim = hd_sim)
 }
 
-
-get_mhd_distance <- function(id_1, id_2, long_data, py){
+get_mhd_distance <- function(id_1, id_2, long_data, py, write, path){
   
   
   d1 <- long_data %>%
@@ -137,10 +136,39 @@ get_mhd_distance <- function(id_1, id_2, long_data, py){
   
    mhd_sim <- py$ModHausdorffDist(d1, d2)[1] %>%
               unlist()
+   
+   df <- data.frame(key_id_1 = id_1,
+                    key_id_2 = id_2, 
+                    mhd_sim = mhd_sim)
   
-  data.frame(key_id_1 = id_1,
-             key_id_2 = id_2, 
-             mhd_sim = mhd_sim)
+  if (write){
+    write_csv(df, path, append = TRUE)
+  } else {
+    return(df)
+  }
 }
+
+get_country_combos <- function(country_names){
+  
+  unique_country_combos <- combinat::combn(country_names, 2) %>%
+    t() %>%
+    as.data.frame() %>%
+    rename(c_1 = V1,
+           c_2 = V2) %>%
+    mutate_all(as.character) %>%
+    bind_rows(data.frame(c_1 = country_names,# (include within country, e.g. US_US)
+                         c_2 = country_names))
+  
+  # make lists for looping over
+  arg_list = list(unique_country_combos$c_1,
+                  unique_country_combos$c_2)
+  
+  return(arg_list)
+  
+}
+
+
+
+
 
   

@@ -1,0 +1,150 @@
+---
+title: Predict pairwise similarities with climate measures
+subtitle: 
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc_float: false
+    code_folding: hide
+---
+  
+******
+******
+  
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(knitr)
+library(rmarkdown)
+library(langcog)
+library(tidyverse)
+library(stringr)
+library(corrr)
+library(countrycode)
+library(forcats)
+library(broom)
+library(igraph)
+library(intergraph)
+library(ggnetwork)
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F, cache = F, fig.height = 4)
+```
+
+Climate measures: http://data.worldbank.org/data-catalog/cckp_historical_data. 
+
+Ratio of temperatures predicts 
+```{r}
+ITEM <- "tree"
+``` 
+Here we're just looking at one item: __`r ITEM`__
+
+```{r}
+get_unique_relation_id <- function (x, y){
+  pairs = c(x, y)
+  ordered = order(pairs)
+  paste0(pairs[ordered[1]], pairs[ordered[2]])
+}
+
+# ratios <- read_csv(paste0("../../data/keras_similarities/pairwise_country/", ITEM, "_sim_ratios.csv")) %>%
+#   rowwise() %>%
+#   mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2))  %>%
+#   ungroup() %>%
+#   select(all_codes, everything()) %>%
+#   mutate(country_name_1 = as.factor(country_name_1),
+#          country_name_2 = as.factor(country_name_2))
+
+#write_csv(ratios, "../../data/supplementary_data/cultural_sim_measures/temp2.csv")
+ratios <- read_csv( "../../data/supplementary_data/cultural_sim_measures/temp2.csv") 
+
+dict <- ratios  %>%
+  select(all_codes, country_code_1, 
+         country_code_2, country_name_1,
+         country_name_2, cont_order_1, 
+         cont_order_2 ) %>%
+  distinct() %>%
+  mutate_all(as.factor) %>%
+  mutate(cont_order_1 = as.factor(cont_order_1),
+         cont_order_1 = fct_recode(cont_order_1, 
+                                   "AM" = "2",
+                                   "AU" = "5",
+                                   "EU" = "4",
+                                   "AS" = "3",
+                                   "AF" = "1")) %>%
+  ungroup()
+```
+
+
+```{r}
+precip <- read_csv( "../../data/supplementary_data/cultural_sim_measures/geo/country_precip.csv") %>%
+  select(ISO_3DIGIT, Annual_precip) %>%
+  rename(precip = Annual_precip)
+
+temp <- read_csv( "../../data/supplementary_data/cultural_sim_measures/geo/country_temp.csv")  %>%
+  select(ISO_3DIGIT, Annual_temp) %>%
+  rename(temp = Annual_temp)
+
+climate_data <- precip %>%
+  left_join(temp) %>%
+  mutate(country_code  = countrycode(ISO_3DIGIT, "iso3c", "iso2c")) %>%
+  select(country_code, temp, precip )
+
+country_pairs <- read_csv("../../data/supplementary_data/cultural_sim_measures/all_dyadic_vars.csv")  %>%
+  select(all_codes, country_code_2, country_code_1)
+
+climate_dyadic <- country_pairs %>%
+  left_join(climate_data, by = c("country_code_1" = "country_code")) %>%
+  rename(temp_1 = temp,
+         precip_1 = precip) %>%
+  left_join(climate_data, by = c("country_code_2" = "country_code")) %>%
+  rename(temp_2 = temp,
+         precip_2 = precip) %>%
+  mutate(precip_difference = abs(precip_2 - precip_1),
+         temp_difference = abs(temp_2 - temp_1)) %>%
+  mutate_if(is.character, as.factor) %>%
+  select(-temp_1, -temp_2, -precip_1, -precip_2) %>%
+  group_by(all_codes) %>%
+  slice(1)
+
+write_csv(climate_dyadic, "../../data/supplementary_data/cultural_sim_measures/geo/country_climate_ratios.csv")
+```
+
+Merge together dists and sims
+
+```{r}
+all <- ratios %>%   
+  mutate(all_codes = as.factor(all_codes),
+         country_code_1 = as.factor(country_code_1),
+         country_code_2 = as.factor(country_code_2)) %>%
+  group_by(all_codes) %>%
+  summarize(mean_ratio = mean(mean_ratio)) %>%
+  left_join(climate_dyadic) %>%
+  ungroup() %>%
+  mutate_if(is.character, as.factor) %>%
+  distinct() 
+```
+
+## Models
+
+```{r, fig.height = 4, fig.width = 5}
+all %>%
+ filter(country_code_2 != country_code_1) %>%
+  ggplot(aes(x = temp_difference, y = mean_ratio)) +
+  geom_point(size = .2) +
+  geom_smooth(method = "lm") +
+  theme_minimal()
+```
+
+```{r}
+lm(mean_ratio ~ precip_difference , all) %>%
+  summary() 
+
+lm(mean_ratio ~ temp_difference, all) %>%
+  summary()
+
+lm(mean_ratio ~ temp_difference  + precip_difference, all) %>%
+  summary()
+```
+

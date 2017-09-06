@@ -111,6 +111,9 @@ all2 <- ratios %>%
 ```
 
 ```{r}
+
+climate <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/country_climate_ratios.csv")
+
 all <- ratios %>%   
   mutate(all_codes = as.factor(all_codes),
          country_code_1 = as.factor(country_code_1),
@@ -124,7 +127,10 @@ all <- ratios %>%
          country_code_1 = as.factor(country_code_1),
          country_code_2 = as.factor(country_code_2),
          cont_pair = paste0(as.character(cont_order_1), as.character(cont_order_2))) %>%
-  distinct() 
+  distinct() %>%
+  left_join(climate)
+
+
   
 ```
 
@@ -263,6 +269,10 @@ lm(mean_ratio ~ log_normalized_n_events_all + centroid_dist_meters, all) %>%
   kable()
 
 lm(mean_ratio ~ log_normalized_mean_imports_dollars + centroid_dist_meters, all) %>%
+  tidy () %>%
+  kable()
+
+lm(mean_ratio ~ temp_difference + centroid_dist_meters, all) %>%
   tidy () %>%
   kable()
 ```

@@ -1,0 +1,239 @@
+---
+title: Calculating Haussdorff
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+  
+```{r setup, include = F}
+rm(list=ls())
+
+reticulate::use_python("/usr/local/bin/python") ## load this first otherwise get import errors
+
+# load packages
+library(knitr)
+library(rmarkdown)
+library(langcog)
+library(tidyverse)
+library(purrr)
+library(feather)
+library(forcats)
+library(magick)
+library(data.table)
+source("../R_scripts/helpers.R")
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F, cache = T, fig.height = 4)
+```
+
+```{r}
+ITEM <- "tree"
+N_ILE <- 10
+N_PAIRS <- 1500
+GDRAW_SIZE <- 255
+IMAGENET_SIZE <- 224
+JPEG_SIZE <- IMAGENET_SIZE * 2
+N_INTERPOLATE <- 500 
+```
+
+Read in raw data and sample pairs
+```{r}
+raw_data <- read_feather(paste0("../../data/raw_data/feathers/atleast_100/", ITEM, ".txt"))
+
+key_ids <- unique(raw_data$key_id)
+
+id_pairs = 1:N_PAIRS %>%
+  map_dfr(function(x){ids <- sample(key_ids, 2)  ## this was necessary to avoid getting the weird 'getCharCE'  error
+              return(data.frame(key_id_1 = ids[1], key_id_2 = ids[2]))})
+
+#write_csv(id_pairs, "../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/bread_id_pairs")
+
+id_pairs  <- read_csv("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/tree_id_pairs",
+             col_types = list(col_character(), col_character()))
+```
+
+
+# Get Modified Hausdorff Distance
+```{r, eval = F}
+### Get long data
+unique_ids_in_pairs <- unique(unlist(flatten(id_pairs)))
+nested_raw <- raw_data %>%
+  filter(key_id %in% unique_ids_in_pairs) %>%
+  mutate(key_id_name = key_id) %>%
+  group_by(key_id_name) %>%
+  nest() 
+
+long_data <- map_df(nested_raw$data, get_image_from_google_draw, 
+                                      GDRAW_SIZE,
+                                      IMAGENET_SIZE,
+                                      N_INTERPOLATE, 
+                                      return = "long") %>%
+  #bind_rows() %>%
+  mutate(key_id = as.factor(key_id))
+
+py <- reticulate::py_run_file("../R_scripts/mhausdorff.py")
+
+this_path <- paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", ITEM, "_sampled_pairs_with_sims.csv")
+
+mhd_sims <- map2_df(id_pairs$key_id_1, 
+                    id_pairs$key_id_2, 
+                    get_mhd_distance, 
+                    long_data,
+                    py,
+                    write = TRUE,
+                    path = this_path)
+```
+
+Get Hausdorff Distance (points only)
+```{r}
+point_data <- raw_data %>%
+  filter(key_id %in% unique_ids_in_pairs) %>%
+  mutate(key_id_name = key_id) %>%
+  rename(x_line = x, y_line = y) # this is dumb - it's just teh name in the func
+
+py2 <- reticulate::py_run_file("../R_scripts/hausdorff_fast_wrapper.py")
+
+hd_sims<- map2_df(id_pairs$key_id_1, 
+                   id_pairs$key_id_2, 
+                   get_hd_distance_fast, 
+                   point_data,
+                   py2)
+hd_this_path <- paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", ITEM, "_sampled_pairs_with_sims_hd.csv")
+write_csv(hd_sims, hd_this_path)
+```
+
+
+# Get filtered sampled pairs
+```{r}
+id_countries <- raw_data %>%
+  select(country_code, key_id) %>%
+  distinct() 
+
+ids_with_sims_raw <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", ITEM, "_sampled_pairs_with_sims_hd.csv"), 
+                              col_types = list(col_character(), col_character(), col_double()))  %>%
+  `colnames<-`(c("key_id_1", "key_id_2", "hausdorff_sim")) 
+  
+ids_with_sims <- ids_with_sims_raw %>%
+    #slice(1:1500) %>%
+    mutate(haus_bin = ntile(hausdorff_sim, N_ILE)) %>%
+    left_join(id_countries, by = c("key_id_1" = "key_id")) %>%
+    rename(country_code_1 = country_code) %>%
+    left_join(id_countries, by = c("key_id_2" = "key_id")) %>%
+    rename(country_code_2 = country_code) 
+  
+## get rid of us bias  
+ids_with_sims_filtered <- ids_with_sims %>%
+  group_by(country_code_1) %>%
+  mutate(count_1 = 1:n()) %>%
+  group_by(country_code_2) %>%
+  mutate(count_2 = 1:n()) %>%
+  filter(count_1 < 40  & count_2 < 40) %>%
+  select(-count_1, -count_2)
+
+sampled_tree_pairs <- ids_with_sims_filtered %>%
+    group_by(haus_bin) %>%
+    sample_n(20) 
+  
+# check Ntiles
+sampled_tree_pairs %>%
+  group_by(haus_bin) %>%
+  summarize(mean = mean(hausdorff_sim)) %>%
+  ggplot(aes(y = mean, x = haus_bin)) +
+  geom_point(size = 1) +
+  theme(legend.position = "none")
+
+# check country distributions
+sampled_tree_pairs %>%
+  count(country_code_1, country_code_2) %>%
+  ggplot(aes(x = country_code_1, y = country_code_2, fill = as.factor(n))) +
+  geom_tile()
+
+sampled_tree_pairs %>%
+  count(country_code_2) %>%
+  arrange(-n) %>%
+  as.data.frame()
+
+
+write_csv(sampled_tree_pairs, "../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/tree_id_pairs_balanced_hm.csv")
+
+```
+
+### Get jpegs for filtered sampled pairs
+```{r }
+crit_ids <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", ITEM ,"_id_pairs_balanced_hm.csv"),col_types = list(col_character(), col_character(), col_double(), col_double(), col_character(), col_character()))
+
+# get all crit ids
+crit_ids_long <- gather(crit_ids, "key_id_name", "key_id_num", c(-3:-7))
+
+nested_raw <- raw_data %>%
+  filter(key_id %in% crit_ids_long$key_id_num) %>%
+  mutate(key_id_name = key_id) %>%
+  group_by(key_id_name) %>%
+  nest() 
+
+
+# DO THE THING
+JPEG_PATH <- paste0("../../data/hausdorff_similarities/pair_sim_drawings/images/", ITEM, "/")
+
+walk(nested_raw$data, get_image_from_google_draw, 
+                                      GDRAW_SIZE,
+                                      IMAGENET_SIZE,
+                                      N_INTERPOLATE, 
+                                      return = "jpeg",
+                                      jpeg_size = JPEG_SIZE,
+                                      jpeg_path = JPEG_PATH)
+
+```
+
+## Compare all three metrics as sanity check
+```{r}
+hds_tree <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", ITEM, "_sampled_pairs_with_sims_hd.csv"),                            col_types = list(col_character(), col_character(), col_double())) 
+
+mhds_tree <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", ITEM, "_sampled_pairs_with_sims_mhd.csv"),
+        col_types = list(col_character(), col_character(), col_double())) %>%
+  `colnames<-`(c("key_id_1", "key_id_2", "m_hausdorff_sim"))
+  
+nn_tree <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", ITEM , "_all_sims.txt")) %>%
+  select(key_id_1, key_id_2, cosine) 
+
+all_tree_sims <- hds_tree %>%
+                left_join(mhds_tree) %>%
+                left_join(nn_tree)
+
+crit_ids_long <- gather(nn_tree, "key_id_name", "key_id_num", c(-3))
+
+
+ggcor::ggcorr(nba[, 3:4], label = TRUE)
+
+cor.test(all_tree_sims$m_hausdorff_sim, all_tree_sims$hd_sim)
+```
+
+Compare pairs
+```{r}
+SIM_BIN <- 1
+
+plot_ids <- all_tree_sims %>%
+  mutate(haus_bin = ntile(hd_sim, N_ILE)) %>%
+  mutate(mhaus_bin = ntile(m_hausdorff_sim, N_ILE)) %>%
+  filter(mhaus_bin == SIM_BIN) %>%
+  sample_n(8) %>%
+  gather(key_id_name, key_id_num, c(-3:-7)) %>%
+  arrange(haus_bin) %>%
+  mutate(key_id_num = as.factor(key_id_num))
+
+#files <- list.files("../../data/keras_similarities/pair_sim_drawings/images/bread/")
+long_files = paste0("../../data/hausdorff_similarities/pair_sim_drawings/images/tree/", plot_ids$key_id_num, ".jpeg")
+
+data/hausdorff_similarities/pair_sim_drawings/images/tree/
+
+rl = lapply(long_files, image_read)
+gl = lapply(rl, grid::rasterGrob)
+gridExtra::grid.arrange(grobs = gl, ncol = 2)
+```
+
