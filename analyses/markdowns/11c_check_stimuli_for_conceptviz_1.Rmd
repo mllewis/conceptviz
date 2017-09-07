@@ -1,0 +1,117 @@
+---
+title: Check stimuli for concept viz 1
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+  
+```{r setup, include = F}
+rm(list=ls())
+
+reticulate::use_python("/usr/local/bin/python") ## load this first otherwise get import errors
+
+# load packages
+library(knitr)
+library(rmarkdown)
+library(langcog)
+library(tidyverse)
+library(purrr)
+library(feather)
+library(forcats)
+library(magick)
+library(data.table)
+source("../R_scripts/helpers.R")
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F, cache = T, fig.height = 4)
+```
+
+### Tree
+
+Basic checks
+```{r}
+final_stimuli <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", "tree" ,"_id_pairs_balanced_hd.csv"),col_types = list(col_character(), col_character(), col_double(), col_double(), col_character(), col_character())) %>%
+  rename(hd_sim = hausdorff_sim )
+
+## merge in nn data
+these_nns <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", "tree" , "_all_sims.txt")) %>%
+  select(key_id_1, key_id_2, cosine) 
+
+final_stim <- final_stimuli %>%
+                left_join(these_nns) 
+
+count(final_stim, haus_bin)
+cor.test(final_stim$cosine, final_stim$hd_sim)
+```
+
+
+Confirm that pairs are sensible
+```{r}
+SIM_BIN <- 9
+
+plot_ids <- final_stim %>%
+  filter(haus_bin == SIM_BIN) %>%
+  mutate(id = 1:n()) %>%
+  sample_n(8) %>%
+  gather(key_id_name, key_id_num, c(-3:-9)) %>%
+  arrange(haus_bin) %>%
+  mutate(key_id_num = as.factor(key_id_num)) %>%
+  arrange(id)
+
+long_files = paste0("../../data/hausdorff_similarities/pair_sim_drawings/images/drawings/", plot_ids$key_id_num, ".jpeg")
+
+rl = lapply(long_files, image_read)
+gl = lapply(rl, grid::rasterGrob)
+gridExtra::grid.arrange(grobs = gl, nrow = 8)
+
+```
+
+### Bread
+
+Basic checks
+```{r}
+final_stimuli <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", "bread" ,"_id_pairs_balanced_hd.csv"),col_types = list(col_character(), col_character(), col_double(), col_double(), col_character(), col_character())) %>%
+  rename(hd_sim = hausdorff_sim )
+
+## merge in nn data
+these_nns <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", "bread" , "_all_sims.txt")) %>%
+  select(key_id_1, key_id_2, cosine) 
+
+final_stim <- final_stimuli %>%
+                left_join(these_nns) %>%
+                mutate(haus_bin2 = ntile(hd_sim, 10)) 
+
+count(final_stim, haus_bin)
+count(final_stim, haus_bin2)
+cor.test(final_stim$cosine, final_stim$hd_sim)
+```
+
+
+Confirm that pairs are sensible
+```{r}
+SIM_BIN <- 1
+
+plot_ids <- final_stim %>%
+  filter(haus_bin == SIM_BIN) %>%
+  mutate(id = 1:n()) %>%
+  sample_n(8) %>%
+  gather(key_id_name, key_id_num, c(-3:-9)) %>%
+  arrange(haus_bin) %>%
+  mutate(key_id_num = as.factor(key_id_num)) %>%
+  arrange(id)
+
+long_files = paste0("../../data/hausdorff_similarities/pair_sim_drawings/images/drawings/", plot_ids$key_id_num, ".jpeg")
+
+rl = lapply(long_files, image_read)
+gl = lapply(rl, grid::rasterGrob)
+gridExtra::grid.arrange(grobs = gl, nrow = 8)
+
+```
+
+
