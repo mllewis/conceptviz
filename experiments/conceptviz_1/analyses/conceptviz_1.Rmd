@@ -1,0 +1,176 @@
+---
+title: Conceptviz 1 analyses
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+  
+```{r setup, include = F}
+rm(list=ls())
+
+# load packages
+library(knitr)
+library(rmarkdown)
+library(langcog)
+library(tidyverse)
+library(purrr)
+library(feather)
+library(forcats)
+library(googlesheets)
+library(jsonlite)
+library(broom)
+#source("../R_scripts/helpers.R")
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F, cache = T, fig.height = 4)
+```
+
+## Read in data from google sheet
+```{r}
+d_raw <- gs_title("conceptviz_1_data") %>%
+            gs_read()
+
+d <- map_df(d_raw$data, fromJSON, simplifyDataFrame = TRUE) %>%
+  bind_cols(subj_id = d_raw$subj_id) %>%
+  select(subj_id, everything())
+```
+
+## Tidy data
+```{r}
+d_tidy <- d %>%
+  gather(variable, value, -subj_id) %>%
+  separate(variable, c("variable", "trial_num"), sep = "_T") %>%
+  spread(variable, value) %>%
+  mutate_at(c("trial_num", "haus_sim", "rating", "RT", "trial_ID",  "haus_bin"), as.numeric) %>%
+  mutate_at(c("category", "drawing_key_id_1", "drawing_key_id_2","trial_type"), as.factor)
+```
+
+## Attention Checks
+```{r}
+d_tidy %>%
+  filter(trial_type == "attention_check") %>%
+  select(subj_id, rating) %>%
+  count(rating) %>%
+  ggplot(aes(x = rating, y = n/200)) +
+  geom_bar(stat = "identity") +
+  ylab("proportion responses")+
+  ggtitle("prop. attention checks") +
+  theme_minimal()
+
+mean_attention_check_ratings = d_tidy %>%
+  filter(trial_type == "attention_check") %>%
+  group_by(subj_id) %>% 
+  summarize(mean = mean(rating)) %>%
+  filter(mean < mean(.$mean))
+```
+
+Mostly 1s as correct. 
+
+## hausdorff by decile and ratings
+```{r, fig.width = 5}
+d_tidy_crit <- d_tidy %>%
+  filter(subj_id %in% mean_attention_check_ratings$subj_id) %>%
+  filter(trial_type == "critical_trial") 
+
+means_ratings_by_bin <- d_tidy_crit %>%
+  group_by(haus_bin, category) %>%
+  multi_boot_standard(column = "rating", na.rm = TRUE)
+
+ggplot(means_ratings_by_bin, aes(x = haus_bin, y = mean, group = category, color = category)) +
+  geom_pointrange(aes(ymin = summary_ci_lower, ymax = summary_ci_upper)) +
+  geom_smooth(method = "lm") +
+  ylab("mean similarity rating") +
+  xlab("hausdorfff Distance Decile") +
+  ggtitle("Similarity Ratings by hausdorff Decile") +
+  scale_x_continuous(breaks = 1:10) +
+  theme_minimal()
+```
+
+## hausdorff continous and ratings
+```{r, fig.width = 5}
+d_tidy_crit %>%
+  ggplot(aes(x = haus_sim, y = rating, group = category, color = category)) +
+  geom_smooth(method = "lm") +
+  ylab("mean similarity rating") +
+  xlab("hausdorfff Distance") +
+  ggtitle("Similarity Ratings by hausdorff Distance") +
+  theme_minimal()
+
+d_tidy_crit %>%
+  group_by(category) %>%
+  do(tidy(cor.test(.$rating, .$haus_sim))) %>%
+  select(-parameter, -method, -alternative) %>%
+  kable()
+```
+
+
+There's more variability in hausdorfff distance for bread, relative to tree, which explains the different slopes in the decile plot.
+
+## Hausdorff distance, Modified Hausdorff Distance, and Imagenet-NN cosine
+```{r, fig.width = 9}
+tree_all_measures <- read_csv(paste0("../../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced_lists/tree_all_measures.csv")) %>%
+    mutate_at(c("key_id_1", "key_id_2", "country_code_1","country_code_2"), as.factor) %>%
+  select(key_id_1, key_id_2, hd_sim, mhd_sim, cosine) %>%
+  mutate(category = "tree")
+
+bread_all_measures <- read_csv(paste0("../../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced_lists/bread_all_measures.csv")) %>%
+    mutate_at(c("key_id_1", "key_id_2", "country_code_1","country_code_2"), as.factor)  %>%
+  select(key_id_1, key_id_2, hd_sim, mhd_sim, cosine)  %>%
+  mutate(category = "bread")
+
+all_measures <- d_tidy_crit %>%
+  rename(key_id_1 = drawing_key_id_1,
+         key_id_2 = drawing_key_id_2) %>%
+  left_join(bind_rows(tree_all_measures, bread_all_measures), by = c("key_id_1", "key_id_2", "category")) %>%
+  select(category, rating, haus_sim, mhd_sim, cosine) %>%
+  rename(hd_sim = haus_sim)
+
+all_measures %>%
+  gather("measure", "value", 3:5) %>%
+  ggplot(aes(x = value, y = rating, group = category, color = category)) +
+  geom_smooth(method = "lm") +
+  facet_grid(. ~ measure, scales = "free") +
+  theme_minimal()
+
+
+all_measures %>%
+  gather("measure", "value", 3:5) %>%
+  group_by(category, measure) %>%
+  do(tidy(cor.test(.$rating, .$value))) %>%
+  select(-parameter, -method, -alternative) %>%
+  kable()
+```
+
+Hausdorff Distance is better than Modified hausdorff Distance (MHD). For bread, MHD > cosine; For tree; MHD = cosine (but there's less variability).
+
+The correlations on the continous measures are modest, but I suspect that's because there's a ceiling on the correlation because we're using a likert scale.
+
+# RTS
+```{r}
+all_measures2 <- d_tidy_crit %>%
+  rename(key_id_1 = drawing_key_id_1,
+         key_id_2 = drawing_key_id_2) %>%
+  left_join(bind_rows(tree_all_measures, bread_all_measures), by = c("key_id_1", "key_id_2", "category")) %>%
+  select(category, RT, rating, haus_sim, mhd_sim, cosine) %>%
+  rename(hd_sim = haus_sim)
+a
+all_measures2 %>%
+  gather("measure", "value", 4:6) %>%
+  ggplot(aes(x = value, y = log(RT), group = category, color = category)) +
+  geom_smooth() +
+  facet_grid(. ~ measure, scales = "free") +
+  theme_minimal()
+
+all_measures2 %>%
+  gather("measure", "value", 4:6) %>%
+  ggplot(aes(x = value, y = log(RT), group = category, color = category)) +
+  geom_smooth() +
+  facet_grid(. ~ measure, scales = "free") +
+  theme_minimal()
+```

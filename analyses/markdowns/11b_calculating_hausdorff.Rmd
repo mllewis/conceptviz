@@ -237,34 +237,4 @@ id_pairs  <- read_csv("../../data/hausdorff_similarities/pair_sim_drawings/pair_
 ```
 
 
-# Get Modified Hausdorff Distance
-```{r, eval = F}
-### Get long data
-unique_ids_in_pairs <- unique(unlist(flatten(id_pairs)))
-nested_raw <- raw_data %>%
-  filter(key_id %in% unique_ids_in_pairs) %>%
-  mutate(key_id_name = key_id) %>%
-  group_by(key_id_name) %>%
-  nest() 
-
-long_data <- map_df(nested_raw$data, get_image_from_google_draw, 
-                                      GDRAW_SIZE,
-                                      IMAGENET_SIZE,
-                                      N_INTERPOLATE, 
-                                      return = "long") %>%
-  #bind_rows() %>%
-  mutate(key_id = as.factor(key_id))
-
-py <- reticulate::py_run_file("../R_scripts/mhausdorff.py")
-
-this_path <- paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", ITEM, "_sampled_pairs_with_sims.csv")
-
-mhd_sims <- map2_df(id_pairs$key_id_1, 
-                    id_pairs$key_id_2, 
-                    get_mhd_distance, 
-                    long_data,
-                    py,
-                    write = TRUE,
-                    path = this_path)
-```
 

@@ -26,21 +26,30 @@ library(feather)
 library(forcats)
 library(magick)
 library(data.table)
+
 source("../R_scripts/helpers.R")
 
 opts_chunk$set(echo = T, message = F, warning = F, 
                error = F, tidy = F, cache = T, fig.height = 4)
 ```
 
-### Tree
+```{r}
+ITEM <- "tree"
+GDRAW_SIZE <- 255
+IMAGENET_SIZE <- 224
+N_INTERPOLATE <- 500 
+N_ILE <- 10
+```
+
+## Check items befor running
 
 Basic checks
 ```{r}
-final_stimuli <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", "tree" ,"_id_pairs_balanced_hd.csv"),col_types = list(col_character(), col_character(), col_double(), col_double(), col_character(), col_character())) %>%
-  rename(hd_sim = hausdorff_sim )
+final_stimuli <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced_lists/", ITEM ,"_id_pairs_balanced_hd.csv"), col_types = list(col_character(), col_character(), col_double(), col_double(), col_character(), col_character())) %>%
+  rename(hd_sim = hausdorff_sim)
 
 ## merge in nn data
-these_nns <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", "tree" , "_all_sims.txt")) %>%
+these_nns <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", ITEM , "_all_sims.txt")) %>%
   select(key_id_1, key_id_2, cosine) 
 
 final_stim <- final_stimuli %>%
@@ -72,46 +81,59 @@ gridExtra::grid.arrange(grobs = gl, nrow = 8)
 
 ```
 
-### Bread
-
-Basic checks
+## Save all measure in single csv
+# Get Modified Hausdorff Distance for comparision
 ```{r}
-final_stimuli <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", "bread" ,"_id_pairs_balanced_hd.csv"),col_types = list(col_character(), col_character(), col_double(), col_double(), col_character(), col_character())) %>%
+
+final_stimuli <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced/lists", ITEM,"_id_pairs_balanced_hd.csv"),col_types = list(col_character(), col_character(), col_double(), col_double(), col_character(), col_character())) %>%
   rename(hd_sim = hausdorff_sim )
 
-## merge in nn data
-these_nns <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", "bread" , "_all_sims.txt")) %>%
-  select(key_id_1, key_id_2, cosine) 
+raw_data <- read_feather(paste0("../../data/raw_data/feathers/atleast_100/", ITEM, ".txt"))
 
-final_stim <- final_stimuli %>%
-                left_join(these_nns) %>%
-                mutate(haus_bin2 = ntile(hd_sim, 10)) 
+### Get long data
+unique_ids_in_pairs <- unique(c(final_stimuli$key_id_1, final_stimuli$key_id_2))
+nested_raw <- raw_data %>%
+  filter(key_id %in% unique_ids_in_pairs) %>%
+  mutate(key_id_name = key_id) %>%
+  group_by(key_id_name) %>%
+  nest() 
 
-count(final_stim, haus_bin)
-count(final_stim, haus_bin2)
-cor.test(final_stim$cosine, final_stim$hd_sim)
+long_data <- map_df(nested_raw$data, get_image_from_google_draw, 
+                                      GDRAW_SIZE,
+                                      IMAGENET_SIZE,
+                                      N_INTERPOLATE, 
+                                      return = "long") %>%
+  #bind_rows() %>%
+  mutate(key_id = as.factor(key_id))
+
+py <- reticulate::py_run_file("../R_scripts/mhausdorff.py")
+
+this_path <- paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced_lists/", ITEM, "_balanced_sims_mhd.csv")
+
+mhd_sims <- map2_df(final_stimuli$key_id_1, 
+                    final_stimuli$key_id_2, 
+                    get_mhd_distance, 
+                    long_data,
+                    py,
+                    write = TRUE,
+                    path = this_path)
 ```
 
 
-Confirm that pairs are sensible
+Merge all measures together and write to csv (mhd, hd, cosine)
 ```{r}
-SIM_BIN <- 1
 
-plot_ids <- final_stim %>%
-  filter(haus_bin == SIM_BIN) %>%
-  mutate(id = 1:n()) %>%
-  sample_n(8) %>%
-  gather(key_id_name, key_id_num, c(-3:-9)) %>%
-  arrange(haus_bin) %>%
-  mutate(key_id_num = as.factor(key_id_num)) %>%
-  arrange(id)
+mhd <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced_lists/", ITEM, "_balanced_sims_mhd.csv"), col_names = FALSE, col_types = list(col_character(), col_character(), col_double())) %>%
+  rename(key_id_1 = X1,
+         key_id_2 = X2,
+         mhd_sim = X3)
 
-long_files = paste0("../../data/hausdorff_similarities/pair_sim_drawings/images/drawings/", plot_ids$key_id_num, ".jpeg")
+all_measures <- final_stim %>%
+  left_join(mhd)
 
-rl = lapply(long_files, image_read)
-gl = lapply(rl, grid::rasterGrob)
-gridExtra::grid.arrange(grobs = gl, nrow = 8)
+write_csv(all_measures, paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced_lists/", ITEM, "_all_measures.csv"))
 
-```
+
+
 
 

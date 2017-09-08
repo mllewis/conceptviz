@@ -4,8 +4,6 @@
 //      (2) Parameters and Stimulus Setup 
 //      (3) Control Flow
 
-// to do: make sure attention check questions are working right, preregister
-
 // ---------------- 1. HELPER ------------------
 // this gets the stimuli data from google sheet (specified below)
 function getTrialData(this_url) {
@@ -49,8 +47,8 @@ var circle_width = 20
 var ISI = 1000
 var google_spreadsheet_data_url = "https://script.google.com/macros/s/AKfycbz07BK833vq-UxYc_vf9lp8510Wd1rhWdls2JU34_Ckmo14dfU/exec" // where data is saved; RETRIEVE: https://docs.google.com/spreadsheets/d/1gJyp_OeLf4xUT829-_eFGYGy3mV7rH3afsiSom1H8z8/edit#gid=0
 var num_crit_trials = 50
-var attention_check_indices = [25,50] // where do you want the attention checks to go [0 indexing]? (same pairs)
-var total_unique_trials = 200
+var attention_check_indices = [25,50] // where do you want the attention checks (same pairs) to go [0 indexing]? 
+var total_unique_trials = 200 // per condition
 var secret_code_id = "_D_"
 var num_conditions = 2
 
