@@ -1,6 +1,6 @@
 # read in raw simplified json from google, munge into long form tidy data frame and write to feathers
 # critically, long form data include info about stroke number
-# takes ~5 min per item
+# takes ~15 min per item
 
 # load packages
 library(tidyverse) 
@@ -20,8 +20,10 @@ countries <- read.csv("../../data/supplementary_data/iso_3166_2_countries.csv") 
   slice(1) # get one name per code
 
 # read in all file names
-file_list <- list.files("../../data/raw_data/simplified")
-
+# file_list <- list.files("../../data/raw_data/simplified")
+new_items <- c("eye", "face", "foot", "leg", "toe", "arm")
+file_list <- lapply(new_items, function(x){paste0("full%2Fsimplified%2F", x, ".ndjson")}) %>%
+  unlist()
 # read data, munge and write function
 write_drawings_to_feather <- function(name){
   

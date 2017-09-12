@@ -181,20 +181,21 @@ plot_ids <- balanced %>%
   #         key_id_2 %in% crit_ids) %>%
   #filter(key_id_1 %in% balanced$key_id_1 & 
   #         key_id_2 %in% balanced$key_id_2) %>%
-  mutate(haus_bin = ntile(hd_sim, N_ILE)) %>%
+  mutate(haus_bin = ntile(hd_sim, N_ILE),
+          id = 1:n()) %>%
   #mutate(
   #cosine_bin = ntile(cosine, N_ILE), 
   #       id = 1:n()) %>%
   filter(haus_bin == SIM_BIN) %>%
   #slice(1:8) %>%
   sample_n(8) %>%
-  gather(key_id_name, key_id_num, c(-3:-7)) %>%
+  gather(key_id_name, key_id_num, -3:-5) %>%
   arrange(haus_bin) %>%
   mutate(key_id_num = as.factor(key_id_num)) %>%
   arrange(id)
 
 #files <- list.files("../../data/keras_similarities/pair_sim_drawings/images/bread/")
-long_files = paste0("../../data/hausdorff_similarities/pair_sim_drawings/images/", ITEM,"/", plot_ids$key_id_num, ".jpeg")
+long_files = paste0("../../data/hausdorff_similarities/pair_sim_drawings/images/drawings/", plot_ids$key_id_num, ".jpeg")
 
 rl = lapply(long_files, image_read)
 gl = lapply(rl, grid::rasterGrob)

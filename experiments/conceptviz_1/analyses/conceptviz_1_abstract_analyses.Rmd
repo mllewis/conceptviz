@@ -1,5 +1,5 @@
 ---
-title: Conceptviz 1 analyses
+title: Evolang abstract 2018 analyses
 author: Molly Lewis 
 date: "`r Sys.Date()`"
 output: 
@@ -32,7 +32,8 @@ opts_chunk$set(echo = T, message = F, warning = F,
                error = F, tidy = F, cache = T, fig.height = 4)
 ```
 
-Measures for 1500 pairs
+# Similarity measures
+Cosine and HD measures for 1500 pairs for both items
 ```{r}
 bread_cs <- read_feather("../../../data/keras_similarities/pairwise_country/bread_all_sims.txt") %>%
   select(key_id_1, key_id_2, cosine)
@@ -47,11 +48,12 @@ tree_cs <- read_feather("../../../data/keras_similarities/pairwise_country/tree_
 
 tree_hd_1500 <- read_csv("../../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/tree_sampled_pairs_with_sims_hd.csv", col_types = list( col_character(), col_character(), col_double()))
 
-tree_hd_cs <- left_join(tree_hd_1500,tree_cs) %>%
+tree_hd_cs <- left_join(tree_hd_1500, tree_cs) %>%
   mutate(item = "tree")
 
 all_sims <- bind_rows(bread_hd_cs, tree_hd_cs)
 
+## descriptive stats for HD and CD
 all_sims %>%
   gather("measure", "value", 3:4) %>%
   group_by(measure) %>%
@@ -59,12 +61,12 @@ all_sims %>%
             sd = sd(value, na.rm = T)) %>%
   kable()
 
+# correlation between HD and CD
 cor.test(all_sims$hd_sim, all_sims$cosine)
-
-
 ```
 
-## Read in experimentdata from google sheet
+# Experimental data (conceptviz_1)
+## Read in experiment data from google sheet
 ```{r}
 d_raw <- gs_title("conceptviz_1_data") %>%
             gs_read()
@@ -101,21 +103,20 @@ mean_attention_check_ratings = d_tidy %>%
   group_by(subj_id) %>% 
   summarize(mean = mean(rating)) %>%
   filter(mean < mean(.$mean))
-```
 
-Mostly 1s as correct. 
-
-## hausdorff by decile and ratings
-```{r, fig.width = 5}
 d_tidy_crit <- d_tidy %>%
   filter(subj_id %in% mean_attention_check_ratings$subj_id) %>%
   filter(trial_type == "critical_trial") 
+```
+
+## Hausdorff by decile and ratings
+```{r, fig.width = 5}
 
 means_ratings_by_bin <- d_tidy_crit %>%
   group_by(haus_bin, category) %>%
   multi_boot_standard(column = "rating", na.rm = TRUE)
 
-pdf("distance_decile.pdf", width = 5.5, height  = 5)
+#pdf("distance_decile.pdf", width = 5.5, height  = 5)
 ggplot(means_ratings_by_bin, aes(x = haus_bin, y = mean, group = category, color = category)) +
   geom_pointrange(aes(ymin = summary_ci_lower, ymax = summary_ci_upper)) +
   geom_smooth(method = "lm") +
@@ -137,25 +138,10 @@ ggplot(means_ratings_by_bin, aes(x = haus_bin, y = mean, group = category, color
                                 size = 0.5, linetype = "solid"))  +
     directlabels::geom_dl(aes(label = category), method = list(dl.trans(x = x + .3), "last.bumpup")) 
 # https://stackoverflow.com/questions/38088966/directlabels-package-in-r-labels-do-not-fit-in-plot-area
-dev.off()
+#dev.off()
 ```
 
-## hausdorff continuous and ratings
-```{r, fig.width = 5}
-
-d_tidy_crit %>%
-  group_by(trial_ID, haus_sim) %>%
-  summarize(rating = mean(rating, na.rm = T)) %>%
-  ungroup() %>%
-  do(tidy(cor.test(.$rating, .$haus_sim))) %>%
-  select(-parameter, -method, -alternative) %>%
-  kable()
-```
-
-
-There's more variability in hausdorfff distance for bread, relative to tree, which explains the different slopes in the decile plot.
-
-## Hausdorff distance, Modified Hausdorff Distance, and Imagenet-NN cosine
+## Hausdorff continuous and Imagenet-NN cosine vs. ratings
 ```{r, fig.width = 9}
 tree_all_measures <- read_csv(paste0("../../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced_lists/tree_all_measures.csv")) %>%
     mutate_at(c("key_id_1", "key_id_2", "country_code_1","country_code_2"), as.factor) %>%
@@ -170,49 +156,34 @@ bread_all_measures <- read_csv(paste0("../../../data/hausdorff_similarities/pair
 all_measures <- d_tidy_crit %>%
   rename(key_id_1 = drawing_key_id_1,
          key_id_2 = drawing_key_id_2) %>%
-  left_join(bind_rows(tree_all_measures, bread_all_measures), by = c("key_id_1", "key_id_2", "category")) %>%
+  left_join(bind_rows(tree_all_measures, bread_all_measures), 
+            by = c("key_id_1", "key_id_2", "category")) %>%
   select(subj_id, trial_ID, category, rating, haus_sim, cosine, country_code_1, country_code_2, trial_num) %>%
-  rename(hd_sim = haus_sim)
+  rename(hd_sim = haus_sim) %>%
+  mutate(trial_ID2 = paste0(category, trial_ID)) 
 
-all_measures %>%
-  gather("measure", "value", 3:5) %>%
+item_means <- all_measures %>%
+  group_by(trial_ID2) %>%
+  summarize(rating = mean(rating, na.rm = T)) 
+
+item_means %>%
+  left_join(all_measures %>% select(trial_ID2, hd_sim, cosine) %>%
+              distinct(),
+            by = "trial_ID2") %>%
+  gather("measure", "value", 3:4) %>%
   group_by(measure) %>%
-  
   do(tidy(cor.test(.$rating, .$value))) %>%
   select(-parameter, -method, -alternative) %>%
   kable()
-
-
-d_tidy_crit %>%
-  group_by(trial_ID, haus_sim) %>%
-  summarize(rating = mean(rating, na.rm = T)) %>%
-  ungroup() %>%
-  do(tidy(cor.test(.$rating, .$haus_sim))) %>%
-  select(-parameter, -method, -alternative) %>%
-  kable()
-
-all_measures %>%
-  group_by(trial_ID, cosine) %>%
-  summarize(rating = mean(rating, na.rm = T)) %>%
-  ungroup() %>%
-  do(tidy(cor.test(.$rating, .$cosine))) %>%
-  select(-parameter, -method, -alternative) %>%
-  kable()
-
-
 ```
 
-Hausdorff Distance is better than Modified hausdorff Distance (MHD). For bread, MHD > cosine; For tree; MHD = cosine (but there's less variability).
-
-The correlations on the continous measures are modest, but I suspect that's because there's a ceiling on the correlation because we're using a likert scale.
-
-Measure models
+## Predicting ratings with sim measures
 ```{r}
 summary(lmer(rating ~ scale(hd_sim) + scale(cosine) + (1|subj_id), all_measures))
 ```
 
-
-Get missing vars
+## Predicting ratings with country variables
+Get missing levels for dyadic variables
 ```{r}
 ## centroids
 centroids <- read_tsv("../../../data/supplementary_data/cultural_sim_measures/geo/country_centroids/country_centroids_primary.csv") %>%
@@ -221,7 +192,9 @@ centroids <- read_tsv("../../../data/supplementary_data/cultural_sim_measures/ge
 
 centroids_HK_GE <- centroids %>%
   filter(country_code == "GE") %>%
-  bind_rows(data.frame(country_code ="HK", LAT = 22.28552, LONG = 114.15769)) %>%
+  bind_rows(data.frame(country_code ="HK", 
+                       LAT = 22.28552, 
+                       LONG = 114.15769)) %>%
   bind_rows(centroids)
   
 g_centroids <- geosphere::distm(cbind(centroids_HK_GE$LONG, centroids_HK_GE$LAT)) # in meters 
@@ -238,105 +211,80 @@ event_dists <- read_csv("../../../data/supplementary_data/cultural_sim_measures/
 asjp_dists <- read_csv("../../../data/supplementary_data/cultural_sim_measures/lang/asjp_dists.csv") %>%
   select(-contains("lang"))
 
-
 all_measures_with_dyadic <- all_measures %>%
   left_join(all_centroid_dists) %>%
   left_join(event_dists) %>%
   left_join(asjp_dists) %>%
-  mutate(trial_ID2 = paste0(category, trial_ID))
-```
-
-```{r}
-item_means <- all_measures_with_dyadic %>%
-  mutate(trialname = paste0(category, trial_ID)) %>%
-  group_by(trialname) %>%
-  summarize(rating = mean(rating)) %>%
-  left_join(all_measures_with_dyadic %>% mutate(trialname = paste0(category, trial_ID)) %>% select(-rating), by = "trialname") %>%
-  group_by(trialname) %>%
+  mutate(trial_ID2 = paste0(category, trial_ID)) %>%
+  group_by(trial_ID2) %>%
   slice(1) %>%
-  select(trialname, rating, category, log_normalized_n_events_all, asjp_dist, centroid_dist_meters) 
+  select(trial_ID2, category, log_normalized_n_events_all, asjp_dist, centroid_dist_meters) 
+```
 
-item_means %>%
-  select(centroid_dist_meters, rating) %>%
-    ggplot( aes(x = centroid_dist_meters, y = rating)) +
-    geom_point() +
-    geom_smooth(method = "lm")
+Merge in country variables
+```{r}
+item_means2 <- item_means %>%
+  left_join(all_measures_with_dyadic, by = "trial_ID2") 
 
+item_means2 %>%
+  gather("measure", "value", 4:6) %>%
+  ggplot(aes(x = value, y = rating)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  facet_wrap(~measure, scales = "free")
 
-item_means %>%
-  select(log_normalized_n_events_all, rating) %>%
-    ggplot( aes(x = log_normalized_n_events_all, y = rating)) +
-    geom_point() +
-    geom_smooth(method = "lm")
-
-item_means %>%
-  select(asjp_dist, rating) %>%
-    ggplot( aes(x = asjp_dist, y = rating)) +
-    geom_point() +
-    geom_smooth(method = "lm")
-
+item_means2 %>%
+  gather("measure", "value", 4:6) %>%
+  ggplot(aes(x = value, y = rating, color = category)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  facet_wrap(~measure, scales = "free")
 
 ```
 
 
+## Models for predicting ratings with country variables
 ```{r}
 
-item_means %>%
+item_means2 %>%
   gather("measure", "value", 4:6) %>%
   group_by(measure) %>%
-  
   do(tidy(cor.test(.$rating, .$value))) %>%
   select(-parameter, -method, -alternative) %>%
   kable()
 
-########### Here's are the random model: ##################################
-summary(lmer(rating ~  scale(centroid_dist_meters) + (1 |trial_ID) + (1|subj_id) + (1|category), all_measures_with_dyadic))
+# correlations by category
+item_means2 %>%
+  filter(category == "tree") %>%
+  gather("measure", "value", 4:6) %>%
+  group_by(measure) %>%
+  do(tidy(cor.test(.$rating, .$value))) %>%
+  select(-parameter, -method, -alternative) %>%
+  kable()
 
-summary(lmer(rating ~  scale(log_normalized_n_events_all) + (1 |trial_ID) + (1|subj_id) +(1|category), all_measures_with_dyadic))
+# mixed effect model
+summary(lmer(rating ~  scale(centroid_dist_meters) + (1 |trial_ID2) + (1|subj_id) + (1|category), all_measures_with_dyadic))
 
-summary(lmer(rating ~  scale(asjp_dist) + (1 |trial_ID) + (1|subj_id) + (1|category), all_measures_with_dyadic))
+summary(lmer(rating ~  scale(log_normalized_n_events_all) + (1 |trial_ID2) + (1|subj_id) +(1|category), all_measures_with_dyadic))
+
+summary(lmer(rating ~  scale(asjp_dist) + (1 |trial_ID2) + (1|subj_id) + (1|category), all_measures_with_dyadic))
 
 summary(lmer(rating ~ scale(centroid_dist_meters) + 
                scale(log_normalized_n_events_all) + 
                scale(asjp_dist) +
-               (1|trial_ID) + (1|subj_id) + (1|category), 
+               (1|trial_ID2) + (1|subj_id) + (1|category), 
               all_measures_with_dyadic))
-
-summary(lmer(rating ~  scale(centroid_dist_meters) + category + (1 |subj_id), all_measures_with_dyadic))
-
-summary(lmer(rating ~ scale(centroid_dist_meters) + 
-               scale(log_normalized_n_events_all) + 
-               category + (1 |subj_id), 
-              all_measures_with_dyadic))
-#####################################################################
-########### Here's are the fixed model: ##################################
-summary(lmer(rating ~  scale(centroid_dist_meters) * category + (1|subj_id), all_measures_with_dyadic))
-
-summary(lmer(rating ~ scale(centroid_dist_meters) + 
-               scale(log_normalized_n_events_all) + 
-               (1|category) + (1|subj_id), 
-              all_measures_with_dyadic))
-
-summary(lmer(rating ~  scale(centroid_dist_meters) + category + (1 |subj_id), all_measures_with_dyadic))
-
-summary(lmer(rating ~ scale(centroid_dist_meters) + 
-               scale(log_normalized_n_events_all) + 
-               category + (1 |subj_id), 
-              all_measures_with_dyadic))
-#####################################################################
-
-
 ```
 
 
-Drawing figure
+# Drawing figure
 ```{r}
 bread_stim <- read_csv("../data/sim_experiment_stimuli_bread.csv",  col_types = list(col_integer(), col_character(), col_character(), col_character(), col_double(), col_double()))
 
-SIM_BIN <-10
+SIM_BIN <- 10
 plot_ids <- bread_stim %>%
   filter(hd_bin == SIM_BIN) %>%
-  sample_n(8) %>%
+  sample_n(20) %>%
   mutate(id = 1:n()) %>%
   gather("measure", "key_id_num", 3:4) %>%
   arrange(id)
@@ -346,10 +294,44 @@ long_files = paste0("../images/drawings/", plot_ids$key_id_num, ".jpeg")
 
 rl = lapply(long_files, image_read)
 gl = lapply(rl, grid::rasterGrob)
-gridExtra::grid.arrange(grobs = gl, nrow = 8)
+gridExtra::grid.arrange(grobs = gl, nrow = 8, padding = unit(0, "line"))
+gridExtra::grid.rect(gpar(fill=NA))
+
+par(mfrow=c(2,2))
 
 # 1 = c("4517415574568960", "5171456952500224")
 # 5 = c("5530798088257536", "6476551229014016")
 # 10 = c("5507829509128192", "5139027634159616")
 ```
+
+
+# make grid of images
+```{r}
+N_COLS <- 6
+N_ROWS <- 4
+WIDTH <- 50 # pictures are square
+MARGIN <- .2
+
+pic_coords <- data.frame(x1 = rep(seq(0, (WIDTH * N_COLS-WIDTH), by = WIDTH), N_ROWS), 
+                         y1 = rep(seq(0, (WIDTH * N_ROWS-WIDTH), by = WIDTH),  each = N_COLS), 
+                         x2 = rep(seq(WIDTH, WIDTH * N_COLS, by = WIDTH), N_ROWS), 
+                         y2 = rep(seq(WIDTH, WIDTH * N_ROWS, by = WIDTH), each = N_COLS))
+
+
+op <- par(mar=c(MARGIN, MARGIN, MARGIN, MARGIN))
+plot(c(0,N_COLS * WIDTH), c(0, N_ROWS * WIDTH), 
+     type = "n",
+     axes = FALSE,
+     xlab = "", 
+     ylab = "")
+
+for (i in 1:length(long_files)) {
+  image <- image_read(long_files[i])
+  rasterImage(image, 
+              pic_coords$x1[i], 
+              pic_coords$y1[i],
+              pic_coords$x2[i], 
+              pic_coords$y2[i])
+}
+par(op)
 ```

@@ -120,7 +120,6 @@ names(layer_dict) <- purrr::map_chr(layer_dict ,~.x$name)
 model <- keras_model(inputs = base_model$input, 
                      outputs = get_layer(base_model, LAYER)$output) # outputs
 
-
 #### CONTROL FLOW ####
 # get raw data for this item
 all_data <- read_feather(paste0(RAW_PATH, ITEM, ".txt")) %>%
