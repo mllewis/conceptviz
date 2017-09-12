@@ -29,6 +29,8 @@
 *.rdx
 *html/*
 **/data/*
+**/papers/*
+*httr-oauth
 
 
 

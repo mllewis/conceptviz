@@ -8,7 +8,8 @@ library(feather)
 library(lingtypology)
 
 # get countries in our dataset
-g_countries  <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_countries.csv")
+g_countries  <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_countries.csv") %>%
+  bind_rows(data.frame(country_code = c("GE")))
 
 # get language of eachcountry
 country_lang <- read_csv("../../data/supplementary_data/cultural_sim_measures/lang/geo_cepii.csv") %>%
@@ -82,7 +83,14 @@ g_asjp <- asjp[g_indices_asjp, g_indices_asjp] %>%
   reshape2::melt() %>%
   rename(lang1 = Var1,
          lang2 = Var2,
-         asjp_dist = value) 
+         asjp_dist = value) %>%
+  full_join(g_countries_lang_full, by = c("lang1" = "iso_lang")) %>%
+  rename(country_code_1 = country_code) %>%
+  full_join(g_countries_lang_full, by = c("lang2" = "iso_lang")) %>%
+  rename(country_code_2 = country_code) %>%
+  select(country_code_1, country_code_2, asjp_dist)
+
+write_csv(g_asjp, "asjp_dists.csv")
 
 ####autotype####
 #load("../../data/supplementary_data/cultural_sim_measures/lang/autotyp-dist.RData")

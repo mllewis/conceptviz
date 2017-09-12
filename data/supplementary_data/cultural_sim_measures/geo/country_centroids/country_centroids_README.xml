@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 
+http://gothos.info/2009/02/centroids-for-countries/
+This ZIP file contains tab delimited text files with country centroids in latitude and longitude and FIPS and ISO codes (two-letter alpha) for the world’s countries and territories. Includes metadata. Extracted from the NGA GNS and the USGS GNIS in Feb 2012.
+
 <metadata
   xmlns="http://gothos.info/resource_files/country_centroids.zip"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  

@@ -34,7 +34,7 @@ opts_chunk$set(echo = T, message = F, warning = F,
 ```
 
 ```{r}
-ITEM <- "tree"
+ITEM <- "bread"
 GDRAW_SIZE <- 255
 IMAGENET_SIZE <- 224
 N_INTERPOLATE <- 500 

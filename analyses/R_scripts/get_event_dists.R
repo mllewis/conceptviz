@@ -6,8 +6,9 @@ library(countrycode)
 library(stringr)
 
 # get google countries
-g_countries <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_countries.csv")
-
+g_countries <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_countries.csv") %>%
+  bind_rows(data.frame(country_code = c("GE"))) %>%
+distinct(country_code)
 ########## EVENT DATA ##############
 # read in event data
 event_data <- read_tsv("../../data/supplementary_data/cultural_sim_measures/events/ICEWS_event_data/events.2015.20170206133646.tab") 

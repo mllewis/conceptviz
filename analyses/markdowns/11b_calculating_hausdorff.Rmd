@@ -158,7 +158,7 @@ walk(nested_raw$data, get_image_from_google_draw,
 
 ## Compare all nn cosine and hd metrics as sanity check
 ```{r}
-these_hds <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", ITEM, "_sampled_pairs_with_sims_hd.csv"),                            col_types = list(col_character(), col_character(), col_double())) 
+these_hds <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced_lists/", ITEM ,"_sampled_pairs_with_sims_hd.csv"),                            col_types = list(col_character(), col_character(), col_double())) 
 
 these_nns <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", ITEM , "_all_sims.txt")) %>%
   select(key_id_1, key_id_2, cosine) 
@@ -171,22 +171,20 @@ cor.test(all_sims$cosine, all_sims$hd_sim)
 
 Compare pairs - which looks better?
 ```{r}
-balanced <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", ITEM ,"_id_pairs_balanced_hd.csv"),col_types = list(col_character(), col_character(), col_double(), col_double(), col_character(), col_character())) %>%
-  rename(hd_sim = hausdorff_sim )
-
+balanced <- read_csv(paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced_lists/", ITEM ,"_sampled_pairs_with_sims_hd.csv"), col_types = list(col_character(), col_character(), col_double(), col_double(), col_character(), col_character())) 
 
 SIM_BIN <- 10
 
-plot_ids <- #balanced %>%
-  all_sims %>%
-  filter(key_id_1 %in% crit_ids & 
-           key_id_2 %in% crit_ids) %>%
+plot_ids <- balanced %>%
+  #all_sims %>%
+  #filter(key_id_1 %in% crit_ids & 
+  #         key_id_2 %in% crit_ids) %>%
   #filter(key_id_1 %in% balanced$key_id_1 & 
   #         key_id_2 %in% balanced$key_id_2) %>%
   mutate(haus_bin = ntile(hd_sim, N_ILE)) %>%
-  mutate(
-  cosine_bin = ntile(cosine, N_ILE), 
-         id = 1:n()) %>%
+  #mutate(
+  #cosine_bin = ntile(cosine, N_ILE), 
+  #       id = 1:n()) %>%
   filter(haus_bin == SIM_BIN) %>%
   #slice(1:8) %>%
   sample_n(8) %>%

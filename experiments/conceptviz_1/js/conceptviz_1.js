@@ -16,7 +16,7 @@ function saveTrialsToVars(data) {
     // data comes through as a simple array since simpleSheet is turned on
     td = data
 
-    // get objs an preload
+    // get objs to preload
     objs = []
     for (i = 0; i < num_trials; i++) {
       objs.push("images/drawings/" + td[trial_ids[i]].key_id_1 + ".jpeg") 
@@ -30,6 +30,7 @@ function saveTrialsToVars(data) {
         });
     };
 
+    // preload two - not sure if this works?
     var images = new Array() // By creating image object and setting source, images preload
     for (i=0;i<objs.length;i++) {
       images[i] = new Image()
@@ -294,7 +295,7 @@ var experiment = {
         $("#completion_code").html('<p style="font-size:34px;color:red;"> ' +  new_completion_code + ' </p>')
 
         // stringify all data
-        var data_string = "subj_id=" + subj_id + "&completion_code="+ new_completion_code+'&data=' + JSON.stringify(experiment)
+        var data_string = "subj_id=" + subj_id + "&completion_code="+ new_completion_code + '&data=' + JSON.stringify(experiment)
 
         // save data to google sheet
         post_data(data_string, google_spreadsheet_data_url)
