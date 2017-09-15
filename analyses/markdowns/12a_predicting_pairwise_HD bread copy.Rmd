@@ -1,0 +1,195 @@
+---
+title: Predicting pairwise HD across multiple items
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+  
+```{r setup, include = F}
+rm(list=ls())
+
+
+# load packages
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(purrr)
+library(feather)
+library(forcats)
+library(data.table)
+library(country_code)
+
+source("../R_scripts/helpers.R")
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F, cache = T, fig.height = 4)
+```
+
+Read in HD data
+```{r}
+
+hd_sims2 <- read_csv("../../data/hausdorff_similarities/pair_lists/tree_sampled_pairs_with_sims_hd_even_countries.csv",  
+        col_types = list(col_character(), col_character(), col_double(), col_character(), col_character(), col_character())) %>%
+  rename(country_code_1 = country_code,
+         country_code_2 =  country_code1)
+
+
+items <- c("bread", "tree")
+pairwise_hds_raw <-  data.frame()
+for (i in 1:length(items)) {
+    s <- read_csv(paste0("../../data/hausdorff_similarities/pair_lists/", items[i], "_sampled_pairs_with_sims_hd_even_countries.csv"),  col_types = list(col_character(), col_character(), col_double(), col_character(), col_character(), col_character()))  %>%
+  rename(country_code_1 = country_code,
+         country_code_2 =  country_code1)
+    pairwise_hds_raw <- rbind(pairwise_hds_raw, data.frame(s))
+}
+
+
+ pairwise_hds_raw %>%
+  rowwise() %>%
+  mutate(all_codes = get_unique_relation_id(as.character(country_code_1), as.character(country_code_2))) %>%
+  ungroup() %>%
+  mutate(all_codes = as.factor(all_codes))  %>%
+  group_by(all_codes, country_code_1, country_code_2) %>%
+  summarize(mean = mean(hd_sim),
+            sd = sd(hd_sim)) %>%
+  arrange(mean) %>%
+  mutate(country_name_1  = countrycode(country_code_1, "iso2c",  "country.name"),
+         country_name_2  = countrycode(country_code_2, "iso2c",  "country.name")) %>%
+  ungroup()%>%
+  slice(1:150) %>%
+  select(country_name_1, country_name_2) %>%
+  distinct() %>%
+          as.data.frame() 
+
+
+all_countries <- unique(k$country_name_1)
+NUM_COUNTRIES <- length(all_countries)
+
+m = matrix(nrow = NUM_COUNTRIES, ncol = NUM_COUNTRIES)
+
+for (i in 1:dim(k)[1]){ 
+  sim = unlist(k[i, "mean"])
+  x = which(all_countries == unlist(k[i, "country_name_1"]))
+  y = which(all_countries == unlist(k[i, "country_name_2"]))
+  m[x,y] <- sim
+  m[y,x] <- sim
+  
+}
+
+colnames(m) = all_countries
+rownames(m) = all_countries
+
+# plot
+ggdendro::ggdendrogram(hclust(dist(m)), size = 2)
+
+```
+
+Merge in predictors
+```{r}
+get_unique_relation_id <- function (x, y){
+  pairs = c(x, y)
+  ordered = order(pairs)
+  paste0(pairs[ordered[1]], pairs[ordered[2]])
+}
+
+ling <- read_csv("../../data/supplementary_data/cultural_sim_measures/lang/all_google_lang_dists_clean.csv") 
+geo <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_geo_dists_clean.csv") 
+events <- read_csv("../../data/supplementary_data/cultural_sim_measures/events/all_google_event_dists.csv") %>%
+  mutate(log_normalized_n_events_all = ifelse(is.na(log_normalized_n_events_all), 0, log_normalized_n_events_all))
+
+all_predictors <- ling %>%
+  left_join(geo) %>%
+  left_join(events)
+
+#vexclude BA and HK fewer NAs
+
+pairwise_hds_with_predicts <- pairwise_hds_raw %>%
+  #filter(country_code_1 != country_code_2) %>%
+  left_join(all_predictors) %>% 
+  mutate(log_hd_sim = log(hd_sim)) %>% 
+  filter(is.finite(log_hd_sim)) %>%
+  rowwise() %>%
+  mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2)) %>%
+  ungroup() %>%
+  mutate(all_codes = as.factor(all_codes)) %>%
+  mutate(log_hd_sim = log(hd_sim))
+
+```
+
+Mixed effect models
+```{r}
+# LANGUAGE
+summary(lmer(log_hd_sim ~ centroid_dist_meters*item  + wals_euclidean_dist*item +
+                (1|all_codes) , 
+             pairwise_hds_with_predicts))
+
+summary(lmer(log_hd_sim ~ wals_euclidean_dist  + 
+                (1|all_codes) , 
+             pairwise_hds_with_predicts))
+
+summary(lmer(log_hd_sim ~ asjp_dist  + 
+                (1|all_codes) , 
+             pairwise_hds_with_predicts))
+
+summary(lmer(log_hd_sim ~ log_normalized_mean_imports_dollars  + 
+                (1|all_codes) , 
+             pairwise_hds_with_predicts))
+
+summary(lmer(log_hd_sim ~ log_normalized_n_events_all  + 
+                (1|all_codes) , 
+             pairwise_hds_with_predicts))
+
+summary(lmer(log_hd_sim ~ centroid_dist_meters  + wals_euclidean_dist + log_normalized_mean_imports_dollars + log_normalized_n_events_all + 
+                (1|all_codes) , 
+             pairwise_hds_with_predicts))
+```
+                     
+                     
+Correlations
+```{r}
+
+pairwise_hds_with_predicts_long <- pairwise_hds_with_predicts %>% 
+    group_by(all_codes, item) %>%
+    summarize(hd_sim = mean(hd_sim, na.rm = T),
+              centroid_dist_meters  = mean(centroid_dist_meters , na.rm = T), 
+              log_normalized_n_events_all = mean(log_normalized_n_events_all, na.rm = T),
+              asjp_dist = mean(asjp_dist, na.rm = T),
+              wals_euclidean_dist = mean(wals_euclidean_dist, na.rm = T),
+              log_normalized_mean_imports_dollars = mean(log_normalized_mean_imports_dollars, na.rm = T)) %>%
+     gather("measure", "value", 4:8)
+
+pairwise_hds_with_predicts_long %>%
+  group_by(measure, item) %>%
+  do(tidy(cor.test(.$hd_sim, .$value, na.rm = T))) %>%
+  select(-parameter, -method, -alternative) %>%
+  arrange(p.value) %>%
+  as.data.frame()
+
+pairwise_hds_with_predicts_long %>%
+  group_by(measure) %>%
+  do(tidy(cor.test(log(.$hd_sim), .$value, na.rm = T))) %>%
+  select(-parameter, -method, -alternative) %>%
+  arrange(p.value) %>%
+  as.data.frame()
+
+
+pairwise_hds_with_predicts_long %>%
+  ggplot(aes(x = value, y = log(hd_sim), color = item)) +
+  #geom_point() +
+  geom_smooth(method = "lm") +
+  facet_wrap(~measure, scales = "free") +
+  theme_minimal()
+
+pairwise_hds_with_predicts_long %>%
+  ggplot(aes(x = value, y = log(hd_sim), color = item)) +
+  #geom_point() +
+  geom_smooth(method = "lm") +
+  facet_wrap(~measure, scales = "free") +
+  theme_minimal()
+```

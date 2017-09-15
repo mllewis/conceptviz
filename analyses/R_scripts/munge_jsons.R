@@ -21,9 +21,12 @@ countries <- read.csv("../../data/supplementary_data/iso_3166_2_countries.csv") 
 
 # read in all file names
 # file_list <- list.files("../../data/raw_data/simplified")
-new_items <- c("eye", "face", "foot", "leg", "toe", "arm")
+new_items <-  c("hand", "knee", "mouth", "line", "circle",
+           "square", "hexagon", "triangle", "octagon")
+
 file_list <- lapply(new_items, function(x){paste0("full%2Fsimplified%2F", x, ".ndjson")}) %>%
   unlist()
+
 # read data, munge and write function
 write_drawings_to_feather <- function(name){
   

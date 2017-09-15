@@ -9,12 +9,13 @@ library(tidyverse)
 library(purrr)
 library(feather)
 library(data.table)
+source("../R_scripts/helpers.R")
+
 source("helpers.R")
 
 ### PARAMS ###
 RAW_PATH <- "../../data/raw_data/feathers/atleast_100/"
-N_SAMPLES_PER_COUNTRY <- 1000
-N_PAIRS <- 20000
+N_SAMPLES_PER_COUNTRY <- 20
 py2 <- reticulate::py_run_file("../R_scripts/hausdorff_fast_wrapper.py")
 
 GOOD_COUNTRIES <-  c("US", "NZ", "NL", "BR" ,"IT", "KR", "AR", "BG",
@@ -27,13 +28,37 @@ GOOD_COUNTRIES <-  c("US", "NZ", "NL", "BR" ,"IT", "KR", "AR", "BG",
                       "AT", "HK", "EG", "BE", "SI", "LT",
                       "ZA", "GR", "BY", "BA" ,"MX" ,"CH",
                       "CO" ,"KW", "PK" ,"LV" ,"KZ" ,"JO")
+items <- c("mouth", "line", "circle",
+          "square", "hexagon", "triangle", "octagon")
 
-### ITEMS ###
-#items <- c("leg", "toe", "foot", "face", "eye",
-#           "ear", "hand", "knee", "mouth", "line", "circle",
-#           "square", "hexagon", "triangle", "octagon")
+#"leg", "toe", "foot", "face", "eye",
+#"ear", "hand", "knee", "mouth"
 
-items <- c("bread")
+
+get_key_id_pairs <- function(cc_1, cc_2, d){
+   
+   first_key_ids <- d %>%
+     filter(country_code == cc_1) %>%
+     select(country_code, key_id) %>%
+     rename(country_code = country_code,
+            key_id_1 = key_id) %>%
+     sample_frac(1)
+   
+   
+   second_key_ids <- d %>%
+     filter(country_code == cc_2) %>%
+     select(country_code, key_id) %>%
+     rename(country_code = country_code,
+            key_id_2 = key_id)
+   
+   data.frame(cbind(first_key_ids, second_key_ids))
+   
+ } 
+
+
+unique_country_pairs <- as.data.frame(t(combn(GOOD_COUNTRIES, 2))) %>%
+  rename(country_code_1 = V1, 
+         country_code_2 = V2)
 
 ### LOOP OVER ITEMS AND GET HD FOR PAIRS ###
 
@@ -48,22 +73,21 @@ for (i in 1:length(items)){
   
   # get N_SAMPLES_PER_COUNTRY drawing key_ids from each country
   current_key_ids <- raw_data %>%
+    group_by(country_code, key_id) %>%
+    slice(1) %>%
     group_by(country_code) %>%
-    sample_n(N_SAMPLES_PER_COUNTRY, replace = TRUE)  %>%
-    ungroup()
+    sample_n(N_SAMPLES_PER_COUNTRY)  %>%
+    mutate(ID = 1:n()) %>%
+    select(country_code, key_id, ID)
   
-  # get indexes of random samples
-  is_of_key_ids_1 <- sample(1:nrow(current_key_ids), N_PAIRS)
-  is_of_key_ids_2 <- sample(1:nrow(current_key_ids), N_PAIRS)
-
-  # get actual key_ids
-  crit_pairs <- data.frame(key_id_1 = current_key_ids$key_id[is_of_key_ids_1], 
-                           key_id_2 = current_key_ids$key_id[is_of_key_ids_2],
-                           country_code_1 = current_key_ids$country_code[is_of_key_ids_1], 
-                           country_code_2 = current_key_ids$country_code[is_of_key_ids_2])
+  crit_pairs <- map2_df(unique_country_pairs$country_code_1,
+                         unique_country_pairs$country_code_2,
+                         get_key_id_pairs,
+                         current_key_ids)
 
   # get point data for the unique drawings in the pairs
-  unique_ids_in_pairs <- unique(unlist(list(crit_pairs$key_id_1, crit_pairs$key_id_2)))
+  unique_ids_in_pairs <- unique(unlist(list(crit_pairs$key_id_1, 
+                                            crit_pairs$key_id_2)))
   
   point_data <- raw_data %>%
     filter(key_id %in% unique_ids_in_pairs) %>%
@@ -81,6 +105,6 @@ for (i in 1:length(items)){
   hd_sims_with_meta <- left_join(hd_sims, crit_pairs) %>%
     mutate(item = items[i])
 
-  hd_this_path <- paste0("../../data/hausdorff_similarities/pair_lists/", items[i], "_sampled_pairs_with_sims_hd_2.csv")
+  hd_this_path <- paste0("../../data/hausdorff_similarities/pair_lists/", items[i], "_sampled_pairs_with_sims_hd_even_countries.csv")
   write_csv(hd_sims_with_meta, hd_this_path)
 }

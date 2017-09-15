@@ -8,46 +8,67 @@ library(feather)
 library(lingtypology)
 
 # get countries in our dataset
-g_countries  <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_countries.csv") %>%
-  bind_rows(data.frame(country_code = c("GE")))
+#g_countries  <- read_csv(paste0("../../data/hausdorff_similarities/pair_lists/line_sampled_pairs_with_sims_hd.csv"))  %>%
+#  select(country_code_1) %>%
+#distinct()
+
+g_countries <- data.frame(country_code = c("US", "NZ", "NL", "BR" ,"IT", "KR", "AR", "BG",
+                 "NO", "AU" ,"DE" ,"GB" ,"HU" ,"PL", "SE", "AE", "SA", "PH",
+                 "RS", "ID", "DK", "VN", "SG", "CA",
+                 "CZ", "MY", "JP", "FR", "EE", "RU",
+                 "QA", "TR", "TH", "IE" ,"FI", "HR",
+                 "ES" ,"UA", "IL", "SK", "CL", "TW",
+                 "PT" ,"RO", "IQ", "DZ", "IN", "KH",
+                 "AT", "HK", "EG", "BE", "SI", "LT",
+                 "ZA", "GR", "BY", ,"MX" ,"CH",
+                 "CO" ,"KW", "PK" ,"LV" ,"KZ" ,"JO")) 
 
 # get language of eachcountry
-country_lang <- read_csv("../../data/supplementary_data/cultural_sim_measures/lang/geo_cepii.csv") %>%
-  rename(country_code = iso2,
-         language = langoff_1) %>%
-  select(country_code, language) %>%
-  mutate(country_code = fct_recode(country_code,
-                           "RS" = "YU")) %>%
-  group_by(country_code) %>% 
-  slice(1)
+iso_codes <- read_csv("../../data/supplementary_data/cultural_sim_measures/lang/iso3_and_1.csv") %>%
+  select(-English) %>%
+  rename(iso3 = `alpha3-b`)
 
-g_countries_lang <- g_countries %>%
-  left_join(country_lang)  %>%
-  mutate(language = replace(language, country_code == "IN", "Hindi")) 
 
-### NOTE: need to get percentage of language in each country - here using official language which is weird for India. Change this manually
-g_countries_lang_full <- g_countries_lang %>%
-  mutate(language = fct_recode(language,
-                           "Standard Arabic" = "Arabic",
-                           "Croatian" = "Serbo-Croatian",
-                           "Standard Malay" = "Malay",
-                           "Mandarin Chinese" = "Chinese", 
-                           "Belarusian" = "Belarussian",
-                           "Modern Greek" = "Greek",
-                           "Modern Hebrew" = "Hebrew",
-                           "Central Khmer" = "Khmer")) %>%
-  mutate(iso_lang = iso.lang(language))
+## coud do second and third languages too
+g_countries_lang <- read_tsv("../../data/supplementary_data/cultural_sim_measures/lang/geo_codes.csv", skip = 50) %>%
+  rename(country_code = `#ISO`,
+         language = Languages,
+         area = `Area(in sq km)`) %>%
+  select(country_code, language, area) %>%
+  filter(country_code %in% g_countries$country_code)  %>%
+  separate(language, into = c("top_lang", "other_langs"), 
+                             sep = ",") %>%
+  separate(top_lang, into = c("top_lang", "other_langs2"), 
+             sep = "-") %>%
+  select(country_code, top_lang, area)%>%
+  left_join(iso_codes, by = c("top_lang" = "alpha2")) %>%
+  mutate(iso3 = replace(iso3, top_lang == "cmn", "cmn")) %>%
+  select(-top_lang)
 
 load("../../data/supplementary_data/cultural_sim_measures/lang/wals-euclidean-mode-dm.RData")
 
 wals_euclidean <- as.matrix(wals.euclidean.mode.dm)
 
-g_indices <- which(dimnames(wals_euclidean)[[1]] %in% g_countries_lang_full$iso_lang)
+g_countries_lang$iso_lang_eu <- g_countries_lang$iso3 # need asjp-specifc codes
+g_countries_lang[g_countries_lang$iso_lang_eu == "hrv","iso_lang_eu"] = "srb"
+g_countries_lang[g_countries_lang$iso_lang_eu == "srp","iso_lang_eu"] = "srb"
+
+g_indices <- which(dimnames(wals_euclidean)[[1]] %in% g_countries_lang$iso_lang_eu)
+setdiff(g_countries_lang$iso_lang_eu,dimnames(wals_euclidean)[[1]])
+
 g_wals_euclidean <- wals_euclidean[g_indices, g_indices] %>%
                       reshape2::melt() %>%
                       rename(lang1 = Var1,
                              lang2 = Var2,
-                             wals_euclidean_dist = value) 
+                             wals_euclidean_dist = value)  %>%
+  left_join(g_countries_lang %>% select(country_code, iso_lang_eu),
+            by = c("lang1" = "iso_lang_eu")) %>% 
+  rename(country_code_1 = country_code) %>%
+  left_join(g_countries_lang %>% select(country_code, iso_lang_eu), 
+            by = c("lang2" = "iso_lang_eu")) %>%
+  rename(country_code_2 = country_code) %>%
+  mutate_if(is.character, as.factor) %>%
+  select(-lang1, -lang2)
 
 #### MG2015####
 # load("../../data/supplementary_data/cultural_sim_measures/lang/MG2015-wals-alpha=0.69.RData")
@@ -77,34 +98,43 @@ g_wals_euclidean <- wals_euclidean[g_indices, g_indices] %>%
 load("../../data/supplementary_data/cultural_sim_measures/lang/asjp16-dists.RData")
 
 asjp <- as.matrix(asjp16.dm)
-g_indices_asjp <- which(dimnames(asjp)[[1]] %in% g_countries_lang_full$iso_lang)
+
+g_countries_lang$iso_lang_asjp <- g_countries_lang$iso3# need asjp-specifc codes
+#g_countries_lang[g_countries_lang$iso_lang_asjp == "arb","iso_lang_asjp"] = "acm" # this is some dialect of arabic; doesn't seem to have macro
+g_countries_lang[g_countries_lang$iso_lang_asjp == "ara","iso_lang_asjp"] = "acm" # this is some dialect of arabic; doesn't seem to have macro
+g_countries_lang[g_countries_lang$iso_lang_asjp == "heb","iso_lang_asjp"] = "hbo" 
+g_countries_lang[g_countries_lang$iso_lang_asjp == "lav","iso_lang_asjp"] = "lvs" # i think these are bcecause asjp uses 639-3, and the codes i have are 639-2 
+g_countries_lang[g_countries_lang$iso_lang_asjp == "zsm","iso_lang_asjp"] = "ind"
+g_countries_lang[g_countries_lang$iso_lang_asjp == "ger","iso_lang_asjp"] = "deu"
+g_countries_lang[g_countries_lang$iso_lang_asjp == "dut","iso_lang_asjp"] = "nld"
+g_countries_lang[g_countries_lang$iso_lang_asjp == "cze","iso_lang_asjp"] = "ces"
+g_countries_lang[g_countries_lang$iso_lang_asjp == "est","iso_lang_asjp"] = "ekk"
+g_countries_lang[g_countries_lang$iso_lang_asjp == "fre","iso_lang_asjp"] = "fra"
+g_countries_lang[g_countries_lang$iso_lang_asjp == "gre","iso_lang_asjp"] = "ell"
+g_countries_lang[g_countries_lang$iso_lang_asjp == "chi","iso_lang_asjp"] = "cmn"
+g_countries_lang[g_countries_lang$iso_lang_asjp == "may","iso_lang_asjp"] = "ind"
+g_countries_lang[g_countries_lang$iso_lang_asjp == "rum","iso_lang_asjp"] = "ron"
+g_countries_lang[g_countries_lang$iso_lang_asjp == "slo","iso_lang_asjp"] = "slk"
+
+g_indices_asjp <- which(dimnames(asjp)[[1]] %in% g_countries_lang$iso_lang_asjp)
 
 g_asjp <- asjp[g_indices_asjp, g_indices_asjp] %>%
   reshape2::melt() %>%
   rename(lang1 = Var1,
          lang2 = Var2,
-         asjp_dist = value) %>%
-  full_join(g_countries_lang_full, by = c("lang1" = "iso_lang")) %>%
+         asjp_dist = value)  %>%
+  full_join(g_countries_lang, by = c("lang1" = "iso_lang_asjp")) %>%
   rename(country_code_1 = country_code) %>%
-  full_join(g_countries_lang_full, by = c("lang2" = "iso_lang")) %>%
+  full_join(g_countries_lang, by = c("lang2" = "iso_lang_asjp")) %>%
   rename(country_code_2 = country_code) %>%
   select(country_code_1, country_code_2, asjp_dist)
 
-write_csv(g_asjp, "asjp_dists.csv")
 
 ####autotype####
 #load("../../data/supplementary_data/cultural_sim_measures/lang/autotyp-dist.RData")
 # indicies don't have names
 
 ### write to file with country names ####
-all_lang_dists <-  full_join(g_wals_euclidean, g_asjp) %>%
-  left_join(g_countries_lang_full, by = c("lang1" = "iso_lang")) %>% 
-  rename(country_code_1 = country_code) %>%
-  left_join(g_countries_lang_full, by = c("lang2" = "iso_lang")) %>%
-  rename(country_code_2 = country_code) %>%
-  mutate(asjp_dist = ifelse(lang1 == lang2, 0, asjp_dist),# we want zero here for pairs dataset doesn't happen to have
-         wals_euclidean_dist = ifelse(lang1 == lang2, 0, wals_euclidean_dist)) %>%
-  select(country_code_1, country_code_2, 
-         wals_euclidean_dist, asjp_dist) 
+all_lang_dists <-  full_join(g_wals_euclidean, g_asjp, by = c('country_code_1', "country_code_2") )
 
-write_csv(all_lang_dists, "../../data/supplementary_data/cultural_sim_measures/lang/all_google_lang_dists.csv")
+write_csv(all_lang_dists, "../../data/supplementary_data/cultural_sim_measures/lang/all_google_lang_dists_clean.csv")

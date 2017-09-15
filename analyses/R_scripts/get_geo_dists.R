@@ -55,9 +55,10 @@ all_capital_dists_with_countries <- all_dists %>%
 #################Country Centroids#################
 # data from: http://gothos.info/resource_files/country_centroids.zip
 centroids <- read_tsv("../../data/supplementary_data/cultural_sim_measures/geo/country_centroids/country_centroids_primary.csv") %>%
-  select(ISO3136, SHORT_NAME, LAT, LONG) %>%
+  select(ISO3136, LAT, LONG) %>%
   rename(country_code = ISO3136) %>%
-  left_join(g_countries) 
+  add_row(country_code = "HK", LAT = 22.28552, LONG =  114.15769) %>%
+  right_join(g_countries)  
 
 g_centroids <- geosphere::distm(cbind(centroids$LONG, centroids$LAT)) # in meters
 rownames(g_centroids) <- centroids$country_code
@@ -77,4 +78,4 @@ ggplot(all_dists, aes(x = log(centroid_dist_meters),
   geom_point() +
   geom_smooth(method = "lm")
 
-write_csv(all_dists, "../../data/supplementary_data/cultural_sim_measures/geo/all_google_geo_dists.csv")
+write_csv(all_centroid_dists, "../../data/supplementary_data/cultural_sim_measures/geo/all_google_geo_dists_clean.csv")

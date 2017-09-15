@@ -133,7 +133,55 @@ all_measures <- final_stim %>%
 
 write_csv(all_measures, paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced_lists/", ITEM, "_all_measures.csv"))
 
+```
 
+```{r}
+bread_haus = read_csv("../../data/hausdorff_similarities/pair_lists/bread_sampled_pairs_with_sims_hd.csv",  col_types = list(col_character(), col_character(), col_double()))
+
+  raw_data <- read_feather("../../data/raw_data/feathers/atleast_100/bread.txt") %>%
+    data.table()  %>%
+    group_by(key_id) %>%
+    slice(1) %>%
+    select(key_id, country_code) 
+  
+bread_haus_with_countries = bread_haus %>%
+  left_join(raw_data, by = c("key_id_1" = "key_id")) %>%
+  rename(country_code_1 = country_code) %>%
+  left_join(raw_data, by = c("key_id_2" = "key_id")) %>%
+  rename(country_code_2 = country_code)  %>%
+  left_join(all_predictors) %>%
+  rowwise() %>%
+  mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2)) %>%
+  ungroup() %>%
+  mutate(log_hd_sim = log(hd_sim)) %>%
+  filter(is.finite(log_hd_sim)) %>%
+  mutate( country_code_1 = as.factor(country_code_1),
+          country_code_2 = as.factor(country_code_2))
+
+bread_haus_with_countries %>%
+  gather("measure", "value", 6:10) %>%
+  group_by(measure) %>%
+  do(tidy(cor.test(.$hd_sim, .$value, na.rm = T))) %>%
+  select(-parameter, -method, -alternative) %>%
+  arrange(p.value) %>%
+  as.data.frame()
+
+summary(lmer(log_hd_sim ~ centroid_dist_meters +  log_normalized_n_events_all + 
+                (1|country_code_1) +  (1|country_code_2) , 
+             bread_haus_with_countries))
+
+wals_euclidean_dist
+asjp_dist 
+centroid_dist_meters 
+log_normalized_n_events_all 
+log_normalized_mean_imports_dollars
+
+count(bread_haus_with_countries, country_code_1) %>%
+  arrange(-n) %>%
+  as.data.frame()
+  
+
+```
 
 
 

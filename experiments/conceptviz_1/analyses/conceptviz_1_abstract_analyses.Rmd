@@ -25,6 +25,7 @@ library(forcats)
 library(googlesheets)
 library(jsonlite)
 library(broom)
+library(magick)
 library(corrr)
 #source("../R_scripts/helpers.R")
 
@@ -38,7 +39,7 @@ Cosine and HD measures for 1500 pairs for both items
 bread_cs <- read_feather("../../../data/keras_similarities/pairwise_country/bread_all_sims.txt") %>%
   select(key_id_1, key_id_2, cosine)
 
-bread_hd_1500 <- read_csv("../../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/bread_sampled_pairs_with_sims_hd.csv", col_types = list( col_character(), col_character(), col_double()))
+bread_hd_1500 <- read_csv("../../../data/hausdorff_similarities/pair_lists/bread_sampled_pairs_with_sims_hd.csv", col_types = list( col_character(), col_character(), col_double()))
 
 bread_hd_cs <- left_join(bread_hd_1500, bread_cs) %>%
   mutate(item = "bread")
@@ -46,7 +47,7 @@ bread_hd_cs <- left_join(bread_hd_1500, bread_cs) %>%
 tree_cs <- read_feather("../../../data/keras_similarities/pairwise_country/tree_all_sims.txt") %>%
   select(key_id_1, key_id_2, cosine)
 
-tree_hd_1500 <- read_csv("../../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/tree_sampled_pairs_with_sims_hd.csv", col_types = list( col_character(), col_character(), col_double()))
+tree_hd_1500 <- read_csv("../../../data/hausdorff_similarities/pair_lists/tree_sampled_pairs_with_sims_hd.csv", col_types = list( col_character(), col_character(), col_double()))
 
 tree_hd_cs <- left_join(tree_hd_1500, tree_cs) %>%
   mutate(item = "tree")
@@ -89,7 +90,7 @@ d_tidy <- d %>%
 ## Attention Checks
 ```{r}
 d_tidy %>%
-  filter(trial_type == "attention_check") %>%
+ # filter(trial_type == "attention_check") %>%
   select(subj_id, rating) %>%
   count(rating) %>%
   ggplot(aes(x = rating, y = n/200)) +
@@ -143,22 +144,22 @@ ggplot(means_ratings_by_bin, aes(x = haus_bin, y = mean, group = category, color
 
 ## Hausdorff continuous and Imagenet-NN cosine vs. ratings
 ```{r, fig.width = 9}
-tree_all_measures <- read_csv(paste0("../../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced_lists/tree_all_measures.csv")) %>%
+tree_all_measures <- read_csv(paste0("../../../data/hausdorff_similarities/pair_lists/balanced_lists/tree_all_measures.csv")) %>%
     mutate_at(c("key_id_1", "key_id_2", "country_code_1","country_code_2"), as.factor) %>%
   select(key_id_1, key_id_2, hd_sim, mhd_sim, cosine, country_code_1, country_code_2) %>%
   mutate(category = "tree")
 
-bread_all_measures <- read_csv(paste0("../../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/balanced_lists/bread_all_measures.csv")) %>%
+bread_all_measures <- read_csv(paste0("../../../data/hausdorff_similarities/pair_lists/balanced_lists/bread_all_measures.csv")) %>%
     mutate_at(c("key_id_1", "key_id_2", "country_code_1","country_code_2"), as.factor)  %>%
   select(key_id_1, key_id_2, hd_sim, mhd_sim, cosine,  country_code_1, country_code_2)  %>%
   mutate(category = "bread")
 
-all_measures <- d_tidy_crit %>%
+all_measures <- d_tidy %>%
   rename(key_id_1 = drawing_key_id_1,
          key_id_2 = drawing_key_id_2) %>%
   left_join(bind_rows(tree_all_measures, bread_all_measures), 
             by = c("key_id_1", "key_id_2", "category")) %>%
-  select(subj_id, trial_ID, category, rating, haus_sim, cosine, country_code_1, country_code_2, trial_num) %>%
+  select(subj_id, trial_ID, category, rating, haus_sim, cosine, country_code_1, country_code_2, trial_num, haus_bin) %>%
   rename(hd_sim = haus_sim) %>%
   mutate(trial_ID2 = paste0(category, trial_ID)) 
 
@@ -186,59 +187,64 @@ summary(lmer(rating ~ scale(hd_sim) + scale(cosine) + (1|subj_id), all_measures)
 Get missing levels for dyadic variables
 ```{r}
 ## centroids
-centroids <- read_tsv("../../../data/supplementary_data/cultural_sim_measures/geo/country_centroids/country_centroids_primary.csv") %>%
-  select(ISO3136, LAT, LONG) %>%
-  rename(country_code = ISO3136) 
+ling <- read_csv("../../../data/supplementary_data/cultural_sim_measures/lang/all_google_lang_dists_clean.csv") 
+geo <- read_csv("../../../data/supplementary_data/cultural_sim_measures/geo/all_google_geo_dists_clean.csv") 
+events <- read_csv("../../../data/supplementary_data/cultural_sim_measures/events/all_google_event_dists.csv") %>%
+  mutate(log_normalized_n_events_all = ifelse(is.na(log_normalized_n_events_all), 0, log_normalized_n_events_all))
 
-centroids_HK_GE <- centroids %>%
-  filter(country_code == "GE") %>%
-  bind_rows(data.frame(country_code ="HK", 
-                       LAT = 22.28552, 
-                       LONG = 114.15769)) %>%
-  bind_rows(centroids)
-  
-g_centroids <- geosphere::distm(cbind(centroids_HK_GE$LONG, centroids_HK_GE$LAT)) # in meters 
-rownames(g_centroids) <- centroids_HK_GE$country_code
-colnames(g_centroids) <- centroids_HK_GE$country_code
+all_predictors <- ling %>%
+  left_join(geo) %>%
+  left_join(events) %>%
+  left_join(all_measures %>% select(trial_ID2, country_code_1, country_code_2, category, hd_sim)) %>%
+  distinct()
 
-all_centroid_dists <- reshape2::melt(g_centroids) %>%
-  rename(country_code_1 = Var1,
-         country_code_2 = Var2,
-         centroid_dist_meters = value) 
-
-event_dists <- read_csv("../../../data/supplementary_data/cultural_sim_measures/events/all_google_event_dists.csv")
-
-asjp_dists <- read_csv("../../../data/supplementary_data/cultural_sim_measures/lang/asjp_dists.csv") %>%
-  select(-contains("lang"))
-
-all_measures_with_dyadic <- all_measures %>%
-  left_join(all_centroid_dists) %>%
-  left_join(event_dists) %>%
-  left_join(asjp_dists) %>%
-  mutate(trial_ID2 = paste0(category, trial_ID)) %>%
-  group_by(trial_ID2) %>%
-  slice(1) %>%
-  select(trial_ID2, category, log_normalized_n_events_all, asjp_dist, centroid_dist_meters) 
 ```
 
 Merge in country variables
 ```{r}
-item_means2 <- item_means %>%
-  left_join(all_measures_with_dyadic, by = "trial_ID2") 
+
+all_predictors %>%
+  ga
+
+item_means2 <- all_measures %>% 
+  group_by(trial_ID2, haus_bin, category) %>%
+  summarize(rating = mean(rating, na.rm = T)) %>%
+  left_join(all_predictors %>% group_by(trial_ID2) %>% slice(1), by = "trial_ID2")  %>%
+  group_by(haus_bin, category.x) %>%
+  summarize(rating = mean(rating),
+            wals_euclidean_dist = mean(wals_euclidean_dist, na.rm = T),
+            asjp_dist = mean(asjp_dist, na.rm  = T),
+            centroid_dist_meters = mean(centroid_dist_meters, na.rm = T),
+            log_normalized_n_events_all = mean(log_normalized_n_events_all, na.rm = T),
+            log_normalized_mean_imports_dollars = mean(log_normalized_mean_imports_dollars, na.rm = T),
+            hd_sim = mean(hd_sim, na.rm = T))
 
 item_means2 %>%
-  gather("measure", "value", 4:6) %>%
+  gather("measure", "value", c(4:9)) %>%
+  ggplot(aes(x = haus_bin, y = value, color = category.x)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  facet_wrap(~measure, scales = "free")
+
+ 
+item_means2 %>%
+  gather("measure", "value", c(3, 6:9)) %>%
   ggplot(aes(x = value, y = rating)) +
   geom_point() +
   geom_smooth(method = "lm") +
   facet_wrap(~measure, scales = "free")
 
 item_means2 %>%
-  gather("measure", "value", 4:6) %>%
+  gather("measure", "value", c(3, 6:9)) %>%
   ggplot(aes(x = value, y = rating, color = category)) +
   geom_point() +
   geom_smooth(method = "lm") +
   facet_wrap(~measure, scales = "free")
+
+
+  ggplot(item_means2, aes(x = log(centroid_dist_meters), y = rating)) +
+  geom_point() +
+  geom_smooth(method = "lm")
 
 ```
 
@@ -247,8 +253,9 @@ item_means2 %>%
 ```{r}
 
 item_means2 %>%
-  gather("measure", "value", 4:6) %>%
-  group_by(measure) %>%
+  #filter(country_code_1 != country_code_2) %>%
+gather("measure", "value", c(3, 6:9)) %>%
+group_by(measure) %>%
   do(tidy(cor.test(.$rating, .$value))) %>%
   select(-parameter, -method, -alternative) %>%
   kable()
@@ -256,24 +263,58 @@ item_means2 %>%
 # correlations by category
 item_means2 %>%
   filter(category == "tree") %>%
-  gather("measure", "value", 4:6) %>%
+gather("measure", "value", c(3, 6:9)) %>%
   group_by(measure) %>%
   do(tidy(cor.test(.$rating, .$value))) %>%
   select(-parameter, -method, -alternative) %>%
   kable()
 
 # mixed effect model
-summary(lmer(rating ~  scale(centroid_dist_meters) + (1 |trial_ID2) + (1|subj_id) + (1|category), all_measures_with_dyadic))
 
-summary(lmer(rating ~  scale(log_normalized_n_events_all) + (1 |trial_ID2) + (1|subj_id) +(1|category), all_measures_with_dyadic))
+all_measures_with_dyadic2 <-
+  all_measures_with_dyadic %>%
+  filter(country_code_1 != country_code_2)
 
-summary(lmer(rating ~  scale(asjp_dist) + (1 |trial_ID2) + (1|subj_id) + (1|category), all_measures_with_dyadic))
+all_measures_with_dyadic <- all_measures %>%
+  left_join(all_predictors)
 
-summary(lmer(rating ~ scale(centroid_dist_meters) + 
-               scale(log_normalized_n_events_all) + 
-               scale(asjp_dist) +
-               (1|trial_ID2) + (1|subj_id) + (1|category), 
+summary(lmer(rating ~  scale(centroid_dist_meters)*category + 
+               scale(wals_euclidean_dist)*category + 
+               (1 |trial_ID2) + (1|subj_id), all_measures_with_dyadic))
+
+summary(lmer(rating ~  + scale(asjp_dist)*category + (1 |trial_ID2) + (1|subj_id), all_measures_with_dyadic))
+
+summary(lmer(rating ~  scale(centroid_dist_meters)*category +   + scale(log_normalized_mean_imports_dollars)*category + (1 |trial_ID2) + (1|subj_id) + (1|country_code_1) + (1|country_code_2), all_measures_with_dyadic))
+
+summary(lmer(rating ~  scale(asjp_dist)*category + 
+               (1 |trial_ID2) + (1|subj_id) +  (1|country_code_1) + (1|country_code_2), all_measures_with_dyadic2))
+
+summary(lmer(rating ~  scale(asjp_dist)*category+ (1 |trial_ID2) + (1|subj_id) + (1|category), all_measures_with_dyadic))
+
+summary(lmer(rating ~  scale(asjp_dist)*category + (1 |trial_ID2) + (1|subj_id) + (1|country_code_1) + (1|country_code_2), all_measures_with_dyadic2))
+
+
+summary(lmer(rating ~ scale(centroid_dist_meters)*category+ 
+               #scale(log_normalized_n_events_all) + 
+               scale(wals_euclidean_dist)*category +
+               (1|trial_ID2) + (1|subj_id), 
               all_measures_with_dyadic))
+
+
+
+summary(lmer(rating ~ scale(log_normalized_mean_imports_dollars)*category+ 
+               #scale(log_normalized_n_events_all) + 
+               scale(centroid_dist_meters)*category +
+               (1|trial_ID2) + (1|subj_id), 
+              all_measures_with_dyadic))
+
+
+summary(lmer(rating ~ scale(log_normalized_mean_imports_dollars)*category+ scale(asjp_dist)*category +
+               #scale(log_normalized_n_events_all) + 
+               scale(centroid_dist_meters)*category +
+               (1|trial_ID2) + (1|subj_id), 
+              all_measures_with_dyadic2))
+```
 ```
 
 
@@ -297,18 +338,37 @@ gl = lapply(rl, grid::rasterGrob)
 gridExtra::grid.arrange(grobs = gl, nrow = 8, padding = unit(0, "line"))
 gridExtra::grid.rect(gpar(fill=NA))
 
-par(mfrow=c(2,2))
+par(mfrow = c(2, 2))
 
 # 1 = c("4517415574568960", "5171456952500224")
 # 5 = c("5530798088257536", "6476551229014016")
 # 10 = c("5507829509128192", "5139027634159616")
 ```
 
+# make grid of images for abstract figure
 
-# make grid of images
+get grid items
 ```{r}
-N_COLS <- 6
-N_ROWS <- 4
+plot_ids <- d_tidy %>%
+  group_by(category, haus_bin, trial_ID) %>%
+  summarize(mean_rating = mean(rating, na.rm = T))%>%
+  arrange(category, haus_bin, mean_rating) %>%
+  slice(1) %>%
+  left_join(d_tidy %>% select(category, trial_ID, drawing_key_id_1, drawing_key_id_2) %>%
+group_by(category, trial_ID) %>% slice(1))  %>%
+  ungroup() %>%
+  mutate(id = 1:n()) %>%
+  gather("measure", "key_id_num", 5:6) %>%
+  arrange(-haus_bin, id) 
+
+long_files = paste0("../images/drawings/", plot_ids$key_id_num, ".jpeg")
+```
+
+make ground
+```{r}
+pdf("/Users/mollylewis/Documents/research/Projects/conceptviz/papers/evolang_abstract_2018/evolang12_latex_good/drawing_fig.pdf", height = 500/2, width = 450)
+N_COLS <- 4
+N_ROWS <- 10
 WIDTH <- 50 # pictures are square
 MARGIN <- .2
 
@@ -317,6 +377,9 @@ pic_coords <- data.frame(x1 = rep(seq(0, (WIDTH * N_COLS-WIDTH), by = WIDTH), N_
                          x2 = rep(seq(WIDTH, WIDTH * N_COLS, by = WIDTH), N_ROWS), 
                          y2 = rep(seq(WIDTH, WIDTH * N_ROWS, by = WIDTH), each = N_COLS))
 
+pic_coords <- pic_coords %>%
+  mutate(x1 = x1 + 5,
+         x2 = x2 + 5)
 
 op <- par(mar=c(MARGIN, MARGIN, MARGIN, MARGIN))
 plot(c(0,N_COLS * WIDTH), c(0, N_ROWS * WIDTH), 
@@ -333,5 +396,16 @@ for (i in 1:length(long_files)) {
               pic_coords$x2[i], 
               pic_coords$y2[i])
 }
+text(0,475, "1")
+text(0,425, "2")
+text(0,375, "3")
+text(0,325, "4")
+text(0,275, "5")
+text(0,225, "6")
+text(0,175, "7")
+text(0,125, "8")
+text(0,75, "9")
+text(0,25, "10")
 par(op)
+dev.off()
 ```
