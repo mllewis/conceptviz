@@ -23,7 +23,7 @@ library(purrr)
 library(feather)
 library(forcats)
 library(data.table)
-library(country_code)
+library(countrycode)
 
 source("../R_scripts/helpers.R")
 
@@ -34,9 +34,20 @@ opts_chunk$set(echo = T, message = F, warning = F,
 Read in HD data
 ```{r}
 
+GOOD_COUNTRIES <-  c("US", "NZ", "NL", "BR" ,"IT", "KR", "AR", "BG",
+                     "NO", "AU" ,"DE" ,"GB" ,"HU" ,"PL", "SE", "AE", "SA", "PH",
+                     "RS", "ID", "DK", "VN", "SG", "CA",
+                     "CZ", "MY", "JP", "FR", "EE", "RU",
+                      "QA", "TR", "TH", "IE" ,"FI", "HR",
+                      "ES" ,"UA", "IL", "SK", "CL", "TW",
+                      "PT" ,"RO", "IQ", "DZ", "IN", "KH",
+                      "AT", "HK", "EG", "BE", "SI", "LT",
+                      "ZA", "GR", "BY", "BA" ,"MX" ,"CH",
+                      "CO" ,"KW", "PK" ,"LV" ,"KZ" ,"JO")
+ITEM <- "bread"
+
 hd_this_path <- paste0("../../data/hausdorff_similarities/within_country_distances/bread/bread_within_country_pairs_", GOOD_COUNTRIES[i], ".csv")
 
-GOOD_COUNTRIES <- c("US", "NZ")
 wpairwise_hds_raw <-  data.frame()
 for (i in 1:length(GOOD_COUNTRIES)) {
     s <- read_csv( paste0("../../data/hausdorff_similarities/within_country_distances/bread/bread_within_country_pairs_", GOOD_COUNTRIES[i], ".csv"),  col_types = list(col_character(), col_character(), col_double(), col_character(), col_character()))
@@ -59,7 +70,13 @@ write_csv(prototypes, "../../data/hausdorff_similarities/within_country_distance
 
 ### Get jpegs for filtered sampled pairs
 ```{r }
-# get all crit ids
+GDRAW_SIZE <- 255
+IMAGENET_SIZE <- 224
+N_INTERPOLATE <- 1000
+JPEG_SIZE <- IMAGENET_SIZE *2
+ITEM <- "toe"
+
+raw_data <- read_feather(paste0("../../data/raw_data/feathers/atleast_100/", ITEM, ".txt"))
 
 nested_raw <- raw_data %>%
   filter(key_id %in% prototypes$key_id_1) %>%
@@ -68,7 +85,7 @@ nested_raw <- raw_data %>%
   nest() 
 
 # DO THE THING
-JPEG_PATH <- paste0("../../data/hausdorff_similarities/pair_sim_drawings/images/", ITEM, "/")
+JPEG_PATH <- paste0("../../data/hausdorff_similarities/within_country_distances/bread/images/", , "jpeg")
 
 walk(nested_raw$data, get_image_from_google_draw, 
                                       GDRAW_SIZE,
@@ -79,4 +96,203 @@ walk(nested_raw$data, get_image_from_google_draw,
                                       jpeg_path = JPEG_PATH)
 
 
+```
+
+Draw Map
+```{r}
+
+custom_key <- data.frame(country_raw =c("United Kingdom of Great Britain and Northern Ireland", "Republic of Korea", "Russian Federation" , "Taiwan, Province of China" , "United States of America" ,  "Viet nam"), 
+                         country_good = c("UK", "South Korea", "Russia","Taiwan",  "USA", "Vietnam")
+)
+
+
+key_countries <- read_csv("../../data/hausdorff_similarities/within_country_distances/bread/key_id_protoype_country_key_bread.csv",  col_types = list(col_character(), col_character()))  %>%
+  mutate(country_raw = countrycode(country_code, 'iso2c', "country.name")) %>% 
+  left_join(custom_key) %>%
+  mutate(country = ifelse(is.na(country_good), as.character(country_raw), as.character(country_good))) %>%
+  select(-country_good, -country_raw) %>%
+  as.data.frame()
+
+
+
+
+```
+
+```{r}
+# http://rpubs.com/zachcp/157645
+library(maps)
+library(rgeos)
+library(grid)
+library(ggthemes)
+library(sp)
+
+
+```
+
+## no ggforce
+get centers and jpegs
+```{r}
+
+# get centroids of countries
+world <- map_data("world")
+getLabelPoint <- function(country) {
+    rgeos::gCentroid(SpatialPoints(country[c('long','lat')]))}
+centroids <- by(world, world$region, getLabelPoint)
+centnames <- names(centroids)
+centroids <- as.data.frame(do.call(rbind, centroids) ) 
+row.names(centroids) <- centnames
+names(centroids) <- c('long', 'lat') 
+
+centroids <- centroids %>% 
+    rownames_to_column ("country") %>%
+  filter(country %in% key_countries$country) 
+
+  centroids[centroids$country == "USA", "long"] <- -110
+    centroids[centroids$country == "USA", "lat"] <- 40
+
+
+row.names(centroids) <- centroids$country 
+centroids = select(centroids, -country)
+
+
+# get files
+bread_files <- centroids %>% 
+    rownames_to_column ("country") %>% 
+    right_join(key_countries, by=c("country")) %>%
+    mutate(jpegfile = paste0("../../data/hausdorff_similarities/within_country_distances/bread/images/", key_id_1, ".jpeg_hc")) %>%
+  filter(!is.na(lat))
+```
+
+```{r}
+test <- image_read(bread_files$jpegfile[3])
+image_oilpaint(test)
+image_flatten(test, 'Modulate') %>%
+  image_oilpaint()
+
+  image_oilpaint(test) %>%
+    image_flatten('Modulate')
+  
+image_flatten(test)
+
+for (i in 1:length(bread_files$jpegfile)){
+  g <-image_read(bread_files$jpegfile[i]) %>%
+               image_oilpaint() %>%
+                image_flatten('Modulate')
+  image_write(g, paste0(bread_files$jpegfile[i], "_hc"))
+}
+```
+Get the map and plot images
+```{r}
+PIC_SIZE <- 4
+apply(bread_files,
+      1,
+      function(x) 
+          {img  <- jpeg::readJPEG(x['jpegfile'])
+           g    <- rasterGrob(img, interpolate=TRUE)
+            lat  <- as.numeric(x['lat']) 
+           long <- as.numeric(x['long'])
+          return(list(grob=g, long=long,lat=lat))
+          }) -> grobs
+
+addmap <- function(gg,g){
+    grob  <- g$grob
+    lat   <- g$lat
+    long  <- g$long
+    #print(paste(lat,long))
+    xdiff = PIC_SIZE
+    ydiff = PIC_SIZE 
+    gg <- gg + annotation_custom(grob,
+                           xmin = long - xdiff,
+                           xmax = long + xdiff,
+                           ymin = lat - ydiff,
+                           ymax = lat + ydiff)
+    return(gg)
+}
+
+
+
+gw <- ggplot(world)
+
+gg <- gw + geom_map(
+    data=world,
+    map=world,
+    aes(x=long,y=lat, map_id=region),
+    fill="grey50") +
+  scale_y_continuous(limits = c(-47, 80)) +
+  scale_x_continuous(limits = c(-130, 150)) 
+    #, color = "black")
+    
+    #colour = "white", size = .2)
+gg <- gg + theme_map() 
+
+# create Map
+Reduce(addmap,grobs,gg)
+```
+
+
+### with ggforce
+```{r}
+findboxes <- function(df, xcol, ycol, pad_point_x, pad_point_y, xlim, ylim,
+                      force = 1e-6, maxiter = 20000) {
+    
+    #x and y posiitons as a dataframe
+    posdf <- df[c(xcol,ycol)] 
+    
+    #returnd a df where columns are points
+    boxdf <- apply(posdf,1,function(row) { xval <- row[xcol]
+    yval <- row[ycol]
+    return(c(xval, 
+             yval, 
+             xval + pad_point_x, 
+             yval + pad_point_y))})                                       
+    # columns are x1,y1,x2,y2
+    boxmatrix = as.matrix(t(boxdf))
+    
+    moved <- ggrepel:::repel_boxes(data_points=as.matrix(posdf), 
+                                   point_padding_x=0.1, 
+                                   point_padding_y=0.1, 
+                                   boxes = boxmatrix,
+                                   xlim=xlim,
+                                   ylim=ylim,
+                                   force=force,
+                                   maxiter=maxiter)
+    
+    finaldf <- cbind(posdf, moved)
+    names(finaldf) <- c("x1","y1","x2","y2")
+    return(finaldf)
+}
+
+
+newcentroids <- findboxes(centroids, xcol = 'long', ycol='lat',
+                 pad_point_x = 10, pad_point_y = 10,
+                 #xlim = c(-180,180), ylim=c(-60,60),
+                 xlim = c(-130,180), ylim=c(-47,80),
+                 force= 0.3,
+                 maxiter = 1000)
+
+new_bread_files <- newcentroids %>% 
+  rownames_to_column ("country") %>% 
+    right_join(key_countries, by=c("country")) %>%
+    mutate(jpegfile = paste0("../../data/hausdorff_similarities/within_country_distances/bread/images/", key_id_1, ".jpeg_hc")) %>%
+  filter(!is.na(x1))
+
+apply(new_bread_files,
+      1,
+      function(x) 
+      {img  <- jpeg::readJPEG(x['jpegfile'])
+      g    <- rasterGrob(img, interpolate=TRUE)
+      lat  <- as.numeric(x['y2']) 
+      long <- as.numeric(x['x2'])
+      return(list(grob=g, long=long,lat=lat))
+      }) -> newgrobs
+
+gg2 <- gg  + geom_point(data=new_bread_files, 
+                        aes(x1,y1) , color = "red", size = .5)
+gg2 <- gg2 + geom_segment(data=new_bread_files,
+                          aes(x1,y1,xend=x2,yend=y2), color = "red", size = .2)
+p <- Reduce(addmap,newgrobs,gg2)
+
+pdf("../../papers/evolang_abstract_2018/evolang12_latex_good/map.pdf", width = 10)
+p
+dev.off()
 ```

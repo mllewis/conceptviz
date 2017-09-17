@@ -34,24 +34,245 @@ opts_chunk$set(echo = T, message = F, warning = F,
 Read in HD data
 ```{r}
 items <- c("line", "circle", "square", "hexagon", 
-           "triangle", "octagon", "ear", "hand", 
-           "knee", "mouth", "eye", "face", "foot", 
-           "leg", "toe", "arm")
+           "triangle", "octagon", "bread", "tree")
 
-items <- c("hand", "knee", "mouth", "foot", 
-           "leg", "toe", "arm")
-
+items <- c("mouth", "line", "circle",
+          "square", "hexagon", "triangle", "octagon", "leg", "toe", "foot", "face", "eye",
+"ear", "hand", "knee", "mouth", "bread", "tree")
+#"arm"
 pairwise_hds_raw <-  data.frame()
 for (i in 1:length(items)) {
-    s <- read_csv(paste0("../../data/hausdorff_similarities/pair_lists/", items[i], "_sampled_pairs_with_sims_hd.csv"),  col_types = list(col_character(), col_character(), col_double(), col_character(), col_character(), col_character())) %>%
-      slice(1:2500)
+    s <- read_csv(paste0("../../data/hausdorff_similarities/pair_lists/", items[i], "_sampled_pairs_with_sims_hd_even_countries.csv"),  col_types = list(col_character(), col_character(), col_double(), col_character(), col_character(), col_character())) 
     pairwise_hds_raw <- rbind(pairwise_hds_raw, data.frame(s))
 }
 
 pairwise_hds <- pairwise_hds_raw %>%
   mutate_if(is.character, as.factor) %>%
-  mutate(category = ifelse(item %in% c("line", "circle", "square", "hexagon", 
-           "triangle", "octagon"), "shape", "bodypart"))
+  rename(country_code_1 = country_code,
+         country_code_2 = country_code1)
+
+```
+Merge in predictors
+```{r}
+get_unique_relation_id <- function (x, y){
+  pairs = c(x, y)
+  ordered = order(pairs)
+  paste0(pairs[ordered[1]], pairs[ordered[2]])
+}
+
+ling <- read_csv("../../data/supplementary_data/cultural_sim_measures/lang/all_google_lang_dists_clean.csv") 
+geo <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_geo_dists_clean.csv") 
+events <- read_csv("../../data/supplementary_data/cultural_sim_measures/events/all_google_event_dists.csv") %>%
+  mutate(log_normalized_n_events_all = ifelse(is.na(log_normalized_n_events_all), 0, log_normalized_n_events_all))
+
+all_predictors <- ling %>%
+  left_join(geo) %>%
+  left_join(events)
+
+#vexclude BA and HK fewer NAs
+
+pairwise_hds_with_predicts <- pairwise_hds %>%
+  #filter(as.character(country_code_1) != as.character(country_code_2)) %>%
+  left_join(all_predictors) %>% 
+  mutate(log_hd_sim = log(hd_sim)) %>% 
+  filter(is.finite(log_hd_sim)) %>%
+  rowwise() %>%
+  mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2)) %>%
+  ungroup() %>%
+  mutate(all_codes = as.factor(all_codes)) 
+
+```
+
+Mixed effect models
+```{r}
+
+m1 <- lmer(log_hd_sim ~ scale(wals_euclidean_dist)+scale(asjp_dist) + scale(centroid_dist_meters) +
+               (1|all_codes) + (1|item), REML = FALSE,
+             pairwise_hds_with_predicts)
+
+m2 <- lmer(log_hd_sim ~ scale(wals_euclidean_dist)*scale(asjp_dist) + scale(centroid_dist_meters) +
+               (1|all_codes) + (1|item), REML = FALSE,
+             pairwise_hds_with_predicts)
+
+m3 <- lmer(log_hd_sim ~ scale(wals_euclidean_dist)+scale(asjp_dist) *scale(centroid_dist_meters) +
+               (1|all_codes) + (1|item), REML = FALSE,
+             pairwise_hds_with_predicts)
+
+m4 <- lmer(scale(log_hd_sim) ~ scale(wals_euclidean_dist) *scale(centroid_dist_meters) + scale(asjp_dist) +
+               (1|all_codes) + (1|item), REML = FALSE,
+             pairwise_hds_with_predicts)
+
+m5 <- lmer(log_hd_sim ~ scale(wals_euclidean_dist)*scale(asjp_dist) *scale(centroid_dist_meters) +
+               (1|all_codes) + (1|item), REML = FALSE,
+             pairwise_hds_with_predicts)
+
+m6 <- lmer(log_hd_sim ~ scale(wals_euclidean_dist)+scale(asjp_dist) +
+               (1|all_codes) + (1|item), REML = FALSE,
+             pairwise_hds_with_predicts)
+
+m7 <- lmer(log_hd_sim ~ scale(centroid_dist_meters)+scale(asjp_dist) +
+               (1|all_codes) + (1|item), REML = FALSE,
+             pairwise_hds_with_predicts)
+
+m8 <- lmer(log_hd_sim ~ scale(centroid_dist_meters)+scale(wals_euclidean_dist) +
+               (1|all_codes) + (1|item), REML = FALSE,
+             pairwise_hds_with_predicts)
+
+m9 <- lmer(log_hd_sim ~ scale(centroid_dist_meters) +
+               (1|all_codes) + (1|item), REML = FALSE,
+             pairwise_hds_with_predicts)
+
+m10 <- lmer(log_hd_sim ~ scale(wals_euclidean_dist) +
+               (1|all_codes) + (1|item), REML = FALSE,
+             pairwise_hds_with_predicts)
+
+m11 <- lmer(log_hd_sim ~ scale(asjp_dist) +
+               (1|all_codes) + (1|item), REML = FALSE,
+             pairwise_hds_with_predicts)
+
+AIC(m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11) %>%
+  rownames_to_column("model_name") %>%
+  arrange(AIC)
+#m11, m2
+
+summary(lmer(log_hd_sim ~ scale(wals_euclidean_dist)* scale(centroid_dist_meters) +
+               (1|all_codes) + (1|item), REML = FALSE,
+             pairwise_hds_with_predicts))
+
+```
+
+```{r}
+for_plotting <- pairwise_hds_with_predicts %>%
+  select(log_hd_sim, asjp_dist, wals_euclidean_dist) %>%
+  mutate_all(scale) %>%
+  mutate(asjp_dist_bin = as.factor(ntile(asjp_dist,2)))
+
+ggplot(for_plotting, aes(x = wals_euclidean_dist, y = log_hd_sim, 
+                         color =asjp_dist_bin )) +
+  geom_smooth(method = "lm")
+
+
+for_plotting <- pairwise_hds_with_predicts %>%
+  select(log_hd_sim, asjp_dist, wals_euclidean_dist) %>%
+  mutate_all(scale) %>%
+  mutate(wals_euclidean_dist_bin = as.factor(ntile(wals_euclidean_dist,2)))
+
+ggplot(for_plotting, aes(x = asjp_dist, y = log_hd_sim, 
+                         color =wals_euclidean_dist_bin )) +
+  geom_smooth(method = "lm")
+
+for_plotting <- pairwise_hds_with_predicts %>%
+  select(log_hd_sim, centroid_dist_meteters, wals_euclidean_dist) %>%
+  mutate_all(scale) %>%
+  mutate(wals_euclidean_dist_bin = as.factor(ntile(wals_euclidean_dist,2)))
+
+ggplot(for_plotting, aes(x = asjp_dist, y = log_hd_sim, 
+                         color =wals_euclidean_dist_bin )) +
+  geom_smooth(method = "lm")
+  
+
+```
+
+# correlation for bread
+```{r}
+bread_corr <-  pairwise_hds_with_predicts %>% 
+  filter(item == "bread") %>%
+  group_by(all_codes) %>%
+  summarize(log_hd_sim = mean(hd_sim, na.rm = T),
+            centroid_dist_meters  = mean(centroid_dist_meters , na.rm = T),
+            wals_euclidean_dist = mean(wals_euclidean_dist, na.rm = T),
+            asjp_dist = mean(asjp_dist, na.rm = T)) 
+
+cor.test(bread_corr$centroid_dist_meters, bread_corr$log_hd_sim)
+
+pdf("../../papers/evolang_abstract_2018/evolang12_latex_good/bread_corr1.pdf", 
+    width = 4.2, height = 4)
+
+#ggsave(file = "../../papers/evolang_abstract_2018/evolang12_latex_good/bread_corr.pdf", dpi = 600, width = 4, height = 4, units = "in")
+
+ggplot(bread_corr, aes(x = wals_euclidean_dist, y = log_hd_sim)) +
+  ylab("Haussdorf Distance \n(drawing dissimilarity)") +
+  xlab("Between-Country WALS distance") +
+  geom_point(size = .2, alpha = .9) +
+  #annotate("text", x = 18000000, y = 75, label = "r = .26", color = "red", size = 6)   +
+  
+  geom_smooth(method = "lm") +
+    theme(text = element_text(size=12),
+          axis.text.x = element_text(size=8),
+      plot.title=element_text(size=14, face = "bold"),
+      plot.background = element_blank(),
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.border = element_blank(),
+      legend.position = "none",
+      axis.line = element_line(color = 'black'),
+      panel.background = element_rect(fill = "white",
+                                colour = "white",
+                                size = 0.5, linetype = "solid")) 
+dev.off()
+
+```
+
+```{r}
+
+mod <- lm(log_hd_sim ~ centroid_dist_meters, bread_corr ) 
+bread_corr <- bread_corr %>%
+  add_residuals(mod)
+
+ggplot(bread_corr, aes(x = wals_euclidean_dist, y = resid)) +
+  ylab("Haussdorf Distance \n(drawing dissimilarity)") +
+  xlab("Between-Country WALS distance") +
+  geom_point(size = .2, alpha = .9) +
+  #annotate("text", x = 18000000, y = 75, label = "r = .26", color = "red", size = 6)   +
+  
+  geom_smooth(method = "lm") +
+    theme(text = element_text(size=12),
+          axis.text.x = element_text(size=8),
+      plot.title=element_text(size=14, face = "bold"),
+      plot.background = element_blank(),
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.border = element_blank(),
+      legend.position = "none",
+      axis.line = element_line(color = 'black'),
+      panel.background = element_rect(fill = "white",
+                                colour = "white",
+                                size = 0.5, linetype = "solid")) 
+
+
+```
+
+
+Correlations
+```{r}
+pairwise_hds_with_predicts_long <- pairwise_hds_with_predicts %>% 
+    group_by(all_codes, item,) %>%
+    summarize(hd_sim = mean(log(hd_sim), na.rm = T),
+              centroid_dist_meters  = mean(centroid_dist_meters , na.rm = T), 
+              log_normalized_n_events_all = mean(log_normalized_n_events_all, na.rm = T),
+              asjp_dist = mean(asjp_dist, na.rm = T),
+              wals_euclidean_dist = mean(wals_euclidean_dist, na.rm = T),
+              log_normalized_mean_imports_dollars = mean(log_normalized_mean_imports_dollars, na.rm = T)) %>%
+     gather("measure", "value", c(5,7,8))
+
+pairwise_hds_with_predicts_long %>%
+  group_by(measure, item) %>%
+  do(tidy(cor.test(.$hd_sim, .$value, na.rm = T))) %>%
+  select(-parameter, -method, -alternative) %>%
+  arrange(measure, -estimate) %>%
+  as.data.frame()
+
+pairwise_hds_with_predicts_long %>%
+  group_by(measure, category) %>%
+  do(tidy(cor.test(log(.$hd_sim), .$value, na.rm = T))) %>%
+  select(-parameter, -method, -alternative) %>%
+  arrange(p.value) %>%
+  as.data.frame()
+```
+
+### MISC + dendogram
+```{r}
+
 
 pairwise_hds %>%
   group_by(item) %>%
@@ -76,8 +297,6 @@ k = pairwise_hds %>%
   select(country_name_1, country_name_2) %>%
   distinct() %>%
           as.data.frame() 
-
-
 all_countries <- unique(k$country_name_1)
 NUM_COUNTRIES <- length(all_countries)
 
@@ -98,151 +317,3 @@ ggdendro::ggdendrogram(hclust(dist(m)), size = 2)
 
 ```
 
-Merge in predictors
-```{r}
-get_unique_relation_id <- function (x, y){
-  pairs = c(x, y)
-  ordered = order(pairs)
-  paste0(pairs[ordered[1]], pairs[ordered[2]])
-}
-
-ling <- read_csv("../../data/supplementary_data/cultural_sim_measures/lang/all_google_lang_dists_clean.csv") 
-geo <- read_csv("../../data/supplementary_data/cultural_sim_measures/geo/all_google_geo_dists_clean.csv") 
-events <- read_csv("../../data/supplementary_data/cultural_sim_measures/events/all_google_event_dists.csv") %>%
-  mutate(log_normalized_n_events_all = ifelse(is.na(log_normalized_n_events_all), 0, log_normalized_n_events_all))
-
-all_predictors <- ling %>%
-  left_join(geo) %>%
-  left_join(events)
-
-#vexclude BA and HK fewer NAs
-
-pairwise_hds_with_predicts <- pairwise_hds %>%
-  #filter(country_code_1 != country_code_2) %>%
-  left_join(all_predictors) %>% 
-  mutate(log_hd_sim = log(hd_sim)) %>% 
-  filter(is.finite(log_hd_sim)) %>%
-  rowwise() %>%
-  mutate(all_codes = get_unique_relation_id(country_code_1, country_code_2)) %>%
-  ungroup() %>%
-  mutate(all_codes = as.factor(all_codes)) 
-
-```
-
-Mixed effect models
-```{r}
-# LANGUAGE
-summary(lmer(log_hd_sim ~ centroid_dist_meters + wals_euclidean_dist + 
-                (1|all_codes) +(1|item), 
-             pairwise_hds_with_predicts))
-
-summary(lmer(log_hd_sim ~ asjp_dist + 
-               wals_euclidean_dist +
-               #centroid_dist_meters 
-               (1|all_codes) + (1|item), 
-              filter(pairwise_hds_with_predicts, category == "shape")))
-
-
-summary(lmer(log_hd_sim ~ asjp_dist * category + 
-               (1|all_codes)+(1|item), 
-             pairwise_hds_with_predicts))
-             
-summary(lmer(log_hd_sim ~ asjp_dist + centroid_dist_meters +
-               (1|all_codes), 
-             filter(pairwise_hds_with_predicts, category == "bodypart")))
-
-items <- c("line", "circle", "square", "hexagon", 
-           "triangle", "octagon", "ear", "hand", 
-           "knee", "mouth", "eye", "face", "foot", 
-           "leg", "toe", "arm")
-
-summary(lmer(log_hd_sim ~ asjp_dist + 
-               (1|country_code_1) + (1|country_code_2) +  (1|item), 
-             filter(pairwise_hds_with_predicts,  category == "shape")))
-
-
-# DISTANCE
-summary(lmer(log_hd_sim ~ centroid_dist_meters * category +  
-               (1|country_code_1) + (1|country_code_2) +  (1|item), 
-             pairwise_hds_with_predicts))
-
-summary(lmer(log_hd_sim ~ centroid_dist_meters * category +  
-                (1|all_codes) +  (1|item), 
-             pairwise_hds_with_predicts))
-
-
-summary(lmer(log_hd_sim ~ centroid_dist_meters +
-               (1|country_code_1) +(1|country_code_2) +  (1|item),  
-             filter(pairwise_hds_with_predicts,category == "bodypart")))
-
-summary(lmer(log_hd_sim ~ centroid_dist_meters + 
-               (1|country_code_1) +(1|country_code_2)+  (1|item),  
-             filter(pairwise_hds_with_predicts,category == "shape")))
-
-
-# EVENTS
-summary(lmer(log_hd_sim ~ log_normalized_n_events_all * category  + 
-               (1|country_code_1) +(1|country_code_2)+  (1|item), 
-             pairwise_hds_with_predicts))
-
-summary(lmer(log_hd_sim ~ log_normalized_n_events_all * category  + 
-                (1|all_codes)+  (1|item), 
-             pairwise_hds_with_predicts))
-
-summary(lmer(log_hd_sim ~ log_normalized_n_events_all + 
-               (1|country_code_1) +(1|country_code_2) +  (1|item),  
-             filter(pairwise_hds_with_predicts,category == "bodypart")))
-
-summary(lmer(log_hd_sim ~  log_normalized_n_events_all + 
-               (1|country_code_1) +(1|country_code_2)+  (1|item),  
-             filter(pairwise_hds_with_predicts,category == "shape")))
-
-# events + asjp
-summary(lmer(log_hd_sim ~ log_normalized_n_events_all + asjp_dist+ 
-               (1|country_code_1) +(1|country_code_2) +  (1|item),  
-             filter(pairwise_hds_with_predicts,category == "bodypart")))
-
-summary(lmer(log_hd_sim ~ log_normalized_n_events_all + asjp_dist+ 
-                (1|all_codes) +  (1|item),  
-             filter(pairwise_hds_with_predicts,category == "bodypart")))
-
-summary(lmer(log_hd_sim ~  log_normalized_n_events_all + asjp_dist + 
-               (1|country_code_1) +(1|country_code_2)+  (1|item),  
-             filter(pairwise_hds_with_predicts,category == "shape")))
-
-
-# Euclidean
-summary(lmer(log_hd_sim ~ wals_euclidean_dist*category +
-                (1|all_codes)+  (1|item), 
-             pairwise_hds_with_predicts))
-
-
-```
-
-Correlations
-```{r}
-
-pairwise_hds_with_predicts_long <- pairwise_hds_with_predicts %>% 
-    group_by(all_codes, item, category) %>%
-    summarize(hd_sim = mean(hd_sim, na.rm = T),
-              centroid_dist_meters  = mean(centroid_dist_meters , na.rm = T), 
-              log_normalized_n_events_all = mean(log_normalized_n_events_all, na.rm = T),
-              asjp_dist = mean(asjp_dist, na.rm = T),
-              wals_euclidean_dist = mean(wals_euclidean_dist, na.rm = T),
-              log_normalized_mean_imports_dollars = mean(log_normalized_mean_imports_dollars, na.rm = T)) %>%
-     gather("measure", "value", 5:9)
-
-pairwise_hds_with_predicts_long %>%
-  group_by(measure, item) %>%
-  do(tidy(cor.test(.$hd_sim, .$value, na.rm = T))) %>%
-  select(-parameter, -method, -alternative) %>%
-  arrange(p.value) %>%
-  as.data.frame()
-
-pairwise_hds_with_predicts_long %>%
-  group_by(measure, category) %>%
-  do(tidy(cor.test(.$log_hd_sim, .$value, na.rm = T))) %>%
-  select(-parameter, -method, -alternative) %>%
-  arrange(p.value) %>%
-  as.data.frame()
-```
