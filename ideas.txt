@@ -1,0 +1,31 @@
+Research Ideas:
+
+* scale up with more items
+- variability in concepts ~ variability in heterogenity
+- what are the best predictors using a bunch of different measures (including d-space)
+-> what are the properties of items that vary more - frequent, less frequent?
+- is there a way to think about which are more veridical? E.e. top N images in google images search, searching by country
+[conventionality]
+
+Sketch
+
+-> CONTENT 
+- predicting variability using similairity measures
+	- what's the difference between the two similarity measurse? [NN vs. haussdorf]
+	- use different layers on neural net - earlier features
+	- try using drawing-trained NN
+	- predicting hetergenity in picture and heterogenity in content
+	- which items vary more, and what are their properties?
+	- which itme sare more veridical E.e. top N images in google images search, searching by country
+		[conventionality]
+	- more measures of cultural variability (d-space)
+	- really cool human data one could collect would be to have semantic segmentation/annotation (like the COCO dataset, but for parts of objects in sketches). Like, tagging marks as being of one part, and labeling it accordingly. Could be used to train a semantic parser for this domain, which would be really neat. But nearer at hand, it could address your question about whether people "subset" different parts of objects in different places... presumably the distribution of % ink per part might be more similar among sketchers from the same place, and this might predict how people categorize them. 
+
+-> DYNAMICS: One could imagine a recognition task where the sketches are "degraded" to varying degrees by removing the last k strokes, and that the number of strokes required to recognize the object is similar between sketches from the same place, but different across places. Assumption being that the priority of different subparts is similar where people share the same visual conventions. 
+
+organism creates the pressure; pressure affets orgnasims -> biology (darwing - m), physical (newtwon)
+
+douglas north
+learning is relevant
+
+North: minimzing infomration uncertainty in coordiantion problem (what is an instituion minininz)

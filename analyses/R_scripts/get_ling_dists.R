@@ -20,7 +20,7 @@ g_countries <- data.frame(country_code = c("US", "NZ", "NL", "BR" ,"IT", "KR", "
                  "ES" ,"UA", "IL", "SK", "CL", "TW",
                  "PT" ,"RO", "IQ", "DZ", "IN", "KH",
                  "AT", "HK", "EG", "BE", "SI", "LT",
-                 "ZA", "GR", "BY", ,"MX" ,"CH",
+                 "ZA", "GR", "BY", "MX" ,"CH",
                  "CO" ,"KW", "PK" ,"LV" ,"KZ" ,"JO")) 
 
 # get language of eachcountry
@@ -69,6 +69,8 @@ g_wals_euclidean <- wals_euclidean[g_indices, g_indices] %>%
   rename(country_code_2 = country_code) %>%
   mutate_if(is.character, as.factor) %>%
   select(-lang1, -lang2)
+
+write_csv(g_wals_euclidean, "wals_for_ETS.csv")
 
 #### MG2015####
 # load("../../data/supplementary_data/cultural_sim_measures/lang/MG2015-wals-alpha=0.69.RData")

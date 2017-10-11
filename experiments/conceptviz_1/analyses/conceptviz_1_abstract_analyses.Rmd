@@ -32,6 +32,11 @@ library(jsonlite)
 library(broom)
 library(magick)
 library(corrr)
+library(directlabels)
+library(lme4)
+library(grid)
+library(gridExtra)
+
 #source("../R_scripts/helpers.R")
 
 opts_chunk$set(echo = T, message = F, warning = F, 
@@ -120,11 +125,11 @@ d_tidy_crit <- d_tidy %>%
 
 means_ratings_by_bin <- d_tidy_crit %>%
   group_by(haus_bin, category) %>%
-  multi_boot_standard(column = "rating", na.rm = TRUE)
+  multi_boot_standard(col = "rating", na.rm = TRUE)
 
 #pdf("distance_decile.pdf", width = 5.5, height  = 5)
 ggplot(means_ratings_by_bin, aes(x = haus_bin, y = mean, group = category, color = category)) +
-  geom_pointrange(aes(ymin = summary_ci_lower, ymax = summary_ci_upper)) +
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
   geom_smooth(method = "lm") +
   ylab("Mean Similarity Rating") +
   xlab("Hausdorff Distance Decile") +
@@ -223,7 +228,7 @@ long_files = paste0("../images/drawings/", plot_ids$key_id_num, ".jpeg")
 rl = lapply(long_files, image_read)
 gl = lapply(rl, grid::rasterGrob)
 gridExtra::grid.arrange(grobs = gl, nrow = 8, padding = unit(0, "line"))
-gridExtra::grid.rect(gpar(fill=NA))
+grid.rect(gpar(fill=NA))
 
 par(mfrow = c(2, 2))
 
@@ -253,14 +258,12 @@ for (i in 1:length(long_files)){
   image_write(g, paste0(long_files[i], "_hc"))
 }
 
-
-
 ```
 
 
 make ground
 ```{r}
-pdf("/Users/mollylewis/Documents/research/Projects/conceptviz/papers/evolang_abstract_2018/evolang12_latex_good/drawing_fig2.pdf", height = 500/2, width = 450)
+#pdf("/Users/mollylewis/Documents/research/Projects/conceptviz/papers/evolang_abstract_2018/evolang12_latex_good/drawing_fig2.pdf", height = 500/2, width = 450)
 N_COLS <- 4
 N_ROWS <- 10
 WIDTH <- 50 # pictures are square
@@ -302,14 +305,14 @@ text(0,125, "8", cex = XX)
 text(0,75, "9", cex = XX)
 text(0,25, "10", cex = XX)
 par(op)
-dev.off()
+#dev.off()
 ```
 
 
 
 ############ Misc ############ 
 Merge in country variables
-```{r, include = F}
+```{r, eval = F}
 
 all_predictors %>%
   ga
@@ -358,7 +361,7 @@ item_means2 %>%
 
 
 ## Models for predicting ratings with country variables
-```{r, include = F}
+```{r, , eval = F}
 item_means2 %>%
   #filter(country_code_1 != country_code_2) %>%
 gather("measure", "value", c(3, 6:9)) %>%
