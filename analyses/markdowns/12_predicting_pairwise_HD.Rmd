@@ -23,7 +23,9 @@ library(purrr)
 library(feather)
 library(forcats)
 library(data.table)
-library(country_code)
+library(countrycode)
+library(lme4)
+library(broom)
 
 source("../R_scripts/helpers.R")
 
@@ -33,13 +35,12 @@ opts_chunk$set(echo = T, message = F, warning = F,
 
 Read in HD data
 ```{r}
-items <- c("line", "circle", "square", "hexagon", 
-           "triangle", "octagon", "bread", "tree")
+items <- c("bread", "tree")
 
 items <- c("mouth", "line", "circle",
           "square", "hexagon", "triangle", "octagon", "leg", "toe", "foot", "face", "eye",
-"ear", "hand", "knee", "mouth", "bread", "tree")
-#"arm"
+"ear", "hand", "knee", "mouth", "bread", "tree", "arm")
+
 pairwise_hds_raw <-  data.frame()
 for (i in 1:length(items)) {
     s <- read_csv(paste0("../../data/hausdorff_similarities/pair_lists/", items[i], "_sampled_pairs_with_sims_hd_even_countries.csv"),  col_types = list(col_character(), col_character(), col_double(), col_character(), col_character(), col_character())) 
@@ -141,7 +142,7 @@ summary(lmer(log_hd_sim ~ scale(wals_euclidean_dist)* scale(centroid_dist_meters
 
 ```
 
-```{r}
+```{r, eval = F}
 for_plotting <- pairwise_hds_with_predicts %>%
   select(log_hd_sim, asjp_dist, wals_euclidean_dist) %>%
   mutate_all(scale) %>%
@@ -162,7 +163,7 @@ ggplot(for_plotting, aes(x = asjp_dist, y = log_hd_sim,
   geom_smooth(method = "lm")
 
 for_plotting <- pairwise_hds_with_predicts %>%
-  select(log_hd_sim, centroid_dist_meteters, wals_euclidean_dist) %>%
+  select(log_hd_sim, centroid_dist_meters, wals_euclidean_dist, asjp_dist) %>%
   mutate_all(scale) %>%
   mutate(wals_euclidean_dist_bin = as.factor(ntile(wals_euclidean_dist,2)))
 
@@ -174,7 +175,7 @@ ggplot(for_plotting, aes(x = asjp_dist, y = log_hd_sim,
 ```
 
 # correlation for bread
-```{r}
+```{r, eval  = F}
 bread_corr <-  pairwise_hds_with_predicts %>% 
   filter(item == "bread") %>%
   group_by(all_codes) %>%
@@ -213,7 +214,7 @@ dev.off()
 
 ```
 
-```{r}
+```{r, eval = F}
 
 mod <- lm(log_hd_sim ~ centroid_dist_meters, bread_corr ) 
 bread_corr <- bread_corr %>%
@@ -244,7 +245,7 @@ ggplot(bread_corr, aes(x = wals_euclidean_dist, y = resid)) +
 
 
 Correlations
-```{r}
+```{r, eval = F}
 pairwise_hds_with_predicts_long <- pairwise_hds_with_predicts %>% 
     group_by(all_codes, item,) %>%
     summarize(hd_sim = mean(log(hd_sim), na.rm = T),
@@ -253,25 +254,27 @@ pairwise_hds_with_predicts_long <- pairwise_hds_with_predicts %>%
               asjp_dist = mean(asjp_dist, na.rm = T),
               wals_euclidean_dist = mean(wals_euclidean_dist, na.rm = T),
               log_normalized_mean_imports_dollars = mean(log_normalized_mean_imports_dollars, na.rm = T)) %>%
-     gather("measure", "value", c(5,7,8))
+     gather("measure", "value", c(4:7))
 
 pairwise_hds_with_predicts_long %>%
+  filter(item %in% c("bread", 
+                     "tree")) %>%
   group_by(measure, item) %>%
   do(tidy(cor.test(.$hd_sim, .$value, na.rm = T))) %>%
   select(-parameter, -method, -alternative) %>%
   arrange(measure, -estimate) %>%
   as.data.frame()
 
-pairwise_hds_with_predicts_long %>%
-  group_by(measure, category) %>%
-  do(tidy(cor.test(log(.$hd_sim), .$value, na.rm = T))) %>%
-  select(-parameter, -method, -alternative) %>%
-  arrange(p.value) %>%
-  as.data.frame()
+#pairwise_hds_with_predicts_long %>%
+##  group_by(measure, category) %>%
+#  do(tidy(cor.test(log(.$hd_sim), .$value, na.rm = T))) %>%
+#  select(-parameter, -method, -alternative) %>%
+#  arrange(p.value) %>%
+#  as.data.frame()
 ```
 
 ### MISC + dendogram
-```{r}
+```{r, eval = F}
 
 
 pairwise_hds %>%
@@ -281,22 +284,18 @@ pairwise_hds %>%
   arrange(-mean)
 
 k = pairwise_hds %>%
-  filter(item == "hand") %>%
+  filter(item == "bread") %>%
   rowwise() %>%
   mutate(all_codes = get_unique_relation_id(as.character(country_code_1), as.character(country_code_2))) %>%
   ungroup() %>%
   mutate(all_codes = as.factor(all_codes))  %>%
   group_by(all_codes, country_code_1, country_code_2) %>%
-  summarize(mean = mean(hd_sim),
-            sd = sd(hd_sim)) %>%
+  summarize(mean = mean(hd_sim)) %>%
   arrange(mean) %>%
+  slice (1:50) %>%
   mutate(country_name_1  = countrycode(country_code_1, "iso2c",  "country.name"),
-         country_name_2  = countrycode(country_code_2, "iso2c",  "country.name")) %>%
-  ungroup()%>%
-  slice(1:50) %>%
-  select(country_name_1, country_name_2) %>%
-  distinct() %>%
-          as.data.frame() 
+         country_name_2  = countrycode(country_code_2, "iso2c",  "country.name")) 
+
 all_countries <- unique(k$country_name_1)
 NUM_COUNTRIES <- length(all_countries)
 

@@ -36,7 +36,7 @@ ITEM1 <- "tree"
 ITEM2 <- "bread"
 ``` 
 
-## read in data
+Tree vs. Bread
 ```{r}
 
 get_unique_relation_id <- function (x, y){
@@ -68,23 +68,19 @@ alld <- bind_rows(d1, d2) %>%
                                    "AU" = "5",
                                    "EU" = "4",
                                    "AS" = "3",
-                                   "AF" = "1")) %>%
+                                   "AF" = "1")) 
+
+  alld2 <- alld %>%
   group_by(all_codes) %>%
   summarize(tree = mean(tree, na.rm = T),
             bread = mean(bread, na.rm = T))
 
-ggplot(alld, aes(x = bread, y = tree )) +
-  geom_point(aes(color = as.factor(cont_order_1), shape = as.factor(cont_order_2))) +
-  geom_smooth(method = "lm") +
-  theme_minimal()
-
-ggplot(alld, aes(x = bread, y = tree )) +
+ggplot(alld2, aes(x = bread, y = tree )) +
   geom_point() +
   geom_smooth(method = "lm") +
   theme_minimal()
 ```
 
-## compare with tree
 ```{r}
 
 cont_means <- alld %>%
