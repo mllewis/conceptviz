@@ -64,6 +64,16 @@ d_big = d %>%
 #kable(d_big)
 ```
 
+```{r, eval = F}
+m = d_big %>%
+  mutate(country_name = countrycode(country_code_1, "iso2c", "country.name"),
+         iso_3 = countrycode(country_code_1, "iso2c", "iso3c")) %>%
+  select(-n)
+
+write_csv(m, "../../data/misc/major_countries.csv")
+
+```
+
 Remove NAs- very few, these come from 8 drawings (not sure why)
 ```{r}
 d_clean <- d %>%
