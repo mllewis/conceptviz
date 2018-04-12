@@ -116,7 +116,7 @@ country_country_pairs <- list(x = rev(GOOD_COUNTRIES), y = rev(GOOD_COUNTRIES)) 
   rename(countrycode1 = X1, countrycode2 = X2)  %>%
   mutate_all(as.character) %>%
   filter(countrycode1 != countrycode2) %>%
-  slice(BEGIN_INDEX:END_INDEX) %>%
+  #slice(BEGIN_INDEX:END_INDEX) %>%
   as.list() %>%
   transpose()
 
@@ -137,7 +137,7 @@ cluster <- makeCluster(7, type = "FORK")
 
 # DO THE THING (IN PARALLEL)
 parLapply(cluster, 
-          country_country_pairs,
+          rev(country_country_pairs),
           parallel_wrapper)
 
 

@@ -62,8 +62,9 @@ get_distances_for_crit_words <- function(language, model_path, out_path, critica
   write_csv(dists, out_path, append = T)
 }
 
-# do belarusian (#2) lt
-walk(GOOGLE_LANGS[23:39], 
+# do belarusian (#2) be lt sk uk
+#GOOGLE_LANGS
+walk(GOOGLE_LANGS, 
      get_distances_for_crit_words, 
      INPUT_PATH, 
      OUTPUT_PATH,

@@ -40,7 +40,7 @@ pairwise_word_distance_cosines <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ
 all_langs <- unique(pairwise_word_distance_cosines$lang)
 ```
 
-For each language pair
+For each languag/country  pair
 ```{r}
 m = read_feather("/Volumes/wilbur_the_great/CONCEPTVIZ/similarity_measures/HD/country_pairwise/PL_IL_sampled_distances_all_categories.feather")
 

@@ -37,7 +37,7 @@ Read in correlations
 ```{r}
 pairwise_word_distance_cosines <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ/word_distances/word_dists_by_language.csv", col_names = c("word1", "word2", "cos_dist", "lang"))
 
-all_langs <- unique(pairwise_word_distance_cosines$lang)[1:16]
+all_langs <- unique(pairwise_word_distance_cosines$lang)
 ```
 
 
@@ -54,15 +54,16 @@ lang_lang_pairs <- list(x = all_langs, y = all_langs) %>%
 
 
 get_language_pairwise_correlations <- function(lang1, lang2, corr_dat){
-  corr_dat %>%
-    filter(lang %in% c(lang1, lang2)) %>%
-    spread(lang, cos_dist) %>%
-    do(tidy(cor.test(unlist(.[,3]), unlist(.[,4])))) %>%
-    select(-method, -alternative) %>%
-    mutate(lang1 = lang1,
-           lang2 = lang2) %>%
-    select(lang1, lang2, everything())
+    corr_dat %>%
+      filter(lang %in% c(lang1, lang2)) %>%
+      spread(lang, cos_dist) %>%
+      do(tidy(cor.test(unlist(.[,3]), unlist(.[,4]), na.action = "na.exclude"))) %>%
+      select(-method, -alternative) %>%
+      mutate(lang1 = lang1,
+             lang2 = lang2) %>%
+      select(lang1, lang2, everything())
 }
+get_language_pairwise_correlations_safe <- possibly(get_language_pairwise_correlations, data.frame(NA, NA, NA, NA, NA, NA, NA, NA))
 
 language_correlations <- map2_df(lang_lang_pairs$lang1, 
      lang_lang_pairs$lang2, 
@@ -94,7 +95,7 @@ CATEGORY_NAMES <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ/misc/google_cat
   select(google_category_name, category) 
 ```
 
-# Food
+#### Food
 ```{r}
 food_words <- filter(CATEGORY_NAMES, category == "F") %>% 
   select(google_category_name) %>% 
@@ -105,17 +106,18 @@ food_cosines <- pairwise_word_distance_cosines %>%
 
 language_correlations_wide_f <- map2_df(lang_lang_pairs$lang1, 
      lang_lang_pairs$lang2, 
-     get_language_pairwise_correlations,
+     get_language_pairwise_correlations_safe,
      food_cosines) %>%
   select(lang1, lang2, estimate) %>%
-  spread(lang1, estimate) 
+  spread(lang1, estimate)  %>%
+  filter(!is.na(lang2))
 
 all_corrs_mat_langsf <- as.matrix(language_correlations_wide_f[,-1])
 rownames(all_corrs_mat_langsf) <- language_correlations_wide_f$lang2
 ggdendro::ggdendrogram(hclust(dist(all_corrs_mat_langsf)))
 ```
 
-# Artifact
+####  Artifact
 ```{r}
 artifact_words <- filter(CATEGORY_NAMES, category == "A") %>% 
   select(google_category_name) %>% 
@@ -126,10 +128,11 @@ artifact_cosines <- pairwise_word_distance_cosines %>%
 
 language_correlations_wide_a <- map2_df(lang_lang_pairs$lang1, 
      lang_lang_pairs$lang2, 
-     get_language_pairwise_correlations,
+     get_language_pairwise_correlations_safe,
      artifact_cosines) %>%
   select(lang1, lang2, estimate) %>%
-  spread(lang1, estimate) 
+  spread(lang1, estimate)  %>%
+  filter(!is.na(lang2))
 
 all_corrs_mat_langsa <- as.matrix(language_correlations_wide_a[,-1])
 rownames(all_corrs_mat_langsa) <- language_correlations_wide_a$lang2
@@ -137,7 +140,7 @@ ggdendro::ggdendrogram(hclust(dist(all_corrs_mat_langsa)))
 ```
 
 
-# Buildings/Places
+####  Buildings/Places
 ```{r}
 building_words <- filter(CATEGORY_NAMES, category == "K") %>% 
   select(google_category_name) %>% 
@@ -148,17 +151,18 @@ building_cosines <- pairwise_word_distance_cosines %>%
 
 language_correlations_wide_b <- map2_df(lang_lang_pairs$lang1, 
      lang_lang_pairs$lang2, 
-     get_language_pairwise_correlations,
+     get_language_pairwise_correlations_safe,
      building_cosines) %>%
   select(lang1, lang2, estimate) %>%
-  spread(lang1, estimate) 
+  spread(lang1, estimate)  %>%
+  filter(!is.na(lang2))
 
 all_corrs_mat_langsb <- as.matrix(language_correlations_wide_b[,-1])
 rownames(all_corrs_mat_langsb) <- language_correlations_wide_b$lang2
 ggdendro::ggdendrogram(hclust(dist(all_corrs_mat_langsb))) 
 ```
 
-# Weather
+####  Weather
 ```{r}
 weather_words <- filter(CATEGORY_NAMES, category == "M") %>% 
   select(google_category_name) %>% 
@@ -169,10 +173,11 @@ weather_cosines <- pairwise_word_distance_cosines %>%
 
 language_correlations_wide_w <- map2_df(lang_lang_pairs$lang1, 
      lang_lang_pairs$lang2, 
-     get_language_pairwise_correlations,
+     get_language_pairwise_correlations_safe,
     weather_cosines) %>%
   select(lang1, lang2, estimate) %>%
-  spread(lang1, estimate) 
+  spread(lang1, estimate)  %>%
+  filter(!is.na(lang2))
 
 all_corrs_mat_langsw <- as.matrix(language_correlations_wide_w[,-1])
 rownames(all_corrs_mat_langsw) <- language_correlations_wide_w$lang2
