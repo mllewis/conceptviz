@@ -1,0 +1,54 @@
+---
+title: Language pairiwse for google drawing distances
+subtitle: 
+author: Molly Lewis 
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    number_sections: false
+    theme: cerulean
+    toc_float: true
+    code_folding: hide
+---
+  
+******
+******
+
+```{r setup, include = F}
+
+# load packages
+library(tidyverse) 
+library(knitr)
+library(rmarkdown)
+library(langcog)
+library(broom)
+
+opts_chunk$set(echo = T, message = F, warning = F, 
+               error = F, tidy = F,  cache = F, fig.height = 4)
+```  
+
+```{r}
+#utility function
+get_unique_pairs <- function(dat) data.frame(unique(t(apply(dat, 1, sort))))
+```
+
+
+Read in correlations
+```{r}
+pairwise_word_distance_cosines <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ/word_distances/word_dists_by_language.csv", col_names = c("word1", "word2", "cos_dist", "lang"))
+
+all_langs <- unique(pairwise_word_distance_cosines$lang)
+```
+
+For each language pair
+```{r}
+m = read_feather("/Volumes/wilbur_the_great/CONCEPTVIZ/similarity_measures/HD/country_pairwise/PL_IL_sampled_distances_all_categories.feather")
+
+m %>%
+  mutate_if(is.character, as.factor) %>%
+  group_by(category) %>%
+  summarize(mean_hd_sim = mean(hd_sim)) %>%
+  mutate(group = 1) %>%
+  group_by(group) %>%
+  multi_boot_standard(col = "mean_hd_sim")
+``
