@@ -22,33 +22,287 @@ library(knitr)
 library(rmarkdown)
 library(langcog)
 library(broom)
+library(corrplot)
 
 opts_chunk$set(echo = T, message = F, warning = F, 
                error = F, tidy = F,  cache = F, fig.height = 4)
 ```  
 
 ```{r}
-#utility function
-get_unique_pairs <- function(dat) data.frame(unique(t(apply(dat, 1, sort))))
+country_key <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ/misc/country_langiso_langwiki_key.csv") %>%
+  select(countryres, country_name)
+
+all_drawing_sims <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ/word_distances/all_drawing_sims.csv") %>%
+  #mutate_if(is.character, as.factor) %>%
+  left_join(country_key, by = c("country1" = "countryres")) %>%
+  select(-country1) %>%
+  rename(country1 = country_name) %>%
+  left_join(country_key, by = c("country2" = "countryres")) %>%
+  select(-country2) %>%
+  rename(country2 = country_name) 
+
+```
+
+## Drawing Dendograms
+
+###  All
+```{r}
+draw_sim_means_flipped <- all_drawing_sims %>%
+  filter(type == "all") %>%
+  rename(temp = country1,
+         country1 = country2) %>%
+  rename(country2 = temp)
+sims_wide <- draw_sim_means_flipped %>%
+  select(country1, country2, mean_hd_sim) %>%
+  spread(country1, mean_hd_sim)
+sims_widef <- as.matrix(sims_wide[,-1])
+rownames(sims_widef) <- sims_wide$country2
+ggdendro::ggdendrogram(hclust(dist(sims_widef)))
+```
+
+###  Food
+```{r}
+draw_sim_means_flipped <- all_drawing_sims %>%
+  filter(category_type == "F") %>%
+  rename(temp = country1,
+         country1 = country2) %>%
+  rename(country2 = temp)
+sims_wide <- draw_sim_means_flipped %>%
+  select(country1, country2, mean_hd_sim) %>%
+  spread(country1, mean_hd_sim)
+sims_widef <- as.matrix(sims_wide[,-1])
+rownames(sims_widef) <- sims_wide$country2
+ggdendro::ggdendrogram(hclust(dist(sims_widef)))
+```
+
+###  Food
+```{r}
+draw_sim_means_flipped <- all_drawing_sims %>%
+  filter(category_type == "F") %>%
+  rename(temp = country1,
+         country1 = country2) %>%
+  rename(country2 = temp)
+sims_wide <- draw_sim_means_flipped %>%
+  select(country1, country2, mean_hd_sim) %>%
+  spread(country1, mean_hd_sim)
+sims_widef <- as.matrix(sims_wide[,-1])
+rownames(sims_widef) <- sims_wide$country2
+ggdendro::ggdendrogram(hclust(dist(sims_widef)))
+```
+
+###  Artifact
+```{r}
+draw_sim_means_flipped <- all_drawing_sims %>%
+  filter(category_type == "A") %>%
+  rename(temp = country1,
+         country1 = country2) %>%
+  rename(country2 = temp)
+sims_wide <- draw_sim_means_flipped %>%
+  select(country1, country2, mean_hd_sim) %>%
+  spread(country1, mean_hd_sim)
+sims_widef <- as.matrix(sims_wide[,-1])
+rownames(sims_widef) <- sims_wide$country2
+ggdendro::ggdendrogram(hclust(dist(sims_widef)))
+```
+
+###  Structures
+```{r}
+draw_sim_means_flipped <- all_drawing_sims %>%
+  filter(category_type == "K") %>%
+  rename(temp = country1,
+         country1 = country2) %>%
+  rename(country2 = temp)
+sims_wide <- draw_sim_means_flipped %>%
+  select(country1, country2, mean_hd_sim) %>%
+  spread(country1, mean_hd_sim)
+sims_widef <- as.matrix(sims_wide[,-1])
+rownames(sims_widef) <- sims_wide$country2
+ggdendro::ggdendrogram(hclust(dist(sims_widef)))
 ```
 
 
-Read in correlations
+###  Weather
 ```{r}
-pairwise_word_distance_cosines <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ/word_distances/word_dists_by_language.csv", col_names = c("word1", "word2", "cos_dist", "lang"))
-
-all_langs <- unique(pairwise_word_distance_cosines$lang)
+draw_sim_means_flipped <- all_drawing_sims %>%
+  filter(category_type == "M") %>%
+  rename(temp = country1,
+         country1 = country2) %>%
+  rename(country2 = temp)
+sims_wide <- draw_sim_means_flipped %>%
+  select(country1, country2, mean_hd_sim) %>%
+  spread(country1, mean_hd_sim)
+sims_widef <- as.matrix(sims_wide[,-1])
+rownames(sims_widef) <- sims_wide$country2
+ggdendro::ggdendrogram(hclust(dist(sims_widef)))
 ```
 
-For each languag/country  pair
+Language sims
 ```{r}
-m = read_feather("/Volumes/wilbur_the_great/CONCEPTVIZ/similarity_measures/HD/country_pairwise/PL_IL_sampled_distances_all_categories.feather")
+country_to_lang_key <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ/misc/country_langiso_langwiki_key.csv") %>%
+  select(country_name, wiki_language_code)
 
-m %>%
-  mutate_if(is.character, as.factor) %>%
-  group_by(category) %>%
-  summarize(mean_hd_sim = mean(hd_sim)) %>%
-  mutate(group = 1) %>%
-  group_by(group) %>%
-  multi_boot_standard(col = "mean_hd_sim")
-``
+lang_sim_corrs <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ/word_distances/language_pairwise_correlations.csv") %>%
+  select(lang1, lang2, estimate) %>%
+  rename(lang_corrs = estimate)
+```
+
+Join and plot
+```{r, eval = F}
+
+  all_sims <- all_drawing_sims %>% 
+    filter(type == "all") %>%
+    left_join(country_to_lang_key, by = c("country1" = "country_name")) %>%
+    rename(lang1 = wiki_language_code) %>%
+    left_join(country_to_lang_key, by = c("country2" = "country_name")) %>%
+    rename(lang2 = wiki_language_code)  %>%
+    left_join(lang_sim_corrs) %>%
+    left_join(lang_sim_corrs,
+              by = c("lang1" = "lang2", "lang2" = "lang1")) %>%
+    mutate(lang_corrs = ifelse(!is.na(lang_corrs.x), lang_corrs.x, lang_corrs.y)) %>%
+    filter(!is.na(lang_corrs)) %>%
+    select(-lang_corrs.x, -lang_corrs.y) %>%
+    mutate_if(is.character, as.factor) 
+
+
+cor.test(all_sims$mean_hd_sim, -all_sims$lang_corrs)
+
+pdf("/Users/mollylewis/Documents/research/Projects/conceptviz/writeups/evolang_abstract_2018/poster/posterfigs/cor_plot.pdf", width = 9.5, height = 7)
+all_sims %>%
+  filter(type == "all") %>%
+  ggplot(aes(x = -lang_corrs, y = mean_hd_sim)) +
+  #geom_point(size = 2) +
+  geom_text(aes(label = paste0(lang1, lang2))) +
+  geom_smooth(method = "lm") +
+  ggtitle("Drawing Distance vs. Semantic Distance") +
+  ylab("Drawing Distance (HD)") +
+  xlab("Semantic Distance") +
+  geom_text(aes(x = .1, y = 90.5, 
+                label = "r = -.18***"), 
+            color = "red", 
+            size = 8) +
+  theme_classic() +
+  theme(text = element_text(size = 24))
+dev.off()
+```
+
+# Add in other independent measures (asjp + wals + geo)
+```{r}
+
+langs_key <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ/misc/langs_sampled.csv")
+raw_lang_dists <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ/misc/wals_asjp_dists.csv")
+raw_geo_dists <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ/misc/all_google_geo_dists_clean.csv") 
+
+get_linear_models_by_category_type <- function(current_group, all_drawing_sims, langs_key, raw_lang_dists, raw_geo_dists){
+  all_sims <- all_drawing_sims %>% 
+    filter(category_type == current_group) %>%
+    left_join(country_to_lang_key, by = c("country1" = "country_name")) %>%
+    rename(lang1 = wiki_language_code) %>%
+    left_join(country_to_lang_key, by = c("country2" = "country_name")) %>%
+    rename(lang2 = wiki_language_code)  %>%
+    left_join(lang_sim_corrs) %>%
+    left_join(lang_sim_corrs,
+              by = c("lang1" = "lang2", "lang2" = "lang1")) %>%
+    mutate(lang_corrs = ifelse(!is.na(lang_corrs.x), lang_corrs.x, lang_corrs.y)) %>%
+    filter(!is.na(lang_corrs)) %>%
+    select(-lang_corrs.x, -lang_corrs.y) %>%
+    mutate_if(is.character, as.factor) 
+
+  ling_dists <- raw_lang_dists %>%
+    left_join(langs_key %>% select(iso_lang, wiki_language_code), 
+              by = c("iso_lang1" = "iso_lang")) %>%
+    rename(lang1 = wiki_language_code) %>%
+      left_join(langs_key %>% select(iso_lang, wiki_language_code), 
+              by = c("iso_lang2" = "iso_lang")) %>%
+    rename(lang2 = wiki_language_code) %>%
+    select(lang1, lang2, asjp_dist, wals_euclidean_dist)
+  
+  geo_dists <- raw_geo_dists %>%
+    rename(country1 = country_code_1,
+           country2 = country_code_2) %>%
+    left_join(country_key, by = c("country1" = "countryres")) %>%
+    select(-country1) %>%
+    rename(country1 = country_name) %>%
+    left_join(country_key, by = c("country2" = "countryres")) %>%
+    select(-country2) %>%
+    rename(country2 = country_name) 
+  
+  all_sims_with_lang <- all_sims %>%
+    left_join(ling_dists) %>%
+    left_join(geo_dists) %>%
+    select(mean_hd_sim, lang_corrs, 
+           asjp_dist, wals_euclidean_dist,
+           centroid_dist_meters)
+  
+  m1 <- lm(scale(mean_hd_sim) ~ scale(asjp_dist) + scale(wals_euclidean_dist) + scale(-lang_corrs) + scale(centroid_dist_meters), 
+           d = all_sims_with_lang[complete.cases(all_sims_with_lang),]) 
+  
+  summary(m1) %>%
+    tidy() %>%
+    mutate(group = current_group)
+}
+
+all_drawing_sims_tidy <- all_drawing_sims %>%
+  mutate(category_type = ifelse(type == "all", "all", category_type)) 
+
+params <- map_df(c("A", "K", "F", "M", "all"), get_linear_models_by_category_type,
+                 all_drawing_sims_tidy, langs_key, raw_lang_dists, raw_geo_dists) %>%
+  filter(term != "(Intercept)") %>%
+  mutate(ci_lower = estimate - (2 *std.error),
+         ci_upper = estimate + (2 *std.error)) %>%
+  mutate(sig = p.value < .05)
+
+plot_data <- params %>%
+  mutate(group = fct_recode(group, "Artifact" = "A",
+         "Food" = "F", "Place"  = "K", "Weather" = "M", 
+         "All" = "all"),
+         term = fct_recode(term, 
+                               "Semantic" = "scale(-lang_corrs)",
+                                "Physical" = "scale(centroid_dist_meters)",
+                               "WALS"  = "scale(wals_euclidean_dist)",
+                               "ASJP" = "scale(asjp_dist)"),
+         group = fct_relevel(group, "All", "Food", "Weather"),
+         term = fct_relevel(term, "Semantic",
+                            "ASJP",
+                            "WALS")) 
+
+pdf("/Users/mollylewis/Documents/research/Projects/conceptviz/writeups/evolang_abstract_2018/poster/posterfigs/betas_plot.pdf", width = 8, height = 3.5)
+  ggplot(plot_data, aes(x = term, y = estimate, fill = term)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper)) +
+  facet_grid(. ~ group) +
+  ggtitle("What predicts drawing similarity?") +
+  xlab("Distance Measure") +
+  ylab("Standardized Regression\nCoefficient") +
+  theme_classic() + 
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        text = element_text(size = 18))
+dev.off()
+  
+
+```
+
+
+Look at correlation between all measures
+```{r, eval = F}
+corr_mat <- cor(all_sims_with_lang,
+                use = "pairwise.complete.obs")
+
+p.mat <- cor.mtest(corr_mat, 
+                  conf.level = .05,  
+                  use = "pairwise.complete.obs")$p
+
+cols = rev(colorRampPalette(c("red", "white", "blue"))(100))
+corrplot(corr_mat, method = "color",  col = cols,
+         type = "upper", order = "original", number.cex = .7,
+         addCoef.col = "black", 
+         p.mat = p.mat, sig.level = .95,
+         tl.col = "black", tl.srt = 90,
+         diag = FALSE)
+```
+
+Linear models
+```{r}
+
+
+```

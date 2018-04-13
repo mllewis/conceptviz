@@ -63,12 +63,15 @@ get_language_pairwise_correlations <- function(lang1, lang2, corr_dat){
              lang2 = lang2) %>%
       select(lang1, lang2, everything())
 }
-get_language_pairwise_correlations_safe <- possibly(get_language_pairwise_correlations, data.frame(NA, NA, NA, NA, NA, NA, NA, NA))
+get_language_pairwise_correlations_safe <- possibly(get_language_pairwise_correlations,
+                                                    data.frame(NA, NA, NA, NA, NA, NA, NA, NA))
 
 language_correlations <- map2_df(lang_lang_pairs$lang1, 
      lang_lang_pairs$lang2, 
      get_language_pairwise_correlations,
      pairwise_word_distance_cosines) 
+
+write_csv(language_correlations, "language_pairwise_correlations.csv")
 
 ```
 

@@ -37,13 +37,15 @@ Read in HD data
 ```{r}
 items <- c("bread", "tree")
 
-items <- c("mouth", "line", "circle",
-          "square", "hexagon", "triangle", "octagon", "leg", "toe", "foot", "face", "eye",
-"ear", "hand", "knee", "mouth", "bread", "tree", "arm")
+#items <- c("mouth", "line", "circle",
+#          "square", "hexagon", "triangle", "octagon", "leg", "toe", "foot", "face", "eye",
+#"ear", "hand", "knee", "mouth", "bread", "tree", "arm")
+
+
 
 pairwise_hds_raw <-  data.frame()
 for (i in 1:length(items)) {
-    s <- read_csv(paste0("../../data/hausdorff_similarities/pair_lists/", items[i], "_sampled_pairs_with_sims_hd_even_countries.csv"),  col_types = list(col_character(), col_character(), col_double(), col_character(), col_character(), col_character())) 
+    s <- read_csv(paste0("/Users/mollylewis/Documents/research/Projects/conceptviz/data/hausdorff_similarities/pair_lists/", items[i], "_sampled_pairs_with_sims_hd_even_countries.csv"),  col_types = list(col_character(), col_character(), col_double(), col_character(), col_character(), col_character())) 
     pairwise_hds_raw <- rbind(pairwise_hds_raw, data.frame(s))
 }
 
@@ -276,15 +278,7 @@ pairwise_hds_with_predicts_long %>%
 ### MISC + dendogram
 ```{r, eval = F}
 
-
-pairwise_hds %>%
-  group_by(item) %>%
-  summarize(mean = mean(hd_sim),
-            sd = sd(hd_sim)) %>%
-  arrange(-mean)
-
 k = pairwise_hds %>%
-  filter(item == "bread") %>%
   rowwise() %>%
   mutate(all_codes = get_unique_relation_id(as.character(country_code_1), as.character(country_code_2))) %>%
   ungroup() %>%
@@ -294,25 +288,32 @@ k = pairwise_hds %>%
   arrange(mean) %>%
   slice (1:50) %>%
   mutate(country_name_1  = countrycode(country_code_1, "iso2c",  "country.name"),
-         country_name_2  = countrycode(country_code_2, "iso2c",  "country.name")) 
+         country_name_2  = countrycode(country_code_2, "iso2c",  "country.name"))  %>%
+  mutate(country_name_2 = ifelse(country_name_2 == "Taiwan, Province of China", "Tawain", country_name_2),
+         country_name_2 = ifelse(country_name_2 == "Republic of Korea", "S. Korea", country_name_2),
+         country_name_2 = ifelse(country_name_2 == "Russian Federation", "Russia", country_name_2),
+         country_name_2 = ifelse(country_name_2 == "Bosnia and Herzegovina", "Bosnia", country_name_2),
+         country_name_2 = ifelse(country_name_2 == "United Kingdom of Great Britain and Northern Ireland", "UK", country_name_2),
+         country_name_2 = ifelse(country_name_2 == "United Arab Emirates", "UAE", country_name_2),
+         country_name_2 = ifelse(country_name_2 == "Czech Republic", "Czechoslovakia", country_name_2))
 
-all_countries <- unique(k$country_name_1)
-NUM_COUNTRIES <- length(all_countries)
+sims_wide <- k %>%
+  ungroup() %>%
+  select(country_name_1, country_name_2, mean) %>%
+  spread(country_name_1, mean)
+sims_widef <- as.matrix(sims_wide[,-1])
+rownames(sims_widef) <- sims_wide$country_name_2
 
-m = matrix(nrow = NUM_COUNTRIES, ncol = NUM_COUNTRIES)
+dist_matrix <- dist(sims_widef)
+p <- hclust(dist_matrix)
+pd <- as.dendrogram(p, horiz = FALSE)
 
-for (i in 1:dim(k)[1]){ 
-  sim = unlist(k[i, "mean"])
-  x = which(all_countries == unlist(k[i, "country_name_1"]))
-  y = which(all_countries == unlist(k[i, "country_name_2"]))
-  m[x,y] <- sim
-}
+pdf("/Users/mollylewis/Documents/research/Projects/conceptviz/writeups/evolang_abstract_2018/poster/posterfigs/denro_plot.pdf", width = 4, height = 10)
+par(mar=c(2,0,0,10))
+plot(pd, horiz = TRUE, yaxt='n', ann = FALSE)
+dev.off()
 
-colnames(m) = all_countries
-rownames(m) = all_countries
 
-# plot
-ggdendro::ggdendrogram(hclust(dist(m)), size = 2)
 
 ```
 
