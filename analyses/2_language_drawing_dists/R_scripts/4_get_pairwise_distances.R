@@ -15,7 +15,6 @@ CATEGORY_NAMES <- read_csv("/Volumes/wilbur_the_great/CONCEPTVIZ/misc/google_cat
   select(google_category_name) %>%
   unlist(use.names = F)
 
-
 ## functions for getting clustering/overlap coefficent 
 get_pairwise_dist_beween_words <- function(d){
   model_matrix <- d %>%

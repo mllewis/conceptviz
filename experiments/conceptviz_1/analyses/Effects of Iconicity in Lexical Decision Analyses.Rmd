@@ -1,0 +1,1018 @@
+---
+title: "Effects of Iconicity in Lexical Decision"
+output: html_document
+---
+#Load Packages
+
+```{r}
+require(lme4)
+require(ggplot2)
+require(data.table)
+require(lmerTest)
+require(afex)
+require(RePsychLing)
+require(r2glmm)
+```
+
+
+#Experiment 1
+
+##RT Analyses
+
+###Load and Prepare Data
+
+```{r}
+data<-as.data.table(read.csv("Exp1.csv"))
+data <- as.data.table(data)
+
+#remove nonword trials
+data <- data[(RealWord == 1)]
+data$Type = droplevels(data$Type)
+
+#remove inaccurate trials
+nrow1 <- nrow(data)
+data <- data[(ACC == 1)]
+nrow2 <- nrow(data)
+paste((((nrow1 - nrow2)/nrow1)*100), "percent of trials were removed because of inaccurate responses")
+#remove very slow/fast trials
+slow <- data[(RT > 3000)]
+fast <- data[(RT < 200)]
+nslow <- nrow(slow)
+nfast <- nrow(fast)
+
+paste(((nslow/nrow(data))*100), "percent of trials were removed for being too slow")
+paste(((nfast/nrow(data))*100), "percent of trials were removed for being too fast")
+
+data <- data[(RT >= 200 & RT <= 3000)]
+
+
+#find and remove subject outliers
+data <- data[, zRT := scale(RT), by = Subject]
+
+outliers<-data[zRT < -2.5 | zRT > 2.50]
+paste((nrow(outliers)/nrow(data))*100, "percent of trials were removed for being outliers")
+
+data <- data[zRT >= -2.5 & zRT <= 2.50]
+
+paste("this left a total of", nrow(data), "trials to be analyzed")
+
+#Preparing variables
+data$Subject<-as.factor(data$Subject)
+data$Word<-as.factor(data$Target)
+data$Condition<-as.factor(data$ExperimentName)
+contrasts(data$Condition) <- c(-1, 1) #setting condition to be effects coded
+
+#Standardize
+data$PhonCon<-scale(data$PhonCon, center = TRUE, scale = TRUE)
+data$PhonCon<-as.numeric(data$PhonCon)
+
+data$Length<-scale(data$Length, center = TRUE, scale = TRUE)
+data$Length<-as.numeric(data$Length)
+
+data$Freq<-scale(data$Freq, center = TRUE, scale = TRUE)
+data$Freq<-as.numeric(data$Freq)
+
+data$OLD<-scale(data$OLD, center = TRUE, scale = TRUE)
+data$OLD<-as.numeric(data$OLD)
+
+data$Iconicity<-scale(data$Iconicity, center = TRUE, scale = TRUE)
+data$Iconicity<-as.numeric(data$Iconicity)
+
+```
+
+###Main Analysis
+
+```{r}
+#Beginning with full model.
+m1 <- lmer(RT~Length+Freq+OLD+Iconicity*Condition+(1+Iconicity|Subject)+(1+Condition|Word), data = data)
+
+#Run PCA on random effects to determine if overfitted.
+pcam1 <- rePCA(m1)
+summary(pcam1)
+
+#Suggests removing both slopes.
+
+m2 <- lmer(RT~Length+Freq+OLD+Iconicity*Condition+(1|Subject)+(1|Word), data = data)
+
+```
+
+###Generating sr2 values
+
+```{r}
+sr2 <- r2beta(m2, partial = TRUE, method = "nsj")
+```
+
+
+###Predicting values at -1.5 and +1.5 SD of iconicity.
+
+```{r}
+require(prediction)
+prediction(m2, at = list(Iconicity = c(-1.5, 1.5)))
+
+#And by condition
+
+prediction(m2, at = list(Condition = c("IconLDT_Deg", "IconLDT_NoDeg")))
+
+#Both?
+
+prediction(m2, at = list(Condition = c("IconLDT_Deg", "IconLDT_NoDeg"), Iconicity = c(-1.5, 1.5)))
+
+```
+
+
+###Checking effects of degredation
+
+```{r}
+#Full model (note that when full model includes a greater number of iterations, this means that a model with fewer iterations failed to converge. the greater number of iterations is then also used throughout)
+m1<-lmer(RT~Length+Freq+OLD+PhonCon*Condition+(1+PhonCon|Subject)+(1+Condition|Word), data = data, control=lmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+
+#Fails to converge even with more iteractions. Removing the correlations for slopes.
+
+m2<-lmer_alt(RT~Length+Freq+OLD+PhonCon*Condition+(1+PhonCon||Subject)+(1+Condition||Word), data = data, control=lmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+
+#Run PCA on random effects to determine if overfitted.
+pcam2 <- rePCA(m2)
+summary(pcam2)
+
+#Suggests removing both slopes.
+
+m3<-lmer_alt(RT~Length+Freq+OLD+PhonCon*Condition+(1|Subject)+(1|Word), data = data, control=lmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+```
+
+###Predicting effects of PhonCon in each condition
+
+```{r}
+prediction(m3, at = list(PhonCon = c(-1.5, 1.5), Condition = c("IconLDT_Deg", "IconLDT_NoDeg")))
+```
+
+
+##Accuracy Analysis
+
+###Load and Prepare Data
+
+```{r}
+data_acc<-as.data.table(read.csv("Exp1.csv"))
+
+#remove nonword trials
+data_acc <- data_acc[(RealWord == 1)]
+
+
+#remove very slow/fast trials
+
+slow <- data_acc[(RT > 3000)]
+fast <- data_acc[(RT < 200)]
+nslow <- nrow(slow)
+nfast <- nrow(fast)
+
+paste(((nslow/nrow(data_acc))*100), "percent of trials were removed for being too slow")
+paste(((nfast/nrow(data_acc))*100), "percent of trials were removed for being too fast")
+data_acc <- data_acc[(RT >= 200 & RT <= 3000)]
+
+
+#find and remove subject outliers
+data_acc <- data_acc[, zRT := scale(RT), by = Subject]
+
+outliers<-data_acc[zRT < -2.5 | zRT > 2.50]
+paste((nrow(outliers)/nrow(data_acc)), "percent of trials were removed for being outliers")
+
+data_acc <- data_acc[zRT >= -2.5 & zRT <= 2.50]
+
+paste("this left a total of", nrow(data_acc), "trials to be analyzed")
+
+#make variables correct type
+data_acc$Subject<-as.factor(data_acc$Subject)
+data_acc$Word<-as.factor(data_acc$Target)
+data_acc$Condition<-as.factor(data_acc$ExperimentName)
+contrasts(data_acc$Condition) <- c(-1, 1) #setting condition to be effects coded
+
+#Standardize
+data_acc$Length<-scale(data_acc$Length, center = TRUE, scale = TRUE)
+data_acc$Length<-as.numeric(data_acc$Length)
+
+data_acc$Freq<-scale(data_acc$Freq, center = TRUE, scale = TRUE)
+data_acc$Freq<-as.numeric(data_acc$Freq)
+
+data_acc$OLD<-scale(data_acc$OLD, center = TRUE, scale = TRUE)
+data_acc$OLD<-as.numeric(data_acc$OLD)
+
+data_acc$Iconicity<-scale(data_acc$Iconicity, center = TRUE, scale = TRUE)
+data_acc$Iconicity<-as.numeric(data_acc$Iconicity)
+```
+###Main Analysis
+
+```{r}
+#Full model
+m1<-glmer(ACC~Length+Freq+OLD+Iconicity*Condition+(1+Iconicity|Subject)+(1+Condition|Word), data = data_acc, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+
+#Run PCA on random effects to determine if overfitted.
+pcam1 <- rePCA(m1)
+summary(pcam1)
+
+#Suggests removing both slopes.
+m2<-glmer(ACC~Length+Freq+OLD+Iconicity*Condition+(1|Subject)+(1|Word), data = data_acc, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+```
+
+###Generating sr2 values.
+
+
+```{r}
+sr2 <- r2beta(m2, partial = TRUE, method = "nsj")
+```
+
+
+###Predicting RT at -1.5 and + 1.5 sd of iconicity.
+
+```{r}
+require(prediction)
+prediction(m2, at = list(Iconicity = c(-1.5, 1.5)))
+```
+
+#Experiment 2
+
+##RT Analyses
+
+###Load and Prepare Data
+
+```{r}
+data <- as.data.table(read.csv("Exp2.csv"))
+
+data <- data[, RT := Target2.RT]
+data <- data[, Target2.RT:= NULL]
+data <- data[, ACC := Target2.ACC]
+data <- data[, Target2.ACC:= NULL]
+
+#remove poor PH performners
+data <- data[(Subject!= 140 & Subject!= 134 & Subject!= 111 &Subject!= 108 &Subject!= 106 &Subject!= 102 &Subject!= 141 &Subject!= 146)]
+
+#remove nonword trials
+data <- data[(RealWord == 1)]
+
+#remove inaccurate trials
+nrow1 <- nrow(data)
+data <- data[(ACC == 1)]
+nrow2 <- nrow(data)
+paste((((nrow1 - nrow2)/nrow1)*100), "percent of trials were removed because of inaccurate responses")
+
+#remove very slow/fast trials
+slow <- data[(RT > 3000)]
+fast <- data[(RT < 200)]
+nslow <- nrow(slow)
+nfast <- nrow(fast)
+
+paste(((nslow/nrow(data))*100), "percent of trials were removed for being too slow")
+paste(((nfast/nrow(data))*100), "percent of trials were removed for being too fast")
+
+data <- data[(RT >= 200 & RT <= 3000)]
+
+
+#find and remove subject outliers
+data <- data[, zRT := scale(RT), by = Subject]
+
+outliers<-data[zRT < -2.5 | zRT > 2.50]
+paste((nrow(outliers)/nrow(data)), "percent of trials were removed for being outliers")
+
+data <- data[zRT >= -2.5 & zRT <= 2.50]
+
+paste("this left a total of", nrow(data), "trials to be analyzed")
+
+#make variables correct type
+data$Subject<-as.factor(data$Subject)
+data$Word<-as.factor(data$Target)
+
+#Standardize
+data$Length<-scale(data$Length, center = TRUE, scale = TRUE)
+data$Length<-as.numeric(data$Length)
+
+data$Freq<-scale(data$Freq, center = TRUE, scale = TRUE)
+data$Freq<-as.numeric(data$Freq)
+
+data$PLD<-scale(data$PLD, center = TRUE, scale = TRUE)
+data$PLD<-as.numeric(data$PLD)
+
+data$OLD<-scale(data$OLD, center = TRUE, scale = TRUE)
+data$OLD<-as.numeric(data$OLD)
+
+data$Iconicity<-scale(data$Iconicity, center = TRUE, scale = TRUE)
+data$Iconicity<-as.numeric(data$Iconicity)
+```
+###Main Analysis
+
+```{r}
+#Full model
+m1<-lmer(RT~Length+Freq+PLD+Iconicity+(1+Iconicity|Subject)+(1|Word), data = data)
+
+#Run PCA on random effects to determine if overfitted.
+pcam1 <- rePCA(m1)
+summary(pcam1)
+
+#Suggests removing random slope.
+m2<-lmer(RT~Length+Freq+PLD+Iconicity+(1|Subject)+(1|Word), data = data)
+
+#Same with OLD instead of PLD?
+mx<-lmer(RT~Length+Freq+OLD+Iconicity+(1|Subject)+(1|Word), data = data)
+```
+
+###generating sr2 values
+
+```{r}
+sr2 <- r2beta(m2, partial = TRUE, method = "nsj")
+```
+
+###Predict values at 1.5 sd of iconicity.
+
+```{r}
+require(prediction)
+prediction(m2, at = list(Iconicity = c(-1.5, 1.5)))
+```
+
+
+##Accuracy Analysis
+
+###Load and Prepare Data
+
+```{r}
+data_acc<-read.csv("Exp2.csv")
+data_acc <- as.data.table(data_acc)
+
+data_acc <- data_acc[, ACC := Target2.ACC]
+data_acc <- data_acc[, RT := Target2.RT]
+data_acc <- data_acc[, Target2.ACC:= NULL]
+data_acc <- data_acc[, Target2.RT:= NULL]
+
+#remove poor PH performners
+data_acc <- data_acc[(Subject!= 140 & Subject!= 134 & Subject!= 111 &Subject!= 108 &Subject!= 106 &Subject!= 102 &Subject!= 141 &Subject!= 146)]
+
+
+#remove nonword trials
+data_acc <- data_acc[(RealWord == 1)]
+
+
+#remove very slow/fast trials
+
+slow <- data_acc[(RT > 3000)]
+fast <- data_acc[(RT < 200)]
+nslow <- nrow(slow)
+nfast <- nrow(fast)
+
+paste(((nslow/nrow(data_acc))*100), "percent of trials were removed for being too slow")
+paste(((nfast/nrow(data_acc))*100), "percent of trials were removed for being too fast")
+data_acc <- data_acc[(RT >= 200 & RT <= 3000)]
+
+
+#find and remove subject outliers
+data_acc <- data_acc[, zRT := scale(RT), by = Subject]
+
+outliers<-data_acc[zRT < -2.5 | zRT > 2.50]
+paste((nrow(outliers)/nrow(data_acc)), "percent of trials were removed for being outliers")
+
+data_acc <- data_acc[zRT >= -2.5 & zRT <= 2.50]
+
+paste("this left a total of", nrow(data_acc), "trials to be analyzed")
+
+#make variables correct type
+data_acc$Subject<-as.factor(data_acc$Subject)
+data_acc$Word<-as.factor(data_acc$Target)
+
+#Standardize
+data_acc$Length<-scale(data_acc$Length, center = TRUE, scale = TRUE)
+data_acc$Length<-as.numeric(data_acc$Length)
+
+data_acc$Freq<-scale(data_acc$Freq, center = TRUE, scale = TRUE)
+data_acc$Freq<-as.numeric(data_acc$Freq)
+
+data_acc$PLD<-scale(data_acc$PLD, center = TRUE, scale = TRUE)
+data_acc$PLD<-as.numeric(data_acc$PLD)
+
+data_acc$Iconicity<-scale(data_acc$Iconicity, center = TRUE, scale = TRUE)
+data_acc$Iconicity<-as.numeric(data_acc$Iconicity)
+```
+
+###Main Analysis
+
+```{r}
+#Full model
+m1<-glmer(ACC~Length+Freq+PLD+Iconicity+(1+Iconicity|Subject)+(1|Word), data = data_acc, family = "binomial")
+
+#Run PCA on random effects to determine if overfitted.
+pcam1 <- rePCA(m1)
+summary(pcam1)
+
+#Suggests removing slope.
+m2<-glmer(ACC~Length+Freq+PLD+Iconicity+(1|Subject)+(1|Word), data = data_acc, family = "binomial")
+```
+
+
+###generating sr2 values
+
+```{r}
+sr2 <- r2beta(m2, partial = TRUE, method = "nsj")
+```
+
+#Exp 1 Clear and Exp2 Combined
+
+##RT
+
+###Load and Prepare Data
+
+```{r}
+data<-as.data.table(read.csv("Exp1_2.csv"))
+
+#remove poor PH performners
+data <- data[(Subject!= 1140 & Subject!= 1134 & Subject!= 1111 &Subject!= 1108 &Subject!= 1106 &Subject!= 1102 &Subject!= 1141 &Subject!= 1146)]
+
+#remove inaccurate trials
+data <- data[(ACC == 1)]
+
+#remove nonword trials
+data <- data[(RealWord == 1)]
+
+
+#remove very slow/fast trials
+data <- data[(RT >= 200 & RT <= 3000)]
+
+#find and remove subject outliers
+data <- data[, zRT := scale(RT), by = Subject]
+data <- data[zRT >= -2.5 & zRT <= 2.50]
+
+#make variables correct type
+data$Subject<-as.factor(data$Subject)
+data$Word<-as.factor(data$Target)
+data$Condition <- as.factor(data$ExperimentName)
+
+#Selecting just the clear condition from Exp1
+data <- data[(Condition != "IconLDT_Deg")]
+data$Condition = droplevels(data$Condition)
+contrasts(data$Condition) <- c(-1, 1) #setting condition to be effects coded
+
+#Standardize
+data$Length<-scale(data$Length, center = TRUE, scale = TRUE)
+data$Length<-as.numeric(data$Length)
+
+data$Freq<-scale(data$Freq, center = TRUE, scale = TRUE)
+data$Freq<-as.numeric(data$Freq)
+
+data$OLD<-scale(data$OLD, center = TRUE, scale = TRUE)
+data$OLD<-as.numeric(data$OLD)
+
+data$Iconicity<-scale(data$Iconicity, center = TRUE, scale = TRUE)
+data$Iconicity<-as.numeric(data$Iconicity)
+```
+
+###Main Analysis
+```{r}
+#Fit full model
+m1 <- lmer(RT~Length+Freq+OLD+Iconicity*Condition+(1+Iconicity|Subject)+(1+Condition|Word), data = data)
+
+#Run PCA on random effects to determine if overfitted.
+pcam1 <- rePCA(m1)
+summary(pcam1)
+
+#Suggests keeping the condition slope. Now checking to see if correlation is needed.
+m2 <- lmer_alt(RT~Length+Freq+OLD+Iconicity*Condition+(1|Subject)+(1+Condition|Word), data = data)
+m3 <- lmer_alt(RT~Length+Freq+OLD+Iconicity*Condition+(1|Subject)+(1+Condition||Word), data = data)
+
+anova(m2,m3)
+
+#Suggests correlation needed. Checking if random slope needed.
+
+m4 <- lmer_alt(RT~Length+Freq+OLD+Iconicity*Condition+(1|Subject)+(1|Word), data = data)
+anova(m2,m4)
+
+#Yes it is, making m2 the best model.
+```
+
+###Predicting values
+
+```{r}
+
+prediction(m2, at = list(Condition = c("PLDT", "IconLDT_NoDeg"), Iconicity = c(-1.5, 1.5)))
+```
+
+
+##Accuracy
+
+###Load and Prepare Data
+
+```{r}
+data_acc <- as.data.table(read.csv("Exp1_2.csv"))
+
+#remove poor PH performners
+data_acc <- data_acc[(Subject!= 1140 & Subject!= 1134 & Subject!= 1111 &Subject!= 1108 &Subject!= 1106 &Subject!= 1102 &Subject!= 1141 &Subject!= 1146)]
+
+#remove nonword trials
+data_acc <- data_acc[(RealWord == 1)]
+
+#remove very slow/fast trials
+slow <- data_acc[(RT > 3000)]
+fast <- data_acc[(RT < 200)]
+nslow <- nrow(slow)
+nfast <- nrow(fast)
+
+paste(((nslow/nrow(data_acc))*100), "percent of trials were removed for being too slow")
+paste(((nfast/nrow(data_acc))*100), "percent of trials were removed for being too fast")
+data_acc <- data_acc[(RT >= 200 & RT <= 3000)]
+
+#find and remove subject outliers
+data_acc <- data_acc[, zRT := scale(RT), by = Subject]
+
+outliers<-data_acc[zRT < -2.5 | zRT > 2.50]
+paste((nrow(outliers)/nrow(data_acc)), "percent of trials were removed for being outliers")
+
+data_acc <- data_acc[zRT >= -2.5 & zRT <= 2.50]
+
+paste("this left a total of", nrow(data_acc), "trials to be analyzed")
+
+#make variables correct type
+data_acc$Subject<-as.factor(data_acc$Subject)
+data_acc$Word<-as.factor(data_acc$Target)
+data_acc$Condition<-as.factor(data_acc$ExperimentName)
+
+#Selecting just the clear condition from Exp1
+data_acc <- data_acc[(Condition != "IconLDT_Deg")]
+data_acc$Condition = droplevels(data_acc$Condition)
+contrasts(data_acc$Condition) <- c(-1, 1) #setting condition to be effects coded
+
+#Standardize
+data_acc$Length<-scale(data_acc$Length, center = TRUE, scale = TRUE)
+data_acc$Length<-as.numeric(data_acc$Length)
+
+data_acc$Freq<-scale(data_acc$Freq, center = TRUE, scale = TRUE)
+data_acc$Freq<-as.numeric(data_acc$Freq)
+
+data_acc$OLD<-scale(data_acc$OLD, center = TRUE, scale = TRUE)
+data_acc$OLD<-as.numeric(data_acc$OLD)
+
+data_acc$Iconicity<-scale(data_acc$Iconicity, center = TRUE, scale = TRUE)
+data_acc$Iconicity<-as.numeric(data_acc$Iconicity)
+```
+
+
+###Main Analysis
+```{r}
+#Fit full model
+m1 <- lmer_alt(ACC~Length+Freq+OLD+Iconicity*Condition+(1+Iconicity|Subject)+(1+Condition|Word), data = data_acc, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+
+#Run PCA on random effects to determine if overfitted.
+pcam1 <- rePCA(m1)
+summary(pcam1)
+
+#Suggests keping both slopes. Checking if correlations are needed.
+m2 <- lmer_alt(ACC~Length+Freq+OLD+Iconicity*Condition+(1+Iconicity||Subject)+(1+Condition||Word), data = data_acc, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+anova(m1,m2)
+
+#Suggests removing them. Checking if slopes are needed.
+m3 <- lmer_alt(ACC~Length+Freq+OLD+Iconicity*Condition+(1|Subject)+(1+Condition||Word), data = data_acc, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+anova(m2,m3)
+
+#Iconicicty slope not needed. Condition slope needed?
+m4 <- lmer_alt(ACC~Length+Freq+OLD+Iconicity*Condition+(1|Subject)+(1|Word), data = data_acc, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+anova(m3,m4)
+
+#Not needed, making m4 the best model.
+
+```
+
+#Exp 2 Pseudohomophones
+
+##RT
+
+###Load and Prepare Data
+
+```{r}
+data<-as.data.table(read.csv("Exp2_PH.csv"))
+
+data <- data[(Subject!= 140 & Subject!= 134 & Subject!= 111 &Subject!= 108 &Subject!= 106 &Subject!= 102 &Subject!= 141 &Subject!= 146)]
+
+dataPH <- data[(Type == "PH")]
+
+dataPH <- dataPH[, ACC := Target2.ACC]
+dataPH <- dataPH[, RT := Target2.RT]
+dataPH <- dataPH[, Target2.ACC:= NULL]
+dataPH <- dataPH[, Target2.RT:= NULL]
+
+#remove inaccurate trials
+nrow1 <- nrow(dataPH)
+dataPH <- dataPH[(ACC == 1)]
+nrow2 <- nrow(dataPH)
+paste((((nrow1 - nrow2)/nrow1)*100), "percent of trials were removed because of inaccurate responses")
+
+#remove very slow/fast trials
+slow <- dataPH[(RT > 3000)]
+fast <- dataPH[(RT < 200)]
+nslow <- nrow(slow)
+nfast <- nrow(fast)
+
+paste(((nslow/nrow(dataPH))*100), "percent of trials were removed for being too slow")
+paste(((nfast/nrow(dataPH))*100), "percent of trials were removed for being too fast")
+
+dataPH <- dataPH[(RT >= 200 & RT <= 3000)]
+
+
+#find and remove subject outliers
+dataPH <- dataPH[, zRT := scale(RT), by = Subject]
+
+outliers<-dataPH[zRT < -2.5 | zRT > 2.50]
+paste((nrow(outliers)/nrow(dataPH)), "percent of trials were removed for being outliers")
+
+dataPH <- dataPH[zRT >= -2.5 & zRT <= 2.50]
+
+paste("this left a total of", nrow(dataPH), "trials to be analyzed")
+
+dataPH$Length<-scale(dataPH$Length, center = TRUE, scale = TRUE)
+dataPH$Length<-as.numeric(dataPH$Length)
+
+dataPH$Ortho_N<-scale(dataPH$Ortho_N, center = TRUE, scale = TRUE)
+dataPH$Ortho_N<-as.numeric(dataPH$Ortho_N)
+
+dataPH$BG_Mean<-scale(dataPH$BG_Mean, center = TRUE, scale = TRUE)
+dataPH$BG_Mean<-as.numeric(dataPH$BG_Mean)
+
+dataPH$Wfreq<-scale(dataPH$Wfreq, center = TRUE, scale = TRUE)
+dataPH$Wfreq<-as.numeric(dataPH$Wfreq)
+
+dataPH$Iconicity<-scale(dataPH$Iconicity, center = TRUE, scale = TRUE)
+dataPH$Iconicity<-as.numeric(dataPH$Iconicity)
+```
+
+###Analysis
+
+```{r}
+#Full model
+m1<-lmer_alt(RT~Length+Ortho_N+BG_Mean+Wfreq+Iconicity+(1+Iconicity|Subject)+(1|Target), data = dataPH)
+
+#Run PCA on random effects to determine if overfitted.
+pcam1 <- rePCA(m1)
+summary(pcam1)
+
+#Suggests keeping iconicity slope. Need the correlation?
+m2<-lmer_alt(RT~Length+Ortho_N+BG_Mean+Wfreq+Iconicity+(1+Iconicity||Subject)+(1|Target), data = dataPH)
+anova(m1,m2) 
+
+#No, don't need it. Do you need the slope at all?
+m3<-lmer_alt(RT~Length+Ortho_N+BG_Mean+Wfreq+Iconicity+(1|Subject)+(1|Target), data = dataPH)
+anova(m2,m3) 
+#No, making m3 the best model.
+```
+
+###Predict values at 1.5 sd of iconicity.
+
+```{r}
+require(prediction)
+prediction(m3, at = list(Iconicity = c(-1.5, 1.5)))
+```
+
+##Accuracy
+
+###Load and Prepare Data
+
+```{r}
+data<-as.data.table(read.csv("Exp2_PH.csv"))
+
+data <- data[(Subject!= 140 & Subject!= 134 & Subject!= 111 &Subject!= 108 &Subject!= 106 &Subject!= 102 &Subject!= 141 &Subject!= 146)]
+
+dataPH_ACC <- data[(Type == "PH")]
+dataPH_ACC$PHType <- as.factor(dataPH_ACC$PHType)
+
+dataPH_ACC <- dataPH_ACC[, ACC := Target2.ACC]
+dataPH_ACC <- dataPH_ACC[, RT := Target2.RT]
+dataPH_ACC <- dataPH_ACC[, Target2.ACC:= NULL]
+dataPH_ACC <- dataPH_ACC[, Target2.RT:= NULL]
+
+#remove very slow/fast trials
+slow <- dataPH_ACC[(RT > 3000)]
+fast <- dataPH_ACC[(RT < 200)]
+nslow <- nrow(slow)
+nfast <- nrow(fast)
+
+paste(((nslow/nrow(dataPH_ACC))*100), "percent of trials were removed for being too slow")
+paste(((nfast/nrow(dataPH_ACC))*100), "percent of trials were removed for being too fast")
+
+dataPH_ACC <- dataPH_ACC[(RT >= 200 & RT <= 3000)]
+
+
+#find and remove subject outliers
+dataPH_ACC <- dataPH_ACC[, zRT := scale(RT), by = Subject]
+
+outliers<-dataPH_ACC[zRT < -2.5 | zRT > 2.50]
+paste((nrow(outliers)/nrow(dataPH_ACC)), "percent of trials were removed for being outliers")
+
+dataPH_ACC <- dataPH_ACC[zRT >= -2.5 & zRT <= 2.50]
+
+paste("this left a total of", nrow(dataPH_ACC), "trials to be analyzed")
+
+dataPH_ACC$Length<-scale(dataPH_ACC$Length, center = TRUE, scale = TRUE)
+dataPH_ACC$Length<-as.numeric(dataPH_ACC$Length)
+
+dataPH_ACC$Ortho_N<-scale(dataPH_ACC$Ortho_N, center = TRUE, scale = TRUE)
+dataPH_ACC$Ortho_N<-as.numeric(dataPH_ACC$Ortho_N)
+
+dataPH_ACC$BG_Mean<-scale(dataPH_ACC$BG_Mean, center = TRUE, scale = TRUE)
+dataPH_ACC$BG_Mean<-as.numeric(dataPH_ACC$BG_Mean)
+
+dataPH_ACC$Wfreq<-scale(dataPH_ACC$Wfreq, center = TRUE, scale = TRUE)
+dataPH_ACC$Wfreq<-as.numeric(dataPH_ACC$Wfreq)
+
+dataPH_ACC$Iconicity<-scale(dataPH_ACC$Iconicity, center = TRUE, scale = TRUE)
+dataPH_ACC$Iconicity<-as.numeric(dataPH_ACC$Iconicity)
+```
+
+###Analysis
+
+```{r}
+#Run full model
+m1<-lmer_alt(ACC~Length+Ortho_N+BG_Mean+Wfreq+Iconicity+(1+Iconicity|Subject)+(1|Target), data = dataPH_ACC, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+
+#Run PCA on random effects to determine if overfitted.
+pcam1 <- rePCA(m1)
+summary(pcam1)
+
+#Suggests keeping slope. Checking if correlation is needed.
+m2<-lmer_alt(ACC~Length+Ortho_N+BG_Mean+Wfreq+Iconicity+(1+Iconicity||Subject)+(1|Target), data = dataPH_ACC, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+anova(m1,m2)
+
+#Not needed. Is the slope needed at all?
+m3<-lmer_alt(ACC~Length+Ortho_N+BG_Mean+Wfreq+Iconicity+(1|Subject)+(1|Target), data = dataPH_ACC, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+anova(m2,m3)
+
+#No. Making m3 the best model.
+```
+
+#ELex Data
+
+##Load and Prepare
+
+```{r}
+data<-as.data.table(read.csv("Exp1.csv"))
+data <- as.data.table(data)
+
+data <- data[Subject == 1 & RealWord == 1]
+
+
+#Standardize
+data$PhonCon<-scale(data$PhonCon, center = TRUE, scale = TRUE)
+data$PhonCon<-as.numeric(data$PhonCon)
+
+data$Length<-scale(data$Length, center = TRUE, scale = TRUE)
+data$Length<-as.numeric(data$Length)
+
+data$Freq<-scale(data$Freq, center = TRUE, scale = TRUE)
+data$Freq<-as.numeric(data$Freq)
+
+data$OLD<-scale(data$OLD, center = TRUE, scale = TRUE)
+data$OLD<-as.numeric(data$OLD)
+
+data$Iconicity<-scale(data$Iconicity, center = TRUE, scale = TRUE)
+data$Iconicity<-as.numeric(data$Iconicity)
+
+data$SER<-scale(data$SER, center = TRUE, scale = TRUE)
+data$SER<-as.numeric(data$SER)
+
+data$BGMean<-scale(data$BGMean, center = TRUE, scale = TRUE)
+data$BGMean<-as.numeric(data$BGMean)
+
+data$OrthCon<-scale(data$OrthCon, center = TRUE, scale = TRUE)
+data$OrthCon<-as.numeric(data$OrthCon)
+
+```
+
+##Analyze
+```{r}
+m <- lm(LDT_RT ~ Length + OLD + Freq + Iconicity, data = data)
+m_acc <- lm(LDT_ACC ~ Length + OLD + Freq + Iconicity, data = data)
+```
+
+#Supplementary Analysis with Trial Number
+
+##RT
+
+###Load and Prepare Data
+
+```{r}
+data<-as.data.table(read.csv("DegLDT.csv"))
+data <- as.data.table(data)
+
+#remove nonword trials
+data <- data[(RealWord == 1)]
+data$Type = droplevels(data$Type)
+
+#Just keep non-degraded trials
+data <- data[ExperimentName == "IconLDT_NoDeg"]
+
+#remove inaccurate trials
+nrow1 <- nrow(data)
+data <- data[(ACC == 1)]
+nrow2 <- nrow(data)
+paste((((nrow1 - nrow2)/nrow1)*100), "percent of trials were removed because of inaccurate responses")
+#remove very slow/fast trials
+slow <- data[(RT > 3000)]
+fast <- data[(RT < 200)]
+nslow <- nrow(slow)
+nfast <- nrow(fast)
+
+paste(((nslow/nrow(data))*100), "percent of trials were removed for being too slow")
+paste(((nfast/nrow(data))*100), "percent of trials were removed for being too fast")
+
+data <- data[(RT >= 200 & RT <= 3000)]
+
+
+#find and remove subject outliers
+data <- data[, zRT := scale(RT), by = Subject]
+
+outliers<-data[zRT < -2.5 | zRT > 2.50]
+paste((nrow(outliers)/nrow(data))*100, "percent of trials were removed for being outliers")
+
+data <- data[zRT >= -2.5 & zRT <= 2.50]
+
+paste("this left a total of", nrow(data), "trials to be analyzed")
+
+#Preparing variables
+data$Subject<-as.factor(data$Subject)
+data$Word<-as.factor(data$Target)
+data$Condition<-as.factor(data$ExperimentName)
+contrasts(data$Condition) <- c(-1, 1) #setting condition to be effects coded
+
+#Standardize
+data$PhonCon<-scale(data$PhonCon, center = TRUE, scale = TRUE)
+data$PhonCon<-as.numeric(data$PhonCon)
+
+data$Length<-scale(data$Length, center = TRUE, scale = TRUE)
+data$Length<-as.numeric(data$Length)
+
+data$Freq<-scale(data$Freq, center = TRUE, scale = TRUE)
+data$Freq<-as.numeric(data$Freq)
+
+data$OLD<-scale(data$OLD, center = TRUE, scale = TRUE)
+data$OLD<-as.numeric(data$OLD)
+
+data$Iconicity<-scale(data$Iconicity, center = TRUE, scale = TRUE)
+data$Iconicity<-as.numeric(data$Iconicity)
+
+data$Order<-scale(data$Order, center = TRUE, scale = TRUE)
+data$Order<-as.numeric(data$Order)
+```
+
+###Run Analysis
+
+```{r}
+m1 <- lmer_alt(RT~Length+Freq+OLD+Iconicity*Order+(1+Iconicity*Order|Subject)+(1+Order|Word), data = data)
+
+pcam1 <- rePCA(m1)
+summary(pcam1)
+
+m2 <- lmer_alt(RT~Length+Freq+OLD+Iconicity*Order+(1+Order|Subject)+(1|Word), data = data)
+
+pcam2 <- rePCA(m2)
+summary(pcam2)
+
+#Need correlation?
+
+m3 <- lmer_alt(RT~Length+Freq+OLD+Iconicity*Order+(1+Order||Subject)+(1|Word), data = data)
+anova(m2,m3)
+
+#no. need slope?
+
+m4 <- lmer_alt(RT~Length+Freq+OLD+Iconicity*Order+(1|Subject)+(1|Word), data = data)
+anova(m3,m4)
+
+#Yes! making m3 the best model
+
+summary(m3)
+```
+
+
+###Predict values at trial 30 and 90
+```{r}
+require(prediction)
+prediction(m3, at = list(Iconicity = c(-1.5, 1.5), Order = c(-0.8810900, 0.8735041)))
+```
+
+###Make Plot
+
+```{r}
+#First build model based on quartile split of trials.
+data$Quarter <- as.factor(data$Quarter)
+library(MASS)
+contrasts(data$Quarter) <- contr.sdif(4)
+
+m1 <- lmer_alt(RT~Length+Freq+OLD+Iconicity*Quarter+(1+Iconicity*Quarter||Subject)+(1+Quarter||Word), data = data)
+
+pcam1 <- rePCA(m1)
+summary(pcam1)
+
+m2 <- lmer_alt(RT~Length+Freq+OLD+Iconicity*Quarter+(1+Quarter||Subject)+(1+Quarter||Word), data = data)
+
+pcam2 <- rePCA(m2)
+summary(pcam2)
+
+m3 <- lmer_alt(RT~Length+Freq+OLD+Iconicity*Quarter+(1+Quarter||Subject)+(1|Word), data = data)
+
+#put correlation back in?
+
+m4 <- lmer_alt(RT~Length+Freq+OLD+Iconicity*Quarter+(1+Quarter|Subject)+(1|Word), data = data)
+anova(m3,m4)
+
+#Yes. Check if the slope is needed.
+
+m5 <- lmer_alt(RT~Length+Freq+OLD+Iconicity*Quarter+(1|Subject)+(1|Word), data = data)
+anova(m4,m5)
+
+#Yes. Making m4 the best model.
+
+require(effects)
+int <- effect(term = "Iconicity:Quarter", mod = m4)
+int <- as.data.frame(int)
+
+p <- ggplot(int) + geom_line(aes(Iconicity,fit,col=Quarter), size = 3) + theme_classic()+ ylab("Reaction Time") + ggtitle("                Iconicity x Trial Order in Experiment 1 Non-Degraded LDT") +  theme_classic() + scale_color_manual(values = c("#9ecae1", "#4292c6", "#08519c", "#08306b"), labels = c("1-60","61-120", "121-180", "181-240"), name = "Trial Number") + xlab("Standardized Iconicity") + theme(text = element_text(family = "Times")) +theme(text=element_text(size=20)) + 
+  theme(plot.title = element_text(hjust = 0.5, margin=margin(0,0,30,0)))
+
+png("Figure1.png", height = 6000, width = 6000, res = 600)
+p
+dev.off()
+```
+
+
+##Accuracy
+
+###Load and prepare data
+```{r}
+data_acc<-as.data.table(read.csv("Exp1.csv"))
+
+#remove nonword trials
+data_acc <- data_acc[(RealWord == 1)]
+
+#Just keep non-degraded trials
+data_acc <- data_acc[ExperimentName == "IconLDT_NoDeg"]
+
+#remove very slow/fast trials
+
+slow <- data_acc[(RT > 3000)]
+fast <- data_acc[(RT < 200)]
+nslow <- nrow(slow)
+nfast <- nrow(fast)
+
+paste(((nslow/nrow(data_acc))*100), "percent of trials were removed for being too slow")
+paste(((nfast/nrow(data_acc))*100), "percent of trials were removed for being too fast")
+data_acc <- data_acc[(RT >= 200 & RT <= 3000)]
+
+
+#find and remove subject outliers
+data_acc <- data_acc[, zRT := scale(RT), by = Subject]
+
+outliers<-data_acc[zRT < -2.5 | zRT > 2.50]
+paste((nrow(outliers)/nrow(data_acc)), "percent of trials were removed for being outliers")
+
+data_acc <- data_acc[zRT >= -2.5 & zRT <= 2.50]
+
+paste("this left a total of", nrow(data_acc), "trials to be analyzed")
+
+#make variables correct type
+data_acc$Subject<-as.factor(data_acc$Subject)
+data_acc$Word<-as.factor(data_acc$Target)
+data_acc$Condition<-as.factor(data_acc$ExperimentName)
+contrasts(data_acc$Condition) <- c(-1, 1) #setting condition to be effects coded
+
+#Standardize
+data_acc$Length<-scale(data_acc$Length, center = TRUE, scale = TRUE)
+data_acc$Length<-as.numeric(data_acc$Length)
+
+data_acc$Freq<-scale(data_acc$Freq, center = TRUE, scale = TRUE)
+data_acc$Freq<-as.numeric(data_acc$Freq)
+
+data_acc$OLD<-scale(data_acc$OLD, center = TRUE, scale = TRUE)
+data_acc$OLD<-as.numeric(data_acc$OLD)
+
+data_acc$Iconicity<-scale(data_acc$Iconicity, center = TRUE, scale = TRUE)
+data_acc$Iconicity<-as.numeric(data_acc$Iconicity)
+
+data_acc$Order<-scale(data_acc$Order, center = TRUE, scale = TRUE)
+data_acc$Order<-as.numeric(data_acc$Order)
+```
+
+
+###Run Analysis
+
+```{r}
+#Full Model
+m1<-glmer(ACC~Length+Freq+OLD+Iconicity*Order+(1+Iconicity*Order|Subject)+(1+Order|Word), data = data_acc, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+
+#Run PCA on random effects to determine if overfitted.
+pcam1 <- rePCA(m1)
+summary(pcam1)
+
+m2<-lmer_alt(ACC~Length+Freq+OLD+Iconicity*Order+(1+Iconicity|Subject)+(1|Word), data = data_acc, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+
+pcam2 <- rePCA(m2)
+summary(pcam2)
+
+#Need correlation?
+
+m3<-lmer_alt(ACC~Length+Freq+OLD+Iconicity*Order+(1+Iconicity||Subject)+(1|Word), data = data_acc, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+anova(m2,m3)
+
+#No. Need slope at all?
+
+m4<-lmer_alt(ACC~Length+Freq+OLD+Iconicity*Order+(1|Subject)+(1|Word), data = data_acc, family = "binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+anova(m3,m4)
+
+#No, making m4 the best model.
+```

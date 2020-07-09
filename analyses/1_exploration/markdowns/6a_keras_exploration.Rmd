@@ -34,7 +34,7 @@ opts_chunk$set(echo = T, message = F, warning = F,
 Sanity check
 ```{r}
 LAYER <- 'fc2'
-IMG_PATH <- "../../data/supplementary_data/test_keras_images/"
+IMG_PATH <- "../../../data/supplementary_data/test_keras_images/"
 
 # get model with appropriate outputs
 base_model <- application_vgg16(include_top = TRUE, 

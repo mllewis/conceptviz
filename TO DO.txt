@@ -3,6 +3,9 @@
 (2) do more of pipeline with new items
 (3) is mover's distance correlated with this siilaritiy?
 (4) explore aspects of tensor flow - different layers, different measures, etc.
+(5) This looks like intersting data and approach to looking at bilateral data (https://lingfeiwu1.gitbooks.io/data-mining-in-social-science/content/discovering_the_hidden_structure_of_global_migration_and_remittance_flows/)
+(6) Look at 2d-entropy paper in literature - looks like great measures of entropy
+
 
 all <- tree_dists %>%
   left_join(dyadic_clean, by = "all_codes") %>%

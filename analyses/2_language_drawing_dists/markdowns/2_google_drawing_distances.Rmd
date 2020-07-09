@@ -166,18 +166,18 @@ Join and plot
 
 cor.test(all_sims$mean_hd_sim, -all_sims$lang_corrs)
 
-pdf("/Users/mollylewis/Documents/research/Projects/conceptviz/writeups/evolang_abstract_2018/poster/posterfigs/cor_plot.pdf", width = 9.5, height = 7)
+pdf("/Users/mollylewis/Documents/research/Projects/conceptviz/writeups/evolang_abstract_2018/poster/posterfigs/cor_plot.pdf", width = 11, height = 7.5)
 all_sims %>%
   filter(type == "all") %>%
   ggplot(aes(x = -lang_corrs, y = mean_hd_sim)) +
-  #geom_point(size = 2) +
-  geom_text(aes(label = paste0(lang1, lang2))) +
+  geom_point(size = 2) +
+  #geom_text(aes(label = paste0(lang1, lang2))) +
   geom_smooth(method = "lm") +
   ggtitle("Drawing Distance vs. Semantic Distance") +
   ylab("Drawing Distance (HD)") +
   xlab("Semantic Distance") +
   geom_text(aes(x = .1, y = 90.5, 
-                label = "r = -.18***"), 
+                label = "r = .18***"), 
             color = "red", 
             size = 8) +
   theme_classic() +
@@ -265,7 +265,7 @@ plot_data <- params %>%
                             "ASJP",
                             "WALS")) 
 
-pdf("/Users/mollylewis/Documents/research/Projects/conceptviz/writeups/evolang_abstract_2018/poster/posterfigs/betas_plot.pdf", width = 8, height = 3.5)
+pdf("/Users/mollylewis/Documents/research/Projects/conceptviz/writeups/evolang_abstract_2018/poster/posterfigs/betas_plot.pdf", width = 9, height = 4)
   ggplot(plot_data, aes(x = term, y = estimate, fill = term)) +
   geom_bar(stat = "identity", position = "dodge") +
   geom_linerange(aes(ymin = ci_lower, ymax = ci_upper)) +

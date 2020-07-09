@@ -1,0 +1,46 @@
+-> A foundational assumptino about language is that when I say a word - like bread - it brings to mind roughly same representation in your mind as mind,k and similiar representaitons across people
+
+ANd, while some version of this assumption is very likely to be true, it's difficult to interrogate because we only coarse grain representations of meaning are observable.
+
+We propose using hand drawings as a window into studying cross-cultural variability in conceptual represnations
+
+In particular, we make use of a dataset collected by google - quick draw -
+
+that include 50 million drawings of various concrete nouns - bread, tree, mountain, sun, etc.) by over 15 million participations across the world
+
+-> To quantify the similarity of drawings to eachother, we used a geometric measure callued hasusdorf distance, which is the minimun distance between two sets of points.
+
+We validated this measure of similarity by comparing it to human judgements
+
+We took two categories - bread and tree - and divided pairs of them into different quintiles based on their hassdorf distance - and human judgements were relatively highly correlated.
+
+-> We next asked how drawings from participants of different cultural background compared to eachother. 
+
+Here's the prototype for the “bread” drawing for each country [calculated as the drawing with the smallest average pairwise distance to other drawings from the same country], 
+
+and when you compare these drawing across countries a highly sensible pattern emerges, with participants from countries that inutitively seem relatively more similair to eachother producing drawings that are also more similiar to eacthoerh/
+
+-> Finally, we tried to predict variability in drawings with cross linguistic varability in semantic space. 
+
+We compared the mean similiarity of drawings of 40 different items between countries
+to the similarity of word meanings in  the primary langauges spoken in each country, using word embedding models.
+
+What we found was that languages that had relatively more similiar semantics, also had relatively more similiar drawings - 
+suggesting non loinguistioc represntation is predicted by linguistic community
+
+-> Moving forward, were thinking about how to characterize difference across sematnic domains, and compare linguistic similarity to other measures of cultural
+
+ * label points as countries
+ * summarize findings
+ * bread - true 
+ * english speakers
+ * make map bigger
+
+ 50M drawings across 
+345 categories (N = 15M)
+quickdraw.withgoogle.com
+Bojanowski et al. (2016
+
+
+
+

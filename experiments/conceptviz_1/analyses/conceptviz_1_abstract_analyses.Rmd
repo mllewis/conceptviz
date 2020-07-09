@@ -57,7 +57,8 @@ bread_hd_cs <- left_join(bread_hd_1500, bread_cs) %>%
 tree_cs <- read_feather("../../../data/keras_similarities/pairwise_country/tree_all_sims.txt") %>%
   select(key_id_1, key_id_2, cosine)
 
-tree_hd_1500 <- read_csv("../../../data/hausdorff_similarities/pair_lists/tree_sampled_pairs_with_sims_hd.csv", col_types = list( col_character(), col_character(), col_double()))
+tree_hd_1500 <- read_csv("../../../data/hausdorff_similarities/pair_lists/tree_sampled_pairs_with_sims_hd.csv", 
+                         col_types = list( col_character(), col_character(), col_double()))
 
 tree_hd_cs <- left_join(tree_hd_1500, tree_cs) %>%
   mutate(item = "tree")

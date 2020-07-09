@@ -308,7 +308,7 @@ dist_matrix <- dist(sims_widef)
 p <- hclust(dist_matrix)
 pd <- as.dendrogram(p, horiz = FALSE)
 
-pdf("/Users/mollylewis/Documents/research/Projects/conceptviz/writeups/evolang_abstract_2018/poster/posterfigs/denro_plot.pdf", width = 4, height = 10)
+pdf("/Users/mollylewis/Documents/research/Projects/conceptviz/writeups/evolang_abstract_2018/poster/posterfigs/denro_plot.pdf", width = 5, height = 10)
 par(mar=c(2,0,0,10))
 plot(pd, horiz = TRUE, yaxt='n', ann = FALSE)
 dev.off()
