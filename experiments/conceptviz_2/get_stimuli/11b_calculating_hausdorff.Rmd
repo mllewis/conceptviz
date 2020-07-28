@@ -44,7 +44,11 @@ N_INTERPOLATE <- 500
 
 Read in raw data and get pairs to sample from (same as cosine measure)
 ```{r}
-raw_data <- read_feather(paste0("../../data/raw_data/feathers/atleast_100/", ITEM, ".txt"))
+raw_data <- read_feather(paste0("../../../data/raw_data/feathers/atleast_100/", ITEM, ".txt"))
+
+m = raw_data %>%
+  distinct(country, key_id) %>%
+  count(country)
 
 # sample from already-sampled pairs of nn model
 id_pairs <- read_feather(paste0("../../data/keras_similarities/pairwise_country/", ITEM , "_all_sims.txt")) %>%

@@ -58,7 +58,6 @@ sampled_tree_pairs <- d_bin_tree %>%
     group_by(cosine_bin) %>%
     sample_n(20) 
 
-
 # check n in each bin
 count(sampled_tree_pairs, cosine_bin)
 

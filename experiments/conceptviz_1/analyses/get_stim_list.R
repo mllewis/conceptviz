@@ -19,7 +19,6 @@ d_tidy <- d %>%
   mutate_at(c("trial_num", "haus_sim", "rating", "RT", "trial_ID",  "haus_bin"), as.numeric) %>%
   mutate_at(c("category", "drawing_key_id_1", "drawing_key_id_2","trial_type", "subj_id"), as.factor)
 
-
 mean_attention_check_ratings = d_tidy %>%
   filter(trial_type == "attention_check") %>%
   group_by(subj_id) %>%

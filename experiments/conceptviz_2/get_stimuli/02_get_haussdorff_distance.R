@@ -1,6 +1,13 @@
+# sample drawing pairs for an item, and get their haussdorff distance
+
 library(tidyverse)
 library(feather)
+library(here)
 
+ITEM <- "chair"
+DATA_PATH <- paste0("/Volumes/wilbur_the_great/CONCEPTVIZ/raw_data/feathers/all/", ITEM, '_tidy.txt')
+
+raw_data <- read_feather(DATA_PATH)
 
 get_hd_distance_fast <- function(id_1, id_2, long_data, py){
 
@@ -23,30 +30,25 @@ get_hd_distance_fast <- function(id_1, id_2, long_data, py){
              hd_sim = hd_sim)
 }
 
-
-ITEM <- "tree"
-raw_data <- read_feather(paste0("../../../data/raw_data/feathers/atleast_100/",
-                                ITEM, ".txt"))
-
 # sample 10 drawings from each country (n = 71)
 sample_ids <- raw_data %>%
   distinct(country, key_id) %>%
   group_by(country) %>%
   sample_n(10)
 
+# get all drawing combos
 all_pair_combos <- combn(sample_ids$key_id, 2) %>%
   t() %>%
   as.data.frame() %>%
   mutate_all(as.character) %>%
-  mutate_all(as.numeric) %>%
-  filter(V1 < V2) # get all unique pairs %>%
+  filter(V1 < V2) # get all unique pairs
 
-
+# sample 1000 pairs
 sampled_pairs <- all_pair_combos %>%
-  sample_n(10) %>%
+  sample_n(1000) %>%
   mutate_all(as.character)
 
-unique_ids_in_pairs <- unique(sampled_pairs$V1, sampled_pairs$V2)
+unique_ids_in_pairs <- unique(c(sampled_pairs$V1, sampled_pairs$V2))
 
 point_data <- raw_data %>%
   filter(key_id %in% unique_ids_in_pairs) %>%
@@ -64,5 +66,5 @@ hd_sims<- map2_df(sampled_pairs$V1,
 
 hd_this_path <- paste0("../../data/hausdorff_similarities/pair_sim_drawings/pair_lists/", ITEM, "_sampled_pairs_with_sims_hd.csv")
 write_csv(hd_sims, hd_this_path)
-```
+
 
