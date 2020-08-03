@@ -39,7 +39,7 @@ d_raw <- gs_title("conceptviz_1_data") %>%
 
 d <- map_df(d_raw$data, fromJSON, simplifyDataFrame = TRUE) %>%
   bind_cols(subj_id = d_raw$subj_id) %>%
-  select(subj_id, everything())
+  select(subj_id, everything()) 
 ```
 
 ## Tidy data

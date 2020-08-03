@@ -15,25 +15,27 @@ function getTrialData(this_url) {
 function saveTrialsToVars(data) {
     // data comes through as a simple array since simpleSheet is turned on
     // get list of row ids that apply to the current category
-    var targ_trial_ids = []
+    targ_trials_id = []
     for (i = 0; i < Object.values(data).length; i++) {
       if(data[i].category == current_category){
           targ_trial_ids.push(i)
       }
     }
 
+    var trial_ids = sample_from_array(targ_trial_ids, num_trials) // sample trials without replacement
+
+
     // save array of stimuli data for current category
     td = []
-    for (i = 0; i < 200; i++) {
-      td.push(data[targ_trial_ids[i]])
-    }
-
-    // get objs to preload
-    objs = []
     for (i = 0; i < num_trials; i++) {
-      objs.push('images/drawings/' + current_category + '/'  + td[trial_ids[i]].key_id_1 + '.jpeg')
-      objs.push('images/drawings/' + current_category + '/'  + td[trial_ids[i]].key_id_2 + '.jpeg')
+      td.push(data[trial_ids[i]])
     }
+    // get objs to preload
+    //objs = []
+    //for (i = 0; i < num_trials; i++) {
+    //  objs.push('images/drawings/' + current_category + '/'  + td[trial_ids[i]].key_id_1 + '.jpeg')
+    //  objs.push('images/drawings/' + current_category + '/'  + td[trial_ids[i]].key_id_2 + '.jpeg')
+    //}
 
     // preload  images
     $.fn.preload = function() {
@@ -94,13 +96,21 @@ var paper = Raphael("drawing_canvas", paper_width, paper_height);
 // Initialize experiment logic variables
 var num_ratings = -1 //initialize at -1
 var td // array of target condition trial data from google sheets
-var all_ids = Array.apply(null, {length: total_unique_trials}).map(Number.call, Number) // gets 1:N array
-var trial_ids = sample_from_array(all_ids, num_trials) // sample trials without replacement
+var targ_trial_ids = []
+
 var objs = []
 var current_likert_value
 var current_rt
 
 getTrialData(google_spreadsheet_stimuli_url); // get trial data
+
+//var all_ids = Array.apply(null, {length: total_unique_trials}).map(Number.call, Number) // gets 1:N array
+//alert(current_category)
+//alert(JSON.stringify(targ_trial_ids))
+//alert(num_trials)
+//var trial_ids = sample_from_array(targ_trial_ids, num_trials) // sample trials without replacement
+//alert(trial_ids)
+
 
 // ---------------- 3. CONTROL FLOW ------------------
 // START experiment
@@ -140,16 +150,21 @@ var experiment = {
     // GET RATINGS DISPLAY FUNCTION
     get_ratings: function() {
 
+
         // add in attention check indicis at certain points
         if (attention_check_indices.indexOf(num_ratings) > -1){
 
           current_trial_type = "attention_check"
-          current_pics = [td[trial_ids[num_ratings]].key_id_1,  td[trial_ids[num_ratings]].key_id_1] // two identical
+          current_pics = [td[num_ratings].key_id_1,  td[num_ratings].key_id_1] // two identical
 
         } else {
+
           // randomize sides of pictures
           current_trial_type = "critical_trial"
-          current_pics = shuffle([td[trial_ids[num_ratings]].key_id_1, td[trial_ids[num_ratings]].key_id_2])
+         // alert(td[num_ratings].key_id_1)
+          //alert(td[num_ratings].key_id_2)
+          current_pics = shuffle([td[num_ratings].key_id_1, td[num_ratings].key_id_2])
+
         }
 
         rating_image1_html = '<img src=images/drawings/' + current_category + '/' + current_pics[0] + '.jpeg alt="' + current_pics[0] + '" id="objImage" class = "objImage"/>';
@@ -295,10 +310,10 @@ var experiment = {
 
     // SAVE DATA
     saveData: function() {
-        var dataforTrial = subj_id + "," + num_ratings + "," + td[trial_ids[num_ratings - 1]].trial_ID;
-		    dataforTrial += "," + td[trial_ids[num_ratings - 1]].category + "," + current_trial_type;
-		    dataforTrial += ","+ td[trial_ids[num_ratings - 1]].hd_bin + "," + td[trial_ids[num_ratings - 1]].hd_sim;
-		    dataforTrial += "," + td[trial_ids[num_ratings - 1]].key_id_1  + "," +  td[trial_ids[num_ratings - 1]].key_id_2;
+        var dataforTrial = subj_id + "," + num_ratings + "," + td[num_ratings-1].trial_ID;
+		    dataforTrial += "," + td[num_ratings - 1].category + "," + current_trial_type;
+		    dataforTrial += ","+ td[num_ratings - 1].hd_bin + "," + td[num_ratings - 1].hd_sim;
+		    dataforTrial += "," + td[num_ratings - 1].key_id_1  + "," +  td[num_ratings - 1].key_id_2;
 		    dataforTrial += "," + current_rt + "," + current_likert_value + "," +  current_completion_code + "\n";
 		    $.post(php_script, {postresult_string: dataforTrial, subjectid: subj_id});	 // write to csv using php
 		    // test with local php file: php -S 127.0.0.1:8000
