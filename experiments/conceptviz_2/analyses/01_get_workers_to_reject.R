@@ -4,22 +4,28 @@ library(here)
 
 DATA_PATH1 <- here("experiments/conceptviz_2/data/run1/")
 DATA_PATH2 <- here("experiments/conceptviz_2/data/run2/")
+DATA_PATH3 <- here("experiments/conceptviz_2/data/run3/")
+
 
 STIM_OUT <- here("experiments/conceptviz_2/get_stimuli/data/experiment_stimuli/all_stim_data_run3.csv")
 
 run1 <- list.files(DATA_PATH1, full.names = T)
 run2 <- list.files(DATA_PATH2, full.names = T)
+run3 <- list.files(DATA_PATH3, full.names = T)
 
 run1_ids <- map(run1, str_extract_all, "\\d+") %>%
   map_chr(~.[[1]][4])
+run2_ids <- map(run2, str_extract_all, "\\d+") %>%
+  map_chr(~.[[1]][4])
 
 ### get workers to reject
-all_data <- map_df(run2,
+all_data <- map_df(c(run1, run2, run3),
                    read_csv, col_names = c("subj_id", "trial_num", "pair_id", "category", "trial_type", "hd_bin",
                                            "hd_sim", "key_id_1", "key_id_2", "rt", "rating", "completion_code"),
                    col_types = c("cddccddccddc")) %>%
   mutate(run = case_when(subj_id %in% run1_ids ~ "run1",
-                         TRUE ~ "run2"))
+                         subj_id %in% run2_ids ~ "run2",
+                         TRUE ~ "run3"))
 
 complete_subj_ids <- all_data %>%
   count(subj_id) %>%
@@ -28,6 +34,7 @@ complete_subj_ids <- all_data %>%
 
 missed_two <- all_data %>%
   filter(subj_id %in% complete_subj_ids) %>%
+  filter(run == "run3") %>%
   select(subj_id, trial_type, rating, completion_code) %>%
   filter(trial_type == "attention_check") %>%
   filter(rating > 2) %>%
